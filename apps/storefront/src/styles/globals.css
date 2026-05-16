@@ -1,0 +1,218 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label {
+    @apply -translate-y-2 text-xsmall-regular;
+  }
+
+  input:focus ~ label {
+    @apply left-0;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: 1px solid #212121;
+    -webkit-text-fill-color: #212121;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+:root {
+  --brand-orange: #FF6B35;
+  --brand-orange-light: #FF8F5E;
+  --brand-red: #E63946;
+  --brand-green: #2A9D8F;
+}
+
+body {
+  @apply bg-white text-grey-90;
+}
+
+/* Orange theme button */
+.btn-primary {
+  @apply bg-brand-orange text-white px-6 py-3 rounded-lg font-semibold
+         hover:bg-brand-orange-dark transition-colors duration-200
+         disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply border-2 border-brand-orange text-brand-orange px-6 py-3 rounded-lg font-semibold
+         hover:bg-brand-orange hover:text-white transition-all duration-200;
+}
+
+.btn-whatsapp {
+  @apply bg-[#25D366] text-white rounded-full px-4 py-2 font-medium
+         hover:bg-[#20BD5A] transition-colors duration-200;
+}
+
+/* Section headings */
+.section-title {
+  @apply text-2xl md:text-3xl font-bold text-grey-90 text-center mb-2;
+}
+
+.section-subtitle {
+  @apply text-grey-50 text-center mb-8 max-w-2xl mx-auto;
+}
+
+/* Orange accent underline for headings */
+.section-title-accent {
+  @apply relative inline-block;
+}
+.section-title-accent::after {
+  content: '';
+  @apply absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-brand-orange rounded-full;
+}
+
+/* Price tag styling */
+.price-current {
+  @apply text-xl font-bold text-brand-red;
+}
+
+.price-original {
+  @apply text-sm line-through text-grey-40 ml-2;
+}
+
+/* Product card */
+.product-card {
+  @apply bg-white rounded-lg border border-grey-20 overflow-hidden
+         hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+}
+
+/* Category card */
+.category-card {
+  @apply relative rounded-xl overflow-hidden cursor-pointer;
+}
+.category-card img {
+  @apply w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110;
+}
+.category-card .overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent
+         flex items-end p-4;
+}
+.category-card .overlay span {
+  @apply text-white text-lg font-semibold;
+}
+
+/* Mega menu */
+.mega-menu {
+  @apply absolute top-full left-0 w-56 bg-white shadow-xl border border-grey-20 rounded-b-lg rounded-r-lg
+         opacity-0 invisible transition-all duration-150 z-50 mt-1;
+}
+
+.nav-cat-group:hover .mega-menu {
+  @apply opacity-100 visible;
+}
+
+/* Free shipping bar */
+.shipping-bar {
+  @apply bg-brand-orange text-white text-center text-sm py-2 px-4 font-medium;
+}
+
+/* Hero */
+.hero-slide {
+  @apply relative w-full h-[300px] md:h-[450px] lg:h-[550px] overflow-hidden;
+}
+
+.text-orange {
+  @apply text-brand-orange;
+}
+.bg-orange {
+  @apply bg-brand-orange;
+}
+.border-orange {
+  @apply border-brand-orange;
+}
+
+@layer components {
+  .content-container {
+    @apply max-w-[1440px] w-full mx-auto px-6;
+  }
+
+  .contrast-btn {
+    @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
+  }
+
+  .text-xsmall-regular {
+    @apply text-[10px] leading-4 font-normal;
+  }
+
+  .text-small-regular {
+    @apply text-xs leading-5 font-normal;
+  }
+
+  .text-small-semi {
+    @apply text-xs leading-5 font-semibold;
+  }
+
+  .text-base-regular {
+    @apply text-sm leading-6 font-normal;
+  }
+
+  .text-base-semi {
+    @apply text-sm leading-6 font-semibold;
+  }
+
+  .text-large-regular {
+    @apply text-base leading-6 font-normal;
+  }
+
+  .text-large-semi {
+    @apply text-base leading-6 font-semibold;
+  }
+
+  .text-xl-regular {
+    @apply text-2xl leading-[36px] font-normal;
+  }
+
+  .text-xl-semi {
+    @apply text-2xl leading-[36px] font-semibold;
+  }
+
+  .text-2xl-regular {
+    @apply text-[30px] leading-[48px] font-normal;
+  }
+
+  .text-2xl-semi {
+    @apply text-[30px] leading-[48px] font-semibold;
+  }
+
+  .text-3xl-regular {
+    @apply text-[32px] leading-[44px] font-normal;
+  }
+
+  .text-3xl-semi {
+    @apply text-[32px] leading-[44px] font-semibold;
+  }
+}

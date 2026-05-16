@@ -3,14 +3,12 @@ import {
   ContainerRegistrationKeys,
   ModuleRegistrationName,
   Modules,
-  ProductStatus,
 } from "@medusajs/framework/utils";
 import {
   createApiKeysWorkflow,
   createCollectionsWorkflow,
   createInventoryLevelsWorkflow,
   createProductCategoriesWorkflow,
-  createProductsWorkflow,
   createRegionsWorkflow,
   createSalesChannelsWorkflow,
   createShippingOptionsWorkflow,
@@ -294,6 +292,7 @@ export default async function initial_data_seed({
       product_categories: parents.map((name) => ({
         name,
         is_active: true,
+        metadata: { nav_visible: true },
       })),
     },
   });
@@ -325,253 +324,9 @@ export default async function initial_data_seed({
     },
   });
 
-  const catMap = new Map<string, string>();
-  for (const cat of parentResult) {
-    catMap.set(cat.name, cat.id);
-  }
-  for (const cat of childResult) {
-    catMap.set(cat.name, cat.id);
-  }
-
   const allCategories = { data: [...parentResult, ...childResult] };
 
-  logger.info("Seeding product data...");
-
-  await createProductsWorkflow(container).run({
-    input: {
-      products: [
-        {
-          title: "Basmati Rice - India Gate",
-          category_ids: [catMap.get("Basmati Rice")!],
-          description: "Premium long grain basmati rice by India Gate.",
-          handle: "basmati-rice-india-gate",
-          weight: 1000,
-          status: ProductStatus.PUBLISHED,
-          shipping_profile_id: shippingProfile.id,
-          options: [
-            {
-              title: "Weight",
-              values: ["1kg", "5kg"],
-            },
-          ],
-          variants: [
-            {
-              title: "1kg",
-              sku: "RICE-BASMATI-IG-1KG",
-              options: { Weight: "1kg" },
-              prices: [{ amount: 549, currency_code: "gbp" }],
-            },
-            {
-              title: "5kg",
-              sku: "RICE-BASMATI-IG-5KG",
-              options: { Weight: "5kg" },
-              prices: [{ amount: 2599, currency_code: "gbp" }],
-            },
-          ],
-          sales_channels: [{ id: defaultSalesChannel.id }],
-        },
-        {
-          title: "Basmati Rice - Daawat",
-          category_ids: [catMap.get("Basmati Rice")!],
-          description: "Premium long grain basmati rice by Daawat.",
-          handle: "basmati-rice-daawat",
-          weight: 1000,
-          status: ProductStatus.PUBLISHED,
-          shipping_profile_id: shippingProfile.id,
-          options: [
-            {
-              title: "Weight",
-              values: ["1kg", "5kg", "10kg"],
-            },
-          ],
-          variants: [
-            {
-              title: "1kg",
-              sku: "RICE-BASMATI-DT-1KG",
-              options: { Weight: "1kg" },
-              prices: [{ amount: 529, currency_code: "gbp" }],
-            },
-            {
-              title: "5kg",
-              sku: "RICE-BASMATI-DT-5KG",
-              options: { Weight: "5kg" },
-              prices: [{ amount: 2499, currency_code: "gbp" }],
-            },
-            {
-              title: "10kg",
-              sku: "RICE-BASMATI-DT-10KG",
-              options: { Weight: "10kg" },
-              prices: [{ amount: 4799, currency_code: "gbp" }],
-            },
-          ],
-          sales_channels: [{ id: defaultSalesChannel.id }],
-        },
-        {
-          title: "Toor Dal - Deepak",
-          category_ids: [catMap.get("Toor Dal")!],
-          description: "Premium quality toor dal by Deepak.",
-          handle: "toor-dal-deepak",
-          weight: 500,
-          status: ProductStatus.PUBLISHED,
-          shipping_profile_id: shippingProfile.id,
-          options: [
-            {
-              title: "Weight",
-              values: ["500g", "1kg", "2kg"],
-            },
-          ],
-          variants: [
-            {
-              title: "500g",
-              sku: "DAL-TOOR-DEEPAK-500G",
-              options: { Weight: "500g" },
-              prices: [{ amount: 199, currency_code: "gbp" }],
-            },
-            {
-              title: "1kg",
-              sku: "DAL-TOOR-DEEPAK-1KG",
-              options: { Weight: "1kg" },
-              prices: [{ amount: 379, currency_code: "gbp" }],
-            },
-            {
-              title: "2kg",
-              sku: "DAL-TOOR-DEEPAK-2KG",
-              options: { Weight: "2kg" },
-              prices: [{ amount: 729, currency_code: "gbp" }],
-            },
-          ],
-          sales_channels: [{ id: defaultSalesChannel.id }],
-        },
-        {
-          title: "Toor Dal - Tata Sampann",
-          category_ids: [catMap.get("Toor Dal")!],
-          description: "Unpolished toor dal by Tata Sampann.",
-          handle: "toor-dal-tata",
-          weight: 500,
-          status: ProductStatus.PUBLISHED,
-          shipping_profile_id: shippingProfile.id,
-          options: [
-            {
-              title: "Weight",
-              values: ["500g", "1kg"],
-            },
-          ],
-          variants: [
-            {
-              title: "500g",
-              sku: "DAL-TOOR-TATA-500G",
-              options: { Weight: "500g" },
-              prices: [{ amount: 219, currency_code: "gbp" }],
-            },
-            {
-              title: "1kg",
-              sku: "DAL-TOOR-TATA-1KG",
-              options: { Weight: "1kg" },
-              prices: [{ amount: 399, currency_code: "gbp" }],
-            },
-          ],
-          sales_channels: [{ id: defaultSalesChannel.id }],
-        },
-        {
-          title: "Toor Dal - Laxmi",
-          category_ids: [catMap.get("Toor Dal")!],
-          description: "Everyday toor dal by Laxmi.",
-          handle: "toor-dal-laxmi",
-          weight: 500,
-          status: ProductStatus.PUBLISHED,
-          shipping_profile_id: shippingProfile.id,
-          options: [
-            {
-              title: "Weight",
-              values: ["500g", "1kg", "2kg"],
-            },
-          ],
-          variants: [
-            {
-              title: "500g",
-              sku: "DAL-TOOR-LAXMI-500G",
-              options: { Weight: "500g" },
-              prices: [{ amount: 179, currency_code: "gbp" }],
-            },
-            {
-              title: "1kg",
-              sku: "DAL-TOOR-LAXMI-1KG",
-              options: { Weight: "1kg" },
-              prices: [{ amount: 339, currency_code: "gbp" }],
-            },
-            {
-              title: "2kg",
-              sku: "DAL-TOOR-LAXMI-2KG",
-              options: { Weight: "2kg" },
-              prices: [{ amount: 649, currency_code: "gbp" }],
-            },
-          ],
-          sales_channels: [{ id: defaultSalesChannel.id }],
-        },
-        {
-          title: "Fresh Red Onions - Loose",
-          category_ids: [catMap.get("Onions")!],
-          description: "Fresh red onions sold by weight.",
-          handle: "fresh-red-onions",
-          weight: 1000,
-          status: ProductStatus.PUBLISHED,
-          shipping_profile_id: shippingProfile.id,
-          options: [
-            {
-              title: "Packaging",
-              values: ["Loose 1kg", "Bag 5kg"],
-            },
-          ],
-          variants: [
-            {
-              title: "Loose 1kg",
-              sku: "ONION-LOOSE-1KG",
-              options: { Packaging: "Loose 1kg" },
-              prices: [{ amount: 129, currency_code: "gbp" }],
-            },
-            {
-              title: "Bag 5kg",
-              sku: "ONION-BAG-5KG",
-              options: { Packaging: "Bag 5kg" },
-              prices: [{ amount: 549, currency_code: "gbp" }],
-            },
-          ],
-          sales_channels: [{ id: defaultSalesChannel.id }],
-        },
-        {
-          title: "Fresh Potatoes - Loose",
-          category_ids: [catMap.get("Potatoes")!],
-          description: "Fresh white potatoes sold by weight.",
-          handle: "fresh-potatoes",
-          weight: 1000,
-          status: ProductStatus.PUBLISHED,
-          shipping_profile_id: shippingProfile.id,
-          options: [
-            {
-              title: "Packaging",
-              values: ["Loose 1kg", "Bag 5kg"],
-            },
-          ],
-          variants: [
-            {
-              title: "Loose 1kg",
-              sku: "POTATO-LOOSE-1KG",
-              options: { Packaging: "Loose 1kg" },
-              prices: [{ amount: 99, currency_code: "gbp" }],
-            },
-            {
-              title: "Bag 5kg",
-              sku: "POTATO-BAG-5KG",
-              options: { Packaging: "Bag 5kg" },
-              prices: [{ amount: 429, currency_code: "gbp" }],
-            },
-          ],
-          sales_channels: [{ id: defaultSalesChannel.id }],
-        },
-      ],
-    },
-  });
-  logger.info("Finished seeding product data.");
+  logger.info("Skipping hardcoded product seeding — products are imported via Natco CSV catalog.");
 
   logger.info("Seeding inventory levels.");
 
@@ -591,6 +346,29 @@ export default async function initial_data_seed({
   });
 
   logger.info("Finished seeding inventory levels data.");
+
+  logger.info("Seeding product collections...");
+  const { result: collectionResults } = await createCollectionsWorkflow(
+    container
+  ).run({
+    input: {
+      collections: [
+        { title: "Best Sellers", handle: "best-sellers", metadata: { description: "Top-selling Indian groceries" } },
+        { title: "Rice & Grains", handle: "rice-grains", metadata: { description: "Basmati, Sona Masoori, and more" } },
+        { title: "Spices & Masalas", handle: "spices-masalas", metadata: { description: "Whole and ground Indian spices" } },
+        { title: "Dals & Lentils", handle: "dals-lentils", metadata: { description: "Toor, moong, masoor, and chana dals" } },
+        { title: "Snacks & Namkeen", handle: "snacks-namkeen", metadata: { description: "Bhujia, chips, biscuits, and namkeen" } },
+        { title: "Cooking Oils & Ghee", handle: "cooking-oils-ghee", metadata: { description: "Mustard, sunflower, coconut oils and pure ghee" } },
+        { title: "Beverages", handle: "beverages", metadata: { description: "Tea, coffee, and Indian drinks" } },
+        { title: "Frozen Foods", handle: "frozen-foods", metadata: { description: "Frozen snacks, parathas, and vegetables" } },
+        { title: "Pooja Essentials", handle: "pooja-essentials", metadata: { description: "Everything for your home temple and rituals" } },
+        { title: "Sweets & Mithai", handle: "sweets-mithai", metadata: { description: "Laddus, barfis, and canned Indian sweets" } },
+        { title: "Pickles & Chutneys", handle: "pickles-chutneys", metadata: { description: "Mango, lime, mixed pickles and chutneys" } },
+        { title: "Fresh Vegetables", handle: "fresh-vegetables", metadata: { description: "Fresh onions, potatoes, tomatoes, and seasonal veg" } },
+      ],
+    },
+  });
+  logger.info(`Created ${collectionResults.length} product collections.`);
 
   logger.info("");
   logger.info("============================================================");

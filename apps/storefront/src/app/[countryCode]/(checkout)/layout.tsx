@@ -1,0 +1,41 @@
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import ChevronDown from "@modules/common/icons/chevron-down"
+
+export default function CheckoutLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <div className="w-full bg-gray-50 relative small:min-h-screen">
+      <div className="h-16 bg-white border-b border-gray-200 shadow-sm">
+        <nav className="flex h-full items-center content-container justify-between">
+          <LocalizedClientLink
+            href="/cart"
+            className="text-small-semi flex items-center gap-x-2 flex-1 basis-0"
+            data-testid="back-to-cart-link"
+          >
+            <ChevronDown className="rotate-90" size={16} />
+            <span className="mt-px hidden small:block txt-compact-plus text-gray-500 hover:text-gray-700">
+              Back to shopping cart
+            </span>
+            <span className="mt-px block small:hidden txt-compact-plus text-gray-500 hover:text-gray-700">
+              Back
+            </span>
+          </LocalizedClientLink>
+          <LocalizedClientLink
+            href="/"
+            className="txt-compact-xlarge-plus text-brand-orange font-bold tracking-tight"
+            data-testid="store-link"
+          >
+            IndiaGrocers
+          </LocalizedClientLink>
+          <div className="flex-1 basis-0" />
+        </nav>
+      </div>
+      <div className="relative" data-testid="checkout-container">
+        {children}
+      </div>
+    </div>
+  )
+}

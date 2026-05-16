@@ -1,0 +1,2322 @@
+[
+  {
+    "id": "prod_01KRPE9YPS8Z1KG3S91QRJ7PY9",
+    "handle": "natco-soya-chunks-700g",
+    "title": "Soya Chunks 700g",
+    "image_file": "natco_soya-chunks-700g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPE9YWRSXEYP62W2BBG6Y96",
+    "handle": "natco-black-eyed-beans-400g",
+    "title": "Black Eyed Beans 400g",
+    "image_file": "natco_black-eyed-beans-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPE9Z0MGQ2CYADZFCN7Q5KG",
+    "handle": "natco-white-kidney-beans-400g",
+    "title": "White Kidney Beans 400g",
+    "image_file": "natco_white-kidney-beans-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPE9Z9HDZPJMJ9VRVB73S12",
+    "handle": "natco-bhel-puri-kit-500g",
+    "title": "Bhel Puri Kit 500g",
+    "image_file": "natco_bhel-puri-kit-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPE9ZD6A47F3MC5BZCQ1M0D",
+    "handle": "natco-chick-peas-full-case-4x1kg",
+    "title": "Chick Peas Full Case 4x1kg",
+    "image_file": "natco_chick-peas-full-case-4x1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPE9ZHH3R42HQ5ZX14CVZ24",
+    "handle": "natco-red-kidney-beans-25kg",
+    "title": "Red Kidney Beans 2.5kg",
+    "image_file": "natco_red-kidney-beans-25kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPE9ZMTRGXPHZBZQEBHRV0F",
+    "handle": "natco-red-kidney-beans-boiled-full-case-12x400g",
+    "title": "Red Kidney Beans Boiled Full Case 12x400g",
+    "image_file": "natco_red-kidney-beans-boiled-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPE9ZTGWN1GY8JXNHCWWTX2",
+    "handle": "natco-chick-peas-full-case-12x400g",
+    "title": "Chick Peas Full Case 12x400g",
+    "image_file": "natco_chick-peas-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPE9ZYVFDAZJ8PRZKF4K8XQ",
+    "handle": "natco-chick-peas-25kg",
+    "title": "Chick Peas 2.5kg",
+    "image_file": "natco_chick-peas-25kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA0379KC9FTN8EA71SPCB",
+    "handle": "natco-chick-peas-2kg",
+    "title": "Chick Peas 2kg",
+    "image_file": "natco_chick-peas-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA06DA4F362XGXB15BF8J",
+    "handle": "natco-kala-chana-boiled-400g",
+    "title": "Kala Chana Boiled 400g",
+    "image_file": "natco_kala-chana-boiled-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA0CFRY5M2750QRPDBAAJ",
+    "handle": "natco-red-kidney-beans-1kg",
+    "title": "Red Kidney Beans 1kg",
+    "image_file": "natco_red-kidney-beans-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA0FMBY200DA7S1R986GQ",
+    "handle": "natco-red-kidney-beans-2kg",
+    "title": "Red Kidney Beans 2kg",
+    "image_file": "natco_red-kidney-beans-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA0JRHWMSC2CH1S8H1MTV",
+    "handle": "natco-rose-coco-borlotti-beans-400g",
+    "title": "Rose Coco (Borlotti) Beans 400g",
+    "image_file": "natco_rose-coco-borlotti-beans-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA0P4NFGEXDNG9V3CRNZE",
+    "handle": "natco-toovar-400g",
+    "title": "Toovar 400g",
+    "image_file": "natco_toovar-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA0T1PVYQBQWTW6DWA1E1",
+    "handle": "natco-alubia-beans-2kg",
+    "title": "Alubia Beans 2kg",
+    "image_file": "natco_alubia-beans-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA0WXWN7YTXN24Q2R0NMJ",
+    "handle": "natco-alubia-beans-500g",
+    "title": "Alubia Beans 500g",
+    "image_file": "natco_alubia-beans-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA0ZM45Q198JQX5SHFRHM",
+    "handle": "natco-black-eye-beans-2kg",
+    "title": "Black Eye Beans 2kg",
+    "image_file": "natco_black-eye-beans-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA12HYJVMN5S11JRQBMQR",
+    "handle": "natco-pure-mustard-oil-250ml",
+    "title": "Pure Mustard Oil 250ml",
+    "image_file": "natco_pure-mustard-oil-250ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA15RRHREP5563WCCG6QD",
+    "handle": "natco-pure-mustard-oil-1ltr",
+    "title": "Pure Mustard Oil 1Ltr",
+    "image_file": "natco_pure-mustard-oil-1ltr.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA18VQJMVFM9BN5N46K78",
+    "handle": "natco-basmati-rice-india-2kg",
+    "title": "Basmati Rice India 2kg",
+    "image_file": "natco_basmati-rice-india-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA1BW09DZ0F2D9XB71Y1D",
+    "handle": "natco-ragi-flour-900g",
+    "title": "Ragi Flour 900g",
+    "image_file": "natco_ragi-flour-900g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA1EHPNDGT478F28QP1ST",
+    "handle": "natco-lemon-juice-1-ltr",
+    "title": "Lemon Juice 1 Ltr",
+    "image_file": "natco_lemon-juice-1-ltr.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA1HM2TRGWBZCCFMWD4X8",
+    "handle": "natco-lemon-juice-500ml",
+    "title": "Lemon Juice 500ml",
+    "image_file": "natco_lemon-juice-500ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA1MFN2WRZPBCZ8T8KSZ9",
+    "handle": "natco-lemon-juice-with-essential-oil-200ml",
+    "title": "Lemon Juice with Essential Oil 200ml",
+    "image_file": "natco_lemon-juice-with-essential-oil-200ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA1Q4X2JJWCRQRB59AVNG",
+    "handle": "natco-okra-full-case-12x400g",
+    "title": "Okra Full Case 12x400g",
+    "image_file": "natco_okra-full-case-12x400g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA1SVD38Z6DHBB6ZF56FC",
+    "handle": "natco-jaggery-500g",
+    "title": "Jaggery 500g",
+    "image_file": "natco_jaggery-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA1WFT002QY72C8R3GKR7",
+    "handle": "natco-spiced-tea-masala-blend-160s",
+    "title": "Spiced Tea - Masala Blend 160s",
+    "image_file": "natco_spiced-tea-masala-blend-160s.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA1ZDTH53NA0J09B2GX3H",
+    "handle": "natco-coriander-seeds-jar-60g",
+    "title": "Coriander Seeds Jar 60g",
+    "image_file": "natco_coriander-seeds-jar-60g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA2255AK4WT95NCGPF7HE",
+    "handle": "natco-kasuri-methi-leaves-100g",
+    "title": "Kasuri Methi Leaves 100g",
+    "image_file": "natco_kasuri-methi-leaves-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA25G06TBNG56XZMCTMY9",
+    "handle": "natco-crispy-fried-onions-150g",
+    "title": "Crispy Fried Onions 150g",
+    "image_file": "natco_crispy-fried-onions-150g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA28FPF324NM0H2E19PFD",
+    "handle": "natco-mixed-pickle-300g",
+    "title": "Mixed Pickle 300g",
+    "image_file": "natco_mixed-pickle-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA2C3TXJH2FDRFAE08QPE",
+    "handle": "natco-whole-birdseye-chilli-jar-40g",
+    "title": "Whole Birdseye Chilli Jar 40g",
+    "image_file": "natco_whole-birdseye-chilli-jar-40g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA2EPDGSBD6Q8E8YPFJSX",
+    "handle": "natco-coconut-cream-400ml",
+    "title": "Coconut Cream 400ml",
+    "image_file": "natco_coconut-cream-400ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA2JVV175AEWYRAH6TGDT",
+    "handle": "natco-coconut-water-330ml",
+    "title": "Coconut Water 330ml",
+    "image_file": "natco_coconut-water-330ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA2NEFY11BMGJZHVYXRY3",
+    "handle": "natco-coconut-water-1l",
+    "title": "Coconut Water 1L",
+    "image_file": "natco_coconut-water-1l.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA2S2SSDE3Z9T1SB6EKNW",
+    "handle": "natco-demerara-sugar-500g",
+    "title": "Demerara Sugar 500g",
+    "image_file": "natco_demerara-sugar-500g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA2VP5R048T45C5VN5GE4",
+    "handle": "natco-chakki-atta-multigrain-5kg",
+    "title": "Chakki Atta Multigrain 5kg",
+    "image_file": "natco_chakki-atta-multigrain-5kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA2YE4FFM65CZ0ZD54RCH",
+    "handle": "natco-rosemary-jar-40g",
+    "title": "Rosemary Jar 40g",
+    "image_file": "natco_rosemary-jar-40g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA31371KHZBDMQ6QYVM35",
+    "handle": "natco-phool-makhana-popped-lotus-seeds-100g",
+    "title": "Phool Makhana (Popped Lotus Seeds) 100g",
+    "image_file": "natco_phool-makhana-popped-lotus-seeds-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA33VKN1GPG50TRAR3EW6",
+    "handle": "natco-punjabi-tinda-full-case-12x400g",
+    "title": "Punjabi Tinda Full Case 12x400g",
+    "image_file": "natco_punjabi-tinda-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA370JSC0JFTYC7XDD2WQ",
+    "handle": "natco-big-d-honey-roast-peanuts-12x50g-packs-on-a-pub-card",
+    "title": "Big D Honey Roast Peanuts 12x50g Packs on a Pub Card",
+    "image_file": "natco_big-d-honey-roast-peanuts-12x50g-packs-on-a-pub-card.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA3B3MCDE1Y3FH50QKXEN",
+    "handle": "natco-big-d-salted-cashews-12x30g-cards",
+    "title": "Big D Salted Cashews 12x30g Cards",
+    "image_file": "natco_big-d-salted-cashews-12x30g-cards.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA3E2ESD0K92CZ32VSJ4C",
+    "handle": "natco-big-d-salted-peanuts-24x50g",
+    "title": "Big D Salted Peanuts 24x50g",
+    "image_file": "natco_big-d-salted-peanuts-24x50g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA3GTY5MJ43S5XC2W02K7",
+    "handle": "natco-mango-chutney-spicy-340g",
+    "title": "Mango Chutney Spicy 340g",
+    "image_file": "natco_mango-chutney-spicy-340g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA3KJXS1EBZGJ362BSM3Q",
+    "handle": "natco-tamarind-sauce-340g",
+    "title": "Tamarind Sauce 340g",
+    "image_file": "natco_tamarind-sauce-340g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA3PTRDAXY32Y25CWQAB5",
+    "handle": "natco-garlic-amp-chilli-sauce-340g",
+    "title": "Garlic &amp; Chilli Sauce 340g",
+    "image_file": "natco_garlic-amp-chilli-sauce-340g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA3TRWPAM9ZZ26S1XJXEQ",
+    "handle": "natco-tamarind-amp-date-sauce-340g",
+    "title": "Tamarind &amp; Date Sauce 340g",
+    "image_file": "natco_tamarind-amp-date-sauce-340g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA3XSYHGFX9Q9Y3JZ16WK",
+    "handle": "natco-roasted-monkey-nuts-300g",
+    "title": "Roasted Monkey Nuts 300g",
+    "image_file": "natco_roasted-monkey-nuts-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA40D7MMP9TVZ0CYSRZT1",
+    "handle": "natco-roasted-amp-salted-pistachio-nuts-1kg",
+    "title": "Roasted &amp; Salted Pistachio Nuts 1kg",
+    "image_file": "natco_roasted-amp-salted-pistachio-nuts-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA43570QGSQMA9DEXTF09",
+    "handle": "natco-roasted-amp-salted-pistachio-nuts-300g",
+    "title": "Roasted &amp; Salted Pistachio Nuts 300g",
+    "image_file": "natco_roasted-amp-salted-pistachio-nuts-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA45PD2CPR7TWWW87WJ7M",
+    "handle": "natco-roasted-amp-salted-pistachio-nuts-100g",
+    "title": "Roasted &amp; Salted Pistachio Nuts 100g",
+    "image_file": "natco_roasted-amp-salted-pistachio-nuts-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA48CCK5DWMABCMS1EK8H",
+    "handle": "natco-pappadoms-black-pepper-200g",
+    "title": "Pappadoms Black Pepper 200g",
+    "image_file": "natco_pappadoms-black-pepper-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA4B0C6BV7MRQYX9GSVWB",
+    "handle": "natco-pappadoms-jeera-microwavable-200g",
+    "title": "Pappadoms Jeera (Microwavable) 200g",
+    "image_file": "natco_pappadoms-jeera-microwavable-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA4DP7YMTG1Y28V99T6JV",
+    "handle": "natco-pappadoms-plain-microwavable-200g",
+    "title": "Pappadoms Plain (Microwavable) 200g",
+    "image_file": "natco_pappadoms-plain-microwavable-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA4G8SXTXZHESMGJ5QAGP",
+    "handle": "natco-pappadoms-punjabi-microwavable-200g",
+    "title": "Pappadoms Punjabi (Microwavable) 200g",
+    "image_file": "natco_pappadoms-punjabi-microwavable-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA4K2Q0C11HDAMR6MBX0N",
+    "handle": "natco-pappadoms-madras-papa-brand-250g",
+    "title": "Pappadoms Madras (Papa Brand) 250g",
+    "image_file": "natco_pappadoms-madras-papa-brand-250g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA4NXYWCDH8BVSETWH3DM",
+    "handle": "natco-popcorn-2kg",
+    "title": "Popcorn 2kg",
+    "image_file": "natco_popcorn-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA4RGD1C5WXZN1E9NYY53",
+    "handle": "natco-popcorn-500g",
+    "title": "Popcorn 500g",
+    "image_file": "natco_popcorn-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA4VP4EHRJQPSY3S9EH0K",
+    "handle": "natco-peanut-gachak-peanut-brittle-400g",
+    "title": "Peanut Gachak (Peanut Brittle) 400g",
+    "image_file": "natco_peanut-gachak-peanut-brittle-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA4YAMMC2A1M9W1Z7FM5E",
+    "handle": "natco-coconut-flour-200g",
+    "title": "Coconut Flour 200g",
+    "image_file": "natco_coconut-flour-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA51PZ9GW5X5CMTMP3PS1",
+    "handle": "natco-coconut-flour-1kg",
+    "title": "Coconut Flour 1kg",
+    "image_file": "natco_coconut-flour-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA555B8FECXZ8N86GG4RK",
+    "handle": "natco-coconut-milk-400ml",
+    "title": "Coconut Milk 400ml",
+    "image_file": "natco_coconut-milk-400ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA5A9EZMKAFDAFVB9J431",
+    "handle": "natco-coconut-milk-light-400ml",
+    "title": "Coconut Milk Light 400ml",
+    "image_file": "natco_coconut-milk-light-400ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA5EMY1DERKACEFNCCT45",
+    "handle": "natco-coconut-oil-parachute-brand-500ml",
+    "title": "Coconut Oil (Parachute Brand) 500ml",
+    "image_file": "natco_coconut-oil-parachute-brand-500ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA5H2FNW0PPMHBDNNCT3P",
+    "handle": "natco-coconut-desicated-medium-1kg",
+    "title": "Coconut Desicated Medium 1kg",
+    "image_file": "natco_coconut-desicated-medium-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA5KTD7ECJF6MPE2DFE2Z",
+    "handle": "natco-coconut-desiccated-fine-300g",
+    "title": "Coconut Desiccated (Fine) 300g",
+    "image_file": "natco_coconut-desiccated-fine-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA5PDCC087493B9366Z0Z",
+    "handle": "natco-coconut-milk-powder-300g",
+    "title": "Coconut Milk Powder 300g",
+    "image_file": "natco_coconut-milk-powder-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA5TGJG5GBGE2001H521F",
+    "handle": "natco-coconut-flakes-200g",
+    "title": "Coconut Flakes 200g",
+    "image_file": "natco_coconut-flakes-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA5XPNMBQ53ZBG1BT54CC",
+    "handle": "natco-coconut-halves-250g",
+    "title": "Coconut Halves 250g",
+    "image_file": "natco_coconut-halves-250g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA61522RX56BTD9FYTD91",
+    "handle": "natco-coconut-flavouring-essence-28ml",
+    "title": "Coconut Flavouring Essence 28ml",
+    "image_file": "natco_coconut-flavouring-essence-28ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA63NGKKSVS9WWGTRBMHJ",
+    "handle": "natco-brinjal-chutney-sweet-300g",
+    "title": "Brinjal Chutney Sweet 300g",
+    "image_file": "natco_brinjal-chutney-sweet-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA669T21P08WF16W1B44N",
+    "handle": "natco-mango-pickle-hot-300g",
+    "title": "Mango Pickle Hot 300g",
+    "image_file": "natco_mango-pickle-hot-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA694EVJ71ZYMHC6B6YGC",
+    "handle": "natco-chilli-pickle-hot-300g",
+    "title": "Chilli Pickle Hot 300g",
+    "image_file": "natco_chilli-pickle-hot-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA6CFFWQ80RT9JPA9R6Q0",
+    "handle": "natco-lime-pickle-hot-300g",
+    "title": "Lime Pickle Hot 300g",
+    "image_file": "natco_lime-pickle-hot-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA6GK9KJ74FGG9BFJ5PG5",
+    "handle": "natco-gorkeri-chutney-sweet-300g",
+    "title": "Gorkeri Chutney Sweet 300g",
+    "image_file": "natco_gorkeri-chutney-sweet-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA6MFATAGM14EZP6YCVHC",
+    "handle": "natco-chundo-chutney-sweet-340g",
+    "title": "Chundo Chutney Sweet 340g",
+    "image_file": "natco_chundo-chutney-sweet-340g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA6QBX67HZY2P52TA0WK5",
+    "handle": "natco-thecha-chilli-paste-300g",
+    "title": "Thecha Chilli Paste 300g",
+    "image_file": "natco_thecha-chilli-paste-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA6V8PZK1KGD2VDDV0VSX",
+    "handle": "natco-mango-chutney-sweet-340g",
+    "title": "Mango Chutney Sweet 340g",
+    "image_file": "natco_mango-chutney-sweet-340g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA6YB6322W2RCK208DZVF",
+    "handle": "natco-garlic-pickle-300g",
+    "title": "Garlic Pickle 300g",
+    "image_file": "natco_garlic-pickle-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA70T40V6EBAMAPW3CC1D",
+    "handle": "natco-garlic-paste-190g",
+    "title": "Garlic Paste 190g",
+    "image_file": "natco_garlic-paste-190g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA73WRDCA0QQJCNN43RVR",
+    "handle": "natco-ginger-paste-190g",
+    "title": "Ginger Paste 190g",
+    "image_file": "natco_ginger-paste-190g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA77W1N9A53KHFDT6EDG9",
+    "handle": "natco-garlic-amp-ginger-paste-190g",
+    "title": "Garlic &amp; Ginger Paste 190g",
+    "image_file": "natco_garlic-amp-ginger-paste-190g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA7APQRF29PDG6ES191VS",
+    "handle": "natco-bombay-sandwich-spread-280g",
+    "title": "Bombay Sandwich Spread 280g",
+    "image_file": "natco_bombay-sandwich-spread-280g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA7DER8W0TE8RRSYJNZGD",
+    "handle": "natco-chilli-sauce-hot-310g",
+    "title": "Chilli Sauce Hot 310g",
+    "image_file": "natco_chilli-sauce-hot-310g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA7FTE9JRNFGJPY5JNG1Y",
+    "handle": "natco-coriander-mint-sauce-340g",
+    "title": "Coriander Mint Sauce 340g",
+    "image_file": "natco_coriander-mint-sauce-340g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA7JD4981231YZ8BMCZH3",
+    "handle": "natco-cornmeal-fine-15kg",
+    "title": "Cornmeal Fine 1.5kg",
+    "image_file": "natco_cornmeal-fine-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA7NG46M93A11FZXEATF6",
+    "handle": "natco-cornmeal-fine-500g",
+    "title": "Cornmeal Fine 500g",
+    "image_file": "natco_cornmeal-fine-500g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA7RTVGNSK8RJK4TP5AQJ",
+    "handle": "natco-cornmeal-medium-15kg",
+    "title": "Cornmeal Medium 1.5kg",
+    "image_file": "natco_cornmeal-medium-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA7VWBQ98XNXX7B7KPCJJ",
+    "handle": "natco-cornmeal-medium-500g",
+    "title": "Cornmeal Medium 500g",
+    "image_file": "natco_cornmeal-medium-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA7Z6R21STRF6GVHBCA4E",
+    "handle": "natco-golden-raisins-1kg",
+    "title": "Golden Raisins 1kg",
+    "image_file": "natco_golden-raisins-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA83ESFR8K48DQV3XWMD6",
+    "handle": "natco-golden-raisins-100g",
+    "title": "Golden Raisins 100g",
+    "image_file": "natco_golden-raisins-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA86CZG38GH4Z1P8QAZC9",
+    "handle": "natco-demerara-sugar-15kg",
+    "title": "Demerara Sugar 1.5kg",
+    "image_file": "natco_demerara-sugar-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA891HJSB5BYW7QZNX05A",
+    "handle": "natco-almond-oil-500ml",
+    "title": "Almond Oil 500ml",
+    "image_file": "natco_almond-oil-500ml.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA8CQHNA7ZWXBSKWYKBF7",
+    "handle": "natco-almond-oil-250ml",
+    "title": "Almond Oil 250ml",
+    "image_file": "natco_almond-oil-250ml.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA8FV9ZT39P12X3JCK6JF",
+    "handle": "natco-castor-oil-250ml",
+    "title": "Castor Oil 250ml",
+    "image_file": "natco_castor-oil-250ml.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA8K10CZAJX1C3VYQMEV0",
+    "handle": "natco-pure-linseed-oil-250ml",
+    "title": "Pure Linseed Oil 250ml",
+    "image_file": "natco_pure-linseed-oil-250ml.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA8NRXSXEH4QGMW1TZ41N",
+    "handle": "natco-groundnut-oil-1-litre",
+    "title": "Groundnut Oil 1 Litre",
+    "image_file": "natco_groundnut-oil-1-litre.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA8RQ4F3MWQXG8QXFFVYE",
+    "handle": "natco-pure-sesame-oil-1-litre",
+    "title": "Pure Sesame Oil 1 Litre",
+    "image_file": "natco_pure-sesame-oil-1-litre.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA8VBKW7SNTTNFFVTE4C8",
+    "handle": "natco-pure-sesame-oil-250ml",
+    "title": "Pure Sesame Oil 250ml",
+    "image_file": "natco_pure-sesame-oil-250ml.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA8XSBWYJ9E9YXDHZGGNE",
+    "handle": "natco-pomace-olive-oil-blend-3-litres",
+    "title": "Pomace Olive Oil Blend 3 Litres",
+    "image_file": "natco_pomace-olive-oil-blend-3-litres.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA90ACTZF0WK0VNKD8JJ1",
+    "handle": "natco-pomace-olive-oil-5-litre",
+    "title": "Pomace Olive Oil 5 Litre",
+    "image_file": "natco_pomace-olive-oil-5-litre.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA937RRZSN9N4W6P1B64T",
+    "handle": "natco-cashew-roasted-salted-250g",
+    "title": "Cashew Roasted Salted 250g",
+    "image_file": "natco_cashew-roasted-salted-250g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA96BYTABH6CMDP7CJJ7H",
+    "handle": "natco-chapati-flour-white-15kg",
+    "title": "Chapati Flour White 1.5kg",
+    "image_file": "natco_chapati-flour-white-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA9ADE7E9WE4WT7HDE4GM",
+    "handle": "natco-chapati-flour-medium-15kg",
+    "title": "Chapati Flour Medium 1.5kg",
+    "image_file": "natco_chapati-flour-medium-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA9E0Y4V673FJSNNTR7P5",
+    "handle": "natco-white-maize-meal-15kg",
+    "title": "White Maize Meal 1.5kg",
+    "image_file": "natco_white-maize-meal-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA9GV6JNEHGW4BW2EHSRV",
+    "handle": "natco-gram-flour-superfine-2kg",
+    "title": "Gram Flour Superfine 2kg",
+    "image_file": "natco_gram-flour-superfine-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA9KXEFFW2N9C23V0PQHV",
+    "handle": "natco-gram-flour-superfine-1kg",
+    "title": "Gram Flour Superfine 1kg",
+    "image_file": "natco_gram-flour-superfine-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA9P5N3JHN55CAM48DKHM",
+    "handle": "natco-gram-flour-superfine-500g",
+    "title": "Gram Flour Superfine 500g",
+    "image_file": "natco_gram-flour-superfine-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA9RPBBB256PJ5FTZN0TD",
+    "handle": "natco-gram-flour-papa-brand-2kg",
+    "title": "Gram Flour (Papa brand) 2kg",
+    "image_file": "natco_gram-flour-papa-brand-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA9VNKVMFPME425A6GHCP",
+    "handle": "natco-ground-rice-15kg",
+    "title": "Ground Rice 1.5kg",
+    "image_file": "natco_ground-rice-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEA9ZR4GGSAA8W0FXAH7Q8",
+    "handle": "natco-ground-rice-500g",
+    "title": "Ground Rice 500g",
+    "image_file": "natco_ground-rice-500g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAA2V9W6GSREW7G43SYTG",
+    "handle": "natco-rice-flour-500g",
+    "title": "Rice Flour 500g",
+    "image_file": "natco_rice-flour-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAA5HBMK5EJ2Q18GGZ8MA",
+    "handle": "natco-semolina-fine-15kg",
+    "title": "Semolina Fine 1.5kg",
+    "image_file": "natco_semolina-fine-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAA8ND0BCGD8DC8ZCNPES",
+    "handle": "natco-semolina-fine-500g",
+    "title": "Semolina Fine 500g",
+    "image_file": "natco_semolina-fine-500g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAAB89BTMTKK4Q0S3SY4E",
+    "handle": "natco-semolina-coarse-15kg",
+    "title": "Semolina Coarse 1.5kg",
+    "image_file": "natco_semolina-coarse-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAADZ41M0FJT47ESJN5CW",
+    "handle": "natco-semolina-coarse-500g",
+    "title": "Semolina Coarse 500g",
+    "image_file": "natco_semolina-coarse-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAAGSWPTPH50M2PWKCQTM",
+    "handle": "natco-semolina-extra-coarse-15kg",
+    "title": "Semolina Extra Coarse 1.5kg",
+    "image_file": "natco_semolina-extra-coarse-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAAK96ZXVK14SYDRG05JY",
+    "handle": "natco-millet-bajri-flour-900g",
+    "title": "Millet (Bajri) Flour 900g",
+    "image_file": "natco_millet-bajri-flour-900g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAANYDD4XKCPSH6SDWP9P",
+    "handle": "natco-milk-powder-750g",
+    "title": "Milk Powder 750g",
+    "image_file": "natco_milk-powder-750g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAARDYMJ1ZVB4DYJB75XX",
+    "handle": "natco-milk-powder-300g",
+    "title": "Milk Powder 300g",
+    "image_file": "natco_milk-powder-300g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAAVWNA7C1EC1M13RXVHW",
+    "handle": "natco-rose-syrup-725ml",
+    "title": "Rose Syrup 725ml",
+    "image_file": "natco_rose-syrup-725ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAAYEP5BM6XYACNXFPMNZ",
+    "handle": "natco-yellow-food-colouring-powder-25g",
+    "title": "Yellow Food Colouring - Powder 25g",
+    "image_file": "natco_yellow-food-colouring-powder-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAB1MKFJN6YSS3JNRFQN6",
+    "handle": "natco-orange-food-colouring-powder-25g",
+    "title": "Orange Food Colouring - Powder 25g",
+    "image_file": "natco_orange-food-colouring-powder-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAB5TEXCZQNG3D3N25092",
+    "handle": "natco-red-food-colouring-powder-25g",
+    "title": "Red Food Colouring - Powder 25g",
+    "image_file": "natco_red-food-colouring-powder-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAB9DM31G7SYEYD7EC12H",
+    "handle": "natco-green-food-colouring-powder-25g",
+    "title": "Green Food Colouring - Powder 25g",
+    "image_file": "natco_green-food-colouring-powder-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEABCWP0CZPJ1AE6AN0RYV",
+    "handle": "natco-orange-food-colouring-liquid-28ml",
+    "title": "Orange Food Colouring - Liquid 28ml",
+    "image_file": "natco_orange-food-colouring-liquid-28ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEABF70SYVFHZFK0WQ3NN8",
+    "handle": "natco-red-food-colouring-liquid-28ml",
+    "title": "Red Food Colouring - Liquid 28ml",
+    "image_file": "natco_red-food-colouring-liquid-28ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEABHWV2CJZFQ83PTNTFM7",
+    "handle": "natco-green-food-colouring-liquid-28ml",
+    "title": "Green Food Colouring - Liquid 28ml",
+    "image_file": "natco_green-food-colouring-liquid-28ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEABMBJHPE8BTE6KVZWGD9",
+    "handle": "natco-vanilla-flavouring-essence-28ml",
+    "title": "Vanilla Flavouring Essence 28ml",
+    "image_file": "natco_vanilla-flavouring-essence-28ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEABQ2D7TGAHXM0WPEWDFY",
+    "handle": "natco-almond-flavouring-essence-28ml",
+    "title": "Almond Flavouring Essence 28ml",
+    "image_file": "natco_almond-flavouring-essence-28ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEABT8N65RVZSPN926FE3N",
+    "handle": "natco-rose-flavouring-essence-28ml",
+    "title": "Rose Flavouring Essence 28ml",
+    "image_file": "natco_rose-flavouring-essence-28ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEABX8KC7961QG938E9Y27",
+    "handle": "natco-strawberry-flavouring-essence-28ml",
+    "title": "Strawberry Flavouring Essence 28ml",
+    "image_file": "natco_strawberry-flavouring-essence-28ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAC0HDDVBEMZZJG68X5Y8",
+    "handle": "natco-pineapple-flavouring-essence-28ml",
+    "title": "Pineapple Flavouring Essence 28ml",
+    "image_file": "natco_pineapple-flavouring-essence-28ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAC3XX70B9Q40GD4F0MNN",
+    "handle": "natco-kevda-water-310ml",
+    "title": "Kevda Water 310ml",
+    "image_file": "natco_kevda-water-310ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAC7VNGH3B0P1GYA5DS6W",
+    "handle": "natco-rose-water-310ml",
+    "title": "Rose Water 310ml",
+    "image_file": "natco_rose-water-310ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEACB44DYZ8DVMSAHW964P",
+    "handle": "natco-ghee-pure-plough-brand-500g",
+    "title": "Ghee Pure (Plough brand) 500g",
+    "image_file": "natco_ghee-pure-plough-brand-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEACEYZD86PVDBC3PT6C3N",
+    "handle": "natco-ghee-pure-butter-1kg",
+    "title": "Ghee Pure Butter 1kg",
+    "image_file": "natco_ghee-pure-butter-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEACHP6SQ00Q8PFRWQ5H9W",
+    "handle": "natco-pomace-olive-oil-1-litre",
+    "title": "Pomace Olive Oil 1 Litre",
+    "image_file": "natco_pomace-olive-oil-1-litre.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEACN971QB534QQ8VYMXAD",
+    "handle": "natco-olive-oil-extra-virgin-500ml",
+    "title": "Olive Oil Extra Virgin 500ml",
+    "image_file": "natco_olive-oil-extra-virgin-500ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEACR9QTYMKY2GEDJPQNQ3",
+    "handle": "natco-mamra-basmati-908g",
+    "title": "Mamra Basmati 908g",
+    "image_file": "natco_mamra-basmati-908g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEACTY4JKBWPZJ810FSQN5",
+    "handle": "natco-mamra-basmati-200g",
+    "title": "Mamra Basmati 200g",
+    "image_file": "natco_mamra-basmati-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEACY3BKS151PG2HSJWY51",
+    "handle": "natco-black-eye-beans-500g",
+    "title": "Black Eye Beans 500g",
+    "image_file": "natco_black-eye-beans-500g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAD0X5RTT8661DX2TCWT8",
+    "handle": "natco-butter-beans-2kg",
+    "title": "Butter Beans 2kg",
+    "image_file": "natco_butter-beans-2kg.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAD3JF3ZMA08JYGXN7HR0",
+    "handle": "natco-butter-beans-500g",
+    "title": "Butter Beans 500g",
+    "image_file": "natco_butter-beans-500g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAD61MJW1ENEWEJJ8S05G",
+    "handle": "natco-brown-lentils-2kg",
+    "title": "Brown Lentils 2kg",
+    "image_file": "natco_brown-lentils-2kg.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAD8G8ZQPXP5SQNNCJEYS",
+    "handle": "natco-brown-lentils-500g",
+    "title": "Brown Lentils 500g",
+    "image_file": "natco_brown-lentils-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEADAZKFP81Q71MB6CEZYY",
+    "handle": "natco-chanadal-polished-2kg",
+    "title": "Chanadal Polished 2kg",
+    "image_file": "natco_chanadal-polished-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEADDNM106NPGP44JR6697",
+    "handle": "natco-chanadal-polished-1kg",
+    "title": "Chanadal Polished 1kg",
+    "image_file": "natco_chanadal-polished-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEADHEWSP50YFST7SSYDBY",
+    "handle": "natco-green-lentils-1kg",
+    "title": "Green Lentils 1kg",
+    "image_file": "natco_green-lentils-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEADN92GCA870W26HSQ6TP",
+    "handle": "natco-green-lentils-2kg",
+    "title": "Green Lentils 2kg",
+    "image_file": "natco_green-lentils-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEADR9XG6JMH2BBTEC95WZ",
+    "handle": "natco-mung-beans-1kg",
+    "title": "Mung Beans 1kg",
+    "image_file": "natco_mung-beans-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEADWM9QS4HPKVAENEHPKR",
+    "handle": "natco-mung-beans-2kg",
+    "title": "Mung Beans 2kg",
+    "image_file": "natco_mung-beans-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEADZDGV1CEC4Z9NJ3GX1T",
+    "handle": "natco-mung-split-2kg",
+    "title": "Mung Split 2kg",
+    "image_file": "natco_mung-split-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAE2M1GFHEND2X35E5M0X",
+    "handle": "natco-mung-split-500g",
+    "title": "Mung Split 500g",
+    "image_file": "natco_mung-split-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAE50025BPTKZ8YHXN53K",
+    "handle": "natco-mung-dal-yellow-1kg",
+    "title": "Mung Dal Yellow 1kg",
+    "image_file": "natco_mung-dal-yellow-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAE7DKD129ZZ23EE9HYDN",
+    "handle": "natco-gram-roasted-unsalted-300g",
+    "title": "Gram Roasted Unsalted 300g",
+    "image_file": "natco_gram-roasted-unsalted-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAEA0M6QP7316NBM6YXHA",
+    "handle": "natco-gram-roasted-salted-300g",
+    "title": "Gram Roasted Salted 300g",
+    "image_file": "natco_gram-roasted-salted-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAED6R01W0JZQ651SCJRV",
+    "handle": "natco-daria-gotta-small-300g",
+    "title": "Daria Gotta (Small) 300g",
+    "image_file": "natco_daria-gotta-small-300g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAEGABRFB3VNM3Q5DNBN3",
+    "handle": "natco-daria-gotta-large-700g",
+    "title": "Daria Gotta (Large) 700g",
+    "image_file": "natco_daria-gotta-large-700g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAEKEJ2HE54WVAD0S2Q98",
+    "handle": "natco-daria-dal-300g",
+    "title": "Daria Dal 300g",
+    "image_file": "natco_daria-dal-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAEQAPHD5ES576G3BXHKZ",
+    "handle": "natco-pine-nuts-75g",
+    "title": "Pine Nuts 75g",
+    "image_file": "natco_pine-nuts-75g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAESZNMVXVKWEGP28PRTD",
+    "handle": "natco-cashew-split-1kg",
+    "title": "Cashew Split 1kg",
+    "image_file": "natco_cashew-split-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAEXTG3DMDXMFKFM2GVMK",
+    "handle": "natco-almond-blanched-whole-250g",
+    "title": "Almond Blanched Whole 250g",
+    "image_file": "natco_almond-blanched-whole-250g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAF0P757QKE1PPBVEZXTT",
+    "handle": "natco-cashew-kernel-300g",
+    "title": "Cashew Kernel 300g",
+    "image_file": "natco_cashew-kernel-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAF367D9YAFGE69J3ZASM",
+    "handle": "natco-almonds-1kg",
+    "title": "Almonds 1kg",
+    "image_file": "natco_almonds-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAF5RE58VMXX9BFWBM33E",
+    "handle": "natco-almonds-400g",
+    "title": "Almonds 400g",
+    "image_file": "natco_almonds-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAF8KQ20TH0PZH4Z8PYAZ",
+    "handle": "natco-almonds-ground-300g",
+    "title": "Almonds Ground 300g",
+    "image_file": "natco_almonds-ground-300g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAFBAFR4G1Y77H2H620WF",
+    "handle": "natco-almond-flakes-1kg",
+    "title": "Almond Flakes 1kg",
+    "image_file": "natco_almond-flakes-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAFE3RZ17E4CZVW9JB9YH",
+    "handle": "natco-almond-flakes-300g",
+    "title": "Almond Flakes 300g",
+    "image_file": "natco_almond-flakes-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAFGH0EXTMZJP2KTZCXAQ",
+    "handle": "natco-blanched-almond-whole-700g",
+    "title": "Blanched Almond Whole 700g",
+    "image_file": "natco_blanched-almond-whole-700g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAFJXEHQ17W2X2E527397",
+    "handle": "natco-pecans-200g",
+    "title": "Pecans 200g",
+    "image_file": "natco_pecans-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAFN96RKPT4TAM00B7HA2",
+    "handle": "natco-walnut-halves-700g",
+    "title": "Walnut Halves 700g",
+    "image_file": "natco_walnut-halves-700g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAFR3CAXP2BZPTMTBM3ZY",
+    "handle": "natco-walnut-halves-200g",
+    "title": "Walnut Halves 200g",
+    "image_file": "natco_walnut-halves-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAFVKQN5KW9M8AV3J8PHN",
+    "handle": "natco-cashew-kernel-1kg",
+    "title": "Cashew Kernel 1kg",
+    "image_file": "natco_cashew-kernel-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAFYZ80H31N4MZM2NXQ66",
+    "handle": "natco-cashew-large-white-pieces-750g",
+    "title": "Cashew (Large White Pieces) 750g",
+    "image_file": "natco_cashew-large-white-pieces-750g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAG2HBQ121DQNX3RAAPZG",
+    "handle": "natco-peanuts-red-1kg",
+    "title": "Peanuts Red 1kg",
+    "image_file": "natco_peanuts-red-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAG5647QG5VF45E1XMEQH",
+    "handle": "natco-peanuts-red-400g",
+    "title": "Peanuts Red 400g",
+    "image_file": "natco_peanuts-red-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAG7P6ZYAB9NNZMMK6HVK",
+    "handle": "natco-pappadoms-madras-coin-size-200g",
+    "title": "Pappadoms Madras (Coin size) 200g",
+    "image_file": "natco_pappadoms-madras-coin-size-200g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAGA73XFN480KBCX6RQZ9",
+    "handle": "natco-pistachio-kernels-1kg",
+    "title": "Pistachio Kernels 1kg",
+    "image_file": "natco_pistachio-kernels-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAGD8JHV3DCBX299C5S7K",
+    "handle": "natco-pistachio-kernels-250g",
+    "title": "Pistachio Kernels 250g",
+    "image_file": "natco_pistachio-kernels-250g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAGHATQSB2FVV7KVWQGYB",
+    "handle": "natco-pistachio-kernels-100g",
+    "title": "Pistachio Kernels 100g",
+    "image_file": "natco_pistachio-kernels-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAGMWBCXQ5MZCC41RX18N",
+    "handle": "natco-luxury-fruit-amp-nut-mix-250g",
+    "title": "Luxury Fruit &amp; Nut Mix 250g",
+    "image_file": "natco_luxury-fruit-amp-nut-mix-250g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAGQZY59JS6XS4VRAH9MH",
+    "handle": "natco-luxury-fruit-amp-nuts-mix-750g",
+    "title": "Luxury Fruit &amp; Nuts Mix 750g",
+    "image_file": "natco_luxury-fruit-amp-nuts-mix-750g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAGTP30XAAF7W6JX5K3CY",
+    "handle": "natco-basmati-rice-india-bag-5kg",
+    "title": "Basmati Rice India - Bag 5kg",
+    "image_file": "natco_basmati-rice-india-bag-5kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAGX4R6QX3JYKHE7MG9ZC",
+    "handle": "natco-basmati-rice-kernel-5kg",
+    "title": "Basmati Rice Kernel 5kg",
+    "image_file": "natco_basmati-rice-kernel-5kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAH01PJ4XY8Y665MQ95CY",
+    "handle": "natco-long-grain-white-rice-5kg",
+    "title": "Long Grain White Rice 5kg",
+    "image_file": "natco_long-grain-white-rice-5kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAH2YZ46EN7TJEDTSED22",
+    "handle": "natco-easycook-parboiled-rice-5kg",
+    "title": "Easycook Parboiled Rice 5kg",
+    "image_file": "natco_easycook-parboiled-rice-5kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAH629NV2D7BDB2QMVR2D",
+    "handle": "natco-sona-masuri-rice-5kg",
+    "title": "Sona Masuri Rice 5kg",
+    "image_file": "natco_sona-masuri-rice-5kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAH8YNNKWTZ3ZM5BCEJTQ",
+    "handle": "natco-ponni-rice-5kg",
+    "title": "Ponni Rice 5kg",
+    "image_file": "natco_ponni-rice-5kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAHCHD6096KNPWJXZGWVG",
+    "handle": "natco-idli-rice-5kg",
+    "title": "Idli Rice 5kg",
+    "image_file": "natco_idli-rice-5kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAHEW56G7BKSC25MXMENX",
+    "handle": "natco-powa-medium-flaked-rice-1kg",
+    "title": "Powa Medium (Flaked Rice) 1kg",
+    "image_file": "natco_powa-medium-flaked-rice-1kg.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAHHEPMTZ5X73A194M1MY",
+    "handle": "natco-pumpkin-seeds-250g",
+    "title": "Pumpkin Seeds 250g",
+    "image_file": "natco_pumpkin-seeds-250g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAHMA9D4WDAGDHXCJ8S3G",
+    "handle": "natco-linseed-brown-1kg",
+    "title": "Linseed Brown 1kg",
+    "image_file": "natco_linseed-brown-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAHQ3JWKDZ7F50G6737NQ",
+    "handle": "natco-linseed-brown-400g",
+    "title": "Linseed Brown 400g",
+    "image_file": "natco_linseed-brown-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAHSX7ER14PJ8X8BRKWR0",
+    "handle": "natco-white-poppy-seeds-300g",
+    "title": "White Poppy Seeds 300g",
+    "image_file": "natco_white-poppy-seeds-300g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAHWV4CAE7ANG4X1PK33Z",
+    "handle": "natco-white-poppy-seeds-100g",
+    "title": "White Poppy Seeds 100g",
+    "image_file": "natco_white-poppy-seeds-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAHZRY60KFVSMESCYRGPG",
+    "handle": "natco-sunflower-seeds-1kg",
+    "title": "Sunflower Seeds 1kg",
+    "image_file": "natco_sunflower-seeds-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJ2HAKPW0R5A0KVXPAZF",
+    "handle": "natco-sunflower-seeds-300g",
+    "title": "Sunflower Seeds 300g",
+    "image_file": "natco_sunflower-seeds-300g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJ51EG6XWT4SMDJ7J9V8",
+    "handle": "natco-sagoo-seeds-medium-15kg",
+    "title": "Sagoo Seeds Medium 1.5kg",
+    "image_file": "natco_sagoo-seeds-medium-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJ7QBH8R9JEJ2MPVG5NX",
+    "handle": "natco-sesame-seeds-natural-400g",
+    "title": "Sesame Seeds Natural 400g",
+    "image_file": "natco_sesame-seeds-natural-400g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJA5HC5R5HMVK7QN78S7",
+    "handle": "natco-sesame-seeds-hulled-15kg",
+    "title": "Sesame Seeds Hulled 1.5kg",
+    "image_file": "natco_sesame-seeds-hulled-15kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJCTX1W27J7WM4EPFCHZ",
+    "handle": "natco-black-chia-seeds-250g",
+    "title": "Black Chia Seeds 250g",
+    "image_file": "natco_black-chia-seeds-250g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJFAK3142F0W4VNR5PZA",
+    "handle": "natco-soya-beans-2kg",
+    "title": "Soya Beans 2kg",
+    "image_file": "natco_soya-beans-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJHQHSX0KDC7E8R69YBB",
+    "handle": "natco-soya-beans-500g",
+    "title": "Soya Beans 500g",
+    "image_file": "natco_soya-beans-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJMTCB53858X0VRPG5BP",
+    "handle": "natco-soya-chunks-350g",
+    "title": "Soya Chunks 350g",
+    "image_file": "natco_soya-chunks-350g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJR9JEJ1P07VTN8F646M",
+    "handle": "natco-soya-mince-300g",
+    "title": "Soya Mince 300g",
+    "image_file": "natco_soya-mince-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJWWMNGY8YXY83747M7C",
+    "handle": "natco-mango-pulp-alphonso-450g",
+    "title": "Mango Pulp Alphonso 450g",
+    "image_file": "natco_mango-pulp-alphonso-450g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAJZSYGMK5SSPQ1NR5W0F",
+    "handle": "natco-tomatoes-chopped-full-case-12x400g",
+    "title": "Tomatoes Chopped Full Case 12x400g",
+    "image_file": "natco_tomatoes-chopped-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAK2F4G1SCGDJTTFGZ3PA",
+    "handle": "natco-red-lentils-polished-2kg",
+    "title": "Red Lentils Polished 2kg",
+    "image_file": "natco_red-lentils-polished-2kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAK4QDNFE6YTP68NB5RXA",
+    "handle": "natco-basil-jar-25g",
+    "title": "Basil Jar 25g",
+    "image_file": "natco_basil-jar-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAK73JBYT3R0N5R86QZ3F",
+    "handle": "natco-coriander-leaves-jar-25g",
+    "title": "Coriander Leaves Jar 25g",
+    "image_file": "natco_coriander-leaves-jar-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAK9JAMKP4FGB67BZEQQB",
+    "handle": "natco-marjoram-jar-20g",
+    "title": "Marjoram Jar 20g",
+    "image_file": "natco_marjoram-jar-20g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAKCAPJWNPQG35FZKYVCF",
+    "handle": "natco-mint-jar-30g",
+    "title": "Mint Jar 30g",
+    "image_file": "natco_mint-jar-30g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAKF9VCZY2MFYQ0X552MG",
+    "handle": "natco-mixed-herbs-jar-25g",
+    "title": "Mixed Herbs Jar 25g",
+    "image_file": "natco_mixed-herbs-jar-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAKJ44EXRCC98ZNGWEGPE",
+    "handle": "natco-oregano-jar-25g",
+    "title": "Oregano Jar 25g",
+    "image_file": "natco_oregano-jar-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAKMNX7CEQ5ZJYSH4HY4W",
+    "handle": "natco-parsley-jar-25g",
+    "title": "Parsley Jar 25g",
+    "image_file": "natco_parsley-jar-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAKQ9091VYVQ5SRWPCTFP",
+    "handle": "natco-sage-jar-25g",
+    "title": "Sage Jar 25g",
+    "image_file": "natco_sage-jar-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAKV292FWFPJF28FS6VV6",
+    "handle": "natco-ajwan-seeds-jar-100g",
+    "title": "Ajwan Seeds Jar 100g",
+    "image_file": "natco_ajwan-seeds-jar-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAKY9W1JJ5FT1R830YV1T",
+    "handle": "natco-amchoor-powder-jar-100g",
+    "title": "Amchoor Powder Jar 100g",
+    "image_file": "natco_amchoor-powder-jar-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAM154D7S1H82B396AJMD",
+    "handle": "natco-aniseed-star-jar-40g",
+    "title": "Aniseed Star Jar 40g",
+    "image_file": "natco_aniseed-star-jar-40g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAM443YWJVPV34B41WXQN",
+    "handle": "natco-asafoetida-hing-jar-100g",
+    "title": "Asafoetida (Hing) Jar 100g",
+    "image_file": "natco_asafoetida-hing-jar-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAM800AM6WVKN8WGCKDRS",
+    "handle": "natco-bay-leaves-jar-10g",
+    "title": "Bay Leaves Jar 10g",
+    "image_file": "natco_bay-leaves-jar-10g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAMB9H9M7G9PSG9YQEHS5",
+    "handle": "natco-cardamom-green-jar-50g",
+    "title": "Cardamom Green Jar 50g",
+    "image_file": "natco_cardamom-green-jar-50g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAMFA4VF2BTNE534B8M0H",
+    "handle": "natco-whole-birdseye-chilli-jar-50g",
+    "title": "Whole Birdseye Chilli Jar 50g",
+    "image_file": "natco_whole-birdseye-chilli-jar-50g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAMJA96WZGFCT7RXN82NV",
+    "handle": "natco-chilli-crushed-jar-80g",
+    "title": "Chilli Crushed Jar 80g",
+    "image_file": "natco_chilli-crushed-jar-80g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAMN2FX5NRGK1QG64RC5T",
+    "handle": "natco-chilli-powder-hot-jar-100g",
+    "title": "Chilli Powder Hot Jar 100g",
+    "image_file": "natco_chilli-powder-hot-jar-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAMR0K5XRMQ8EH3CWNGV2",
+    "handle": "natco-cassia-dalchini-jar-50g",
+    "title": "Cassia (Dalchini) Jar 50g",
+    "image_file": "natco_cassia-dalchini-jar-50g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAMTVSX071VV60QA80ET1",
+    "handle": "natco-cinnamon-ground-jar-100g",
+    "title": "Cinnamon Ground Jar 100g",
+    "image_file": "natco_cinnamon-ground-jar-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAMY09C0F7G2WSHSGAVFS",
+    "handle": "natco-cloves-jar-50g",
+    "title": "Cloves Jar 50g",
+    "image_file": "natco_cloves-jar-50g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAN0WB7Y4W8B0FD65QQ66",
+    "handle": "natco-coriander-seeds-jar-65g",
+    "title": "Coriander Seeds Jar 65g",
+    "image_file": "natco_coriander-seeds-jar-65g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAN3D7GE7G5SGJR2ABQZ9",
+    "handle": "natco-coriander-ground-jar-70g",
+    "title": "Coriander Ground Jar 70g",
+    "image_file": "natco_coriander-ground-jar-70g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAN5ZCT3B60K6GZRHF391",
+    "handle": "natco-all-purpose-seasoning-100g",
+    "title": "All Purpose Seasoning 100g",
+    "image_file": "natco_all-purpose-seasoning-100g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAN8EKD4K5P8SAQ11PH2T",
+    "handle": "natco-all-purpose-seasoning-400g",
+    "title": "All Purpose Seasoning 400g",
+    "image_file": "natco_all-purpose-seasoning-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEANAWZ2BBP506XHADBRPM",
+    "handle": "natco-anardana-powder-mangal-100g",
+    "title": "Anardana Powder Mangal 100g",
+    "image_file": "natco_anardana-powder-mangal-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEANDAH9YD6W47DH0RYTNK",
+    "handle": "natco-chana-masala-mangal-100g",
+    "title": "Chana Masala Mangal 100g",
+    "image_file": "natco_chana-masala-mangal-100g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEANFPMBWN2TWQ3MVF6PGA",
+    "handle": "natco-chat-masala-mangal-100g",
+    "title": "Chat Masala Mangal 100g",
+    "image_file": "natco_chat-masala-mangal-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEANJADFVRQTNATAZVVRZ9",
+    "handle": "natco-meat-masala-mangal-100g",
+    "title": "Meat Masala Mangal 100g",
+    "image_file": "natco_meat-masala-mangal-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEANNREPY2F9W38TV5RB5Q",
+    "handle": "natco-pickle-masala-mangal-125g",
+    "title": "Pickle Masala Mangal 125g",
+    "image_file": "natco_pickle-masala-mangal-125g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEANSY7K7BHNVFTQFZV8BP",
+    "handle": "natco-sambhar-masala-mangal-100g",
+    "title": "Sambhar Masala Mangal 100g",
+    "image_file": "natco_sambhar-masala-mangal-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEANX7T6FKT0VC8APTB8H9",
+    "handle": "natco-chicken-masala-mangal-100g",
+    "title": "Chicken Masala Mangal 100g",
+    "image_file": "natco_chicken-masala-mangal-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAP14V3V21Y5MCZ3SJYBE",
+    "handle": "natco-biryani-masala-mangal-50g",
+    "title": "Biryani Masala Mangal 50g",
+    "image_file": "natco_biryani-masala-mangal-50g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAP3FEEM8VXDDDWECFGNA",
+    "handle": "natco-pavbhaji-masala-mangal-100g",
+    "title": "Pavbhaji Masala Mangal 100g",
+    "image_file": "natco_pavbhaji-masala-mangal-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAP5TTP33WDQSJG8BTGG0",
+    "handle": "natco-garam-masala-400g",
+    "title": "Garam Masala 400g",
+    "image_file": "natco_garam-masala-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAP8EEMSPN8GB9WPPVB8V",
+    "handle": "natco-mixed-masala-whole-300g",
+    "title": "Mixed Masala Whole 300g",
+    "image_file": "natco_mixed-masala-whole-300g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAPBEXMXYTSCC6P24K291",
+    "handle": "natco-tandoori-masala-400g",
+    "title": "Tandoori Masala 400g",
+    "image_file": "natco_tandoori-masala-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAPE7P020G3XWHE06XXB3",
+    "handle": "natco-garam-masala-jar-80g",
+    "title": "Garam Masala Jar 80g",
+    "image_file": "natco_garam-masala-jar-80g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAPHFF96HRCGE9BZ7MXQW",
+    "handle": "natco-tandoori-masala-jar-100g",
+    "title": "Tandoori Masala Jar 100g",
+    "image_file": "natco_tandoori-masala-jar-100g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAPN01QY5BC0SMAXQ36XZ",
+    "handle": "natco-dried-tarragon-25g",
+    "title": "Dried Tarragon 25g",
+    "image_file": "natco_dried-tarragon-25g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAPQEVMZNRHERXD5AD5C0",
+    "handle": "natco-sugar-candy-375g",
+    "title": "Sugar Candy 375g",
+    "image_file": "natco_sugar-candy-375g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAPTATJXWN182M5MTF3SK",
+    "handle": "natco-spinach-puree-395g",
+    "title": "Spinach Puree 395g",
+    "image_file": "natco_spinach-puree-395g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAPXE37WKQ8ZWP0NPNWYP",
+    "handle": "natco-mango-slices-alphonso-425g",
+    "title": "Mango Slices Alphonso 425g",
+    "image_file": "natco_mango-slices-alphonso-425g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAQ0R2JRMN5FB095T43TW",
+    "handle": "natco-mango-pulp-kesar-850g",
+    "title": "Mango Pulp Kesar 850g",
+    "image_file": "natco_mango-pulp-kesar-850g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAQ4VRZBE1EVSZ2ZWWEHQ",
+    "handle": "natco-crispy-fried-onions-400g",
+    "title": "Crispy Fried Onions 400g",
+    "image_file": "natco_crispy-fried-onions-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAQ8TTZJGB4H8ZWGD9593",
+    "handle": "natco-spinach-leaf-396g",
+    "title": "Spinach Leaf 396g",
+    "image_file": "natco_spinach-leaf-396g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAQDFG6YDYDWZ1B2H13MT",
+    "handle": "natco-spinach-puree-794g",
+    "title": "Spinach Puree 794g",
+    "image_file": "natco_spinach-puree-794g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAQHGH13CEYK1P50DYVHY",
+    "handle": "natco-tomato-paste-800g",
+    "title": "Tomato Paste 800g",
+    "image_file": "natco_tomato-paste-800g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAQNJD0ND6WHFM076KQB9",
+    "handle": "natco-tomatoes-peeled-400g",
+    "title": "Tomatoes Peeled 400g",
+    "image_file": "natco_tomatoes-peeled-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAQTJFZREWJJTRPMRV02H",
+    "handle": "natco-patra-400g",
+    "title": "Patra 400g",
+    "image_file": "natco_patra-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAQY5D1YPEJT0EMF1RK8F",
+    "handle": "natco-sarson-ka-saag-450g",
+    "title": "Sarson Ka Saag 450g",
+    "image_file": "natco_sarson-ka-saag-450g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAR1WJ8GD7A5FE2SA2Z2R",
+    "handle": "natco-karela-400g",
+    "title": "Karela 400g",
+    "image_file": "natco_karela-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEAR63X7KT37FH5GJ72SD4",
+    "handle": "natco-lotus-root-400g",
+    "title": "Lotus Root 400g",
+    "image_file": "natco_lotus-root-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEARBFWCW8560NCMJJFK47",
+    "handle": "natco-suran-yam-400g",
+    "title": "Suran (Yam) 400g",
+    "image_file": "natco_suran-yam-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEARF8FCJNC5PNXRDCEQEC",
+    "handle": "natco-couscous-500g",
+    "title": "Couscous 500g",
+    "image_file": "natco_couscous-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPEARJ0HM9T6E2R53CYXTYM",
+    "handle": "natco-vermice-taposdini-fedelini-500g",
+    "title": "Vermice T&apos;Dini-Fedelini 500g",
+    "image_file": "natco_vermice-taposdini-fedelini-500g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHC9C335HB3AAA6MVCAGG8",
+    "handle": "natco-white-kidney-beans-boiled-full-case-12x400g",
+    "title": "White Kidney Beans Boiled Full Case 12x400g",
+    "image_file": "natco_white-kidney-beans-boiled-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHC9GNH0FBD3Q3Z8DZ3Y1J",
+    "handle": "natco-red-kidney-beans-400g",
+    "title": "Red Kidney Beans 400g",
+    "image_file": "natco_red-kidney-beans-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHC9KZS8FXDVHQYTNSGCFT",
+    "handle": "natco-chick-peas-400g",
+    "title": "Chick Peas 400g",
+    "image_file": "natco_chick-peas-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHC9R00G91Q9AM39B4Z0K5",
+    "handle": "natco-chick-peas-1kg",
+    "title": "Chick Peas 1kg",
+    "image_file": "natco_chick-peas-1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHC9V8XDTHR0KCDS1CAQMT",
+    "handle": "natco-kala-chana-boiled-full-case-12x400g",
+    "title": "Kala Chana Boiled Full Case 12x400g",
+    "image_file": "natco_kala-chana-boiled-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHC9Z0930YRBFWVEY85CAQ",
+    "handle": "natco-rose-coco-borlotti-beans-full-case-12x400g",
+    "title": "Rose Coco (Borlotti) Beans Full Case 12x400g",
+    "image_file": "natco_rose-coco-borlotti-beans-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCA2A41MEV6G2PPMWR590",
+    "handle": "natco-toovar-full-case-12x400g",
+    "title": "Toovar Full Case 12x400g",
+    "image_file": "natco_toovar-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCA4Y4H3GWR69E1NZ2MVY",
+    "handle": "natco-coconut-cream-full-case-6x400ml",
+    "title": "Coconut Cream Full Case 6x400ml",
+    "image_file": "natco_coconut-cream-full-case-6x400ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCA8062H7EGZPNF1B2W0K",
+    "handle": "natco-coconut-milk-full-case-6x400ml",
+    "title": "Coconut Milk Full Case 6x400ml",
+    "image_file": "natco_coconut-milk-full-case-6x400ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCAB41MBJYRWHMWJV242F",
+    "handle": "natco-coconut-milk-light-full-case-6x400ml",
+    "title": "Coconut Milk Light Full Case 6x400ml",
+    "image_file": "natco_coconut-milk-light-full-case-6x400ml.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCAF3HHK5QB7CC921HDKM",
+    "handle": "natco-chanadal-full-case-4x1kg",
+    "title": "Chanadal Full Case 4x1kg",
+    "image_file": "natco_chanadal-full-case-4x1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCAHXV58PDYJPH798695J",
+    "handle": "natco-green-lentils-full-case-4x1kg",
+    "title": "Green Lentils Full Case 4x1kg",
+    "image_file": "natco_green-lentils-full-case-4x1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCAMW1NXGV8MRCTQ1EDCP",
+    "handle": "natco-mung-beans-full-case-4x1kg",
+    "title": "Mung Beans Full Case 4x1kg",
+    "image_file": "natco_mung-beans-full-case-4x1kg.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCAR1JSH21GZT8HWHCBTP",
+    "handle": "natco-punjabi-tinda-400g",
+    "title": "Punjabi Tinda 400g",
+    "image_file": "natco_punjabi-tinda-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCAV0X3N4XK2B6RDFN0R0",
+    "handle": "natco-spinach-leaf-full-case-12x396g",
+    "title": "Spinach Leaf Full Case 12x396g",
+    "image_file": "natco_spinach-leaf-full-case-12x396g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCAXYQAXKRD44E1SGYSTN",
+    "handle": "natco-spinach-puree-full-case-12x794g",
+    "title": "Spinach Puree Full Case 12x794g",
+    "image_file": "natco_spinach-puree-full-case-12x794g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCB14Y0Z4JT9HTYGF4VFM",
+    "handle": "natco-tomato-paste-full-case-12x800g",
+    "title": "Tomato Paste Full Case 12x800g",
+    "image_file": "natco_tomato-paste-full-case-12x800g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCB45SVZW8RYWY26VGBFT",
+    "handle": "natco-tomatoes-peeled-full-case-24x400g",
+    "title": "Tomatoes Peeled Full Case 24x400g",
+    "image_file": "natco_tomatoes-peeled-full-case-24x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCB84CRCM8FSZYEKB2YH7",
+    "handle": "natco-tomatoes-chopped-400g",
+    "title": "Tomatoes Chopped 400g",
+    "image_file": "natco_tomatoes-chopped-400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCBAY0QM43S0GD084F613",
+    "handle": "natco-patra-full-case-12x400g",
+    "title": "Patra Full Case 12x400g",
+    "image_file": "natco_patra-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCBD90RH9293E00EJAKX9",
+    "handle": "natco-sarson-ka-saag-full-case-12x450g",
+    "title": "Sarson Ka Saag Full Case 12x450g",
+    "image_file": "natco_sarson-ka-saag-full-case-12x450g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCBFTVJTVT6E48C3CKCRJ",
+    "handle": "natco-karela-full-case-12x400g",
+    "title": "Karela Full Case 12x400g",
+    "image_file": "natco_karela-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCBK6DB0ZWQJH8S1WV98N",
+    "handle": "natco-lotus-root-full-case-12x400g",
+    "title": "Lotus Root Full Case 12x400g",
+    "image_file": "natco_lotus-root-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCBP9REJ73Z20HFT699ZE",
+    "handle": "natco-okra-400g",
+    "title": "Okra 400g",
+    "image_file": "natco_okra-400g.png",
+    "exists": true,
+    "status": "uploaded"
+  },
+  {
+    "id": "prod_01KRPHCBSAQZVSMQ0QSGB8MM2M",
+    "handle": "natco-suran-yam-full-case-12x400g",
+    "title": "Suran (Yam) Full Case 12x400g",
+    "image_file": "natco_suran-yam-full-case-12x400g.jpg",
+    "exists": true,
+    "status": "uploaded"
+  }
+]

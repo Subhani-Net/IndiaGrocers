@@ -54,3 +54,13 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 **/.DS_Store
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Backend uploads / static (large binary files)
+**/uploads/
+**/static/
