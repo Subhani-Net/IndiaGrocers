@@ -1,0 +1,33 @@
+To build a highly resilient full-basket grocery platform serving high-density South London boroughs like Croydon and Kingston, you must architect for real-world failure states. Grocery e-commerce has highly distinct traffic patterns compared to standard retail: customers build massive baskets over 45 minutes, check out simultaneously during evening delivery-slot releases, and require instant local geographic validation.
+Here is the non-functional requirements (NFR) blueprint to handle modern e-commerce realities across either your MedusaJS or nopCommerce setup.
+1. Hardened Security & Fraud Mitigation 
+Grocery delivery platforms targeting specific UK zip codes face localized fraud, scraping bots, and payment liabilities.
+Secure API Design: Enforce JWT rotation or strict cookie-based sessions for carts. Ensure the frontend never trusts user-inputted item prices; Medusa or nopCommerce must recalculate line item costs server-side against the secure database during every cart update.
+Address & Postcode Sanitisation: Attackers manipulate checkout payloads to bypass local shipping logic. Use server-side regex validations (^(CR|SM|KT)[0-9] for your territory) and sanitize inputs against the Royal Mail Postcode Address File (PAF) API to prevent delivery to invalid or out-of-bounds destinations.
+3D Secure 2.0 (3DS2): Integrate UK-compliant payment gateways (e.g., Stripe, Adyen) with 3DS2 enabled. This protects your business from liability shift on chargebacks if an order using a stolen card is physically dropped off at a flat in Croydon. 
+2. Denial of Service (DoS) & Bot Protection
+Competitors or scraping services will continuously try to scrape your large catalog data (prices and stock status), driving up your database CPU usage. 
+Edge-Layer Rate Limiting: Implement an edge network like Cloudflare or AWS CloudFront in front of your server. Apply strict rate limits on high-velocity endpoints:
+GET /api/products (Scraping limit: Maximum 60 requests per minute per IP).
+POST /api/carts/*/line-items (Cart-stuffing/DoS limit: Maximum 20 requests per minute per IP).
+Geofencing at the Edge: Since your operational footprint is exclusively local to South London, block or present hard CAPTCHAs to all non-UK traffic at the DNS level. This instantly neutralizes global botnets attempting layer-7 DoS attacks.
+Checkout Throttling: Use Redis-backed token buckets to limit the velocity of total system checkouts during peak "slot release" times (e.g., Sunday evenings), ensuring your database connection pool does not exhaust.
+3. Caching Architecture & Solving "The Grocery Dilemma"
+Standard e-commerce caches product pages for 24 hours. A modern grocery website cannot do this because prices fluctuate and hundreds of items in a single basket can cause cache invalidation loops. 
+ [ Customer Request ] ──> [ Edge Cache: Cloudflare ] ──> [ Layer 2: Redis Cache ] ──> [ Application Engine ]
+                          (Catalog Browsing Only)        (Cart / Session Memory)      (Final Checkout Logic)
+Split-Level Caching:
+Static Assets & Catalog (Edge Cache): Cache the product list, names, descriptions, and category hierarchies at the edge. This can safely have a 1-hour Time-to-Live (TTL).
+Dynamic Basket State (In-Memory Cache): Never cache cart payloads at the edge. Use an in-memory datastore like Redis to maintain cart line-items. Since a grocery basket contains 40+ items, pulling the cart directly from a relational SQL/PostgreSQL database on every single page view will crash your database under heavy user load.
+The Race Condition / Stale Price Issue: If a customer spends 45 minutes building an offline or cached basket, and you update the wholesale price of tomatoes in your Google Sheet CMS during that time, the user has stale data.
+Solution: The edge cache handles browsing, but the final transition step (opening the checkout pane) must trigger an explicit server-side database lookup to validate that the basket price perfectly matches current database pricing before authorization. 
+4. Handling Real-World Modern E-Commerce Scenarios
+Scenario A: The Friday Evening "Flash Rush"
+The Reality: At 6:00 PM on Friday, thousands of families across Sutton and Morden open your app simultaneously to secure their weekend delivery slots.
+The NFR Fix: Immutability of core configurations. Pre-load your delivery slot schedule matrix into a Redis cache cache layer rather than running complex SQL table joins (SELECT FROM delivery_slots WHERE...) for every active user session. 
+Scenario B: The Micro-Disconnection (The Transit Trap)
+The Reality: A user adds 35 items to their basket while riding the train through East Croydon station. The train enters a tunnel, their mobile connection drops, and they click "Add to Basket" on item 36.
+The NFR Fix: Local state preservation. Your frontend storefront must use optimistic UI updates. When a network error occurs, save the action to a local IndexedDB state queue, display a subtle warning ("Reconnecting... your basket is saved locally"), and seamlessly replay the requests back to the Medusa/nopCommerce backend APIs when the handshake returns.
+Scenario C: Cart Serialization Inflation
+The Reality: In standard apparel retail, a cart has 2 items. In your South London grocery model, a full weekly basket easily reaches 60–80 individual items. Fetching this massive payload via API transfers large amounts of text data on every single click.
+The NFR Fix: Payload optimization. Never return full product descriptions, image URLs, or manufacturer metadata inside the checkout cart API payload. The cart API should only return basic fields: variant_id, quantity, and calculated_price. Let the frontend client merge these IDs locally with the cached product catalog data to save mobile data and decrease network latency.

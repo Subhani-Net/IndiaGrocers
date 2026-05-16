@@ -1,0 +1,158 @@
+Product Handle,Product Title,Product Subtitle,Product Description,Product Status,Product Thumbnail,Product Weight,Product Discountable,Product Tag 1,Variant Title,Variant Sku,Variant Barcode,Variant Manage Inventory,Variant Allow Backorder,Variant Option 1 Name,Variant Option 1 Value,Variant Price GBP,Shipping Profile Id
+basmati-rice-1kg,Premium Basmati Rice,Long grain aromatic rice,,published,,1000,TRUE,Premium,1kg,basmati-1kg,8901234567890,TRUE,FALSE,Weight,1kg,249,default
+basmati-rice-5kg,Premium Basmati Rice,Long grain aromatic rice,,published,,5000,TRUE,Premium,5kg,basmati-5kg,8901234567891,TRUE,FALSE,Weight,5kg,1199,default
+sona-masoori-rice-1kg,Sona Masoori Rice,South Indian staple rice,,published,,1000,TRUE,,1kg,sona-1kg,8901234567892,TRUE,FALSE,Weight,1kg,89,default
+sona-masoori-rice-5kg,Sona Masoori Rice,South Indian staple rice,,published,,5000,TRUE,,5kg,sona-5kg,8901234567893,TRUE,FALSE,Weight,5kg,425,default
+sona-masoori-rice-10kg,Sona Masoori Rice,South Indian staple rice,,published,,10000,TRUE,,10kg,sona-10kg,8901234567894,TRUE,FALSE,Weight,10kg,799,default
+ponni-boiled-rice-1kg,Ponni Boiled Rice,Kerala style boiled rice,,published,,1000,TRUE,,1kg,ponni-1kg,8901234567895,TRUE,FALSE,Weight,1kg,75,default
+ponni-boiled-rice-5kg,Ponni Boiled Rice,Kerala style boiled rice,,published,,5000,TRUE,,5kg,ponni-5kg,8901234567896,TRUE,FALSE,Weight,5kg,359,default
+brown-rice-1kg,Brown Rice,Unpolished healthy rice,,published,,1000,TRUE,Healthy,1kg,brown-1kg,8901234567897,TRUE,FALSE,Weight,1kg,129,default
+idli-rice-1kg,Idli Rice,Perfect for idli dosa,,published,,1000,TRUE,,1kg,idli-rice-1kg,8901234567898,TRUE,FALSE,Weight,1kg,65,default
+idli-rice-5kg,Idli Rice,Perfect for idli dosa,,published,,5000,TRUE,,5kg,idli-rice-5kg,8901234567899,TRUE,FALSE,Weight,5kg,299,default
+toor-dal-500g,Toor Dal,Pigeon pea lentils,,published,,500,TRUE,,500g,toordal-500g,8901234567900,TRUE,FALSE,Weight,500g,89,default
+toor-dal-1kg,Toor Dal,Pigeon pea lentils,,published,,1000,TRUE,,1kg,toordal-1kg,8901234567901,TRUE,FALSE,Weight,1kg,169,default
+moong-dal-500g,Moong Dal,Yellow split gram,,published,,500,TRUE,,500g,moongdal-500g,8901234567902,TRUE,FALSE,Weight,500g,79,default
+moong-dal-1kg,Moong Dal,Yellow split gram,,published,,1000,TRUE,,1kg,moongdal-1kg,8901234567903,TRUE,FALSE,Weight,1kg,149,default
+masoor-dal-500g,Masoor Dal,Red lentils,,published,,500,TRUE,,500g,masoordal-500g,8901234567904,TRUE,FALSE,Weight,500g,69,default
+masoor-dal-1kg,Masoor Dal,Red lentils,,published,,1000,TRUE,,1kg,masoordal-1kg,8901234567905,TRUE,FALSE,Weight,1kg,129,default
+chana-dal-500g,Chana Dal,Bengal gram split,,published,,500,TRUE,,500g,chanadal-500g,8901234567906,TRUE,FALSE,Weight,500g,75,default
+chana-dal-1kg,Chana Dal,Bengal gram split,,published,,1000,TRUE,,1kg,chanadal-1kg,8901234567907,TRUE,FALSE,Weight,1kg,139,default
+urad-dal-500g,Urad Dal,Black gram split,,published,,500,TRUE,,500g,uraddal-500g,8901234567908,TRUE,FALSE,Weight,500g,99,default
+urad-dal-1kg,Urad Dal,Black gram split,,published,,1000,TRUE,,1kg,uraddal-1kg,8901234567909,TRUE,FALSE,Weight,1kg,189,default
+kabuli-chana-500g,Kabuli Chana,White chickpeas,,published,,500,TRUE,,500g,kabuli-500g,8901234567910,TRUE,FALSE,Weight,500g,85,default
+kabuli-chana-1kg,Kabuli Chana,White chickpeas,,published,,1000,TRUE,,1kg,kabuli-1kg,8901234567911,TRUE,FALSE,Weight,1kg,159,default
+turmeric-powder-100g, Turmeric Powder,Pure ground turmeric,,published,,100,TRUE,,100g,turmeric-100g,8901234567912,TRUE,FALSE,Weight,100g,49,default
+turmeric-powder-200g, Turmeric Powder,Pure ground turmeric,,published,,200,TRUE,,200g,turmeric-200g,8901234567913,TRUE,FALSE,Weight,200g,89,default
+red-chilli-powder-100g,Red Chilli Powder,Premium ground chilli,,published,,100,TRUE,,100g,chilli-100g,8901234567914,TRUE,FALSE,Weight,100g,55,default
+red-chilli-powder-200g,Red Chilli Powder,Premium ground chilli,,published,,200,TRUE,,200g,chilli-200g,8901234567915,TRUE,FALSE,Weight,200g,99,default
+cumin-seeds-100g,Jeera (Cumin Seeds),Premium Indian cumin,,published,,100,TRUE,,100g,cumin-100g,8901234567916,TRUE,FALSE,Weight,100g,45,default
+cumin-seeds-200g,Jeera (Cumin Seeds),Premium Indian cumin,,published,,200,TRUE,,200g,cumin-200g,8901234567917,TRUE,FALSE,Weight,200g,85,default
+coriander-powder-100g,Dhania (Coriander) Powder,Freshly ground,,published,,100,TRUE,,100g,coriander-100g,8901234567919,TRUE,FALSE,Weight,100g,35,default
+coriander-powder-200g,Dhania (Coriander) Powder,Freshly ground,,published,,200,TRUE,,200g,coriander-200g,8901234567920,TRUE,FALSE,Weight,200g,65,default
+garam-masala-100g,Garam Masala,Aromatic spice blend,,published,,100,TRUE,,100g,garammasala-100g,8901234567921,TRUE,FALSE,Weight,100g,69,default
+garam-masala-200g,Garam Masala,Aromatic spice blend,,published,,200,TRUE,,200g,garammasala-200g,8901234567922,TRUE,FALSE,Weight,200g,129,default
+chicken-masala-100g,Chicken Masala,Spice mix for chicken,,published,,100,TRUE,Masala Mix,100g,chickenmasala-100g,8901234567923,TRUE,FALSE,Weight,100g,59,default
+chicken-masala-200g,Chicken Masala,Spice mix for chicken,,published,,200,TRUE,Masala Mix,200g,chickenmasala-200g,8901234567924,TRUE,FALSE,Weight,200g,109,default
+panch-phoron-100g,Panch Phoron,Bengal five spice,,published,,100,TRUE,,100g,panchphoron-100g,8901234567925,TRUE,FALSE,Weight,100g,45,default
+cardamom-50g,Elaichi (Cardamom),Green cardamom pods,,published,,50,TRUE,Premium,50g,cardamom-50g,8901234567926,TRUE,FALSE,Weight,50g,129,default
+cloves-50g,Laung (Cloves),Premium whole cloves,,published,,50,TRUE,,50g,cloves-50g,8901234567927,TRUE,FALSE,Weight,50g,79,default
+cinnamon-50g,Dalchini (Cinnamon),Cassia cinnamon sticks,,published,,50,TRUE,,50g,cinnamon-50g,8901234567928,TRUE,FALSE,Weight,50g,59,default
+mustard-oil-1l, Mustard Oil,Pure kachi ghani mustard,,published,,1000,TRUE,,1L,mustardoil-1l,8901234567929,TRUE,FALSE,Size,1L,199,default
+mustard-oil-500ml, Mustard Oil,Pure kachi ghani mustard,,published,,500,TRUE,,500ml,mustardoil-500ml,8901234567930,TRUE,FALSE,Size,500ml,109,default
+sunflower-oil-1l,Sunflower Oil,Refined sunflower oil,,published,,1000,TRUE,,1L,sunoil-1l,8901234567931,TRUE,FALSE,Size,1L,179,default
+sunflower-oil-5l,Sunflower Oil,Refined sunflower oil,,published,,5000,TRUE,,5L,sunoil-5l,8901234567932,TRUE,FALSE,Size,5L,849,default
+ghee-500ml,Pure Cow Ghee,Clarified butter,,published,,500,TRUE,Premium,500ml,ghee-500ml,8901234567933,TRUE,FALSE,Size,500ml,349,default
+ghee-1l,Pure Cow Ghee,Clarified butter,,published,,1000,TRUE,Premium,1L,ghee-1l,8901234567934,TRUE,FALSE,Size,1L,649,default
+coconut-oil-500ml,Coconut Oil,Pure virgin coconut oil,,published,,500,TRUE,,500ml,coconutoil-500ml,8901234567935,TRUE,FALSE,Size,500ml,159,default
+coconut-oil-1l,Coconut Oil,Pure virgin coconut oil,,published,,1000,TRUE,,1L,coconutoil-1l,8901234567936,TRUE,FALSE,Size,1L,299,default
+groundnut-oil-1l,Groundnut Oil,Cold pressed peanut oil,,published,,1000,TRUE,,1L,gndnoil-1l,8901234567937,TRUE,FALSE,Size,1L,229,default
+wheat-flour-1kg,Whole Wheat Atta,Stone ground whole wheat,,published,,1000,TRUE,,1kg,atta-1kg,8901234567938,TRUE,FALSE,Weight,1kg,49,default
+wheat-flour-5kg,Whole Wheat Atta,Stone ground whole wheat,,published,,5000,TRUE,,5kg,atta-5kg,8901234567939,TRUE,FALSE,Weight,5kg,229,default
+wheat-flour-10kg,Whole Wheat Atta,Stone ground whole wheat,,published,,10000,TRUE,,10kg,atta-10kg,8901234567940,TRUE,FALSE,Weight,10kg,439,default
+besan-500g,Besan (Gram Flour),Chickpea flour,,published,,500,TRUE,,500g,besan-500g,8901234567941,TRUE,FALSE,Weight,500g,59,default
+besan-1kg,Besan (Gram Flour),Chickpea flour,,published,,1000,TRUE,,1kg,besan-1kg,8901234567942,TRUE,FALSE,Weight,1kg,109,default
+rice-flour-1kg,Rice Flour,Finely ground rice flour,,published,,1000,TRUE,,1kg,riceflour-1kg,8901234567943,TRUE,FALSE,Weight,1kg,79,default
+sooji-500g,Sooji (Semolina),Coarse wheat granules,,published,,500,TRUE,,500g,sooji-500g,8901234567944,TRUE,FALSE,Weight,500g,39,default
+sooji-1kg,Sooji (Semolina),Coarse wheat granules,,published,,1000,TRUE,,1kg,sooji-1kg,8901234567945,TRUE,FALSE,Weight,1kg,69,default
+maida-1kg,Maida (All Purpose Flour),Refined wheat flour,,published,,1000,TRUE,,1kg,maida-1kg,8901234567946,TRUE,FALSE,Weight,1kg,55,default
+bhujia-200g,Haldiram Bhujia,Classic crispy bhujia,,published,,200,TRUE,Haldiram,200g,bhujia-200g,8901234567947,TRUE,FALSE,Weight,200g,49,default
+bhujia-400g,Haldiram Bhujia,Classic crispy bhujia,,published,,400,TRUE,Haldiram,400g,bhujia-400g,8901234567948,TRUE,FALSE,Weight,400g,89,default
+moong-dal-snack-200g,Haldiram Moong Dal,Crispy moong dal snack,,published,,200,TRUE,Haldiram,200g,moongsna-200g,8901234567949,TRUE,FALSE,Weight,200g,45,default
+moong-dal-snack-400g,Haldiram Moong Dal,Crispy moong dal snack,,published,,400,TRUE,Haldiram,400g,moongsna-400g,8901234567950,TRUE,FALSE,Weight,400g,79,default
+balaji-mixture-200g,Balaji Mixture,Spicy traditional mixture,,published,,200,TRUE,Balaji,200g,balajimix-200g,8901234567951,TRUE,FALSE,Weight,200g,35,default
+kurkure-75g,Kurkure Snacks,Masala munch snacks,,published,,75,TRUE,PepsiCo,75g,kurkure-75g,8901234567953,TRUE,FALSE,Weight,75g,10,default
+kurkure-150g,Kurkure Snacks,Masala munch snacks,,published,,150,TRUE,PepsiCo,150g,kurkure-150g,8901234567954,TRUE,FALSE,Weight,150g,20,default
+lays-salted-52g,Lay's Chips,Classic salted chips,,published,,52,TRUE,PepsiCo,52g,lays-salt-52g,8901234567955,TRUE,FALSE,Weight,52g,20,default
+lays-masala-52g,Lay's Chips,India's Magic Masala,,published,,52,TRUE,PepsiCo,52g,lays-mas-52g,8901234567956,TRUE,FALSE,Weight,52g,20,default
+parle-g-200g,Parle-G Biscuits,Classic glucose biscuits,,published,,200,TRUE,Parle,200g,parleg-200g,8901234567959,TRUE,FALSE,Weight,200g,30,default
+good-day-150g,Good Day Biscuits,Cashew cookies,,published,,150,TRUE,Britannia,150g,goodday-150g,8901234567960,TRUE,FALSE,Weight,150g,35,default
+oreo-120g,Oreo Cookies,Chocolate creme sandwich,,published,,120,TRUE,Cadbury,120g,oreo-120g,8901234567961,TRUE,FALSE,Weight,120g,45,default
+masala-peanuts-200g,Masala Peanuts,Roasted spiced peanuts,,published,,200,TRUE,,200g,masalapnt-200g,8901234567962,TRUE,FALSE,Weight,200g,39,default
+chai-masala-100g,Chai Masala,Aromatic tea spice blend,,published,,100,TRUE,,100g,chaimas-100g,8901234567963,TRUE,FALSE,Weight,100g,79,default
+tetley-green-25,Tetley Green Tea,Natural green tea bags,,published,,100,TRUE,Tetley,25 bags,tetley-grn-25,8901234567964,TRUE,FALSE,Quantity,25 bags,145,default
+tetley-green-50,Tetley Green Tea,Natural green tea bags,,published,,200,TRUE,Tetley,50 bags,tetley-grn-50,8901234567965,TRUE,FALSE,Quantity,50 bags,279,default
+taj-mahal-tea-250g,Taj Mahal Tea,Premium CTC tea,,published,,250,TRUE,Tata,250g,tajtea-250g,8901234567966,TRUE,FALSE,Weight,250g,195,default
+taj-mahal-tea-500g,Taj Mahal Tea,Premium CTC tea,,published,,500,TRUE,Tata,500g,tajtea-500g,8901234567967,TRUE,FALSE,Weight,500g,375,default
+red-label-tea-250g,Red Label Tea,Natural care tea,,published,,250,TRUE,Brooke Bond,250g,redlabel-250g,8901234567968,TRUE,FALSE,Weight,250g,165,default
+bru-instant-coffee-50g,Bru Instant Coffee,South Indian filter coffee,,published,,50,TRUE,Bru,50g,bru-50g,8901234567969,TRUE,FALSE,Weight,50g,119,default
+bru-instant-coffee-100g,Bru Instant Coffee,South Indian filter coffee,,published,,100,TRUE,Bru,100g,bru-100g,8901234567970,TRUE,FALSE,Weight,100g,219,default
+nescafe-classic-50g,Nescafe Classic,100% pure instant coffee,,published,,50,TRUE,Nestle,50g,nescafe-50g,8901234567971,TRUE,FALSE,Weight,50g,139,default
+tang-500g,Tang Orange Drink,Powdered orange drink,,published,,500,TRUE,,500g,tang-500g,8901234567972,TRUE,FALSE,Weight,500g,159,default
+mango-pickle-500g,Mango Pickle,Traditional hot sour pickle,,published,,500,TRUE,,500g,mangopickle-500g,8901234567973,TRUE,FALSE,Weight,500g,99,default
+lime-pickle-500g,Lime Pickle,Salty sour lemon pickle,,published,,500,TRUE,,500g,limepickle-500g,8901234567974,TRUE,FALSE,Weight,500g,89,default
+mixed-pickle-500g,Mixed Pickle,Assorted vegetable pickle,,published,,500,TRUE,,500g,mixedpickle-500g,8901234567975,TRUE,FALSE,Weight,500g,79,default
+chilli-pickle-500g,Chilli Pickle,Spicy stuffed chilli pickle,,published,,500,TRUE,,500g,chillipickle-500g,8901234567976,TRUE,FALSE,Weight,500g,99,default
+garlic-pickle-500g,Garlic Pickle,Punjabi style garlic pickle,,published,,500,TRUE,,500g,garlicpickle-500g,8901234567977,TRUE,FALSE,Weight,500g,109,default
+mango-chutney-300g,Mango Chutney,Sweet mango chutney,,published,,300,TRUE,,300g,mangochutney-300g,8901234567978,TRUE,FALSE,Weight,300g,69,default
+tamarind-chutney-300g,Tamarind Chutney,Sweet tangy imli chutney,,published,,300,TRUE,,300g,tamarindchutney-300g,8901234567979,TRUE,FALSE,Weight,300g,59,default
+moong-papad-200g,Moong Dal Papad,Crispy roasted moong papad,,published,,200,TRUE,,200g,moongpapad-200g,8901234567981,TRUE,FALSE,Weight,200g,45,default
+udad-papad-200g,Urad Dal Papad,Traditional urad papad,,published,,200,TRUE,,200g,udadpapad-200g,8901234567982,TRUE,FALSE,Weight,200g,49,default
+rice-papad-200g,Rice Papad,Crispy rice papad,,published,,200,TRUE,,200g,ricepapad-200g,8901234567983,TRUE,FALSE,Weight,200g,35,default
+mixed-fryums-200g,Mixed Fryums,Assorted colorful fryums,,published,,200,TRUE,,200g,mixedfryums-200g,8901234567984,TRUE,FALSE,Weight,200g,29,default
+chilli-fryums-200g,Chilli Fryums,Spicy chilli flavored fryums,,published,,200,TRUE,,200g,chillifryums-200g,8901234567985,TRUE,FALSE,Weight,200g,29,default
+veg-samosa-300g,Vegetable Samosa,Frozen vegetable samosa,,published,,300,TRUE,,300g,vegsamosa-300g,8901234567989,TRUE,FALSE,Weight,300g,99,default
+idli-dosa-batter-1kg,Idli Dosa Batter,Ready to make batter,,published,,1000,TRUE,,1kg,batter-1kg,8901234567990,TRUE,FALSE,Weight,1kg,89,default
+alooparatha-300g,Aloo Paratha,Frozen stuffed potato paratha,,published,,300,TRUE,,300g,alooparatha-300g,8901234567991,TRUE,FALSE,Weight,300g,99,default
+paneer-paratha-300g,Paneer Paratha,Frozen stuffed paneer paratha,,published,,300,TRUE,,300g,paneerpratha-300g,8901234567992,TRUE,FALSE,Weight,300g,119,default
+laddu-250g,Boondi Laddu,Traditional Indian sweet,,published,,250,TRUE,,250g,laddu-250g,8901234567993,TRUE,FALSE,Weight,250g,99,default
+laddu-500g,Boondi Laddu,Traditional Indian sweet,,published,,500,TRUE,,500g,laddu-500g,8901234567994,TRUE,FALSE,Weight,500g,189,default
+soan-papdi-250g,Soan Papdi,Flaky sweet confection,,published,,250,TRUE,,250g,soanpapdi-250g,8901234567995,TRUE,FALSE,Weight,250g,89,default
+kaju-katli-250g,Kaju Katli,Rich cashew nut sweet,,published,,250,TRUE,Premium,250g,kajukatli-250g,8901234567996,TRUE,FALSE,Weight,250g,259,default
+gulab-jamun-400g,Gulab Jamun,Canned gulab jamun,,published,,400,TRUE,Haldiram,400g,gulabjamun-400g,8901234567997,TRUE,FALSE,Weight,400g,149,default
+rasgulla-400g,Rasgulla,Canned rasgulla,,published,,400,TRUE,,400g,rasgulla-400g,8901234567998,TRUE,FALSE,Weight,400g,139,default
+maggie-masala-70g,Maggi Noodles,2-minute masala noodles,,published,,70,TRUE,Nestle,70g,maggi-70g,8901234567999,TRUE,FALSE,Weight,70g,14,default
+maggie-masala-140g,Maggi Noodles,2-minute masala noodles,,published,,140,TRUE,Nestle,140g,maggi-140g,8901234568000,TRUE,FALSE,Weight,140g,28,default
+top-ramen-65g,Top Ramen Curry Noodles,Curry flavored noodles,,published,,65,TRUE,Top Ramen,65g,topramen-65g,8901234568001,TRUE,FALSE,Weight,65g,12,default
+yippee-noodles-70g,Yippee Noodles,Magic masala noodles,,published,,70,TRUE,ITC,70g,yippee-70g,8901234568002,TRUE,FALSE,Weight,70g,14,default
+penne-pasta-500g,Penne Pasta,Italian penne pasta,,published,,500,TRUE,,500g,penne-500g,8901234568003,TRUE,FALSE,Weight,500g,69,default
+macaroni-500g,Macaroni Pasta,Classic macaroni,,published,,500,TRUE,,500g,macaroni-500g,8901234568004,TRUE,FALSE,Weight,500g,59,default
+tomato-sauce-500g,Tomato Ketchup,Rich tomato ketchup,,published,,500,TRUE,,500g,tomatosauce-500g,8901234568005,TRUE,FALSE,Weight,500g,49,default
+tomato-sauce-1kg,Tomato Ketchup,Rich tomato ketchup,,published,,1000,TRUE,,1kg,tomatosauce-1kg,8901234568006,TRUE,FALSE,Weight,1kg,89,default
+green-chilli-sauce-500g,Green Chilli Sauce,Spicy green chilli sauce,,published,,500,TRUE,,500g,greenchillisauce-500g,8901234568007,TRUE,FALSE,Weight,500g,49,default
+soy-sauce-200g, Soy Sauce,Dark soy sauce,,published,,200,TRUE,,200g,soysauce-200g,8901234568008,TRUE,FALSE,Weight,200g,45,default
+vinegar-200g,White Vinegar,Cooking vinegar,,published,,200,TRUE,,200g,vinegar-200g,8901234568009,TRUE,FALSE,Weight,200g,25,default
+amul-butter-100g,Amul Butter,Pasteurized butter,,published,,100,TRUE,Amul,100g,butter-100g,8901234568010,TRUE,FALSE,Weight,100g,55,default
+amul-butter-500g,Amul Butter,Pasteurized butter block,,published,,500,TRUE,Amul,500g,butter-500g,8901234568011,TRUE,FALSE,Weight,500g,249,default
+amul-paneer-200g,Amul Paneer,Fresh cottage cheese,,published,,200,TRUE,Amul,200g,paneer-200g,8901234568012,TRUE,FALSE,Weight,200g,89,default
+amul-paneer-500g,Amul Paneer,Fresh cottage cheese,,published,,500,TRUE,Amul,500g,paneer-500g,8901234568013,TRUE,FALSE,Weight,500g,209,default
+amul-cheese-200g,Amul Cheese Block,Processed cheese block,,published,,200,TRUE,Amul,200g,cheese-200g,8901234568014,TRUE,FALSE,Weight,200g,99,default
+curd-400g,Fresh Curd,Thick set curd,,published,,400,TRUE,,400g,curd-400g,8901234568015,TRUE,FALSE,Weight,400g,45,default
+curd-1kg,Fresh Curd,Thick set curd,,published,,1000,TRUE,,1kg,curd-1kg,8901234568016,TRUE,FALSE,Weight,1kg,99,default
+milk-powder-200g,Milk Powder,Full cream milk powder,,published,,200,TRUE,,200g,milkpowder-200g,8901234568017,TRUE,FALSE,Weight,200g,129,default
+milk-powder-500g,Milk Powder,Full cream milk powder,,published,,500,TRUE,,500g,milkpowder-500g,8901234568018,TRUE,FALSE,Weight,500g,299,default
+dal-makhani-300g,Dal Makhani Ready to Eat,Creamy black dal,,published,,300,TRUE,,300g,dalmakhani-300g,8901234568019,TRUE,FALSE,Weight,300g,109,default
+paneer-butter-masala-300g,Paneer Butter Masala Ready to Eat,Rich creamy paneer curry,,published,,300,TRUE,,300g,paneerbm-300g,8901234568020,TRUE,FALSE,Weight,300g,119,default
+chana-masala-300g,Chana Masala Ready to Eat,Spicy chickpea curry,,published,,300,TRUE,,300g,chanamasala-300g,8901234568021,TRUE,FALSE,Weight,300g,99,default
+biryani-300g,Hyderabadi Biryani Ready to Eat,Veritical veg biryani,,published,,300,TRUE,,300g,biryani-300g,8901234568022,TRUE,FALSE,Weight,300g,129,default
+upma-mix-200g,Instant Upma Mix,Rava upma in 5 minutes,,published,,200,TRUE,,200g,upma-200g,8901234568023,TRUE,FALSE,Weight,200g,49,default
+poha-mix-200g,Instant Poha Mix,Flattened rice poha,,published,,200,TRUE,,200g,pohamix-200g,8901234568024,TRUE,FALSE,Weight,200g,45,default
+idli-mix-500g,Instant Idli Mix,Soft idli batter mix,,published,,500,TRUE,,500g,idlidosa-500g,8901234568025,TRUE,FALSE,Weight,500g,69,default
+dosa-mix-500g,Instant Dosa Mix,Crispy dosa batter mix,,published,,500,TRUE,,500g,dosamix-500g,8901234568026,TRUE,FALSE,Weight,500g,69,default
+tata-salt-1kg,Tata Salt,Iodized table salt,,published,,1000,TRUE,Tata,1kg,salt-1kg,8901234568027,TRUE,FALSE,Weight,1kg,22,default
+sugar-1kg, Sugar,Fine white sugar,,published,,1000,TRUE,,1kg,sugar-1kg,8901234568028,TRUE,FALSE,Weight,1kg,45,default
+sugar-5kg, Sugar,Fine white sugar,,published,,5000,TRUE,,5kg,sugar-5kg,8901234568029,TRUE,FALSE,Weight,5kg,209,default
+jaggery-500g,Jaggery (Gur),Natural unrefined cane sugar,,published,,500,TRUE,Natural Sweetener,500g,jaggery-500g,8901234568030,TRUE,FALSE,Weight,500g,69,default
+jaggery-1kg,Jaggery (Gur),Natural unrefined cane sugar,,published,,1000,TRUE,Natural Sweetener,1kg,jaggery-1kg,8901234568031,TRUE,FALSE,Weight,1kg,129,default
+rooh-afza-750ml,Rooh Afza,Herbal summer drink,,published,,750,TRUE,Hamdard,750ml,roohafza-750ml,8901234568032,TRUE,FALSE,Size,750ml,169,default
+maaza-1L,Maaza Mango Drink,Premium mango pulp drink,,published,,1000,TRUE,Coca-Cola,1L,maaza-1l,8901234568033,TRUE,FALSE,Size,1L,79,default
+nimbooz-1L,Nimbooz Lemon Drink,Ready to serve lemon drink,,published,,1000,TRUE,PepsiCo,1L,nimbooz-1l,8901234568034,TRUE,FALSE,Size,1L,69,default
+coconut-water-1L,Tender Coconut Water,Packed tender coconut water,,published,,1000,TRUE,,1L,coconutwater-1l,8901234568035,TRUE,FALSE,Size,1L,89,default
+mustard-seeds-200g,Rai (Mustard Seeds),Whole black mustard seeds,,published,,200,TRUE,,200g,mustardseed-200g,8901234568036,TRUE,FALSE,Weight,200g,39,default
+fennel-seeds-100g, Saunf (Fennel Seeds),Sweet fennel seeds,,published,,100,TRUE,,100g,fennel-100g,8901234568037,TRUE,FALSE,Weight,100g,29,default
+fenugreek-seeds-100g,Methi (Fenugreek Seeds),Whole fenugreek seeds,,published,,100,TRUE,,100g,methi-100g,8901234568038,TRUE,FALSE,Weight,100g,25,default
+kokum-200g,Kokum,Malabar tamarind,,published,,200,TRUE,,200g,kokum-200g,8901234568039,TRUE,FALSE,Weight,200g,59,default
+curry-leaf-powder-100g,Curry Leaves Powder,Dried curry leaf powder,,published,,100,TRUE,,100g,curryleaf-100g,8901234568040,TRUE,FALSE,Weight,100g,45,default
+pav-bhaji-masala-100g,Pav Bhaji Masala,Spice mix for pav bhaji,,published,,100,TRUE,Masala Mix,100g,pavbhaji-100g,8901234568041,TRUE,FALSE,Weight,100g,59,default
+pav-bhaji-masala-200g,Pav Bhaji Masala,Spice mix for pav bhaji,,published,,200,TRUE,Masala Mix,200g,pavbhaji-200g,8901234568042,TRUE,FALSE,Weight,200g,109,default
+sambhar-masala-100g,Sambhar Masala,Spice mix for sambhar,,published,,100,TRUE,Masala Mix,100g,sambhar-100g,8901234568043,TRUE,FALSE,Weight,100g,45,default
+rasam-powder-100g,Rasam Powder,Spice mix for rasam,,published,,100,TRUE,Masala Mix,100g,rasam-100g,8901234568044,TRUE,FALSE,Weight,100g,45,default
+poha-flat-rice-500g,Poha (Flattened Rice),Medium thick poha,,published,,500,TRUE,,500g,poha-500g,8901234568045,TRUE,FALSE,Weight,500g,39,default
+poha-flat-rice-1kg,Poha (Flattened Rice),Medium thick poha,,published,,1000,TRUE,,1kg,poha-1kg,8901234568046,TRUE,FALSE,Weight,1kg,69,default
+sabudana-500g,Sabudana (Tapioca Pearls),Pearl sago for fasting,,published,,500,TRUE,,500g,sabudana-500g,8901234568047,TRUE,FALSE,Weight,500g,55,default
+sabudana-1kg,Sabudana (Tapioca Pearls),Pearl sago for fasting,,published,,1000,TRUE,,1kg,sabudana-1kg,8901234568048,TRUE,FALSE,Weight,1kg,99,default
+onion-loose-1kg,Onion, Fresh red onions loose,,published,,1000,TRUE,,1kg Loose,onion-loose-1kg,8901234568049,TRUE,FALSE,Packaging,Loose 1kg,39,default
+onion-bag-5kg,Onion, Fresh red onions bag,,published,,5000,TRUE,,5kg Bag,onion-bag-5kg,8901234568050,TRUE,FALSE,Packaging,Bag 5kg,179,default
+potato-loose-1kg,Potato, Fresh white potatoes loose,,published,,1000,TRUE,,1kg Loose,potato-loose-1kg,8901234568051,TRUE,FALSE,Packaging,Loose 1kg,29,default
+potato-bag-5kg,Potato, Fresh white potatoes bag,,published,,5000,TRUE,,5kg Bag,potato-bag-5kg,8901234568052,TRUE,FALSE,Packaging,Bag 5kg,129,default
+tomato-loose-1kg,Tomato, Fresh red tomatoes loose,,published,,1000,TRUE,,1kg Loose,tomato-loose-1kg,8901234568053,TRUE,FALSE,Packaging,Loose 1kg,39,default
+tomato-bag-5kg,Tomato, Fresh red tomatoes bag,,published,,5000,TRUE,,5kg Bag,tomato-bag-5kg,8901234568054,TRUE,FALSE,Packaging,Bag 5kg,179,default
