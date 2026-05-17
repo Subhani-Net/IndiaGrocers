@@ -104,8 +104,10 @@ B5 (search) ──> E1-E4 (polish)
 | F — Production | 10 | 0 | ⬜ 0% |
 | G — Navigation Alignment | 4 | 4 | ✅ 100% |
 | H — Data Cleanup (Natco-only) | 5 | 5 | ✅ 100% |
-| I — Storefront Fixes for Backend Alignment | 6 | 6 | ✅ 100% |
-| **Total** | **52** | **39** | **75%** |
+| I — Storefront Fixes for Backend | 6 | 6 | ✅ 100% |
+| J — Product Display & UX | 9 | 9 | ✅ 100% |
+| K — Data Pipeline Scripts | 7 | 7 | ✅ 100% |
+| **Total** | **68** | **55** | **81%** |
 
 ### Phase I — Storefront Fixes for Backend Alignment (NEW)
 | ID | Task | Details | Status |

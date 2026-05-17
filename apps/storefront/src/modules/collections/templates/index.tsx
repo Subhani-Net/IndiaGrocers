@@ -4,6 +4,7 @@ import { Suspense } from "react"
 import SkeletonProductGrid from "@modules/skeletons/templates/skeleton-product-grid"
 import PaginatedProducts from "@modules/store/templates/paginated-products"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import CartSidebar from "@modules/layout/components/cart-sidebar"
 import { HttpTypes } from "@medusajs/types"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 
@@ -65,17 +66,22 @@ export default function CollectionTemplate({
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 py-8">
-        <Suspense fallback={<SkeletonProductGrid numberOfProducts={12} />}>
-          <PaginatedProducts
-            sortBy={sort}
-            page={pageNumber}
-            collectionId={collection.id}
-            countryCode={countryCode}
-            minPrice={minPrice}
-            maxPrice={maxPrice}
-            brand={brand}
-          />
-        </Suspense>
+        <div className="flex gap-6">
+          <div className="flex-1 min-w-0">
+            <Suspense fallback={<SkeletonProductGrid numberOfProducts={12} />}>
+              <PaginatedProducts
+                sortBy={sort}
+                page={pageNumber}
+                collectionId={collection.id}
+                countryCode={countryCode}
+                minPrice={minPrice}
+                maxPrice={maxPrice}
+                brand={brand}
+              />
+            </Suspense>
+          </div>
+          <CartSidebar countryCode={countryCode} />
+        </div>
       </div>
     </div>
   )

@@ -64,6 +64,9 @@ async function main() {
   for (const row of rows) {
     const t = row[1], ty = (row[8] || "").replace(/&amp;/g, "&")
     if (t && ty && !titleToType[t]) titleToType[t] = ty
+    // Also map base name (strip weight) for merged products
+    const base = t.replace(/\s+\d+\.?\d*\s*(g|kg|ml|l|litre|litres|ltr)s?$/i, "").trim()
+    if (base && base !== t && !titleToType[base]) titleToType[base] = ty
   }
   console.log(`CSV: ${rows.length} rows, ${new Set(Object.values(titleToType)).size} types`)
 

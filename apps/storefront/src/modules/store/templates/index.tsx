@@ -2,6 +2,7 @@ import { Suspense } from "react"
 
 import SkeletonProductGrid from "@modules/skeletons/templates/skeleton-product-grid"
 import PaginatedProducts from "@modules/store/templates/paginated-products"
+import CartSidebar from "@modules/layout/components/cart-sidebar"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 
 const StoreTemplate = ({
@@ -23,21 +24,24 @@ const StoreTemplate = ({
   const sort = sortBy || "created_at"
 
   return (
-    <div className="flex flex-col small:flex-row small:items-start py-6 content-container">
-      <div className="w-full">
-        <div className="mb-8 text-2xl-semi">
-          <h1>All products</h1>
+    <div className="py-6 content-container">
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-grey-90">All products</h1>
+      </div>
+      <div className="flex gap-6">
+        <div className="flex-1 min-w-0">
+          <Suspense fallback={<SkeletonProductGrid />}>
+            <PaginatedProducts
+              sortBy={sort}
+              page={pageNumber}
+              countryCode={countryCode}
+              minPrice={minPrice}
+              maxPrice={maxPrice}
+              brand={brand}
+            />
+          </Suspense>
         </div>
-        <Suspense fallback={<SkeletonProductGrid />}>
-          <PaginatedProducts
-            sortBy={sort}
-            page={pageNumber}
-            countryCode={countryCode}
-            minPrice={minPrice}
-            maxPrice={maxPrice}
-            brand={brand}
-          />
-        </Suspense>
+        <CartSidebar countryCode={countryCode} />
       </div>
     </div>
   )
