@@ -1,7 +1,7 @@
 import { HttpTypes } from "@medusajs/types"
 import ProductCard from "./product-card"
 
-export default async function ProductPreview({
+export default function ProductPreview({
   product,
   region,
   isFeatured,

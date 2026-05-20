@@ -8,6 +8,7 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import PostcodeCheckButton from "@modules/layout/components/postcode-check-button"
 
 interface NavCategory {
   name: string
@@ -121,8 +122,9 @@ export default async function Nav() {
             </form>
           </div>
 
-          {/* Right: Account + Cart */}
+          {/* Right: Postcode + Account + Cart */}
           <div className="flex items-center gap-3 lg:gap-4 flex-shrink-0">
+            <PostcodeCheckButton />
             <LocalizedClientLink
               className="hidden sm:flex items-center gap-1.5 text-xs lg:text-sm text-grey-70 hover:text-brand-orange transition-colors"
               href="/account"

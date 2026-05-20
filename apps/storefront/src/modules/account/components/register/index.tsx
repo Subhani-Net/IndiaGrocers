@@ -1,6 +1,6 @@
 "use client"
 
-import { useActionState } from "react"
+import { useActionState, useState } from "react"
 import Input from "@modules/common/components/input"
 import { LOGIN_VIEW } from "@modules/account/templates/login-template"
 import ErrorMessage from "@modules/checkout/components/error-message"
@@ -12,12 +12,62 @@ type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void
 }
 
+const validateEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+
+const validatePassword = (password: string) => {
+  const errors: string[] = []
+  if (password.length < 8) errors.push("at least 8 characters")
+  if (!/[a-zA-Z]/.test(password)) errors.push("at least 1 letter")
+  if (!/[0-9]/.test(password)) errors.push("at least 1 number")
+  return errors
+}
+
+const PasswordRules = ({ password }: { password: string }) => {
+  const rules = validatePassword(password)
+  if (rules.length === 0) return null
+  return (
+    <ul className="text-xs text-gray-500 mt-1 space-y-0.5 pl-1">
+      <li className={!password || password.length >= 8 ? "text-green-600" : "text-gray-400"}>
+        {password.length >= 8 ? "\u2713" : "\u2022"} At least 8 characters
+      </li>
+      <li className={!/[a-zA-Z]/.test(password) ? "text-gray-400" : "text-green-600"}>
+        {/[a-zA-Z]/.test(password) ? "\u2713" : "\u2022"} At least 1 letter
+      </li>
+      <li className={!/[0-9]/.test(password) ? "text-gray-400" : "text-green-600"}>
+        {/[0-9]/.test(password) ? "\u2713" : "\u2022"} At least 1 number
+      </li>
+    </ul>
+  )
+}
+
 const Register = ({ setCurrentView }: Props) => {
   const [message, formAction] = useActionState(signup, null)
+  const [password, setPassword] = useState("")
+  const [emailError, setEmailError] = useState<string | null>(null)
+
+  const handleSubmit = (formData: FormData) => {
+    const email = formData.get("email") as string
+    const pw = formData.get("password") as string
+
+    setEmailError(null)
+
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address")
+      return
+    }
+
+    const passwordErrors = validatePassword(pw)
+    if (passwordErrors.length > 0) {
+      return
+    }
+
+    formAction(formData)
+  }
 
   return (
     <div data-testid="register-page">
-      <form className="w-full flex flex-col" action={formAction}>
+      <form className="w-full flex flex-col" action={handleSubmit}>
         <div className="flex flex-col w-full gap-y-4">
           <div className="grid grid-cols-2 gap-x-4">
             <Input
@@ -43,6 +93,9 @@ const Register = ({ setCurrentView }: Props) => {
             autoComplete="email"
             data-testid="email-input"
           />
+          {emailError && (
+            <p className="text-rose-500 text-xs -mt-2">{emailError}</p>
+          )}
           <Input
             label="Phone"
             name="phone"
@@ -50,14 +103,18 @@ const Register = ({ setCurrentView }: Props) => {
             autoComplete="tel"
             data-testid="phone-input"
           />
-          <Input
-            label="Password"
-            name="password"
-            required
-            type="password"
-            autoComplete="new-password"
-            data-testid="password-input"
-          />
+          <div>
+            <Input
+              label="Password"
+              name="password"
+              required
+              type="password"
+              autoComplete="new-password"
+              data-testid="password-input"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <PasswordRules password={password} />
+          </div>
         </div>
         <ErrorMessage error={message} data-testid="register-error" />
         <span className="text-center text-gray-500 text-sm mt-4">

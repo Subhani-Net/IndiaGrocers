@@ -38,6 +38,7 @@ export default function ProductActions({
 
   const [options, setOptions] = useState<Record<string, string | undefined>>({})
   const [isAdding, setIsAdding] = useState(false)
+  const [quantity, setQuantity] = useState(1)
   const countryCode = useParams().countryCode as string
 
   useEffect(() => {
@@ -123,7 +124,7 @@ export default function ProductActions({
     setIsAdding(true)
     await addToCart({
       variantId: selectedVariant.id,
-      quantity: 1,
+      quantity,
       countryCode,
     })
     setIsAdding(false)
@@ -172,6 +173,30 @@ export default function ProductActions({
             {stockDisplay().text}
           </span>
         </div>
+
+        {inStock && selectedVariant && isValidVariant && (
+          <div className="flex items-center gap-3">
+            <label
+              htmlFor="quantity"
+              className="text-sm font-medium text-gray-600 flex-shrink-0"
+            >
+              Qty
+            </label>
+            <select
+              id="quantity"
+              value={quantity}
+              onChange={(e) => setQuantity(Number(e.target.value))}
+              className="w-20 px-2 py-2 text-sm border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange"
+              disabled={isAdding}
+            >
+              {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
+                <option key={n} value={n}>
+                  {n}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         <Button
           onClick={handleAddToCart}

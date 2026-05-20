@@ -61,6 +61,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
 
   const maxQtyFromInventory = 10
   const maxQuantity = item.variant?.manage_inventory ? 10 : maxQtyFromInventory
+  const isOOS = item.variant?.manage_inventory && (item.variant?.inventory_quantity || 0) <= 0
 
   return (
     <Table.Row className="w-full" data-testid="product-row">
@@ -90,6 +91,11 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
         {brand && (
           <span className="inline-block mt-0.5 bg-brand-orange/10 text-brand-orange text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide">
             {brand}
+          </span>
+        )}
+        {isOOS && (
+          <span className="inline-block mt-0.5 bg-red-100 text-red-700 text-[10px] font-semibold px-1.5 py-0.5 rounded">
+            Out of Stock
           </span>
         )}
         <LineItemOptions variant={item.variant} data-testid="product-variant" />

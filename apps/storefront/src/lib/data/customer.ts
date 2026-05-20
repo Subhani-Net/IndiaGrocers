@@ -3,7 +3,7 @@
 import { sdk } from "@lib/config"
 import medusaError from "@lib/util/medusa-error"
 import { HttpTypes } from "@medusajs/types"
-import { revalidateTag } from "next/cache"
+import { revalidatePath, revalidateTag } from "next/cache"
 import { redirect } from "next/navigation"
 import {
   getAuthHeaders,
@@ -61,8 +61,20 @@ export const updateCustomer = async (body: HttpTypes.StoreUpdateCustomer) => {
 
 export async function signup(_currentState: unknown, formData: FormData) {
   const password = formData.get("password") as string
+  const email = formData.get("email") as string
+
+  if (password.length < 8) {
+    return "Password must be at least 8 characters"
+  }
+  if (!/[a-zA-Z]/.test(password)) {
+    return "Password must include at least one letter"
+  }
+  if (!/[0-9]/.test(password)) {
+    return "Password must include at least one number"
+  }
+
   const customerForm = {
-    email: formData.get("email") as string,
+    email,
     first_name: formData.get("first_name") as string,
     last_name: formData.get("last_name") as string,
     phone: formData.get("phone") as string,
@@ -70,7 +82,7 @@ export async function signup(_currentState: unknown, formData: FormData) {
 
   try {
     const token = await sdk.auth.register("customer", "emailpass", {
-      email: customerForm.email,
+      email,
       password: password,
     })
 
@@ -87,7 +99,7 @@ export async function signup(_currentState: unknown, formData: FormData) {
     )
 
     const loginToken = await sdk.auth.login("customer", "emailpass", {
-      email: customerForm.email,
+      email,
       password,
     })
 
@@ -95,11 +107,16 @@ export async function signup(_currentState: unknown, formData: FormData) {
 
     const customerCacheTag = await getCacheTag("customers")
     revalidateTag(customerCacheTag)
+    revalidatePath("/", "layout")
 
     await transferCart()
 
     return createdCustomer
   } catch (error: any) {
+    const msg = error.toString().toLowerCase()
+    if (msg.includes("already exists") || msg.includes("duplicate")) {
+      return "An account with this email already exists. Please sign in or use a different email."
+    }
     return error.toString()
   }
 }
@@ -115,6 +132,7 @@ export async function login(_currentState: unknown, formData: FormData) {
         await setAuthToken(token as string)
         const customerCacheTag = await getCacheTag("customers")
         revalidateTag(customerCacheTag)
+        revalidatePath("/", "layout")
       })
   } catch (error: any) {
     return error.toString()
@@ -258,4 +276,58 @@ export const updateCustomerAddress = async (
     .catch((err) => {
       return { success: false, error: err.toString() }
     })
+}
+
+export async function requestPasswordReset(
+  _currentState: unknown,
+  formData: FormData
+) {
+  const email = formData.get("email") as string
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return "Please enter a valid email address"
+  }
+
+  try {
+    await sdk.auth.resetPassword("customer", "emailpass", {
+      identifier: email,
+    })
+    return "success"
+  } catch (error: any) {
+    return error.toString()
+  }
+}
+
+export async function resetPassword(
+  _currentState: unknown,
+  formData: FormData
+) {
+  const token = formData.get("token") as string
+  const password = formData.get("password") as string
+
+  if (!token || token.trim().length < 4) {
+    return "Please enter the reset code sent to your email"
+  }
+
+  if (password.length < 8) {
+    return "Password must be at least 8 characters"
+  }
+  if (!/[a-zA-Z]/.test(password)) {
+    return "Password must include at least one letter"
+  }
+  if (!/[0-9]/.test(password)) {
+    return "Password must include at least one number"
+  }
+
+  try {
+    await sdk.auth.updateProvider(
+      "customer",
+      "emailpass",
+      { password },
+      token.trim()
+    )
+    return "success"
+  } catch (error: any) {
+    return error.toString()
+  }
 }

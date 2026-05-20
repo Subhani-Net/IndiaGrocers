@@ -9,7 +9,8 @@
 
 | Document | Purpose | Status |
 |---|---|---|
-| [STORE-FRONT-FEATURE-REQS.md](./STORE-FRONT-FEATURE-REQS.md) | Feature requirements (29 items) | 100% Complete |
+| [PERFORMANCE-CACHING.md](./PERFORMANCE-CACHING.md) | Caching strategy, ISR, localStorage, image optimization | ✅ |
+| [STORE-FRONT-FEATURE-REQS.md](./STORE-FRONT-FEATURE-REQS.md) | Feature requirements (52 done, 6 pending) | 52/58 |
 | [STORE-FRONT-LAUNCH-PLAN.md](./STORE-FRONT-LAUNCH-PLAN.md) | Launch plan & issues | 81% (55/68) |
 | [STORE-FRONT-PLAN.md](./STORE-FRONT-PLAN.md) | Original build plan | 83% (38/46) |
 | [BACKEND-PLAN.md](./BACKEND-PLAN.md) | Backend build plan | 53% (39/74) |

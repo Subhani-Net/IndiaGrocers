@@ -1,16 +1,11 @@
-import { listProductsWithSort } from "@lib/data/products"
+import { fetchProductsPage } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
 import ProductGridLoadMore from "@modules/store/templates/product-grid-load-more"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 
-const PRODUCT_LIMIT = 12
-
-type PaginatedProductsParams = {
-  limit: number
-  collection_id?: string[]
-  category_id?: string[]
-  id?: string[]
-  order?: string
+type LoadMoreParams = {
+  collectionId?: string
+  categoryId?: string
 }
 
 export default async function PaginatedProducts({
@@ -20,9 +15,6 @@ export default async function PaginatedProducts({
   categoryId,
   productsIds,
   countryCode,
-  minPrice,
-  maxPrice,
-  brand,
 }: {
   sortBy?: SortOptions
   page: number
@@ -34,43 +26,27 @@ export default async function PaginatedProducts({
   maxPrice?: number
   brand?: string
 }) {
-  const queryParams: PaginatedProductsParams = {
-    limit: 100,
-  }
-
-  if (collectionId) {
-    queryParams["collection_id"] = [collectionId]
-  }
-
-  if (categoryId) {
-    queryParams["category_id"] = [categoryId]
-  }
-
-  if (productsIds) {
-    queryParams["id"] = productsIds
-  }
-
-  if (sortBy === "created_at") {
-    queryParams["order"] = "created_at"
-  }
-
   const region = await getRegion(countryCode)
+  if (!region) return null
 
-  if (!region) {
-    return null
-  }
+  const loadMoreParams: LoadMoreParams = {}
+  if (collectionId) loadMoreParams.collectionId = collectionId
+  if (categoryId) loadMoreParams.categoryId = categoryId
 
-  const {
-    response: { products, count },
-  } = await listProductsWithSort({
+  const { products, count } = await fetchProductsPage({
     page: 1,
-    queryParams,
-    sortBy,
     countryCode,
-    minPrice,
-    maxPrice,
-    brand,
+    collectionId,
+    categoryId,
   })
 
-  return <ProductGridLoadMore products={products} count={count} region={region} />
+  return (
+    <ProductGridLoadMore
+      initialProducts={products}
+      totalCount={count}
+      region={region}
+      countryCode={countryCode}
+      loadMoreParams={loadMoreParams}
+    />
+  )
 }

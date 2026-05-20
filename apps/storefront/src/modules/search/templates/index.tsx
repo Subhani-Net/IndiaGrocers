@@ -2,12 +2,12 @@
 
 import { useState, useEffect, useCallback, useRef } from "react"
 import { HttpTypes } from "@medusajs/types"
-import { sdk } from "@lib/config"
 import { Spinner } from "@medusajs/icons"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import Thumbnail from "@modules/products/components/thumbnail"
 import { getProductPrice } from "@lib/util/get-product-price"
 import { useSearchParams } from "next/navigation"
+import { fetchProductsPage } from "@lib/data/products"
 
 const CATEGORY_CHIPS = [
   "Rice",
@@ -19,6 +19,14 @@ const CATEGORY_CHIPS = [
   "Oils & Ghee",
   "Tea & Coffee",
   "Pooja Items",
+]
+
+const DIETARY_CHIPS = [
+  "Vegetarian",
+  "Vegan",
+  "Gluten-Free",
+  "Halal",
+  "Organic",
 ]
 
 function extractBrand(
@@ -119,6 +127,49 @@ function SearchProductCard({
   )
 }
 
+function BrandChips({
+  products,
+  activeBrand,
+  setActiveBrand,
+}: {
+  products: HttpTypes.StoreProduct[]
+  activeBrand: string | null
+  setActiveBrand: (brand: string | null) => void
+}) {
+  const brandCounts = new Map<string, number>()
+  products.forEach((p) => {
+    const { brand } = extractBrand(p.title)
+    if (brand) {
+      brandCounts.set(brand, (brandCounts.get(brand) || 0) + 1)
+    }
+  })
+  const brands = Array.from(brandCounts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+
+  if (brands.length === 0) return null
+
+  return (
+    <div className="flex flex-wrap justify-center gap-2 mt-3">
+      {brands.map(([brand, count]) => (
+        <button
+          key={brand}
+          onClick={() =>
+            setActiveBrand(activeBrand === brand ? null : brand)
+          }
+          className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 ${
+            activeBrand === brand
+              ? "bg-brand-orange border-brand-orange text-white"
+              : "border-grey-30 text-grey-60 hover:border-brand-orange hover:text-brand-orange"
+          }`}
+        >
+          {brand} ({count})
+        </button>
+      ))}
+    </div>
+  )
+}
+
 export default function SearchTemplate() {
   const searchParams = useSearchParams()
   const qParam = searchParams.get("q")
@@ -128,9 +179,14 @@ export default function SearchTemplate() {
   const [query, setQuery] = useState(qParam || brandParam || "")
   const [products, setProducts] = useState<HttpTypes.StoreProduct[]>([])
   const [loading, setLoading] = useState(false)
+  const [loadingMore, setLoadingMore] = useState(false)
   const [searched, setSearched] = useState(false)
+  const [page, setPage] = useState(1)
+  const [totalCount, setTotalCount] = useState(0)
   const [autocompleteResults, setAutocompleteResults] = useState<HttpTypes.StoreProduct[]>([])
   const [showAutocomplete, setShowAutocomplete] = useState(false)
+  const [activeDietary, setActiveDietary] = useState<string | null>(null)
+  const [activeBrand, setActiveBrand] = useState<string | null>(null)
   const inputContainerRef = useRef<HTMLDivElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -154,35 +210,60 @@ export default function SearchTemplate() {
         )
       )
     }
+    if (activeDietary) {
+      const dietaryKey = activeDietary.toLowerCase().replace("-", " ")
+      filtered = filtered.filter((p) =>
+        p.tags?.some(
+          (t) => t.value?.toLowerCase() === dietaryKey
+        )
+      )
+    }
+    if (activeBrand) {
+      filtered = filtered.filter((p) => {
+        const { brand } = extractBrand(p.title)
+        return brand?.toLowerCase() === activeBrand.toLowerCase()
+      })
+    }
     return filtered
-  }, [brandParam, maxPriceParam])
+  }, [brandParam, maxPriceParam, activeDietary, activeBrand])
 
-  const performSearch = useCallback(async (searchQuery: string) => {
+  const performSearch = useCallback(async (searchQuery: string, pageNum: number = 1) => {
     if (!searchQuery.trim() && !hasFilters) {
       setProducts([])
       setSearched(false)
+      setTotalCount(0)
       return
     }
-    setLoading(true)
-    setSearched(true)
-    try {
-      const queryObj: Record<string, any> = { limit: 50 }
-      if (searchQuery.trim()) queryObj.q = searchQuery
 
-      const { products: results } = await sdk.client.fetch<{
-        products: HttpTypes.StoreProduct[]
-      }>(`/store/products`, {
-        method: "GET",
-        query: queryObj,
+    const isLoadingFirst = pageNum === 1
+    if (isLoadingFirst) {
+      setLoading(true)
+      setSearched(true)
+    } else {
+      setLoadingMore(true)
+    }
+
+    try {
+      const result = await fetchProductsPage({
+        page: pageNum,
+        countryCode: "gb",
+        searchQuery: searchQuery.trim() || undefined,
       })
 
-      setProducts(filterProducts(results))
+      if (isLoadingFirst) {
+        setProducts(result.products)
+        setTotalCount(result.count)
+      } else {
+        setProducts((prev) => [...prev, ...result.products])
+      }
+      setPage(pageNum)
     } catch {
-      setProducts([])
+      // silent
     } finally {
       setLoading(false)
+      setLoadingMore(false)
     }
-  }, [hasFilters, filterProducts])
+  }, [hasFilters])
 
   useEffect(() => {
     const timer = setTimeout(() => performSearch(query), 300)
@@ -196,13 +277,12 @@ export default function SearchTemplate() {
     }
     const timer = setTimeout(async () => {
       try {
-        const { products: results } = await sdk.client.fetch<{
-          products: HttpTypes.StoreProduct[]
-        }>(`/store/products`, {
-          method: "GET",
-          query: { q: query, limit: 5 },
+        const result = await fetchProductsPage({
+          page: 1,
+          countryCode: "gb",
+          searchQuery: query,
         })
-        setAutocompleteResults(results)
+        setAutocompleteResults(result.products.slice(0, 5))
       } catch {
         setAutocompleteResults([])
       }
@@ -344,6 +424,36 @@ export default function SearchTemplate() {
             ))}
           </div>
         )}
+
+        {!brandParam && (
+          <div className="flex flex-wrap justify-center gap-2 mt-3">
+            {DIETARY_CHIPS.map((chip) => (
+              <button
+                key={chip}
+                onClick={() =>
+                  setActiveDietary(
+                    activeDietary === chip ? null : chip
+                  )
+                }
+                className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 ${
+                  activeDietary === chip
+                    ? "bg-brand-green border-brand-green text-white"
+                    : "border-grey-30 text-grey-60 hover:border-brand-green hover:text-brand-green"
+                }`}
+              >
+                {chip}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {!brandParam && products.length > 0 && (
+          <BrandChips
+            products={products}
+            activeBrand={activeBrand}
+            setActiveBrand={setActiveBrand}
+          />
+        )}
       </div>
 
       <div className="mt-12">
@@ -368,7 +478,7 @@ export default function SearchTemplate() {
         {!loading && products.length > 0 && (
           <>
             <p className="text-ui-fg-subtle mb-4">
-              {products.length} result{products.length !== 1 ? "s" : ""}
+              {totalCount} result{totalCount !== 1 ? "s" : ""}
               {query
                 ? ` for "${query}"`
                 : brandParam
@@ -382,6 +492,17 @@ export default function SearchTemplate() {
                 <SearchProductCard key={product.id} product={product} />
               ))}
             </div>
+            {products.length < totalCount && (
+              <div className="flex justify-center mt-8">
+                <button
+                  onClick={() => performSearch(query, page + 1)}
+                  disabled={loadingMore}
+                  className="px-10 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-dark transition-colors disabled:opacity-50"
+                >
+                  {loadingMore ? "Loading..." : "Load More Products"}
+                </button>
+              </div>
+            )}
           </>
         )}
 

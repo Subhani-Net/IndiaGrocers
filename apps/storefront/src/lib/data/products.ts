@@ -1,4 +1,4 @@
-"use server"
+﻿"use server"
 
 import { sdk } from "@lib/config"
 import { sortProducts } from "@lib/util/sort-products"
@@ -45,17 +45,12 @@ export const listProducts = async ({
     }
   }
 
-  const headers = {
-    ...(await getAuthHeaders()),
-  }
-
-  const next = {
-    ...(await getCacheOptions("products")),
-  }
+  const headers = { ...(await getAuthHeaders()) }
+  const next = { ...(await getCacheOptions("products")) }
 
   return sdk.client
     .fetch<{ products: HttpTypes.StoreProduct[]; count: number }>(
-      `/store/products`,
+      "/store/products",
       {
         method: "GET",
         query: {
@@ -63,7 +58,7 @@ export const listProducts = async ({
           offset,
           region_id: region?.id,
           fields:
-            "*variants.calculated_price,+variants.inventory_quantity,*variants.images,+metadata,+tags,+thumbnail,+description,",
+            "*variants.calculated_price,categories.id,categories.name,+variants.inventory_quantity,*variants.images,+metadata,+tags,+thumbnail,+description,",
           ...queryParams,
         },
         headers,
@@ -73,22 +68,14 @@ export const listProducts = async ({
     )
     .then(({ products, count }) => {
       const nextPage = count > offset + limit ? pageParam + 1 : null
-
       return {
-        response: {
-          products,
-          count,
-        },
-        nextPage: nextPage,
+        response: { products, count },
+        nextPage,
         queryParams,
       }
     })
 }
 
-/**
- * This will fetch 100 products to the Next.js cache and sort them based on the sortBy parameter.
- * It will then return the paginated products based on the page and limit parameters.
- */
 export const listProductsWithSort = async ({
   page = 0,
   queryParams,
@@ -112,14 +99,9 @@ export const listProductsWithSort = async ({
 }> => {
   const limit = queryParams?.limit || 12
 
-  const {
-    response: { products, count },
-  } = await listProducts({
+  const { response: { products, count } } = await listProducts({
     pageParam: 0,
-    queryParams: {
-      ...queryParams,
-      limit: 100,
-    },
+    queryParams: { ...queryParams, limit: 100 },
     countryCode,
   })
 
@@ -154,21 +136,63 @@ export const listProductsWithSort = async ({
   }
 
   const sortedProducts = sortProducts(filteredProducts, sortBy)
-
   const pageParam = (page - 1) * limit
-
   const filteredCount = sortedProducts.length
-
   const nextPage = filteredCount > pageParam + limit ? pageParam + limit : null
-
   const paginatedProducts = sortedProducts.slice(pageParam, pageParam + limit)
 
   return {
-    response: {
-      products: paginatedProducts,
-      count: filteredCount,
-    },
+    response: { products: paginatedProducts, count: filteredCount },
     nextPage,
     queryParams,
   }
+}
+
+/**
+ * Server action for Load More: fetch a single page of products
+ */
+export async function fetchProductsPage({
+  page,
+  countryCode,
+  collectionId,
+  categoryId,
+  searchQuery,
+}: {
+  page: number
+  countryCode: string
+  collectionId?: string
+  categoryId?: string
+  searchQuery?: string
+}): Promise<{ products: HttpTypes.StoreProduct[]; count: number; page: number }> {
+  const limit = 12
+  const offset = (page - 1) * limit
+
+  const queryParams: any = { limit, offset }
+  if (collectionId) queryParams.collection_id = [collectionId]
+  if (categoryId) queryParams.category_id = [categoryId]
+  if (searchQuery) queryParams.q = searchQuery
+
+  const region = await getRegion(countryCode)
+  if (!region) return { products: [], count: 0, page }
+
+  const headers = { ...(await getAuthHeaders()) }
+  const next = { ...(await getCacheOptions("products")) }
+
+  const { products, count } = await sdk.client
+    .fetch<{ products: HttpTypes.StoreProduct[]; count: number }>("/store/products", {
+      method: "GET",
+      query: {
+        limit,
+        offset,
+        region_id: region.id,
+        fields: "title,*variants.calculated_price,variants.title,variants.id,categories.id,categories.name,+variants.inventory_quantity,*variants.images,*metadata,*tags,*thumbnail,*description,",
+        ...queryParams,
+      },
+      headers,
+      next,
+      cache: "force-cache",
+    })
+    .then(({ products, count }) => ({ products, count }))
+
+  return { products, count, page }
 }

@@ -55,7 +55,8 @@ const ImageOrPlaceholder = ({
       draggable={false}
       quality={50}
       unoptimized={true}
-      sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
+      loading="lazy"
+      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
       fill
     />
   ) : (

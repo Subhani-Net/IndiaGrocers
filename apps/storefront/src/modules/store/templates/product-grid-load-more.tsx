@@ -1,21 +1,33 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useTransition } from "react"
 import { HttpTypes } from "@medusajs/types"
 import ProductPreview from "@modules/products/components/product-preview"
+import { fetchProductsPage } from "@lib/data/products"
 
-const PRODUCTS_PER_LOAD = 12
+const PRODUCTS_PER_PAGE = 12
+
+type LoadMoreParams = {
+  collectionId?: string
+  categoryId?: string
+}
 
 export default function ProductGridLoadMore({
-  products,
-  count,
+  initialProducts,
+  totalCount,
   region,
+  countryCode,
+  loadMoreParams,
 }: {
-  products: HttpTypes.StoreProduct[]
-  count: number
+  initialProducts: HttpTypes.StoreProduct[]
+  totalCount: number
   region: HttpTypes.StoreRegion
+  countryCode: string
+  loadMoreParams: LoadMoreParams
 }) {
-  const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_LOAD)
+  const [products, setProducts] = useState(initialProducts)
+  const [page, setPage] = useState(1)
+  const [isLoading, startLoading] = useTransition()
 
   if (!products || products.length === 0) {
     return (
@@ -25,8 +37,21 @@ export default function ProductGridLoadMore({
     )
   }
 
-  const visibleProducts = products.slice(0, visibleCount)
-  const hasMore = visibleCount < products.length
+  const hasMore = products.length < totalCount
+
+  const handleLoadMore = () => {
+    startLoading(async () => {
+      const nextPage = page + 1
+      const result = await fetchProductsPage({
+        page: nextPage,
+        countryCode,
+        collectionId: loadMoreParams.collectionId,
+        categoryId: loadMoreParams.categoryId,
+      })
+      setProducts((prev) => [...prev, ...result.products])
+      setPage(nextPage)
+    })
+  }
 
   return (
     <>
@@ -34,8 +59,8 @@ export default function ProductGridLoadMore({
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
         data-testid="products-list"
       >
-        {visibleProducts.map((p) => (
-          <li key={p.id}>
+        {products.map((p) => (
+          <li key={p.id} className="h-full">
             <ProductPreview product={p} region={region} />
           </li>
         ))}
@@ -43,13 +68,14 @@ export default function ProductGridLoadMore({
       {hasMore && (
         <div className="flex flex-col items-center mt-8 gap-2">
           <p className="text-sm text-grey-50">
-            Showing {visibleCount} of {products.length} products
+            Showing {products.length} of {totalCount} products
           </p>
           <button
-            onClick={() => setVisibleCount((c) => c + PRODUCTS_PER_LOAD)}
-            className="px-10 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-dark transition-colors"
+            onClick={handleLoadMore}
+            disabled={isLoading}
+            className="px-10 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-dark transition-colors disabled:opacity-50"
           >
-            Load More Products
+            {isLoading ? "Loading..." : "Load More Products"}
           </button>
         </div>
       )}

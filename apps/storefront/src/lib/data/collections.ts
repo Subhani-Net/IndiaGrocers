@@ -34,7 +34,10 @@ export const listCollections = async (
     .fetch<{ collections: HttpTypes.StoreCollection[]; count: number }>(
       "/store/collections",
       {
-        query: queryParams,
+        query: {
+          fields: "products.id,products.title",
+          ...queryParams,
+        },
         next,
         cache: "force-cache",
       }
@@ -51,7 +54,7 @@ export const getCollectionByHandle = async (
 
   return sdk.client
     .fetch<HttpTypes.StoreCollectionListResponse>(`/store/collections`, {
-      query: { handle, fields: "*products" },
+      query: { handle, fields: "products.id,products.title" },
       next,
       cache: "force-cache",
     })

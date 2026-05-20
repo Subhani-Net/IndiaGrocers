@@ -5,6 +5,7 @@ import SkeletonProductGrid from "@modules/skeletons/templates/skeleton-product-g
 import PaginatedProducts from "@modules/store/templates/paginated-products"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartSidebar from "@modules/layout/components/cart-sidebar"
+import InlineSort from "@modules/store/components/inline-sort"
 import { HttpTypes } from "@medusajs/types"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 
@@ -66,6 +67,9 @@ export default function CollectionTemplate({
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 py-8">
+        <div className="flex items-center justify-between mb-4">
+          <InlineSort sortBy={sort} />
+        </div>
         <div className="flex gap-6">
           <div className="flex-1 min-w-0">
             <Suspense fallback={<SkeletonProductGrid numberOfProducts={12} />}>

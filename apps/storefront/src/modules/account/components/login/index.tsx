@@ -7,10 +7,21 @@ import { useActionState } from "react"
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void
+  setForgotEmail: (email: string) => void
 }
 
-const Login = ({ setCurrentView }: Props) => {
+const Login = ({ setCurrentView, setForgotEmail }: Props) => {
   const [message, formAction] = useActionState(login, null)
+
+  const handleForgotPassword = () => {
+    const emailInput = document.querySelector(
+      'input[name="email"]'
+    ) as HTMLInputElement
+    if (emailInput?.value) {
+      setForgotEmail(emailInput.value)
+    }
+    setCurrentView(LOGIN_VIEW.FORGOT_PASSWORD)
+  }
 
   return (
     <div data-testid="login-page">
@@ -35,11 +46,19 @@ const Login = ({ setCurrentView }: Props) => {
           />
         </div>
         <ErrorMessage error={message} data-testid="login-error-message" />
-        <SubmitButton data-testid="sign-in-button" className="w-full mt-6">
+        <SubmitButton data-testid="sign-in-button" className="w-full mt-4">
           Sign in
         </SubmitButton>
       </form>
-      <span className="text-center text-gray-500 text-sm mt-6 block">
+      <div className="text-center mt-3">
+        <button
+          onClick={handleForgotPassword}
+          className="text-brand-orange text-sm font-medium hover:underline"
+        >
+          Forgot your password?
+        </button>
+      </div>
+      <span className="text-center text-gray-500 text-sm mt-4 block">
         Not a member?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}

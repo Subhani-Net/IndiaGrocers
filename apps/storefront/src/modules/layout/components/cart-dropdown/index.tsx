@@ -116,7 +116,7 @@ const CartDropdown = ({
                         ? -1
                         : 1
                     })
-                    .slice(0, 3)
+                     .slice(0, 5)
                     .map((item) => (
                       <div
                         className="grid grid-cols-[80px_1fr] gap-x-3"
@@ -177,9 +177,9 @@ const CartDropdown = ({
                         </div>
                       </div>
                     ))}
-                  {cartState.items.length > 3 && (
+                  {cartState.items.length > 5 && (
                     <p className="text-xs text-grey-50 text-center border-t border-grey-10 pt-3">
-                      +{cartState.items.length - 3} more item{cartState.items.length - 3 > 1 ? "s" : ""} in bag
+                      +{cartState.items.length - 5} more item{cartState.items.length - 5 > 1 ? "s" : ""} in bag
                     </p>
                   )}
                 </div>
