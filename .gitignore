@@ -64,3 +64,6 @@ Thumbs.db
 # Backend uploads / static (large binary files)
 **/uploads/
 **/static/
+
+# opencode config
+opencode.json
