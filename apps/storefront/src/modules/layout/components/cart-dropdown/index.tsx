@@ -39,9 +39,7 @@ const CartDropdown = ({
 
   const timedOpen = () => {
     open()
-
     const timer = setTimeout(close, 5000)
-
     setActiveTimer(timer)
   }
 
@@ -49,7 +47,6 @@ const CartDropdown = ({
     if (activeTimer) {
       clearTimeout(activeTimer)
     }
-
     open()
   }
 
@@ -77,13 +74,13 @@ const CartDropdown = ({
     >
       <Popover className="relative h-full">
         <PopoverButton className="h-full">
-          <div className="relative flex items-center gap-2 text-sm text-grey-70 hover:text-brand-orange transition-colors" data-testid="nav-cart-link">
+          <div className="relative flex items-center gap-1.5 text-sm text-grey-70 hover:text-brand-orange transition-colors rounded-xl px-2 py-1.5 hover:bg-brand-orange/5 press-scale" data-testid="nav-cart-link">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
-            <span>Cart</span>
+            <span className="hidden lg:inline font-medium">Cart</span>
             {totalItems > 0 && (
-              <span className="absolute -top-2 -right-2 small:static small:ml-1 bg-brand-orange text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 lg:static lg:ml-1.5 bg-brand-orange text-white text-[10px] font-bold min-w-[20px] h-[20px] rounded-full flex items-center justify-center px-1 shadow-sm">
                 {totalItems > 99 ? "99+" : totalItems}
               </span>
             )}
@@ -101,15 +98,15 @@ const CartDropdown = ({
         >
           <PopoverPanel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[420px] text-ui-fg-base"
+            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white/95 backdrop-blur-2xl border border-grey-20/80 shadow-[0_16px_48px_rgba(0,0,0,0.12)] rounded-2xl w-[420px] overflow-hidden"
             data-testid="nav-cart-dropdown"
           >
-            <div className="p-4 flex items-center justify-center border-b border-grey-20">
-              <h3 className="text-large-semi text-grey-90">Shopping Bag</h3>
+            <div className="p-4 flex items-center justify-center border-b border-grey-20/60">
+              <h3 className="text-base font-bold text-grey-90">Shopping Bag</h3>
             </div>
             {cartState && cartState.items?.length ? (
               <>
-                <div className="overflow-y-scroll max-h-[360px] px-4 grid grid-cols-1 gap-y-6 no-scrollbar p-px py-4">
+                <div className="overflow-y-scroll max-h-[360px] px-4 grid grid-cols-1 gap-y-4 no-scrollbar p-px py-4">
                   {cartState.items
                     .sort((a, b) => {
                       return (a.created_at ?? "") > (b.created_at ?? "")
@@ -125,7 +122,7 @@ const CartDropdown = ({
                       >
                         <LocalizedClientLink
                           href={`/products/${item.product_handle}`}
-                          className="w-20"
+                          className="w-20 rounded-xl overflow-hidden border border-grey-10/60"
                         >
                           <Thumbnail
                             thumbnail={item.thumbnail}
@@ -169,7 +166,7 @@ const CartDropdown = ({
                           </div>
                           <DeleteButton
                             id={item.id}
-                            className="text-xs text-grey-50 hover:text-brand-red mt-1"
+                            className="text-xs text-grey-40 hover:text-brand-red mt-0.5 transition-colors self-start"
                             data-testid="cart-item-remove-button"
                           >
                             Remove
@@ -178,18 +175,18 @@ const CartDropdown = ({
                       </div>
                     ))}
                   {cartState.items.length > 5 && (
-                    <p className="text-xs text-grey-50 text-center border-t border-grey-10 pt-3">
+                    <p className="text-xs text-grey-50 text-center border-t border-grey-10/60 pt-3">
                       +{cartState.items.length - 5} more item{cartState.items.length - 5 > 1 ? "s" : ""} in bag
                     </p>
                   )}
                 </div>
-                <div className="p-4 flex flex-col gap-y-4 text-small-regular border-t border-grey-20">
+                <div className="p-4 flex flex-col gap-y-3 border-t border-grey-20/60">
                   <div className="flex items-center justify-between">
-                    <span className="text-grey-70 font-semibold">
+                    <span className="text-sm font-semibold text-grey-70">
                       Subtotal
                     </span>
                     <span
-                      className="text-base font-bold text-brand-orange"
+                      className="text-base font-bold text-grey-90"
                       data-testid="cart-subtotal"
                       data-value={subtotal}
                     >
@@ -201,12 +198,12 @@ const CartDropdown = ({
                   </div>
                   <div className="flex flex-col gap-2">
                     <LocalizedClientLink href="/cart" passHref>
-                      <button className="btn-primary w-full text-sm !py-2.5" data-testid="go-to-cart-button">
+                      <button className="w-full py-2.5 bg-brand-orange text-white text-sm font-semibold rounded-xl hover:bg-brand-orange-dark active:scale-[0.97] transition-all duration-200" data-testid="go-to-cart-button">
                         View Cart
                       </button>
                     </LocalizedClientLink>
                     <LocalizedClientLink href="/checkout" passHref>
-                      <button className="btn-primary w-full text-sm !py-2.5" data-testid="go-to-checkout-button">
+                      <button className="w-full py-2.5 bg-grey-90 text-white text-sm font-semibold rounded-xl hover:bg-grey-80 active:scale-[0.97] transition-all duration-200" data-testid="go-to-checkout-button">
                         Checkout
                       </button>
                     </LocalizedClientLink>

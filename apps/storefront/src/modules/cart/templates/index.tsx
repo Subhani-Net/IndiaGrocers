@@ -33,7 +33,7 @@ const CartTemplate = ({
                     <Divider />
                   </>
                 )}
-                <ItemsTemplate cart={cart} />
+                <ItemsTemplate cart={cart ?? undefined} />
               </div>
               <div className="relative">
                 <div className="flex flex-col gap-y-8 sticky top-12">

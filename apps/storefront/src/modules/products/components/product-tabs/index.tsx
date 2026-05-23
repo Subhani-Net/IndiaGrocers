@@ -1,5 +1,6 @@
 ﻿"use client"
 
+import React from "react"
 import Accordion from "./accordion"
 import { HttpTypes } from "@medusajs/types"
 

@@ -1,0 +1,662 @@
+﻿[
+    {
+        "variants":  [
+                         "100g",
+                         "1kg",
+                         "400g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Coarse Black Pepper",
+        "image_filename":  "TRS Coarse Black Pepper.png",
+        "category":  "Spices",
+        "description":  "Coarse Black pepper retains a larger grind and a more powerful aroma and flavour than the finer grinds.",
+        "image_relative_path":  "images/TRS Coarse Black Pepper.png"
+    },
+    {
+        "variants":  [
+                         "1.5kg",
+                         "500g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Coarse Cornmeal",
+        "image_filename":  "TRS Coarse Cornmeal.png",
+        "category":  "Flours",
+        "description":  "Naturally gluten-free, cornmeal products add texture and flavour to various dishes. Cornmeal is perfect in cornbread, porridge, or even cakes. Mix with rich flavours in main dishes, sides, and sweet treats.",
+        "image_relative_path":  "images/TRS Coarse Cornmeal.png"
+    },
+    {
+        "variants":  [
+                         "1.5kg",
+                         "500g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Coarse Semolina",
+        "image_filename":  "TRS Coarse Semolina.png",
+        "category":  "Flours",
+        "description":  "Coarse Semolina is a coarsely milled wheat used to make cereals, puddings, pasta, and sweet dishes. Semolina is quite popular in South Asian and African cuisine.",
+        "image_relative_path":  "images/TRS Coarse Semolina.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "1kg",
+                         "200g",
+                         "400g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Coriander Powder (Dhania)",
+        "image_filename":  "TRS Coriander Powder (Dhania).png",
+        "category":  "Spices",
+        "description":  "Thicken and flavour curry, gravy, and other sauces with our warming coriander powder. Mellow and bittersweet, this versatile spice can enhance various dishes, from sambhars to salads. It is a cupboard essential to add flavour to your cooking at a momentâ€™s notice.",
+        "image_relative_path":  "images/TRS Coriander Powder (Dhania).png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "250g",
+                         "3kg",
+                         "750g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Coriander Seeds (Whole Dhania)",
+        "image_filename":  "TRS Coriander Seeds (Whole Dhania).png",
+        "category":  "Spices",
+        "description":  "Our aromatic and warming whole coriander is ideal for cooking authentic South Asian dishes. Mellow and bittersweet, this versatile spice can be used in various dishes, from soups to salads. Perfect for your pantry to add flavour to your cooking at a momentâ€™s notice.",
+        "image_relative_path":  "images/TRS Coriander Seeds (Whole Dhania).png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "250g",
+                         "3kg",
+                         "750g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Crushed Chilli",
+        "image_filename":  "TRS Crushed Chilli.png",
+        "category":  "Spices",
+        "description":  "Dial up the heat with a sprinkling of our extra hot crushed chillies. Stir into your favourite dishes or add sparingly as a table condiment to pack a punch. Our crushed chillies can invigorate everyday meals like pasta and soup for fiery flavours.",
+        "image_relative_path":  "images/TRS Crushed Chilli.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "400g",
+                         "1Kg",
+                         "5Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Cumin Powder",
+        "image_filename":  "TRS Cumin Powder.png",
+        "category":  "Spices",
+        "description":  "Our warm and aromatic cumin powder is at the heart of South Asian cooking and many more cuisines. Sprinkle on stir fries, salads, or in aloo gobi and stews for a distinctive musky taste. A perfect partner to meat and vegetables.",
+        "image_relative_path":  "images/TRS Cumin Powder.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "1kg",
+                         "400g",
+                         "4kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Cumin Seeds",
+        "image_filename":  "TRS Cumin Seeds.png",
+        "category":  "Spices",
+        "description":  "Our warm and aromatic cumin powder is at the heart of Indian cooking and other cuisines. Sprinkle on stir fries, salads, or in aloo gobi and stews for a distinctive musky taste. A perfect partner to meat, vegetables and more, cumin is sure to add delight to your dishes.",
+        "image_relative_path":  "images/TRS Cumin Seeds.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "1kg",
+                         "400g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Fennel Seeds",
+        "image_filename":  "TRS Fennel Seeds.png",
+        "category":  "Spices",
+        "description":  "Sweet and aromatic with liquorice tones, our fennel seeds are perfect for flavouring everything from curries to cakes. This mild and fragrant seed is an ideal partner for fish dishes and adds flavour to soups and salads. Dry roast to enhance the aroma.",
+        "image_relative_path":  "images/TRS Fennel Seeds.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "1kg",
+                         "300g",
+                         "50g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Fenugreek Leaves",
+        "image_filename":  "TRS Fenugreek Leaves.png",
+        "category":  "Spices",
+        "description":  "Our intense and bittersweet fenugreek leaves are an ideal spice in curries. Aromatic with a maple syrup flavour, our fenugreek leaves are a flavoursome addition to many savoury dishes. Keep it in your pantry to add flavour to everything from sauces to stews.",
+        "image_relative_path":  "images/TRS Fenugreek Leaves.png"
+    },
+    {
+        "variants":  [
+                         "50g",
+                         "100g",
+                         "300g",
+                         "1Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Fenugreek Seeds",
+        "image_filename":  "TRS Fenugreek Seeds.png",
+        "category":  "Spices",
+        "description":  "Our intense and bittersweet fenugreek seeds are ideal in curries. Aromatic with a maple syrup flavour, our fenugreek seeds are a flavoursome addition to many savoury dishes. Keep it in your pantry to add flavour to everything from sauces to stews.",
+        "image_relative_path":  "images/TRS Fenugreek Seeds.png"
+    },
+    {
+        "variants":  [
+                         "300g",
+                         "1kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Fine Desiccated Coconut",
+        "image_filename":  "TRS Fine Desiccated Coconut.png",
+        "category":  "Dried Fruit Nuts",
+        "description":  "Desiccated coconut is finely ground coconut, rather than bigger strips. It is high in fibre. This is also usually drier than shredded coconut.",
+        "image_relative_path":  "images/TRS Fine Desiccated Coconut.png"
+    },
+    {
+        "variants":  [
+                         "1.5kg",
+                         "500g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Fine Semolina",
+        "image_filename":  "TRS Fine Semolina.png",
+        "category":  "Flours",
+        "description":  "Enjoy the lovely aroma of baking with our fine semolina. Make sweet dishes like a traditional semolina pudding or savoury favourites like pasta and pizza. This versatile ingredient is a perfect pantry staple.",
+        "image_relative_path":  "images/TRS Fine Semolina.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "200g",
+                         "400g",
+                         "500g",
+                         "1Kg",
+                         "5Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Garam Masala",
+        "image_filename":  "TRS Garam Masala.png",
+        "category":  "Spices",
+        "description":  "Our garam masala powder is a delicious blend of fragrant spices that brings depth of flavour and authenticity to your dishes. Warming and complex, it’s an aromatic addition to any curry.",
+        "image_relative_path":  "images/TRS Garam Masala.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "1kg",
+                         "400g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Garlic Powder",
+        "image_filename":  "TRS Garlic Powder.png",
+        "category":  "Spices",
+        "description":  "TRS Garlic powder is made from dehydrated garlic that has been dried and ground into fine particles.",
+        "image_relative_path":  "images/TRS Garlic Powder.png"
+    },
+    {
+        "variants":  [
+                         "1kg",
+                         "300g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Ginger \u0026 Garlic Paste",
+        "image_filename":  "TRS Ginger and Garlic Paste.png",
+        "category":  "Condiments Sauces",
+        "description":  "Combine the lively flavours of ginger and garlic with your favourite dish. Easy to use, this staple duo will liven up everything from stir fries to curries. Spice up your culinary adventures with the exciting addition of garlic and ginger.",
+        "image_relative_path":  "images/TRS Ginger and Garlic Paste.png"
+    },
+    {
+        "variants":  [
+                         "1kg",
+                         "300g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Ginger Paste",
+        "image_filename":  "TRS Ginger Paste.png",
+        "category":  "Condiments Sauces",
+        "description":  " ",
+        "image_relative_path":  "images/TRS Ginger Paste.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "400g",
+                         "1Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Ginger Powder",
+        "image_filename":  "TRS Ginger Powder.png",
+        "category":  "Spices",
+        "description":  "Gorgeously zesty, our ground ginger will bring warm and spicy tones to everything from dals and curries to your favourite baked treats. Spice up your culinary stories with the zingy addition of ginger. Keep in your cupboard for a pinch of aromatic flavour whenever you need it.",
+        "image_relative_path":  "images/TRS Ginger Powder.png"
+    },
+    {
+        "variants":  [
+                         "200g",
+                         "50g",
+                         "750g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Green Cardamom",
+        "image_filename":  "TRS Green Cardamom.png",
+        "category":  "Spices",
+        "description":  "Cardamom pods are the seed pods of a tropical fruit of the ginger family, known as Elettaria cardamomum. Green cardamom is recognised as having a superior flavour.",
+        "image_relative_path":  "images/TRS Green Cardamom.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1kg",
+                         "2kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Green Lentils",
+        "image_filename":  "TRS Green Lentils.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Green Lentils.png"
+    },
+    {
+        "variants":  [
+
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Green Peas",
+        "image_filename":  "TRS Green Peas.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Green Peas.png"
+    },
+    {
+        "variants":  [
+                         "1.5kg",
+                         "500g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Ground Rice",
+        "image_filename":  "TRS Ground Rice.png",
+        "category":  "Rice",
+        "description":  "TRS ground rice is milled and specially treated to ensure it is free from any impurities. This versatile product can be used in savouries and sweets.",
+        "image_relative_path":  "images/TRS Ground Rice.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "400g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Hot Madras Curry",
+        "image_filename":  "TRS Hot Madras Curry.png",
+        "category":  "Spices",
+        "description":  "An aromatic blend of spices that provides flavour and heat for the perfect taste to complete your dish.",
+        "image_relative_path":  "images/TRS Hot Madras Curry.png"
+    },
+    {
+        "variants":  [
+
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Mango Powder (Amchoor)",
+        "image_filename":  "TRS Mango Powder (Amchoor).png",
+        "category":  "Spices",
+        "description":  "Authentic \u0026 Flavourful",
+        "image_relative_path":  "images/TRS Mango Powder (Amchoor).png"
+    },
+    {
+        "variants":  [
+                         "1kg",
+                         "2kg",
+                         "400g",
+                         "500g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Mild Madras Curry Powder",
+        "image_filename":  "TRS Mild Madras Curry Powder.png",
+        "category":  "Pulses",
+        "description":  " ",
+        "image_relative_path":  "images/TRS Mild Madras Curry Powder.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1kg",
+                         "2kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Moth Beans",
+        "image_filename":  "TRS Moth Beans.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Moth Beans.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1Kg",
+                         "2Kg",
+                         "5Kg",
+                         ""
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Mung Beans",
+        "image_filename":  "TRS Mung Beans.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Mung Beans.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1Kg",
+                         "2Kg",
+                         "5Kg",
+                         "25Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Mung Dal",
+        "image_filename":  "TRS Mung Dal.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Mung Dal.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1kg",
+                         "2kg"
+                     ],
+        "image_exists":  false,
+        "product_name":  "TRS Mung Dal Chilka (Split Green Peas)",
+        "image_filename":  "TRS Mung Dal Chilka (Split Green Peas).jpg",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  null
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "1kg",
+                         "400g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Paprika Powder",
+        "image_filename":  "TRS Paprika Powder.png",
+        "category":  "Spices",
+        "description":  "Our paprika powder is a feast for the eyes and tastebuds. This tantalising red spice brightens your cooking with colour and fabulous flavour. Jazz up your meals and add a splash of colour to soups and sauces.",
+        "image_relative_path":  "images/TRS Paprika Powder.png"
+    },
+    {
+        "variants":  [
+
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Pomegranate Powder (Anardana)",
+        "image_filename":  "TRS Pomegranate Powder (Anardana).png",
+        "category":  "Spices",
+        "description":  "Authentic \u0026 Flavourful",
+        "image_relative_path":  "images/TRS Pomegranate Powder (Anardana).png"
+    },
+    {
+        "variants":  [
+
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Pomegranate Seeds (Anardana Whole)",
+        "image_filename":  "TRS Pomegranate Seeds (Anardana Whole).jpg",
+        "category":  "Spices",
+        "description":  "Authentic \u0026 Flavourful",
+        "image_relative_path":  "images/TRS Pomegranate Seeds (Anardana Whole).jpg"
+    },
+    {
+        "variants":  [
+                         "2kg",
+                         "500g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Popcorn",
+        "image_filename":  "TRS Popcorn.png",
+        "category":  "Snacks",
+        "description":  "Make fresh, crunchy popcorn in just three minutes at home. This tasty snack is irresistible when you add your favourite sweet or savoury toppings. Our popcorn is the perfect partner for a cosy movie night.",
+        "image_relative_path":  "images/TRS Popcorn.png"
+    },
+    {
+        "variants":  [
+                         "1kg",
+                         "20kg",
+                         "2kg"
+                     ],
+        "image_exists":  false,
+        "product_name":  "TRS Pure Gram Flour",
+        "image_filename":  "TRS Pure Gram Flour.jpg",
+        "category":  "Flours",
+        "description":  "Our stone-milled gram flour is mild, nutty, and a staple in South Asian cuisine. Make everything from pancakes to pakoras with this versatile ingredient. This earthy flour is perfect for savoury recipes.",
+        "image_relative_path":  null
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "2Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Red Adzuki Beans (Red Cow Peas)",
+        "image_filename":  "TRS Red Adzuki Beans (Red Cow Peas).png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Red Adzuki Beans (Red Cow Peas).png"
+    },
+    {
+        "variants":  [
+                         "1kg",
+                         "2kg",
+                         "400g",
+                         "500g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Red Kidney Beans",
+        "image_filename":  "TRS Red Kidney Beans.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Red Kidney Beans.png"
+    },
+    {
+        "variants":  [
+                         "1kg",
+                         "2kg",
+                         "500g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Red Split Lentils",
+        "image_filename":  "TRS Red Split Lentils.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Red Split Lentils.png"
+    },
+    {
+        "variants":  [
+                         "25kg",
+                         "2kg",
+                         "500g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Rosecoco Beans",
+        "image_filename":  "TRS Rosecoco Beans.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Rosecoco Beans.png"
+    },
+    {
+        "variants":  [
+                         "450g",
+                         "850g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Sarson Ka Saag (Spiced Mustard Greens Curry)",
+        "image_filename":  "TRS Sarson Ka Saag (Spiced Mustard Greens Curry).png",
+        "category":  "Cans",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Sarson Ka Saag (Spiced Mustard Greens Curry).png"
+    },
+    {
+        "variants":  [
+                         "1.5kg",
+                         "500g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Tapioca Pearls",
+        "image_filename":  "TRS Tapioca Pearls.png",
+        "category":  "Speciality",
+        "description":  "The delicate taste of our tapioca pearls is perfect for sweet treats. Naturally gluten-free, tapioca pearls are delicious in warm or cold creations. Keep them in the cupboard for a neutral base for all your sweet drinks and puddings.",
+        "image_relative_path":  "images/TRS Tapioca Pearls.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1Kg",
+                         "2Kg",
+                         "25Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Toor Dal",
+        "image_filename":  "TRS Toor Dal.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Toor Dal.png"
+    },
+    {
+        "variants":  [
+                         "100g",
+                         "400g",
+                         "1Kg",
+                         "5Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Tumeric Powder",
+        "image_filename":  "TRS Tumeric Powder.png",
+        "category":  "Spices",
+        "description":  "TRS Turmeric lands a wonderful, woody aroma and flavour to dals, vegetables, meat, poultry and seafood dishes. Haldi (Turmeric) is used in pilau rice which creates a golden colour.",
+        "image_relative_path":  "images/TRS Tumeric Powder.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1Kg",
+                         "2Kg",
+                         "5Kg",
+                         "25Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Urid Beans",
+        "image_filename":  "TRS Urid Beans.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Urid Beans.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1kg",
+                         "2Kg",
+                         "5Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Urid Dal",
+        "image_filename":  "TRS Urid Dal.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Urid Dal.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1kg",
+                         "2kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Urid Dal Chilka",
+        "image_filename":  "TRS Urid Dal Chilka.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Urid Dal Chilka.png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "1kg",
+                         "2Kg",
+                         "5Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Urid Whole Gota",
+        "image_filename":  "TRS Urid Whole Gota.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Urid Whole Gota.png"
+    },
+    {
+        "variants":  [
+                         "1.5kg",
+                         "500g",
+                         "5kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS White Maize Meal",
+        "image_filename":  "TRS White Maize Meal.png",
+        "category":  "Flours",
+        "description":  "Our versatile white maize meal is perfect for a variety of dishes. Use flour to make bread and Rotis or in porridge and puddings. White maize meal is a staple food in several cuisines.",
+        "image_relative_path":  "images/TRS White Maize Meal.png"
+    },
+    {
+        "variants":  [
+                         "1.5kg",
+                         "200g",
+                         "400g",
+                         "50g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Whole Cinnamon (Dalchini)",
+        "image_filename":  "TRS Whole Cinnamon (Dalchini).png",
+        "category":  "Spices",
+        "description":  "Add some comforting whole cinnamon to rich curries and hot drinks. Perfect for adding depth and warmth to meats and stirring festive flavours into seasonal beverages. Whole cinnamon is a pantry staple for sweet and savoury dishes.",
+        "image_relative_path":  "images/TRS Whole Cinnamon (Dalchini).png"
+    },
+    {
+        "variants":  [
+                         "500g",
+                         "2Kg"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Yellow Peas",
+        "image_filename":  "TRS Yellow Peas.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Yellow Peas.png"
+    },
+    {
+        "variants":  [
+                         "2kg",
+                         "500g"
+                     ],
+        "image_exists":  true,
+        "product_name":  "TRS Yellow Split Peas",
+        "image_filename":  "TRS Yellow Split Peas.png",
+        "category":  "Pulses",
+        "description":  "Tasty \u0026 Nutritious",
+        "image_relative_path":  "images/TRS Yellow Split Peas.png"
+    }
+]

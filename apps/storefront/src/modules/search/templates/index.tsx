@@ -5,7 +5,7 @@ import { HttpTypes } from "@medusajs/types"
 import { Spinner } from "@medusajs/icons"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import Thumbnail from "@modules/products/components/thumbnail"
-import { getProductPrice } from "@lib/util/get-product-price"
+import ProductCard from "@modules/products/components/product-preview/product-card"
 import { useSearchParams } from "next/navigation"
 import { fetchProductsPage } from "@lib/data/products"
 
@@ -45,88 +45,6 @@ function extractBrand(
   return { brand: null, cleanTitle: title }
 }
 
-function formatPrice(amount: number, currency: string = "gbp"): string {
-  return new Intl.NumberFormat("en-GB", {
-    style: "currency",
-    currency: currency.toUpperCase(),
-    minimumFractionDigits: 2,
-  }).format(amount / 100)
-}
-
-function SearchProductCard({
-  product,
-}: {
-  product: HttpTypes.StoreProduct
-}) {
-  const { cheapestPrice } = getProductPrice({ product })
-  const { brand, cleanTitle } = extractBrand(product.title)
-  const firstOption = product.options?.[0]
-  const optionValues = firstOption
-    ? Array.from(
-        new Set(
-          product.variants?.map(
-            (v: any) => v.options?.[firstOption.title]
-          )
-        )
-      )
-    : []
-  const minPrice = cheapestPrice?.calculated_price_number
-
-  return (
-    <LocalizedClientLink
-      href={`/products/${product.handle}`}
-      className="group block"
-    >
-      <div className="product-card" data-testid="product-wrapper">
-        <div className="relative aspect-square overflow-hidden bg-grey-10">
-          <Thumbnail
-            thumbnail={product.thumbnail}
-            images={product.images}
-            size="square"
-          />
-          {brand && (
-            <span className="absolute top-2 left-2 bg-brand-orange text-white text-[10px] font-semibold px-2 py-0.5 rounded uppercase tracking-wide">
-              {brand}
-            </span>
-          )}
-        </div>
-        <div className="p-3">
-          <h3 className="text-sm font-semibold text-grey-90 leading-tight line-clamp-2 group-hover:text-brand-orange transition-colors min-h-[2.5rem]">
-            {cleanTitle}
-          </h3>
-          <div className="mt-1.5 flex items-baseline gap-1.5">
-            <span className="text-base font-bold text-brand-red">
-              {minPrice ? `From ${formatPrice(minPrice)}` : "—"}
-            </span>
-          </div>
-          {optionValues.length > 1 && (
-            <div className="mt-2 flex flex-wrap gap-1">
-              {optionValues.slice(0, 4).map((val: string) => (
-                <span
-                  key={val}
-                  className="text-[10px] px-2 py-0.5 rounded-full border border-grey-20 text-grey-60"
-                >
-                  {val}
-                </span>
-              ))}
-              {optionValues.length > 4 && (
-                <span className="text-[10px] text-grey-40">
-                  +{optionValues.length - 4}
-                </span>
-              )}
-            </div>
-          )}
-          <div className="mt-3">
-            <span className="block w-full text-center text-xs font-semibold text-brand-orange border border-brand-orange rounded-lg py-1.5 group-hover:bg-brand-orange group-hover:text-white transition-all duration-200">
-              Add
-            </span>
-          </div>
-        </div>
-      </div>
-    </LocalizedClientLink>
-  )
-}
-
 function BrandChips({
   products,
   activeBrand,
@@ -157,10 +75,10 @@ function BrandChips({
           onClick={() =>
             setActiveBrand(activeBrand === brand ? null : brand)
           }
-          className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 ${
+          className={`px-5 py-2 text-sm font-medium rounded-full border transition-all duration-200 press-scale ${
             activeBrand === brand
-              ? "bg-brand-orange border-brand-orange text-white"
-              : "border-grey-30 text-grey-60 hover:border-brand-orange hover:text-brand-orange"
+              ? "bg-brand-orange border-brand-orange text-white shadow-md"
+              : "border-grey-30/80 text-grey-60 bg-white hover:border-brand-orange hover:text-brand-orange hover:shadow-sm"
           }`}
         >
           {brand} ({count})
@@ -318,19 +236,23 @@ export default function SearchTemplate() {
           <LocalizedClientLink href="/" className="hover:text-brand-orange transition-colors">
             Home
           </LocalizedClientLink>
-          <span className="text-grey-30">/</span>
+          <svg className="w-3 h-3 text-grey-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
           <LocalizedClientLink href="/brands" className="hover:text-brand-orange transition-colors">
             Brands
           </LocalizedClientLink>
-          <span className="text-grey-30">/</span>
+          <svg className="w-3 h-3 text-grey-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
           <span className="text-brand-orange font-semibold">{brandParam}</span>
         </nav>
       )}
 
       {brandParam && (
-        <div className="bg-brand-orange rounded-xl p-6 mb-8 text-white">
-          <h2 className="text-2xl font-bold">{brandParam}</h2>
-          <p className="text-white/80 mt-1">
+        <div className="bg-gradient-to-br from-brand-orange via-brand-orange-light to-brand-orange rounded-2xl p-8 mb-8 text-white shadow-xl">
+          <h2 className="text-3xl font-bold tracking-tight">{brandParam}</h2>
+          <p className="text-white/80 mt-1.5 text-sm">
             {products.length} product{products.length !== 1 ? "s" : ""}
           </p>
         </div>
@@ -345,6 +267,11 @@ export default function SearchTemplate() {
         </p>
 
         <div className="relative" ref={inputContainerRef}>
+          <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-grey-40">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
           <input
             type="text"
             value={query}
@@ -356,7 +283,7 @@ export default function SearchTemplate() {
               if (query.trim() && !hasFilters) setShowAutocomplete(true)
             }}
             placeholder="Search for rice, spices, dals, snacks..."
-            className="w-full h-14 px-6 text-lg border-2 border-gray-200 rounded-xl outline-none transition-all duration-200 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/20"
+            className="w-full h-14 pl-12 pr-6 text-lg bg-grey-5 border-2 border-grey-20/80 rounded-2xl text-grey-90 placeholder-grey-40 outline-none transition-all duration-200 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/20 focus:bg-white"
           />
           {loading && (
             <div className="absolute right-4 top-1/2 -translate-y-1/2">
@@ -367,7 +294,7 @@ export default function SearchTemplate() {
           {showAutocomplete && autocompleteResults.length > 0 && query.trim() && !loading && !hasFilters && (
             <div
               ref={dropdownRef}
-              className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-lg border border-grey-20 z-50 overflow-hidden"
+              className="absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.12)] border border-grey-20/80 z-50 overflow-hidden"
             >
               {autocompleteResults.map((product) => {
                 const { brand } = extractBrand(product.title)
@@ -375,10 +302,10 @@ export default function SearchTemplate() {
                   <LocalizedClientLink
                     key={product.id}
                     href={`/products/${product.handle}`}
-                    className="flex items-center gap-3 px-4 py-3 hover:bg-grey-5 transition-colors border-b border-grey-10 last:border-b-0"
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-brand-orange/5 transition-colors border-b border-grey-20/40 last:border-b-0"
                     onClick={() => setShowAutocomplete(false)}
                   >
-                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-grey-10 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl overflow-hidden bg-grey-10 flex-shrink-0 border border-grey-10/60">
                       {product.thumbnail && (
                         <img
                           src={product.thumbnail}
@@ -393,7 +320,7 @@ export default function SearchTemplate() {
                       </p>
                     </div>
                     {brand && (
-                      <span className="text-[10px] font-semibold text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded flex-shrink-0">
+                      <span className="text-[10px] font-semibold text-brand-saffron bg-brand-saffron/10 px-2 py-0.5 rounded-full flex-shrink-0">
                         {brand}
                       </span>
                     )}
@@ -402,7 +329,7 @@ export default function SearchTemplate() {
               })}
               <LocalizedClientLink
                 href={`/search?q=${encodeURIComponent(query)}`}
-                className="block px-4 py-3 text-sm text-brand-orange font-semibold hover:bg-grey-5 transition-colors text-center border-t border-grey-10"
+                className="block px-4 py-3.5 text-sm font-semibold text-brand-orange hover:bg-brand-orange/5 transition-colors text-center border-t border-grey-20/40 press-scale"
                 onClick={() => setShowAutocomplete(false)}
               >
                 View all results for &ldquo;{query}&rdquo;
@@ -417,7 +344,7 @@ export default function SearchTemplate() {
               <button
                 key={chip}
                 onClick={() => handleChipClick(chip)}
-                className="px-4 py-1.5 text-sm rounded-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-200"
+                className="px-5 py-2 text-sm font-medium rounded-full border border-brand-orange/60 text-brand-orange bg-white hover:bg-brand-orange hover:text-white active:scale-95 transition-all duration-200 shadow-sm press-scale"
               >
                 {chip}
               </button>
@@ -435,10 +362,10 @@ export default function SearchTemplate() {
                     activeDietary === chip ? null : chip
                   )
                 }
-                className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 ${
+                className={`px-5 py-2 text-sm font-medium rounded-full border transition-all duration-200 press-scale ${
                   activeDietary === chip
-                    ? "bg-brand-green border-brand-green text-white"
-                    : "border-grey-30 text-grey-60 hover:border-brand-green hover:text-brand-green"
+                    ? "bg-brand-green border-brand-green text-white shadow-md"
+                    : "border-grey-30/80 text-grey-60 bg-white hover:border-brand-green hover:text-brand-green hover:shadow-sm"
                 }`}
               >
                 {chip}
@@ -487,9 +414,9 @@ export default function SearchTemplate() {
                     ? ` under £${maxPriceParam}`
                     : ""}
             </p>
-            <div className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-3 sm:gap-4">
               {products.map((product) => (
-                <SearchProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
             {products.length < totalCount && (
@@ -497,9 +424,17 @@ export default function SearchTemplate() {
                 <button
                   onClick={() => performSearch(query, page + 1)}
                   disabled={loadingMore}
-                  className="px-10 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-dark transition-colors disabled:opacity-50"
+                  className="px-10 py-3.5 bg-brand-orange text-white font-semibold rounded-xl hover:bg-brand-orange-dark active:scale-[0.97] transition-all duration-200 disabled:opacity-50 shadow-lg shadow-brand-orange/20 press-scale"
                 >
-                  {loadingMore ? "Loading..." : "Load More Products"}
+                  {loadingMore ? (
+                    <span className="flex items-center gap-2">
+                      <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Loading...
+                    </span>
+                  ) : "Load More Products"}
                 </button>
               </div>
             )}

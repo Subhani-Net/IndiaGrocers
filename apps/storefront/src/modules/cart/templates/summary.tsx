@@ -122,7 +122,7 @@ const Summary = ({ cart }: SummaryProps) => {
                       ? `-${promotion.application_method.value}%`
                       : promotion.application_method?.value !== undefined
                         ? `-${convertToLocale({
-                            amount: promotion.application_method.value,
+                            amount: Number(promotion.application_method.value),
                             currency_code: promotion.application_method.currency_code || cart.currency_code,
                           })}`
                         : ""}

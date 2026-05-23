@@ -37,25 +37,25 @@ export default function Testimonials() {
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length)
 
   return (
-    <section className="py-16 bg-gradient-to-b from-grey-5 to-white">
-      <div className="max-w-[1440px] mx-auto px-6">
+    <section className="py-20 px-6 bg-stone-50">
+      <div className="max-w-[1440px] mx-auto">
         <h2 className="section-title section-title-accent">Trusted by Customers</h2>
         <p className="section-subtitle">Here is what our customers say about us</p>
 
         <div className="relative max-w-2xl mx-auto mt-10">
-          <div className="overflow-hidden">
+          <div className="overflow-hidden rounded-2xl">
             <div
-              className="flex transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
               {testimonials.map((t, i) => (
                 <div key={i} className="min-w-full px-4">
-                  <div className="bg-white rounded-2xl shadow-lg p-8 text-center border border-grey-10">
-                    <div className="flex justify-center gap-1 mb-4">
+                  <div className="bg-white rounded-2xl shadow-sm border border-stone-200/40 p-10 text-center">
+                    <div className="flex justify-center gap-1 mb-5">
                       {Array.from({ length: 5 }).map((_, s) => (
                         <svg
                           key={s}
-                          className={`w-5 h-5 ${s < t.rating ? "text-accent-yellow" : "text-grey-20"}`}
+                          className={`w-5 h-5 ${s < t.rating ? "text-brand-saffron" : "text-stone-200"}`}
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -63,10 +63,10 @@ export default function Testimonials() {
                         </svg>
                       ))}
                     </div>
-                    <p className="text-grey-70 text-lg italic mb-6 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
+                    <p className="text-stone-600 text-lg italic mb-6 leading-relaxed font-light">&ldquo;{t.text}&rdquo;</p>
                     <div>
-                      <p className="font-semibold text-grey-90">{t.name}</p>
-                      <p className="text-sm text-grey-50">{t.location}</p>
+                      <p className="font-semibold text-stone-900">{t.name}</p>
+                      <p className="text-sm text-stone-500">{t.location}</p>
                     </div>
                   </div>
                 </div>
@@ -76,17 +76,17 @@ export default function Testimonials() {
 
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 
-                     w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center
-                     hover:bg-grey-5 transition-colors text-grey-60"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14
+                     w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center
+                     hover:bg-stone-50 transition-colors text-stone-500 hover:text-stone-700"
           >
             <ChevronLeftIcon className="w-5 h-5" />
           </button>
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12
-                     w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center
-                     hover:bg-grey-5 transition-colors text-grey-60"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14
+                     w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center
+                     hover:bg-stone-50 transition-colors text-stone-500 hover:text-stone-700"
           >
             <ChevronRightIcon className="w-5 h-5" />
           </button>
@@ -96,8 +96,8 @@ export default function Testimonials() {
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  i === current ? "bg-brand-orange w-6" : "bg-grey-30"
+                className={`rounded-full transition-all duration-300 ${
+                  i === current ? "w-8 h-2.5 bg-brand-orange" : "w-2.5 h-2.5 bg-stone-300 hover:bg-stone-400"
                 }`}
               />
             ))}

@@ -195,6 +195,11 @@ Discrepancies found during codebase investigation to fix later:
       success without manual refresh. The login server action sets the auth
       cookie but doesn't trigger a page re-render. Fixed with `revalidatePath("/", "layout")`
       in both `login()` and `signup()` server actions (`src/lib/data/customer.ts:110,135`).
+- [ ] **P1.13** — `checkout/components/shipping/index.tsx:74,78,345` uses
+      `(sm as any).service_zone` — the `service_zone` relation is not loaded
+      by default when fetching shipping options. The proper fix is to include
+      `service_zone` in the relation config of the fulfillment list call. See
+      lines marked `FIXME: service_zone relation not loaded`.
 
 ---
 
@@ -241,20 +246,12 @@ Aggregate retail orders into a wholesale master purchase list by target date.
 These must be resolved before production launch. Ordered by priority.
 
 ### G1. Email delivery — notification provider
-**Status:** Not configured — Medusa v2 requires notification providers to be
-registered inside the `@medusajs/notification` module's `providers` array, not as
-standalone modules. Adding a top-level `modules` key overrides default module
-auto-loading and crashes startup. The `@medusajs/notification-local` and
-`@medusajs/notification-sendgrid` packages are installed. Correct config format:
-```ts
-modules: [
-  { resolve: "@medusajs/notification", options: { providers: [
-    { resolve: "@medusajs/notification-sendgrid", id: "sendgrid", options: { ... } }
-  ]}}
-]
-```
-This requires listing ALL modules explicitly (not just notification) to avoid
-overriding defaults.
+**Status:** Configured — notification module in `medusa-config.ts` with local dev
+provider always enabled and `@medusajs/notification-sendgrid` auto-activated when
+`SENDGRID_API_KEY` env var is set. Providers are nested inside the notification
+module's `providers` array (not standalone modules), and the module uses `key:
+"notification"` to override the default while keeping all other default modules
+auto-loaded.
 
 ### G2. Login/signup page transition after success
 **Status:** Fixed — `revalidatePath("/", "layout")` added to `login()` and `signup()`.

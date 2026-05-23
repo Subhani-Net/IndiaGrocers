@@ -2,28 +2,79 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-white text-grey-90 antialiased;
+    overscroll-behavior: none;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-orange;
+  }
+
+  ::selection {
+    @apply bg-brand-orange/20 text-grey-90;
+  }
+
+  /* Modern thin scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-grey-30 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-grey-50;
+  }
+}
+
 @layer utilities {
-  /* Chrome, Safari and Opera */
+  /* Hide scrollbar but keep functionality */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
-  .no-scrollbar::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  input:focus ~ label,
-  input:not(:placeholder-shown) ~ label {
-    @apply -translate-y-2 text-xsmall-regular;
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+  .glass-strong {
+    @apply bg-white/90 backdrop-blur-2xl border border-white/30 shadow-lg;
+  }
+  .glass-dark {
+    @apply bg-grey-90/70 backdrop-blur-xl border border-white/10;
   }
 
-  input:focus ~ label {
-    @apply left-0;
+  /* Touch-friendly minimum tap area (48px) */
+  .min-tap {
+    @apply min-w-[44px] min-h-[44px] flex items-center justify-center;
+  }
+
+  /* Ripple / press scale */
+  .press-scale {
+    @apply active:scale-95 transition-transform duration-150;
+  }
+
+  /* Floating label input */
+  .input-focus ~ label,
+  .input-filled ~ label {
+    @apply -translate-y-3 text-[10px] leading-tight;
+  }
+  .input-focus ~ label {
+    @apply left-0 text-brand-orange;
   }
 
   input:-webkit-autofill,
@@ -47,46 +98,67 @@
   input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
   }
+
+  /* Skeleton shimmer */
+  .shimmer {
+    @apply bg-gradient-to-r from-grey-10 via-grey-20 to-grey-10 bg-[length:200%_100%];
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
 }
 
 :root {
   --brand-orange: #FF6B35;
   --brand-orange-light: #FF8F5E;
-  --brand-red: #E63946;
-  --brand-green: #2A9D8F;
+  --brand-orange-dark: #E55A2B;
+  --brand-saffron: #F4A100;
+  --brand-saffron-light: #FFC34D;
+  --brand-cardamom: #2E6F40;
+  --brand-cardamom-dark: #1F4D2A;
+  --brand-red: #EF4444;
+  --brand-green: #22C55E;
+  --brand-charcoal: #1A1A2E;
+
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
-body {
-  @apply bg-white text-grey-90;
-}
-
-/* Orange theme button */
+/* Buttons */
 .btn-primary {
-  @apply bg-brand-orange text-white px-6 py-3 rounded-lg font-semibold
-         hover:bg-brand-orange-dark transition-colors duration-200
-         disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply bg-brand-orange text-white px-6 py-3 rounded-xl font-semibold
+         hover:bg-brand-orange-dark active:scale-[0.97]
+         transition-all duration-200
+         disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100;
 }
 
 .btn-secondary {
-  @apply border-2 border-brand-orange text-brand-orange px-6 py-3 rounded-lg font-semibold
-         hover:bg-brand-orange hover:text-white transition-all duration-200;
+  @apply border-2 border-brand-orange text-brand-orange px-6 py-3 rounded-xl font-semibold
+         hover:bg-brand-orange hover:text-white active:scale-[0.97]
+         transition-all duration-200;
 }
 
 .btn-whatsapp {
   @apply bg-[#25D366] text-white rounded-full px-4 py-2 font-medium
-         hover:bg-[#20BD5A] transition-colors duration-200;
+         hover:bg-[#20BD5A] active:scale-[0.97] transition-all duration-200;
+}
+
+.btn-ghost {
+  @apply text-brand-orange font-semibold px-4 py-2 rounded-xl
+         hover:bg-brand-orange/10 active:scale-[0.97] transition-all duration-200;
 }
 
 /* Section headings */
 .section-title {
   @apply text-2xl md:text-3xl font-bold text-grey-90 text-center mb-2;
 }
-
 .section-subtitle {
   @apply text-grey-50 text-center mb-8 max-w-2xl mx-auto;
 }
-
-/* Orange accent underline for headings */
 .section-title-accent {
   @apply relative inline-block;
 }
@@ -95,24 +167,24 @@ body {
   @apply absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-brand-orange rounded-full;
 }
 
-/* Price tag styling */
+/* Price tags */
 .price-current {
-  @apply text-xl font-bold text-brand-red;
+  @apply text-xl font-bold text-grey-90;
 }
-
 .price-original {
   @apply text-sm line-through text-grey-40 ml-2;
 }
 
-/* Product card */
+/* MODERN PRODUCT CARD */
 .product-card {
-  @apply bg-white rounded-lg border border-grey-20 overflow-hidden
-         hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+  @apply bg-white rounded-2xl border border-grey-20/60 overflow-hidden
+         hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-0.5
+         transition-all duration-300 ease-out;
 }
 
 /* Category card */
 .category-card {
-  @apply relative rounded-xl overflow-hidden cursor-pointer;
+  @apply relative rounded-2xl overflow-hidden cursor-pointer;
 }
 .category-card img {
   @apply w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110;
@@ -125,19 +197,21 @@ body {
   @apply text-white text-lg font-semibold;
 }
 
-/* Mega menu */
+/* MEGA MENU — wider grid layout */
 .mega-menu {
-  @apply absolute top-full left-0 w-56 bg-white shadow-xl border border-grey-20 rounded-b-lg rounded-r-lg
-         opacity-0 invisible transition-all duration-150 z-50 mt-1;
+  @apply absolute top-full left-0 min-w-[240px] bg-white/95 backdrop-blur-xl
+         shadow-[0_16px_48px_rgba(0,0,0,0.12)] border border-grey-20/60
+         rounded-2xl opacity-0 invisible
+         transition-all duration-200 ease-out z-50 mt-2;
 }
-
 .nav-cat-group:hover .mega-menu {
   @apply opacity-100 visible;
 }
 
-/* Free shipping bar */
+/* Shipping bar */
 .shipping-bar {
-  @apply bg-brand-orange text-white text-center text-sm py-2 px-4 font-medium;
+  @apply bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-orange
+         text-white text-center text-sm py-2 px-4 font-medium;
 }
 
 /* Hero */
@@ -145,74 +219,55 @@ body {
   @apply relative w-full h-[300px] md:h-[450px] lg:h-[550px] overflow-hidden;
 }
 
-.text-orange {
+/* Bottombar — mobile navigation */
+.bottom-nav {
+  @apply fixed bottom-0 inset-x-0 z-50 bg-white/90 backdrop-blur-2xl
+         border-t border-grey-20/60
+         flex items-center justify-around py-1 safe-area-pb;
+}
+.bottom-nav a,
+.bottom-nav button {
+  @apply flex flex-col items-center gap-0.5 text-[10px] font-medium text-grey-50
+         min-w-[48px] min-h-[44px] justify-center
+         active:text-brand-orange transition-colors duration-150;
+}
+.bottom-nav a.active,
+.bottom-nav button.active {
   @apply text-brand-orange;
 }
-.bg-orange {
-  @apply bg-brand-orange;
-}
-.border-orange {
-  @apply border-brand-orange;
+
+/* Color utilities */
+.text-orange { @apply text-brand-orange; }
+.bg-orange { @apply bg-brand-orange; }
+.border-orange { @apply border-brand-orange; }
+
+/* Safe area bottom for mobile (notch phones) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 @layer components {
   .content-container {
-    @apply max-w-[1440px] w-full mx-auto px-6;
+    @apply max-w-[1440px] w-full mx-auto px-4 sm:px-6;
   }
 
   .contrast-btn {
     @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
   }
 
-  .text-xsmall-regular {
-    @apply text-[10px] leading-4 font-normal;
-  }
-
-  .text-small-regular {
-    @apply text-xs leading-5 font-normal;
-  }
-
-  .text-small-semi {
-    @apply text-xs leading-5 font-semibold;
-  }
-
-  .text-base-regular {
-    @apply text-sm leading-6 font-normal;
-  }
-
-  .text-base-semi {
-    @apply text-sm leading-6 font-semibold;
-  }
-
-  .text-large-regular {
-    @apply text-base leading-6 font-normal;
-  }
-
-  .text-large-semi {
-    @apply text-base leading-6 font-semibold;
-  }
-
-  .text-xl-regular {
-    @apply text-2xl leading-[36px] font-normal;
-  }
-
-  .text-xl-semi {
-    @apply text-2xl leading-[36px] font-semibold;
-  }
-
-  .text-2xl-regular {
-    @apply text-[30px] leading-[48px] font-normal;
-  }
-
-  .text-2xl-semi {
-    @apply text-[30px] leading-[48px] font-semibold;
-  }
-
-  .text-3xl-regular {
-    @apply text-[32px] leading-[44px] font-normal;
-  }
-
-  .text-3xl-semi {
-    @apply text-[32px] leading-[44px] font-semibold;
-  }
+  .text-xsmall-regular { @apply text-[10px] leading-4 font-normal; }
+  .text-small-regular  { @apply text-xs leading-5 font-normal; }
+  .text-small-semi     { @apply text-xs leading-5 font-semibold; }
+  .text-base-regular   { @apply text-sm leading-6 font-normal; }
+  .text-base-semi      { @apply text-sm leading-6 font-semibold; }
+  .text-large-regular  { @apply text-base leading-6 font-normal; }
+  .text-large-semi     { @apply text-base leading-6 font-semibold; }
+  .text-xl-regular     { @apply text-2xl leading-[36px] font-normal; }
+  .text-xl-semi        { @apply text-2xl leading-[36px] font-semibold; }
+  .text-2xl-regular    { @apply text-[30px] leading-[48px] font-normal; }
+  .text-2xl-semi       { @apply text-[30px] leading-[48px] font-semibold; }
+  .text-3xl-regular    { @apply text-[32px] leading-[44px] font-normal; }
+  .text-3xl-semi       { @apply text-[32px] leading-[44px] font-semibold; }
 }

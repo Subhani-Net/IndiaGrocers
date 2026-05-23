@@ -1,7 +1,7 @@
 import { readFileSync } from "fs"
 
 const BASE = "http://127.0.0.1:9000"
-const CSV_PATH = "C:\\IndiaGrocers\\Implementation\\natcofoods-import-backup\\natcofoods-catalog.csv"
+const CSV_PATH = "C:\\IndiaGrocers\\Implementation\\Natcofoods\\natcofoods-import\\natcofoods-catalog.csv"
 
 const TYPE_TO_COLLECTION = {
   "Rice": "rice-grains", "Flour": "rice-grains", "Corn": "rice-grains",
@@ -27,6 +27,9 @@ const TYPE_TO_COLLECTION = {
   "Coconut Products": "cooking-essentials", "Coconut": "cooking-essentials", "Tinned Coconut": "cooking-essentials",
   "Vegetables": "fresh-vegetables", "vegetable": "fresh-vegetables", "Tinned Vegetables": "fresh-vegetables",
   "Dairy": "dairy", "Milk Powder": "dairy",
+  // TRS categories
+  "Pulses": "dals-lentils", "Condiments Sauces": "pickles-chutneys",
+  "Cans": "fresh-vegetables", "Speciality": "rice-grains",
 }
 
 async function login() {
@@ -64,6 +67,15 @@ async function main() {
     const base = t.replace(/\s+\d+\.?\d*\s*(g|kg|ml|l|litre|litres|ltr)s?$/i, "").replace(/\s+[Ff]ull\s+[Cc]ase.*$/, "").trim()
     if (base && base !== t && !titleToType[base]) titleToType[base] = ty
   }
+
+  // Also read TRS JSON for TRS product type mappings
+  const TRS_PATH = "C:\\IndiaGrocers\\Implementation\\TRS_products\\products.json"
+  const trsProducts = JSON.parse(readFileSync(TRS_PATH, "utf-8").replace(/^\uFEFF/, ""))
+  for (const p of trsProducts) {
+    const name = (p.product_name || "").replace(/^TRS\s+/, "")
+    if (name && p.category && !titleToType[name]) titleToType[name] = p.category
+  }
+  console.log(`  CSV + TRS: ${Object.keys(titleToType).length} product-type mappings`)
 
   // Get collections
   const { collections } = await (await fetch(`${BASE}/admin/collections?limit=20`, { headers })).json()

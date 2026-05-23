@@ -43,6 +43,15 @@ export default function PostcodeOverlay({
   const [postcode, setPostcode] = useState("")
   const [result, setResult] = useState<"idle" | "valid" | "invalid">("idle")
   const [checked, setChecked] = useState(false)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    if (open) {
+      requestAnimationFrame(() => setVisible(true))
+    } else {
+      setVisible(false)
+    }
+  }, [open])
 
   useEffect(() => {
     if (!open) return
@@ -69,61 +78,90 @@ export default function PostcodeOverlay({
   }
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4" onClick={onClose}>
-      <div className="absolute inset-0 bg-black/50" />
-      <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md p-6" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full hover:bg-grey-10 transition-colors">
-          <svg className="w-4 h-4 text-grey-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        <div className="text-center mb-6">
-          <svg className="w-12 h-12 text-brand-orange mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          <h2 className="text-xl font-bold text-grey-90">Check Delivery</h2>
-          <p className="text-sm text-grey-50 mt-1">Enter your postcode to check if we deliver to your area</p>
+    <div
+      className={`fixed inset-0 z-[60] flex items-end sm:items-center justify-center transition-all duration-300 ease-out ${
+        visible ? 'bg-black/50 backdrop-blur-sm' : 'bg-transparent'
+      }`}
+      onClick={onClose}
+    >
+      <div
+        className={`relative bg-white w-full sm:max-w-md sm:rounded-2xl sm:shadow-2xl overflow-hidden transition-all duration-300 ease-out ${
+          visible
+            ? 'translate-y-0 sm:scale-100 opacity-100'
+            : 'translate-y-full sm:translate-y-0 sm:scale-95 opacity-0'
+        }`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Drag handle (mobile) */}
+        <div className="sm:hidden flex justify-center pt-2 pb-1">
+          <div className="w-10 h-1 rounded-full bg-grey-30" />
         </div>
 
-        <div className="flex gap-2">
-          <input
-            type="text"
-            value={postcode}
-            onChange={(e) => { setPostcode(e.target.value); setChecked(false) }}
-            onKeyDown={(e) => { if (e.key === "Enter") handleCheck() }}
-            placeholder="e.g. E1 6AN"
-            className="flex-1 border border-grey-20 rounded-lg py-2.5 px-4 text-sm text-grey-90 placeholder-grey-40 focus:outline-none focus:border-brand-orange uppercase"
-          />
-          <button
-            onClick={handleCheck}
-            disabled={!postcode.trim()}
-            className="px-6 py-2.5 bg-brand-orange text-white text-sm font-semibold rounded-lg hover:bg-brand-orange-dark disabled:opacity-50 transition-colors"
-          >
-            Check
+        <div className="p-6">
+          <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm shadow-sm hover:bg-grey-10 transition-colors border border-grey-20/50 press-scale">
+            <svg className="w-4 h-4 text-grey-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </button>
-        </div>
 
-        {checked && (
-          <div className={`mt-4 p-4 rounded-lg text-center ${result === "valid" ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}>
-            {result === "valid" ? (
-              <>
-                <p className="font-semibold">We deliver to your area!</p>
-                <p className="text-sm mt-1">Order by 2pm for next day delivery</p>
-              </>
-            ) : (
-              <>
-                <p className="font-semibold">Sorry, we don't deliver to this postcode yet</p>
-                <p className="text-sm mt-1">We're expanding soon. Check back later!</p>
-              </>
-            )}
+          <div className="text-center mb-6">
+            <div className="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-7 h-7 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-bold text-grey-90">Check Delivery</h2>
+            <p className="text-sm text-grey-50 mt-1 max-w-xs mx-auto">Enter your postcode to check if we deliver to your area</p>
           </div>
-        )}
 
-        <p className="text-xs text-grey-40 text-center mt-4">
-          You can browse and add items to your basket without checking
-        </p>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={postcode}
+              onChange={(e) => { setPostcode(e.target.value); setChecked(false) }}
+              onKeyDown={(e) => { if (e.key === "Enter") handleCheck() }}
+              placeholder="e.g. E1 6AN"
+              className="flex-1 border border-grey-20/80 rounded-xl py-3 px-4 text-sm text-grey-90 placeholder-grey-40 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 uppercase transition-all duration-200"
+            />
+            <button
+              onClick={handleCheck}
+              disabled={!postcode.trim()}
+              className="px-6 py-3 bg-brand-orange text-white text-sm font-semibold rounded-xl hover:bg-brand-orange-dark disabled:opacity-50 active:scale-[0.97] transition-all duration-200 press-scale"
+            >
+              Check
+            </button>
+          </div>
+
+          {checked && (
+            <div className={`mt-4 p-4 rounded-xl text-center transition-all duration-300 ${
+              result === "valid"
+                ? "bg-brand-cardamom/5 border border-brand-cardamom/20 text-brand-cardamom"
+                : "bg-red-50 border border-red-200 text-red-700"
+            }`}>
+              {result === "valid" ? (
+                <>
+                  <p className="font-semibold flex items-center justify-center gap-1.5">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    We deliver to your area!
+                  </p>
+                  <p className="text-sm mt-1 opacity-80">Order by 2pm for next day delivery</p>
+                </>
+              ) : (
+                <>
+                  <p className="font-semibold">Sorry, we don't deliver to this postcode yet</p>
+                  <p className="text-sm mt-1 opacity-80">We're expanding soon. Check back later!</p>
+                </>
+              )}
+            </div>
+          )}
+
+          <p className="text-xs text-grey-40 text-center mt-5">
+            You can browse and add items to your basket without checking
+          </p>
+        </div>
       </div>
     </div>
   )

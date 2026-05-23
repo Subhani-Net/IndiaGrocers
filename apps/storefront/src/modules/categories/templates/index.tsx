@@ -28,6 +28,14 @@ export const categoryEmojis: Record<string, string> = {
   "Fresh Vegetables": "🥗", "Onions": "🧅", "Potatoes": "🥔", "Tomatoes": "🍅",
 }
 
+function ChevronRight() {
+  return (
+    <svg className="w-3.5 h-3.5 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  )
+}
+
 export default function CategoryTemplate({
   category,
   sortBy,
@@ -62,16 +70,20 @@ export default function CategoryTemplate({
   const emoji = categoryEmojis[category.name] || "🛍️"
 
   return (
-    <div className="bg-grey-5 min-h-screen">
-      <div className="bg-white border-b border-grey-20">
-        <div className="max-w-[1440px] mx-auto px-6 py-6">
-          <nav className="flex items-center gap-2 text-sm text-grey-50 mb-4">
+    <div className="bg-stone-50 min-h-screen">
+      <div className="bg-white border-b border-stone-200/60">
+        <div className="max-w-[1440px] mx-auto px-6 py-5">
+          <nav className="flex items-center gap-2 text-sm text-stone-500 mb-4">
+            <LocalizedClientLink href="/" className="hover:text-brand-orange transition-colors">
+              Home
+            </LocalizedClientLink>
+            <ChevronRight />
             <LocalizedClientLink href="/store" className="hover:text-brand-orange transition-colors">
-              All Products
+              Store
             </LocalizedClientLink>
             {parents.map((parent) => (
               <span key={parent.id} className="flex items-center gap-2">
-                <span className="text-grey-30">/</span>
+                <ChevronRight />
                 <LocalizedClientLink
                   href={`/categories/${parent.handle}`}
                   className="hover:text-brand-orange transition-colors"
@@ -80,16 +92,18 @@ export default function CategoryTemplate({
                 </LocalizedClientLink>
               </span>
             ))}
-            <span className="text-grey-30">/</span>
+            <ChevronRight />
             <span className="text-brand-orange font-semibold">{category.name}</span>
           </nav>
 
           <div className="flex items-center gap-4">
-            <span className="text-4xl">{emoji}</span>
+            <span className="w-14 h-14 rounded-2xl bg-brand-orange/10 flex items-center justify-center text-3xl flex-shrink-0">
+              {emoji}
+            </span>
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-grey-90">{category.name}</h1>
+              <h1 className="text-2xl md:text-3xl font-bold text-stone-900">{category.name}</h1>
               {category.description && (
-                <p className="text-grey-50 mt-1">{category.description}</p>
+                <p className="text-stone-500 mt-0.5">{category.description}</p>
               )}
             </div>
           </div>
@@ -97,18 +111,18 @@ export default function CategoryTemplate({
       </div>
 
       {category.category_children && category.category_children.length > 0 && (
-        <div className="bg-white border-b border-grey-20">
+        <div className="bg-white border-b border-stone-200/40">
           <div className="max-w-[1440px] mx-auto px-6 py-4 overflow-x-auto no-scrollbar">
             <div className="flex gap-2">
               {category.category_children.map((child) => (
                 <LocalizedClientLink
                   key={child.id}
                   href={`/categories/${child.handle}`}
-                  className="flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full border border-grey-20 
-                             text-sm text-grey-70 hover:border-brand-orange hover:text-brand-orange 
-                             hover:bg-brand-orange/5 transition-all duration-200"
+                  className="flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border border-stone-200/60
+                             text-sm font-medium text-stone-600 hover:border-brand-orange/50 hover:text-brand-orange
+                             hover:bg-brand-orange/5 transition-all duration-200 bg-stone-50/50"
                 >
-                  <span>{categoryEmojis[child.name] || "•"}</span>
+                  <span className="text-base">{categoryEmojis[child.name] || "•"}</span>
                   {child.name}
                 </LocalizedClientLink>
               ))}

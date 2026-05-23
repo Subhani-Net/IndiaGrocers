@@ -37,6 +37,38 @@ async function fetchNavCategories(): Promise<NavCategory[]> {
   }
 }
 
+function SearchIcon() {
+  return (
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+  )
+}
+
+function AccountIcon() {
+  return (
+    <svg className="w-5 h-5 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+    </svg>
+  )
+}
+
+function CartIcon() {
+  return (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+    </svg>
+  )
+}
+
+function ChevronDown() {
+  return (
+    <svg className="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
+  )
+}
+
 export default async function Nav() {
   const [regions, locales, currentLocale, categories] = await Promise.all([
     listRegions().then((regions: StoreRegion[]) => regions),
@@ -47,51 +79,55 @@ export default async function Nav() {
 
   return (
     <>
-      <div className="bg-brand-orange text-white text-center text-sm py-1.5 px-4 font-medium">
-        FREE DELIVERY on orders over £40 | Order by 2pm for next day delivery
+      <div className="bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-orange text-white text-center text-sm py-2 px-4 font-medium tracking-wide">
+        FREE DELIVERY on orders over £40 &nbsp;·&nbsp; Order by 2pm for next day delivery
       </div>
 
-      <header className="sticky top-0 z-50 bg-white border-b border-grey-20">
-        <div className="content-container flex items-center justify-between h-12 lg:h-14 gap-3">
+      <header className="sticky top-0 z-50 glass border-b border-grey-20/60">
+        <div className="content-container flex items-center justify-between h-14 lg:h-16 gap-3">
           {/* Mobile hamburger + Logo */}
-          <div className="flex items-center gap-2 lg:gap-0">
+          <div className="flex items-center gap-2 lg:gap-3">
             <div className="lg:hidden">
               <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} categories={categories} />
             </div>
-            <LocalizedClientLink href="/" className="text-lg lg:text-xl font-bold text-brand-orange flex-shrink-0">
-              IndiaGrocers
+            <LocalizedClientLink href="/" className="text-xl lg:text-2xl font-bold text-brand-orange flex-shrink-0 tracking-tight">
+              India<span className="text-grey-90">Grocers</span>
             </LocalizedClientLink>
           </div>
 
           {/* Category dropdown + Search — desktop */}
-          <div className="hidden lg:flex items-center gap-2 flex-1 max-w-2xl">
+          <div className="hidden lg:flex items-center gap-3 flex-1 max-w-xl mx-auto">
             <div className="nav-cat-group relative flex-shrink-0">
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-grey-70 hover:text-brand-orange border border-grey-20 rounded-lg hover:border-brand-orange transition-colors">
+              <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-grey-70 hover:text-brand-orange border border-grey-20/80 rounded-xl hover:border-brand-orange/50 transition-all duration-200 bg-white/60 press-scale">
                 Browse
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                <ChevronDown />
               </button>
               <div className="mega-menu">
-                <div className="p-3">
-                  <div className="flex flex-col gap-0.5 min-w-[200px]">
-                    <LocalizedClientLink href="/store" className="text-sm font-semibold text-brand-orange hover:bg-orange-50 px-2 py-1.5 rounded">
-                      All Products
-                    </LocalizedClientLink>
-                    <div className="border-t border-grey-20 my-1" />
+                <div className="p-2">
+                  <LocalizedClientLink
+                    href="/store"
+                    className="flex items-center gap-2 px-3 py-2.5 text-sm font-semibold text-brand-orange hover:bg-brand-orange/10 rounded-xl transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    All Products
+                  </LocalizedClientLink>
+                  <div className="border-t border-grey-20/60 my-1" />
+                  <div className="grid grid-cols-2 gap-1">
                     {categories.map((cat) => (
                       <div key={cat.handle}>
                         <LocalizedClientLink
                           href={`/categories/${cat.handle}`}
-                          className="text-sm text-grey-70 hover:text-brand-orange hover:bg-orange-50 px-2 py-1.5 rounded block"
+                          className="block px-3 py-2 text-sm font-medium text-grey-70 hover:text-brand-orange hover:bg-brand-orange/5 rounded-xl transition-colors"
                         >
                           {cat.name}
                         </LocalizedClientLink>
-                        {cat.children.map((child) => (
+                        {cat.children.slice(0, 4).map((child) => (
                           <LocalizedClientLink
                             key={child.handle}
                             href={`/categories/${child.handle}`}
-                            className="text-xs text-grey-50 hover:text-brand-orange hover:bg-orange-50 pl-6 pr-2 py-1 rounded block"
+                            className="block px-3 py-1 text-xs text-grey-50 hover:text-brand-orange hover:bg-brand-orange/5 rounded-lg transition-colors ml-1"
                           >
                             {child.name}
                           </LocalizedClientLink>
@@ -103,44 +139,42 @@ export default async function Nav() {
               </div>
             </div>
 
-            <form
-              className="flex-1 flex items-center"
-              action="/gb/search"
-              method="get"
-            >
-              <input
-                type="text"
-                name="q"
-                placeholder="Search products..."
-                className="flex-1 border border-grey-20 rounded-l-lg py-1.5 px-3 text-sm text-grey-90 placeholder-grey-40 focus:outline-none focus:border-brand-orange"
-              />
-              <button type="submit" className="bg-brand-orange text-white px-3 py-1.5 rounded-r-lg hover:bg-brand-orange-dark transition-colors">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+            <form className="flex-1 flex items-center" action="/gb/search" method="get">
+              <div className="relative flex-1">
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-grey-40">
+                  <SearchIcon />
+                </div>
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search rice, spices, dals..."
+                  className="w-full h-10 pl-10 pr-4 text-sm bg-grey-5 border border-grey-20/80 rounded-xl text-grey-90 placeholder-grey-40 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all duration-200"
+                />
+              </div>
+              <button type="submit" className="ml-2 min-w-[40px] h-10 flex items-center justify-center bg-brand-orange text-white rounded-xl hover:bg-brand-orange-dark active:scale-95 transition-all duration-200 press-scale">
+                <SearchIcon />
               </button>
             </form>
           </div>
 
           {/* Right: Postcode + Account + Cart */}
-          <div className="flex items-center gap-3 lg:gap-4 flex-shrink-0">
-            <PostcodeCheckButton />
+          <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
+            <div className="hidden sm:block">
+              <PostcodeCheckButton />
+            </div>
             <LocalizedClientLink
-              className="hidden sm:flex items-center gap-1.5 text-xs lg:text-sm text-grey-70 hover:text-brand-orange transition-colors"
+              className="min-tap flex items-center gap-1.5 text-xs lg:text-sm text-grey-70 hover:text-brand-orange transition-colors rounded-xl px-2 py-1.5 hover:bg-brand-orange/5"
               href="/account"
             >
-              <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-              <span className="hidden lg:inline">Account</span>
+              <AccountIcon />
+              <span className="hidden lg:inline font-medium">Account</span>
             </LocalizedClientLink>
             <Suspense
               fallback={
-                <LocalizedClientLink className="hover:text-ui-fg-base flex gap-2" href="/cart">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
-                  </svg>
-                  <span>Cart (0)</span>
+                <LocalizedClientLink className="min-tap relative flex items-center gap-1.5 text-grey-70 hover:text-brand-orange transition-colors rounded-xl px-2 py-1.5 hover:bg-brand-orange/5" href="/cart">
+                  <CartIcon />
+                  <span className="hidden lg:inline text-sm font-medium">Cart</span>
+                  <span className="absolute -top-0.5 -right-0.5 lg:static lg:ml-1 bg-brand-orange text-white text-[10px] font-bold min-w-[18px] h-[18px] rounded-full flex items-center justify-center">0</span>
                 </LocalizedClientLink>
               }
             >
@@ -150,35 +184,31 @@ export default async function Nav() {
         </div>
       </header>
 
-      {/* Mega menu bar — scrolls away */}
-      <div className="hidden lg:block bg-white border-b border-grey-20">
+      {/* Category strip — desktop only, scrolls away */}
+      <div className="hidden lg:block bg-white/60 backdrop-blur-sm border-b border-grey-20/40">
         <div className="content-container">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0.5 overflow-x-auto no-scrollbar">
             {categories.map((cat) => (
-              <div key={cat.handle} className="nav-cat-group relative">
+              <div key={cat.handle} className="nav-cat-group relative flex-shrink-0">
                 <LocalizedClientLink
                   href={`/categories/${cat.handle}`}
-                  className="flex items-center gap-1 px-3 py-2.5 text-sm font-medium text-grey-70 hover:text-brand-orange transition-colors"
+                  className="flex items-center gap-1 px-3.5 py-2.5 text-sm font-medium text-grey-70 hover:text-brand-orange transition-colors rounded-lg hover:bg-brand-orange/5 whitespace-nowrap"
                 >
                   {cat.name}
-                  <svg className="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  {cat.children.length > 0 && <ChevronDown />}
                 </LocalizedClientLink>
                 {cat.children.length > 0 && (
                   <div className="mega-menu">
-                    <div className="p-3">
-                      <div className="flex flex-col gap-0.5">
-                        {cat.children.map((child) => (
-                          <LocalizedClientLink
-                            key={child.handle}
-                            href={`/categories/${child.handle}`}
-                            className="text-sm text-grey-60 hover:text-brand-orange hover:bg-orange-50 px-2 py-1.5 rounded transition-colors"
-                          >
-                            {child.name}
-                          </LocalizedClientLink>
-                        ))}
-                      </div>
+                    <div className="p-2 min-w-[200px]">
+                      {cat.children.map((child) => (
+                        <LocalizedClientLink
+                          key={child.handle}
+                          href={`/categories/${child.handle}`}
+                          className="block px-3 py-2 text-sm text-grey-60 hover:text-brand-orange hover:bg-brand-orange/5 rounded-xl transition-colors"
+                        >
+                          {child.name}
+                        </LocalizedClientLink>
+                      ))}
                     </div>
                   </div>
                 )}
