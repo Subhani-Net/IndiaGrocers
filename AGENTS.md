@@ -155,6 +155,19 @@ Backend tsconfig: `strictNullChecks: true`, outputs to `.medusa/server/`.
 |----------|---------------|------|------------------------------|
 | postgres | `postgres:16` | 5432 | `medusa`:`medusa`, db `indiagrocers` |
 | redis    | `redis:7-alpine` | 6379 | —                       |
+| meilisearch | `getmeili/meilisearch:v1.12` | 7700 | — (no auth in dev) |
+
+All three services start with one command:
+```bash
+docker compose -f C:\IndiaGrocers\docker-compose.yml up -d
+```
+
+MeiliSearch index must be configured after first Docker start:
+```bash
+cd C:\IndiaGrocers\apps\meilisearch
+npm run configure
+npm run reindex
+```
 
 ## Brand
 
@@ -311,3 +324,28 @@ Redis is used for event bus + cache. Production needs:
 **Status:** Test mode only
 `NEXT_PUBLIC_STRIPE_KEY` in storefront `.env` and Stripe provider config in
 backend must be swapped to live keys before accepting real payments.
+
+---
+
+## AI Agent Guardrails — Mandatory
+
+### Tests
+
+| User asks | Agent must |
+|---|---|
+| "add tests" / "add a test" / "enhance tests" | **APPEND new test sections ONLY.** Never overwrite, delete, or replace existing test code. Add new `console.log("\nN. Section Name\n")` blocks after the last existing section. |
+| "fix tests" / "change test" / "rewrite test" / "update test" | Only then modify existing test code. Reference the specific section number. |
+| "run tests" / "check tests" | Run the existing test file without modifications. |
+| "what does test X check" | Read the test file and explain. Do not edit. |
+
+**Rule:** When in doubt about the user's intent — whether they want new tests or modifications to existing ones — **ASK before touching existing test code.**
+
+### Code
+
+| User asks | Agent must |
+|---|---|
+| "build" / "create" / "implement" | Create NEW files or add to existing files without removing working code. |
+| "fix" / "rewrite" / "change" / "update" | Only then modify existing logic. |
+| "delete" / "remove" / "strip" | Only then delete code or files. |
+
+**Rule:** Never silently overwrite or delete existing functionality. If an edit would remove existing tests, validations, or features, WARN the user first.
