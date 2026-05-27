@@ -1,0 +1,12 @@
+{
+  "name": "search-intelligence",
+  "private": true,
+  "scripts": {
+    "scrape": "node scraper.mjs",
+    "scrape:headless": "node scraper-headless.mjs",
+    "merge": "node merge-and-upload.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.52.0"
+  }
+}

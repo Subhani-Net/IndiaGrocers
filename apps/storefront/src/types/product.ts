@@ -56,6 +56,7 @@ export interface GroceryProductMetadata {
   requires_fast_delivery: boolean
   requires_cold_chain: boolean
   brand_slug: string
+  synonyms: string[]
 }
 
 export interface GroceryVariantMetadata {

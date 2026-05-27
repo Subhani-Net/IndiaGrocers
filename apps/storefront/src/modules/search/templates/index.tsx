@@ -7,19 +7,24 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import Thumbnail from "@modules/products/components/thumbnail"
 import ProductCard from "@modules/products/components/product-preview/product-card"
 import { useSearchParams } from "next/navigation"
-import { fetchProductsPage } from "@lib/data/products"
+import { searchProducts, autocompleteProducts } from "@lib/search-client"
 
-const CATEGORY_CHIPS = [
-  "Rice",
-  "Spices",
-  "Dals",
-  "Snacks",
-  "Pickles",
-  "Flours",
-  "Oils & Ghee",
-  "Tea & Coffee",
-  "Pooja Items",
-]
+// Inline synonym detection (avoids cross-package import from meilisearch workspace)
+const SYNONYM_MAP = {
+  besan: "gram flour", "gram flour": "besan", "chickpea flour": "besan", "chana flour": "besan",
+  hing: "asafoetida", asafoetida: "hing", heeng: "hing",
+  sooji: "semolina", semolina: "sooji", rava: "sooji", suji: "sooji",
+  jeera: "cumin seeds", "cumin seeds": "jeera", zeera: "jeera", cumin: "jeera",
+  haldi: "turmeric", turmeric: "haldi",
+  dhania: "coriander", coriander: "dhania",
+  methi: "fenugreek", fenugreek: "methi",
+  saunf: "fennel seeds", "fennel seeds": "saunf", fennel: "saunf",
+  imli: "tamarind", tamarind: "imli",
+  ghee: "clarified butter", paneer: "indian cheese",
+  chana: "chickpeas", moong: "mung", masoor: "red lentils",
+  urad: "black gram", toor: "pigeon pea",
+}
+function getResolvedTerm(q: string) { return (SYNONYM_MAP as any)[q.toLowerCase()] || null }
 
 const DIETARY_CHIPS = [
   "Vegetarian",
@@ -88,7 +93,11 @@ function BrandChips({
   )
 }
 
-export default function SearchTemplate() {
+export default function SearchTemplate({
+  categoryChips,
+}: {
+  categoryChips?: Array<{ name: string; handle: string }>
+}) {
   const searchParams = useSearchParams()
   const qParam = searchParams.get("q")
   const brandParam = searchParams.get("brand")
@@ -145,43 +154,23 @@ export default function SearchTemplate() {
     return filtered
   }, [brandParam, maxPriceParam, activeDietary, activeBrand])
 
-  const performSearch = useCallback(async (searchQuery: string, pageNum: number = 1) => {
+  const [appliedSynonym, setAppliedSynonym] = useState<string | null>(null)
+
+  const performSearch = async (searchQuery: string, pageNum: number = 1) => {
     if (!searchQuery.trim() && !hasFilters) {
-      setProducts([])
-      setSearched(false)
-      setTotalCount(0)
-      return
+      setProducts([]); setSearched(false); setTotalCount(0); setAppliedSynonym(null); return
     }
-
-    const isLoadingFirst = pageNum === 1
-    if (isLoadingFirst) {
-      setLoading(true)
-      setSearched(true)
-    } else {
-      setLoadingMore(true)
-    }
-
+    setLoading(true); setSearched(true)
     try {
-      const result = await fetchProductsPage({
-        page: pageNum,
-        countryCode: "gb",
-        searchQuery: searchQuery.trim() || undefined,
-      })
-
-      if (isLoadingFirst) {
-        setProducts(result.products)
-        setTotalCount(result.count)
-      } else {
-        setProducts((prev) => [...prev, ...result.products])
-      }
+        const { products: hits, totalCount: count } = await searchProducts((searchQuery || "").trim(), { limit: 12, offset: (pageNum - 1) * 12 })
+        setProducts(hits.map(h => ({ id: h.id, title: h.title, handle: h.handle, thumbnail: h.thumbnail } as any)))
+      setTotalCount(count)
       setPage(pageNum)
-    } catch {
-      // silent
-    } finally {
-      setLoading(false)
-      setLoadingMore(false)
-    }
-  }, [hasFilters])
+      const resolved = getResolvedTerm((searchQuery || "").trim())
+      setAppliedSynonym(resolved)
+    } catch { setProducts([]); setTotalCount(0) }
+    setLoading(false)
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => performSearch(query), 300)
@@ -189,22 +178,13 @@ export default function SearchTemplate() {
   }, [query, performSearch])
 
   useEffect(() => {
-    if (!query.trim() || hasFilters) {
-      setAutocompleteResults([])
-      return
-    }
+    if (!query.trim() || hasFilters) { setAutocompleteResults([]); return }
     const timer = setTimeout(async () => {
       try {
-        const result = await fetchProductsPage({
-          page: 1,
-          countryCode: "gb",
-          searchQuery: query,
-        })
-        setAutocompleteResults(result.products.slice(0, 5))
-      } catch {
-        setAutocompleteResults([])
-      }
-    }, 300)
+        const hits = await autocompleteProducts(query)
+        setAutocompleteResults(hits.map(h => ({ id: h.id, title: h.title, handle: h.handle, thumbnail: h.thumbnail, calculated_price: { calculated_amount: h.price_gbp } } as any)))
+      } catch { setAutocompleteResults([]) }
+    }, 200)
     return () => clearTimeout(timer)
   }, [query, hasFilters])
 
@@ -340,14 +320,14 @@ export default function SearchTemplate() {
 
         {!brandParam && (
           <div className="flex flex-wrap justify-center gap-2 mt-6">
-            {CATEGORY_CHIPS.map((chip) => (
-              <button
-                key={chip}
-                onClick={() => handleChipClick(chip)}
+            {(categoryChips || []).map((cat) => (
+              <LocalizedClientLink
+                key={cat.handle}
+                href={`/categories/${cat.handle}`}
                 className="px-5 py-2 text-sm font-medium rounded-full border border-brand-orange/60 text-brand-orange bg-white hover:bg-brand-orange hover:text-white active:scale-95 transition-all duration-200 shadow-sm press-scale"
               >
-                {chip}
-              </button>
+                {cat.name}
+              </LocalizedClientLink>
             ))}
           </div>
         )}
@@ -413,6 +393,11 @@ export default function SearchTemplate() {
                   : maxPriceParam
                     ? ` under £${maxPriceParam}`
                     : ""}
+              {appliedSynonym && (
+                <span className="text-brand-orange font-medium">
+                  {" "}— showing results for "{appliedSynonym}"
+                </span>
+              )}
             </p>
             <div className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-3 sm:gap-4">
               {products.map((product) => (

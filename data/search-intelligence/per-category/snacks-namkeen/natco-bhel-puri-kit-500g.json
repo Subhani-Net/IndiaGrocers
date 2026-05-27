@@ -1,0 +1,106 @@
+{
+  "our_handle": "natco-bhel-puri-kit-500g",
+  "our_title": "Natco Bhel Puri Kit 500g",
+  "cleaned_query": "Bhel Puri Kit",
+  "source": "blinkit+jiomart",
+  "extracted_at": "2026-05-26T22:47:30.160Z",
+  "intelligence": {
+    "cross_category": {
+      "our_category": "snacks-namkeen",
+      "blinkit_category_path": [],
+      "jiomart_category_path": [],
+      "insight": ""
+    },
+    "alternate_names": {
+      "our_spelling": "Natco Bhel Puri Kit 500g",
+      "blinkit_names": [],
+      "jiomart_names": [],
+      "autocomplete_suggestions": []
+    },
+    "competitor_ranking": {
+      "top_blinkit": [],
+      "top_jiomart": []
+    },
+    "tags_from_platforms": {
+      "blinkit_tags": [],
+      "jiomart_tags": []
+    },
+    "search_patterns": {
+      "cleaned_query_used": "Bhel Puri Kit",
+      "autocomplete_terms": []
+    },
+    "reverse_intelligence": {
+      "jiomart_rank": {
+        "total_shown": 0,
+        "our_position": -1
+      },
+      "blinkit_related_searches": [],
+      "jiomart_related_searches": [],
+      "blinkit_category_listings": [],
+      "jiomart_category_listings": [
+        "Header",
+        "Sections",
+        "Radius Configuration",
+        "Cart",
+        "Compare",
+        "Search",
+        "Footer",
+        "common",
+        "Image Container",
+        "Login Page"
+      ]
+    },
+    "cross_sell": {
+      "blinkit_fbt": [],
+      "jiomart_fbt": [],
+      "blinkit_promoted": [],
+      "jiomart_promoted": []
+    },
+    "market": {
+      "blinkit_pricing": {},
+      "jiomart_pricing": {
+        "raw_matches": [],
+        "has_discount": "12",
+        "has_mrp_strikethrough": false
+      },
+      "blinkit_popularity": {},
+      "jiomart_popularity": {
+        "is_bestseller": true,
+        "is_trending": true,
+        "is_new_arrival": true,
+        "rating_count": null,
+        "review_count": null,
+        "star_rating": null
+      },
+      "variant_sizes": [
+        "5l",
+        "1.42l",
+        "3l",
+        "1kg",
+        "4g",
+        "0g",
+        "5g",
+        "6l",
+        "2g",
+        "12l",
+        "10kg",
+        "500g",
+        "150g",
+        "4kg",
+        "2kg"
+      ],
+      "jiomart_search_volume": null,
+      "blinkit_filters": {},
+      "jiomart_filters": {
+        "brands": [],
+        "weights": [],
+        "price": {}
+      },
+      "seasonal_tags": [
+        "eid",
+        "holi",
+        "summer"
+      ]
+    }
+  }
+}

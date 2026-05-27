@@ -157,14 +157,16 @@ export async function fetchProductsPage({
   collectionId,
   categoryId,
   searchQuery,
+  limit: customLimit,
 }: {
   page: number
   countryCode: string
   collectionId?: string
   categoryId?: string
   searchQuery?: string
+  limit?: number
 }): Promise<{ products: HttpTypes.StoreProduct[]; count: number; page: number }> {
-  const limit = 12
+  const limit = customLimit || 12
   const offset = (page - 1) * limit
 
   const queryParams: any = { limit, offset }
@@ -185,7 +187,7 @@ export async function fetchProductsPage({
         limit,
         offset,
         region_id: region.id,
-        fields: "title,*variants.calculated_price,variants.title,variants.id,categories.id,categories.name,+variants.inventory_quantity,*variants.images,*metadata,*tags,*thumbnail,*description,",
+        fields: "title,*variants.calculated_price,*variants.metadata,variants.title,variants.id,categories.id,categories.name,+variants.inventory_quantity,*variants.images,*metadata,*tags,*thumbnail,*description,",
         ...queryParams,
       },
       headers,

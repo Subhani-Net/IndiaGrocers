@@ -210,7 +210,7 @@
                          "300g"
                      ],
         "image_exists":  true,
-        "product_name":  "TRS Ginger \u0026 Garlic Paste",
+        "product_name":  "TRS Ginger  Garlic Paste",
         "image_filename":  "TRS Ginger and Garlic Paste.png",
         "category":  "Condiments Sauces",
         "description":  "Combine the lively flavours of ginger and garlic with your favourite dish. Easy to use, this staple duo will liven up everything from stir fries to curries. Spice up your culinary adventures with the exciting addition of garlic and ginger.",
@@ -264,7 +264,7 @@
         "product_name":  "TRS Green Lentils",
         "image_filename":  "TRS Green Lentils.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Green Lentils.png"
     },
     {
@@ -275,7 +275,7 @@
         "product_name":  "TRS Green Peas",
         "image_filename":  "TRS Green Peas.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Green Peas.png"
     },
     {
@@ -311,7 +311,7 @@
         "product_name":  "TRS Mango Powder (Amchoor)",
         "image_filename":  "TRS Mango Powder (Amchoor).png",
         "category":  "Spices",
-        "description":  "Authentic \u0026 Flavourful",
+        "description":  "Authentic  Flavourful",
         "image_relative_path":  "images/TRS Mango Powder (Amchoor).png"
     },
     {
@@ -339,7 +339,7 @@
         "product_name":  "TRS Moth Beans",
         "image_filename":  "TRS Moth Beans.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Moth Beans.png"
     },
     {
@@ -354,7 +354,7 @@
         "product_name":  "TRS Mung Beans",
         "image_filename":  "TRS Mung Beans.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Mung Beans.png"
     },
     {
@@ -369,7 +369,7 @@
         "product_name":  "TRS Mung Dal",
         "image_filename":  "TRS Mung Dal.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Mung Dal.png"
     },
     {
@@ -382,7 +382,7 @@
         "product_name":  "TRS Mung Dal Chilka (Split Green Peas)",
         "image_filename":  "TRS Mung Dal Chilka (Split Green Peas).jpg",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  null
     },
     {
@@ -407,7 +407,7 @@
         "product_name":  "TRS Pomegranate Powder (Anardana)",
         "image_filename":  "TRS Pomegranate Powder (Anardana).png",
         "category":  "Spices",
-        "description":  "Authentic \u0026 Flavourful",
+        "description":  "Authentic  Flavourful",
         "image_relative_path":  "images/TRS Pomegranate Powder (Anardana).png"
     },
     {
@@ -418,7 +418,7 @@
         "product_name":  "TRS Pomegranate Seeds (Anardana Whole)",
         "image_filename":  "TRS Pomegranate Seeds (Anardana Whole).jpg",
         "category":  "Spices",
-        "description":  "Authentic \u0026 Flavourful",
+        "description":  "Authentic  Flavourful",
         "image_relative_path":  "images/TRS Pomegranate Seeds (Anardana Whole).jpg"
     },
     {
@@ -455,7 +455,7 @@
         "product_name":  "TRS Red Adzuki Beans (Red Cow Peas)",
         "image_filename":  "TRS Red Adzuki Beans (Red Cow Peas).png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Red Adzuki Beans (Red Cow Peas).png"
     },
     {
@@ -470,7 +470,7 @@
         "product_name":  "TRS Red Kidney Beans",
         "image_filename":  "TRS Red Kidney Beans.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Red Kidney Beans.png"
     },
     {
@@ -484,7 +484,7 @@
         "product_name":  "TRS Red Split Lentils",
         "image_filename":  "TRS Red Split Lentils.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Red Split Lentils.png"
     },
     {
@@ -497,7 +497,7 @@
         "product_name":  "TRS Rosecoco Beans",
         "image_filename":  "TRS Rosecoco Beans.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Rosecoco Beans.png"
     },
     {
@@ -509,7 +509,7 @@
         "product_name":  "TRS Sarson Ka Saag (Spiced Mustard Greens Curry)",
         "image_filename":  "TRS Sarson Ka Saag (Spiced Mustard Greens Curry).png",
         "category":  "Cans",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Sarson Ka Saag (Spiced Mustard Greens Curry).png"
     },
     {
@@ -535,7 +535,7 @@
         "product_name":  "TRS Toor Dal",
         "image_filename":  "TRS Toor Dal.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Toor Dal.png"
     },
     {
@@ -564,7 +564,7 @@
         "product_name":  "TRS Urid Beans",
         "image_filename":  "TRS Urid Beans.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Urid Beans.png"
     },
     {
@@ -578,7 +578,7 @@
         "product_name":  "TRS Urid Dal",
         "image_filename":  "TRS Urid Dal.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Urid Dal.png"
     },
     {
@@ -591,7 +591,7 @@
         "product_name":  "TRS Urid Dal Chilka",
         "image_filename":  "TRS Urid Dal Chilka.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Urid Dal Chilka.png"
     },
     {
@@ -605,7 +605,7 @@
         "product_name":  "TRS Urid Whole Gota",
         "image_filename":  "TRS Urid Whole Gota.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Urid Whole Gota.png"
     },
     {
@@ -644,7 +644,7 @@
         "product_name":  "TRS Yellow Peas",
         "image_filename":  "TRS Yellow Peas.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Yellow Peas.png"
     },
     {
@@ -656,7 +656,7 @@
         "product_name":  "TRS Yellow Split Peas",
         "image_filename":  "TRS Yellow Split Peas.png",
         "category":  "Pulses",
-        "description":  "Tasty \u0026 Nutritious",
+        "description":  "Tasty  Nutritious",
         "image_relative_path":  "images/TRS Yellow Split Peas.png"
     }
 ]

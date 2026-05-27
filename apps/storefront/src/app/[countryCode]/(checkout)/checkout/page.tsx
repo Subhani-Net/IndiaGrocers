@@ -1,35 +1,25 @@
 import { retrieveCart } from "@lib/data/cart"
 import { retrieveCustomer } from "@lib/data/customer"
-import PaymentWrapper from "@modules/checkout/components/payment-wrapper"
 import CheckoutForm from "@modules/checkout/templates/checkout-form"
-import CheckoutSummary from "@modules/checkout/templates/checkout-summary"
-import DeliveryGate from "@modules/checkout/components/delivery-gate"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
-  title: "Checkout",
+  title: "Checkout | IndiaGrocers",
+  description: "Complete your order — Indian groceries delivered across London",
 }
 
 export default async function Checkout() {
   const cart = await retrieveCart()
-
-  if (!cart) {
-    return notFound()
-  }
+  if (!cart) return notFound()
 
   const customer = await retrieveCustomer()
 
   return (
-    <DeliveryGate>
-      <div className="grid grid-cols-1 small:grid-cols-[1fr_416px] content-container gap-x-8 gap-y-8 py-8">
-        <PaymentWrapper cart={cart}>
-          <CheckoutForm cart={cart} customer={customer} />
-        </PaymentWrapper>
-        <div className="relative">
-          <CheckoutSummary cart={cart} />
-        </div>
+    <div className="bg-stone-50 min-h-screen py-6 sm:py-10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <CheckoutForm cart={cart} customer={customer} />
       </div>
-    </DeliveryGate>
+    </div>
   )
 }

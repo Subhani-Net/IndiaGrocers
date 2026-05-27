@@ -5,9 +5,8 @@ import { useSearchParams } from "next/navigation"
 
 const STEPS = [
   { key: "address", label: "Address" },
-  { key: "delivery", label: "Shipping" },
+  { key: "delivery", label: "Delivery Slot" },
   { key: "payment", label: "Payment" },
-  { key: "review", label: "Review" },
 ]
 
 const StepIndicator = () => {
@@ -25,8 +24,8 @@ const StepIndicator = () => {
   }
 
   return (
-    <div className="w-full mb-8">
-      <div className="flex items-center justify-between max-w-2xl mx-auto">
+    <div className="w-full mb-6 sm:mb-8">
+      <div className="flex items-center justify-between max-w-lg mx-auto">
         {STEPS.map((step, index) => {
           const status = getStepStatus(step.key)
           const isLast = index === STEPS.length - 1
@@ -36,37 +35,28 @@ const StepIndicator = () => {
               <div className="flex flex-col items-center">
                 <div
                   className={clx(
-                    "w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors duration-200",
+                    "w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300",
                     {
-                      "bg-brand-orange text-white": status === "active",
-                      "bg-brand-green text-white": status === "completed",
-                      "bg-gray-200 text-gray-500": status === "upcoming",
+                      "bg-brand-orange text-white shadow-md shadow-brand-orange/20":
+                        status === "active",
+                      "bg-green-500 text-white": status === "completed",
+                      "bg-stone-200 text-stone-400": status === "upcoming",
                     }
                   )}
                 >
                   {status === "completed" ? (
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   ) : (
                     index + 1
                   )}
                 </div>
                 <span
-                  className={clx("text-xs mt-1 font-medium", {
+                  className={clx("text-[11px] mt-1.5 font-semibold whitespace-nowrap", {
                     "text-brand-orange": status === "active",
-                    "text-brand-green": status === "completed",
-                    "text-gray-400": status === "upcoming",
+                    "text-green-600": status === "completed",
+                    "text-stone-400": status === "upcoming",
                   })}
                 >
                   {step.label}
@@ -74,19 +64,10 @@ const StepIndicator = () => {
               </div>
               {!isLast && (
                 <div
-                  className={clx(
-                    "flex-1 h-0.5 mx-2 mt-[-1.5rem] transition-colors duration-200",
-                    {
-                      "bg-brand-green":
-                        STEPS.findIndex(
-                          (s) => s.key === currentStep
-                        ) > index,
-                      "bg-gray-200":
-                        STEPS.findIndex(
-                          (s) => s.key === currentStep
-                        ) <= index,
-                    }
-                  )}
+                  className={clx("flex-1 h-0.5 mx-2 mt-[-1.5rem] transition-colors duration-300", {
+                    "bg-green-400": STEPS.findIndex((s) => s.key === currentStep) > index,
+                    "bg-stone-200": STEPS.findIndex((s) => s.key === currentStep) <= index,
+                  })}
                 />
               )}
             </div>

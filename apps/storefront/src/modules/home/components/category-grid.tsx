@@ -1,6 +1,6 @@
 import { listCategories } from "@lib/data/categories"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { categoryEmojis } from "@modules/categories/templates"
+import { categoryEmojis } from "@lib/constants/category-emojis"
 
 export default async function CategoryGrid() {
   const allCategories = await listCategories()

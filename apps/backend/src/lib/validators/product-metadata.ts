@@ -62,6 +62,11 @@ export const productMetadataSchema = z.object({
       (slug) => BRAND_SLUGS.has(slug),
       { message: "brand_slug is not a recognised brand slug. See GET /admin/reference/brands" }
     ),
+
+  synonyms: z
+    .array(z.string().min(1))
+    .default([])
+    .describe("Per-product alternate search terms (Hindi/Urdu/Tamil/English transliterations)"),
 })
 
 export type ProductMetadataInput = z.infer<typeof productMetadataSchema>

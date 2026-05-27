@@ -8,6 +8,7 @@ export type SortOptions =
   | "created_at"
   | "title_asc"
   | "title_desc"
+  | "weight_desc"
 
 type InlineSortProps = {
   sortBy: SortOptions
@@ -19,6 +20,7 @@ const sortLabels: Record<SortOptions, string> = {
   price_desc: "Price: High → Low",
   title_asc: "Name: A → Z",
   title_desc: "Name: Z → A",
+  weight_desc: "Weight: Largest First",
 }
 
 const InlineSort = ({ sortBy }: InlineSortProps) => {

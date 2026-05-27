@@ -255,44 +255,128 @@ export default async function initial_data_seed({
   });
   logger.info("Finished seeding stock location data.");
 
-  logger.info("Seeding product categories...");
+  logger.info("Seeding product categories (design master list)...");
 
-  const parents = [
-    "Rice & Grains", "Dals & Lentils", "Spices & Masalas",
-    "Cooking Oils & Ghee", "Flours & Grains", "Snacks & Namkeen",
-    "Beverages", "Pickles & Chutneys", "Papads & Fryums",
-    "Frozen Foods", "Sweets & Mithai", "Noodles & Pasta",
-    "Sauces & Ketchup", "Dairy & Milk Products", "Ready to Eat",
-    "Fresh Vegetables",
+  // === DESIGN-MATCHED CATEGORIES (from catalogue-build/01-categories-master-list.md) ===
+  //
+  // Each parent has: name, handle (explicit URL slug), phase, template, status
+  // Phase 1 categories: live immediately
+  // Phase 2/3 categories: coming-soon — show waitlist on storefront
+
+  interface CategoryDef {
+    name: string
+    handle: string
+    is_active: boolean
+    metadata: {
+      nav_visible: boolean
+      phase: 1 | 2 | 3
+      template: string
+      status: "live" | "coming-soon"
+    }
+  }
+
+  const parents: CategoryDef[] = [
+    // === PHASE 1 — Launch (11 categories) ===
+    { name: "Staples & Grains",  handle: "staples-grains",  is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-weight-heavy",     status: "live" } },
+    { name: "Atta & Flours",    handle: "atta-flours",    is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-weight-heavy",     status: "live" } },
+    { name: "Dal & Lentils",    handle: "dal-lentils",    is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-weight-heavy",     status: "live" } },
+    { name: "Oils & Ghee",      handle: "oils-ghee",      is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-weight-heavy",     status: "live" } },
+    { name: "Spices — Whole",   handle: "spices-whole",   is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-standard-grid",    status: "live" } },
+    { name: "Spices — Ground",  handle: "spices-ground",  is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-standard-grid",    status: "live" } },
+    { name: "Spice Blends",     handle: "spice-blends",   is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-brand-showcase",   status: "live" } },
+    { name: "Dairy & Eggs",     handle: "dairy",          is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-standard-grid",    status: "live" } },
+    { name: "Beverages",        handle: "beverages",      is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-brand-showcase",   status: "live" } },
+    { name: "Snacks & Namkeen",  handle: "snacks-namkeen",  is_active: true,  metadata: { nav_visible: true, phase: 1, template: "template-standard-grid",    status: "live" } },
+    { name: "Pickles & Chutneys", handle: "pickles-chutneys", is_active: true, metadata: { nav_visible: true, phase: 1, template: "template-standard-grid",  status: "live" } },
+
+    // === PHASE 2 — Month 3+ (4 categories) ===
+    { name: "Frozen Foods",                   handle: "frozen",          is_active: true, metadata: { nav_visible: true, phase: 2, template: "template-standard-grid",  status: "coming-soon" } },
+    { name: "Fresh Produce",                  handle: "fresh",           is_active: true, metadata: { nav_visible: true, phase: 2, template: "template-fresh-produce", status: "coming-soon" } },
+    { name: "Ready-to-Cook & Instant Mixes",  handle: "ready-to-cook",  is_active: true, metadata: { nav_visible: true, phase: 2, template: "template-standard-grid",  status: "coming-soon" } },
+    { name: "Condiments & Cooking Essentials", handle: "condiments",     is_active: true, metadata: { nav_visible: true, phase: 2, template: "template-standard-grid",  status: "coming-soon" } },
+
+    // === PHASE 3 — Month 9+ (3 categories) ===
+    { name: "Pooja Essentials",         handle: "pooja",      is_active: true, metadata: { nav_visible: true, phase: 3, template: "template-standard-grid",    status: "coming-soon" } },
+    { name: "Household & Kitchen",      handle: "household",  is_active: true, metadata: { nav_visible: true, phase: 3, template: "template-standard-grid",    status: "coming-soon" } },
+    { name: "Regional Specialties",     handle: "regional",   is_active: true, metadata: { nav_visible: true, phase: 3, template: "template-regional-curated", status: "coming-soon" } },
   ];
 
+  // Phase 1 granular sub-categories per design master list
   const children: Record<string, string[]> = {
-    "Rice & Grains": ["Basmati Rice", "Sona Masoori", "Ponni Boiled", "Idli Rice"],
-    "Dals & Lentils": ["Toor Dal", "Moong Dal", "Masoor Dal", "Chana Dal", "Urad Dal", "Kabuli Chana"],
-    "Spices & Masalas": ["Turmeric", "Chilli Powder", "Cumin", "Coriander", "Garam Masala", "Chicken Masala", "Whole Spices"],
-    "Cooking Oils & Ghee": ["Mustard Oil", "Sunflower Oil", "Ghee", "Coconut Oil", "Groundnut Oil"],
-    "Flours & Grains": ["Wheat Atta", "Besan", "Rice Flour", "Sooji", "Maida"],
-    "Snacks & Namkeen": ["Bhujia", "Namkeen", "Chips", "Biscuits"],
-    "Beverages": ["Tea", "Coffee", "Drinks"],
-    "Pickles & Chutneys": ["Mango Pickle", "Lime Pickle", "Mixed Pickle", "Chutneys"],
-    "Papads & Fryums": [],
-    "Frozen Foods": ["Frozen Snacks", "Frozen Paratha"],
-    "Sweets & Mithai": ["Laddu", "Barfi", "Canned Sweets"],
-    "Noodles & Pasta": ["Instant Noodles", "Pasta"],
-    "Sauces & Ketchup": [],
-    "Dairy & Milk Products": [],
-    "Ready to Eat": ["Curry Pouches", "Breakfast Mixes"],
-    "Fresh Vegetables": ["Onions", "Potatoes", "Tomatoes"],
+    "Staples & Grains": [
+      "Basmati Rice", "Sona Masoori Rice", "Idli Rice", "Brown Rice",
+      "Poha (Flattened Rice)", "Semolina / Sooji / Rava",
+    ],
+    "Atta & Flours": [
+      "Chapatti Flour (Atta)", "Besan (Gram Flour)", "Plain Flour (Maida)",
+      "Rice Flour", "Ragi / Finger Millet Flour", "Suji / Coarse Semolina",
+    ],
+    "Dal & Lentils": [
+      "Toor Dal", "Chana Dal", "Moong Dal (Yellow)", "Whole Moong (Green)",
+      "Masoor Dal (Red Lentils)", "Urad Dal (Split)", "Whole Urad (Black)",
+      "Rajma (Kidney Beans)", "Chana (Whole Chickpeas)", "Kala Chana (Black Chickpeas)",
+      "Lobhia (Black Eye Beans)",
+    ],
+    "Oils & Ghee": [
+      "Sunflower Oil", "Mustard Oil", "Vegetable / Refined Oil", "Coconut Oil",
+      "Groundnut / Peanut Oil", "Ghee (Clarified Butter)",
+    ],
+    "Spices — Whole": [
+      "Cumin Seeds (Jeera)", "Mustard Seeds (Rai)", "Coriander Seeds (Dhania)",
+      "Fenugreek Seeds (Methi)", "Fennel Seeds (Saunf)", "Carom Seeds (Ajwain)",
+      "Bay Leaves (Tej Patta)", "Green Cardamom (Elaichi)", "Black Cardamom",
+      "Cloves (Laung)", "Cinnamon Sticks (Dalchini)", "Black Pepper (Kali Mirch)",
+      "Asafoetida / Hing", "Dried Red Chillies", "Star Anise",
+      "Panch Phoron", "Nutmeg (Jaiphal)",
+    ],
+    "Spices — Ground": [
+      "Turmeric Powder (Haldi)", "Red Chilli Powder (Mirchi)", "Coriander Powder (Dhania)",
+      "Cumin Powder (Jeera)", "Black Pepper Powder", "Ginger Powder (Sonth)",
+      "Kashmiri Chilli Powder", "Amchur (Mango Powder)", "Kasuri Methi (Dried Fenugreek Leaves)",
+    ],
+    "Spice Blends": [
+      "Garam Masala", "Chaat Masala", "Chole / Chana Masala", "Rajma Masala",
+      "Biryani Masala", "Sambar Powder", "Rasam Powder", "Pav Bhaji Masala",
+      "Kitchen King Masala", "Tandoori Masala", "Meat Masala", "Fish Curry Masala",
+      "Chicken Masala", "Paneer Masala", "Pulao Masala",
+    ],
+    "Dairy & Eggs": [
+      "Paneer", "Set Yoghurt / Dahi", "Butter (Salted)", "Butter (Unsalted)",
+      "Double Cream", "Single Cream", "Condensed Milk", "Evaporated Milk",
+    ],
+    "Beverages": [
+      "Loose Leaf Tea / Chai", "Tea Bags", "Filter Coffee", "Instant Coffee",
+      "Horlicks", "Bournvita", "Rooh Afza / Rose Syrup", "Sherbets & Squash",
+    ],
+    "Snacks & Namkeen": [
+      "Bhujia", "Mixture (Bombay Mix)", "Sev", "Papad", "Chivda",
+      "Biscuits — Parle-G", "Biscuits — Cream", "Biscuits — Marie",
+      "Roasted Peanuts / Chana",
+    ],
+    "Pickles & Chutneys": [
+      "Mango Pickle (Achar)", "Mixed Pickle", "Lime / Lemon Pickle",
+      "Green Chilli Pickle", "Garlic Pickle", "Tamarind Paste / Concentrate",
+      "Mango Chutney", "Tamarind Chutney",
+    ],
+    // Phase 2/3: sparse children for navigation structure (no products yet)
+    "Frozen Foods":                   ["Parathas", "Samosas", "Frozen Mixed Vegetables", "Frozen Peas"],
+    "Fresh Produce":                  ["Curry Leaves", "Green Chillies", "Fresh Ginger", "Fresh Coriander"],
+    "Ready-to-Cook & Instant Mixes":  ["Idli Mix", "Dosa Mix", "Dhokla Mix", "Gulab Jamun Mix"],
+    "Condiments & Cooking Essentials": ["Coconut Milk", "Ginger-Garlic Paste", "Jaggery (Gur)"],
+    "Pooja Essentials":               [],
+    "Household & Kitchen":            [],
+    "Regional Specialties":           ["Punjabi / North Indian", "Gujarati", "South Indian", "Bengali"],
   };
 
   const { result: parentResult } = await createProductCategoriesWorkflow(
     container
   ).run({
     input: {
-      product_categories: parents.map((name) => ({
-        name,
-        is_active: true,
-        metadata: { nav_visible: true },
+      product_categories: parents.map((cat) => ({
+        name: cat.name,
+        handle: cat.handle,
+        is_active: cat.is_active,
+        metadata: cat.metadata,
       })),
     },
   });
@@ -302,13 +386,19 @@ export default async function initial_data_seed({
     parentMap.set(cat.name, cat.id);
   }
 
-  const childCategories: { name: string; parent_category_id: string; is_active: boolean }[] = [];
+  const childCategories: { name: string; handle: string; parent_category_id: string; is_active: boolean }[] = [];
   for (const [parentName, childNames] of Object.entries(children)) {
     const parentId = parentMap.get(parentName);
     if (parentId) {
       for (const childName of childNames) {
+        const childHandle = childName
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-]/g, "")
+          .replace(/[\s]+/g, "-")
+          .replace(/-+/g, "-");
         childCategories.push({
           name: childName,
+          handle: childHandle,
           parent_category_id: parentId,
           is_active: true,
         });
@@ -354,17 +444,24 @@ export default async function initial_data_seed({
     input: {
       collections: [
         { title: "Best Sellers", handle: "best-sellers", metadata: { description: "Top-selling Indian groceries" } },
-        { title: "Rice & Grains", handle: "rice-grains", metadata: { description: "Basmati, Sona Masoori, and more" } },
-        { title: "Spices & Masalas", handle: "spices-masalas", metadata: { description: "Whole and ground Indian spices" } },
-        { title: "Dals & Lentils", handle: "dals-lentils", metadata: { description: "Toor, moong, masoor, and chana dals" } },
-        { title: "Snacks & Namkeen", handle: "snacks-namkeen", metadata: { description: "Bhujia, chips, biscuits, and namkeen" } },
-        { title: "Cooking Oils & Ghee", handle: "cooking-oils-ghee", metadata: { description: "Mustard, sunflower, coconut oils and pure ghee" } },
-        { title: "Beverages", handle: "beverages", metadata: { description: "Tea, coffee, and Indian drinks" } },
-        { title: "Frozen Foods", handle: "frozen-foods", metadata: { description: "Frozen snacks, parathas, and vegetables" } },
-        { title: "Pooja Essentials", handle: "pooja-essentials", metadata: { description: "Everything for your home temple and rituals" } },
-        { title: "Sweets & Mithai", handle: "sweets-mithai", metadata: { description: "Laddus, barfis, and canned Indian sweets" } },
-        { title: "Pickles & Chutneys", handle: "pickles-chutneys", metadata: { description: "Mango, lime, mixed pickles and chutneys" } },
-        { title: "Fresh Vegetables", handle: "fresh-vegetables", metadata: { description: "Fresh onions, potatoes, tomatoes, and seasonal veg" } },
+        { title: "Staples & Grains", handle: "staples-grains", metadata: { description: "Basmati, Sona Masoori, and more" } },
+        { title: "Atta & Flours", handle: "atta-flours", metadata: { description: "Chakki atta, besan, maida" } },
+        { title: "Dal & Lentils", handle: "dal-lentils", metadata: { description: "Toor, moong, masoor, chana" } },
+        { title: "Oils & Ghee", handle: "oils-ghee", metadata: { description: "Mustard, sunflower, coconut, ghee" } },
+        { title: "Spices — Whole", handle: "spices-whole", metadata: { description: "Cumin, mustard, cardamom, cloves" } },
+        { title: "Spices — Ground", handle: "spices-ground", metadata: { description: "Turmeric, chilli, coriander powders" } },
+        { title: "Spice Blends", handle: "spice-blends", metadata: { description: "Garam masala, MDH, Shan, Everest" } },
+        { title: "Dairy & Eggs", handle: "dairy", metadata: { description: "Paneer, yoghurt, butter, cream" } },
+        { title: "Beverages", handle: "beverages", metadata: { description: "Tea, coffee, Rooh Afza" } },
+        { title: "Snacks & Namkeen", handle: "snacks-namkeen", metadata: { description: "Bhujia, sev, papad, biscuits" } },
+        { title: "Pickles & Chutneys", handle: "pickles-chutneys", metadata: { description: "Mango, lime, mixed pickles" } },
+        { title: "Frozen Foods", handle: "frozen", metadata: { description: "Parathas, samosas, frozen veg" } },
+        { title: "Fresh Produce", handle: "fresh", metadata: { description: "Curry leaves, chillies, ginger" } },
+        { title: "Ready-to-Cook", handle: "ready-to-cook", metadata: { description: "Instant mixes, idli, dosa" } },
+        { title: "Condiments", handle: "condiments", metadata: { description: "Coconut milk, pastes, jaggery" } },
+        { title: "Pooja Essentials", handle: "pooja", metadata: { description: "Agarbatti, camphor, puja items" } },
+        { title: "Household & Kitchen", handle: "household", metadata: { description: "Tawa, kadhai, masala dabba" } },
+        { title: "Regional Specialties", handle: "regional", metadata: { description: "Punjabi, Gujarati, South Indian, Bengali" } },
       ],
     },
   });

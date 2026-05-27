@@ -1,0 +1,1486 @@
+{
+  "rice": [
+    "arisi",
+    "biyyam",
+    "akki",
+    "chawal",
+    "chaval",
+    "chal",
+    "chokha"
+  ],
+  "arisi": [
+    "rice"
+  ],
+  "brown rice": [
+    "pachai arisi",
+    "brown rice"
+  ],
+  "pachai arisi": [
+    "brown rice"
+  ],
+  "idli rice": [
+    "idli arisi",
+    "idli biyyam",
+    "idli akki"
+  ],
+  "idli arisi": [
+    "idli rice"
+  ],
+  "sona masuri rice": [
+    "sona masoori arisi",
+    "sona masoori biyyam",
+    "sona masoori akki"
+  ],
+  "sona masoori arisi": [
+    "sona masuri rice"
+  ],
+  "ponni rice": [
+    "ponni arisi"
+  ],
+  "ponni arisi": [
+    "ponni rice"
+  ],
+  "parboiled rice": [
+    "pulungal arisi"
+  ],
+  "pulungal arisi": [
+    "parboiled rice"
+  ],
+  "poha": [
+    "avul",
+    "aval",
+    "powa"
+  ],
+  "avul": [
+    "poha"
+  ],
+  "aval": [
+    "poha"
+  ],
+  "powa": [
+    "poha"
+  ],
+  "dal": [
+    "paruppu",
+    "pappu",
+    "bele",
+    "lentils"
+  ],
+  "paruppu": [
+    "dal"
+  ],
+  "toor dal": [
+    "thuvaram paruppu",
+    "kandi pappu",
+    "togari bele",
+    "toor dal",
+    "arhar dal",
+    "tuver dal"
+  ],
+  "thuvaram paruppu": [
+    "toor dal"
+  ],
+  "moong dal": [
+    "payatham paruppu",
+    "pasiparuppu",
+    "pesara pappu",
+    "hesaru bele",
+    "moong dal",
+    "mug dal",
+    "mag dal"
+  ],
+  "payatham paruppu": [
+    "moong dal"
+  ],
+  "pasiparuppu": [
+    "moong dal"
+  ],
+  "chana dal": [
+    "kadalai paruppu",
+    "senaga pappu",
+    "kadale bele",
+    "chana dal",
+    "cholar dal",
+    "chana ni dal"
+  ],
+  "kadalai paruppu": [
+    "chana dal"
+  ],
+  "urad dal": [
+    "ulundam paruppu",
+    "ulundu",
+    "minapa pappu",
+    "minapappu",
+    "uddina bele",
+    "urad dal",
+    "biuli dal",
+    "adad ni dal"
+  ],
+  "ulundam paruppu": [
+    "urad dal"
+  ],
+  "ulundu": [
+    "urad dal"
+  ],
+  "chana": [
+    "kadala",
+    "kadale kalu",
+    "chickpeas",
+    "chola"
+  ],
+  "kadala": [
+    "chana"
+  ],
+  "kabuli chana": [
+    "kondakadalai",
+    "kabuli senaga",
+    "chickpeas"
+  ],
+  "kondakadalai": [
+    "kabuli chana"
+  ],
+  "whole urad": [
+    "karuppu ulundu"
+  ],
+  "karuppu ulundu": [
+    "whole urad"
+  ],
+  "whole moong": [
+    "pachai payaru"
+  ],
+  "pachai payaru": [
+    "whole moong"
+  ],
+  "black pepper": [
+    "milagu",
+    "miriyalu",
+    "menasu",
+    "kali mirch",
+    "gol morich",
+    "mari"
+  ],
+  "milagu": [
+    "black pepper"
+  ],
+  "turmeric": [
+    "manjal",
+    "pasupu",
+    "arishina",
+    "haldi",
+    "halud",
+    "haldar"
+  ],
+  "manjal": [
+    "turmeric"
+  ],
+  "turmeric powder": [
+    "manjal podi"
+  ],
+  "manjal podi": [
+    "turmeric powder"
+  ],
+  "chilli powder": [
+    "milagai podi",
+    "karam podi",
+    "mensina pudi"
+  ],
+  "milagai podi": [
+    "chilli powder"
+  ],
+  "cumin": [
+    "jeeragam",
+    "jeelakarra",
+    "jeerige",
+    "jeera",
+    "zeera",
+    "jeere",
+    "jeeru"
+  ],
+  "jeeragam": [
+    "cumin"
+  ],
+  "coriander": [
+    "kothamalli",
+    "dhaniyalu",
+    "kottambari",
+    "dhania",
+    "dhone",
+    "dhana"
+  ],
+  "kothamalli": [
+    "coriander"
+  ],
+  "hing": [
+    "perungayam",
+    "inguva",
+    "ingu",
+    "asafoetida"
+  ],
+  "perungayam": [
+    "hing"
+  ],
+  "onion": [
+    "vengayam"
+  ],
+  "vengayam": [
+    "onion"
+  ],
+  "tamarind": [
+    "puli",
+    "chintapandu",
+    "hunase",
+    "imli",
+    "tetul",
+    "aamli"
+  ],
+  "puli": [
+    "tamarind"
+  ],
+  "coconut": [
+    "thengai",
+    "kobbari",
+    "tenginakayi",
+    "nariyal",
+    "narkel",
+    "kopru"
+  ],
+  "thengai": [
+    "coconut"
+  ],
+  "gingelly oil": [
+    "nellennai"
+  ],
+  "nellennai": [
+    "gingelly oil"
+  ],
+  "sesame oil": [
+    "nalla ennai",
+    "nuvvula nune",
+    "yellu enne",
+    "til ka tel"
+  ],
+  "nalla ennai": [
+    "sesame oil"
+  ],
+  "mustard": [
+    "kadugu",
+    "aavaalu",
+    "sasive",
+    "sarson",
+    "shorshe",
+    "rai"
+  ],
+  "kadugu": [
+    "mustard"
+  ],
+  "fenugreek": [
+    "vendhayam",
+    "menthulu",
+    "menthe",
+    "methi"
+  ],
+  "vendhayam": [
+    "fenugreek"
+  ],
+  "curry leaves": [
+    "karuveppilai",
+    "karivepaku",
+    "karibevu",
+    "kadi patta",
+    "meetha neem",
+    "kari pata",
+    "mitho limdo"
+  ],
+  "karuveppilai": [
+    "curry leaves"
+  ],
+  "cardamom": [
+    "elakkai",
+    "yalakulu",
+    "elakki",
+    "elaichi",
+    "elach",
+    "elchi"
+  ],
+  "elakkai": [
+    "cardamom"
+  ],
+  "cloves": [
+    "krambu",
+    "lavangam",
+    "lavangalu",
+    "lavanga",
+    "laung",
+    "lobongo",
+    "laving"
+  ],
+  "krambu": [
+    "cloves"
+  ],
+  "lavangam": [
+    "cloves"
+  ],
+  "cinnamon": [
+    "pattai",
+    "dalchina chekka",
+    "dalchini",
+    "darchini",
+    "taj"
+  ],
+  "pattai": [
+    "cinnamon"
+  ],
+  "nutmeg": [
+    "jathikai",
+    "jaiphal"
+  ],
+  "jathikai": [
+    "nutmeg"
+  ],
+  "ajwain": [
+    "omam",
+    "vamu",
+    "omakalu",
+    "carom seeds",
+    "jowan",
+    "ajmo"
+  ],
+  "omam": [
+    "ajwain"
+  ],
+  "fennel": [
+    "sombu",
+    "sopu ginjalu",
+    "sompu",
+    "mouri",
+    "variyali"
+  ],
+  "sombu": [
+    "fennel"
+  ],
+  "biyyam": [
+    "rice"
+  ],
+  "sona masoori biyyam": [
+    "sona masuri rice"
+  ],
+  "idli biyyam": [
+    "idli rice"
+  ],
+  "pappu": [
+    "dal"
+  ],
+  "kandi pappu": [
+    "toor dal"
+  ],
+  "pesara pappu": [
+    "moong dal"
+  ],
+  "senaga pappu": [
+    "chana dal"
+  ],
+  "minapa pappu": [
+    "urad dal"
+  ],
+  "minapappu": [
+    "urad dal"
+  ],
+  "kabuli senaga": [
+    "kabuli chana"
+  ],
+  "miriyalu": [
+    "black pepper"
+  ],
+  "pasupu": [
+    "turmeric"
+  ],
+  "karam podi": [
+    "chilli powder"
+  ],
+  "jeelakarra": [
+    "cumin"
+  ],
+  "dhaniyalu": [
+    "coriander"
+  ],
+  "inguva": [
+    "hing"
+  ],
+  "chintapandu": [
+    "tamarind"
+  ],
+  "kobbari": [
+    "coconut"
+  ],
+  "nuvvula nune": [
+    "sesame oil"
+  ],
+  "aavaalu": [
+    "mustard"
+  ],
+  "menthulu": [
+    "fenugreek"
+  ],
+  "karivepaku": [
+    "curry leaves"
+  ],
+  "yalakulu": [
+    "cardamom"
+  ],
+  "lavangalu": [
+    "cloves"
+  ],
+  "dalchina chekka": [
+    "cinnamon"
+  ],
+  "vamu": [
+    "ajwain"
+  ],
+  "sopu ginjalu": [
+    "fennel"
+  ],
+  "akki": [
+    "rice"
+  ],
+  "sona masoori akki": [
+    "sona masuri rice"
+  ],
+  "idli akki": [
+    "idli rice"
+  ],
+  "bele": [
+    "dal"
+  ],
+  "togari bele": [
+    "toor dal"
+  ],
+  "hesaru bele": [
+    "moong dal"
+  ],
+  "kadale bele": [
+    "chana dal"
+  ],
+  "uddina bele": [
+    "urad dal"
+  ],
+  "kadale kalu": [
+    "chana"
+  ],
+  "menasu": [
+    "black pepper"
+  ],
+  "arishina": [
+    "turmeric"
+  ],
+  "mensina pudi": [
+    "chilli powder"
+  ],
+  "jeerige": [
+    "cumin"
+  ],
+  "kottambari": [
+    "coriander"
+  ],
+  "ingu": [
+    "hing"
+  ],
+  "hunase": [
+    "tamarind"
+  ],
+  "tenginakayi": [
+    "coconut"
+  ],
+  "yellu enne": [
+    "sesame oil"
+  ],
+  "sasive": [
+    "mustard"
+  ],
+  "menthe": [
+    "fenugreek"
+  ],
+  "karibevu": [
+    "curry leaves"
+  ],
+  "elakki": [
+    "cardamom"
+  ],
+  "lavanga": [
+    "cloves"
+  ],
+  "dalchini": [
+    "cinnamon"
+  ],
+  "omakalu": [
+    "ajwain"
+  ],
+  "sompu": [
+    "fennel"
+  ],
+  "chawal": [
+    "rice"
+  ],
+  "chaval": [
+    "rice"
+  ],
+  "lentils": [
+    "dal"
+  ],
+  "arhar dal": [
+    "toor dal"
+  ],
+  "masoor dal": [
+    "masoor dal",
+    "musur dal"
+  ],
+  "chickpeas": [
+    "chana",
+    "kabuli chana"
+  ],
+  "black chickpeas": [
+    "kala chana"
+  ],
+  "kala chana": [
+    "black chickpeas"
+  ],
+  "kidney beans": [
+    "rajma"
+  ],
+  "rajma": [
+    "kidney beans"
+  ],
+  "black eyed beans": [
+    "lobhia"
+  ],
+  "lobhia": [
+    "black eyed beans"
+  ],
+  "whole wheat flour": [
+    "atta"
+  ],
+  "atta": [
+    "whole wheat flour"
+  ],
+  "plain flour": [
+    "maida"
+  ],
+  "maida": [
+    "plain flour"
+  ],
+  "gram flour": [
+    "besan",
+    "loth"
+  ],
+  "besan": [
+    "gram flour"
+  ],
+  "semolina": [
+    "sooji",
+    "rava",
+    "suji",
+    "ravo"
+  ],
+  "sooji": [
+    "semolina"
+  ],
+  "rava": [
+    "semolina"
+  ],
+  "suji": [
+    "semolina"
+  ],
+  "clarified butter": [
+    "ghee"
+  ],
+  "ghee": [
+    "clarified butter"
+  ],
+  "oil": [
+    "tel"
+  ],
+  "tel": [
+    "oil"
+  ],
+  "mustard oil": [
+    "sarson ka tel",
+    "sada tel"
+  ],
+  "sarson ka tel": [
+    "mustard oil"
+  ],
+  "coconut oil": [
+    "nariyal ka tel"
+  ],
+  "nariyal ka tel": [
+    "coconut oil"
+  ],
+  "haldi": [
+    "turmeric"
+  ],
+  "chilli": [
+    "mirchi",
+    "lanka",
+    "marchu"
+  ],
+  "mirchi": [
+    "chilli"
+  ],
+  "red chilli": [
+    "lal mirch"
+  ],
+  "lal mirch": [
+    "red chilli"
+  ],
+  "jeera": [
+    "cumin"
+  ],
+  "zeera": [
+    "cumin"
+  ],
+  "dhania": [
+    "coriander"
+  ],
+  "asafoetida": [
+    "hing",
+    "heeng"
+  ],
+  "heeng": [
+    "asafoetida"
+  ],
+  "imli": [
+    "tamarind"
+  ],
+  "nariyal": [
+    "coconut"
+  ],
+  "desiccated coconut": [
+    "khopra"
+  ],
+  "khopra": [
+    "desiccated coconut"
+  ],
+  "sesame": [
+    "til",
+    "tal"
+  ],
+  "til": [
+    "sesame"
+  ],
+  "til ka tel": [
+    "sesame oil"
+  ],
+  "mustard seeds": [
+    "rai"
+  ],
+  "rai": [
+    "mustard seeds",
+    "mustard"
+  ],
+  "sarson": [
+    "mustard"
+  ],
+  "methi": [
+    "fenugreek"
+  ],
+  "kadi patta": [
+    "curry leaves"
+  ],
+  "meetha neem": [
+    "curry leaves"
+  ],
+  "elaichi": [
+    "cardamom"
+  ],
+  "green cardamom": [
+    "choti elaichi"
+  ],
+  "choti elaichi": [
+    "green cardamom"
+  ],
+  "black cardamom": [
+    "badi elaichi"
+  ],
+  "badi elaichi": [
+    "black cardamom"
+  ],
+  "laung": [
+    "cloves"
+  ],
+  "kali mirch": [
+    "black pepper"
+  ],
+  "carom seeds": [
+    "ajwain"
+  ],
+  "fennel seeds": [
+    "saunf"
+  ],
+  "saunf": [
+    "fennel seeds"
+  ],
+  "jaiphal": [
+    "nutmeg"
+  ],
+  "mace": [
+    "javitri"
+  ],
+  "javitri": [
+    "mace"
+  ],
+  "mango powder": [
+    "amchur"
+  ],
+  "amchur": [
+    "mango powder"
+  ],
+  "pomegranate seeds": [
+    "anardana"
+  ],
+  "anardana": [
+    "pomegranate seeds"
+  ],
+  "jaggery": [
+    "gur"
+  ],
+  "gur": [
+    "jaggery"
+  ],
+  "unrefined sugar": [
+    "shakkar"
+  ],
+  "shakkar": [
+    "unrefined sugar"
+  ],
+  "salt": [
+    "namak"
+  ],
+  "namak": [
+    "salt"
+  ],
+  "black salt": [
+    "kala namak"
+  ],
+  "kala namak": [
+    "black salt"
+  ],
+  "indian cheese": [
+    "paneer"
+  ],
+  "paneer": [
+    "indian cheese"
+  ],
+  "yoghurt": [
+    "dahi"
+  ],
+  "dahi": [
+    "yoghurt"
+  ],
+  "raw": [
+    "kachha"
+  ],
+  "kachha": [
+    "raw"
+  ],
+  "roasted": [
+    "bhuna"
+  ],
+  "bhuna": [
+    "roasted"
+  ],
+  "hot": [
+    "garam"
+  ],
+  "garam": [
+    "hot"
+  ],
+  "cold": [
+    "thanda"
+  ],
+  "thanda": [
+    "cold"
+  ],
+  "fresh": [
+    "taza"
+  ],
+  "taza": [
+    "fresh"
+  ],
+  "chal": [
+    "rice"
+  ],
+  "basmati rice": [
+    "basmati chal"
+  ],
+  "basmati chal": [
+    "basmati rice"
+  ],
+  "musur dal": [
+    "masoor dal"
+  ],
+  "mug dal": [
+    "moong dal"
+  ],
+  "cholar dal": [
+    "chana dal"
+  ],
+  "biuli dal": [
+    "urad dal"
+  ],
+  "chola": [
+    "chana"
+  ],
+  "sada tel": [
+    "mustard oil"
+  ],
+  "halud": [
+    "turmeric"
+  ],
+  "lanka": [
+    "chilli"
+  ],
+  "jeere": [
+    "cumin"
+  ],
+  "dhone": [
+    "coriander"
+  ],
+  "tetul": [
+    "tamarind"
+  ],
+  "narkel": [
+    "coconut"
+  ],
+  "shorshe": [
+    "mustard"
+  ],
+  "kari pata": [
+    "curry leaves"
+  ],
+  "elach": [
+    "cardamom"
+  ],
+  "lobongo": [
+    "cloves"
+  ],
+  "darchini": [
+    "cinnamon"
+  ],
+  "gol morich": [
+    "black pepper"
+  ],
+  "jowan": [
+    "ajwain"
+  ],
+  "mouri": [
+    "fennel"
+  ],
+  "chokha": [
+    "rice"
+  ],
+  "tuver dal": [
+    "toor dal"
+  ],
+  "mag dal": [
+    "moong dal"
+  ],
+  "chana ni dal": [
+    "chana dal"
+  ],
+  "adad ni dal": [
+    "urad dal"
+  ],
+  "loth": [
+    "gram flour"
+  ],
+  "ravo": [
+    "semolina"
+  ],
+  "rice flour": [
+    "tandulja"
+  ],
+  "tandulja": [
+    "rice flour"
+  ],
+  "haldar": [
+    "turmeric"
+  ],
+  "marchu": [
+    "chilli"
+  ],
+  "jeeru": [
+    "cumin"
+  ],
+  "dhana": [
+    "coriander"
+  ],
+  "aamli": [
+    "tamarind"
+  ],
+  "kopru": [
+    "coconut"
+  ],
+  "tal": [
+    "sesame"
+  ],
+  "mitho limdo": [
+    "curry leaves"
+  ],
+  "elchi": [
+    "cardamom"
+  ],
+  "laving": [
+    "cloves"
+  ],
+  "taj": [
+    "cinnamon"
+  ],
+  "mari": [
+    "black pepper"
+  ],
+  "ajmo": [
+    "ajwain"
+  ],
+  "variyali": [
+    "fennel"
+  ],
+  "aashirvaad": [
+    "ashirvad",
+    "ashirwad",
+    "aashirvaadh",
+    "aashirvaad",
+    "ashirvaad"
+  ],
+  "ashirvad": [
+    "aashirvaad"
+  ],
+  "ashirwad": [
+    "aashirvaad"
+  ],
+  "aashirvaadh": [
+    "aashirvaad"
+  ],
+  "ashirvaad": [
+    "aashirvaad"
+  ],
+  "pillsbury": [
+    "pilsbury",
+    "pilsbery",
+    "pillsbery"
+  ],
+  "pilsbury": [
+    "pillsbury"
+  ],
+  "pilsbery": [
+    "pillsbury"
+  ],
+  "pillsbery": [
+    "pillsbury"
+  ],
+  "elephant": [
+    "elefant",
+    "elephent",
+    "elephant atta"
+  ],
+  "elefant": [
+    "elephant"
+  ],
+  "elephent": [
+    "elephant"
+  ],
+  "elephant atta": [
+    "elephant"
+  ],
+  "india gate": [
+    "indiagate",
+    "india gate rice",
+    "indian gate"
+  ],
+  "indiagate": [
+    "india gate"
+  ],
+  "india gate rice": [
+    "india gate"
+  ],
+  "indian gate": [
+    "india gate"
+  ],
+  "daawat": [
+    "dawat",
+    "dawaat",
+    "davaat"
+  ],
+  "dawat": [
+    "daawat"
+  ],
+  "dawaat": [
+    "daawat"
+  ],
+  "davaat": [
+    "daawat"
+  ],
+  "tilda": [
+    "tilda rice",
+    "tilda basmati",
+    "teelda"
+  ],
+  "tilda rice": [
+    "tilda"
+  ],
+  "tilda basmati": [
+    "tilda"
+  ],
+  "teelda": [
+    "tilda"
+  ],
+  "kohinoor": [
+    "kohinur",
+    "kohinoor rice",
+    "koh-i-noor"
+  ],
+  "kohinur": [
+    "kohinoor"
+  ],
+  "kohinoor rice": [
+    "kohinoor"
+  ],
+  "koh-i-noor": [
+    "kohinoor"
+  ],
+  "lal qilla": [
+    "lalqilla",
+    "lal quila",
+    "lal kila",
+    "lalqila"
+  ],
+  "lalqilla": [
+    "lal qilla"
+  ],
+  "lal quila": [
+    "lal qilla"
+  ],
+  "lal kila": [
+    "lal qilla"
+  ],
+  "lalqila": [
+    "lal qilla"
+  ],
+  "trs": [
+    "t.r.s",
+    "trs foods",
+    "trs brand"
+  ],
+  "t.r.s": [
+    "trs"
+  ],
+  "trs foods": [
+    "trs"
+  ],
+  "trs brand": [
+    "trs"
+  ],
+  "east end": [
+    "eastend",
+    "east end foods",
+    "eest end"
+  ],
+  "eastend": [
+    "east end"
+  ],
+  "east end foods": [
+    "east end"
+  ],
+  "eest end": [
+    "east end"
+  ],
+  "heera": [
+    "heera foods",
+    "hira",
+    "heeraa"
+  ],
+  "heera foods": [
+    "heera"
+  ],
+  "hira": [
+    "heera"
+  ],
+  "heeraa": [
+    "heera"
+  ],
+  "natco": [
+    "natco foods",
+    "natko",
+    "nat.co"
+  ],
+  "natco foods": [
+    "natco"
+  ],
+  "natko": [
+    "natco"
+  ],
+  "nat.co": [
+    "natco"
+  ],
+  "mdh": [
+    "m.d.h",
+    "mdh masala",
+    "mdh spices"
+  ],
+  "m.d.h": [
+    "mdh"
+  ],
+  "mdh masala": [
+    "mdh"
+  ],
+  "mdh spices": [
+    "mdh"
+  ],
+  "everest": [
+    "everast",
+    "everst",
+    "everest masala"
+  ],
+  "everast": [
+    "everest"
+  ],
+  "everst": [
+    "everest"
+  ],
+  "everest masala": [
+    "everest"
+  ],
+  "shan": [
+    "shaan",
+    "shan foods",
+    "shan masala"
+  ],
+  "shaan": [
+    "shan"
+  ],
+  "shan foods": [
+    "shan"
+  ],
+  "shan masala": [
+    "shan"
+  ],
+  "mtr": [
+    "mtr foods",
+    "m.t.r",
+    "mtr masala"
+  ],
+  "mtr foods": [
+    "mtr"
+  ],
+  "m.t.r": [
+    "mtr"
+  ],
+  "mtr masala": [
+    "mtr"
+  ],
+  "aachi": [
+    "achi",
+    "aachi masala",
+    "achi masala"
+  ],
+  "achi": [
+    "aachi"
+  ],
+  "aachi masala": [
+    "aachi"
+  ],
+  "achi masala": [
+    "aachi"
+  ],
+  "haldiram's": [
+    "haldiram",
+    "haldiraam",
+    "haldirams",
+    "haldiram's",
+    "haldirams namkeen"
+  ],
+  "haldiram": [
+    "haldiram's"
+  ],
+  "haldiraam": [
+    "haldiram's"
+  ],
+  "haldirams": [
+    "haldiram's"
+  ],
+  "haldirams namkeen": [
+    "haldiram's"
+  ],
+  "jabsons": [
+    "jabson",
+    "jabson's",
+    "jabsons namkeen"
+  ],
+  "jabson": [
+    "jabsons"
+  ],
+  "jabson's": [
+    "jabsons"
+  ],
+  "jabsons namkeen": [
+    "jabsons"
+  ],
+  "lijjat": [
+    "lijat",
+    "lijjat papad",
+    "lijat papad"
+  ],
+  "lijat": [
+    "lijjat"
+  ],
+  "lijjat papad": [
+    "lijjat"
+  ],
+  "lijat papad": [
+    "lijjat"
+  ],
+  "amul": [
+    "amool",
+    "amul dairy",
+    "amul ghee"
+  ],
+  "amool": [
+    "amul"
+  ],
+  "amul dairy": [
+    "amul"
+  ],
+  "amul ghee": [
+    "amul"
+  ],
+  "ktc": [
+    "k.t.c",
+    "ktc oils",
+    "ktc ghee"
+  ],
+  "k.t.c": [
+    "ktc"
+  ],
+  "ktc oils": [
+    "ktc"
+  ],
+  "ktc ghee": [
+    "ktc"
+  ],
+  "dabur": [
+    "daboor",
+    "dabur honey",
+    "dabur chyawanprash"
+  ],
+  "daboor": [
+    "dabur"
+  ],
+  "dabur honey": [
+    "dabur"
+  ],
+  "dabur chyawanprash": [
+    "dabur"
+  ],
+  "patak's": [
+    "patak",
+    "pataks",
+    "pataks pickle",
+    "pataks chutney"
+  ],
+  "patak": [
+    "patak's"
+  ],
+  "pataks": [
+    "patak's"
+  ],
+  "pataks pickle": [
+    "patak's"
+  ],
+  "pataks chutney": [
+    "patak's"
+  ],
+  "priya": [
+    "priya pickle",
+    "preya",
+    "priya foods"
+  ],
+  "priya pickle": [
+    "priya"
+  ],
+  "preya": [
+    "priya"
+  ],
+  "priya foods": [
+    "priya"
+  ],
+  "mother's recipe": [
+    "mothers recipe",
+    "mother recipe",
+    "mothers recipie"
+  ],
+  "mothers recipe": [
+    "mother's recipe"
+  ],
+  "mother recipe": [
+    "mother's recipe"
+  ],
+  "mothers recipie": [
+    "mother's recipe"
+  ],
+  "nilon's": [
+    "nilon",
+    "nilons pickle",
+    "neelons"
+  ],
+  "nilon": [
+    "nilon's"
+  ],
+  "nilons pickle": [
+    "nilon's"
+  ],
+  "neelons": [
+    "nilon's"
+  ],
+  "bedekar": [
+    "bedeker",
+    "bedekar pickle",
+    "bedekar pickles"
+  ],
+  "bedeker": [
+    "bedekar"
+  ],
+  "bedekar pickle": [
+    "bedekar"
+  ],
+  "bedekar pickles": [
+    "bedekar"
+  ],
+  "wagh bakri": [
+    "wagh bakri tea",
+    "wag bakri",
+    "waghbakri",
+    "vaag bakri"
+  ],
+  "wagh bakri tea": [
+    "wagh bakri"
+  ],
+  "wag bakri": [
+    "wagh bakri"
+  ],
+  "waghbakri": [
+    "wagh bakri"
+  ],
+  "vaag bakri": [
+    "wagh bakri"
+  ],
+  "brooke bond": [
+    "brook bond",
+    "brookebond",
+    "brook bond tea"
+  ],
+  "brook bond": [
+    "brooke bond"
+  ],
+  "brookebond": [
+    "brooke bond"
+  ],
+  "brook bond tea": [
+    "brooke bond"
+  ],
+  "tetley": [
+    "tetly",
+    "teteley",
+    "tetley tea"
+  ],
+  "tetly": [
+    "tetley"
+  ],
+  "teteley": [
+    "tetley"
+  ],
+  "tetley tea": [
+    "tetley"
+  ],
+  "parle": [
+    "parle g",
+    "parley",
+    "parle biscuits"
+  ],
+  "parle g": [
+    "parle"
+  ],
+  "parley": [
+    "parle"
+  ],
+  "parle biscuits": [
+    "parle"
+  ],
+  "britannia": [
+    "britania",
+    "britannia biscuits",
+    "britania biscuits"
+  ],
+  "britania": [
+    "britannia"
+  ],
+  "britannia biscuits": [
+    "britannia"
+  ],
+  "britania biscuits": [
+    "britannia"
+  ],
+  "nestle": [
+    "nestlé",
+    "nestle maggi",
+    "nestea"
+  ],
+  "nestlé": [
+    "nestle"
+  ],
+  "nestle maggi": [
+    "nestle"
+  ],
+  "nestea": [
+    "nestle"
+  ],
+  "pepsico": [
+    "pepsi",
+    "pepsico lays",
+    "pepsico kurkure"
+  ],
+  "pepsi": [
+    "pepsico"
+  ],
+  "pepsico lays": [
+    "pepsico"
+  ],
+  "pepsico kurkure": [
+    "pepsico"
+  ],
+  "maggi": [
+    "maggie",
+    "maggi noodles",
+    "magi"
+  ],
+  "maggie": [
+    "maggi"
+  ],
+  "maggi noodles": [
+    "maggi"
+  ],
+  "magi": [
+    "maggi"
+  ],
+  "cadbury": [
+    "cadburys",
+    "cadbury oreo",
+    "cadburies"
+  ],
+  "cadburys": [
+    "cadbury"
+  ],
+  "cadbury oreo": [
+    "cadbury"
+  ],
+  "cadburies": [
+    "cadbury"
+  ]
+}

@@ -69,6 +69,8 @@ export const BRANDS: Brand[] = [
   // Ready to Cook / Instant
   { slug: "gits", name: "Gits", categories: ["ready-to-cook"] },
   { slug: "bambino", name: "Bambino", categories: ["ready-to-cook"] },
+  // Fallback
+  { slug: "generic", name: "Generic / Unbranded", categories: [] },
 ]
 
 /** Slugs set — used for fast O(1) validation */

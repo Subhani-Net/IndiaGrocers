@@ -8,7 +8,7 @@ import CartMismatchBanner from "@modules/layout/components/cart-mismatch-banner"
 import Footer from "@modules/layout/templates/footer"
 import Nav from "@modules/layout/templates/nav"
 import FreeShippingPriceNudge from "@modules/shipping/components/free-shipping-price-nudge"
-import CountdownTimer from "@modules/common/components/countdown-timer"
+import PantryShell from "@modules/home/components/pantry-shell"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
@@ -28,7 +28,6 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
   return (
     <>
       <Nav />
-      <CountdownTimer />
       {customer && cart && (
         <CartMismatchBanner customer={customer} cart={cart} />
       )}
@@ -40,7 +39,7 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
           shippingOptions={shippingOptions}
         />
       )}
-      {props.children}
+      <PantryShell>{props.children}</PantryShell>
       <Footer />
     </>
   )

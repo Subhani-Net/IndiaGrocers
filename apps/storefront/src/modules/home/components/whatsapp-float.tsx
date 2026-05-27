@@ -1,10 +1,23 @@
 "use client"
 
 import { XMarkIcon } from "@heroicons/react/24/solid"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function WhatsAppFloat() {
   const [showPopup, setShowPopup] = useState(false)
+  const [dismissed, setDismissed] = useState(false)
+
+  useEffect(() => {
+    const stored = localStorage.getItem("whatsapp_dismissed")
+    if (stored === "true") setDismissed(true)
+  }, [])
+
+  const dismiss = () => {
+    localStorage.setItem("whatsapp_dismissed", "true")
+    setDismissed(true)
+  }
+
+  if (dismissed) return null
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">

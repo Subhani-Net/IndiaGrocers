@@ -1,0 +1,18 @@
+{
+  "name": "@indiagrocers/meilisearch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MeiliSearch configuration and utilities for IndiaGrocers",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "configure": "cd ../.. && npx tsx apps/meilisearch/scripts/configure-index.ts",
+    "reindex": "cd ../.. && npx tsx apps/meilisearch/scripts/reindex-products.ts"
+  },
+  "dependencies": {
+    "meilisearch": "^0.45.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0"
+  }
+}

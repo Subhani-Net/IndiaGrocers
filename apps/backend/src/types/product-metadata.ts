@@ -67,4 +67,14 @@ export interface ProductMetadata {
   requires_cold_chain: boolean
   /** Reference to the brands master list slug */
   brand_slug: string
+  /**
+   * Per-product transliteration / alternate search terms.
+   * Hindi/Urdu/Tamil/Bengali names a customer might type that are NOT
+   * covered by the global synonym dictionary. Indexed in MeiliSearch
+   * as `metadata.synonyms` and treated as searchable text.
+   *
+   * Example for "TRS Besan": ["besan", "gram flour", "chickpea flour"]
+   * Example for "Tilda Basmati": ["chawal", "chaval", "biryani rice"]
+   */
+  synonyms: string[]
 }

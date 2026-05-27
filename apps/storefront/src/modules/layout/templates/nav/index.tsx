@@ -8,7 +8,6 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
-import PostcodeCheckButton from "@modules/layout/components/postcode-check-button"
 
 interface NavCategory {
   name: string
@@ -69,7 +68,7 @@ function ChevronDown() {
   )
 }
 
-export default async function Nav() {
+export default async function Nav({ customer }: { customer?: any }) {
   const [regions, locales, currentLocale, categories] = await Promise.all([
     listRegions().then((regions: StoreRegion[]) => regions),
     listLocales(),
@@ -83,7 +82,7 @@ export default async function Nav() {
         FREE DELIVERY on orders over £40 &nbsp;·&nbsp; Order by 2pm for next day delivery
       </div>
 
-      <header className="sticky top-0 z-50 glass border-b border-grey-20/60">
+        <header className="z-50 bg-white border-b border-grey-20/60">
         <div className="content-container flex items-center justify-between h-14 lg:h-16 gap-3">
           {/* Mobile hamburger + Logo */}
           <div className="flex items-center gap-2 lg:gap-3">
@@ -157,18 +156,27 @@ export default async function Nav() {
             </form>
           </div>
 
-          {/* Right: Postcode + Account + Cart */}
+          {/* Right: Account + Cart */}
           <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
-            <div className="hidden sm:block">
-              <PostcodeCheckButton />
-            </div>
-            <LocalizedClientLink
-              className="min-tap flex items-center gap-1.5 text-xs lg:text-sm text-grey-70 hover:text-brand-orange transition-colors rounded-xl px-2 py-1.5 hover:bg-brand-orange/5"
-              href="/account"
-            >
-              <AccountIcon />
-              <span className="hidden lg:inline font-medium">Account</span>
-            </LocalizedClientLink>
+            {customer ? (
+              <LocalizedClientLink
+                className="min-tap flex items-center gap-1.5 text-xs lg:text-sm text-grey-70 hover:text-brand-orange transition-colors rounded-xl px-2 py-1.5 hover:bg-brand-orange/5"
+                href="/account"
+              >
+                <AccountIcon />
+                <span className="hidden lg:inline font-medium">
+                  Hi, {customer.first_name}
+                </span>
+              </LocalizedClientLink>
+            ) : (
+              <LocalizedClientLink
+                className="min-tap flex items-center gap-1.5 text-xs lg:text-sm text-grey-70 hover:text-brand-orange transition-colors rounded-xl px-2 py-1.5 hover:bg-brand-orange/5"
+                href="/account"
+              >
+                <AccountIcon />
+                <span className="hidden lg:inline font-medium">Account</span>
+              </LocalizedClientLink>
+            )}
             <Suspense
               fallback={
                 <LocalizedClientLink className="min-tap relative flex items-center gap-1.5 text-grey-70 hover:text-brand-orange transition-colors rounded-xl px-2 py-1.5 hover:bg-brand-orange/5" href="/cart">
@@ -185,9 +193,9 @@ export default async function Nav() {
       </header>
 
       {/* Category strip — desktop only, scrolls away */}
-      <div className="hidden lg:block bg-white/60 backdrop-blur-sm border-b border-grey-20/40">
+      <div className="hidden lg:block bg-white/60 backdrop-blur-sm border-b border-grey-20/40 overflow-visible">
         <div className="content-container">
-          <div className="flex items-center gap-0.5 overflow-x-auto no-scrollbar">
+          <div className="flex items-center gap-0.5 overflow-x-auto overflow-y-visible no-scrollbar">
             {categories.map((cat) => (
               <div key={cat.handle} className="nav-cat-group relative flex-shrink-0">
                 <LocalizedClientLink
@@ -203,7 +211,7 @@ export default async function Nav() {
                       {cat.children.map((child) => (
                         <LocalizedClientLink
                           key={child.handle}
-                          href={`/categories/${child.handle}`}
+                          href={`/categories/${cat.handle}`}
                           className="block px-3 py-2 text-sm text-grey-60 hover:text-brand-orange hover:bg-brand-orange/5 rounded-xl transition-colors"
                         >
                           {child.name}
@@ -215,8 +223,8 @@ export default async function Nav() {
               </div>
             ))}
           </div>
+          </div>
         </div>
-      </div>
     </>
   )
 }
