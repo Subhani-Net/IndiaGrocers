@@ -129,7 +129,7 @@ export default function WeightHeavyProductCard({
             </span>
           )}
           <LocalizedClientLink href={`/products/${handle}`}>
-            <h3 className="text-sm font-semibold text-stone-800 leading-tight line-clamp-2">
+            <h3 data-testid="product-title" className="text-sm font-semibold text-stone-800 leading-tight line-clamp-2">
               {cleanTitle}
             </h3>
           </LocalizedClientLink>
@@ -225,7 +225,7 @@ export default function WeightHeavyProductCard({
 
         <div className="flex-1 flex flex-col p-3.5">
           <LocalizedClientLink href={`/products/${handle}`}>
-            <h3 className="text-sm font-semibold text-stone-800 group-hover:text-brand-orange transition-colors line-clamp-2 leading-snug min-h-[2.5rem]">
+            <h3 data-testid="product-title" className="text-sm font-semibold text-stone-800 group-hover:text-brand-orange transition-colors line-clamp-2 leading-snug min-h-[2.5rem]">
               {cleanTitle}
             </h3>
           </LocalizedClientLink>

@@ -198,3 +198,42 @@ export async function fetchProductsPage({
 
   return { products, count, page }
 }
+
+/**
+ * Fetch full products by their Medusa IDs, preserving sort order from MeiliSearch.
+ * Used after MeiliSearch returns ranked IDs — fetches full variant/pricing/image data.
+ */
+export async function fetchProductsByIds({
+  ids,
+  countryCode,
+}: {
+  ids: string[]
+  countryCode: string
+}): Promise<HttpTypes.StoreProduct[]> {
+  if (!ids.length) return []
+
+  const region = await getRegion(countryCode)
+  if (!region) return []
+
+  const headers = { ...(await getAuthHeaders()) }
+  const next = { ...(await getCacheOptions("products")) }
+
+  const { products } = await sdk.client
+    .fetch<{ products: HttpTypes.StoreProduct[] }>("/store/products", {
+      method: "GET",
+      query: {
+        id: ids,
+        region_id: region.id,
+        limit: ids.length,
+        fields: "title,*variants.calculated_price,*variants.metadata,variants.title,variants.id,categories.id,categories.name,+variants.inventory_quantity,*variants.images,*metadata,*tags,*thumbnail,*description,",
+      },
+      headers,
+      next,
+      cache: "force-cache",
+    })
+    .then(({ products }) => ({ products }))
+
+  // Re-sort products to match the MeiliSearch ID order
+  const productMap = new Map((products || []).map((p: any) => [p.id, p]))
+  return ids.map((id) => productMap.get(id)).filter(Boolean) as HttpTypes.StoreProduct[]
+}

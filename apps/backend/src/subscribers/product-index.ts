@@ -44,6 +44,7 @@ export default async function productIndexHandler({
         "variants.title",
         "variants.sku",
         "variants.inventory_quantity",
+        "variants.metadata",
         "variants.calculated_price.calculated_amount",
       ],
     })
@@ -55,6 +56,12 @@ export default async function productIndexHandler({
     const meta = (product.metadata || {}) as Record<string, unknown>
     const price =
       product.variants?.[0]?.calculated_price?.calculated_amount || 0
+    const maxWeight = Math.max(
+      0,
+      ...(product.variants || []).map(
+        (v: any) => v.metadata?.weight_grams || v.metadata?.weight_value || 0
+      )
+    )
 
     const document = {
       id: product.id,
@@ -66,6 +73,9 @@ export default async function productIndexHandler({
       status: product.status,
       created_at: product.created_at,
       price_gbp: price,
+      weight_grams: maxWeight,
+      category_name: product.categories?.[0]?.name || "",
+      category_handle: product.categories?.[0]?.handle || "",
       collection_title: product.collection?.title || "",
       collection_handle: product.collection?.handle || "",
       tags: (product.tags || []).map((t: any) => t.value),

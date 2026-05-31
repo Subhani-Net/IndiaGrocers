@@ -55,6 +55,9 @@ interface IndexDocument {
   status: string
   created_at: string
   price_gbp: number
+  weight_grams: number
+  category_name: string
+  category_handle: string
   collection_title: string
   collection_handle: string
   tags: string[]
@@ -111,6 +114,12 @@ async function fetchProducts(token: string): Promise<MedusaProduct[]> {
 function transformProduct(p: MedusaProduct): IndexDocument {
   const meta = (p.metadata || {}) as Record<string, unknown>
   const price = p.variants?.[0]?.calculated_price?.calculated_amount || 0
+  const maxWeight = Math.max(
+    0,
+    ...(p.variants || []).map(
+      (v: any) => v.metadata?.weight_grams || v.metadata?.weight_value || 0
+    )
+  )
 
   return {
     id: p.id,
@@ -122,14 +131,15 @@ function transformProduct(p: MedusaProduct): IndexDocument {
     status: p.status,
     created_at: p.created_at,
     price_gbp: price,
+    weight_grams: maxWeight,
+    category_name: p.categories?.[0]?.name || "",
+    category_handle: p.categories?.[0]?.handle || "",
     collection_title: p.collection?.title || "",
     collection_handle: p.collection?.handle || "",
     tags: (p.tags || []).map((t) => t.value),
     metadata: {
       ...meta,
-      // Expand brand_slug for better search matching
       brand_slug: meta.brand_slug || "",
-      // Join synonyms array into searchable text
       synonyms_text: Array.isArray(meta.synonyms)
         ? (meta.synonyms as string[]).join(" ")
         : "",

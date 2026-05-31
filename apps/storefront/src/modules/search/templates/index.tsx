@@ -8,6 +8,7 @@ import Thumbnail from "@modules/products/components/thumbnail"
 import ProductCard from "@modules/products/components/product-preview/product-card"
 import { useSearchParams } from "next/navigation"
 import { searchProducts, autocompleteProducts } from "@lib/search-client"
+import { fetchProductsByIds } from "@lib/data/products"
 
 // Inline synonym detection (avoids cross-package import from meilisearch workspace)
 const SYNONYM_MAP = {
@@ -95,8 +96,10 @@ function BrandChips({
 
 export default function SearchTemplate({
   categoryChips,
+  countryCode,
 }: {
   categoryChips?: Array<{ name: string; handle: string }>
+  countryCode: string
 }) {
   const searchParams = useSearchParams()
   const qParam = searchParams.get("q")
@@ -156,21 +159,23 @@ export default function SearchTemplate({
 
   const [appliedSynonym, setAppliedSynonym] = useState<string | null>(null)
 
-  const performSearch = async (searchQuery: string, pageNum: number = 1) => {
+  const performSearch = useCallback(async (searchQuery: string, pageNum: number = 1) => {
     if (!searchQuery.trim() && !hasFilters) {
       setProducts([]); setSearched(false); setTotalCount(0); setAppliedSynonym(null); return
     }
     setLoading(true); setSearched(true)
     try {
         const { products: hits, totalCount: count } = await searchProducts((searchQuery || "").trim(), { limit: 12, offset: (pageNum - 1) * 12 })
-        setProducts(hits.map(h => ({ id: h.id, title: h.title, handle: h.handle, thumbnail: h.thumbnail } as any)))
+        const hitIds = hits.map((h: any) => h.id)
+        const fullProducts = await fetchProductsByIds({ ids: hitIds, countryCode })
+        setProducts(fullProducts as any[])
       setTotalCount(count)
       setPage(pageNum)
       const resolved = getResolvedTerm((searchQuery || "").trim())
       setAppliedSynonym(resolved)
     } catch { setProducts([]); setTotalCount(0) }
     setLoading(false)
-  }
+  }, [hasFilters, countryCode])
 
   useEffect(() => {
     const timer = setTimeout(() => performSearch(query), 300)

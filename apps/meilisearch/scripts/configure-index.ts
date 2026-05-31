@@ -26,6 +26,7 @@ async function main() {
     "description",
     "handle",
     "subtitle",
+    "category_name",
     "metadata.brand_slug",
     "metadata.synonyms",
     "metadata.allergens",
@@ -38,13 +39,17 @@ async function main() {
   // 2. Set filterable attributes
   console.log("Setting filterable attributes...")
   await index.updateFilterableAttributes([
+    "category_handle",
     "collection_handle",
-    "metadata.regional_tags",
+    "tags",
     "metadata.dietary_flags",
+    "metadata.allergens",
+    "metadata.regional_tags",
     "metadata.velocity",
     "metadata.brand_slug",
     "metadata.vat_rate",
     "metadata.subscription_eligible",
+    "metadata.eco_rating",
     "status",
   ])
   console.log("  ✓ filterableAttributes updated")
@@ -54,6 +59,7 @@ async function main() {
   await index.updateSortableAttributes([
     "price_gbp",
     "created_at",
+    "weight_grams",
     "metadata.velocity",
   ])
   console.log("  ✓ sortableAttributes updated")
@@ -65,6 +71,7 @@ async function main() {
     "typo",
     "proximity",
     "attribute",
+    "metadata.velocity:desc",
     "sort",
     "exactness",
   ])

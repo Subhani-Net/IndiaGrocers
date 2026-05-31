@@ -8,11 +8,15 @@ export const metadata: Metadata = {
   description: "Search for Indian groceries, spices, rice, dals and more",
 }
 
-export default async function SearchPage() {
-  // Fetch categories dynamically for chips
+type Props = {
+  params: Promise<{ countryCode: string }>
+}
+
+export default async function SearchPage(props: Props) {
+  const { countryCode } = await props.params
+
   const categories = await listCategories().catch(() => [])
 
-  // Extract parent category names for quick-filter chips
   const parentCategories = (Array.isArray(categories) ? categories : [])
     .filter((c: any) => !c.parent_category_id)
     .slice(0, 12)
@@ -20,7 +24,7 @@ export default async function SearchPage() {
 
   return (
     <Suspense>
-      <SearchTemplate categoryChips={parentCategories} />
+      <SearchTemplate categoryChips={parentCategories} countryCode={countryCode} />
     </Suspense>
   )
 }

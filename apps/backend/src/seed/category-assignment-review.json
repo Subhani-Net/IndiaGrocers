@@ -1,0 +1,2934 @@
+{
+  "_generated": "2026-05-28T22:09:58.453Z",
+  "_total_products": 265,
+  "_matched": 261,
+  "_unmatched": 4,
+  "_instructions": "Review the assignments. Run with --apply to upload to DB.",
+  "assigned": [
+    {
+      "product_id": "prod_01KSQVCBKM9AKC9FMG5KHDM6HP",
+      "product_title": "Amchoor Powder Jar 100g",
+      "product_handle": "4567657545800",
+      "current_categories": [
+        "amchur-mango-powder"
+      ],
+      "assigned_leaf_category": "amchur-mango-powder",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4KMTDNFBW3DX30P1D5",
+      "assigned_leaf_category_name": "Amchur (Mango Powder)"
+    },
+    {
+      "product_id": "prod_01KSQVCBTHYDMNGSDY2THTS421",
+      "product_title": "Asafoetida (Hing) Jar 100g",
+      "product_handle": "4567657447496",
+      "current_categories": [
+        "spices-whole",
+        "asafoetida-hing"
+      ],
+      "assigned_leaf_category": "asafoetida-hing",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4906JVDA0H6G6PTS6E",
+      "assigned_leaf_category_name": "Asafoetida / Hing"
+    },
+    {
+      "product_id": "prod_01KSQVBR5MM1X9Q48J4VJ15QER",
+      "product_title": "Coconut Flour 200g",
+      "product_handle": "4583223853128",
+      "current_categories": [
+        "snacks-namkeen",
+        "atta-flours"
+      ],
+      "assigned_leaf_category": "atta-flours",
+      "assigned_leaf_category_id": "pcat_01KSNC6FYZQ2PX4GQ6T1H72PR6",
+      "assigned_leaf_category_name": "Atta & Flours"
+    },
+    {
+      "product_id": "prod_01KSQVBR9186D7EZ8X1W2QRV80",
+      "product_title": "Coconut Flour 1kg",
+      "product_handle": "4583223820360",
+      "current_categories": [
+        "snacks-namkeen",
+        "atta-flours"
+      ],
+      "assigned_leaf_category": "atta-flours",
+      "assigned_leaf_category_id": "pcat_01KSNC6FYZQ2PX4GQ6T1H72PR6",
+      "assigned_leaf_category_name": "Atta & Flours"
+    },
+    {
+      "product_id": "prod_01KSQVBJTC4XKNXZHTGW2CBW0G",
+      "product_title": "Basmati Rice India 2kg",
+      "product_handle": "4567662002248",
+      "current_categories": [
+        "staples-grains",
+        "basmati-rice"
+      ],
+      "assigned_leaf_category": "basmati-rice",
+      "assigned_leaf_category_id": "pcat_01KSNC6G35N5GEW77CYA5ZP3XH",
+      "assigned_leaf_category_name": "Basmati Rice"
+    },
+    {
+      "product_id": "prod_01KSQVC28TDE46FZRZ69BRR68A",
+      "product_title": "Mamra Basmati 908g",
+      "product_handle": "4641506558024",
+      "current_categories": [
+        "staples-grains",
+        "basmati-rice"
+      ],
+      "assigned_leaf_category": "basmati-rice",
+      "assigned_leaf_category_id": "pcat_01KSNC6G35N5GEW77CYA5ZP3XH",
+      "assigned_leaf_category_name": "Basmati Rice"
+    },
+    {
+      "product_id": "prod_01KSQVC2D1X717PDCHAJAY2NT7",
+      "product_title": "Mamra Basmati 200g",
+      "product_handle": "4641504952392",
+      "current_categories": [
+        "staples-grains",
+        "basmati-rice"
+      ],
+      "assigned_leaf_category": "basmati-rice",
+      "assigned_leaf_category_id": "pcat_01KSNC6G35N5GEW77CYA5ZP3XH",
+      "assigned_leaf_category_name": "Basmati Rice"
+    },
+    {
+      "product_id": "prod_01KSQVC7SE8Z5KAJ5EB6JA9EQE",
+      "product_title": "Basmati Rice India - Bag 5kg",
+      "product_handle": "4567662067784",
+      "current_categories": [
+        "staples-grains",
+        "basmati-rice"
+      ],
+      "assigned_leaf_category": "basmati-rice",
+      "assigned_leaf_category_id": "pcat_01KSNC6G35N5GEW77CYA5ZP3XH",
+      "assigned_leaf_category_name": "Basmati Rice"
+    },
+    {
+      "product_id": "prod_01KSQVC7WBPJ4BPB248TAXWV7C",
+      "product_title": "Basmati Rice Kernel 5kg",
+      "product_handle": "4567661871176",
+      "current_categories": [
+        "staples-grains",
+        "basmati-rice"
+      ],
+      "assigned_leaf_category": "basmati-rice",
+      "assigned_leaf_category_id": "pcat_01KSNC6G35N5GEW77CYA5ZP3XH",
+      "assigned_leaf_category_name": "Basmati Rice"
+    },
+    {
+      "product_id": "prod_01KSQVBY6SH4E8XEF7VQVVT974",
+      "product_title": "Gram Flour Superfine 2kg",
+      "product_handle": "4567669309512",
+      "current_categories": [
+        "atta-flours",
+        "besan-gram-flour"
+      ],
+      "assigned_leaf_category": "besan-gram-flour",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3B56JR3J3KDTQDNRD3",
+      "assigned_leaf_category_name": "Besan (Gram Flour)"
+    },
+    {
+      "product_id": "prod_01KSQVBYB4E31ND32W51N5W24F",
+      "product_title": "Gram Flour Superfine 1kg",
+      "product_handle": "4567669211208",
+      "current_categories": [
+        "atta-flours",
+        "besan-gram-flour"
+      ],
+      "assigned_leaf_category": "besan-gram-flour",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3B56JR3J3KDTQDNRD3",
+      "assigned_leaf_category_name": "Besan (Gram Flour)"
+    },
+    {
+      "product_id": "prod_01KSQVBYF9NQ6BDXZ4HM65NW7Z",
+      "product_title": "Gram Flour Superfine 500g",
+      "product_handle": "4567669145672",
+      "current_categories": [
+        "atta-flours",
+        "besan-gram-flour"
+      ],
+      "assigned_leaf_category": "besan-gram-flour",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3B56JR3J3KDTQDNRD3",
+      "assigned_leaf_category_name": "Besan (Gram Flour)"
+    },
+    {
+      "product_id": "prod_01KSQVBYJPQMKTE0E1AV5AACKX",
+      "product_title": "Gram Flour (Papa brand) 2kg",
+      "product_handle": "4567669047368",
+      "current_categories": [
+        "atta-flours",
+        "besan-gram-flour"
+      ],
+      "assigned_leaf_category": "besan-gram-flour",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3B56JR3J3KDTQDNRD3",
+      "assigned_leaf_category_name": "Besan (Gram Flour)"
+    },
+    {
+      "product_id": "prod_01KSQVCDXYT972A2C58N9EWRCV",
+      "product_title": "Biryani Masala Mangal 50g",
+      "product_handle": "4567665180744",
+      "current_categories": [
+        "spice-blends"
+      ],
+      "assigned_leaf_category": "biryani-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4RF907ZPMCTDJ2Z664",
+      "assigned_leaf_category_name": "Biryani Masala"
+    },
+    {
+      "product_id": "prod_01KSQVCDCNWKGVA9V9E12GDABR",
+      "product_title": "Chat Masala Mangal 100g",
+      "product_handle": "4567665442888",
+      "current_categories": [],
+      "assigned_leaf_category": "chaat-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4NA9BKV3CZ0C317RC9",
+      "assigned_leaf_category_name": "Chaat Masala"
+    },
+    {
+      "product_id": "prod_01KSQVC34FRJAVR2WB1QXWSAQG",
+      "product_title": "Chanadal Polished 2kg",
+      "product_handle": "4567667310664",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-dal",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3GCZ4TNMR5K4B014HX",
+      "assigned_leaf_category_name": "Chana Dal"
+    },
+    {
+      "product_id": "prod_01KSQVC37RW3K6Y60NSJPAPE7J",
+      "product_title": "Chanadal Polished 1kg",
+      "product_handle": "4567667277896",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-dal",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3GCZ4TNMR5K4B014HX",
+      "assigned_leaf_category_name": "Chana Dal"
+    },
+    {
+      "product_id": "prod_01KSQVBG55DS8RS0XP9A8QK9G9",
+      "product_title": "Chick Peas Full Case 4x1kg",
+      "product_handle": "4583223754824",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVBGQPWME02JM7HJV08XDC",
+      "product_title": "Chick Peas Full Case 12x400g",
+      "product_handle": "4583223165000",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVBGYC58EZ7F6BQGM4E2J0",
+      "product_title": "Chick Peas 2.5kg",
+      "product_handle": "4583223066696",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVBH3W76Y2PXAJ9435Q0K6",
+      "product_title": "Chick Peas 2kg",
+      "product_handle": "4567672356936",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVBH7PZ4JB4RCA019MGE4Q",
+      "product_title": "Kala Chana Boiled 400g",
+      "product_handle": "4567672193096",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVBHQPPPEDB27BXR07XT4M",
+      "product_title": "Rose Coco (Borlotti) Beans 400g",
+      "product_handle": "4567671504968",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVBJ59N47WT0WWWT24BZX9",
+      "product_title": "Alubia Beans 2kg",
+      "product_handle": "4567667638344",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVBJ98JHZSJ84YX8JDC287",
+      "product_title": "Alubia Beans 500g",
+      "product_handle": "4567667605576",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVC2KWNNTWPKK2YCD9MHY2",
+      "product_title": "Butter Beans 2kg",
+      "product_handle": "4567667474504",
+      "current_categories": [
+        "dairy"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVC2R3KJ5D8HBATQJ9J74Z",
+      "product_title": "Butter Beans 500g",
+      "product_handle": "4567667441736",
+      "current_categories": [
+        "dairy"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVCD8QN7MPSYW93SMQPQBY",
+      "product_title": "Chana Masala Mangal 100g",
+      "product_handle": "4567665475656",
+      "current_categories": [
+        "spice-blends"
+      ],
+      "assigned_leaf_category": "chana-whole-chickpeas",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3PWBNNV7RGHGAW62NQ",
+      "assigned_leaf_category_name": "Chana (Whole Chickpeas)"
+    },
+    {
+      "product_id": "prod_01KSQVBXSVJ6Y34DW8T5FTRSRD",
+      "product_title": "Chapati Flour White 1.5kg",
+      "product_handle": "4567669866568",
+      "current_categories": [],
+      "assigned_leaf_category": "chapatti-flour-atta",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3A0Z0PQ3B4YAY50VY9",
+      "assigned_leaf_category_name": "Chapatti Flour (Atta)"
+    },
+    {
+      "product_id": "prod_01KSQVBXXYNBRW01Y076KCQQJV",
+      "product_title": "Chapati Flour Medium 1.5kg",
+      "product_handle": "4567669833800",
+      "current_categories": [],
+      "assigned_leaf_category": "chapatti-flour-atta",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3A0Z0PQ3B4YAY50VY9",
+      "assigned_leaf_category_name": "Chapatti Flour (Atta)"
+    },
+    {
+      "product_id": "prod_01KSQVCDTSEQJK9RBFMNCW0BVC",
+      "product_title": "Chicken Masala Mangal 100g",
+      "product_handle": "4567665213512",
+      "current_categories": [
+        "spice-blends"
+      ],
+      "assigned_leaf_category": "chicken-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4YX2DB9THT8FPMAXX3",
+      "assigned_leaf_category_name": "Chicken Masala"
+    },
+    {
+      "product_id": "prod_01KSQVCD5MEC1WZS23XW711PZT",
+      "product_title": "Anardana Powder Mangal 100g",
+      "product_handle": "4567665508424",
+      "current_categories": [],
+      "assigned_leaf_category": "chole-chana-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4PXJ41M52FJQRP9MTV",
+      "assigned_leaf_category_name": "Chole / Chana Masala"
+    },
+    {
+      "product_id": "prod_01KSQVCCNRKGG26SJ1N0VHMR7D",
+      "product_title": "Cloves Jar 50g",
+      "product_handle": "4567657054280",
+      "current_categories": [
+        "spices-whole"
+      ],
+      "assigned_leaf_category": "cloves-laung",
+      "assigned_leaf_category_id": "pcat_01KSNC6G46XHW7MPRYF837XYQ6",
+      "assigned_leaf_category_name": "Cloves (Laung)"
+    },
+    {
+      "product_id": "prod_01KSQVBRSMRH4RNC2EBX03XDQF",
+      "product_title": "Coconut Oil (Parachute Brand) 500ml",
+      "product_handle": "4567671832648",
+      "current_categories": [
+        "oils-ghee"
+      ],
+      "assigned_leaf_category": "coconut-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3WC71RFBK67WNNPV61",
+      "assigned_leaf_category_name": "Coconut Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBK4RX42XYGC2ADPPV1VQ",
+      "product_title": "Lemon Juice 1 Ltr",
+      "product_handle": "15097116393857",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVBK9FMEP9GXA55WJP0AB1",
+      "product_title": "Lemon Juice 500ml",
+      "product_handle": "15097122881921",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVBKJQEZEJCQ0DYCK4SP2C",
+      "product_title": "Okra Full Case 12x400g",
+      "product_handle": "4567670423624",
+      "current_categories": [
+        "fresh"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVBM7NFJMD59FVAXXYW5W6",
+      "product_title": "Crispy Fried Onions 150g",
+      "product_handle": "4567661084744",
+      "current_categories": [
+        "fresh"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVBNJ5PVPHK9JSSEZVJJMQ",
+      "product_title": "Punjabi Tinda Full Case 12x400g",
+      "product_handle": "4567670161480",
+      "current_categories": [
+        "fresh"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVBPEHT35P9918N6Q98V5H",
+      "product_title": "Tamarind &amp; Date Sauce 340g",
+      "product_handle": "4567672717384",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCABY4ZG4PSNYQ26J1T15",
+      "product_title": "Tomatoes Chopped Full Case 12x400g",
+      "product_handle": "4567670980680",
+      "current_categories": [
+        "fresh"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCEWYWAWJAYZ9P6E8300M",
+      "product_title": "Spinach Puree 395g",
+      "product_handle": "6617796804680",
+      "current_categories": [],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCF04CGDEYRF9964CYQ2M",
+      "product_title": "Mango Slices Alphonso 425g",
+      "product_handle": "4567671963720",
+      "current_categories": [],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCF71KBCA5GYEWG31PM1Y",
+      "product_title": "Crispy Fried Onions 400g",
+      "product_handle": "6647388209224",
+      "current_categories": [
+        "fresh"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCFACWBBF47AXP2XT9XAN",
+      "product_title": "Spinach Leaf 396g",
+      "product_handle": "4567671406664",
+      "current_categories": [],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCFFPKH6YS6A1988XSXGM",
+      "product_title": "Spinach Puree 794g",
+      "product_handle": "4567671308360",
+      "current_categories": [],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCFN33HJSJ1VX62J53AED",
+      "product_title": "Tomato Paste 800g",
+      "product_handle": "4567671210056",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCFSW03MSZGKRBQGZ41AD",
+      "product_title": "Tomatoes Peeled 400g",
+      "product_handle": "4567671144520",
+      "current_categories": [
+        "fresh"
+      ],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCFZ8NFVPVVVSK94EXAYB",
+      "product_title": "Patra 400g",
+      "product_handle": "4567670915144",
+      "current_categories": [],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCG4SJK12QHFDYDZA20YG",
+      "product_title": "Sarson Ka Saag 450g",
+      "product_handle": "4567670816840",
+      "current_categories": [],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCG9PY7PY4HPJMN123W9A",
+      "product_title": "Karela 400g",
+      "product_handle": "4567670620232",
+      "current_categories": [],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCGFBJ1513KAT4JY27YSR",
+      "product_title": "Lotus Root 400g",
+      "product_handle": "4567670521928",
+      "current_categories": [],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCGPJJ1T5BXT4N0C90NVM",
+      "product_title": "Suran (Yam) 400g",
+      "product_handle": "4567670095944",
+      "current_categories": [],
+      "assigned_leaf_category": "condiments",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ9SWRQBAVQ8JSCQBS0",
+      "assigned_leaf_category_name": "Condiments & Cooking Essentials"
+    },
+    {
+      "product_id": "prod_01KSQVCCX1XYK21VDBA26KBCZB",
+      "product_title": "Coriander Ground Jar 70g",
+      "product_handle": "4567656988744",
+      "current_categories": [],
+      "assigned_leaf_category": "coriander-powder-dhania",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4EN4VGAFJVK4F5B8PC",
+      "assigned_leaf_category_name": "Coriander Powder (Dhania)"
+    },
+    {
+      "product_id": "prod_01KSQVBZTJF00RZ09KRRVEPBE0",
+      "product_title": "Milk Powder 750g",
+      "product_handle": "4567668326472",
+      "current_categories": [
+        "dairy"
+      ],
+      "assigned_leaf_category": "dairy",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ48AHV1R4AK2DWYTNN",
+      "assigned_leaf_category_name": "Dairy & Eggs"
+    },
+    {
+      "product_id": "prod_01KSQVBZZ2TFMYT0YVX8F8NQTR",
+      "product_title": "Milk Powder 300g",
+      "product_handle": "4567668293704",
+      "current_categories": [
+        "dairy"
+      ],
+      "assigned_leaf_category": "dairy",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ48AHV1R4AK2DWYTNN",
+      "assigned_leaf_category_name": "Dairy & Eggs"
+    },
+    {
+      "product_id": "prod_01KSQVBFA50WF5R192RRQXCFG1",
+      "product_title": "Soya Chunks 700g",
+      "product_handle": "4567660527688",
+      "current_categories": [
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "dal-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ029NQY2F27FAH7B9P",
+      "assigned_leaf_category_name": "Dal & Lentils"
+    },
+    {
+      "product_id": "prod_01KSQVC4CT4377X607X08CPTRS",
+      "product_title": "Gram Roasted Unsalted 300g",
+      "product_handle": "4567661445192",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "dal-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ029NQY2F27FAH7B9P",
+      "assigned_leaf_category_name": "Dal & Lentils"
+    },
+    {
+      "product_id": "prod_01KSQVC4GNGEA0KT370NW453YV",
+      "product_title": "Gram Roasted Salted 300g",
+      "product_handle": "4567661412424",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "dal-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ029NQY2F27FAH7B9P",
+      "assigned_leaf_category_name": "Dal & Lentils"
+    },
+    {
+      "product_id": "prod_01KSQVC4WQPEKVW91PAKC7EF6F",
+      "product_title": "Daria Dal 300g",
+      "product_handle": "4567661248584",
+      "current_categories": [],
+      "assigned_leaf_category": "dal-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ029NQY2F27FAH7B9P",
+      "assigned_leaf_category_name": "Dal & Lentils"
+    },
+    {
+      "product_id": "prod_01KSQVC9RS50G0798VQJANBPJQ",
+      "product_title": "Soya Beans 2kg",
+      "product_handle": "4567665573960",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "dal-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ029NQY2F27FAH7B9P",
+      "assigned_leaf_category_name": "Dal & Lentils"
+    },
+    {
+      "product_id": "prod_01KSQVC9W1B5JX7XH18WWWCP6G",
+      "product_title": "Soya Beans 500g",
+      "product_handle": "4567665541192",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "dal-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ029NQY2F27FAH7B9P",
+      "assigned_leaf_category_name": "Dal & Lentils"
+    },
+    {
+      "product_id": "prod_01KSQVC9Z8CX77HDK29MR3EAEJ",
+      "product_title": "Soya Chunks 350g",
+      "product_handle": "4567660462152",
+      "current_categories": [
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "dal-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ029NQY2F27FAH7B9P",
+      "assigned_leaf_category_name": "Dal & Lentils"
+    },
+    {
+      "product_id": "prod_01KSQVCA3CVDMHEK5SG1R8KB0V",
+      "product_title": "Soya Mince 300g",
+      "product_handle": "4567660396616",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "dal-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ029NQY2F27FAH7B9P",
+      "assigned_leaf_category_name": "Dal & Lentils"
+    },
+    {
+      "product_id": "prod_01KSQVCCDR2TV72XX0Q47ZCJZK",
+      "product_title": "Cassia (Dalchini) Jar 50g",
+      "product_handle": "4567657119816",
+      "current_categories": [
+        "spices-whole"
+      ],
+      "assigned_leaf_category": "dal-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ029NQY2F27FAH7B9P",
+      "assigned_leaf_category_name": "Dal & Lentils"
+    },
+    {
+      "product_id": "prod_01KSQVBMFX44ZYRKP9KD6EA9CV",
+      "product_title": "Whole Birdseye Chilli Jar 40g",
+      "product_handle": "6804786282568",
+      "current_categories": [
+        "fresh"
+      ],
+      "assigned_leaf_category": "dried-red-chillies",
+      "assigned_leaf_category_id": "pcat_01KSNC6G49XVYYHDPZQ5FGH0EH",
+      "assigned_leaf_category_name": "Dried Red Chillies"
+    },
+    {
+      "product_id": "prod_01KSQVCC4NFWVSGA8B9P38D6ZE",
+      "product_title": "Whole Birdseye Chilli Jar 50g",
+      "product_handle": "4567657283656",
+      "current_categories": [
+        "fresh"
+      ],
+      "assigned_leaf_category": "dried-red-chillies",
+      "assigned_leaf_category_id": "pcat_01KSNC6G49XVYYHDPZQ5FGH0EH",
+      "assigned_leaf_category_name": "Dried Red Chillies"
+    },
+    {
+      "product_id": "prod_01KSQVCCZNZD7J852Q4R81YYPC",
+      "product_title": "All Purpose Seasoning 100g",
+      "product_handle": "4583224016968",
+      "current_categories": [],
+      "assigned_leaf_category": "garam-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4MPSBDW0FA0SE27DJ7",
+      "assigned_leaf_category_name": "Garam Masala"
+    },
+    {
+      "product_id": "prod_01KSQVCD2GZG2JAPARB7X28Z5V",
+      "product_title": "All Purpose Seasoning 400g",
+      "product_handle": "4583223984200",
+      "current_categories": [],
+      "assigned_leaf_category": "garam-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4MPSBDW0FA0SE27DJ7",
+      "assigned_leaf_category_name": "Garam Masala"
+    },
+    {
+      "product_id": "prod_01KSQVCE4NZ6TEPHFZ2QFQ39HT",
+      "product_title": "Garam Masala 400g",
+      "product_handle": "4567658627144",
+      "current_categories": [
+        "spice-blends"
+      ],
+      "assigned_leaf_category": "garam-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4MPSBDW0FA0SE27DJ7",
+      "assigned_leaf_category_name": "Garam Masala"
+    },
+    {
+      "product_id": "prod_01KSQVCEF1FY3MQ7FYWNTW6DEH",
+      "product_title": "Garam Masala Jar 80g",
+      "product_handle": "4567656759368",
+      "current_categories": [
+        "spice-blends"
+      ],
+      "assigned_leaf_category": "garam-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4MPSBDW0FA0SE27DJ7",
+      "assigned_leaf_category_name": "Garam Masala"
+    },
+    {
+      "product_id": "prod_01KSQVBTSP19KJMPG3619KMF4N",
+      "product_title": "Garlic Pickle 300g",
+      "product_handle": "4567673012296",
+      "current_categories": [
+        "pickles-chutneys"
+      ],
+      "assigned_leaf_category": "garlic-pickle",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5WTJHSWP49BBYBJQB2",
+      "assigned_leaf_category_name": "Garlic Pickle"
+    },
+    {
+      "product_id": "prod_01KSQVC1S9J42K7SK8H1NYBTG2",
+      "product_title": "Ghee Pure (Plough brand) 500g",
+      "product_handle": "4567672127560",
+      "current_categories": [
+        "oils-ghee"
+      ],
+      "assigned_leaf_category": "ghee-clarified-butter",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3X9CRPK3CQ0CEBMDR2",
+      "assigned_leaf_category_name": "Ghee (Clarified Butter)"
+    },
+    {
+      "product_id": "prod_01KSQVC1WD9EHZYQSAABC7VH1A",
+      "product_title": "Ghee Pure Butter 1kg",
+      "product_handle": "4567672029256",
+      "current_categories": [
+        "dairy"
+      ],
+      "assigned_leaf_category": "ghee-clarified-butter",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3X9CRPK3CQ0CEBMDR2",
+      "assigned_leaf_category_name": "Ghee (Clarified Butter)"
+    },
+    {
+      "product_id": "prod_01KSQVBTY2GKGCWR88YB53RFFG",
+      "product_title": "Garlic Paste 190g",
+      "product_handle": "4567672979528",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "ginger-garlic-paste",
+      "assigned_leaf_category_id": "pcat_01KSNC6G683SX354XJBV8723G5",
+      "assigned_leaf_category_name": "Ginger-Garlic Paste"
+    },
+    {
+      "product_id": "prod_01KSQVBV2C7ADR758T25FE7EH7",
+      "product_title": "Ginger Paste 190g",
+      "product_handle": "4567672946760",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "ginger-garlic-paste",
+      "assigned_leaf_category_id": "pcat_01KSNC6G683SX354XJBV8723G5",
+      "assigned_leaf_category_name": "Ginger-Garlic Paste"
+    },
+    {
+      "product_id": "prod_01KSQVBV6TZYWGCQFMSK0GYMT6",
+      "product_title": "Garlic &amp; Ginger Paste 190g",
+      "product_handle": "4567672913992",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "ginger-garlic-paste",
+      "assigned_leaf_category_id": "pcat_01KSNC6G683SX354XJBV8723G5",
+      "assigned_leaf_category_name": "Ginger-Garlic Paste"
+    },
+    {
+      "product_id": "prod_01KSQVCC1WM9DHM2KV2EGBYEWS",
+      "product_title": "Cardamom Green Jar 50g",
+      "product_handle": "4567657316424",
+      "current_categories": [
+        "spices-whole"
+      ],
+      "assigned_leaf_category": "green-cardamom-elaichi",
+      "assigned_leaf_category_id": "pcat_01KSNC6G44P6EWKZB44VSXZ1GD",
+      "assigned_leaf_category_name": "Green Cardamom (Elaichi)"
+    },
+    {
+      "product_id": "prod_01KSQVBSZSJF78WF9VAFYNB0H7",
+      "product_title": "Chilli Pickle Hot 300g",
+      "product_handle": "4567673602120",
+      "current_categories": [
+        "pickles-chutneys"
+      ],
+      "assigned_leaf_category": "green-chilli-pickle",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5VN2ES52ZYHHTRE3WB",
+      "assigned_leaf_category_name": "Green Chilli Pickle"
+    },
+    {
+      "product_id": "prod_01KSQVBX0TVZA9Z8H3N5S5EJNN",
+      "product_title": "Groundnut Oil 1 Litre",
+      "product_handle": "6666589306952",
+      "current_categories": [
+        "oils-ghee"
+      ],
+      "assigned_leaf_category": "groundnut-peanut-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3WZ14TT1CF4DSRDVBD",
+      "assigned_leaf_category_name": "Groundnut / Peanut Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBX4PGRM54MNZ0P0MBE8V",
+      "product_title": "Pure Sesame Oil 1 Litre",
+      "product_handle": "6666589044808",
+      "current_categories": [
+        "oils-ghee"
+      ],
+      "assigned_leaf_category": "groundnut-peanut-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3WZ14TT1CF4DSRDVBD",
+      "assigned_leaf_category_name": "Groundnut / Peanut Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBX96MR6ZRATNPBASFYM2",
+      "product_title": "Pure Sesame Oil 250ml",
+      "product_handle": "6666587701320",
+      "current_categories": [
+        "oils-ghee"
+      ],
+      "assigned_leaf_category": "groundnut-peanut-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3WZ14TT1CF4DSRDVBD",
+      "assigned_leaf_category_name": "Groundnut / Peanut Oil"
+    },
+    {
+      "product_id": "prod_01KSQVC8CDF9E6MBCRY1NQCN3V",
+      "product_title": "Idli Rice 5kg",
+      "product_handle": "4567661477960",
+      "current_categories": [
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "idli-rice",
+      "assigned_leaf_category_id": "pcat_01KSNC6G37787CP1EVFJ06EF8N",
+      "assigned_leaf_category_name": "Idli Rice"
+    },
+    {
+      "product_id": "prod_01KSQVBKQ8HRTYW39M01Y0K3D5",
+      "product_title": "Jaggery 500g",
+      "product_handle": "4567661183048",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "jaggery-gur",
+      "assigned_leaf_category_id": "pcat_01KSNC6G695FA4KBG6N0XY848V",
+      "assigned_leaf_category_name": "Jaggery (Gur)"
+    },
+    {
+      "product_id": "prod_01KSQVBN27AV1VXVEJ6AXDDVA7",
+      "product_title": "Demerara Sugar 500g",
+      "product_handle": "6804650754120",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "jaggery-gur",
+      "assigned_leaf_category_id": "pcat_01KSNC6G695FA4KBG6N0XY848V",
+      "assigned_leaf_category_name": "Jaggery (Gur)"
+    },
+    {
+      "product_id": "prod_01KSQVBWDAM0ZKKE8XGDERNEZD",
+      "product_title": "Demerara Sugar 1.5kg",
+      "product_handle": "4567660331080",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "jaggery-gur",
+      "assigned_leaf_category_id": "pcat_01KSNC6G695FA4KBG6N0XY848V",
+      "assigned_leaf_category_name": "Jaggery (Gur)"
+    },
+    {
+      "product_id": "prod_01KSQVCET4W7K60TXFSNZ4S6G8",
+      "product_title": "Sugar Candy 375g",
+      "product_handle": "4567660298312",
+      "current_categories": [
+        "condiments"
+      ],
+      "assigned_leaf_category": "jaggery-gur",
+      "assigned_leaf_category_id": "pcat_01KSNC6G695FA4KBG6N0XY848V",
+      "assigned_leaf_category_name": "Jaggery (Gur)"
+    },
+    {
+      "product_id": "prod_01KSQVBM3520J75DK1EV231H1G",
+      "product_title": "Kasuri Methi Leaves 100g",
+      "product_handle": "4567658168392",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "kasuri-methi-dried-fenugreek-leaves",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4M4E98P69Z179BP7SG",
+      "assigned_leaf_category_name": "Kasuri Methi (Dried Fenugreek Leaves)"
+    },
+    {
+      "product_id": "prod_01KSQVBT49RQ8FTERKQX58E6JC",
+      "product_title": "Lime Pickle Hot 300g",
+      "product_handle": "4567673405512",
+      "current_categories": [
+        "pickles-chutneys"
+      ],
+      "assigned_leaf_category": "lime-lemon-pickle",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5TCC69SQ6PKH7DWAWA",
+      "assigned_leaf_category_name": "Lime / Lemon Pickle"
+    },
+    {
+      "product_id": "prod_01KSQVBFHAMYRERVWYX1GRYHMY",
+      "product_title": "Black Eyed Beans 400g",
+      "product_handle": "6647387652168",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "lobhia-black-eye-beans",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3QZDPAGP802BPDM974",
+      "assigned_leaf_category_name": "Lobhia (Black Eye Beans)"
+    },
+    {
+      "product_id": "prod_01KSQVBJD5N654S1PMD0H3XS7D",
+      "product_title": "Black Eye Beans 2kg",
+      "product_handle": "4567667572808",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "lobhia-black-eye-beans",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3QZDPAGP802BPDM974",
+      "assigned_leaf_category_name": "Lobhia (Black Eye Beans)"
+    },
+    {
+      "product_id": "prod_01KSQVC2GB0KH4EK6F5PYDAS4P",
+      "product_title": "Black Eye Beans 500g",
+      "product_handle": "4567667507272",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "lobhia-black-eye-beans",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3QZDPAGP802BPDM974",
+      "assigned_leaf_category_name": "Lobhia (Black Eye Beans)"
+    },
+    {
+      "product_id": "prod_01KSQVBKV2ARX6T2C2J38MTPKA",
+      "product_title": "Spiced Tea - Masala Blend 160s",
+      "product_handle": "14681551307137",
+      "current_categories": [
+        "beverages"
+      ],
+      "assigned_leaf_category": "loose-leaf-tea-chai",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5812AA6R6W37K4B35B",
+      "assigned_leaf_category_name": "Loose Leaf Tea / Chai"
+    },
+    {
+      "product_id": "prod_01KSQVBP2RP4S1HEQTD7K8N0NZ",
+      "product_title": "Mango Chutney Spicy 340g",
+      "product_handle": "4567673077832",
+      "current_categories": [
+        "pickles-chutneys"
+      ],
+      "assigned_leaf_category": "mango-chutney",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5XBE9RMWYNCJTMAW76",
+      "assigned_leaf_category_name": "Mango Chutney"
+    },
+    {
+      "product_id": "prod_01KSQVBSV7PFRA9J4NWZ3FZEP7",
+      "product_title": "Mango Pickle Hot 300g",
+      "product_handle": "4567673667656",
+      "current_categories": [
+        "pickles-chutneys"
+      ],
+      "assigned_leaf_category": "mango-pickle-achar",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5RW8YDYSNHSEMDV23K",
+      "assigned_leaf_category_name": "Mango Pickle (Achar)"
+    },
+    {
+      "product_id": "prod_01KSQVC2WCT1FXBKPHBRGZMD8D",
+      "product_title": "Brown Lentils 2kg",
+      "product_handle": "4567667376200",
+      "current_categories": [],
+      "assigned_leaf_category": "masoor-dal-red-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3K0EMT4G6NP1Y8ZSNF",
+      "assigned_leaf_category_name": "Masoor Dal (Red Lentils)"
+    },
+    {
+      "product_id": "prod_01KSQVC306NT16SBPCEG268HDZ",
+      "product_title": "Brown Lentils 500g",
+      "product_handle": "4567667343432",
+      "current_categories": [],
+      "assigned_leaf_category": "masoor-dal-red-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3K0EMT4G6NP1Y8ZSNF",
+      "assigned_leaf_category_name": "Masoor Dal (Red Lentils)"
+    },
+    {
+      "product_id": "prod_01KSQVCAET9WVXYPYBJGD7ZBPY",
+      "product_title": "Red Lentils Polished 2kg",
+      "product_handle": "4567666524232",
+      "current_categories": [],
+      "assigned_leaf_category": "masoor-dal-red-lentils",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3K0EMT4G6NP1Y8ZSNF",
+      "assigned_leaf_category_name": "Masoor Dal (Red Lentils)"
+    },
+    {
+      "product_id": "prod_01KSQVCDFWSE37P1JSMK548TEB",
+      "product_title": "Meat Masala Mangal 100g",
+      "product_handle": "4567665377352",
+      "current_categories": [
+        "spice-blends"
+      ],
+      "assigned_leaf_category": "meat-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4WGC2KJRTVSETPW3YW",
+      "assigned_leaf_category_name": "Meat Masala"
+    },
+    {
+      "product_id": "prod_01KSQVBMBZGN3Y3WYRG65VZ4YN",
+      "product_title": "Mixed Pickle 300g",
+      "product_handle": "4567673438280",
+      "current_categories": [
+        "pickles-chutneys"
+      ],
+      "assigned_leaf_category": "mixed-pickle",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5SKQZNPQ4Z9RSB9DWD",
+      "assigned_leaf_category_name": "Mixed Pickle"
+    },
+    {
+      "product_id": "prod_01KSQVC3ZYV9TVF2YBA7D63MYR",
+      "product_title": "Mung Split 2kg",
+      "product_handle": "4567666982984",
+      "current_categories": [],
+      "assigned_leaf_category": "moong-dal-yellow",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3HVR4FFC45H1NMGXRG",
+      "assigned_leaf_category_name": "Moong Dal (Yellow)"
+    },
+    {
+      "product_id": "prod_01KSQVC44751MPTSXZ7N41C2QD",
+      "product_title": "Mung Split 500g",
+      "product_handle": "4567666950216",
+      "current_categories": [],
+      "assigned_leaf_category": "moong-dal-yellow",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3HVR4FFC45H1NMGXRG",
+      "assigned_leaf_category_name": "Moong Dal (Yellow)"
+    },
+    {
+      "product_id": "prod_01KSQVC48KWNAC3T8NZE69E5TE",
+      "product_title": "Mung Dal Yellow 1kg",
+      "product_handle": "4567666917448",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "moong-dal-yellow",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3HVR4FFC45H1NMGXRG",
+      "assigned_leaf_category_name": "Moong Dal (Yellow)"
+    },
+    {
+      "product_id": "prod_01KSQVBJGSD9ZE48DWXCDJ9T38",
+      "product_title": "Pure Mustard Oil 250ml",
+      "product_handle": "15383683334529",
+      "current_categories": [
+        "oils-ghee"
+      ],
+      "assigned_leaf_category": "mustard-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3SQ5S56TX5DD6E1J3K",
+      "assigned_leaf_category_name": "Mustard Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBJNHT83GCKYV982VV46T",
+      "product_title": "Pure Mustard Oil 1Ltr",
+      "product_handle": "15383643226497",
+      "current_categories": [
+        "oils-ghee"
+      ],
+      "assigned_leaf_category": "mustard-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3SQ5S56TX5DD6E1J3K",
+      "assigned_leaf_category_name": "Mustard Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBQ5K1KEPVTQ4Y6W0D8M3",
+      "product_title": "Pappadoms Black Pepper 200g",
+      "product_handle": "4567662559304",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "papad",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5JBWQYSGWWBP3AR6NV",
+      "assigned_leaf_category_name": "Papad"
+    },
+    {
+      "product_id": "prod_01KSQVBQ94K8XVEMZ794D66MT4",
+      "product_title": "Pappadoms Jeera (Microwavable) 200g",
+      "product_handle": "4567662526536",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "papad",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5JBWQYSGWWBP3AR6NV",
+      "assigned_leaf_category_name": "Papad"
+    },
+    {
+      "product_id": "prod_01KSQVBQCSQQQP6818T42YACR2",
+      "product_title": "Pappadoms Plain (Microwavable) 200g",
+      "product_handle": "4567662493768",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "papad",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5JBWQYSGWWBP3AR6NV",
+      "assigned_leaf_category_name": "Papad"
+    },
+    {
+      "product_id": "prod_01KSQVBQGPZK6D6RPSQXG3RHXQ",
+      "product_title": "Pappadoms Punjabi (Microwavable) 200g",
+      "product_handle": "4567662461000",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "papad",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5JBWQYSGWWBP3AR6NV",
+      "assigned_leaf_category_name": "Papad"
+    },
+    {
+      "product_id": "prod_01KSQVBQNFWW6T3CJDZD4JYVCG",
+      "product_title": "Pappadoms Madras (Papa Brand) 250g",
+      "product_handle": "4567662166088",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "papad",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5JBWQYSGWWBP3AR6NV",
+      "assigned_leaf_category_name": "Papad"
+    },
+    {
+      "product_id": "prod_01KSQVC72GRFGS5C4MA3KE2AVJ",
+      "product_title": "Pappadoms Madras (Coin size) 200g",
+      "product_handle": "4567662362696",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "papad",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5JBWQYSGWWBP3AR6NV",
+      "assigned_leaf_category_name": "Papad"
+    },
+    {
+      "product_id": "prod_01KSQVCE12G21T2PM58KTX18SR",
+      "product_title": "Pavbhaji Masala Mangal 100g",
+      "product_handle": "4567665147976",
+      "current_categories": [],
+      "assigned_leaf_category": "pav-bhaji-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4TDHV25P74ABXN4PHN",
+      "assigned_leaf_category_name": "Pav Bhaji Masala"
+    },
+    {
+      "product_id": "prod_01KSQVC8FEQSKC7QCSMWJ9427K",
+      "product_title": "Powa Medium (Flaked Rice) 1kg",
+      "product_handle": "4567660757064",
+      "current_categories": [
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "poha-flattened-rice",
+      "assigned_leaf_category_id": "pcat_01KSNC6G39XC5HXBT5VBED0VPZ",
+      "assigned_leaf_category_name": "Poha (Flattened Rice)"
+    },
+    {
+      "product_id": "prod_01KSQVBJZ21C2HN6BFRTMS9SE8",
+      "product_title": "Ragi Flour 900g",
+      "product_handle": "4567668523080",
+      "current_categories": [
+        "atta-flours"
+      ],
+      "assigned_leaf_category": "ragi-finger-millet-flour",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3DK7FNVMKYA4MSRWRE",
+      "assigned_leaf_category_name": "Ragi / Finger Millet Flour"
+    },
+    {
+      "product_id": "prod_01KSQVBZQB9ZJC7E28Y8EYS4AG",
+      "product_title": "Millet (Bajri) Flour 900g",
+      "product_handle": "4567668555848",
+      "current_categories": [
+        "atta-flours"
+      ],
+      "assigned_leaf_category": "ragi-finger-millet-flour",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3DK7FNVMKYA4MSRWRE",
+      "assigned_leaf_category_name": "Ragi / Finger Millet Flour"
+    },
+    {
+      "product_id": "prod_01KSQVBFPS6DQYSJ19RSNMSBWM",
+      "product_title": "White Kidney Beans 400g",
+      "product_handle": "6579342409800",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "rajma-kidney-beans",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3NNQEB6CRH0T0CQXMD",
+      "assigned_leaf_category_name": "Rajma (Kidney Beans)"
+    },
+    {
+      "product_id": "prod_01KSQVBGACNT03RE6QRVWR1TYF",
+      "product_title": "Red Kidney Beans 2.5kg",
+      "product_handle": "4583223394376",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "rajma-kidney-beans",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3NNQEB6CRH0T0CQXMD",
+      "assigned_leaf_category_name": "Rajma (Kidney Beans)"
+    },
+    {
+      "product_id": "prod_01KSQVBGFQQ3GJTTBK5K71DW6R",
+      "product_title": "Red Kidney Beans Boiled Full Case 12x400g",
+      "product_handle": "4583223361608",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "rajma-kidney-beans",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3NNQEB6CRH0T0CQXMD",
+      "assigned_leaf_category_name": "Rajma (Kidney Beans)"
+    },
+    {
+      "product_id": "prod_01KSQVBHFFPRDE3BTWRRC83G53",
+      "product_title": "Red Kidney Beans 1kg",
+      "product_handle": "4567671734344",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "rajma-kidney-beans",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3NNQEB6CRH0T0CQXMD",
+      "assigned_leaf_category_name": "Rajma (Kidney Beans)"
+    },
+    {
+      "product_id": "prod_01KSQVBHJV4W940EYY9Q5NY09X",
+      "product_title": "Red Kidney Beans 2kg",
+      "product_handle": "4567671701576",
+      "current_categories": [
+        "dal-lentils"
+      ],
+      "assigned_leaf_category": "rajma-kidney-beans",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3NNQEB6CRH0T0CQXMD",
+      "assigned_leaf_category_name": "Rajma (Kidney Beans)"
+    },
+    {
+      "product_id": "prod_01KSQVCCAREC45021N79G9167Q",
+      "product_title": "Chilli Powder Hot Jar 100g",
+      "product_handle": "4567657185352",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "red-chilli-powder-mirchi",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4EQ22NE8W4917R3149",
+      "assigned_leaf_category_name": "Red Chilli Powder (Mirchi)"
+    },
+    {
+      "product_id": "prod_01KSQVBNPJ5P7TGSJBK9YAEXN7",
+      "product_title": "Big D Honey Roast Peanuts 12x50g Packs on a Pub Card",
+      "product_handle": "5864194801736",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "roasted-peanuts-chana",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5QM6R69HV7CMF5CSHT",
+      "assigned_leaf_category_name": "Roasted Peanuts / Chana"
+    },
+    {
+      "product_id": "prod_01KSQVBNT5HTFXDQN7XMCNGQ9X",
+      "product_title": "Big D Salted Cashews 12x30g Cards",
+      "product_handle": "6562924986440",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "roasted-peanuts-chana",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5QM6R69HV7CMF5CSHT",
+      "assigned_leaf_category_name": "Roasted Peanuts / Chana"
+    },
+    {
+      "product_id": "prod_01KSQVBNYHG06J30WM86HHQY7J",
+      "product_title": "Big D Salted Peanuts 24x50g",
+      "product_handle": "5864191590472",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "roasted-peanuts-chana",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5QM6R69HV7CMF5CSHT",
+      "assigned_leaf_category_name": "Roasted Peanuts / Chana"
+    },
+    {
+      "product_id": "prod_01KSQVBPPNEECA2KMV0Z7XB80F",
+      "product_title": "Roasted Monkey Nuts 300g",
+      "product_handle": "4567663411272",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "roasted-peanuts-chana",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5QM6R69HV7CMF5CSHT",
+      "assigned_leaf_category_name": "Roasted Peanuts / Chana"
+    },
+    {
+      "product_id": "prod_01KSQVBXP9X05ZEB5JNRZHHE7Y",
+      "product_title": "Cashew Roasted Salted 250g",
+      "product_handle": "4567664558152",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "roasted-peanuts-chana",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5QM6R69HV7CMF5CSHT",
+      "assigned_leaf_category_name": "Roasted Peanuts / Chana"
+    },
+    {
+      "product_id": "prod_01KSQVC0325BTTNNVVCZ6XNCCZ",
+      "product_title": "Rose Syrup 725ml",
+      "product_handle": "4567667769416",
+      "current_categories": [
+        "condiments",
+        "rooh-afza-rose-syrup"
+      ],
+      "assigned_leaf_category": "rooh-afza-rose-syrup",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5F2SE0MCYFSZ1JF55E",
+      "assigned_leaf_category_name": "Rooh Afza / Rose Syrup"
+    },
+    {
+      "product_id": "prod_01KSQVC1N31DA5KJHQ01Q785SW",
+      "product_title": "Rose Water 310ml",
+      "product_handle": "4567655219272",
+      "current_categories": [
+        "condiments",
+        "rooh-afza-rose-syrup"
+      ],
+      "assigned_leaf_category": "rooh-afza-rose-syrup",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5F2SE0MCYFSZ1JF55E",
+      "assigned_leaf_category_name": "Rooh Afza / Rose Syrup"
+    },
+    {
+      "product_id": "prod_01KSQVCDPZBZ4SKW1JWF4ZTH8Q",
+      "product_title": "Sambhar Masala Mangal 100g",
+      "product_handle": "4567665279048",
+      "current_categories": [
+        "sambar-powder"
+      ],
+      "assigned_leaf_category": "sambar-powder",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4RTJT78A5NAHGW6ME1",
+      "assigned_leaf_category_name": "Sambar Powder"
+    },
+    {
+      "product_id": "prod_01KSQVBZ3JMA88S5SMCX5GKYPZ",
+      "product_title": "Semolina Fine 1.5kg",
+      "product_handle": "4567668817992",
+      "current_categories": [
+        "atta-flours",
+        "semolina-sooji-rava"
+      ],
+      "assigned_leaf_category": "semolina-sooji-rava",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3968GK3RBM2FDGAE2W",
+      "assigned_leaf_category_name": "Semolina / Sooji / Rava"
+    },
+    {
+      "product_id": "prod_01KSQVBZ7Q71JTP0ACR0Q5FR3X",
+      "product_title": "Semolina Fine 500g",
+      "product_handle": "4567668785224",
+      "current_categories": [
+        "atta-flours",
+        "semolina-sooji-rava"
+      ],
+      "assigned_leaf_category": "semolina-sooji-rava",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3968GK3RBM2FDGAE2W",
+      "assigned_leaf_category_name": "Semolina / Sooji / Rava"
+    },
+    {
+      "product_id": "prod_01KSQVBZBB3QBVDH1DS08BJ270",
+      "product_title": "Semolina Coarse 1.5kg",
+      "product_handle": "4567668719688",
+      "current_categories": [
+        "atta-flours",
+        "semolina-sooji-rava"
+      ],
+      "assigned_leaf_category": "semolina-sooji-rava",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3968GK3RBM2FDGAE2W",
+      "assigned_leaf_category_name": "Semolina / Sooji / Rava"
+    },
+    {
+      "product_id": "prod_01KSQVBZFHC6P0QFCMJAYR8Q44",
+      "product_title": "Semolina Coarse 500g",
+      "product_handle": "4567668686920",
+      "current_categories": [
+        "atta-flours",
+        "semolina-sooji-rava"
+      ],
+      "assigned_leaf_category": "semolina-sooji-rava",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3968GK3RBM2FDGAE2W",
+      "assigned_leaf_category_name": "Semolina / Sooji / Rava"
+    },
+    {
+      "product_id": "prod_01KSQVBZK5VTWSN0TSFGHR9NZM",
+      "product_title": "Semolina Extra Coarse 1.5kg",
+      "product_handle": "4567668621384",
+      "current_categories": [
+        "atta-flours",
+        "semolina-sooji-rava"
+      ],
+      "assigned_leaf_category": "semolina-sooji-rava",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3968GK3RBM2FDGAE2W",
+      "assigned_leaf_category_name": "Semolina / Sooji / Rava"
+    },
+    {
+      "product_id": "prod_01KSQVCGW43YNSJWPPF9924KPV",
+      "product_title": "Couscous 500g",
+      "product_handle": "4567668588616",
+      "current_categories": [
+        "staples-grains",
+        "semolina-sooji-rava"
+      ],
+      "assigned_leaf_category": "semolina-sooji-rava",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3968GK3RBM2FDGAE2W",
+      "assigned_leaf_category_name": "Semolina / Sooji / Rava"
+    },
+    {
+      "product_id": "prod_01KSQVBMTDKGXA8ZX92RMG03M2",
+      "product_title": "Coconut Water 330ml",
+      "product_handle": "4567667671112",
+      "current_categories": [
+        "snacks-namkeen",
+        "sherbets-squash"
+      ],
+      "assigned_leaf_category": "sherbets-squash",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5FK7KDD3C6RC0FPCC1",
+      "assigned_leaf_category_name": "Sherbets & Squash"
+    },
+    {
+      "product_id": "prod_01KSQVBMXSZEHSNZBX38J80SH2",
+      "product_title": "Coconut Water 1L",
+      "product_handle": "6546732482632",
+      "current_categories": [
+        "snacks-namkeen",
+        "sherbets-squash"
+      ],
+      "assigned_leaf_category": "sherbets-squash",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5FK7KDD3C6RC0FPCC1",
+      "assigned_leaf_category_name": "Sherbets & Squash"
+    },
+    {
+      "product_id": "prod_01KSQVC1HW4RFR1MNSNXQQBS5E",
+      "product_title": "Kevda Water 310ml",
+      "product_handle": "4567655284808",
+      "current_categories": [
+        "sherbets-squash"
+      ],
+      "assigned_leaf_category": "sherbets-squash",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5FK7KDD3C6RC0FPCC1",
+      "assigned_leaf_category_name": "Sherbets & Squash"
+    },
+    {
+      "product_id": "prod_01KSQVCA8X85QFG7FEBA1GBYF5",
+      "product_title": "Mango Pulp Alphonso 450g",
+      "product_handle": "4567671996488",
+      "current_categories": [
+        "sherbets-squash"
+      ],
+      "assigned_leaf_category": "sherbets-squash",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5FK7KDD3C6RC0FPCC1",
+      "assigned_leaf_category_name": "Sherbets & Squash"
+    },
+    {
+      "product_id": "prod_01KSQVCF396C38PZF5NFQEJYEJ",
+      "product_title": "Mango Pulp Kesar 850g",
+      "product_handle": "4567671930952",
+      "current_categories": [
+        "sherbets-squash"
+      ],
+      "assigned_leaf_category": "sherbets-squash",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5FK7KDD3C6RC0FPCC1",
+      "assigned_leaf_category_name": "Sherbets & Squash"
+    },
+    {
+      "product_id": "prod_01KSQVBG11N4NX1GM5P2CTJV2G",
+      "product_title": "Bhel Puri Kit 500g",
+      "product_handle": "6535757660232",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBKZ3ZNXZCJ86A6TZ9V85",
+      "product_title": "Coriander Seeds Jar 60g",
+      "product_handle": "6842634403912",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBMKH9862P186CY8084SQ",
+      "product_title": "Coconut Cream 400ml",
+      "product_handle": "4567672488008",
+      "current_categories": [
+        "condiments",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBNDJYRV3S07ZN6KKVPEN",
+      "product_title": "Phool Makhana (Popped Lotus Seeds) 100g",
+      "product_handle": "4567661281352",
+      "current_categories": [
+        "staples-grains",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBPT2GQ9X31QNQ9XAFVYZ",
+      "product_title": "Roasted &amp; Salted Pistachio Nuts 1kg",
+      "product_handle": "4567663378504",
+      "current_categories": [
+        "condiments",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBPY0ZY0QHZ6HKCMJNEEY",
+      "product_title": "Roasted &amp; Salted Pistachio Nuts 300g",
+      "product_handle": "4567663312968",
+      "current_categories": [
+        "condiments",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBQ12KHXHMXWW9RA9NX2Z",
+      "product_title": "Roasted &amp; Salted Pistachio Nuts 100g",
+      "product_handle": "4567663280200",
+      "current_categories": [
+        "condiments",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBQS7ARVNFYXF639FTW2T",
+      "product_title": "Popcorn 2kg",
+      "product_handle": "4567661051976",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBQX46SKFPBDP1DACM8YQ",
+      "product_title": "Popcorn 500g",
+      "product_handle": "4567660986440",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBR1HGPEF34Y60XETXFKT",
+      "product_title": "Peanut Gachak (Peanut Brittle) 400g",
+      "product_handle": "4567660167240",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBRDM3FVAV2ZDW5KTSWF1",
+      "product_title": "Coconut Milk 400ml",
+      "product_handle": "4567672619080",
+      "current_categories": [
+        "condiments",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBRKQXX554J5QPYVTSKDS",
+      "product_title": "Coconut Milk Light 400ml",
+      "product_handle": "4567672553544",
+      "current_categories": [
+        "condiments",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBRWT8TANCYRQKGK2XNDQ",
+      "product_title": "Coconut Desicated Medium 1kg",
+      "product_handle": "4567663870024",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBS0YZQECFBJMHM2JYKPQ",
+      "product_title": "Coconut Desiccated (Fine) 300g",
+      "product_handle": "4567663837256",
+      "current_categories": [
+        "condiments",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBS5N7687JEB1BG4AGEA2",
+      "product_title": "Coconut Milk Powder 300g",
+      "product_handle": "4567663804488",
+      "current_categories": [
+        "dairy",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBSA5GBJKDWEZGRWG48BR",
+      "product_title": "Coconut Flakes 200g",
+      "product_handle": "4567663673416",
+      "current_categories": [
+        "condiments",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBSEW0SZFBXE3XN50H7M5",
+      "product_title": "Coconut Halves 250g",
+      "product_handle": "4567663607880",
+      "current_categories": [
+        "condiments",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBSKFYFMTM774NR8QDZ7Q",
+      "product_title": "Coconut Flavouring Essence 28ml",
+      "product_handle": "4567655350344",
+      "current_categories": [
+        "spices-ground",
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBSPX20BA6SCZYZSPT7WQ",
+      "product_title": "Brinjal Chutney Sweet 300g",
+      "product_handle": "4567673208904",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBT8SX5S8NQ2B5S7CR2C0",
+      "product_title": "Gorkeri Chutney Sweet 300g",
+      "product_handle": "4567673274440",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBTDC58S92075MERJRJGA",
+      "product_title": "Chundo Chutney Sweet 340g",
+      "product_handle": "4567673241672",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBTNC1MGA9FVNDASRHQQ1",
+      "product_title": "Mango Chutney Sweet 340g",
+      "product_handle": "4567673045064",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBW5QDGCVF5P676MXWD93",
+      "product_title": "Golden Raisins 1kg",
+      "product_handle": "4567669932104",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVBW9APW5Q9MH5ABKX3E2P",
+      "product_title": "Golden Raisins 100g",
+      "product_handle": "4567669899336",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC143KE4KCCE88A1P8MHF",
+      "product_title": "Almond Flavouring Essence 28ml",
+      "product_handle": "4567655612488",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC4N1K05SCR5TEHGTP8FG",
+      "product_title": "Daria Gotta (Small) 300g",
+      "product_handle": "4567661379656",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC4S4WBCR9PMNBNPMY4Q8",
+      "product_title": "Daria Gotta (Large) 700g",
+      "product_handle": "4567661314120",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC50ZD4HMDTW2E92AREC9",
+      "product_title": "Pine Nuts 75g",
+      "product_handle": "4641502855240",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC557VZS60KNJ2CVR238F",
+      "product_title": "Cashew Split 1kg",
+      "product_handle": "4567664656456",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC58TSQWMYHZ3V07J37HX",
+      "product_title": "Almond Blanched Whole 250g",
+      "product_handle": "4567664885832",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC5CGHEH45P48CK9T69QP",
+      "product_title": "Cashew Kernel 300g",
+      "product_handle": "4567664689224",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC5GYBF80Y7XY9D1V8ENR",
+      "product_title": "Almonds 1kg",
+      "product_handle": "4567665115208",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC5MBBFBZQ3S16R0AXXBZ",
+      "product_title": "Almonds 400g",
+      "product_handle": "4567665049672",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC5RA920NFPB9HD6J955N",
+      "product_title": "Almonds Ground 300g",
+      "product_handle": "4567665016904",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC5W4C3RXE28TA9QY1WPV",
+      "product_title": "Almond Flakes 1kg",
+      "product_handle": "4567664984136",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC5ZGMG34JBDX0GR3RZM3",
+      "product_title": "Almond Flakes 300g",
+      "product_handle": "4567664951368",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC63VN9SQR2G068RP8X77",
+      "product_title": "Blanched Almond Whole 700g",
+      "product_handle": "4567664918600",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC68DQZ92S5S4TQEWEQ31",
+      "product_title": "Pecans 200g",
+      "product_handle": "4567664820296",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC6CQ38ECNV941GGSXKEV",
+      "product_title": "Walnut Halves 700g",
+      "product_handle": "4567664787528",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC6FXK45HFVMR8902CK8A",
+      "product_title": "Walnut Halves 200g",
+      "product_handle": "4567664754760",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC6M7JTFZ39XVSZGV70XJ",
+      "product_title": "Cashew Kernel 1kg",
+      "product_handle": "4567664721992",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC6QSXE5QWWEHZA59ZVMT",
+      "product_title": "Cashew (Large White Pieces) 750g",
+      "product_handle": "4567664590920",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC6W2E2678N76GFTSXAGW",
+      "product_title": "Peanuts Red 1kg",
+      "product_handle": "4567663575112",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC6ZA08201Y3RS5Y10DYB",
+      "product_title": "Peanuts Red 400g",
+      "product_handle": "4567663476808",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC76FTH5BJ7XEX39TMQ2S",
+      "product_title": "Pistachio Kernels 1kg",
+      "product_handle": "4567663214664",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC7A8SMP287T78VGRZQD2",
+      "product_title": "Pistachio Kernels 250g",
+      "product_handle": "4567663149128",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC7DFW4YHDE7XSY3DBY6A",
+      "product_title": "Pistachio Kernels 100g",
+      "product_handle": "4567663116360",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC7HE36ZG7T055DQ8RG4F",
+      "product_title": "Luxury Fruit &amp; Nut Mix 250g",
+      "product_handle": "4567662952520",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC7NE7RPD9ZQANXQHEBCW",
+      "product_title": "Luxury Fruit &amp; Nuts Mix 750g",
+      "product_handle": "4567662919752",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC8J8Y2XQ8801QRY26PSE",
+      "product_title": "Pumpkin Seeds 250g",
+      "product_handle": "4567660953672",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC8P7RAP02S3XBV31TP94",
+      "product_title": "Linseed Brown 1kg",
+      "product_handle": "4567660920904",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC8SJ06RX36FQTDMN9C5G",
+      "product_title": "Linseed Brown 400g",
+      "product_handle": "4567660888136",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC8WZ8Y1N10XVBC82XHNA",
+      "product_title": "White Poppy Seeds 300g",
+      "product_handle": "4567660855368",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC912FD5B79HS7SWTW0ZE",
+      "product_title": "White Poppy Seeds 100g",
+      "product_handle": "4567660822600",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC94R87818T9VEVNGW3JF",
+      "product_title": "Sunflower Seeds 1kg",
+      "product_handle": "4567660724296",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC97XJ6PAR79E887B1C66",
+      "product_title": "Sunflower Seeds 300g",
+      "product_handle": "4567660691528",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC9BKV60MDN5YTK5CC015",
+      "product_title": "Sagoo Seeds Medium 1.5kg",
+      "product_handle": "4567660658760",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC9EQ4XCPB1TYHDWBX137",
+      "product_title": "Sesame Seeds Natural 400g",
+      "product_handle": "4567660593224",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC9J1BYC378GBJNNTGPDY",
+      "product_title": "Sesame Seeds Hulled 1.5kg",
+      "product_handle": "4567660560456",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC9N3VHKH0WPWJQ0E6ABD",
+      "product_title": "Black Chia Seeds 250g",
+      "product_handle": "4567660134472",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVCBFJ9XEK5Z9DDH5E1A26",
+      "product_title": "Ajwan Seeds Jar 100g",
+      "product_handle": "4567657578568",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVCBQG324YD588H7WV0RXE",
+      "product_title": "Aniseed Star Jar 40g",
+      "product_handle": "4567657513032",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVCCSHF1RRN7NK5JQDVC1Y",
+      "product_title": "Coriander Seeds Jar 65g",
+      "product_handle": "4567657021512",
+      "current_categories": [
+        "snacks-namkeen"
+      ],
+      "assigned_leaf_category": "snacks-namkeen",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ68XT9MAD1VRTDDEMZ",
+      "assigned_leaf_category_name": "Snacks & Namkeen"
+    },
+    {
+      "product_id": "prod_01KSQVC8673AJ5RV97Y7P79PED",
+      "product_title": "Sona Masuri Rice 5kg",
+      "product_handle": "4567661674568",
+      "current_categories": [
+        "staples-grains",
+        "sona-masoori-rice"
+      ],
+      "assigned_leaf_category": "sona-masoori-rice",
+      "assigned_leaf_category_id": "pcat_01KSNC6G36VYJMFWAMMEHZT9DP",
+      "assigned_leaf_category_name": "Sona Masoori Rice"
+    },
+    {
+      "product_id": "prod_01KSQVCDK3AKQDMXF4N5SMQN9H",
+      "product_title": "Pickle Masala Mangal 125g",
+      "product_handle": "4567665344584",
+      "current_categories": [
+        "pickles-chutneys",
+        "spice-blends"
+      ],
+      "assigned_leaf_category": "spice-blends",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ3B6AEHZDTN6D1QG21",
+      "assigned_leaf_category_name": "Spice Blends"
+    },
+    {
+      "product_id": "prod_01KSQVCE80Q4PE67ZECWTHX861",
+      "product_title": "Mixed Masala Whole 300g",
+      "product_handle": "4567658135624",
+      "current_categories": [
+        "spice-blends"
+      ],
+      "assigned_leaf_category": "spice-blends",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ3B6AEHZDTN6D1QG21",
+      "assigned_leaf_category_name": "Spice Blends"
+    },
+    {
+      "product_id": "prod_01KSQVBN9WY6JHH58VPY3D33PM",
+      "product_title": "Rosemary Jar 40g",
+      "product_handle": "6804638728264",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC063GY7CXNHMDD6KKGFA",
+      "product_title": "Yellow Food Colouring - Powder 25g",
+      "product_handle": "4567656104008",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC09Z7NW74HW64XGXY7C3",
+      "product_title": "Orange Food Colouring - Powder 25g",
+      "product_handle": "4567656071240",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC0D31P0YC8R19FJ048PG",
+      "product_title": "Red Food Colouring - Powder 25g",
+      "product_handle": "4567656005704",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC0G7G3WS9D8JWQYSG8CY",
+      "product_title": "Green Food Colouring - Powder 25g",
+      "product_handle": "4567655972936",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC0MD2RHNZSDK5HEH8PGA",
+      "product_title": "Orange Food Colouring - Liquid 28ml",
+      "product_handle": "4567655874632",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC0RRQG4BRA8ZQM593EFT",
+      "product_title": "Red Food Colouring - Liquid 28ml",
+      "product_handle": "4567655841864",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC0WX36HZ09PBVF5ZMS56",
+      "product_title": "Green Food Colouring - Liquid 28ml",
+      "product_handle": "4567655743560",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC10MZRZJWMM7B5JJAH1K",
+      "product_title": "Vanilla Flavouring Essence 28ml",
+      "product_handle": "4567655678024",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC17DKR1N6F5EJK9WK0C2",
+      "product_title": "Rose Flavouring Essence 28ml",
+      "product_handle": "4567655514184",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC1AQVKJZJDNJZ3B8XZMW",
+      "product_title": "Strawberry Flavouring Essence 28ml",
+      "product_handle": "4567655448648",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVC1E7KHTTGFV0XXCXRHVN",
+      "product_title": "Pineapple Flavouring Essence 28ml",
+      "product_handle": "4567655383112",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVCAJX873J9004JR8912TA",
+      "product_title": "Basil Jar 25g",
+      "product_handle": "4567668260936",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVCAQ2HA3GW3D9K8RCYCF1",
+      "product_title": "Coriander Leaves Jar 25g",
+      "product_handle": "4567668195400",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVCAVGXMRYA9VREV6B6YC7",
+      "product_title": "Marjoram Jar 20g",
+      "product_handle": "4567668162632",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVCAZJRPHK7F526EX9431P",
+      "product_title": "Mint Jar 30g",
+      "product_handle": "4567668097096",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVCB2NNSCF6P3XDYV29CNP",
+      "product_title": "Mixed Herbs Jar 25g",
+      "product_handle": "4567668064328",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVCB5HTNMSTAEWCPZ33R4Z",
+      "product_title": "Oregano Jar 25g",
+      "product_handle": "4567667966024",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVCB8AHD7576CF817ZQ7R9",
+      "product_title": "Parsley Jar 25g",
+      "product_handle": "4567667933256",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVCBCCNCKT3NCR7SWS353F",
+      "product_title": "Sage Jar 25g",
+      "product_handle": "4567667867720",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVCEPKMEK32MPVGNTWJMCK",
+      "product_title": "Dried Tarragon 25g",
+      "product_handle": "4567667834952",
+      "current_categories": [
+        "spices-ground"
+      ],
+      "assigned_leaf_category": "spices-ground",
+      "assigned_leaf_category_id": "pcat_01KSNC6FZ33G1NW8WBWP7GFXP0",
+      "assigned_leaf_category_name": "Spices — Ground"
+    },
+    {
+      "product_id": "prod_01KSQVBN5HZP2PT1HSFN9CJNK8",
+      "product_title": "Chakki Atta Multigrain 5kg",
+      "product_handle": "4567669735496",
+      "current_categories": [
+        "atta-flours",
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "staples-grains",
+      "assigned_leaf_category_id": "pcat_01KSNC6FYYQB82KTM5R291TDNV",
+      "assigned_leaf_category_name": "Staples & Grains"
+    },
+    {
+      "product_id": "prod_01KSQVBYPXK0PFGA36N1M2VAQB",
+      "product_title": "Ground Rice 1.5kg",
+      "product_handle": "4567668981832",
+      "current_categories": [
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "staples-grains",
+      "assigned_leaf_category_id": "pcat_01KSNC6FYYQB82KTM5R291TDNV",
+      "assigned_leaf_category_name": "Staples & Grains"
+    },
+    {
+      "product_id": "prod_01KSQVBYV7GK9GFQ45EK5Y9TC2",
+      "product_title": "Ground Rice 500g",
+      "product_handle": "4567668949064",
+      "current_categories": [
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "staples-grains",
+      "assigned_leaf_category_id": "pcat_01KSNC6FYYQB82KTM5R291TDNV",
+      "assigned_leaf_category_name": "Staples & Grains"
+    },
+    {
+      "product_id": "prod_01KSQVBYZH2GM09A1DRT6QWFE8",
+      "product_title": "Rice Flour 500g",
+      "product_handle": "4567668850760",
+      "current_categories": [
+        "atta-flours",
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "staples-grains",
+      "assigned_leaf_category_id": "pcat_01KSNC6FYYQB82KTM5R291TDNV",
+      "assigned_leaf_category_name": "Staples & Grains"
+    },
+    {
+      "product_id": "prod_01KSQVC805HSQ2PVM72JYX4M16",
+      "product_title": "Long Grain White Rice 5kg",
+      "product_handle": "4567661838408",
+      "current_categories": [
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "staples-grains",
+      "assigned_leaf_category_id": "pcat_01KSNC6FYYQB82KTM5R291TDNV",
+      "assigned_leaf_category_name": "Staples & Grains"
+    },
+    {
+      "product_id": "prod_01KSQVC831S666WE2FJ9RNYSGK",
+      "product_title": "Easycook Parboiled Rice 5kg",
+      "product_handle": "4567661772872",
+      "current_categories": [
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "staples-grains",
+      "assigned_leaf_category_id": "pcat_01KSNC6FYYQB82KTM5R291TDNV",
+      "assigned_leaf_category_name": "Staples & Grains"
+    },
+    {
+      "product_id": "prod_01KSQVC8923C6X48GW990QAW06",
+      "product_title": "Ponni Rice 5kg",
+      "product_handle": "4567661543496",
+      "current_categories": [
+        "staples-grains"
+      ],
+      "assigned_leaf_category": "staples-grains",
+      "assigned_leaf_category_id": "pcat_01KSNC6FYYQB82KTM5R291TDNV",
+      "assigned_leaf_category_name": "Staples & Grains"
+    },
+    {
+      "product_id": "prod_01KSQVBVQ9CVKZN0QBTSJ8PMKQ",
+      "product_title": "Cornmeal Fine 1.5kg",
+      "product_handle": "4567669604424",
+      "current_categories": [
+        "suji-coarse-semolina"
+      ],
+      "assigned_leaf_category": "suji-coarse-semolina",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3FD40RXYHPW8VH5XSS",
+      "assigned_leaf_category_name": "Suji / Coarse Semolina"
+    },
+    {
+      "product_id": "prod_01KSQVBVTP2EMVZG4VR921TPN0",
+      "product_title": "Cornmeal Fine 500g",
+      "product_handle": "4567669538888",
+      "current_categories": [
+        "suji-coarse-semolina"
+      ],
+      "assigned_leaf_category": "suji-coarse-semolina",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3FD40RXYHPW8VH5XSS",
+      "assigned_leaf_category_name": "Suji / Coarse Semolina"
+    },
+    {
+      "product_id": "prod_01KSQVBVY66WR0AW0EQK62Z90R",
+      "product_title": "Cornmeal Medium 1.5kg",
+      "product_handle": "4567669506120",
+      "current_categories": [
+        "suji-coarse-semolina"
+      ],
+      "assigned_leaf_category": "suji-coarse-semolina",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3FD40RXYHPW8VH5XSS",
+      "assigned_leaf_category_name": "Suji / Coarse Semolina"
+    },
+    {
+      "product_id": "prod_01KSQVBW1H6KAFQBB2QXQS49R5",
+      "product_title": "Cornmeal Medium 500g",
+      "product_handle": "4567669440584",
+      "current_categories": [
+        "suji-coarse-semolina"
+      ],
+      "assigned_leaf_category": "suji-coarse-semolina",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3FD40RXYHPW8VH5XSS",
+      "assigned_leaf_category_name": "Suji / Coarse Semolina"
+    },
+    {
+      "product_id": "prod_01KSQVBY2G4YBPKX7FX2QGKE2Y",
+      "product_title": "White Maize Meal 1.5kg",
+      "product_handle": "4567669342280",
+      "current_categories": [
+        "atta-flours",
+        "suji-coarse-semolina"
+      ],
+      "assigned_leaf_category": "suji-coarse-semolina",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3FD40RXYHPW8VH5XSS",
+      "assigned_leaf_category_name": "Suji / Coarse Semolina"
+    },
+    {
+      "product_id": "prod_01KSQVBPAXRJCJJWADR26BSNHB",
+      "product_title": "Garlic &amp; Chilli Sauce 340g",
+      "product_handle": "4567672750152",
+      "current_categories": [
+        "condiments",
+        "tamarind-chutney"
+      ],
+      "assigned_leaf_category": "tamarind-chutney",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5Y5TZ7EP6Q6H60G7YY",
+      "assigned_leaf_category_name": "Tamarind Chutney"
+    },
+    {
+      "product_id": "prod_01KSQVBTGV1N1VNVBDMGT2S6D6",
+      "product_title": "Thecha Chilli Paste 300g",
+      "product_handle": "4567673143368",
+      "current_categories": [
+        "condiments",
+        "tamarind-chutney"
+      ],
+      "assigned_leaf_category": "tamarind-chutney",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5Y5TZ7EP6Q6H60G7YY",
+      "assigned_leaf_category_name": "Tamarind Chutney"
+    },
+    {
+      "product_id": "prod_01KSQVBVARSBEY8Y6JDTETVWFQ",
+      "product_title": "Bombay Sandwich Spread 280g",
+      "product_handle": "4567672881224",
+      "current_categories": [
+        "tamarind-chutney"
+      ],
+      "assigned_leaf_category": "tamarind-chutney",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5Y5TZ7EP6Q6H60G7YY",
+      "assigned_leaf_category_name": "Tamarind Chutney"
+    },
+    {
+      "product_id": "prod_01KSQVBVEGC7KFFG9DCGJWJAX4",
+      "product_title": "Chilli Sauce Hot 310g",
+      "product_handle": "4567672815688",
+      "current_categories": [
+        "condiments",
+        "tamarind-chutney"
+      ],
+      "assigned_leaf_category": "tamarind-chutney",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5Y5TZ7EP6Q6H60G7YY",
+      "assigned_leaf_category_name": "Tamarind Chutney"
+    },
+    {
+      "product_id": "prod_01KSQVBVK44PECBVS4RN7FHP70",
+      "product_title": "Coriander Mint Sauce 340g",
+      "product_handle": "4567672651848",
+      "current_categories": [
+        "condiments",
+        "tamarind-chutney"
+      ],
+      "assigned_leaf_category": "tamarind-chutney",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5Y5TZ7EP6Q6H60G7YY",
+      "assigned_leaf_category_name": "Tamarind Chutney"
+    },
+    {
+      "product_id": "prod_01KSQVBP7CW7E3FEX1GFHMVM99",
+      "product_title": "Tamarind Sauce 340g",
+      "product_handle": "4567672848456",
+      "current_categories": [
+        "condiments",
+        "tamarind-paste-concentrate"
+      ],
+      "assigned_leaf_category": "tamarind-paste-concentrate",
+      "assigned_leaf_category_id": "pcat_01KSNC6G5XGGZ0N4G116K78C4T",
+      "assigned_leaf_category_name": "Tamarind Paste / Concentrate"
+    },
+    {
+      "product_id": "prod_01KSQVCEBG5RZZ7Z9EZQJAF843",
+      "product_title": "Tandoori Masala 400g",
+      "product_handle": "4567657644104",
+      "current_categories": [
+        "spice-blends",
+        "tandoori-masala"
+      ],
+      "assigned_leaf_category": "tandoori-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4V86TW110FJ3H8RSZW",
+      "assigned_leaf_category_name": "Tandoori Masala"
+    },
+    {
+      "product_id": "prod_01KSQVCEK8X4A34V0PM6TF3J41",
+      "product_title": "Tandoori Masala Jar 100g",
+      "product_handle": "4567656169544",
+      "current_categories": [
+        "spice-blends",
+        "tandoori-masala"
+      ],
+      "assigned_leaf_category": "tandoori-masala",
+      "assigned_leaf_category_id": "pcat_01KSNC6G4V86TW110FJ3H8RSZW",
+      "assigned_leaf_category_name": "Tandoori Masala"
+    },
+    {
+      "product_id": "prod_01KSQVBHZ1F6NASCW62Z0F1B7W",
+      "product_title": "Toovar 400g",
+      "product_handle": "4567670030408",
+      "current_categories": [
+        "dal-lentils",
+        "toor-dal"
+      ],
+      "assigned_leaf_category": "toor-dal",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3FA05SCEM7YJGEEWTW",
+      "assigned_leaf_category_name": "Toor Dal"
+    },
+    {
+      "product_id": "prod_01KSQVBKE5D3PGAV612736ACS8",
+      "product_title": "Lemon Juice with Essential Oil 200ml",
+      "product_handle": "15097233015169",
+      "current_categories": [
+        "oils-ghee",
+        "vegetable-refined-oil"
+      ],
+      "assigned_leaf_category": "vegetable-refined-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3VTC6F3YHD6QWCK7BA",
+      "assigned_leaf_category_name": "Vegetable / Refined Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBWHJR61X7PS03A1YEZZB",
+      "product_title": "Almond Oil 500ml",
+      "product_handle": "6666608541768",
+      "current_categories": [
+        "snacks-namkeen",
+        "vegetable-refined-oil"
+      ],
+      "assigned_leaf_category": "vegetable-refined-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3VTC6F3YHD6QWCK7BA",
+      "assigned_leaf_category_name": "Vegetable / Refined Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBWN4PXXYSA8T2STW5MKZ",
+      "product_title": "Almond Oil 250ml",
+      "product_handle": "6666603167816",
+      "current_categories": [
+        "snacks-namkeen",
+        "vegetable-refined-oil"
+      ],
+      "assigned_leaf_category": "vegetable-refined-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3VTC6F3YHD6QWCK7BA",
+      "assigned_leaf_category_name": "Vegetable / Refined Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBWRB95E9FGC0XKBRYVJJ",
+      "product_title": "Castor Oil 250ml",
+      "product_handle": "6666591010888",
+      "current_categories": [
+        "oils-ghee",
+        "vegetable-refined-oil"
+      ],
+      "assigned_leaf_category": "vegetable-refined-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3VTC6F3YHD6QWCK7BA",
+      "assigned_leaf_category_name": "Vegetable / Refined Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBWWN7MRTSQV3YCYV9B0J",
+      "product_title": "Pure Linseed Oil 250ml",
+      "product_handle": "6666589536328",
+      "current_categories": [
+        "oils-ghee",
+        "vegetable-refined-oil"
+      ],
+      "assigned_leaf_category": "vegetable-refined-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3VTC6F3YHD6QWCK7BA",
+      "assigned_leaf_category_name": "Vegetable / Refined Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBXDHMA4TDPH4YWD4TS33",
+      "product_title": "Pomace Olive Oil Blend 3 Litres",
+      "product_handle": "4583223296072",
+      "current_categories": [
+        "oils-ghee",
+        "vegetable-refined-oil"
+      ],
+      "assigned_leaf_category": "vegetable-refined-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3VTC6F3YHD6QWCK7BA",
+      "assigned_leaf_category_name": "Vegetable / Refined Oil"
+    },
+    {
+      "product_id": "prod_01KSQVBXJ29REWPWMK3VNWWQZ5",
+      "product_title": "Pomace Olive Oil 5 Litre",
+      "product_handle": "4583223263304",
+      "current_categories": [
+        "oils-ghee",
+        "vegetable-refined-oil"
+      ],
+      "assigned_leaf_category": "vegetable-refined-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3VTC6F3YHD6QWCK7BA",
+      "assigned_leaf_category_name": "Vegetable / Refined Oil"
+    },
+    {
+      "product_id": "prod_01KSQVC20R5Y01X9S6AF6NKYWY",
+      "product_title": "Pomace Olive Oil 1 Litre",
+      "product_handle": "4567671898184",
+      "current_categories": [
+        "oils-ghee",
+        "vegetable-refined-oil"
+      ],
+      "assigned_leaf_category": "vegetable-refined-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3VTC6F3YHD6QWCK7BA",
+      "assigned_leaf_category_name": "Vegetable / Refined Oil"
+    },
+    {
+      "product_id": "prod_01KSQVC24MNVVH11FBKH3KMSZR",
+      "product_title": "Olive Oil Extra Virgin 500ml",
+      "product_handle": "4567671865416",
+      "current_categories": [
+        "oils-ghee",
+        "vegetable-refined-oil"
+      ],
+      "assigned_leaf_category": "vegetable-refined-oil",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3VTC6F3YHD6QWCK7BA",
+      "assigned_leaf_category_name": "Vegetable / Refined Oil"
+    },
+    {
+      "product_id": "prod_01KSQVC3DTRGA927PNBZCDCQZ1",
+      "product_title": "Green Lentils 1kg",
+      "product_handle": "4567667212360",
+      "current_categories": [
+        "whole-moong-green"
+      ],
+      "assigned_leaf_category": "whole-moong-green",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3J6A18Q3R16XNTQCKX",
+      "assigned_leaf_category_name": "Whole Moong (Green)"
+    },
+    {
+      "product_id": "prod_01KSQVC3KN8JZYPTBB84AAV227",
+      "product_title": "Green Lentils 2kg",
+      "product_handle": "4567667114056",
+      "current_categories": [
+        "whole-moong-green"
+      ],
+      "assigned_leaf_category": "whole-moong-green",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3J6A18Q3R16XNTQCKX",
+      "assigned_leaf_category_name": "Whole Moong (Green)"
+    },
+    {
+      "product_id": "prod_01KSQVC3Q7736ECCKFPW0P8QY7",
+      "product_title": "Mung Beans 1kg",
+      "product_handle": "4567667081288",
+      "current_categories": [
+        "dal-lentils",
+        "whole-moong-green"
+      ],
+      "assigned_leaf_category": "whole-moong-green",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3J6A18Q3R16XNTQCKX",
+      "assigned_leaf_category_name": "Whole Moong (Green)"
+    },
+    {
+      "product_id": "prod_01KSQVC3WAVHT6JJYRAJX1FKQZ",
+      "product_title": "Mung Beans 2kg",
+      "product_handle": "4567667015752",
+      "current_categories": [
+        "dal-lentils",
+        "whole-moong-green"
+      ],
+      "assigned_leaf_category": "whole-moong-green",
+      "assigned_leaf_category_id": "pcat_01KSNC6G3J6A18Q3R16XNTQCKX",
+      "assigned_leaf_category_name": "Whole Moong (Green)"
+    }
+  ],
+  "unmatched": [
+    {
+      "product_id": "prod_01KSQVCBYEEKHHXKZ44759NGNR",
+      "product_title": "Bay Leaves Jar 10g",
+      "product_handle": "4567657381960",
+      "current_categories": [],
+      "assigned_leaf_category": null,
+      "assigned_leaf_category_id": null,
+      "assigned_leaf_category_name": null
+    },
+    {
+      "product_id": "prod_01KSQVCC7EERVHY5V1P18JGAM4",
+      "product_title": "Chilli Crushed Jar 80g",
+      "product_handle": "4567657250888",
+      "current_categories": [
+        "fresh"
+      ],
+      "assigned_leaf_category": null,
+      "assigned_leaf_category_id": null,
+      "assigned_leaf_category_name": null
+    },
+    {
+      "product_id": "prod_01KSQVCCHW5ZXT11RKHGXD42GK",
+      "product_title": "Cinnamon Ground Jar 100g",
+      "product_handle": "4567657087048",
+      "current_categories": [
+        "spices-whole"
+      ],
+      "assigned_leaf_category": null,
+      "assigned_leaf_category_id": null,
+      "assigned_leaf_category_name": null
+    },
+    {
+      "product_id": "prod_01KSQVCGYW149H7QDXTDWVXYH0",
+      "product_title": "Vermice T&apos;Dini-Fedelini 500g",
+      "product_handle": "4567659905096",
+      "current_categories": [],
+      "assigned_leaf_category": null,
+      "assigned_leaf_category_id": null,
+      "assigned_leaf_category_name": null
+    }
+  ]
+}

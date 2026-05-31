@@ -8,7 +8,7 @@ export const listCategories = async (query?: Record<string, any>) => {
     revalidate: 300, // revalidate every 5 minutes
   }
 
-  const limit = query?.limit || 100
+  const limit = query?.limit || 200
 
   return sdk.client
     .fetch<{ product_categories: HttpTypes.StoreProductCategory[] }>(

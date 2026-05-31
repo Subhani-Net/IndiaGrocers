@@ -54,5 +54,18 @@ export function sortProducts(
     sortedProducts.sort((a, b) => b.title!.localeCompare(a.title!))
   }
 
+  if (sortBy === "weight_desc") {
+    sortedProducts.sort((a, b) => {
+      const maxWeight = (p: HttpTypes.StoreProduct) =>
+        Math.max(
+          0,
+          ...(p.variants || []).map(
+            (v) => ((v as any).metadata?.weight_grams as number) || 0
+          )
+        )
+      return maxWeight(b) - maxWeight(a)
+    })
+  }
+
   return sortedProducts
 }

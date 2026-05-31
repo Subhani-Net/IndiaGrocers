@@ -18,27 +18,101 @@ Run storefront commands with `yarn`, not `npm`:
 cd apps/storefront && yarn dev
 ```
 
-## Quickstart
+## Fresh Setup — Step by Step
 
+> **⚠️ BEFORE ANY DATA WORK:** Read `scripts/data-pipeline/QA-GATES.md`.  
+> All 5 phases must pass their gate before proceeding.  
+> **Never enrich incomplete data.**
+
+Run these in order. The automated script at `scripts/setup.ps1` does all of this.
+
+### Prerequisites
+- Docker Desktop running (whale icon in tray, not animating)
+- Node.js 26+, npm 11+, Yarn 4+
+
+### Step 1: Docker
 ```bash
-# Infrastructure
-docker compose -f C:\IndiaGrocers\docker-compose.yml up -d
-
-# Install (root)
-cd C:\IndiaGrocers
-npm install
-cd apps\storefront
-yarn install
+docker compose -f docker-compose.yml up -d
+# If "container name already in use": docker rm -f indiagrocers-meilisearch
 ```
 
-## Dev servers
+| Service | Port | Credentials |
+|---------|------|-------------|
+| Postgres 16 | 5432 | `medusa`:`medusa`, db `indiagrocers` |
+| Redis 7 | 6379 | — |
+| MeiliSearch v1.12 | 7700 | — |
+
+### Step 2: Install dependencies (ORDER MATTERS)
+```bash
+# Root first — links workspace packages including @indiagrocers/meilisearch
+npm install
+
+# Storefront uses Yarn 4 separately
+cd apps\storefront
+yarn install
+cd ..\..
+```
+> IMPORTANT: Root `npm install` must complete before backend commands work. The backend subscriber imports `@indiagrocers/meilisearch` which is a workspace package. Running `npx medusa user` without root install will fail with `Cannot find module '@indiagrocers/meilisearch'`.
+
+### Step 3: Configure backend .env
+```bash
+cd apps\backend
+cp .env.template .env   # if .env missing
+```
+Ensure `.env` has:
+```
+DATABASE_URL=postgres://medusa:medusa@localhost:5432/indiagrocers
+REDIS_URL=redis://localhost:6379
+```
+
+### Step 4: Migrate + create admin
+```bash
+cd apps\backend
+npx medusa db:migrate        # creates tables + seeds infrastructure (categories, regions, collections)
+npx medusa user -e admin@example.com -p password123
+```
+
+### Step 5: Start backend
+```bash
+npx medusa develop   # runs on :9000 — keep this terminal open
+```
+
+### Step 6: Seed products (in a new terminal, with backend running)
+```bash
+cd apps\backend
+node src/seed/merge-product-variants.mjs       # import Natco products → 290→238 consolidated
+node src/seed/reassign-natco-categories.mjs     # map products to seed categories
+node src/seed/assign-collections-v2.mjs          # map products to collections
+node src/seed/set-inventory.mjs                  # enable stock (disable inventory mgmt)
+```
+
+### Step 7: Configure search
+```bash
+cd apps\meilisearch
+npm run configure       # create MeiliSearch index with synonyms, filters, ranking
+npm run reindex         # push all products into search index
+```
+
+### Step 8: Verify data quality
+```bash
+node scripts/verify-data-health.mjs
+# Checks: no old category handles in MeiliSearch, product count matches,
+# dietary flags present. Run after ANY data operation.
+```
+
+### Step 9: Start storefront
+```bash
+cd apps\storefront
+yarn dev              # runs on :8000
+```
+
+Open: `http://localhost:8000/gb`
+
+## Dev servers (after initial setup)
 
 ```bash
 # Backend (:9000)
 cd apps\backend
-cp .env.template .env        # then set DATABASE_URL, REDIS_URL
-npx medusa db:migrate
-npx medusa user -e admin@test.com -p supersecret
 npx medusa develop
 
 # Storefront (:8000, uses turbopack)
@@ -47,6 +121,13 @@ yarn dev
 
 # Both at once (root)
 npm -r dev
+```
+
+## After any data change (seed, enrichment, migration)
+
+```bash
+cd apps\meilisearch && npm run reindex     # push changes to MeiliSearch
+node scripts/verify-data-health.mjs         # confirm no old handles, correct counts
 ```
 
 ## Storefront build traps
@@ -112,6 +193,8 @@ Detailed pipeline docs: `apps/backend/src/seed/README.md`.
 |------|---------|
 | `AGENTS.md` | This file — repo setup, commands, gotchas |
 | `Documentation/customer-journeys-and-features.md` | Gherkin E2E scenarios + user story backlog |
+| `data-design/IMPLEMENTATION-PLAN.md` | Epics, user stories, implementation order, script index |
+| `data-design/QA-GATES.md` | 5-phase QA gate checklist |
 | `Implementation/README.md` | Implementation tracker, project structure, brand colors |
 
 ## Architecture notes
@@ -172,6 +255,20 @@ npm run reindex
 ## Brand
 
 Primary brand color: `#FF6B35` (orange). Full palette in `Implementation/README.md`.
+
+## Image Naming Convention
+
+**Format**: `{brand}_{product-handle}.{ext}`  
+**Examples**: `natco_basmati-rice-2kg.jpg`, `trs_coarse-black-pepper.jpg`
+
+| Rule | Reason |
+|------|--------|
+| Brand prefix required | Avoids collisions when multiple brands share same product name |
+| Product handle as filename | Matches product handle in Medusa — trivial to map by script |
+| Lowercase only | Avoids case-sensitivity issues on CDN |
+| No spaces/special chars | URL-safe without encoding |
+
+**For future catalogs (TRS, Haldiram, etc.)**: Download images from Shopify JSON before importing products. Name files as `{brand}_{handle}.{ext}` and save to `apps/storefront/public/images/`. Set thumbnail to `/images/{brand}_{handle}.{ext}` during product creation.
 
 ---
 

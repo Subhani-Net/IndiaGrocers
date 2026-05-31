@@ -3,6 +3,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 export type SortOptions =
+  | "default"
   | "price_asc"
   | "price_desc"
   | "created_at"
@@ -15,6 +16,7 @@ type InlineSortProps = {
 }
 
 const sortLabels: Record<SortOptions, string> = {
+  default: "Default (Relevance)",
   created_at: "Latest Arrivals",
   price_asc: "Price: Low → High",
   price_desc: "Price: High → Low",
