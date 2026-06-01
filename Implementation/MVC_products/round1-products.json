@@ -1,0 +1,386 @@
+[
+  {
+    "product_name": "Shan Special Chicken Biryani Mix",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["60g"],
+    "description": "Shan Special Chicken Biryani Mix - aromatic spice blend for authentic chicken biryani with basmati rice.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Special Beef Biryani Mix",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["60g"],
+    "description": "Shan Special Beef Biryani Mix - richly spiced seasoning for a hearty beef biryani.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Special Mutton Biryani Mix",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["60g"],
+    "description": "Shan Special Mutton Biryani Mix - traditional spice mix for slow-cooked mutton biryani.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Sindhi Biryani Mix",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["65g"],
+    "description": "Shan Sindhi Biryani Mix - tangy and spicy seasoning for authentic Sindhi-style biryani with potatoes and tomatoes.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Bombay Biryani Mix",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["60g"],
+    "description": "Shan Bombay Biryani Mix - mildly spiced blend for the classic Bombay-style biryani with dried plums.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Karahi Gosht Masala",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Karahi Gosht Masala - robust spice mix for traditional Pakistani karahi-style mutton or chicken.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Nihari Masala",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Nihari Masala - aromatic blend for the slow-cooked, rich nihari stew from Old Delhi and Lahore.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Korma Masala",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Korma Masala - creamy and fragrant spice mix for a luxurious Mughlai-style korma.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Butter Chicken Masala",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Butter Chicken Masala - rich tomato and cream-based spice blend for the world-famous butter chicken.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Chicken Tikka Masala",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Chicken Tikka Masala - tangy and smoky spice mix for classic tandoori-style chicken tikka.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Tandoori Chicken Mix",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Tandoori Chicken Mix - vibrant spice and yoghurt marinade blend for restaurant-style tandoori chicken.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Seekh Kabab Mix",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Seekh Kabab Mix - perfectly balanced seasoning for grilled minced meat skewers.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Haleem Mix",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["300g"],
+    "description": "Shan Haleem Mix - complete spice and grain blend for the legendary slow-cooked wheat, barley, lentil and mutton stew.",
+    "price_gbp": 499
+  },
+  {
+    "product_name": "Shan Chana Masala",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Chana Masala - tangy and spicy seasoning for Punjabi-style chickpea curry.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Daal Masala",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Daal Masala - aromatic spice blend for richly tempered lentil dishes.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Achar Gosht Masala",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Achar Gosht Masala - tangy pickle-flavoured spice mix for a unique meat curry with pickling spices.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Keema Masala",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Keema Masala - deeply spiced blend for minced meat curry, a Pakistani household staple.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Shan Pilau Rice Mix",
+    "brand": "Shan",
+    "category": "shan-masalas",
+    "variants": ["50g"],
+    "description": "Shan Pilau Rice Mix - fragrant whole-spice seasoning for aromatic pilau rice, the perfect biryani side.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Kitchen King Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Kitchen King Masala - the #1 selling all-purpose masala blend in UK South Asian grocery, perfect for any vegetable or meat dish.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Chana Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Chana Masala - traditional Punjabi spice blend for spicy and tangy chickpea curry.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Rajma Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Rajma Masala - aromatic seasoning for North Indian-style red kidney bean curry.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Pav Bhaji Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Pav Bhaji Masala - signature Mumbai street-food spice blend for spicy vegetable mash served with buttered bread rolls.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Paneer Butter Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Paneer Butter Masala - rich and creamy spice mix for the classic Indian cottage cheese curry.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Dal Makhani Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Dal Makhani Masala - slow-cooking spice blend for the iconic Punjabi black lentil and kidney bean dal.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Sambar Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Sambar Masala - authentic South Indian spice blend for tangy lentil and vegetable sambar.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Chicken Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Chicken Masala - balanced everyday spice blend for classic North Indian chicken curry.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Tandoori Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Tandoori Masala - bright red spice and yoghurt marinade blend for tandoori chicken and paneer tikka.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "MDH Meat Masala",
+    "brand": "MDH",
+    "category": "mdh-masalas",
+    "variants": ["100g"],
+    "description": "MDH Meat Masala - bold and aromatic spice blend for richly spiced mutton and lamb curries.",
+    "price_gbp": 299
+  },
+  {
+    "product_name": "Haldiram's Aloo Bhujia",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["200g"],
+    "description": "Haldiram's Aloo Bhujia - crispy fried potato and chickpea flour noodles seasoned with traditional spices.",
+    "price_gbp": 199
+  },
+  {
+    "product_name": "Haldiram's Aloo Bhujia",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["400g"],
+    "description": "Haldiram's Aloo Bhujia - crispy fried potato and chickpea flour noodles seasoned with traditional spices.",
+    "price_gbp": 349
+  },
+  {
+    "product_name": "Haldiram's Aloo Bhujia",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["1kg"],
+    "description": "Haldiram's Aloo Bhujia - crispy fried potato and chickpea flour noodles seasoned with traditional spices. Family value pack.",
+    "price_gbp": 699
+  },
+  {
+    "product_name": "Haldiram's Moong Dal",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["200g"],
+    "description": "Haldiram's Moong Dal - crunchy fried split moong lentils, lightly salted and spiced. A classic teatime snack.",
+    "price_gbp": 199
+  },
+  {
+    "product_name": "Haldiram's Moong Dal",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["400g"],
+    "description": "Haldiram's Moong Dal - crunchy fried split moong lentils, lightly salted and spiced. Family size.",
+    "price_gbp": 349
+  },
+  {
+    "product_name": "Haldiram's All In One Mix",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["200g"],
+    "description": "Haldiram's All In One Mix - an irresistible medley of sev, dal, peanuts, rice flakes and spices.",
+    "price_gbp": 199
+  },
+  {
+    "product_name": "Haldiram's Khatta Meetha Mix",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["200g"],
+    "description": "Haldiram's Khatta Meetha Mix - sweet and sour chickpea flour noodles with peanuts, a uniquely addictive snack.",
+    "price_gbp": 199
+  },
+  {
+    "product_name": "Haldiram's Dalmoth",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["200g"],
+    "description": "Haldiram's Dalmoth - spicy and crunchy mix of fried lentils, nuts and chickpea flour bits, a traditional North Indian snack.",
+    "price_gbp": 199
+  },
+  {
+    "product_name": "Haldiram's Bhujia Sev",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["200g"],
+    "description": "Haldiram's Bhujia Sev - thin, crispy chickpea flour noodles seasoned with black pepper and cloves.",
+    "price_gbp": 199
+  },
+  {
+    "product_name": "Haldiram's Mathri",
+    "brand": "Haldiram's",
+    "category": "haldiram-namkeens",
+    "variants": ["200g"],
+    "description": "Haldiram's Mathri - flaky, savoury whole wheat flour crackers, perfect with chai or pickle.",
+    "price_gbp": 199
+  },
+  {
+    "product_name": "Haldiram's Gulab Jamun Tin",
+    "brand": "Haldiram's",
+    "category": "tinned-sweets",
+    "variants": ["500g"],
+    "description": "Haldiram's Gulab Jamun Tin - soft milk-solid dumplings in fragrant sugar syrup. Ready to serve, ambient storage.",
+    "price_gbp": 399
+  },
+  {
+    "product_name": "Haldiram's Gulab Jamun Tin",
+    "brand": "Haldiram's",
+    "category": "tinned-sweets",
+    "variants": ["1kg"],
+    "description": "Haldiram's Gulab Jamun Tin - soft milk-solid dumplings in fragrant sugar syrup. Large tin for entertaining.",
+    "price_gbp": 699
+  },
+  {
+    "product_name": "Haldiram's Rasgulla Tin",
+    "brand": "Haldiram's",
+    "category": "tinned-sweets",
+    "variants": ["1kg"],
+    "description": "Haldiram's Rasgulla Tin - spongy cottage cheese balls in light sugar syrup, a beloved Bengali sweet.",
+    "price_gbp": 699
+  },
+  {
+    "product_name": "Haldiram's Soan Papdi",
+    "brand": "Haldiram's",
+    "category": "tinned-sweets",
+    "variants": ["500g"],
+    "description": "Haldiram's Soan Papdi - flaky, melt-in-the-mouth gram flour sweet with pistachios and cardamom. The #1 Diwali gifting product in UK Indian market.",
+    "price_gbp": 449
+  },
+  {
+    "product_name": "Parle-G Glucose Biscuits",
+    "brand": "Parle",
+    "category": "indian-biscuits",
+    "variants": ["400g"],
+    "description": "Parle-G Glucose Biscuits - India's most iconic sweetened whole wheat biscuit. The best-selling biscuit in Indian diaspora.",
+    "price_gbp": 199
+  },
+  {
+    "product_name": "Parle-G Glucose Biscuits",
+    "brand": "Parle",
+    "category": "indian-biscuits",
+    "variants": ["1kg"],
+    "description": "Parle-G Glucose Biscuits - India's most iconic sweetened whole wheat biscuit. Mega value family pack.",
+    "price_gbp": 399
+  },
+  {
+    "product_name": "Parle Monaco Salted Crackers",
+    "brand": "Parle",
+    "category": "indian-biscuits",
+    "variants": ["200g"],
+    "description": "Parle Monaco Salted Crackers - crispy salted savoury biscuit crackers, a popular chai-time snack.",
+    "price_gbp": 149
+  },
+  {
+    "product_name": "Parle Bourbon",
+    "brand": "Parle",
+    "category": "indian-biscuits",
+    "variants": ["200g"],
+    "description": "Parle Bourbon - chocolate cream-filled sandwich biscuits, a nostalgic Indian childhood favourite.",
+    "price_gbp": 149
+  },
+  {
+    "product_name": "Britannia Good Day Butter Cookies",
+    "brand": "Britannia",
+    "category": "indian-biscuits",
+    "variants": ["150g"],
+    "description": "Britannia Good Day Butter Cookies - rich and crumbly butter cookies with a hint of cardamom. A daily tea-time essential.",
+    "price_gbp": 199
+  },
+  {
+    "product_name": "Britannia Good Day Cashew Cookies",
+    "brand": "Britannia",
+    "category": "indian-biscuits",
+    "variants": ["150g"],
+    "description": "Britannia Good Day Cashew Cookies - buttery cookies studded with real cashew pieces for a premium tea-time treat.",
+    "price_gbp": 199
+  }
+]

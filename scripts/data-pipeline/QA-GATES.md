@@ -170,6 +170,53 @@ Each brand is independently verifiable. The audit script becomes the single sour
 
 ---
 
+## Phase 6 — TRS Import Gate
+
+### Step 6.1: Import TRS products
+```
+node scripts/rename-trs-images.mjs
+node scripts/import-trs-products.mjs --apply
+```
+
+### Step 6.2: Verify TRS catalog completeness
+```
+node scripts/audit-catalog-completeness.mjs
+```
+
+| Check | Target | Actual | Pass? |
+|-------|--------|--------|-------|
+| TRS products in DB | 50 | ___ | ☐ |
+| TRS products with category | = 50 | ___ | ☐ |
+| TRS images follow convention | trs_{handle}.{ext} | ___ | ☐ |
+| Combined DB count | 357 + 50 = 407 | ___ | ☐ |
+| No old handles in MeiliSearch | 0 | ___ | ☐ |
+
+### Step 6.3: TRS tag + dietary enrichment
+```
+node scripts/enrich-from-csv.mjs --apply
+node scripts/build-pseudo-queries.mjs
+cd apps/meilisearch && npm run reindex
+```
+
+| Check | Target | Actual | Pass? |
+|-------|--------|--------|-------|
+| TRS dietary flags present | ≥ 40/50 | ___ | ☐ |
+| TRS tags indexed | ≥ 40/50 | ___ | ☐ |
+| Search "TRS cumin" returns results | > 0 | ___ | ☐ |
+| Search "TRS" returns only TRS products | Exact | ___ | ☐ |
+
+### Step 6.4: Integration tests
+```
+cd apps/storefront && npx playwright test
+```
+
+| Check | Target | Actual | Pass? |
+|-------|--------|--------|-------|
+| TRS category tests pass | 5/5 | ___ | ☐ |
+| Combined tests pass | 27/27 | ___ | ☐ |
+
+---
+
 ## Audit Script Spec
 
 `scripts/audit-catalog-completeness.mjs` must:

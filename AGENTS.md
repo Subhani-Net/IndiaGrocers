@@ -422,6 +422,96 @@ Redis is used for event bus + cache. Production needs:
 `NEXT_PUBLIC_STRIPE_KEY` in storefront `.env` and Stripe provider config in
 backend must be swapped to live keys before accepting real payments.
 
+### G11. Natco product variant consolidation
+**Status:** Not started — mandatory for consistent UX
+All 357 Natco products are currently flat SKUs with weight in the title
+(e.g., `"Natco - Brown Lentils 2kg"`, `"Natco - Brown Lentils 500g"` as
+separate products). Each has a single `"Default"` variant. The weight-heavy
+card component (`weight-heavy-card.tsx`) cannot display weight chips,
+unit pricing, or best-value indicators because variant metadata is null.
+
+**Must consolidate:**
+1. Merge same-product different-weight SKUs into single products with
+   `Weight/Size` variants (58 clean groups → 120 products merge into 58)
+2. Remove weight suffixes from all Natco product titles
+   (`"Natco - Cumin Seeds 400g"` → `"Natco - Cumin Seeds"`)
+3. Handle 3 cross-category groups manually (dried vs tinned, Full Case)
+4. 227 unique products stay as-is but lose weight suffix in title
+5. Populate `GroceryVariantMetadata` on all variants
+
+**Impact of delay:**
+- Product cards show meaningless `"Default"` weight chip on all Natco products
+- No unit pricing displayed (e.g., `£0.89/100g`)
+- No best-value variant highlighting
+- Search results show weight-suffixed titles inconsistently (TRS already clean)
+- Product detail page shows single `"Default"` option
+
+**Effort breakdown:**
+
+| Phase | Task | Est. |
+|-------|------|------|
+| 1. Adapt merge script | Handle `&amp;` titles, preserve existing metadata + tags, cross-category splits | 1-2h |
+| 2. Run consolidation | Merge 120→58, assign categories, images, delete old products | 30m |
+| 3. Fix enrichment pipeline | Strip weights from titles in `pipeline.mjs` CSV matching | 30m |
+| 4. Re-enrich | Re-run MVC pipeline with updated title matching | 30m |
+| 5. Update integration tests | ~700 title assertions across 8 spec files — remove weight suffixes | 2-3h |
+| 6. Reindex + validate | `npm run reindex`, run full 57-test suite | 30m |
+| **Total** | | **5-7h** |
+
+**Scripts to use/adapt:**
+- `apps/backend/src/seed/merge-product-variants.mjs` — existing consolidation script, needs updating
+- `scripts/mvc/pipeline.mjs` — enrichment pipeline, needs title matching fix
+
+**Do NOT proceed without:**
+- Backing up the database (Docker volume or pg_dump)
+- Running full integration test suite before AND after consolidation
+- Validating MeiliSearch category handles haven't shifted
+
+### G12. Product price management
+**Status:** Not started — mandatory for go-live
+All MVC Round 1 products (Shan, MDH, Haldiram's, Parle, Britannia, Patak's, Tilda, etc.)
+and all TRS products have placeholder prices (£0.99–£3.99). Real wholesale/retail prices
+must be loaded before accepting orders. The system needs:
+
+1. **API-based price loading** — a script that reads prices from a structured data source
+   (JSON/CSV pricelist) and updates product variants via Medusa Admin API. Pattern already
+   exists in `import-round1.mjs` (variant price field). Accept a pricelist file, map product
+   names to variant SKUs, and POST updated prices.
+
+2. **Pricelist scan and update** — support for scanned/uploaded wholesaler price sheets.
+   Convert a CSV/Excel pricelist exported from TRS Dhamecha, Bestway, or other C&C into
+   the price update format. Map C&C product codes/descriptions to Medusa product handles.
+
+3. **Invoice scan and update** — accept a scanned C&C purchase invoice (PDF/image).
+   Extract line items (product name, pack size, cost price) and update Medusa variant
+   prices with actual cost data. Calculate retail prices as cost + margin %.
+
+**Required scripts:**
+- `scripts/pricing/load-pricelist.mjs` — load prices from JSON/CSV pricelist
+- `scripts/pricing/scan-invoice.mjs` — extract prices from C&C invoice
+- `scripts/pricing/update-prices.mjs` — batch-update variant prices via API
+
+**Effort:** 3-4h for API script + pricelist format, 4-6h for invoice scanning (OCR)
+
+### G13. Customer invoice generation
+**Status:** Not started — mandatory for go-live
+After an order is placed, the customer must receive an invoice with:
+- Order number, date, and delivery ETA
+- Line items: product name, variant, quantity, unit price, line total
+- Subtotal, delivery charge, VAT, and grand total
+- Payment method and billing/delivery addresses
+- IndiaGrocers branding and business details (address, VAT number, contact)
+
+Can be delivered as:
+1. **Email PDF invoice** — generated via Medusa order subscriber, sent with
+   notification provider (G1). Requires an HTML-to-PDF template.
+2. **Downloadable invoice** — customer can download from order history page.
+3. **Print-friendly** — order confirmation page doubles as printable invoice.
+
+**Depends on:** G1 (email provider configured), G12 (real pricing for accurate invoices)
+
+**Effort:** 2-3h for PDF template + subscriber, 1-2h for storefront download link
+
 ---
 
 ## AI Agent Guardrails — Mandatory

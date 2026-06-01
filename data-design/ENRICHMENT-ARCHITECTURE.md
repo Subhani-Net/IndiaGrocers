@@ -256,7 +256,19 @@ Vegan, vegetarian, gluten-free, organic flags inferred from product type + tags.
 
 ### DP-06: Brand-Prefixed Titles
 
-Product titles should include brand prefix ("Natco Basmati Rice 5kg" vs "Basmati Rice 5kg") for visual browsing distinction and implicit search filtering. Not yet applied.
+Product titles should include brand prefix ("Natco Basmati Rice 5kg" vs "Basmati Rice 5kg") for visual browsing distinction and implicit search filtering. ✅ Applied — all 357 Natco products prefixed "Natco - ".
+
+### DP-07: Multi-Brand Catalog
+
+Products from multiple brands (Natco, TRS, Haldiram) coexist under the same category taxonomy. Categories are brand-agnostic — browsing `/categories/spices-herbs` shows both Natco and TRS spices. Brand filtering via `brand_slug` metadata + title prefix search.
+
+### DP-08: Shared Enrichment Rules
+
+Dietary, allergen, and tag inference rules apply uniformly across brands. A TRS lentil gets the same vegan/high-protein flags as a Natco lentil. Rules engine (`enrich-from-csv.mjs`) operates on product type + title + category, not brand.
+
+### DP-09: Brand-Segregated Images
+
+Images follow `{brand}_{product-handle}.{ext}` convention. Natco = `natco_*.jpg`, TRS = `trs_*.png`. No filename collisions between brands. Image download/rename scripts are per-brand.
 
 ---
 

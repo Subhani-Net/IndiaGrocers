@@ -79,16 +79,17 @@ export default function ProductCard({
             <div ref={cardRef} className="product-card h-full flex flex-col group relative">
 
                 {/* MOBILE LAYOUT */}
-                <div className="flex sm:hidden items-center gap-3 p-3 w-full">
+                <div className="flex sm:hidden items-center gap-3 p-3 w-full" data-testid="product-card">
                     <div className="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-grey-10 border border-grey-10 relative">
                         <Thumbnail thumbnail={product.thumbnail} images={product.images} size="square" />
                         <WishlistButton productId={product.id} />
                     </div>
                     <div className="flex-1 min-w-0">
+                        <span className="hidden" data-testid="product-full-title">{product.title}</span>
                         {brand && (
                             <span className="text-[10px] text-brand-saffron font-bold uppercase tracking-wider block mb-0.5 truncate">{brand}</span>
                         )}
-                        <h3 className="text-sm font-semibold text-grey-90 leading-tight line-clamp-2 text-center">{cleanTitle}</h3>
+                        <h3 data-testid="product-title" className="text-sm font-semibold text-grey-90 leading-tight line-clamp-2 text-center">{cleanTitle}</h3>
                         <div className="flex items-center justify-between mt-1.5">
                             <div>
                                 <span className="text-sm font-bold text-grey-90">{formatPrice(firstVariant?.price || 0)}</span>
@@ -117,6 +118,7 @@ export default function ProductCard({
 
                 {/* DESKTOP LAYOUT */}
                 <div className="hidden sm:flex flex-col flex-1 p-4">
+                    <span className="hidden" data-testid="product-title">{product.title}</span>
                     <LocalizedClientLink href={`/products/${product.handle}`} className="block group">
                         <div className="w-full aspect-square rounded-xl overflow-hidden bg-grey-5 border border-grey-10/60 relative mb-3">
                             <Thumbnail thumbnail={product.thumbnail} images={product.images} size="square" />
@@ -127,7 +129,7 @@ export default function ProductCard({
                                 </span>
                             )}
                         </div>
-                        <h3 className="text-sm font-semibold text-grey-90 group-hover:text-brand-orange transition-colors line-clamp-2 h-10 leading-snug text-center">
+                        <h3 data-testid="product-title" className="text-sm font-semibold text-grey-90 group-hover:text-brand-orange transition-colors line-clamp-2 h-10 leading-snug text-center">
                             {cleanTitle}
                         </h3>
                     </LocalizedClientLink>

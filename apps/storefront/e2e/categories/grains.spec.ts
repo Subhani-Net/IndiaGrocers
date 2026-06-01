@@ -1,33 +1,132 @@
 import { test, expect } from "@playwright/test"
-
 const TITLE = '[data-testid="product-title"]'
 const CARD = ".product-card"
 
-test("Grains parent — rice at top", async ({ page }) => {
+/**
+ * EXPECTED PRODUCT LISTS — data validation baseline.
+ * Update these product expectations when catalog changes.
+ * Last synced from MeiliSearch index: May 2026.
+ */
+
+test("Grains parent — exhaustive product list validation", async ({ page }) => {
   await page.goto("/categories/grains"); await page.waitForSelector(CARD, { timeout: 60000 })
   const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
-  expect(titles.length).toBeGreaterThanOrEqual(30)
-  const first = titles.slice(0, 5).join(" ").toLowerCase()
-  expect(first).toMatch(/rice|basmati|sona|ponni|idli|powa|mamra/)
+  console.log(`Grains: ${titles.length} products`)
+  titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
+  expect(titles.length).toBeGreaterThanOrEqual(40)
+
+  // rice-quinoa (12)
+  expect(titles).toContain("Natco - Basmati Rice India - Bag 5kg")
+  expect(titles).toContain("Natco - Basmati Rice India 2kg")
+  expect(titles).toContain("Natco - Basmati Rice Kernel 5kg")
+  expect(titles).toContain("Natco - Easycook Parboiled Rice 5kg")
+  expect(titles).toContain("Natco - Idli Rice 5kg")
+  expect(titles).toContain("Natco - Long Grain White Rice 5kg")
+  expect(titles).toContain("Natco - Mamra Basmati 200g")
+  expect(titles).toContain("Natco - Mamra Basmati 908g")
+  expect(titles).toContain("Natco - Ponni Rice 5kg")
+  expect(titles).toContain("Natco - Powa Medium (Flaked Rice) 1kg")
+  expect(titles).toContain("Natco - Sona Masuri Rice 5kg")
+  expect(titles).toContain("TRS Ground Rice")
+
+  // flour-milk-powder (24)
+  expect(titles).toContain("Natco - Chakki Atta Multigrain 5kg")
+  expect(titles).toContain("Natco - Chapati Flour Medium 1.5kg")
+  expect(titles).toContain("Natco - Chapati Flour White 1.5kg")
+  expect(titles).toContain("Natco - Cornmeal Fine 1.5kg")
+  expect(titles).toContain("Natco - Cornmeal Fine 500g")
+  expect(titles).toContain("Natco - Cornmeal Medium 1.5kg")
+  expect(titles).toContain("Natco - Cornmeal Medium 500g")
+  expect(titles).toContain("Natco - Gram Flour (Papa brand) 2kg")
+  expect(titles).toContain("Natco - Gram Flour Superfine 1kg")
+  expect(titles).toContain("Natco - Gram Flour Superfine 2kg")
+  expect(titles).toContain("Natco - Gram Flour Superfine 500g")
+  expect(titles).toContain("Natco - Ground Rice 1.5kg")
+  expect(titles).toContain("Natco - Ground Rice 500g")
+  expect(titles).toContain("Natco - Milk Powder 300g")
+  expect(titles).toContain("Natco - Milk Powder 750g")
+  expect(titles).toContain("Natco - Millet (Bajri) Flour 900g")
+  expect(titles).toContain("Natco - Ragi Flour 900g")
+  expect(titles).toContain("Natco - Rice Flour 500g")
+  expect(titles).toContain("Natco - Semolina Coarse 1.5kg")
+  expect(titles).toContain("Natco - Semolina Coarse 500g")
+  expect(titles).toContain("Natco - Semolina Extra Coarse 1.5kg")
+  expect(titles).toContain("Natco - Semolina Fine 1.5kg")
+  expect(titles).toContain("Natco - Semolina Fine 500g")
+  expect(titles).toContain("Natco - White Maize Meal 1.5kg")
+
+  // wheat-grains-couscous (2)
+  expect(titles).toContain("Natco - Couscous 500g")
+  expect(titles).toContain("Natco - Vermice T&apos;Dini-Fedelini 500g")
+
+  // corn (3)
+  expect(titles).toContain("Natco - Popcorn 2kg")
+  expect(titles).toContain("Natco - Popcorn 500g")
+  expect(titles).toContain("TRS Popcorn")
 })
 
-test("Rice & Quinoa child", async ({ page }) => {
+test("Grains — Rice & Quinoa child", async ({ page }) => {
   await page.goto("/categories/rice-quinoa"); await page.waitForSelector(CARD, { timeout: 60000 })
   const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
-  expect(titles.length).toBeGreaterThanOrEqual(10)
-  for (const t of titles) expect(t?.toLowerCase()).toMatch(/rice|basmati|sona|ponni|idli|quinoa|powa|mamra|parboiled|long grain/)
+  console.log(`Rice & Quinoa: ${titles.length} products`)
+  titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
+  expect(titles.length).toBeGreaterThanOrEqual(11)
+
+  expect(titles).toContain("Natco - Basmati Rice India - Bag 5kg")
+  expect(titles).toContain("Natco - Basmati Rice India 2kg")
+  expect(titles).toContain("Natco - Basmati Rice Kernel 5kg")
+  expect(titles).toContain("Natco - Easycook Parboiled Rice 5kg")
+  expect(titles).toContain("Natco - Idli Rice 5kg")
+  expect(titles).toContain("Natco - Long Grain White Rice 5kg")
+  expect(titles).toContain("Natco - Mamra Basmati 200g")
+  expect(titles).toContain("Natco - Mamra Basmati 908g")
+  expect(titles).toContain("Natco - Ponni Rice 5kg")
+  expect(titles).toContain("Natco - Powa Medium (Flaked Rice) 1kg")
+  expect(titles).toContain("Natco - Sona Masuri Rice 5kg")
+  expect(titles).toContain("TRS Ground Rice")
 })
 
-test("Corn child", async ({ page }) => {
-  await page.goto("/categories/corn"); await page.waitForSelector(CARD, { timeout: 60000 })
-  const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
-  expect(titles.length).toBeGreaterThanOrEqual(1)
-  for (const t of titles) expect(t?.toLowerCase()).toMatch(/popcorn|corn/)
-})
-
-test("Flour & Milk Powder child", async ({ page }) => {
+test("Grains — Flour & Milk Powder child", async ({ page }) => {
   await page.goto("/categories/flour-milk-powder"); await page.waitForSelector(CARD, { timeout: 60000 })
   const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
-  expect(titles.length).toBeGreaterThanOrEqual(14)
-  for (const t of titles) expect(t?.toLowerCase()).toMatch(/flour|atta|besan|maida|semolina|sooji|rava|cornmeal|maize|ground rice|millet|ragi|bajri|milk powder/)
+  console.log(`Flour & Milk Powder: ${titles.length} products`)
+  titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
+  expect(titles.length).toBeGreaterThanOrEqual(22)
+
+  expect(titles).toContain("Natco - Chakki Atta Multigrain 5kg")
+  expect(titles).toContain("Natco - Chapati Flour Medium 1.5kg")
+  expect(titles).toContain("Natco - Chapati Flour White 1.5kg")
+  expect(titles).toContain("Natco - Cornmeal Fine 1.5kg")
+  expect(titles).toContain("Natco - Cornmeal Fine 500g")
+  expect(titles).toContain("Natco - Cornmeal Medium 1.5kg")
+  expect(titles).toContain("Natco - Cornmeal Medium 500g")
+  expect(titles).toContain("Natco - Gram Flour (Papa brand) 2kg")
+  expect(titles).toContain("Natco - Gram Flour Superfine 1kg")
+  expect(titles).toContain("Natco - Gram Flour Superfine 2kg")
+  expect(titles).toContain("Natco - Gram Flour Superfine 500g")
+  expect(titles).toContain("Natco - Ground Rice 1.5kg")
+  expect(titles).toContain("Natco - Ground Rice 500g")
+  expect(titles).toContain("Natco - Milk Powder 300g")
+  expect(titles).toContain("Natco - Milk Powder 750g")
+  expect(titles).toContain("Natco - Millet (Bajri) Flour 900g")
+  expect(titles).toContain("Natco - Ragi Flour 900g")
+  expect(titles).toContain("Natco - Rice Flour 500g")
+  expect(titles).toContain("Natco - Semolina Coarse 1.5kg")
+  expect(titles).toContain("Natco - Semolina Coarse 500g")
+  expect(titles).toContain("Natco - Semolina Extra Coarse 1.5kg")
+  expect(titles).toContain("Natco - Semolina Fine 1.5kg")
+  expect(titles).toContain("Natco - Semolina Fine 500g")
+  expect(titles).toContain("Natco - White Maize Meal 1.5kg")
+})
+
+test("Grains — Corn child", async ({ page }) => {
+  await page.goto("/categories/corn"); await page.waitForSelector(CARD, { timeout: 60000 })
+  const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
+  console.log(`Corn: ${titles.length} products`)
+  titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
+  expect(titles.length).toBeGreaterThanOrEqual(3)
+
+  expect(titles).toContain("Natco - Popcorn 2kg")
+  expect(titles).toContain("Natco - Popcorn 500g")
+  expect(titles).toContain("TRS Popcorn")
 })

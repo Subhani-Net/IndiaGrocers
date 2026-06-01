@@ -141,6 +141,88 @@
 
 ---
 
+## Epic 4: TRS Products (Phase 2)
+
+### US-4.1: TRS Product Import
+**As a** customer, **I want** TRS Foods products available alongside Natco **so that** I can browse and search across both brands seamlessly.
+
+**Acceptance Criteria**:
+- [x] 50 TRS products identified in `Implementation/TRS_products/products.json`
+- [x] 48/50 images renamed to `trs_{product-handle}.{ext}` convention
+- [x] All 9 TRS categories mapped to existing Natco subcategories (0 new categories needed)
+- [x] Import script ready: `scripts/import-trs-products.mjs`
+- [ ] 50 TRS products imported to Medusa with "TRS - " title prefix
+- [ ] Category assignments verified via `verify-data-health.mjs`
+- [ ] Images served correctly from `apps/storefront/public/images/`
+
+**Script**: `scripts/import-trs-products.mjs`
+**Images**: `scripts/rename-trs-images.mjs` (already run)
+**QA Gate**: Phase 6 — TRS catalog completeness
+
+### US-4.2: TRS Tag Enrichment
+**As a** customer, **I want** TRS products to have Hindi/English search terms **so that** searching "jeera" finds TRS Cumin Seeds alongside Natco products.
+
+**Acceptance Criteria**:
+- [ ] ≥80% of TRS products have tags (inferred from product name + category)
+- [ ] Tags indexed in MeiliSearch
+- [ ] Search "jeera" returns TRS Cumin Seeds + Natco Cumin Seeds
+- [ ] Search "haldi" returns TRS Turmeric Powder + Natco Turmeric
+- [ ] Search "TRS" returns only TRS products (brand filtering)
+
+**Script**: `scripts/enrich-from-csv.mjs` (extend for TRS)
+**Dependency**: US-4.1
+**QA Gate**: Phase 6 — tag coverage audit
+
+### US-4.3: TRS Dietary + Allergen Enrichment
+**As a** customer, **I want** to filter TRS products by dietary needs **so that** vegan/vegetarian/gluten-free filters work across both brands.
+
+**Acceptance Criteria**:
+- [ ] TRS spices/pulses get vegan, vegetarian, gluten-free, dairy-free flags
+- [ ] Allergen data inferred from product type (same rules as Natco)
+- [ ] Dietary flags indexed in MeiliSearch
+- [ ] Filter "Vegan" returns TRS + Natco products
+
+**Script**: Same rules engine as Natco (`enrich-from-csv.mjs`)
+**Dependency**: US-4.1
+
+### US-4.4: Combined Catalog Audit
+**As a** QA engineer, **I want** combined Natco (357) + TRS (50) catalog verified **so that** no products are missing or misclassified across brands.
+
+**Acceptance Criteria**:
+- [ ] 407 total products in DB (357 Natco + 50 TRS)
+- [ ] `audit-catalog-completeness.mjs` passes for combined catalog
+- [ ] `verify-data-health.mjs` shows 0 forbidden handles
+- [ ] No category handle conflicts between brands
+- [ ] Search "basmati" finds both brands (if applicable)
+
+**Validation**: `scripts/audit-catalog-completeness.mjs`, `scripts/verify-data-health.mjs`
+
+### US-4.5: Rebuild Pseudo-Queries with TRS Tags
+**As a** customer, **I want** relevance ordering for category browsing to include TRS products **so that** spices, lentils, and grains show both brands in relevance order.
+
+**Acceptance Criteria**:
+- [ ] `category-tags.json` rebuilt with TRS tag data included
+- [ ] Pseudo-query enabled (tags enriched → MeiliSearch → DP-01 active)
+- [ ] Browsing `/categories/spices-herbs` shows relevance-ordered TRS + Natco
+
+**Script**: `scripts/build-pseudo-queries.mjs` (re-run with TRS data)
+**Dependency**: US-4.2
+**Design**: `data-design/SEARCH-ORDERING-PSEUDO-QUERY.md`
+
+### US-4.6: TRS Integration Tests
+**As a** QA engineer, **I want** automated tests for TRS category browsing and search **so that** multi-brand regressions are caught immediately.
+
+**Acceptance Criteria**:
+- [ ] 5 new tests: TRS Spices, TRS Pulses, TRS Flours, Search "TRS", Combined spice search
+- [ ] All 27 tests pass (22 existing + 5 TRS)
+- [ ] TRS product cards render with correct images and prices
+
+**Files**: `e2e/categories/trs-spices.spec.ts`, `e2e/search/trs-search.spec.ts`
+
+---
+
+## Implementation Order — TRS Phase
+
 ## Implementation Order (from scratch)
 
 ```
@@ -189,6 +271,22 @@ PHASE 5 — IMAGES + STOREFRONT VALIDATION
 ### Multi-Brand Repeat
 
 For each additional catalog (TRS, Haldiram, etc.):
+
+### PHASE 6 — TRS PRODUCTS
+
+```
+  □ 6.1 Rename images: node scripts/rename-trs-images.mjs
+  □ 6.2 Dry run: node scripts/import-trs-products.mjs
+  □ 6.3 Import products: node scripts/import-trs-products.mjs --apply
+  □ 6.4 Assign categories: (automatic — included in import script)
+  □ 6.5 Enrich tags + dietary: node scripts/enrich-from-csv.mjs --apply
+  □ 6.6 AUDIT: node scripts/audit-catalog-completeness.mjs
+  □ 6.7 SNAPSHOT: node scripts/snapshot.js save "phase-6-trs-imported"
+  □ 6.8 Rebuild pseudo-queries: node scripts/build-pseudo-queries.mjs
+  □ 6.9 Reindex: cd apps/meilisearch && npm run reindex
+  □ 6.10 AUDIT: node scripts/verify-data-health.mjs
+  □ 6.11 Tests: cd apps/storefront && npx playwright test
+```
 ```
 1. Fetch brand Shopify JSON → data-design/{brand}-master.csv
 2. Repeat Phase 1.9-1.11 (import + audit per brand)
@@ -215,6 +313,8 @@ For each additional catalog (TRS, Haldiram, etc.):
 | `scripts/validate-storefront.mjs` | Browse + search + dietary filter validation | 5 (gate) |
 | `scripts/snapshot.js` | Save/restore data-design snapshots | All |
 | `scripts/audit-crossref.js` | Cross-reference tool for CSVs | Analysis |
+| `scripts/import-trs-products.mjs` | Import TRS products from JSON | 6 |
+| `scripts/rename-trs-images.mjs` | Rename TRS images to convention | 6 |
 
 ---
 

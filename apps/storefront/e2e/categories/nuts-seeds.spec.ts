@@ -2,27 +2,146 @@ import { test, expect } from "@playwright/test"
 const TITLE = '[data-testid="product-title"]'
 const CARD = ".product-card"
 
-test("Nuts & Seeds parent — no flours", async ({ page }) => {
+/**
+ * EXPECTED PRODUCT LISTS — data validation baseline.
+ * Update these product expectations when catalog changes.
+ * Last synced from MeiliSearch index: May 2026.
+ */
+
+test("Nuts & Seeds parent — exhaustive product list validation", async ({ page }) => {
   await page.goto("/categories/nuts-seeds"); await page.waitForSelector(CARD, { timeout: 60000 })
   const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
-  expect(titles.length).toBeGreaterThanOrEqual(30)
-  const noFlour = titles.every((t) => !t?.toLowerCase().includes("flour") || t?.toLowerCase().includes("coconut flour"))
-  expect(noFlour).toBeTruthy()
+  console.log(`Nuts & Seeds: ${titles.length} products`)
+  titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
+  expect(titles.length).toBeGreaterThanOrEqual(40)
+
+  // raw-nuts (20)
+  expect(titles).toContain("Natco - Almond Blanched Whole 250g")
+  expect(titles).toContain("Natco - Almond Flakes 1kg")
+  expect(titles).toContain("Natco - Almond Flakes 300g")
+  expect(titles).toContain("Natco - Almonds 1kg")
+  expect(titles).toContain("Natco - Almonds 400g")
+  expect(titles).toContain("Natco - Almonds Ground 300g")
+  expect(titles).toContain("Natco - Blanched Almond Whole 700g")
+  expect(titles).toContain("Natco - Cashew (Large White Pieces) 750g")
+  expect(titles).toContain("Natco - Cashew Kernel 1kg")
+  expect(titles).toContain("Natco - Cashew Kernel 300g")
+  expect(titles).toContain("Natco - Cashew Split 1kg")
+  expect(titles).toContain("Natco - Luxury Fruit &amp; Nut Mix 250g")
+  expect(titles).toContain("Natco - Luxury Fruit &amp; Nuts Mix 750g")
+  expect(titles).toContain("Natco - Peanuts Red 1kg")
+  expect(titles).toContain("Natco - Peanuts Red 400g")
+  expect(titles).toContain("Natco - Pecans 200g")
+  expect(titles).toContain("Natco - Pine Nuts 75g")
+  expect(titles).toContain("Natco - Roasted Monkey Nuts 300g")
+  expect(titles).toContain("Natco - Walnut Halves 200g")
+  expect(titles).toContain("Natco - Walnut Halves 700g")
+
+  // seeds (13)
+  expect(titles).toContain("Natco - Black Chia Seeds 250g")
+  expect(titles).toContain("Natco - Linseed Brown 1kg")
+  expect(titles).toContain("Natco - Linseed Brown 400g")
+  expect(titles).toContain("Natco - Phool Makhana (Popped Lotus Seeds) 100g")
+  expect(titles).toContain("Natco - Pumpkin Seeds 250g")
+  expect(titles).toContain("Natco - Sagoo Seeds Medium 1.5kg")
+  expect(titles).toContain("Natco - Sesame Seeds Hulled 1.5kg")
+  expect(titles).toContain("Natco - Sesame Seeds Natural 400g")
+  expect(titles).toContain("Natco - Sunflower Seeds 1kg")
+  expect(titles).toContain("Natco - Sunflower Seeds 300g")
+  expect(titles).toContain("Natco - White Poppy Seeds 100g")
+  expect(titles).toContain("Natco - White Poppy Seeds 300g")
+  expect(titles).toContain("TRS Tapioca Pearls")
+
+  // coconut-products (8)
+  expect(titles).toContain("Natco - Coconut Desicated Medium 1kg")
+  expect(titles).toContain("Natco - Coconut Desiccated (Fine) 300g")
+  expect(titles).toContain("Natco - Coconut Flakes 200g")
+  expect(titles).toContain("Natco - Coconut Flour 1kg")
+  expect(titles).toContain("Natco - Coconut Flour 200g")
+  expect(titles).toContain("Natco - Coconut Halves 250g")
+  expect(titles).toContain("Natco - Coconut Milk Powder 300g")
+  expect(titles).toContain("TRS Fine Desiccated Coconut")
+
+  // dried-fruit (2)
+  expect(titles).toContain("Natco - Golden Raisins 100g")
+  expect(titles).toContain("Natco - Golden Raisins 1kg")
 })
 
 test("Nuts & Seeds — Raw Nuts child", async ({ page }) => {
   await page.goto("/categories/raw-nuts"); await page.waitForSelector(CARD, { timeout: 60000 })
   const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
-  expect(titles.length).toBeGreaterThanOrEqual(15)
-  for (const t of titles) expect(t?.toLowerCase()).toMatch(/almond|cashew|walnut|pecan|pine|peanut|pistachio|monkey|fruit|nut/)
+  console.log(`Raw Nuts: ${titles.length} products`)
+  titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
+  expect(titles.length).toBeGreaterThanOrEqual(18)
+
+  expect(titles).toContain("Natco - Almond Blanched Whole 250g")
+  expect(titles).toContain("Natco - Almond Flakes 1kg")
+  expect(titles).toContain("Natco - Almond Flakes 300g")
+  expect(titles).toContain("Natco - Almonds 1kg")
+  expect(titles).toContain("Natco - Almonds 400g")
+  expect(titles).toContain("Natco - Almonds Ground 300g")
+  expect(titles).toContain("Natco - Blanched Almond Whole 700g")
+  expect(titles).toContain("Natco - Cashew (Large White Pieces) 750g")
+  expect(titles).toContain("Natco - Cashew Kernel 1kg")
+  expect(titles).toContain("Natco - Cashew Kernel 300g")
+  expect(titles).toContain("Natco - Cashew Split 1kg")
+  expect(titles).toContain("Natco - Luxury Fruit &amp; Nut Mix 250g")
+  expect(titles).toContain("Natco - Luxury Fruit &amp; Nuts Mix 750g")
+  expect(titles).toContain("Natco - Peanuts Red 1kg")
+  expect(titles).toContain("Natco - Peanuts Red 400g")
+  expect(titles).toContain("Natco - Pecans 200g")
+  expect(titles).toContain("Natco - Pine Nuts 75g")
+  expect(titles).toContain("Natco - Roasted Monkey Nuts 300g")
+  expect(titles).toContain("Natco - Walnut Halves 200g")
+  expect(titles).toContain("Natco - Walnut Halves 700g")
 })
 
-test("Nuts & Seeds — Seeds child — no flours or nuts", async ({ page }) => {
+test("Nuts & Seeds — Seeds child", async ({ page }) => {
   await page.goto("/categories/seeds"); await page.waitForSelector(CARD, { timeout: 60000 })
   const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
-  expect(titles.length).toBeGreaterThanOrEqual(10)
-  for (const t of titles) {
-    expect(t?.toLowerCase()).not.toMatch(/flour|atta|besan|maida/)
-    expect(t?.toLowerCase()).not.toMatch(/cashew|almond|walnut/)
-  }
+  console.log(`Seeds: ${titles.length} products`)
+  titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
+  expect(titles.length).toBeGreaterThanOrEqual(12)
+
+  expect(titles).toContain("Natco - Black Chia Seeds 250g")
+  expect(titles).toContain("Natco - Linseed Brown 1kg")
+  expect(titles).toContain("Natco - Linseed Brown 400g")
+  expect(titles).toContain("Natco - Phool Makhana (Popped Lotus Seeds) 100g")
+  expect(titles).toContain("Natco - Pumpkin Seeds 250g")
+  expect(titles).toContain("Natco - Sagoo Seeds Medium 1.5kg")
+  expect(titles).toContain("Natco - Sesame Seeds Hulled 1.5kg")
+  expect(titles).toContain("Natco - Sesame Seeds Natural 400g")
+  expect(titles).toContain("Natco - Sunflower Seeds 1kg")
+  expect(titles).toContain("Natco - Sunflower Seeds 300g")
+  expect(titles).toContain("Natco - White Poppy Seeds 100g")
+  expect(titles).toContain("Natco - White Poppy Seeds 300g")
+  expect(titles).toContain("TRS Tapioca Pearls")
+})
+
+test("Nuts & Seeds — Coconut Products child", async ({ page }) => {
+  await page.goto("/categories/coconut-products"); await page.waitForSelector(CARD, { timeout: 60000 })
+  const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
+  console.log(`Coconut Products: ${titles.length} products`)
+  titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
+  expect(titles.length).toBeGreaterThanOrEqual(7)
+
+  expect(titles).toContain("Natco - Coconut Desicated Medium 1kg")
+  expect(titles).toContain("Natco - Coconut Desiccated (Fine) 300g")
+  expect(titles).toContain("Natco - Coconut Flakes 200g")
+  expect(titles).toContain("Natco - Coconut Flour 1kg")
+  expect(titles).toContain("Natco - Coconut Flour 200g")
+  expect(titles).toContain("Natco - Coconut Halves 250g")
+  expect(titles).toContain("Natco - Coconut Milk Powder 300g")
+  expect(titles).toContain("TRS Fine Desiccated Coconut")
+})
+
+test("Nuts & Seeds — Dried Fruit child", async ({ page }) => {
+  await page.goto("/categories/dried-fruit"); await page.waitForSelector(CARD, { timeout: 60000 })
+  const titles = await page.$$eval(TITLE, (els) => els.map((el) => el.textContent?.trim()).filter(Boolean) as string[])
+  console.log(`Dried Fruit: ${titles.length} products`)
+  titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
+  expect(titles.length).toBeGreaterThanOrEqual(2)
+
+  expect(titles).toContain("Natco - Golden Raisins 100g")
+  expect(titles).toContain("Natco - Golden Raisins 1kg")
 })

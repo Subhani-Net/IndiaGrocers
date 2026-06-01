@@ -220,6 +220,15 @@ Feature: Order Confirmation
     And I see the list of items ordered with quantities
     And I see the order summary (subtotal, shipping, total)
     And I see a "Continue Shopping" button
+
+  Scenario: Customer receives invoice after purchase
+    Given I have just placed an order
+    Then I receive an email with a PDF invoice
+    And the invoice contains the order number and date
+    And the invoice lists all items with quantities and unit prices
+    And the invoice shows subtotal, delivery charge, VAT, and grand total
+    And the invoice shows IndiaGrocers branding, address, and VAT number
+    And I can also download the invoice from my order history page
 ```
 
 ### Scenario 1.10: Create account
@@ -733,6 +742,69 @@ Feature: Cart Persistence
 
 ---
 
+## Journey 8: Admin Operations — Pricing & Invoicing
+
+### Scenario 8.1: Load prices from pricelist
+
+```
+Feature: Price Management
+
+  Scenario: Admin loads product prices from a pricelist file
+    Given I am signed in as an admin
+    When I upload a JSON or CSV pricelist file containing product names and prices
+    Then the system maps product names to variant SKUs
+    And updates all matched product variant prices
+    And reports how many products were updated
+    And reports which products in the pricelist were not found
+
+  Scenario: Admin loads prices from a wholesaler C&C price sheet
+    Given I have a CSV or Excel price sheet exported from TRS Dhamecha or Bestway
+    When I run the pricelist scan script
+    Then the system maps C&C product codes to Medusa product handles
+    And extracts the wholesale cost prices
+    And calculates retail prices as cost + configured margin percentage
+    And updates product variant prices accordingly
+
+  Scenario: Admin scans a C&C purchase invoice
+    Given I have a scanned PDF or image of a C&C purchase invoice
+    When I run the invoice scan script
+    Then the system extracts line items (product name, pack size, cost price)
+    And maps extracted product names to Medusa products
+    And updates variant prices with the actual C&C cost data
+    And calculates retail prices as cost + margin percentage
+```
+
+### Scenario 8.2: Invoice generation
+
+```
+Feature: Invoice Generation
+
+  Scenario: Customer receives invoice email after order
+    Given a customer has placed an order
+    When the order is confirmed
+    Then a PDF invoice is generated with:
+      And order number, date, and delivery ETA
+      And line items with product name, variant, quantity, unit price, line total
+      And subtotal, delivery charge, VAT, and grand total
+      And payment method and billing/delivery addresses
+      And IndiaGrocers branding, business address, and VAT number
+    And the PDF invoice is emailed to the customer
+
+  Scenario: Customer downloads invoice from order history
+    Given I am signed in and viewing my order history
+    When I click "Download Invoice" on any completed order
+    Then a PDF invoice is generated and downloaded
+    And the invoice matches the format of the email invoice
+
+  Scenario: Order confirmation page is print-friendly
+    Given I am viewing the order confirmation page after placing an order
+    When I print the page
+    Then the printed output contains all invoice-required information
+    And the print layout is clean and professional
+```
+
+---
+
 ## Feature Backlog — User Stories
 
 All features are written as <code>As a ___ I want ___ so that ___</code>.
@@ -745,6 +817,8 @@ All features are written as <code>As a ___ I want ___ so that ___</code>.
 | F-G2 | As a **customer**, I want to see my dashboard after signing in without a manual refresh so that **I know I'm logged in and can continue shopping**. | J2.1 | Broken |
 | F-G4 | As a **security admin**, I want rate limiting on auth endpoints so that **attackers cannot brute-force passwords or spam reset emails**. | J2.1, J2.2 | Not started |
 | F-G7 | As a **devops engineer**, I want JWT and cookie secrets set from environment variables so that **the site is secure in production**. | All | Not started |
+| F-G12 | As an **admin**, I want to load and update product prices from pricelists, C&C price sheets, and purchase invoices so that **customers see real prices, not placeholders, at checkout**. | J1.4, J1.8 | Not started |
+| F-G13 | As a **customer**, I want to receive a proper invoice (PDF + downloadable) after placing an order so that **I have a record of my purchase with prices, VAT, and business details**. | J1.9 | Not started |
 
 ### P1 — Foundational UX
 
