@@ -331,3 +331,34 @@ export async function resetPassword(
     return error.toString()
   }
 }
+
+export async function verifyEmail(
+  _currentState: unknown,
+  formData: FormData
+) {
+  const token = formData.get("token") as string
+
+  if (!token || token.trim().length < 10) {
+    return "Please enter the verification code from your email"
+  }
+
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"}/store/auth/verify-email`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: token.trim() }),
+      }
+    )
+
+    const data = await res.json()
+
+    if (data.success) {
+      return "success"
+    }
+    return data.error || "Invalid or expired verification code"
+  } catch (error: any) {
+    return error.toString()
+  }
+}

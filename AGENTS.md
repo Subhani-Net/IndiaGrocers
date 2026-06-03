@@ -369,13 +369,23 @@ When the server action completes, Next.js re-renders all layouts which causes th
 account page to detect the new auth cookie and switch from login form to dashboard.
 
 ### G3. Email verification on sign-up
-**Status:** Not implemented — accounts created unverified
-Currently `signup()` creates the account without email verification. Medusa
-supports email verification through auth events. Requires:
-1. Notification provider configured (see G1)
-2. Auth workflow subscriber to send verification codes
-3. Verification page in storefront (enter code → activate account)
-4. Restrict account features (checkout, orders) until verified
+**Status:** Implemented — `@indiagrocers/auth` package with Resend email provider.
+New customers receive a verification email on sign-up. Unverified accounts are gated
+from the dashboard. Verification is handled via JWT token in a custom API route.
+
+**Architecture:**
+- `packages/auth/` — reusable auth module (pure Node, extractable as microservice)
+- `apps/backend/src/subscribers/auth.ts` — Medusa event subscriber (customer.created, auth.password_reset)
+- `apps/backend/src/api/auth/verify-email/route.ts` — Verification API endpoint
+- `apps/storefront/src/modules/account/components/verify-email/index.tsx` — Verification UI
+- `apps/storefront/src/modules/account/components/verification-gate/index.tsx` — Unverified gate
+
+**Resend configuration:** Set `RESEND_API_KEY` and `RESEND_FROM` env vars for email delivery.
+Without these, emails are logged to console (dev mode).
+
+**Future phases:**
+- Phase 4: Extract auth as standalone microservice
+- Phase 5: Add Google OAuth, Facebook OAuth (types prepared in `AuthConfig.oauth`)
 
 ### G4. Rate limiting on auth endpoints
 **Status:** Not implemented — vulnerable to abuse
@@ -418,9 +428,13 @@ Redis is used for event bus + cache. Production needs:
 - Backups scheduled
 
 ### G10. Stripe live keys
-**Status:** Test mode only
-`NEXT_PUBLIC_STRIPE_KEY` in storefront `.env` and Stripe provider config in
-backend must be swapped to live keys before accepting real payments.
+**Status:** Stripe plugin loaded, `pp_system_default` working.
+`pp_stripe_stripe` registered but returns HTTP 500 when creating payment sessions
+(likely API key or network connectivity issue). Stripe card UI renders in checkout
+with `hidePostalCode: true`. Payment flow documented in `Implementation/README.md`.
+- Stripe providers: all 8 registered (`pp_stripe_stripe`, `pp_stripe-ideal_stripe`, etc.)
+- API endpoint for session creation: `POST /store/payment-collections/{id}/payment-sessions`
+- SDK upgraded from v2.12.3 → v2.15.2 to match backend
 
 ### G11. Natco product variant consolidation
 **Status:** Not started — mandatory for consistent UX
@@ -494,6 +508,55 @@ must be loaded before accepting orders. The system needs:
 **Effort:** 3-4h for API script + pricelist format, 4-6h for invoice scanning (OCR)
 
 ### G13. Customer invoice generation
+
+---
+
+## Pre-Go-Live Defects
+
+Recorded for fixing before launch. Not yet implemented.
+
+### D1. Delivery slots — 4-hour weekend only
+**Status:** Not started
+Current delivery slot configuration shows time windows inconsistently. Must update to:
+- 4-hour delivery slots only
+- Enable Saturday and Sunday
+- Block all other days (Mon-Fri)
+- File: `apps/storefront/src/modules/checkout/components/delivery-slot-selector/index.tsx`
+
+### D2. Basket sidebar — sticky scroll
+**Status:** Not started
+The cart sidebar on category/product pages does not follow the user as they scroll.
+Must update to sticky/position-fixed so the basket is always visible.
+- On desktop (xl+ screens), the right sidebar showing cart contents should scroll
+  with the page so the user always sees their basket.
+- File: `apps/storefront/src/modules/checkout/components/cart-sidebar/` or similar
+
+### D3. Stripe CardElement — hide ZIP for non-Amex cards
+**Status:** Not started — deferred to later phase
+The Stripe CardElement currently shows a ZIP/postal code field for all card types.
+This should only appear for Amex cards. Non-Amex cards in the UK do not require ZIP.
+- File: `apps/storefront/src/modules/checkout/components/stripe-payment/index.tsx`
+- Fix: Set `hidePostalCode: true` on CardElement options, or conditionally show based on card brand detection
+
+### D4. Add to Basket — no visual feedback on product card
+**Status:** Not started — mandatory before production
+The "Add to Basket" button on product cards adds the item to the cart
+but provides no visual feedback on the card itself. The user has no indication
+the item was added until they look at the cart icon in the header.
+- Must show a quantity badge/count on the product card after adding
+- Or show a brief toast/confirmation animation
+- File: `apps/storefront/src/modules/products/components/product-preview/product-card.tsx`
+
+### D5. Payment fails — "Failed to initiate payment"
+**Status:** Recorded — needs fix
+The checkout form's `handlePlaceOrder()` tries to call `/store/payment-collections`
+to initiate a Stripe session, but this endpoint doesn't exist in Medusa.
+The payment flow needs to use the Medusa SDK (`sdk.store.payment`) or complete
+the cart directly since Stripe module config is not yet working.
+- File: `apps/storefront/src/modules/checkout/templates/checkout-form/index.tsx`
+- Short-term: Fall through to `placeOrder()` using `pp_system_default`
+- Long-term: Wire proper Stripe payment session via SDK once backend config works
+**Status:** Fixed — uses `pp_system_default` until Stripe wired
 **Status:** Not started — mandatory for go-live
 After an order is placed, the customer must receive an invoice with:
 - Order number, date, and delivery ETA
@@ -511,6 +574,92 @@ Can be delivered as:
 **Depends on:** G1 (email provider configured), G12 (real pricing for accurate invoices)
 
 **Effort:** 2-3h for PDF template + subscriber, 1-2h for storefront download link
+
+---
+
+## End-to-End Journey — Go-Live Tasks
+
+These are the specific customer flows that must work before launch.
+Each depends on prior items. Execute in order.
+
+### J1. Complete Registration Flow
+**Status:** Partially built — needs email delivery to work
+**Depends on:** G1 (email provider API key)
+
+| Step | Action | Current State |
+|------|--------|---------------|
+| Customer fills signup form | `signup()` in `customer.ts` creates account + auto-logs in | ✅ Working |
+| Verification email sent | `auth.ts` subscriber catches `customer.created`, generates token, calls notification service | ✅ Code exists |
+| Customer receives email | Notification service delivers via SendGrid | ❌ Needs `SENDGRID_API_KEY` |
+| Customer verifies email | `POST /store/auth/verify-email` validates token, marks customer verified | ✅ Code exists |
+| Unverified account gated | `verification-gate.tsx` blocks dashboard for unverified | ✅ Code exists |
+| Signup → auto-login → dashboard | Restore original flow, defer verification to post-signup prompt | ❌ `signup()` currently returns `createdCustomer` directly |
+
+**Tasks:**
+1. Set `SENDGRID_API_KEY` in `apps/backend/.env`
+2. Verify `auth.ts` subscriber sends email successfully
+3. Test signup → email received → verify → access dashboard
+
+### J2. Forgot Password Flow
+**Status:** Partially built — needs email delivery + correct token forwarding
+**Depends on:** G1 (email provider API key)
+
+| Step | Action | Current State |
+|------|--------|---------------|
+| Customer requests reset | `requestPasswordReset()` calls `sdk.auth.resetPassword()` | ✅ Working |
+| Reset email sent | `auth.ts` subscriber catches `auth.password_reset`, forwards token | ✅ Code exists |
+| Customer receives email | Notification service delivers via SendGrid | ❌ Needs `SENDGRID_API_KEY` |
+| Customer enters token + new password | `resetPassword()` calls `sdk.auth.updateProvider()` | ✅ Working |
+| Customer signs in with new password | `login()` standard flow | ✅ Working |
+
+**Tasks:**
+1. Verify `auth.ts` subscriber correctly forwards Medusa's reset token
+2. Test end-to-end: request → email received → reset → login
+
+### J3. Add to Basket
+**Status:** Working
+**Depends on:** Nothing
+
+| Step | Current State |
+|------|---------------|
+| ProductCard "Add" button | ✅ `addToCart()` dispatches cart-updated event |
+| Variant overlay (Options button) | ✅ `ProductOverlay` with +/- quantity |
+| Cart dropdown updates | ✅ `cart-updated` event listener |
+| Cart persists across navigation | ✅ Cart in Medusa session |
+
+### J4. Checkout
+**Status:** Partially working — fake payment, fake shipping
+**Depends on:** G10 (Stripe payment)
+
+| Step | Action | Current State |
+|------|--------|---------------|
+| Address entry | Shipping address form | ✅ Working |
+| Delivery selection | Shipping method selector | ⚠️ May show dummy methods |
+| Payment | Fake buttons labelled "Powered by Stripe" but calls `pp_system_default` | ❌ No Stripe integration |
+| Review | Order summary + place order button | ✅ Working |
+
+**Tasks:**
+1. Install + configure `@medusajs/payment-stripe`
+2. Integrate `@stripe/react-stripe-js` in checkout form
+3. Create Stripe webhook endpoint
+4. Test payment flow with test keys
+
+### J5. Create Order + Confirmation
+**Status:** Partially working — order created, no confirmation sent
+**Depends on:** J4 (payment), G1 (email)
+
+| Step | Action | Current State |
+|------|--------|---------------|
+| Cart completed | `sdk.store.cart.complete()` → order created | ✅ Working |
+| Order confirmation page | `/order/{id}/confirmed` with order details | ✅ Working |
+| Order confirmation email | Subscriber on `order.placed` sends email | ❌ No subscriber exists |
+| Invoice PDF | HTML template → PDF attached to email | ❌ No code exists |
+
+**Tasks:**
+1. Create `order.placed` subscriber for confirmation email
+2. Build HTML-to-PDF invoice template
+3. Add downloadable invoice to order history
+4. Add print-friendly CSS to order confirmation page
 
 ---
 

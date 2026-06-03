@@ -1,0 +1,24 @@
+{
+  "name": "@indiagrocers/auth",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reusable authentication and email verification module. Designed for future extraction as standalone service. Supports Resend email, OAuth-ready architecture.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "resend": "^4.0.0",
+    "@medusajs/framework": "^2.15.2",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "peerDependencies": {
+    "@medusajs/framework": "^2.15.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.0",
+    "typescript": "^5.6.0"
+  }
+}

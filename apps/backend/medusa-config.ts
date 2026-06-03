@@ -46,6 +46,14 @@ module.exports = defineConfig({
       },
     },
   ],
+  plugins: [
+    {
+      resolve: "@medusajs/payment-stripe",
+      options: {
+        apiKey: process.env.STRIPE_SECRET_KEY || "",
+      },
+    },
+  ],
   admin: {
     disable: process.env.DISABLE_MEDUSA_ADMIN === "true",
   },

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { setAddresses, placeOrder } from "@lib/data/cart"
+import { setAddresses, placeOrder, initiatePaymentSession } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useActionState } from "react"
@@ -11,6 +11,7 @@ import PostcodeValidator from "@modules/checkout/components/postcode-validator"
 import DeliverySlotSelector from "@modules/checkout/components/delivery-slot-selector"
 import ErrorMessage from "@modules/checkout/components/error-message"
 import Spinner from "@modules/common/icons/spinner"
+import StripePayment from "@modules/checkout/components/stripe-payment"
 
 interface CheckoutFormProps {
   cart: HttpTypes.StoreCart
@@ -97,12 +98,17 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
   }
 
   // Handle order placement
-  const handlePlaceOrder = async () => {
+  // Uses pp_system_default. Stripe (pp_stripe_stripe) returns 500 from backend — needs investigation.
+  const handlePlaceOrder = async (_paymentMethodId?: string) => {
     setPlacingOrder(true)
     setPaymentError(null)
     try {
+      if (cart) {
+        await initiatePaymentSession(cart, {
+          provider_id: "pp_system_default",
+        })
+      }
       await placeOrder()
-      // placeOrder does redirect internally on success
     } catch (e: any) {
       setPaymentError(
         e.message || "Payment failed. Please try again."
@@ -272,64 +278,22 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
               </div>
             </div>
 
-            {/* Wallet Payments */}
-            <div className="mb-4 space-y-2">
-              <button
-                type="button"
-                className="w-full py-3 bg-black text-white font-semibold rounded-xl hover:bg-stone-800 active:scale-[0.98] transition-all text-sm flex items-center justify-center gap-2"
-                onClick={handlePlaceOrder}
-              >
-                <span className="text-lg"></span> Pay
-              </button>
-              <button
-                type="button"
-                className="w-full py-3 bg-stone-800 text-white font-semibold rounded-xl hover:bg-stone-700 active:scale-[0.98] transition-all text-sm flex items-center justify-center gap-2"
-                onClick={handlePlaceOrder}
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.5 4.5c-1.95 0-3.46.84-4.38 2.17-.92-1.33-2.43-2.17-4.38-2.17C5.36 4.5 3 7.36 3 11c0 5.5 8.5 12.5 8.5 12.5S20 16.5 20 11c0-3.64-2.36-6.5-2.5-6.5z"/>
-                </svg>
-                Google Pay
-              </button>
-              <div className="flex items-center gap-3 py-2">
-                <div className="flex-1 h-px bg-stone-200" />
-                <span className="text-xs text-stone-400 font-medium">or pay with card</span>
-                <div className="flex-1 h-px bg-stone-200" />
-              </div>
-            </div>
+            {paymentError && <div className="mb-4"><ErrorMessage error={paymentError} /></div>}
 
-            {/* Card payment method */}
-            <div className="bg-stone-50 border border-stone-200 rounded-lg p-4 mb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white border border-stone-200 flex items-center justify-center">
-                  <span className="text-lg">💳</span>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-stone-800">Card Payment</p>
-                  <p className="text-xs text-stone-400">Powered by Stripe · Visa, Mastercard, Amex</p>
-                </div>
-              </div>
-            </div>
+            {/* Stripe Card Payment */}
+            <StripePayment
+              amount={total}
+              onPay={async (paymentMethodId) => {
+                await handlePlaceOrder(paymentMethodId)
+              }}
+              onError={(error) => setPaymentError(error)}
+              disabled={placingOrder}
+            />
 
-            <label className="flex items-start gap-2 mb-5 cursor-pointer">
+            <label className="flex items-start gap-2 mt-4 cursor-pointer">
               <input type="checkbox" className="mt-0.5 accent-brand-orange" defaultChecked />
               <span className="text-xs text-stone-500">I agree to the Terms &amp; Conditions and Privacy Policy</span>
             </label>
-
-            {paymentError && <ErrorMessage error={paymentError} />}
-
-            <button onClick={handlePlaceOrder} disabled={placingOrder}
-              className="w-full py-3.5 bg-brand-orange text-white text-sm font-bold rounded-lg hover:bg-brand-orange/90 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all">
-              {placingOrder ? (
-                <span className="flex items-center justify-center gap-2"><Spinner /> Processing...</span>
-              ) : (
-                `Place Order — ${formatGBP(total)}`
-              )}
-            </button>
-
-            <p className="text-[10px] text-stone-400 text-center mt-3">
-              🔒 Secure payment. Your card details are never stored.
-            </p>
           </div>
         )}
       </div>

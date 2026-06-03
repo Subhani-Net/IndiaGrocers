@@ -6,12 +6,14 @@ import Register from "@modules/account/components/register"
 import Login from "@modules/account/components/login"
 import ForgotPassword from "@modules/account/components/forgot-password"
 import ResetPassword from "@modules/account/components/reset-password"
+import VerifyEmail from "@modules/account/components/verify-email"
 
 export enum LOGIN_VIEW {
   SIGN_IN = "sign-in",
   REGISTER = "register",
   FORGOT_PASSWORD = "forgot-password",
   RESET_PASSWORD = "reset-password",
+  VERIFY_EMAIL = "verify-email",
 }
 
 const LoginTemplate = () => {
@@ -23,6 +25,7 @@ const LoginTemplate = () => {
     [LOGIN_VIEW.REGISTER]: "Create Account",
     [LOGIN_VIEW.FORGOT_PASSWORD]: "Reset Password",
     [LOGIN_VIEW.RESET_PASSWORD]: "Enter New Password",
+    [LOGIN_VIEW.VERIFY_EMAIL]: "Verify Your Email",
   }
 
   const headerSubtitle = {
@@ -30,6 +33,7 @@ const LoginTemplate = () => {
     [LOGIN_VIEW.REGISTER]: "Join IndiaGrocers today",
     [LOGIN_VIEW.FORGOT_PASSWORD]: "We'll send a code to your email",
     [LOGIN_VIEW.RESET_PASSWORD]: "Enter the code we sent and your new password",
+    [LOGIN_VIEW.VERIFY_EMAIL]: "Check your email for the verification link",
   }
 
   return (
@@ -61,6 +65,12 @@ const LoginTemplate = () => {
           )}
           {currentView === LOGIN_VIEW.RESET_PASSWORD && (
             <ResetPassword
+              setCurrentView={setCurrentView}
+              email={forgotEmail}
+            />
+          )}
+          {currentView === LOGIN_VIEW.VERIFY_EMAIL && (
+            <VerifyEmail
               setCurrentView={setCurrentView}
               email={forgotEmail}
             />

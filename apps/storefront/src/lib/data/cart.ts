@@ -241,18 +241,36 @@ export async function initiatePaymentSession(
   cart: HttpTypes.StoreCart,
   data: HttpTypes.StoreInitializePaymentSession
 ) {
-  const headers = {
-    ...(await getAuthHeaders()),
+  const backendUrl = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"
+  const publishableKey = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY || ""
+
+  // Create payment collection
+  const pcRes = await fetch(`${backendUrl}/store/payment-collections`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-publishable-api-key": publishableKey },
+    body: JSON.stringify({ cart_id: cart.id }),
+  }).then(r => r.json()).catch(() => null)
+
+  if (!pcRes?.payment_collection?.id) {
+    throw new Error("Failed to initiate payment collection")
   }
 
-  return sdk.store.payment
-    .initiatePaymentSession(cart, data, {}, headers)
-    .then(async (resp) => {
-      const cartCacheTag = await getCacheTag("carts")
-      revalidateTag(cartCacheTag)
-      return resp
-    })
-    .catch(medusaError)
+  // Create payment session
+  const sessionRes = await fetch(
+    `${backendUrl}/store/payment-collections/${pcRes.payment_collection.id}/payment-sessions`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-publishable-api-key": publishableKey },
+      body: JSON.stringify({ provider_id: data.provider_id }),
+    }
+  )
+
+  if (!sessionRes.ok) {
+    throw new Error("Failed to create payment session")
+  }
+
+  const cartCacheTag = await getCacheTag("carts")
+  revalidateTag(cartCacheTag)
 }
 
 export async function applyPromotions(codes: string[]) {
