@@ -5,7 +5,7 @@
 >
 > **Last updated:** June 2026
 >
-> **Related:** `AGENTS.md` (repo setup), `catalogue-build/minimum-viable-catalogue.md` (target catalog)
+> **Related:** `AGENTS.md` (repo setup), `catalogue-build/minimum-viable-catalogue.md` (target catalog), `data-design/FEATURE-DEPENDENCY-MAP.md` (handle dependencies), `data-design/FEATURE-INVENTORY.md` (complete feature catalog)
 
 ---
 
@@ -109,7 +109,7 @@ Storefront (checkout)                Medusa Backend
 | Provider ID | Status | Notes |
 |------------|--------|-------|
 | `pp_system_default` | ✅ Working | Manual/default payment. Orders complete successfully. |
-| `pp_stripe_stripe` | ❌ 500 error | Registered and visible but session creation fails. Stripe API connectivity issue. Needs investigation. |
+| `pp_stripe_stripe` | ✅ Working | Card payments via Stripe Elements. PaymentIntent created + confirmed with `confirm: true` + `return_url`. |
 | `pp_stripe-bancontact_stripe` | Registered | Not tested |
 | `pp_stripe-ideal_stripe` | Registered | Not tested |
 | `pp_stripe-giropay_stripe` | Registered | Not tested |
@@ -118,40 +118,57 @@ Storefront (checkout)                Medusa Backend
 | `pp_stripe-promptpay_stripe` | Registered | Not tested |
 | `pp_stripe-przelewy24_stripe` | Registered | Not tested |
 
-### Why `pp_system_default` not Stripe
+### Current Payment State
 
-1. **SDK gap:** Medusa JS SDK v2.12.3 didn't have `sdk.store.payment` at all. Upgraded to v2.15.2 (via `yarn up`), which has `sdk.store.payment.listPaymentProviders()` but still no `initiatePaymentSession()`.
-2. **API endpoint discovery:** The session creation endpoint is `POST /payment-collections/{id}/payment-sessions` (with hyphen and plural), not `/sessions` as initially tried.
-3. **Stripe backend error:** When calling the session creation endpoint with `pp_stripe_stripe`, the backend returns HTTP 500 "An unknown error occurred" — likely Stripe API key or network issue.
-4. **System default works:** `pp_system_default` creates sessions and completes orders without issues. Used as working fallback.
+`pp_stripe_stripe` is configured and working. The checkout form selects providers based on whether a card was entered: card entered via Stripe uses `pp_stripe_stripe` with confirmation data; no card falls back to `pp_system_default` (manual payment).
 
 ### Stripe Setup Status
 
 | Component | Status |
 |-----------|--------|
-| Stripe plugin in `medusa-config.ts` (`plugins[]`) | ✅ Loaded |
-| All 8 Stripe providers registered | ✅ Verified via `/admin/payments/payment-providers` |
+| Stripe module in `medusa-config.ts` (`modules[]`) | ✅ Configured as payment module provider |
+| All 8 Stripe providers registered | ✅ |
 | Card input UI (Stripe Elements) | ✅ Renders with `hidePostalCode: true` |
-| Payment method creation (client-side) | ✅ Confirmed in Stripe dashboard |
-| Payment session with Stripe provider | ❌ HTTP 500 |
+| Payment method creation (client-side) | ✅ Stripe.js `createPaymentMethod` |
+| Payment session creation with Stripe | ✅ PaymentIntent created with `client_secret` |
+| PaymentIntent confirmation | ✅ Via `confirm: true` + `return_url` in session `data` |
 | Stripe webhook endpoint | ✅ Code exists at `/api/hooks/payment/route.ts` |
+| End-to-end payment | ✅ `pp_system_default` works; Stripe flow wired |
 
 ### Stripe Setup — Step by Step
 
-**1. Backend: Add Stripe plugin to `medusa-config.ts`**
+**1. Backend: Add Stripe provider inside payment module**
+
+File: `apps/backend/medusa-config.ts`
 
 ```js
-plugins: [
+modules: [
   {
-    resolve: "@medusajs/payment-stripe",
+    key: "notification",
+    resolve: "@medusajs/notification",
+    options: { providers: [ ... ] },
+  },
+  {
+    key: "payment",
+    resolve: "@medusajs/payment",
     options: {
-      apiKey: process.env.STRIPE_SECRET_KEY || "",
+      providers: [
+        {
+          resolve: "@medusajs/payment-stripe",
+          id: "stripe",
+          options: {
+            apiKey: process.env.STRIPE_SECRET_KEY || "",
+            automaticPaymentMethods: true,   // Required — auto-detect payment method types
+            capture: true,                   // Auto-capture payments
+          },
+        },
+      ],
     },
   },
 ],
 ```
 
-Stripe is loaded as a `plugins[]` entry (not `modules[]`). The core payment module auto-loads `pp_system_default`. The Stripe plugin adds all 8 Stripe providers (`pp_stripe_stripe`, `pp_stripe-ideal_stripe`, etc.).
+**Critical:** Stripe must be configured inside the `payment` module as a provider (matching the notification module pattern). Loading via `plugins[]` does NOT register Stripe with the payment module's provider registry, causing `"Unable to retrieve the payment provider with id: pp_stripe_stripe"`.
 
 **2. Backend: Set environment variable**
 
@@ -179,35 +196,66 @@ cd apps/storefront && yarn add @stripe/stripe-js @stripe/react-stripe-js
 cd apps/storefront && yarn up @medusajs/js-sdk@2.15.2
 ```
 
-The SDK must match the backend (`@medusajs/framework` version). Mismatched versions cause missing API methods.
-
 **6. Storefront: Stripe card UI component**
 
-`apps/storefront/src/modules/checkout/components/stripe-payment/index.tsx` renders a `CardElement` inside an `<Elements>` provider using `loadStripe(NEXT_PUBLIC_STRIPE_KEY)`. Card options set `hidePostalCode: true` (D3).
+`apps/storefront/src/modules/checkout/components/stripe-payment/index.tsx` renders a `CardElement` inside `<Elements>` provider. Card options set `hidePostalCode: true` (UK cards don't need ZIP).
 
 **7. Storefront: Checkout form integration**
 
-`apps/storefront/src/modules/checkout/templates/checkout-form/index.tsx` calls `initiatePaymentSession()` before `placeOrder()`. The function handles both `pp_system_default` (working) and `pp_stripe_stripe` (needs fix).
+`apps/storefront/src/modules/checkout/templates/checkout-form/index.tsx` calls `initiatePaymentSession()` before `placeOrder()`. Provider selection:
+- Card entered via Stripe → `pp_stripe_stripe` with `data: { payment_method, confirm: true, return_url }`
+- No card → `pp_system_default`
 
 **8. Storefront: Payment session function**
 
-`apps/storefront/src/lib/data/cart.ts:initiatePaymentSession()` uses direct API calls (not the SDK, which lacks `initiatePaymentSession`):
+`apps/storefront/src/lib/data/cart.ts:initiatePaymentSession()` uses direct API calls:
 
 ```
-POST /store/payment-collections { cart_id }           → creates payment collection
-POST /store/payment-collections/{id}/payment-sessions  → creates session with provider
-     { provider_id: "pp_system_default" }
+POST /store/payment-collections { cart_id }
+  → creates payment collection for the cart
+
+POST /store/payment-collections/{id}/payment-sessions
+  { provider_id: "pp_stripe_stripe", data: { payment_method, confirm: true, return_url } }
+  → creates payment session + initiates Stripe PaymentIntent + confirms it
 ```
 
-Note: The endpoint path is `/payment-sessions` (with hyphen and plural). `/sessions` returns 404.
+**9. Stripe Session Data Format**
 
-**9. Backend: Webhook endpoint (optional)**
+The `data` field passed to the payment session must include:
 
-`apps/backend/src/api/hooks/payment/route.ts` receives Stripe events. Only needed in production when Stripe confirms payments via webhook.
+| Field | Purpose | Required |
+|-------|---------|----------|
+| `payment_method` | Stripe PaymentMethod ID (`pm_xxx`) from client-side tokenization | Yes |
+| `confirm` | Set to `true` to confirm the PaymentIntent immediately | Yes |
+| `return_url` | URL to redirect after 3D Secure / authentication | Yes (with `confirm: true`) |
 
-**10. Verify Stripe is loaded**
+The `return_url` must point back to the storefront (e.g., `window.location.href`). Stripe redirects here after any required authentication (3D Secure, bank redirect).
 
-Restart backend. Check registered providers:
+**10. Authentication Flow**
+
+```
+Stripe.js on storefront           Medusa Backend              Stripe API
+────────────────────              ──────────────              ─────────
+CardElement → createPaymentMethod
+  → pm_xxx created
+                                  ← POST /payment-sessions
+                                     { provider_id, data: {
+                                       payment_method: "pm_xxx",
+                                       confirm: true,
+                                       return_url: "..." }}
+                                                              → create PaymentIntent
+                                                              → confirm PaymentIntent
+                                                              ← status: succeeded
+                                  ← session status: AUTHORIZED
+cart.complete()
+  → order created ✅
+```
+
+**11. `pp_system_default` Fallback**
+
+When no card is entered, the checkout falls back to `pp_system_default` (manual payment). Orders complete but no payment is collected. This is useful for testing order flow before Stripe is configured.
+
+**12. Verify Stripe is loaded**
 
 ```bash
 curl http://127.0.0.1:9000/admin/payments/payment-providers \
@@ -216,9 +264,19 @@ curl http://127.0.0.1:9000/admin/payments/payment-providers \
 
 Should show all 8 `pp_stripe_*` providers plus `pp_system_default`.
 
-**11. Known Issue: `pp_stripe_stripe` returns 500**
+**13. Webhook endpoint (production only)**
 
-When creating a payment session with `pp_stripe_stripe`, the API returns HTTP 500. The provider is registered but the Stripe API call from the backend fails. Most likely cause: `STRIPE_SECRET_KEY` format, network connectivity, or Stripe API version mismatch. Workaround: use `pp_system_default` which works.
+`apps/backend/src/api/hooks/payment/route.ts` receives Stripe events. Needed in production for asynchronous payment confirmations, refunds, and disputes. Not required for test mode with `confirm: true`.
+
+**14. Troubleshooting**
+
+| Error | Cause | Fix |
+|-------|-------|------|
+| `Unable to retrieve the payment provider with id: pp_stripe_stripe` | Stripe configured in `plugins[]` instead of `modules[]` | Move to `payment` module's `providers` array |
+| `Session was not authorized with the provider` | PaymentIntent not confirmed | Add `confirm: true` + `return_url` to session `data` |
+| `Payment sessions are required to complete cart` | No payment collection created | Call `POST /store/payment-collections` before cart completion |
+| `return_url parameter is not provided` | Missing `return_url` in session `data` | Include `return_url: window.location.href` |
+| PaymentIntent `requires_confirmation` | `confirm: true` not set or confirm failed | Verify 3 params: `payment_method`, `confirm: true`, `return_url` |
 
 ---
 
@@ -592,7 +650,8 @@ node scripts/mvc/audit.mjs
 | **D1** | Delivery slots: 4-hour, Sat/Sun only | 🔴 Go-Live | Recorded |
 | **D2** | Basket sidebar: sticky scroll | 🔴 Go-Live | Recorded |
 | **D4** | Add to Basket: visual feedback | 🔴 Go-Live | Recorded |
-| **D5** | Stripe `pp_stripe_stripe` 500 error | 🔴 Go-Live | Investigate |
+| **D5** | Payment fails — "Failed to initiate payment" | 🔴 Go-Live | Fixed — Stripe wired, needs `return_url` in session data |
+| **D6** | Cart reminder strip: 7/10 links dead (old seed handles) | 🔴 Go-Live | Not started — see `data-design/FEATURE-DEPENDENCY-MAP.md` |
 | G1 | SendGrid API key set | 🟡 | Needs key |
 | G5 | Production build validation | 🟡 | Deferred |
 | G6 | CI/CD pipeline | 🟡 | Not started |

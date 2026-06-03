@@ -255,13 +255,16 @@ export async function initiatePaymentSession(
     throw new Error("Failed to initiate payment collection")
   }
 
-  // Create payment session
+  // Create payment session with provider
+  const sessionBody: any = { provider_id: data.provider_id }
+  if (data.data) sessionBody.data = data.data
+
   const sessionRes = await fetch(
     `${backendUrl}/store/payment-collections/${pcRes.payment_collection.id}/payment-sessions`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-publishable-api-key": publishableKey },
-      body: JSON.stringify({ provider_id: data.provider_id }),
+      body: JSON.stringify(sessionBody),
     }
   )
 

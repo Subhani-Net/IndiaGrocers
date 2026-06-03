@@ -98,15 +98,19 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
   }
 
   // Handle order placement
-  // Uses pp_system_default. Stripe (pp_stripe_stripe) returns 500 from backend — needs investigation.
-  const handlePlaceOrder = async (_paymentMethodId?: string) => {
+  const handlePlaceOrder = async (paymentMethodId?: string) => {
     setPlacingOrder(true)
     setPaymentError(null)
     try {
       if (cart) {
         await initiatePaymentSession(cart, {
-          provider_id: "pp_system_default",
-        })
+          provider_id: paymentMethodId ? "pp_stripe_stripe" : "pp_system_default",
+          data: paymentMethodId ? { 
+            payment_method: paymentMethodId,
+            confirm: true,
+            return_url: window.location.href,
+          } : undefined,
+        } as any)
       }
       await placeOrder()
     } catch (e: any) {

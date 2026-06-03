@@ -45,12 +45,21 @@ module.exports = defineConfig({
         ],
       },
     },
-  ],
-  plugins: [
     {
-      resolve: "@medusajs/payment-stripe",
+      key: "payment",
+      resolve: "@medusajs/payment",
       options: {
-        apiKey: process.env.STRIPE_SECRET_KEY || "",
+        providers: [
+          {
+            resolve: "@medusajs/payment-stripe",
+            id: "stripe",
+            options: {
+              apiKey: process.env.STRIPE_SECRET_KEY || "",
+              automaticPaymentMethods: true,
+              capture: true,
+            },
+          },
+        ],
       },
     },
   ],

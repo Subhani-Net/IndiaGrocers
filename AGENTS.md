@@ -548,15 +548,13 @@ the item was added until they look at the cart icon in the header.
 - File: `apps/storefront/src/modules/products/components/product-preview/product-card.tsx`
 
 ### D5. Payment fails — "Failed to initiate payment"
-**Status:** Recorded — needs fix
-The checkout form's `handlePlaceOrder()` tries to call `/store/payment-collections`
-to initiate a Stripe session, but this endpoint doesn't exist in Medusa.
-The payment flow needs to use the Medusa SDK (`sdk.store.payment`) or complete
-the cart directly since Stripe module config is not yet working.
-- File: `apps/storefront/src/modules/checkout/templates/checkout-form/index.tsx`
-- Short-term: Fall through to `placeOrder()` using `pp_system_default`
-- Long-term: Wire proper Stripe payment session via SDK once backend config works
-**Status:** Fixed — uses `pp_system_default` until Stripe wired
+**Status:** Fixed — Stripe wired with correct config.
+Root causes found and resolved:
+1. Stripe must be inside `modules[]` (payment module provider), not `plugins[]`
+2. `automaticPaymentMethods: true` required in provider options
+3. Session `data` must include `{ payment_method, confirm: true, return_url }`
+4. API endpoint is `POST /payment-collections/{id}/payment-sessions` (not `/sessions`)
+Full setup documented in `Implementation/README.md` (Stripe Setup — Step by Step).
 **Status:** Not started — mandatory for go-live
 After an order is placed, the customer must receive an invoice with:
 - Order number, date, and delivery ETA

@@ -39,7 +39,7 @@ export default function WhatsAppFloat() {
           </div>
           <p className="text-sm text-stone-600 mb-4 leading-relaxed">Hi! How can we help you with your Indian grocery order today?</p>
           <a
-            href="https://wa.me/447867226626?text=Hi!%20I%20have%20a%20question%20about%20IndiaGrocers%20London"
+            href="https://wa.me/0771111111?text=Hi!%20I%20have%20a%20question%20about%20IndiaGrocers%20London"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#25D366] text-white text-sm font-semibold rounded-xl hover:bg-[#20BD5A] active:scale-[0.97] transition-all duration-200"
