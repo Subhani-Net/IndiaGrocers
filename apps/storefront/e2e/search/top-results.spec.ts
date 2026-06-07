@@ -8,11 +8,12 @@ import { test, expect } from "@playwright/test"
  * Update these lists when catalog, tags, or MeiliSearch ranking rules change.
  */
 const TITLE = '[data-testid="product-full-title"]'
-const SEARCH_TIMEOUT = 8000
+const CARD = ".product-card"
 
 test("Search 'jeera' — cumin products, top 10", async ({ page }) => {
   await page.goto("/search?q=jeera")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
+  await page.waitForTimeout(1000)
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`jeera: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -33,7 +34,7 @@ test("Search 'jeera' — cumin products, top 10", async ({ page }) => {
 
 test("Search 'haldi' — turmeric products, top 8", async ({ page }) => {
   await page.goto("/search?q=haldi")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`haldi: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -52,7 +53,7 @@ test("Search 'haldi' — turmeric products, top 8", async ({ page }) => {
 
 test("Search 'chana' — chickpea products, top 10", async ({ page }) => {
   await page.goto("/search?q=chana")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`chana: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -73,7 +74,7 @@ test("Search 'chana' — chickpea products, top 10", async ({ page }) => {
 
 test("Search 'basmati' — basmati rice products, top 10", async ({ page }) => {
   await page.goto("/search?q=basmati")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`basmati: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -94,7 +95,7 @@ test("Search 'basmati' — basmati rice products, top 10", async ({ page }) => {
 
 test("Search 'besan' — gram flour, top 10", async ({ page }) => {
   await page.goto("/search?q=besan")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`besan: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -115,7 +116,7 @@ test("Search 'besan' — gram flour, top 10", async ({ page }) => {
 
 test("Search 'rice' — rice products, top 10", async ({ page }) => {
   await page.goto("/search?q=rice")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`rice: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -136,7 +137,7 @@ test("Search 'rice' — rice products, top 10", async ({ page }) => {
 
 test("Search 'dal' — lentil/dal products, top 10", async ({ page }) => {
   await page.goto("/search?q=dal")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`dal: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -157,7 +158,7 @@ test("Search 'dal' — lentil/dal products, top 10", async ({ page }) => {
 
 test("Search 'masala' — spice blends, top 10", async ({ page }) => {
   await page.goto("/search?q=masala")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`masala: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -178,7 +179,7 @@ test("Search 'masala' — spice blends, top 10", async ({ page }) => {
 
 test("Search 'mango' — mango products, top 10", async ({ page }) => {
   await page.goto("/search?q=mango")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`mango: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -199,7 +200,7 @@ test("Search 'mango' — mango products, top 10", async ({ page }) => {
 
 test("Search 'coconut' — coconut products, top 10", async ({ page }) => {
   await page.goto("/search?q=coconut")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`coconut: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -220,7 +221,7 @@ test("Search 'coconut' — coconut products, top 10", async ({ page }) => {
 
 test("Search 'papad' — pappadoms, top 7", async ({ page }) => {
   await page.goto("/search?q=papad")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`papad: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -238,7 +239,7 @@ test("Search 'papad' — pappadoms, top 7", async ({ page }) => {
 
 test("Search 'pickle' — pickle products, top 10", async ({ page }) => {
   await page.goto("/search?q=pickle")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`pickle: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -259,7 +260,7 @@ test("Search 'pickle' — pickle products, top 10", async ({ page }) => {
 
 test("Search 'ghee' — ghee products, top 10", async ({ page }) => {
   await page.goto("/search?q=ghee")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`ghee: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -280,7 +281,7 @@ test("Search 'ghee' — ghee products, top 10", async ({ page }) => {
 
 test("Search 'almond' — almond products, top 10", async ({ page }) => {
   await page.goto("/search?q=almond")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`almond: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -301,7 +302,7 @@ test("Search 'almond' — almond products, top 10", async ({ page }) => {
 
 test("Search 'toor' — toor dal products, top 5", async ({ page }) => {
   await page.goto("/search?q=toor")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`toor: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))
@@ -317,7 +318,7 @@ test("Search 'toor' — toor dal products, top 5", async ({ page }) => {
 
 test("Search 'atta' — chapati flour products, top 3", async ({ page }) => {
   await page.goto("/search?q=atta")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: 15000 }).catch(() => {})
   const titles = await page.locator(TITLE).allTextContents()
   console.log(`atta: ${titles.length} products`)
   titles.forEach((t, i) => console.log(`  ${i + 1}. ${t}`))

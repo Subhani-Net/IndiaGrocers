@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import Thumbnail from "@modules/products/components/thumbnail"
-import { addToCart } from "@lib/data/cart"
+import { addToCart, updateLineItem, deleteLineItem } from "@lib/data/cart"
 import WishlistButton from "@modules/wishlist/components/wishlist-button"
 import { formatGBP, formatUnitPrice, getWeightLabel } from "@lib/util/format-price"
 import type { GroceryVariantMetadata } from "../../../../types/product"
@@ -81,31 +81,66 @@ export default function WeightHeavyProductCard({
   const [selectedVariant, setSelectedVariant] = useState<VariantChip | null>(
     firstVariant
   )
-  const [adding, setAdding] = useState(false)
+  const [qtyCounts, setQtyCounts] = useState<Record<string, number>>({})
+  const [lineItemMap, setLineItemMap] = useState<Record<string, string>>({})
 
-  // Show top 3 variants as chips, rest hidden behind indicator
+  const activeVariant = selectedVariant || firstVariant
   const visibleChips = variants.slice(0, 3)
   const hasMore = variants.length > 3
 
-  const activeVariant = selectedVariant || firstVariant
+  // Lazy-populate line IDs from cart on first use
+  const ensureLineIds = useCallback(async () => {
+    try {
+      const { retrieveCart } = await import("@lib/data/cart")
+      const c = await retrieveCart()
+      const items = c?.items || []
+      const ids: Record<string, string> = {}
+      for (const item of items) {
+        const vid = item.variant_id || item.variant?.id
+        if (vid && item.id) ids[vid] = item.id
+      }
+      setLineItemMap(ids)
+      return ids
+    } catch { return lineItemMap }
+  }, [lineItemMap])
+
+  const handleQuantityChange = useCallback(
+    async (variantId: string, delta: number) => {
+      const current = qtyCounts[variantId] || 0
+      const next = Math.max(0, current + delta)
+      setQtyCounts(prev => ({ ...prev, [variantId]: next }))
+      try {
+        if (next === 0) {
+          const lineId = lineItemMap[variantId]
+          if (lineId) await deleteLineItem(lineId)
+          setLineItemMap(prev => { const m = { ...prev }; delete m[variantId]; return m })
+          window.dispatchEvent(new Event("cart-updated"))
+        } else if (delta > 0) {
+          await addToCart({ variantId, quantity: 1, countryCode })
+          if (current === 0) {
+            window.dispatchEvent(new Event("cart-updated"))
+            ensureLineIds()
+          }
+        } else {
+          let ids = lineItemMap
+          if (!ids[variantId]) ids = await ensureLineIds()
+          const lineId = ids[variantId]
+          if (lineId) await updateLineItem({ lineId, quantity: next })
+        }
+      } catch {
+        setQtyCounts(prev => ({ ...prev, [variantId]: current }))
+      }
+    },
+    [countryCode, qtyCounts, lineItemMap, ensureLineIds]
+  )
 
   const handleAdd = useCallback(
     async (e: React.MouseEvent) => {
-      e.preventDefault()
-      e.stopPropagation()
+      e.preventDefault(); e.stopPropagation()
       if (!activeVariant?.id) return
-      setAdding(true)
-      try {
-        await addToCart({
-          variantId: activeVariant.id,
-          quantity: 1,
-          countryCode,
-        })
-        window.dispatchEvent(new Event("cart-updated"))
-      } catch {}
-      setAdding(false)
+      await handleQuantityChange(activeVariant.id, 1)
     },
-    [activeVariant?.id, countryCode]
+    [activeVariant?.id, handleQuantityChange]
   )
 
   return (
@@ -186,14 +221,37 @@ export default function WeightHeavyProductCard({
             )}
           </div>
 
-          {/* Add button - mobile */}
-          <button
-            onClick={handleAdd}
-            disabled={!activeVariant || adding}
-            className="mt-1.5 text-xs font-semibold text-white bg-brand-orange rounded-lg px-4 py-1.5 hover:bg-brand-orange/90 active:scale-95 disabled:opacity-50 transition-all"
-          >
-            {adding ? "Adding..." : "Add"}
-          </button>
+          {/* Add/Quantity - mobile */}
+          {qtyCounts[activeVariant?.id || ''] > 0 ? (
+            <div className="flex items-center border border-grey-30 rounded-lg bg-white shadow-sm h-8 flex-shrink-0 mt-1.5" data-testid="qty-controls">
+              <button
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(activeVariant.id, -1) }}
+                className="w-8 h-full flex items-center justify-center text-sm font-bold text-grey-50 hover:bg-grey-10 active:bg-grey-20 transition-colors"
+                data-testid="qty-decrement"
+              >
+                −
+              </button>
+              <span className="w-7 text-center text-xs font-bold text-grey-90 select-none" data-testid="qty-count">
+                {qtyCounts[activeVariant?.id || ''] || 0}
+              </span>
+              <button
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(activeVariant.id, 1) }}
+                className="w-8 h-full flex items-center justify-center text-sm font-bold text-brand-orange hover:bg-brand-orange/10 active:bg-brand-orange/20 transition-colors"
+                data-testid="qty-increment"
+              >
+                +
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={handleAdd}
+              disabled={!activeVariant}
+              className="mt-1.5 text-xs font-semibold text-white bg-brand-orange rounded-lg px-4 py-1.5 hover:bg-brand-orange/90 active:scale-95 disabled:opacity-50 transition-all"
+              data-testid="add-to-cart-btn"
+            >
+              Add
+            </button>
+          )}
         </div>
       </div>
 
@@ -289,14 +347,37 @@ export default function WeightHeavyProductCard({
             })()}
           </div>
 
-          {/* Add to basket */}
-          <button
-            onClick={handleAdd}
-            disabled={!activeVariant || adding}
-            className="mt-auto pt-2.5 w-full text-sm font-semibold text-white bg-brand-orange rounded-lg py-2.5 hover:bg-brand-orange/90 active:scale-[0.97] disabled:opacity-50 transition-all"
-          >
-            {adding ? "Adding..." : "Add to Basket"}
-          </button>
+          {/* Add to basket / Quantity */}
+          {qtyCounts[activeVariant?.id || ''] > 0 ? (
+            <div className="mt-auto pt-2.5 flex items-center justify-center border border-grey-30 rounded-lg bg-white shadow-sm h-10" data-testid="qty-controls">
+              <button
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(activeVariant.id, -1) }}
+                className="w-10 h-full flex items-center justify-center text-sm font-bold text-grey-50 hover:bg-grey-10 active:bg-grey-20 transition-colors"
+                data-testid="qty-decrement"
+              >
+                −
+              </button>
+              <span className="w-10 text-center text-sm font-bold text-grey-90 select-none" data-testid="qty-count">
+                {qtyCounts[activeVariant?.id || ''] || 0}
+              </span>
+              <button
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(activeVariant.id, 1) }}
+                className="w-10 h-full flex items-center justify-center text-sm font-bold text-brand-orange hover:bg-brand-orange/10 active:bg-brand-orange/20 transition-colors"
+                data-testid="qty-increment"
+              >
+                +
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={handleAdd}
+              disabled={!activeVariant}
+              className="mt-auto pt-2.5 w-full text-sm font-semibold text-white bg-brand-orange rounded-lg py-2.5 hover:bg-brand-orange/90 active:scale-[0.97] disabled:opacity-50 transition-all"
+              data-testid="add-to-cart-btn"
+            >
+              Add to Basket
+            </button>
+          )}
         </div>
       </div>
     </div>

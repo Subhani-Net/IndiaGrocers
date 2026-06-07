@@ -1,15 +1,16 @@
 import { test, expect } from "@playwright/test"
 
 const TITLE = '[data-testid="product-full-title"]'
-const SEARCH_TIMEOUT = 5000
+const CARD = ".product-card"
+const WAIT = 15000
 
 test("Search jeera finds cumin", async ({ page }) => {
   await page.goto("/search?q=jeera")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: WAIT }).catch(() => {})
+  await page.waitForTimeout(1000)
   const content = (await page.textContent("body")) || ""
   expect(content.toLowerCase()).toMatch(/cumin|jeera|spice/)
 
-  await page.waitForTimeout(2000)
   const titles = await page.locator(TITLE).allTextContents()
   console.log(titles)
   expect(titles).toContain("TRS Cumin Seeds")
@@ -24,11 +25,11 @@ test("Search jeera finds cumin", async ({ page }) => {
 
 test("Search haldi finds turmeric", async ({ page }) => {
   await page.goto("/search?q=haldi")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: WAIT }).catch(() => {})
+  await page.waitForTimeout(1000)
   const content = (await page.textContent("body")) || ""
-  expect(content.toLowerCase()).toMatch(/turmeric|haldi|spice/)
+  expect(content.toLowerCase()).toMatch(/turmeric|haldi|spice/i)
 
-  await page.waitForTimeout(2000)
   const titles = await page.locator(TITLE).allTextContents()
   console.log(titles)
   expect(titles).toContain("Natco - Turmeric Powder 400g")
@@ -37,11 +38,11 @@ test("Search haldi finds turmeric", async ({ page }) => {
 
 test("Search chana finds chickpea", async ({ page }) => {
   await page.goto("/search?q=chana")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: WAIT }).catch(() => {})
+  await page.waitForTimeout(1000)
   const content = (await page.textContent("body")) || ""
-  expect(content.toLowerCase()).toMatch(/chickpea|chana|gram/)
+  expect(content.toLowerCase()).toMatch(/chickpea|chana|gram/i)
 
-  await page.waitForTimeout(2000)
   const titles = await page.locator(TITLE).allTextContents()
   console.log(titles)
   expect(titles).toContain("Natco - Chana Masala Mangal 100g")
@@ -55,11 +56,11 @@ test("Search chana finds chickpea", async ({ page }) => {
 
 test("Search basmati finds rice", async ({ page }) => {
   await page.goto("/search?q=basmati")
-  await page.waitForTimeout(SEARCH_TIMEOUT)
+  await page.waitForSelector(CARD, { timeout: WAIT }).catch(() => {})
+  await page.waitForTimeout(1000)
   const content = (await page.textContent("body")) || ""
-  expect(content.toLowerCase()).toMatch(/basmati|rice/)
+  expect(content.toLowerCase()).toMatch(/basmati|rice/i)
 
-  await page.waitForTimeout(2000)
   const titles = await page.locator(TITLE).allTextContents()
   console.log(titles)
   expect(titles).toContain("Natco - Basmati Rice India - Bag 5kg")

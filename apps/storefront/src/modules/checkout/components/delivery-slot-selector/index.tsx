@@ -19,61 +19,52 @@ interface TimeWindow {
   price: number
 }
 
-// Generate next N days of delivery slots
+// Generate next N weekend days (Sat & Sun only)
 function generateSlots(days: number = 5, hasFastRequired: boolean = false): DeliverySlot[] {
   const slots: DeliverySlot[] = []
   const now = new Date()
-  // Delivery cut-off: 10am for same-day
-  const startDay = now.getHours() < 10 ? 0 : 1
+  
+  // Find next Saturday from today
+  let current = new Date(now)
+  // Skip to Saturday if today is not already Fri/Sat/Sun for next-weekend preview
+  const dayOfWeek = current.getDay()
+  if (dayOfWeek > 0 && dayOfWeek < 5) {
+    // Weekday - jump to Saturday
+    current.setDate(current.getDate() + (6 - dayOfWeek))
+  } else if (dayOfWeek === 5) {
+    // Friday - tomorrow is Saturday
+    current.setDate(current.getDate() + 1)
+  }
+  // If Sunday, start from today
 
-  for (let i = startDay; i < startDay + days; i++) {
-    const date = new Date(now)
-    date.setDate(date.getDate() + i)
+  // Generate 4 weekend days (2 Saturdays + 2 Sundays across 2 weekends)
+  let daysGenerated = 0
+  let attempts = 0
+  while (daysGenerated < 4 && attempts < 14) {
+    const d = new Date(current)
+    d.setDate(d.getDate() + attempts)
+    const dow = d.getDay()
+    
+    // Only Sat (6) and Sun (0)
+    if (dow !== 6 && dow !== 0) {
+      attempts++
+      continue
+    }
 
-    const isToday = i === 0
-    const isTomorrow = i === 1
-    const dayName = date.toLocaleDateString("en-GB", { weekday: "short" })
-    const monthDay = date.toLocaleDateString("en-GB", { day: "numeric", month: "short" })
+    const dayName = d.toLocaleDateString("en-GB", { weekday: "short" })
+    const monthDay = d.toLocaleDateString("en-GB", { day: "numeric", month: "short" })
+    const dateLabel = `${dayName} ${monthDay}`
 
-    const dateLabel = isToday ? "Today" : isTomorrow ? "Tomorrow" : `${dayName} ${monthDay}`
-
-    // Time windows: 8-10am, 10am-12pm, 12-2pm, 2-4pm, 4-6pm, 6-8pm
+    // 4-hour time windows
     const allWindows: TimeWindow[] = [
-      { id: `${i}-morning1`, label: "Morning", start: "08:00", end: "10:00", available: true, premium: false, price: 0 },
-      { id: `${i}-morning2`, label: "Late Morning", start: "10:00", end: "12:00", available: true, premium: false, price: 0 },
-      { id: `${i}-afternoon1`, label: "Early Afternoon", start: "12:00", end: "14:00", available: true, premium: false, price: 0 },
-      { id: `${i}-afternoon2`, label: "Afternoon", start: "14:00", end: "16:00", available: true, premium: false, price: 0 },
-      { id: `${i}-evening1`, label: "Late Afternoon", start: "16:00", end: "18:00", available: true, premium: false, price: 0 },
-      { id: `${i}-evening2`, label: "Evening", start: "18:00", end: "20:00", available: i > 0, premium: false, price: 0 },
+      { id: `${daysGenerated}-morning`, label: "Morning (8am-12pm)", start: "08:00", end: "12:00", available: true, premium: false, price: 0 },
+      { id: `${daysGenerated}-afternoon`, label: "Afternoon (12pm-4pm)", start: "12:00", end: "16:00", available: true, premium: false, price: 0 },
+      { id: `${daysGenerated}-evening`, label: "Evening (4pm-8pm)", start: "16:00", end: "20:00", available: true, premium: false, price: 0 },
     ]
 
-    // Same-day express slot (premium)
-    if (isToday) {
-      allWindows.unshift({
-        id: `${i}-express`,
-        label: "Express (Same Day)",
-        start: "12:00",
-        end: "18:00",
-        available: now.getHours() < 10,
-        premium: true,
-        price: 599, // £5.99
-      })
-      // Early morning unavailable today
-      allWindows[1].available = now.getHours() < 8
-    }
-
-    // If fast delivery required (fresh/dairy), restrict to today/tomorrow
-    if (hasFastRequired && i > 1) {
-      for (const w of allWindows) w.available = false
-    }
-
-    // Simulate some unavailability
-    if (i === 2) {
-      allWindows[0].available = false
-      allWindows[1].available = false
-    }
-
-    slots.push({ date, dateLabel, timeWindows: allWindows })
+    slots.push({ date: d, dateLabel, timeWindows: allWindows })
+    daysGenerated++
+    attempts++
   }
 
   return slots
@@ -104,13 +95,11 @@ export default function DeliverySlotSelector({
   )
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3" data-testid="delivery-slot-selector">
       <div>
         <h3 className="text-sm font-bold text-stone-800 mb-1">Choose Delivery Slot</h3>
-        <p className="text-xs text-stone-400">
-          {hasFastRequired
-            ? "Your basket contains fresh items — delivery must be today or tomorrow"
-            : "Select your preferred delivery day and time"}
+        <p className="text-xs text-stone-400" data-testid="delivery-slot-subtitle">
+          Weekend delivery — Saturday &amp; Sunday, 4-hour slots
         </p>
       </div>
 
@@ -131,6 +120,7 @@ export default function DeliverySlotSelector({
             <button
               key={i}
               onClick={() => setExpandedDay(isExpanded ? -1 : i)}
+              data-testid={`slot-day-${slot.date.toISOString().slice(0, 10)}`}
               className={`flex-shrink-0 flex flex-col items-center px-4 py-3 rounded-xl border-2 transition-all ${
                 isExpanded
                   ? "border-brand-orange bg-brand-orange/5"
@@ -173,6 +163,7 @@ export default function DeliverySlotSelector({
                   key={window.id}
                   disabled={isDisabled}
                   onClick={() => handleSelect(slots[expandedDay], window)}
+                  data-testid={`slot-${window.id}`}
                   className={`text-left px-3 py-2.5 rounded-lg border text-xs transition-all ${
                     isWindowSelected
                       ? "bg-brand-orange text-white border-brand-orange"
@@ -210,7 +201,7 @@ export default function DeliverySlotSelector({
 
       {/* Selected slot summary */}
       {selectedDate && selectedWindow && (
-        <div className="bg-green-50 border border-green-200 rounded-lg px-4 py-3">
+        <div className="bg-green-50 border border-green-200 rounded-lg px-4 py-3" data-testid="slot-selected-summary">
           <span className="text-xs text-green-700 font-medium flex items-center gap-1">
             <span>✓</span>
             Delivery:{" "}

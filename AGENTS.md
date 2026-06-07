@@ -482,28 +482,8 @@ unit pricing, or best-value indicators because variant metadata is null.
 - Validating MeiliSearch category handles haven't shifted
 
 ### G12. Product price management
-**Status:** Not started — mandatory for go-live
-All MVC Round 1 products (Shan, MDH, Haldiram's, Parle, Britannia, Patak's, Tilda, etc.)
-and all TRS products have placeholder prices (£0.99–£3.99). Real wholesale/retail prices
-must be loaded before accepting orders. The system needs:
-
-1. **API-based price loading** — a script that reads prices from a structured data source
-   (JSON/CSV pricelist) and updates product variants via Medusa Admin API. Pattern already
-   exists in `import-round1.mjs` (variant price field). Accept a pricelist file, map product
-   names to variant SKUs, and POST updated prices.
-
-2. **Pricelist scan and update** — support for scanned/uploaded wholesaler price sheets.
-   Convert a CSV/Excel pricelist exported from TRS Dhamecha, Bestway, or other C&C into
-   the price update format. Map C&C product codes/descriptions to Medusa product handles.
-
-3. **Invoice scan and update** — accept a scanned C&C purchase invoice (PDF/image).
-   Extract line items (product name, pack size, cost price) and update Medusa variant
-   prices with actual cost data. Calculate retail prices as cost + margin %.
-
-**Required scripts:**
-- `scripts/pricing/load-pricelist.mjs` — load prices from JSON/CSV pricelist
-- `scripts/pricing/scan-invoice.mjs` — extract prices from C&C invoice
-- `scripts/pricing/update-prices.mjs` — batch-update variant prices via API
+**Status:** Built — `scripts/pricing/load-pricelist.mjs` accepts JSON or CSV pricelist, matches by title/handle/SKU, updates variant prices via Medusa Admin API. Dry-run + apply modes. Documented in `Implementation/README.md`.
+**Effort:** Complete. Example pricelist in `scripts/pricing/example-pricelist.json`.
 
 **Effort:** 3-4h for API script + pricelist format, 4-6h for invoice scanning (OCR)
 
@@ -516,11 +496,11 @@ must be loaded before accepting orders. The system needs:
 Recorded for fixing before launch. Not yet implemented.
 
 ### D1. Delivery slots — 4-hour weekend only
-**Status:** Not started
-Current delivery slot configuration shows time windows inconsistently. Must update to:
-- 4-hour delivery slots only
-- Enable Saturday and Sunday
-- Block all other days (Mon-Fri)
+**Status:** Fixed
+Delivery slots updated to:
+- 4-hour windows: Morning (8am-12pm), Afternoon (12pm-4pm), Evening (4pm-8pm)
+- Saturday and Sunday only (weekdays blocked)
+- 4 weekend days shown (2 Saturdays + 2 Sundays across 2 weekends)
 - File: `apps/storefront/src/modules/checkout/components/delivery-slot-selector/index.tsx`
 
 ### D2. Basket sidebar — sticky scroll

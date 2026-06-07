@@ -85,7 +85,7 @@ function StripeCardForm({ amount, onPay, onError, disabled }: StripePaymentProps
           </div>
         </div>
 
-        <div className="border border-stone-200 rounded-lg p-3 bg-white">
+        <div className="border border-stone-200 rounded-lg p-3 bg-white" data-testid="stripe-card-element">
           <CardElement options={cardElementOptions} />
         </div>
       </div>
@@ -95,6 +95,7 @@ function StripeCardForm({ amount, onPay, onError, disabled }: StripePaymentProps
         onClick={handlePay}
         disabled={busy}
         className="w-full py-3.5 bg-brand-orange text-white text-sm font-bold rounded-lg hover:bg-brand-orange/90 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+        data-testid="stripe-pay-btn"
       >
         {busy ? "Processing..." : `Pay ${formatAmount(amount)}`}
       </button>

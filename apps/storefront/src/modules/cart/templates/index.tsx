@@ -84,16 +84,16 @@ const CartTemplate = ({
   // Common category suggestions for reminder strip
   const reminderCategories = useMemo(
     () => [
-      { name: "Staples & Grains", handle: "staples-grains" },
-      { name: "Atta & Flours", handle: "atta-flours" },
-      { name: "Dal & Lentils", handle: "dal-lentils" },
-      { name: "Oils & Ghee", handle: "oils-ghee" },
-      { name: "Spices — Ground", handle: "spices-ground" },
-      { name: "Spice Blends", handle: "spice-blends" },
-      { name: "Beverages", handle: "beverages" },
-      { name: "Snacks & Namkeen", handle: "snacks-namkeen" },
-      { name: "Pickles & Chutneys", handle: "pickles-chutneys" },
-      { name: "Dairy", handle: "dairy" },
+      { name: "Rice & Grains", handle: "grains" },
+      { name: "Flour & Atta", handle: "flour-milk-powder" },
+      { name: "Lentils & Dals", handle: "dried-lentils-beans-peas" },
+      { name: "Oils & Ghee", handle: "ghee-oils" },
+      { name: "Spices & Herbs", handle: "spices-herbs" },
+      { name: "Spice Blends", handle: "spice-blends-mixes" },
+      { name: "Teas & Drinks", handle: "teas-drinks" },
+      { name: "Snacks", handle: "namkeen-lentil-snacks" },
+      { name: "Pickles & Chutneys", handle: "chutneys-pickles-sauces" },
+      { name: "Nuts & Seeds", handle: "nuts-seeds" },
     ],
     []
   )

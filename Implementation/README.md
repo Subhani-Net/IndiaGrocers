@@ -504,6 +504,73 @@ NEXT_PUBLIC_MEDUSA_BACKEND_URL=http://localhost:9000
 
 ---
 
+## Price Management
+
+### Architecture
+
+The price loading script matches pricelist entries to Medusa products by title, handle, or variant SKU. It updates variant prices via the Medusa Admin API.
+
+### Usage
+
+```bash
+# Dry run — see what would change
+node scripts/pricing/load-pricelist.mjs <pricelist.json>
+
+# Apply changes
+node scripts/pricing/load-pricelist.mjs <pricelist.json> --apply
+
+# Then reindex MeiliSearch
+cd apps/meilisearch && npm run reindex
+```
+
+### Pricelist Format
+
+**JSON:**
+```json
+[
+  { "title": "Natco - Cumin Seeds 400g", "price_gbp": 3.49 },
+  { "title": "Tilda Pure Basmati", "variant_title": "2kg", "price_gbp": 5.49 },
+  { "handle": "shan-special-chicken-biryani-mix", "price_gbp": 1.49 },
+  { "sku": "MVC-shan-special-chicken-biryani-mix-v0", "price_gbp": 1.49 }
+]
+```
+
+**CSV:**
+```csv
+title,variant_title,price_gbp
+"Natco - Cumin Seeds 400g",Default,3.49
+"Tilda Pure Basmati",2kg,5.49
+```
+
+### Matching Logic
+
+| Field | Matches | Example |
+|-------|---------|---------|
+| `title` | Exact product title (case-insensitive) | `"Natco - Cumin Seeds 400g"` |
+| `handle` | Product URL handle | `"shan-special-chicken-biryani-mix"` |
+| `sku` | Variant SKU | `"MVC-shan-special-chicken-biryani-mix-v0"` |
+| `variant_title` | Variant title (defaults to `"Default"`) | `"2kg"`, `"500g"` |
+
+Prices are specified in **GBP pounds** (`price_gbp: 3.49` = £3.49). The script converts to pence internally.
+
+### Output
+
+| Status | Meaning |
+|--------|---------|
+| `UPDATED` | Price changed |
+| `NOT_FOUND` | Product not matched in DB — check title/handle |
+| `NO_VARIANT` | Product matched but variant not found |
+| `SKIPPED` | Price already correct — no change needed |
+
+### Files
+
+| File | Purpose |
+|------|---------|
+| `scripts/pricing/load-pricelist.mjs` | Main price loading script |
+| `scripts/pricing/example-pricelist.json` | Example pricelist (JSON format) |
+
+---
+
 ## Docker Services
 
 ```bash
@@ -645,7 +712,7 @@ node scripts/mvc/audit.mjs
 |----|------|----------|--------|
 | **G11** | Natco variant consolidation | 🔴 Go-Live | Not started |
 | **G4** | Rate limiting on auth endpoints | 🔴 Go-Live | Not started |
-| **G12** | Product price management | 🔴 Go-Live | Not started |
+| **G12** | Product price management | 🔴 Go-Live | ✅ Built — `scripts/pricing/load-pricelist.mjs` |
 | **G13** | Customer invoice generation | 🔴 Go-Live | Not started |
 | **D1** | Delivery slots: 4-hour, Sat/Sun only | 🔴 Go-Live | Recorded |
 | **D2** | Basket sidebar: sticky scroll | 🔴 Go-Live | Recorded |

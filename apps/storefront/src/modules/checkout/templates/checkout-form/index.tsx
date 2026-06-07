@@ -136,7 +136,7 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
       <div className="w-full max-w-xl mx-auto">
         {/* === STEP 1: ADDRESS === */}
         {step === "address" && (
-          <div className="bg-white rounded-xl border border-stone-200 p-4 sm:p-6">
+          <div className="bg-white rounded-xl border border-stone-200 p-4 sm:p-6" data-testid="checkout-step-address">
             <h2 className="text-lg font-bold text-stone-900 mb-1">Delivery Address</h2>
             <p className="text-xs text-stone-400 mb-4">
               We deliver across Greater London. Enter your postcode to check availability.
@@ -213,7 +213,7 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
 
         {/* === STEP 2: DELIVERY SLOT === */}
         {step === "delivery" && (
-          <div className="bg-white rounded-xl border border-stone-200 p-4 sm:p-6">
+          <div className="bg-white rounded-xl border border-stone-200 p-4 sm:p-6" data-testid="checkout-step-delivery">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-bold text-stone-900">Delivery Slot</h2>
               <button onClick={() => pushStep("address")} className="text-xs text-stone-400 hover:text-brand-orange">← Back</button>
@@ -233,7 +233,8 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
 
             <button onClick={() => { if (selectedSlotDate && selectedSlotWindow) pushStep("payment") }}
               disabled={!selectedSlotDate || !selectedSlotWindow}
-              className="w-full mt-5 py-3 bg-brand-orange text-white font-bold rounded-lg hover:bg-brand-orange/90 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all text-sm">
+              className="w-full mt-5 py-3 bg-brand-orange text-white font-bold rounded-lg hover:bg-brand-orange/90 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all text-sm"
+              data-testid="continue-to-payment-btn">
               Continue to Payment
             </button>
           </div>
@@ -241,14 +242,14 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
 
         {/* === STEP 3: PAYMENT + REVIEW === */}
         {step === "payment" && (
-          <div className="bg-white rounded-xl border border-stone-200 p-4 sm:p-6">
+          <div className="bg-white rounded-xl border border-stone-200 p-4 sm:p-6" data-testid="checkout-step-payment">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-bold text-stone-900">Review &amp; Pay</h2>
               <button onClick={() => pushStep("delivery")} className="text-xs text-stone-400 hover:text-brand-orange">← Back</button>
             </div>
 
             {/* Order breakdown */}
-            <div className="border border-stone-200 rounded-lg p-4 mb-4">
+            <div className="border border-stone-200 rounded-lg p-4 mb-4" data-testid="checkout-order-summary">
               <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider mb-3">Order Summary</h3>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between text-stone-500">

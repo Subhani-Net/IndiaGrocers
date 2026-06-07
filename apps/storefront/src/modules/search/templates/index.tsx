@@ -121,6 +121,7 @@ export default function SearchTemplate({
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const hasFilters = !!(brandParam || maxPriceParam)
+  const initialLoad = useRef(true)
 
   const filterProducts = useCallback((products: HttpTypes.StoreProduct[]): HttpTypes.StoreProduct[] => {
     let filtered = products
@@ -178,6 +179,13 @@ export default function SearchTemplate({
   }, [hasFilters, countryCode])
 
   useEffect(() => {
+    // Skip debounce on initial page load (query from URL param — user navigated directly)
+    if (initialLoad.current && query) {
+      initialLoad.current = false
+      performSearch(query)
+      return
+    }
+    initialLoad.current = false
     const timer = setTimeout(() => performSearch(query), 300)
     return () => clearTimeout(timer)
   }, [query, performSearch])

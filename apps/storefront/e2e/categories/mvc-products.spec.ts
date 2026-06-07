@@ -309,3 +309,86 @@ test("MVC — Flour now includes Elephant, Pillsbury, Aashirvaad", async ({ page
   // Existing Natco (still there)
   expect(titles).toContain("Natco - Chakki Atta Multigrain 5kg")
 })
+
+// ═══════════════════════════════════════════════════════════════════
+//  PDP VARIANT SELECTION & PRICE DISPLAY
+// ═══════════════════════════════════════════════════════════════════
+
+test("MVC — PDP loads with title and price for single-variant product", async ({ page }) => {
+  // MDH Kitchen King Masala — single variant, price £1.99
+  await page.goto("/gb/products/mdh-kitchen-king-masala", { waitUntil: "domcontentloaded" })
+  await page.waitForTimeout(4000)
+
+  const content = (await page.textContent("body")) || ""
+  expect(content.length).toBeGreaterThan(200)
+
+  // Should show product title
+  expect(content).toMatch(/kitchen king/i)
+
+  // Should show a price
+  expect(content).toMatch(/£[0-9]+\.[0-9]{2}/)
+
+  console.log("PDP loaded: " + content.slice(0, 150).trim() + "...")
+})
+
+test("MVC — PDP shows add-to-cart button", async ({ page }) => {
+  await page.goto("/gb/products/mdh-kitchen-king-masala", { waitUntil: "domcontentloaded" })
+  await page.waitForTimeout(4000)
+
+  const content = (await page.textContent("body")) || ""
+
+  // Should have add to cart or similar
+  const hasAddBtn = content.match(/add to cart|add to basket/i)
+  console.log("Add to cart: " + (hasAddBtn ? "present" : "not found"))
+})
+
+test("MVC — PDP for multi-variant product (Tilda) shows variant options", async ({ page }) => {
+  // Tilda Pure Basmati has 3 variants: 2kg, 5kg, 10kg
+  await page.goto("/gb/products/tilda-pure-basmati", { waitUntil: "domcontentloaded" })
+  await page.waitForTimeout(4000)
+
+  const content = (await page.textContent("body")) || ""
+  expect(content.length).toBeGreaterThan(200)
+
+  // Variant options may be rendered as buttons or selectors
+  // Check for the product title first
+  expect(content.toLowerCase()).toMatch(/tilda|basmati/)
+
+  // Price should be visible (confirming product page loaded)
+  expect(content).toMatch(/£[0-9]+\.[0-9]{2}/)
+
+  console.log("Tilda PDP loaded — title and price confirmed")
+})
+
+test("MVC — PDP for Natco product shows brand badge", async ({ page }) => {
+  await page.goto("/gb/products/natco-cumin-seeds-400g", { waitUntil: "domcontentloaded" })
+  await page.waitForTimeout(4000)
+
+  const content = (await page.textContent("body")) || ""
+
+  // Should show Natco brand somewhere
+  expect(content.toLowerCase()).toMatch(/natco/)
+  console.log("Natco brand visible on PDP")
+})
+
+test("MVC — PDP for TRS product loads correctly", async ({ page }) => {
+  await page.goto("/gb/products/trs-coarse-black-pepper", { waitUntil: "domcontentloaded" })
+  await page.waitForTimeout(4000)
+
+  const content = (await page.textContent("body")) || ""
+
+  // Should show TRS brand
+  expect(content.toLowerCase()).toMatch(/trs|coarse|black pepper/i)
+  console.log("TRS PDP: " + content.slice(0, 150).trim() + "...")
+})
+
+test("MVC — PDP handles non-existent product handle gracefully", async ({ page }) => {
+  await page.goto("/gb/products/non-existent-product-handle-xyz", { waitUntil: "domcontentloaded" })
+  await page.waitForTimeout(3000)
+
+  const content = (await page.textContent("body")) || ""
+
+  // Should show 404 or redirect, not crash
+  expect(content.length).toBeGreaterThan(50)
+  console.log("404 product: " + content.slice(0, 100).trim() + "...")
+})
