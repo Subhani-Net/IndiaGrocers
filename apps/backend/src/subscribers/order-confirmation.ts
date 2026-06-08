@@ -29,7 +29,7 @@ export default async function orderConfirmationSubscriber({ event, container }: 
         "shipping_total", "tax_total", "created_at",
         "customer.email", "customer.first_name", "customer.last_name",
         "shipping_address.*",
-        "items.title", "items.quantity", "items.unit_price", "items.total",
+        "items.*",
       ],
     })
     const order = orders?.[0]

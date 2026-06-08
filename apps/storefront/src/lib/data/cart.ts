@@ -24,7 +24,7 @@ import { getLocale } from "@lib/data/locale-actions"
 export async function retrieveCart(cartId?: string, fields?: string) {
   const id = cartId || (await getCartId())
   fields ??=
-    "*items, *region, *items.product, *items.variant, *items.thumbnail, *items.metadata, +items.total, *promotions, +shipping_methods.name"
+    "*items, *region, *items.product, *items.product.thumbnail, *items.product.images, *items.variant, *items.variant.product, *items.metadata, +items.total, *promotions, +shipping_methods.name"
 
   if (!id) {
     return null
@@ -244,12 +244,16 @@ export async function initiatePaymentSession(
   const backendUrl = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"
   const publishableKey = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY || ""
 
+  console.log("[payment-fn] cart.item_total:", cart.item_total, "cart.total:", cart.total)
+
   // Create payment collection
   const pcRes = await fetch(`${backendUrl}/store/payment-collections`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-publishable-api-key": publishableKey },
     body: JSON.stringify({ cart_id: cart.id }),
   }).then(r => r.json()).catch(() => null)
+
+  console.log("[payment-fn] payment_collection.amount:", pcRes?.payment_collection?.amount)
 
   if (!pcRes?.payment_collection?.id) {
     throw new Error("Failed to initiate payment collection")
@@ -268,8 +272,12 @@ export async function initiatePaymentSession(
     }
   )
 
+  const sessionJson = await sessionRes.json().catch(() => null)
+  console.log("[payment-fn] session provider:", data.provider_id, "session status:", sessionRes.status, "body:", JSON.stringify(sessionJson).slice(0, 500))
+
   if (!sessionRes.ok) {
-    throw new Error("Failed to create payment session")
+    console.error("[payment-fn] SESSION CREATION FAILED — full response:", JSON.stringify(sessionJson, null, 2))
+    throw new Error(`Failed to create payment session: ${sessionJson?.message || sessionRes.status}`)
   }
 
   const cartCacheTag = await getCacheTag("carts")

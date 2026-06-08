@@ -59,8 +59,15 @@ Then("products not listed in the pricelist retain their current prices", async (
   console.log("ADMIN STUB: Unaffected products verified in verify-pricing.mjs")
 })
 
+// "the displayed price is {string}" is in price-display.steps.ts
+
 Given("the admin has updated a product price via the pricelist", async ({ page }) => {
   console.log("ADMIN STUB: Price updated")
+})
+
+When("the user views the product", async ({ page }) => {
+  await page.goto("/products/mdh-kitchen-king-masala", { waitUntil: "domcontentloaded" })
+  await page.waitForTimeout(3000)
 })
 
 Given("the search index has been reindexed", async ({ page }) => {
@@ -71,21 +78,8 @@ Then("the displayed price matches the updated pricelist value", async ({ page })
   console.log("ADMIN STUB: Storefront price verified in verify-pricing.mjs")
 })
 
-Given("a product has a price of 199 pence in the database", async ({ page }) => {
-  console.log("ADMIN STUB: Price in DB = 199 pence")
-})
-
-When("the user views the product", async ({ page }) => {
-  await page.goto("/products/mdh-kitchen-king-masala", { waitUntil: "domcontentloaded" })
-  await page.waitForTimeout(3000)
-})
-
-Then("the displayed price is {string}", async ({ page }, expectedPrice: string) => {
-  const content = (await page.textContent("body")) || ""
-  const hasPrice = content.includes(expectedPrice)
-  console.log(`Price display "${expectedPrice}": ${hasPrice ? "found" : "not found"}`)
-  expect(hasPrice).toBeTruthy()
-})
+// "a product has a price of {int} pence in the database" is in price-display.steps.ts
+// "the displayed price is {string}" is in price-display.steps.ts
 
 // ────────────────────────────────────────────────────────────
 // CONSOLIDATION STEPS (W08)

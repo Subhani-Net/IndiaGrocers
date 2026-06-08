@@ -51,7 +51,7 @@ module.exports = defineConfig({
       options: {
         providers: [
           {
-            resolve: "@medusajs/payment-stripe",
+            resolve: "./src/framework-enhancements/payment/stripe-gbp-provider",
             id: "stripe",
             options: {
               apiKey: process.env.STRIPE_SECRET_KEY || "",

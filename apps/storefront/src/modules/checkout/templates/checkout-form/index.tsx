@@ -101,6 +101,8 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
   const handlePlaceOrder = async (paymentMethodId?: string) => {
     setPlacingOrder(true)
     setPaymentError(null)
+    console.log("[placeOrder] paymentMethodId:", paymentMethodId, "provider:", paymentMethodId ? "pp_stripe_stripe" : "pp_system_default")
+    console.log("[placeOrder] cart.item_total:", cart?.item_total, "cart.total:", cart?.total)
     try {
       if (cart) {
         await initiatePaymentSession(cart, {
@@ -124,10 +126,13 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
   const itemTotal = cart?.item_total || 0
   const deliveryCost = selectedSlotWindow?.premium
     ? selectedSlotWindow.price
-    : selectedSlotWindow
-    ? 399
     : 399
   const total = itemTotal + (deliveryCost > 0 ? deliveryCost : 0)
+
+  // Log amounts for price verification (all values in pence)
+  if (process.env.NODE_ENV === "development" && cart) {
+    console.log("[checkout] itemTotal:", itemTotal, "deliveryCost:", deliveryCost, "total:", total)
+  }
 
   return (
     <div className="w-full">

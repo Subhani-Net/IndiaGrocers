@@ -169,6 +169,23 @@ via `TEST_TYPE` env var. Run from `apps/backend/`:
 Setup file: `integration-tests/setup.js` (loaded for all tests).
 Note: No actual integration test files exist yet.
 
+## Framework Enhancements
+
+Extensions to Medusa v2 that fix framework-level issues. Maintained separately
+from application code so they can be audited and reverted when upgrading.
+
+Location: `apps/backend/src/framework-enhancements/`
+
+| Enhancement | Medusa Version | Fixes | Status |
+|-------------|---------------|-------|--------|
+| `stripe-gbp-provider` | 2.15.2 | 100× Stripe overcharge for GBP — `getSmallestUnit()` double-converts pence | Active |
+
+### Upgrade Procedure
+1. Run `npx medusa db:migrate` after upgrading Medusa
+2. For each enhancement, follow its `README.md` upgrade checklist
+3. If no longer needed, delete the enhancement directory and revert `medusa-config.ts`
+4. Run full test suite: `npx playwright test --project=bdd && node tests/verify-pricing.mjs`
+
 ## Seed pipeline (custom, NOT `medusa seed`)
 
 6-step pipeline requiring backend running on `http://127.0.0.1:9000`.
@@ -552,6 +569,50 @@ Can be delivered as:
 **Depends on:** G1 (email provider configured), G12 (real pricing for accurate invoices)
 
 **Effort:** 2-3h for PDF template + subscriber, 1-2h for storefront download link
+
+### D6. Cart image on mobile not working
+**Status:** Fixed
+Root cause: `item.thumbnail` was null for cart line items on the `/cart` page
+and cart dropdown, and the Medusa v2 cart API wasn't including product thumbnail
+fields. 
+
+Fixes applied:
+1. `retrieveCart()` in `src/lib/data/cart.ts` — expanded fields to include
+   `*items.product.thumbnail`, `*items.product.images`, `*items.variant.product`
+2. Cart Item component (`src/modules/cart/components/item/index.tsx`) — added
+   fallback `item.thumbnail || item.variant?.product?.thumbnail`
+3. Cart Dropdown (`src/modules/layout/components/cart-dropdown/index.tsx`) —
+   same fallback
+
+### D7. Order confirmation email — all product prices are £0.00
+**Status:** Fixed
+Root cause: The remote query in `order-confirmation.ts` was cherry-picking
+specific item fields (`items.title`, `items.quantity`, `items.unit_price`,
+`items.total`) instead of expanding the full `items` relation. In Medusa v2,
+the remote query needs `items.*` to load all line item fields including prices.
+
+Fix: Changed `"items.title", "items.quantity", "items.unit_price", "items.total"`
+to `"items.*"` in the remote query fields array.
+File: `apps/backend/src/subscribers/order-confirmation.ts:32`
+
+### D8. Price display — values displayed as multiples of 100
+**Status:** Fixed
+Root cause: `convertToLocale()` in `lib/util/money.ts` formatted amounts as-is,
+treating Medusa v2's pence values as pounds. Medusa v2 returns all monetary
+amounts in the minor currency unit (pence for GBP), but `convertToLocale` was
+copied from a Medusa v1 starter that expected major units (pounds).
+
+Fix: Changed `.format(amount)` to `.format(amount / 100)` in `money.ts:24`.
+This fixed 33 instances across: cart line items, cart dropdown, order summary,
+order confirmation, account order history, free shipping nudges, and discount
+codes.
+
+Payment-to-Stripe flow is correct:
+- DB stores pence (e.g., 199)
+- Medusa cart total is in pence
+- Stripe PaymentIntent receives pence (Stripe expects minor units)
+- Frontend pay button shows `formatAmount(total / 100)` = displayed in GBP
+- All three (frontend, backend, Stripe) now charge the same amount
 
 ---
 

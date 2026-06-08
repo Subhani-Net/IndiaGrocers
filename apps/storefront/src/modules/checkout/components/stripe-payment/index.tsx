@@ -29,6 +29,9 @@ interface StripePaymentProps {
 }
 
 function StripeCardForm({ amount, onPay, onError, disabled }: StripePaymentProps) {
+  if (typeof window !== "undefined") {
+    console.log("[stripe-pay] received amount:", amount, "display:", formatAmount(amount))
+  }
   const stripe = useStripe()
   const elements = useElements()
   const [processing, setProcessing] = useState(false)
@@ -60,6 +63,7 @@ function StripeCardForm({ amount, onPay, onError, disabled }: StripePaymentProps
       }
 
       if (paymentMethod) {
+        console.log("[stripe-pay] handlePay — calling onPay with paymentMethod:", paymentMethod.id, "amount:", amount)
         await onPay(paymentMethod.id)
       }
     } catch (e: any) {

@@ -125,7 +125,7 @@ const CartDropdown = ({
                           className="w-20 rounded-xl overflow-hidden border border-grey-10/60"
                         >
                           <Thumbnail
-                            thumbnail={item.thumbnail}
+                            thumbnail={item.thumbnail || item.variant?.product?.thumbnail}
                             images={item.variant?.product?.images}
                             size="square"
                           />

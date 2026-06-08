@@ -91,7 +91,9 @@ Given("the user is on the {string} category page", async ({ page }, handle: stri
 | `@D2` | Basket sidebar sticky scroll |
 | `@D4` | Add to Basket — no visual feedback |
 | `@D5` | Payment fails |
-| `@D6` | Cart reminder dead links |
+| `@D6` | Cart image on mobile not working |
+| `@D7` | Order confirmation email prices are £0.00 |
+| `@D8` | Price display — values displayed as multiples of 100 |
 
 ## When Adding a New Feature
 1. Read `tests/test-plan.md` for workflow context
