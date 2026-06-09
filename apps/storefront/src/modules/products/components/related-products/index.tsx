@@ -1,49 +1,41 @@
+"use client"
+
 import { listProducts } from "@lib/data/products"
-import { getRegion } from "@lib/data/regions"
 import { HttpTypes } from "@medusajs/types"
 import Product from "../product-preview"
+import { useEffect, useState, useRef } from "react"
 
 type RelatedProductsProps = {
   product: HttpTypes.StoreProduct
   countryCode: string
+  region?: any
 }
 
-export default async function RelatedProducts({
+export default function RelatedProducts({
   product,
   countryCode,
+  region,
 }: RelatedProductsProps) {
-  const region = await getRegion(countryCode)
+  const [relatedProducts, setRelatedProducts] = useState<HttpTypes.StoreProduct[]>([])
+  const mounted = useRef(true)
 
-  if (!region) {
-    return null
-  }
+  useEffect(() => {
+    mounted.current = true
+    ;(async () => {
+      const queryParams: HttpTypes.StoreProductListParams = {}
+      if (region?.id) queryParams.region_id = region.id
+      if (product.collection_id) queryParams.collection_id = [product.collection_id]
+      if (product.tags) queryParams.tag_id = product.tags.map((t) => t.id).filter(Boolean) as string[]
+      queryParams.is_giftcard = false
 
-  const queryParams: HttpTypes.StoreProductListParams = {}
-  if (region?.id) {
-    queryParams.region_id = region.id
-  }
-  if (product.collection_id) {
-    queryParams.collection_id = [product.collection_id]
-  }
-  if (product.tags) {
-    queryParams.tag_id = product.tags
-      .map((t) => t.id)
-      .filter(Boolean) as string[]
-  }
-  queryParams.is_giftcard = false
+      const { response } = await listProducts({ queryParams, countryCode })
+      if (!mounted.current) return
+      setRelatedProducts(response.products.filter((p) => p.id !== product.id))
+    })()
+    return () => { mounted.current = false }
+  }, [product.id, countryCode])
 
-  const products = await listProducts({
-    queryParams,
-    countryCode,
-  }).then(({ response }) => {
-    return response.products.filter(
-      (responseProduct) => responseProduct.id !== product.id
-    )
-  })
-
-  if (!products.length) {
-    return null
-  }
+  if (!relatedProducts.length) return null
 
   return (
     <div className="product-page-constraint">
@@ -56,12 +48,11 @@ export default async function RelatedProducts({
         </p>
       </div>
 
-      {/* Mobile: horizontal scroll, Desktop: grid */}
       <div className="overflow-x-auto no-scrollbar small:overflow-visible">
         <ul className="flex gap-4 small:grid small:grid-cols-3 medium:grid-cols-4 small:gap-x-6 small:gap-y-8 w-max small:w-full px-1 pb-2 small:pb-0">
-          {products.map((product) => (
-            <li key={product.id} className="w-[200px] small:w-auto flex-shrink-0 small:flex-shrink">
-              <Product region={region} product={product} />
+          {relatedProducts.map((p) => (
+            <li key={p.id} className="w-[200px] small:w-auto flex-shrink-0 small:flex-shrink">
+              <Product region={region} product={p} />
             </li>
           ))}
         </ul>

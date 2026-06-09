@@ -97,3 +97,39 @@ Feature: Product Discovery — Browse, Categories, PDP
   Scenario: Product with no image shows a placeholder
     Given the user views a product with a missing image
     Then a placeholder image is displayed instead of a broken image
+
+  @D9 @navigation
+  Scenario: Navigate from category page to PDP by clicking a product card
+    Given the user is on the "corn" category page
+    When the user clicks any product card link
+    Then the user is navigated to a product detail page
+    And the PDP displays a product title
+    And the PDP displays a product price in GBP
+
+  @D9 @navigation
+  Scenario: Navigate from category page to PDP on mobile
+    Given the user is on a mobile device
+    And the user is on the "corn" category page
+    When the user clicks any product card link
+    Then the user is navigated to a product detail page
+    And the PDP displays a product title
+
+  @D9 @navigation
+  Scenario: Navigate from store page to PDP
+    Given the user is on the store page
+    When the user clicks any product card link
+    Then the user is navigated to a product detail page
+    And the PDP displays a product title
+
+  @D9 @navigation
+  Scenario: PDP breadcrumbs link back to category
+    Given the user is viewing a product detail page
+    Then the breadcrumbs contain a link to the product's category
+    And the breadcrumbs contain a link to the store
+
+  @D9 @navigation
+  Scenario: Search results navigate to PDP
+    Given the user navigates to the search page with query "basmati"
+    When the user clicks any product card link
+    Then the user is navigated to a product detail page
+    And the page displays basmati rice information

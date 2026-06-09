@@ -39,6 +39,26 @@ test.describe('Price Display Consistency', () => {
     await Then('the displayed price contains a pence value', null, { page }); 
   });
 
+  test('Payment amount matches the displayed cart total', { tag: ['@W01', '@W02', '@W03', '@W05', '@pricing'] }, async ({ Given, Then, And, page }) => { 
+    await Given('the user has an item in their basket', null, { page }); 
+    await And('the user is on the payment step', null, { page }); 
+    await Then('the pay button displays the cart total in GBP', null, { page }); 
+    await And('the amount charged to the payment gateway equals the displayed total'); 
+  });
+
+  test('Backend stores prices in pence, payment gateway receives pence', { tag: ['@W01', '@W02', '@W03', '@W05', '@pricing'] }, async ({ Given, When, Then, And, page }) => { 
+    await Given('a product has a price of 199 pence in the database', null, { page }); 
+    await When('the user adds the product and proceeds to payment'); 
+    await Then('the payment gateway receives an amount of 199 pence', null, { page }); 
+    await And('the user\'s card is charged 199 pence', null, { page }); 
+  });
+
+  test('No price discrepancy between frontend, backend, and payment', { tag: ['@W01', '@W02', '@W03', '@W05', '@pricing'] }, async ({ Given, Then, And, page }) => { 
+    await Given('the user completes a checkout flow'); 
+    await Then('the displayed price on the storefront matches the price in the database divided by 100', null, { page }); 
+    await And('the amount charged by the payment gateway matches the displayed price multiplied by 100', null, { page }); 
+  });
+
 });
 
 // == technical section ==
@@ -56,4 +76,7 @@ const bddFileData = [ // bdd-data-start
   {"pwTestLine":25,"pickleLine":49,"tags":["@W01","@W02","@W03","@W05","@pricing"],"steps":[{"pwStepLine":26,"gherkinStepLine":50,"keywordType":"Context","textWithKeyword":"Given the user views the basket progress bar","stepMatchArguments":[]},{"pwStepLine":27,"gherkinStepLine":51,"keywordType":"Outcome","textWithKeyword":"Then the free delivery threshold contains a pound sign and two decimal places","stepMatchArguments":[]}]},
   {"pwTestLine":30,"pickleLine":53,"tags":["@W01","@W02","@W03","@W05","@pricing"],"steps":[{"pwStepLine":31,"gherkinStepLine":54,"keywordType":"Context","textWithKeyword":"Given the user has items below the minimum order threshold","stepMatchArguments":[]},{"pwStepLine":32,"gherkinStepLine":55,"keywordType":"Action","textWithKeyword":"When the user views the basket","stepMatchArguments":[]},{"pwStepLine":33,"gherkinStepLine":56,"keywordType":"Outcome","textWithKeyword":"Then the minimum order amount contains a pound sign and two decimal places","stepMatchArguments":[]}]},
   {"pwTestLine":36,"pickleLine":58,"tags":["@W01","@W02","@W03","@W05","@pricing"],"steps":[{"pwStepLine":37,"gherkinStepLine":59,"keywordType":"Context","textWithKeyword":"Given a product has a sub-pound price","stepMatchArguments":[]},{"pwStepLine":38,"gherkinStepLine":60,"keywordType":"Action","textWithKeyword":"When the user views the product","stepMatchArguments":[]},{"pwStepLine":39,"gherkinStepLine":61,"keywordType":"Outcome","textWithKeyword":"Then the displayed price contains a pence value","stepMatchArguments":[]}]},
+  {"pwTestLine":42,"pickleLine":63,"tags":["@W01","@W02","@W03","@W05","@pricing"],"steps":[{"pwStepLine":43,"gherkinStepLine":64,"keywordType":"Context","textWithKeyword":"Given the user has an item in their basket","stepMatchArguments":[]},{"pwStepLine":44,"gherkinStepLine":65,"keywordType":"Context","textWithKeyword":"And the user is on the payment step","stepMatchArguments":[]},{"pwStepLine":45,"gherkinStepLine":66,"keywordType":"Outcome","textWithKeyword":"Then the pay button displays the cart total in GBP","stepMatchArguments":[]},{"pwStepLine":46,"gherkinStepLine":67,"keywordType":"Outcome","textWithKeyword":"And the amount charged to the payment gateway equals the displayed total","stepMatchArguments":[]}]},
+  {"pwTestLine":49,"pickleLine":69,"tags":["@W01","@W02","@W03","@W05","@pricing"],"steps":[{"pwStepLine":50,"gherkinStepLine":70,"keywordType":"Context","textWithKeyword":"Given a product has a price of 199 pence in the database","stepMatchArguments":[{"group":{"start":25,"value":"199"},"parameterTypeName":"int"}]},{"pwStepLine":51,"gherkinStepLine":71,"keywordType":"Action","textWithKeyword":"When the user adds the product and proceeds to payment","stepMatchArguments":[]},{"pwStepLine":52,"gherkinStepLine":72,"keywordType":"Outcome","textWithKeyword":"Then the payment gateway receives an amount of 199 pence","stepMatchArguments":[{"group":{"start":42,"value":"199"},"parameterTypeName":"int"}]},{"pwStepLine":53,"gherkinStepLine":73,"keywordType":"Outcome","textWithKeyword":"And the user's card is charged 199 pence","stepMatchArguments":[{"group":{"start":27,"value":"199"},"parameterTypeName":"int"}]}]},
+  {"pwTestLine":56,"pickleLine":75,"tags":["@W01","@W02","@W03","@W05","@pricing"],"steps":[{"pwStepLine":57,"gherkinStepLine":76,"keywordType":"Context","textWithKeyword":"Given the user completes a checkout flow","stepMatchArguments":[]},{"pwStepLine":58,"gherkinStepLine":77,"keywordType":"Outcome","textWithKeyword":"Then the displayed price on the storefront matches the price in the database divided by 100","stepMatchArguments":[{"group":{"start":83,"value":"100"},"parameterTypeName":"int"}]},{"pwStepLine":59,"gherkinStepLine":78,"keywordType":"Outcome","textWithKeyword":"And the amount charged by the payment gateway matches the displayed price multiplied by 100","stepMatchArguments":[{"group":{"start":84,"value":"100"},"parameterTypeName":"int"}]}]},
 ]; // bdd-data-end

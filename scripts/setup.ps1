@@ -96,13 +96,16 @@ if (-not $SkipSeed) {
   Write-Host "  Step 5.1 — Importing products (merge weight variants)..." -ForegroundColor Gray
   node src/seed/merge-product-variants.mjs
 
-  Write-Host "  Step 5.2 — Assigning categories..." -ForegroundColor Gray
-  node src/seed/reassign-natco-categories.mjs
+  Write-Host "  Step 5.2 — Migrating to Natco category tree..." -ForegroundColor Gray
+  node src/seed/migrate-to-natco-categories.mjs
 
-  Write-Host "  Step 5.3 — Assigning collections..." -ForegroundColor Gray
-  node src/seed/assign-collections-v2.mjs
+  Write-Host "  Step 5.3 — Assigning categories from titles..." -ForegroundColor Gray
+  node src/seed/assign-categories-from-titles.mjs
 
-  Write-Host "  Step 5.4 — Configuring inventory..." -ForegroundColor Gray
+  Write-Host "  Step 5.4 — Fixing category handles..." -ForegroundColor Gray
+  node src/seed/fix-category-handles.mjs
+
+  Write-Host "  Step 5.5 — Configuring inventory..." -ForegroundColor Gray
   node src/seed/set-inventory.mjs
 
   Pop-Location
@@ -132,10 +135,11 @@ Write-Host "    Terminal 1: cd apps\backend && npx medusa develop" -ForegroundCo
 Write-Host "    Terminal 2: cd apps\storefront && yarn dev" -ForegroundColor Gray
 Write-Host "`n  Then seed (with backend running):" -ForegroundColor White
 Write-Host "    cd apps\backend" -ForegroundColor Gray
-Write-Host "    node src/seed/merge-product-variants.mjs" -ForegroundColor Gray
-Write-Host "    node src/seed/reassign-natco-categories.mjs" -ForegroundColor Gray
-Write-Host "    node src/seed/assign-collections-v2.mjs" -ForegroundColor Gray
-Write-Host "    node src/seed/set-inventory.mjs" -ForegroundColor Gray
+  Write-Host "    node src/seed/merge-product-variants.mjs" -ForegroundColor Gray
+  Write-Host "    node src/seed/migrate-to-natco-categories.mjs" -ForegroundColor Gray
+  Write-Host "    node src/seed/assign-categories-from-titles.mjs" -ForegroundColor Gray
+  Write-Host "    node src/seed/fix-category-handles.mjs" -ForegroundColor Gray
+  Write-Host "    node src/seed/set-inventory.mjs" -ForegroundColor Gray
 Write-Host "`n  Configure search:" -ForegroundColor White
 Write-Host "    cd apps\meilisearch && npm run configure && npm run reindex" -ForegroundColor Gray
 Write-Host "`n  Open: http://localhost:8000/gb" -ForegroundColor White

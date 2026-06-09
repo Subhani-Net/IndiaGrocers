@@ -318,7 +318,7 @@ export default function GroceryProductTemplate({
           {/* Related Products */}
           <div className="pt-4">
             <Suspense fallback={<SkeletonRelatedProducts />}>
-              <RelatedProducts product={product} countryCode={countryCode} />
+              <RelatedProducts product={product} countryCode={countryCode} region={region} />
             </Suspense>
           </div>
         </div>

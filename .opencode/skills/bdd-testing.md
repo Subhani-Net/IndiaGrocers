@@ -94,6 +94,8 @@ Given("the user is on the {string} category page", async ({ page }, handle: stri
 | `@D6` | Cart image on mobile not working |
 | `@D7` | Order confirmation email prices are £0.00 |
 | `@D8` | Price display — values displayed as multiples of 100 |
+| `@G14` | Payment refunds (future) |
+| `@G15` | Order modification + weight-based charging (future) |
 
 ## When Adding a New Feature
 1. Read `tests/test-plan.md` for workflow context

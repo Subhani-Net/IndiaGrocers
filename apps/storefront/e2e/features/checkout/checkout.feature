@@ -110,3 +110,23 @@ Feature: Checkout and Order Confirmation
     When the user completes the checkout flow
     Then the order is placed successfully
     And the order confirmation page is displayed
+
+  @D10 @regression
+  Scenario: Order confirmation page shows success with order details
+    Given the user has just placed an order
+    Then a green checkmark is displayed
+    And a "Thank you" message is displayed
+    And the confirmation page displays the order number
+    And a delivery ETA is displayed
+    And a delivery address card is displayed
+    And a payment method card is displayed
+    And the list of items ordered with quantities is displayed
+    And the order summary with subtotal, shipping, and total is displayed
+    And a "Continue Shopping" button is displayed
+
+  @D10 @regression
+  Scenario: Order confirmation page is not a blank 404 page
+    Given the user has just placed an order
+    Then the page does not display a 404 error
+    And the page does not display "Page not found"
+    And the page displays meaningful order content

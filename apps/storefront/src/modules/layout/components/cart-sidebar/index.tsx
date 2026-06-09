@@ -32,7 +32,6 @@ export default function CartSidebar({ countryCode }: { countryCode: string }) {
     setRemoving(lineId)
     try {
       await deleteLineItem(lineId)
-      await fetchCart()
       window.dispatchEvent(new Event("cart-updated"))
     } catch { }
     setRemoving(null)

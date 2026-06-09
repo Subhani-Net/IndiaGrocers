@@ -99,6 +99,42 @@ test.describe('Product Discovery — Browse, Categories, PDP', () => {
     await Then('a placeholder image is displayed instead of a broken image', null, { page }); 
   });
 
+  test('Navigate from category page to PDP by clicking a product card', { tag: ['@W01', '@catalog', '@D9', '@navigation'] }, async ({ Given, When, Then, And, page }) => { 
+    await Given('the user is on the "corn" category page', null, { page }); 
+    await When('the user clicks any product card link', null, { page }); 
+    await Then('the user is navigated to a product detail page', null, { page }); 
+    await And('the PDP displays a product title', null, { page }); 
+    await And('the PDP displays a product price in GBP', null, { page }); 
+  });
+
+  test('Navigate from category page to PDP on mobile', { tag: ['@W01', '@catalog', '@D9', '@navigation'] }, async ({ Given, When, Then, And, page }) => { 
+    await Given('the user is on a mobile device', null, { page }); 
+    await And('the user is on the "corn" category page', null, { page }); 
+    await When('the user clicks any product card link', null, { page }); 
+    await Then('the user is navigated to a product detail page', null, { page }); 
+    await And('the PDP displays a product title', null, { page }); 
+  });
+
+  test('Navigate from store page to PDP', { tag: ['@W01', '@catalog', '@D9', '@navigation'] }, async ({ Given, When, Then, And, page }) => { 
+    await Given('the user is on the store page', null, { page }); 
+    await When('the user clicks any product card link', null, { page }); 
+    await Then('the user is navigated to a product detail page', null, { page }); 
+    await And('the PDP displays a product title', null, { page }); 
+  });
+
+  test('PDP breadcrumbs link back to category', { tag: ['@W01', '@catalog', '@D9', '@navigation'] }, async ({ Given, Then, And, page }) => { 
+    await Given('the user is viewing a product detail page', null, { page }); 
+    await Then('the breadcrumbs contain a link to the product\'s category', null, { page }); 
+    await And('the breadcrumbs contain a link to the store', null, { page }); 
+  });
+
+  test('Search results navigate to PDP', { tag: ['@W01', '@catalog', '@D9', '@navigation'] }, async ({ Given, When, Then, And, page }) => { 
+    await Given('the user navigates to the search page with query "basmati"', null, { page }); 
+    await When('the user clicks any product card link', null, { page }); 
+    await Then('the user is navigated to a product detail page', null, { page }); 
+    await And('the page displays basmati rice information', null, { page }); 
+  });
+
 });
 
 // == technical section ==
@@ -123,4 +159,9 @@ const bddFileData = [ // bdd-data-start
   {"pwTestLine":85,"pickleLine":87,"tags":["@W01","@catalog"],"steps":[{"pwStepLine":86,"gherkinStepLine":88,"keywordType":"Context","textWithKeyword":"Given the user is on the store page","stepMatchArguments":[]},{"pwStepLine":87,"gherkinStepLine":89,"keywordType":"Action","textWithKeyword":"When the user clicks \"Load More\"","stepMatchArguments":[{"group":{"start":16,"value":"\"Load More\"","children":[{"start":17,"value":"Load More","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]},{"pwStepLine":88,"gherkinStepLine":90,"keywordType":"Outcome","textWithKeyword":"Then additional products are appended to the grid","stepMatchArguments":[]},{"pwStepLine":89,"gherkinStepLine":91,"keywordType":"Outcome","textWithKeyword":"And the product count display updates","stepMatchArguments":[]}]},
   {"pwTestLine":92,"pickleLine":93,"tags":["@W01","@catalog"],"steps":[{"pwStepLine":93,"gherkinStepLine":94,"keywordType":"Context","textWithKeyword":"Given the user is on a category page","stepMatchArguments":[]},{"pwStepLine":94,"gherkinStepLine":95,"keywordType":"Outcome","textWithKeyword":"Then each product card displays a brand badge","stepMatchArguments":[]}]},
   {"pwTestLine":97,"pickleLine":97,"tags":["@W01","@catalog"],"steps":[{"pwStepLine":98,"gherkinStepLine":98,"keywordType":"Context","textWithKeyword":"Given the user views a product with a missing image","stepMatchArguments":[]},{"pwStepLine":99,"gherkinStepLine":99,"keywordType":"Outcome","textWithKeyword":"Then a placeholder image is displayed instead of a broken image","stepMatchArguments":[]}]},
+  {"pwTestLine":102,"pickleLine":102,"tags":["@W01","@catalog","@D9","@navigation"],"steps":[{"pwStepLine":103,"gherkinStepLine":103,"keywordType":"Context","textWithKeyword":"Given the user is on the \"corn\" category page","stepMatchArguments":[{"group":{"start":19,"value":"\"corn\"","children":[{"start":20,"value":"corn","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]},{"pwStepLine":104,"gherkinStepLine":104,"keywordType":"Action","textWithKeyword":"When the user clicks any product card link","stepMatchArguments":[]},{"pwStepLine":105,"gherkinStepLine":105,"keywordType":"Outcome","textWithKeyword":"Then the user is navigated to a product detail page","stepMatchArguments":[]},{"pwStepLine":106,"gherkinStepLine":106,"keywordType":"Outcome","textWithKeyword":"And the PDP displays a product title","stepMatchArguments":[]},{"pwStepLine":107,"gherkinStepLine":107,"keywordType":"Outcome","textWithKeyword":"And the PDP displays a product price in GBP","stepMatchArguments":[]}]},
+  {"pwTestLine":110,"pickleLine":110,"tags":["@W01","@catalog","@D9","@navigation"],"steps":[{"pwStepLine":111,"gherkinStepLine":111,"keywordType":"Context","textWithKeyword":"Given the user is on a mobile device","stepMatchArguments":[]},{"pwStepLine":112,"gherkinStepLine":112,"keywordType":"Context","textWithKeyword":"And the user is on the \"corn\" category page","stepMatchArguments":[{"group":{"start":19,"value":"\"corn\"","children":[{"start":20,"value":"corn","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]},{"pwStepLine":113,"gherkinStepLine":113,"keywordType":"Action","textWithKeyword":"When the user clicks any product card link","stepMatchArguments":[]},{"pwStepLine":114,"gherkinStepLine":114,"keywordType":"Outcome","textWithKeyword":"Then the user is navigated to a product detail page","stepMatchArguments":[]},{"pwStepLine":115,"gherkinStepLine":115,"keywordType":"Outcome","textWithKeyword":"And the PDP displays a product title","stepMatchArguments":[]}]},
+  {"pwTestLine":118,"pickleLine":118,"tags":["@W01","@catalog","@D9","@navigation"],"steps":[{"pwStepLine":119,"gherkinStepLine":119,"keywordType":"Context","textWithKeyword":"Given the user is on the store page","stepMatchArguments":[]},{"pwStepLine":120,"gherkinStepLine":120,"keywordType":"Action","textWithKeyword":"When the user clicks any product card link","stepMatchArguments":[]},{"pwStepLine":121,"gherkinStepLine":121,"keywordType":"Outcome","textWithKeyword":"Then the user is navigated to a product detail page","stepMatchArguments":[]},{"pwStepLine":122,"gherkinStepLine":122,"keywordType":"Outcome","textWithKeyword":"And the PDP displays a product title","stepMatchArguments":[]}]},
+  {"pwTestLine":125,"pickleLine":125,"tags":["@W01","@catalog","@D9","@navigation"],"steps":[{"pwStepLine":126,"gherkinStepLine":126,"keywordType":"Context","textWithKeyword":"Given the user is viewing a product detail page","stepMatchArguments":[]},{"pwStepLine":127,"gherkinStepLine":127,"keywordType":"Outcome","textWithKeyword":"Then the breadcrumbs contain a link to the product's category","stepMatchArguments":[]},{"pwStepLine":128,"gherkinStepLine":128,"keywordType":"Outcome","textWithKeyword":"And the breadcrumbs contain a link to the store","stepMatchArguments":[]}]},
+  {"pwTestLine":131,"pickleLine":131,"tags":["@W01","@catalog","@D9","@navigation"],"steps":[{"pwStepLine":132,"gherkinStepLine":132,"keywordType":"Context","textWithKeyword":"Given the user navigates to the search page with query \"basmati\"","stepMatchArguments":[{"group":{"start":49,"value":"\"basmati\"","children":[{"start":50,"value":"basmati","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]},{"pwStepLine":133,"gherkinStepLine":133,"keywordType":"Action","textWithKeyword":"When the user clicks any product card link","stepMatchArguments":[]},{"pwStepLine":134,"gherkinStepLine":134,"keywordType":"Outcome","textWithKeyword":"Then the user is navigated to a product detail page","stepMatchArguments":[]},{"pwStepLine":135,"gherkinStepLine":135,"keywordType":"Outcome","textWithKeyword":"And the page displays basmati rice information","stepMatchArguments":[]}]},
 ]; // bdd-data-end

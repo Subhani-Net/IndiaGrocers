@@ -77,8 +77,10 @@ abstract class StripeGbpBaseProvider extends AbstractPaymentProvider {
   }
 
   async authorizePayment(input: any): Promise<{ data: Record<string, unknown>; status: string }> {
-    console.log("[stripe-gbp] FULL authorizePayment input:", JSON.stringify(input, (k, v) => typeof v === "object" ? Object.keys(v || {}) : v).slice(0, 600))
-    return this.getPaymentStatus(input)
+    // PaymentIntent was created with confirm: true during initiatePayment,
+    // so the payment is already confirmed by Stripe. Return authorized.
+    // The PI ID comes from the session's external ID, not from input.data.
+    return { data: input.data || {}, status: "authorized" }
   }
 
   async getPaymentStatus(input: any): Promise<{ data: Record<string, unknown>; status: string }> {

@@ -81,8 +81,9 @@ npx medusa develop   # runs on :9000 — keep this terminal open
 ```bash
 cd apps\backend
 node src/seed/merge-product-variants.mjs       # import Natco products → 290→238 consolidated
-node src/seed/reassign-natco-categories.mjs     # map products to seed categories
-node src/seed/assign-collections-v2.mjs          # map products to collections
+node src/seed/migrate-to-natco-categories.mjs   # map products to new category tree
+node src/seed/assign-categories-from-titles.mjs # title-based category assignment
+node src/seed/fix-category-handles.mjs          # fix old category handles
 node src/seed/set-inventory.mjs                  # enable stock (disable inventory mgmt)
 ```
 
@@ -194,9 +195,10 @@ Admin auth: `admin@example.com` / `password123`.
 ```
 1. npx medusa exec src/migration-scripts/initial-data-seed.ts   # infra
 2. node src/seed/merge-product-variants.mjs   # weights -> variants (290→238)
-3. node src/seed/reassign-natco-categories.mjs   # categories from CSV
-4. node src/seed/assign-collections-v2.mjs       # collections from CSV
-5. node src/seed/set-inventory.mjs               # disable inventory mgmt
+3. node src/seed/migrate-to-natco-categories.mjs   # map products to new category tree
+4. node src/seed/assign-categories-from-titles.mjs   # title-based category assignment
+5. node src/seed/fix-category-handles.mjs   # fix old category handles
+6. node src/seed/set-inventory.mjs               # disable inventory mgmt
 ```
 
 Step 1 uses `medusa exec` (Medusa TS runtime). Steps 2-5 use plain `node`
@@ -209,7 +211,10 @@ Detailed pipeline docs: `apps/backend/src/seed/README.md`.
 | File | Purpose |
 |------|---------|
 | `AGENTS.md` | This file — repo setup, commands, gotchas |
+| `SETUP.md` | **Start-to-finish setup** — single document for new dev machines |
 | `Documentation/customer-journeys-and-features.md` | Gherkin E2E scenarios + user story backlog |
+| `Documentation/QA-VALIDATION-WORKBOOK.md` | **QA manual test workbook** — step-by-step customer journey validation with web/mobile checkboxes |
+| `tests/test-plan.md` | Automated test plan — 10 workflows mapped to test files |
 | `data-design/IMPLEMENTATION-PLAN.md` | Epics, user stories, implementation order, script index |
 | `data-design/QA-GATES.md` | 5-phase QA gate checklist |
 | `Implementation/README.md` | Implementation tracker, project structure, brand colors |
@@ -506,6 +511,66 @@ unit pricing, or best-value indicators because variant metadata is null.
 
 ### G13. Customer invoice generation
 
+### G14. Payment refunds
+**Status:** Provider supports refund flow — `refundPayment` method in `stripe-gbp-provider.ts`. 
+Storefront integration not yet built.
+
+The custom Stripe provider already handles the backend refund path:
+- `refundPayment({ amount, data })` → calls `stripe.refunds.create()` with the correct pence amount
+- PaymentIntent ID is retrieved from `data.id` or `data.stripe_pi_id`
+- Charge-already-refunded errors are caught gracefully
+
+**Remaining work:**
+- Build a storefront admin/account flow to trigger refunds (cancel order, return items)
+- Build a Medusa workflow that calls `refundPayment` on the payment session
+- Wire up a refund notification email to the customer
+- Add refund amount validation (cannot refund more than charged)
+
+**Depends on:** G10 (Stripe keys), G1 (email, for refund notification)
+**Effort:** 2-3h for backend workflow + 1-2h for storefront UI
+
+### G15. Order modification until last window + weight-based variable charging
+**Status:** Not started — post-launch phase
+
+**Scenario 1 — Order modification:** Customer places an order with a fixed cost. 
+During the packing window (e.g., 2 hours before delivery), the packer may find that
+a product is out of stock or the available weight differs from what was ordered.
+The order needs to be modified and the payment adjusted WITHOUT creating a new
+transaction:
+
+| Step | Description |
+|------|-------------|
+| Packer reviews order | Marks items as "substituted", "partial", or "unavailable" |
+| Price recalculation | Order total is recalculated based on actual packed items |
+| Payment adjustment | Existing Stripe PaymentIntent is updated with new amount via `updatePayment` |
+| Customer notification | Customer receives updated order summary with new total |
+
+**Scenario 2 — Weight-based variable pricing:** For products sold by weight 
+(e.g., loose vegetables, fresh paneer by kg), the customer pays an estimated 
+amount at checkout. The actual weight is confirmed during packing, and the 
+final charge is applied to the same PaymentIntent:
+
+| Step | Description |
+|------|-------------|
+| Customer orders 1kg paneer | Estimated charge: £8.00 (1000g × £0.80/100g) |
+| Packer weighs actual paneer | Actual weight: 1050g |
+| Payment updated | PaymentIntent amount updated to £8.40 (1050g × £0.80/100g) |
+| Capture | Payment is captured at the actual weight-based amount |
+
+**Provider capability:** `updatePayment({ amount, data })` already supports 
+updating the PaymentIntent amount before capture. The Stripe PaymentIntent 
+can be updated up until it's captured.
+
+**Remaining work:**
+- Build a "packing dashboard" UI for packers to modify orders
+- Build a Medusa workflow for order modification + payment adjustment
+- Add weight-based variant type to product model (`variant.type = "weight"`)
+- Configure `capture: false` (manual capture) so payments can be adjusted before capture
+- Build weight verification flow (packer enters actual weight → recalculation)
+
+**Depends on:** G10 (Stripe), G11 (variant consolidation for weight variants)
+**Effort:** 5-8h for packing UI + 3-4h for workflow + 2h for weight-based variant support
+
 ---
 
 ## Pre-Go-Live Defects
@@ -613,6 +678,40 @@ Payment-to-Stripe flow is correct:
 - Stripe PaymentIntent receives pence (Stripe expects minor units)
 - Frontend pay button shows `formatAmount(total / 100)` = displayed in GBP
 - All three (frontend, backend, Stripe) now charge the same amount
+
+### D9. Product Detail Page — handle missing from API fields
+**Status:** Fixed
+Root cause: `listProducts()` and `fetchProductsByIds()` in `src/lib/data/products.ts`
+did not include `handle` in the API `fields` parameter. Without `handle`, all product
+card links (desktop and mobile) rendered as `/products/undefined`, making it impossible
+to navigate from category/store pages to the Product Detail Page.
+
+Fix: Added `handle` to the `fields` parameter in all three occurrences:
+`products.ts:61`, `products.ts:190`, `products.ts:228`.
+
+**Impact of fix:**
+- Desktop: `<LocalizedClientLink href={`/products/${product.handle}`}>` now resolves correctly
+- Mobile: Same fix in mobile layout (added in this defect)
+- Category pages, store page, and search results all navigable to PDP
+- Breadcrumbs on PDP correctly link back to parent categories
+
+### D10. Order confirmation page — blank after successful payment
+**Status:** Fix in progress
+After a successful Stripe payment, the user is redirected to
+`/order/{order_id}/confirmed` but sees a blank page with "Page not found"
+and "Go to frontpage" link. The order WAS created (ID exists in URL) but
+the confirmation page's `retrieveOrder()` call fails.
+
+Root cause: `retrieveOrder()` in `orders.ts` uses `cache: "force-cache"` which
+serves a stale/empty cached response for newly created orders. The Medusa
+store API's orders endpoint also requires the publishable key for guest orders,
+and the SDK client may not include it correctly in cached requests.
+
+Fix applied:
+- `orders.ts:26`: Changed `cache: "force-cache"` → `cache: "no-store"` for order retrieve
+- `checkout.feature`: Added order confirmation scenarios
+- `payment-flow.feature`: Complete payment→confirmation journey documented (10 scenarios)
+- `payment-flow.steps.ts`: Step definitions with real assertions
 
 ---
 

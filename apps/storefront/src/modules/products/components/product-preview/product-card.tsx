@@ -103,59 +103,61 @@ export default function ProductCard({
 
                 {/* MOBILE LAYOUT */}
                 <div className="flex sm:hidden items-center gap-3 p-3 w-full" data-testid="product-card">
-                    <div className="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-grey-10 border border-grey-10 relative">
-                        <Thumbnail thumbnail={product.thumbnail} images={product.images} size="square" />
-                        <WishlistButton productId={product.id} />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                        <span className="hidden" data-testid="product-full-title">{product.title}</span>
-                        {brand && (
-                            <span className="text-[10px] text-brand-saffron font-bold uppercase tracking-wider block mb-0.5 truncate">{brand}</span>
-                        )}
-                        <h3 data-testid="product-title" className="text-sm font-semibold text-grey-90 leading-tight line-clamp-2 text-center">{cleanTitle}</h3>
-                        <div className="flex items-center justify-between mt-1.5">
-                            <div>
+                    <LocalizedClientLink href={`/products/${product.handle}`} className="flex items-center gap-3 flex-1 min-w-0 group">
+                        <div className="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-grey-10 border border-grey-10 relative">
+                            <Thumbnail thumbnail={product.thumbnail} images={product.images} size="square" />
+                            <WishlistButton productId={product.id} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <span className="hidden" data-testid="product-full-title">{product.title}</span>
+                            {brand && (
+                                <span className="text-[10px] text-brand-saffron font-bold uppercase tracking-wider block mb-0.5 truncate">{brand}</span>
+                            )}
+                            <h3 data-testid="product-title" className="text-sm font-semibold text-grey-90 leading-tight line-clamp-2">{cleanTitle}</h3>
+                            <div className="flex items-center mt-1.5">
                                 <span className="text-sm font-bold text-grey-90">{formatPrice(firstVariant?.price || 0)}</span>
                                 {weightText && <span className="text-[11px] text-grey-50 ml-2">{weightText}</span>}
                                 {hasVariants && <span className="text-[11px] text-grey-50 ml-2">{variantTitles.length} sizes</span>}
                             </div>
-                            {hasVariants ? (
-                                <button
-                                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShowOverlay(true) }}
-                                    className="text-xs font-semibold text-brand-orange border border-brand-orange rounded-lg px-3 py-1.5 hover:bg-brand-orange hover:text-white active:scale-95 transition-all flex-shrink-0"
-                                >
-                                    Options
-                                </button>
-                            ) : qtyCounts[firstVariant?.id || ''] > 0 ? (
-                                <div className="flex items-center border border-grey-30 rounded-lg bg-white shadow-sm h-8 flex-shrink-0" data-testid="qty-controls">
-                                    <button
-                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(firstVariant.id, -1) }}
-                                        className="w-8 h-full flex items-center justify-center text-sm font-bold text-grey-50 hover:bg-grey-10 active:bg-grey-20 transition-colors"
-                                        data-testid="qty-decrement"
-                                    >
-                                        −
-                                    </button>
-                                    <span className="w-7 text-center text-xs font-bold text-grey-90 select-none" data-testid="qty-count">
-                                        {qtyCounts[firstVariant.id]}
-                                    </span>
-                                    <button
-                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(firstVariant.id, 1) }}
-                                        className="w-8 h-full flex items-center justify-center text-sm font-bold text-brand-orange hover:bg-brand-orange/10 active:bg-brand-orange/20 transition-colors"
-                                        data-testid="qty-increment"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                            ) : (
-                                <button
-                                    onClick={handleAdd}
-                                    className="text-xs font-semibold text-white bg-brand-orange rounded-lg px-3 py-1.5 hover:bg-brand-orange-dark active:scale-95 transition-all flex-shrink-0"
-                                    data-testid="add-to-cart-btn"
-                                >
-                                    Add
-                                </button>
-                            )}
                         </div>
+                    </LocalizedClientLink>
+                    <div className="flex-shrink-0">
+                        {hasVariants ? (
+                            <button
+                                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShowOverlay(true) }}
+                                className="text-xs font-semibold text-brand-orange border border-brand-orange rounded-lg px-3 py-1.5 hover:bg-brand-orange hover:text-white active:scale-95 transition-all"
+                            >
+                                Options
+                            </button>
+                        ) : qtyCounts[firstVariant?.id || ''] > 0 ? (
+                            <div className="flex items-center border border-grey-30 rounded-lg bg-white shadow-sm h-8" data-testid="qty-controls">
+                                <button
+                                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(firstVariant.id, -1) }}
+                                    className="w-8 h-full flex items-center justify-center text-sm font-bold text-grey-50 hover:bg-grey-10 active:bg-grey-20 transition-colors"
+                                    data-testid="qty-decrement"
+                                >
+                                    −
+                                </button>
+                                <span className="w-7 text-center text-xs font-bold text-grey-90 select-none" data-testid="qty-count">
+                                    {qtyCounts[firstVariant.id]}
+                                </span>
+                                <button
+                                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(firstVariant.id, 1) }}
+                                    className="w-8 h-full flex items-center justify-center text-sm font-bold text-brand-orange hover:bg-brand-orange/10 active:bg-brand-orange/20 transition-colors"
+                                    data-testid="qty-increment"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        ) : (
+                            <button
+                                onClick={handleAdd}
+                                className="text-xs font-semibold text-white bg-brand-orange rounded-lg px-3 py-1.5 hover:bg-brand-orange-dark active:scale-95 transition-all z-10 relative"
+                                data-testid="add-to-cart-btn"
+                            >
+                                Add
+                            </button>
+                        )}
                     </div>
                 </div>
 

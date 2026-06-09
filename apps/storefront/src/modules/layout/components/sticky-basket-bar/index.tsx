@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { formatGBP } from "@lib/util/format-price"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
@@ -12,26 +12,23 @@ export default function StickyBasketBar() {
   const [count, setCount] = useState(0)
   const [visible, setVisible] = useState(false)
 
-  useEffect(() => {
-    const handler = () => {
-      // Read cart state from localStorage or listen to custom events
-      const checkCart = async () => {
-        try {
-          const res = await fetch("/store/carts/me", { headers: { "content-type": "application/json" } })
-          if (res.ok) {
-            const { cart } = await res.json()
-            setTotal(cart?.item_total || 0)
-            setCount(cart?.items?.length || 0)
-            setVisible((cart?.items?.length || 0) > 0)
-          }
-        } catch {}
+  const refreshCart = useCallback(async () => {
+    try {
+      const { retrieveCart } = await import("@lib/data/cart")
+      const cart = await retrieveCart()
+      if (cart) {
+        setTotal(cart.item_total || 0)
+        setCount(cart.items?.length || 0)
+        setVisible((cart.items?.length || 0) > 0)
       }
-      checkCart()
-    }
-    handler()
-    window.addEventListener("cart-updated", handler)
-    return () => window.removeEventListener("cart-updated", handler)
+    } catch {}
   }, [])
+
+  useEffect(() => {
+    refreshCart()
+    window.addEventListener("cart-updated", refreshCart)
+    return () => window.removeEventListener("cart-updated", refreshCart)
+  }, [refreshCart])
 
   if (!visible) return null
 

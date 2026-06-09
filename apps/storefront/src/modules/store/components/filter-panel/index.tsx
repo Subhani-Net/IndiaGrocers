@@ -36,16 +36,21 @@ export default function FilterPanel({
     searchParams.get("inStock") === "true"
   )
 
+  const minPriceFromUrl = searchParams.get("minPrice") || ""
+  const maxPriceFromUrl = searchParams.get("maxPrice") || ""
+  const brandFromUrl = searchParams.get("brand") || ""
+  const weightFromUrl = searchParams.get("weight") || ""
+  const dietaryFromUrl = searchParams.get("dietary") || ""
+  const inStockFromUrl = searchParams.get("inStock") === "true"
+
   useEffect(() => {
-    setMinPrice(searchParams.get("minPrice") || "")
-    setMaxPrice(searchParams.get("maxPrice") || "")
-    setBrand(searchParams.get("brand") || "")
-    setWeight(searchParams.get("weight") || "")
-    setDietary(
-      (searchParams.get("dietary") || "").split(",").filter(Boolean)
-    )
-    setInStockOnly(searchParams.get("inStock") === "true")
-  }, [searchParams])
+    setMinPrice(minPriceFromUrl)
+    setMaxPrice(maxPriceFromUrl)
+    setBrand(brandFromUrl)
+    setWeight(weightFromUrl)
+    setDietary(dietaryFromUrl.split(",").filter(Boolean))
+    setInStockOnly(inStockFromUrl)
+  }, [minPriceFromUrl, maxPriceFromUrl, brandFromUrl, weightFromUrl, dietaryFromUrl, inStockFromUrl])
 
   const createQueryString = useCallback(
     (updates: Record<string, string | null>) => {

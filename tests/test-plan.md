@@ -587,3 +587,51 @@ list by target date.
 | Phase C | 2 enhanced specs | ~15 |
 | Phase D | 2 admin Node.js scripts | ~20 |
 | **Total** | **11 files** | **~115 tests** |
+
+---
+
+## Workflow W09 — Payment Refunds (G14)
+
+**Description:** Admin/customer initiates refund for a completed order. Stripe
+PaymentIntent is refunded through the custom `stripe-gbp-provider`.
+
+**Status:** Backend provider ready. Storefront UI + workflow not built.
+
+**Steps & Forks**
+1. Initiate refund
+   - Full refund: entire order amount returned
+   - Partial refund: single item amount returned
+2. Validate refund amount ≤ original charge
+3. Stripe PaymentIntent refunded via `stripe.refunds.create()`
+4. Refund status tracked in payment session data
+5. Idempotent — charge-already-refunded returns gracefully
+6. Refund notification email sent to customer
+
+**Depends on:** G10 (Stripe), G1 (email)
+
+---
+
+## Workflow W10 — Order Modification + Weight-Based Charging (G15)
+
+**Description:** Orders can be modified during the packing window. Items may be
+substituted or marked unavailable. Weight-based products are charged at actual
+weight. Payment is adjusted on the SAME Stripe PaymentIntent.
+
+**Status:** Not started. Provider's `updatePayment` ready.
+
+**Steps & Forks**
+1. Packer reviews order during packing window
+2. Marks items as substituted, partial, or unavailable
+3. For weight-based products, enters actual weight
+4. Order total recalculated
+5. Stripe PaymentIntent updated via `stripe.paymentIntents.update()`
+6. No new payment authorization required from customer
+7. Customer receives updated order summary
+8. Payment captured at final adjusted amount after packing confirmed
+9. Packing window enforcement — no modifications after deadline
+
+**Depends on:** G10 (Stripe), G11 (variant consolidation)
+
+**Feature files:**
+- `e2e/features/checkout/refunds.feature`
+- `e2e/features/checkout/order-modification.feature`

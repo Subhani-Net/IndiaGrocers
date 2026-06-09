@@ -106,6 +106,26 @@ test.describe('Checkout and Order Confirmation', () => {
     await And('the order confirmation page is displayed', null, { page }); 
   });
 
+  test('Order confirmation page shows success with order details', { tag: ['@W03', '@W05', '@checkout', '@D10', '@regression'] }, async ({ Given, Then, And, page }) => { 
+    await Given('the user has just placed an order', null, { page }); 
+    await Then('a green checkmark is displayed', null, { page }); 
+    await And('a "Thank you" message is displayed', null, { page }); 
+    await And('the confirmation page displays the order number', null, { page }); 
+    await And('a delivery ETA is displayed', null, { page }); 
+    await And('a delivery address card is displayed', null, { page }); 
+    await And('a payment method card is displayed', null, { page }); 
+    await And('the list of items ordered with quantities is displayed', null, { page }); 
+    await And('the order summary with subtotal, shipping, and total is displayed', null, { page }); 
+    await And('a "Continue Shopping" button is displayed', null, { page }); 
+  });
+
+  test('Order confirmation page is not a blank 404 page', { tag: ['@W03', '@W05', '@checkout', '@D10', '@regression'] }, async ({ Given, Then, And, page }) => { 
+    await Given('the user has just placed an order', null, { page }); 
+    await Then('the page does not display a 404 error', null, { page }); 
+    await And('the page does not display "Page not found"', null, { page }); 
+    await And('the page displays meaningful order content', null, { page }); 
+  });
+
 });
 
 // == technical section ==
@@ -133,4 +153,6 @@ const bddFileData = [ // bdd-data-start
   {"pwTestLine":91,"pickleLine":98,"tags":["@W03","@W05","@checkout"],"steps":[{"pwStepLine":92,"gherkinStepLine":99,"keywordType":"Context","textWithKeyword":"Given the user is on the order confirmation page","stepMatchArguments":[]},{"pwStepLine":93,"gherkinStepLine":100,"keywordType":"Outcome","textWithKeyword":"Then a \"Continue Shopping\" button is displayed","stepMatchArguments":[{"group":{"start":2,"value":"\"Continue Shopping\"","children":[{"start":3,"value":"Continue Shopping","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]}]},
   {"pwTestLine":96,"pickleLine":103,"tags":["@W03","@W05","@checkout","@G13"],"steps":[{"pwStepLine":97,"gherkinStepLine":104,"keywordType":"Context","textWithKeyword":"Given an order has been placed","stepMatchArguments":[]},{"pwStepLine":98,"gherkinStepLine":105,"keywordType":"Outcome","textWithKeyword":"Then an order confirmation email is sent to the customer","stepMatchArguments":[]}]},
   {"pwTestLine":101,"pickleLine":107,"tags":["@W03","@W05","@checkout"],"steps":[{"pwStepLine":102,"gherkinStepLine":108,"keywordType":"Context","textWithKeyword":"Given the user is not signed in","stepMatchArguments":[]},{"pwStepLine":103,"gherkinStepLine":109,"keywordType":"Context","textWithKeyword":"And the user has items in their basket","stepMatchArguments":[]},{"pwStepLine":104,"gherkinStepLine":110,"keywordType":"Action","textWithKeyword":"When the user completes the checkout flow","stepMatchArguments":[]},{"pwStepLine":105,"gherkinStepLine":111,"keywordType":"Outcome","textWithKeyword":"Then the order is placed successfully","stepMatchArguments":[]},{"pwStepLine":106,"gherkinStepLine":112,"keywordType":"Outcome","textWithKeyword":"And the order confirmation page is displayed","stepMatchArguments":[]}]},
+  {"pwTestLine":109,"pickleLine":115,"tags":["@W03","@W05","@checkout","@D10","@regression"],"steps":[{"pwStepLine":110,"gherkinStepLine":116,"keywordType":"Context","textWithKeyword":"Given the user has just placed an order","stepMatchArguments":[]},{"pwStepLine":111,"gherkinStepLine":117,"keywordType":"Outcome","textWithKeyword":"Then a green checkmark is displayed","stepMatchArguments":[]},{"pwStepLine":112,"gherkinStepLine":118,"keywordType":"Outcome","textWithKeyword":"And a \"Thank you\" message is displayed","stepMatchArguments":[{"group":{"start":2,"value":"\"Thank you\"","children":[{"start":3,"value":"Thank you","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]},{"pwStepLine":113,"gherkinStepLine":119,"keywordType":"Outcome","textWithKeyword":"And the confirmation page displays the order number","stepMatchArguments":[]},{"pwStepLine":114,"gherkinStepLine":120,"keywordType":"Outcome","textWithKeyword":"And a delivery ETA is displayed","stepMatchArguments":[]},{"pwStepLine":115,"gherkinStepLine":121,"keywordType":"Outcome","textWithKeyword":"And a delivery address card is displayed","stepMatchArguments":[]},{"pwStepLine":116,"gherkinStepLine":122,"keywordType":"Outcome","textWithKeyword":"And a payment method card is displayed","stepMatchArguments":[]},{"pwStepLine":117,"gherkinStepLine":123,"keywordType":"Outcome","textWithKeyword":"And the list of items ordered with quantities is displayed","stepMatchArguments":[]},{"pwStepLine":118,"gherkinStepLine":124,"keywordType":"Outcome","textWithKeyword":"And the order summary with subtotal, shipping, and total is displayed","stepMatchArguments":[]},{"pwStepLine":119,"gherkinStepLine":125,"keywordType":"Outcome","textWithKeyword":"And a \"Continue Shopping\" button is displayed","stepMatchArguments":[{"group":{"start":2,"value":"\"Continue Shopping\"","children":[{"start":3,"value":"Continue Shopping","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]}]},
+  {"pwTestLine":122,"pickleLine":128,"tags":["@W03","@W05","@checkout","@D10","@regression"],"steps":[{"pwStepLine":123,"gherkinStepLine":129,"keywordType":"Context","textWithKeyword":"Given the user has just placed an order","stepMatchArguments":[]},{"pwStepLine":124,"gherkinStepLine":130,"keywordType":"Outcome","textWithKeyword":"Then the page does not display a 404 error","stepMatchArguments":[]},{"pwStepLine":125,"gherkinStepLine":131,"keywordType":"Outcome","textWithKeyword":"And the page does not display \"Page not found\"","stepMatchArguments":[{"group":{"start":26,"value":"\"Page not found\"","children":[{"start":27,"value":"Page not found","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]},{"pwStepLine":126,"gherkinStepLine":132,"keywordType":"Outcome","textWithKeyword":"And the page displays meaningful order content","stepMatchArguments":[]}]},
 ]; // bdd-data-end
