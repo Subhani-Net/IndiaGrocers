@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from "react"
 import { formatGBP, getWeightLabel } from "@lib/util/format-price"
 import { addToCart } from "@lib/data/cart"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { getImageUrl } from "@lib/util/images"
 import BasketProgressBar from "@modules/cart/components/basket-progress-bar"
 
 interface ShopItem {
@@ -127,7 +128,7 @@ export default function WeeklyShopPage({
                       <div className="flex items-center gap-3">
                         {item.thumbnail && (
                           <img
-                            src={item.thumbnail}
+                            src={getImageUrl(item.thumbnail)}
                             alt=""
                             className="w-12 h-12 rounded-lg object-cover bg-stone-100 flex-shrink-0"
                           />

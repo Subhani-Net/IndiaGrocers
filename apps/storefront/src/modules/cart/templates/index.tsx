@@ -3,6 +3,7 @@
 import { useMemo, useCallback } from "react"
 import { HttpTypes } from "@medusajs/types"
 import { updateLineItem } from "@lib/data/cart"
+import { InventoryMap } from "@lib/data/inventory"
 import ItemsTemplate from "./items"
 import Summary from "./summary"
 import EmptyCartMessage from "../components/empty-cart-message"
@@ -15,9 +16,11 @@ import CategoryReminderStrip from "@modules/cart/components/category-reminder-st
 const CartTemplate = ({
   cart,
   customer,
+  inventoryMap,
 }: {
   cart: HttpTypes.StoreCart | null
   customer: HttpTypes.StoreCustomer | null
+  inventoryMap?: InventoryMap
 }) => {
   const itemCount = cart?.items?.length ?? 0
   const itemTotal = cart?.item_total ?? 0
@@ -149,7 +152,7 @@ const CartTemplate = ({
                   />
                 ))}
 
-                <ItemsTemplate cart={cart ?? undefined} />
+                <ItemsTemplate cart={cart ?? undefined} inventoryMap={inventoryMap} />
 
                 {/* Category Reminder Strip */}
                 <CategoryReminderStrip

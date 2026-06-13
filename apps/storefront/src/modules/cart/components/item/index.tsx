@@ -3,6 +3,7 @@
 import { Table, Text, clx } from "@medusajs/ui"
 import { updateLineItem } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
+import { InventoryMap } from "@lib/data/inventory"
 import CartItemSelect from "@modules/cart/components/cart-item-select"
 import ErrorMessage from "@modules/checkout/components/error-message"
 import DeleteButton from "@modules/common/components/delete-button"
@@ -18,6 +19,7 @@ type ItemProps = {
   item: HttpTypes.StoreCartLineItem
   type?: "full" | "preview"
   currencyCode: string
+  inventoryMap?: InventoryMap
 }
 
 function extractBrand(
@@ -36,7 +38,7 @@ function extractBrand(
   return { brand: null, cleanTitle: title }
 }
 
-const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
+const Item = ({ item, type = "full", currencyCode, inventoryMap }: ItemProps) => {
   const [updating, setUpdating] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -61,7 +63,8 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
 
   const maxQtyFromInventory = 10
   const maxQuantity = item.variant?.manage_inventory ? 10 : maxQtyFromInventory
-  const isOOS = item.variant?.manage_inventory && (item.variant?.inventory_quantity || 0) <= 0
+  const availability = inventoryMap?.[item.variant_id]?.availability
+  const isOOS = item.variant?.manage_inventory && availability != null && availability <= 0
 
   return (
     <Table.Row className="w-full" data-testid="product-row">

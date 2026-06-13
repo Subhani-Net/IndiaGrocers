@@ -1,6 +1,6 @@
 /**
  * PAYMENT DEBUG SUBSCRIBER
- *
+ * 
  * Captures all payment events and logs amounts to both console and a log file.
  * Log file: apps/backend/payment-debug.log
  *

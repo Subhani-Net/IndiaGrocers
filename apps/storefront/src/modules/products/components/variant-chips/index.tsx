@@ -15,13 +15,20 @@ type VariantChip = {
   inventoryQty: number
 }
 
-function buildChips(variants: any[]): VariantChip[] {
+function buildChips(
+  variants: any[],
+  inventoryMap?: Record<string, { availability: number | null }>
+): VariantChip[] {
   return variants
     .map((v): VariantChip | null => {
       const meta = v.metadata || {}
       if (!meta.weight_value) return null
       const price = v.calculated_price?.calculated_amount ?? 0
-      const inStock = !v.manage_inventory || v.allow_backorder || (v.inventory_quantity || 0) > 0
+      const availability = inventoryMap?.[v.id]?.availability
+      const inStock = !v.manage_inventory
+        || v.allow_backorder
+        || availability == null
+        || availability > 0
       return {
         variant: {
           id: v.id,
@@ -39,7 +46,7 @@ function buildChips(variants: any[]): VariantChip[] {
         pricePerUnitLabel: meta.price_per_unit_label || "",
         isBestValue: meta.is_best_value || false,
         inStock,
-        inventoryQty: v.inventory_quantity || 0,
+        inventoryQty: availability ?? 0,
       }
     })
     .filter(Boolean) as VariantChip[]
@@ -49,14 +56,16 @@ interface VariantChipsProps {
   product: any
   selectedVariantId?: string
   onSelect: (variantId: string) => void
+  inventoryMap?: Record<string, { availability: number | null }>
 }
 
 export default function VariantChips({
   product,
   selectedVariantId,
   onSelect,
+  inventoryMap,
 }: VariantChipsProps) {
-  const chips = buildChips(product.variants || [])
+  const chips = buildChips(product.variants || [], inventoryMap)
 
   if (chips.length <= 1) return null
 

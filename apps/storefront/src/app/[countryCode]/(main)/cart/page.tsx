@@ -1,5 +1,6 @@
 import { retrieveCart } from "@lib/data/cart"
 import { retrieveCustomer } from "@lib/data/customer"
+import { getBulkInventory } from "@lib/data/inventory"
 import CartTemplate from "@modules/cart/templates"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
@@ -17,5 +18,10 @@ export default async function Cart() {
 
   const customer = await retrieveCustomer()
 
-  return <CartTemplate cart={cart} customer={customer} />
+  const variantIds = (cart?.items ?? [])
+    .map((item) => item.variant_id)
+    .filter(Boolean) as string[]
+  const inventoryMap = await getBulkInventory(variantIds)
+
+  return <CartTemplate cart={cart} customer={customer} inventoryMap={inventoryMap} />
 }

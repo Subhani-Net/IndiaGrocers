@@ -11,14 +11,26 @@ import {
  * US-05: Search System — auto-indexing
  */
 export default async function productIndexHandler({
-  event: { data },
+  event: { name, data },
   container,
 }: SubscriberArgs<{ id: string }>) {
   const productId = data.id
   if (!productId) return
 
-  const query = container.resolve("query" as any)
   const logger = container.resolve("logger" as any)
+
+  if (name === "product.deleted") {
+    try {
+      const index = await getProductsIndex()
+      await index.deleteDocument(productId)
+      logger.info(`[search] Deleted product from index: ${productId}`)
+    } catch (err: any) {
+      logger.warn(`[search] Failed to delete product ${productId}: ${err.message}`)
+    }
+    return
+  }
+
+  const query = container.resolve("query" as any)
 
   try {
     // Fetch the full product with all relations
@@ -101,5 +113,5 @@ export default async function productIndexHandler({
 }
 
 export const config: SubscriberConfig = {
-  event: ["product.created", "product.updated"] as any,
+  event: ["product.created", "product.updated", "product.deleted"] as any,
 }

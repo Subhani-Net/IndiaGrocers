@@ -1,15 +1,24 @@
 import repeat from "@lib/util/repeat"
 import { HttpTypes } from "@medusajs/types"
 import { Heading, Table } from "@medusajs/ui"
+import { InventoryMap } from "@lib/data/inventory"
 
 import Item from "@modules/cart/components/item"
 import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
 
 type ItemsTemplateProps = {
   cart?: HttpTypes.StoreCart
+  inventoryMap?: InventoryMap
 }
 
-const ItemsTemplate = ({ cart }: ItemsTemplateProps) => {
+const isOOS = (item: HttpTypes.StoreCartLineItem, inventoryMap?: InventoryMap) => {
+  if (!item.variant?.manage_inventory) return false
+  const availability = inventoryMap?.[item.variant_id]?.availability
+  if (availability == null) return false
+  return availability <= 0
+}
+
+const ItemsTemplate = ({ cart, inventoryMap }: ItemsTemplateProps) => {
   const items = cart?.items
   return (
     <div>
@@ -20,7 +29,7 @@ const ItemsTemplate = ({ cart }: ItemsTemplateProps) => {
       {items && items.length > 0 ? (
         <>
           {/* OOS items pulled to top with alert */}
-          {items.some((item) => item.variant?.manage_inventory && (item.variant?.inventory_quantity || 0) <= 0) && (
+          {items.some((item) => isOOS(item, inventoryMap)) && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4 text-sm text-red-700">
               Some items in your cart are currently out of stock. They will be removed before checkout.
             </div>
@@ -33,8 +42,8 @@ const ItemsTemplate = ({ cart }: ItemsTemplateProps) => {
             const inStockItems: HttpTypes.StoreCartLineItem[] = []
 
             for (const item of items.sort((a, b) => (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1)) {
-              const isOOS = item.variant?.manage_inventory && (item.variant?.inventory_quantity || 0) <= 0
-              if (isOOS) { oosItems.push(item) }
+              const itemIsOOS = isOOS(item, inventoryMap)
+              if (itemIsOOS) { oosItems.push(item) }
               else {
                 const cat = item.variant?.product?.categories?.[0]?.name || "Other"
                 if (!grouped[cat]) grouped[cat] = []
@@ -52,7 +61,7 @@ const ItemsTemplate = ({ cart }: ItemsTemplateProps) => {
                     <Table>
                       <Table.Body>
                         {oosItems.map((item) => (
-                          <Item key={item.id} item={item} currencyCode={cart?.currency_code} />
+                          <Item key={item.id} item={item} currencyCode={cart?.currency_code} inventoryMap={inventoryMap} />
                         ))}
                       </Table.Body>
                     </Table>
@@ -76,7 +85,7 @@ const ItemsTemplate = ({ cart }: ItemsTemplateProps) => {
                       </Table.Header>
                       <Table.Body>
                         {catItems.map((item) => (
-                          <Item key={item.id} item={item} currencyCode={cart?.currency_code} />
+                          <Item key={item.id} item={item} currencyCode={cart?.currency_code} inventoryMap={inventoryMap} />
                         ))}
                       </Table.Body>
                     </Table>

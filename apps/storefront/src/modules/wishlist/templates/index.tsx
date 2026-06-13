@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { getImageUrl } from "@lib/util/images"
 
 type WishlistProduct = {
   id: string
@@ -111,7 +112,7 @@ const WishlistTemplate = () => {
                   <div className="relative aspect-square overflow-hidden bg-grey-10">
                     {product.thumbnail ? (
                       <img
-                        src={product.thumbnail}
+                        src={getImageUrl(product.thumbnail)}
                         alt={product.title}
                         className="absolute inset-0 w-full h-full object-cover"
                       />

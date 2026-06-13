@@ -68,3 +68,4 @@ Thumbs.db
 # opencode config
 opencode.json
 /apps/backend/payment-debug.log
+scripts/data-pipeline/snapshot.json

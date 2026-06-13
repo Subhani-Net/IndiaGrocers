@@ -22,6 +22,7 @@ type GroceryPdpTemplateProps = {
   countryCode: string
   images: any[]
   breadcrumbs: BreadcrumbItem[]
+  inventoryMap?: Record<string, { availability: number | null }>
 }
 
 export default function GroceryProductTemplate({
@@ -30,6 +31,7 @@ export default function GroceryProductTemplate({
   countryCode,
   images,
   breadcrumbs,
+  inventoryMap,
 }: GroceryPdpTemplateProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -67,10 +69,12 @@ export default function GroceryProductTemplate({
         metadata: vMeta,
       } as any)
     : selectedVariant?.title || ""
+  const availability = inventoryMap?.[selectedVariant?.id]?.availability
   const inStock =
     !selectedVariant?.manage_inventory ||
     selectedVariant?.allow_backorder ||
-    (selectedVariant?.inventory_quantity || 0) > 0
+    availability == null ||
+    availability > 0
 
   // Extract brand
   const brand =
@@ -158,6 +162,7 @@ export default function GroceryProductTemplate({
               product={product}
               selectedVariantId={selectedVariantId}
               onSelect={handleVariantSelect}
+              inventoryMap={inventoryMap}
             />
 
             {/* Price Display */}

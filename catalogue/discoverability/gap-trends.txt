@@ -1,0 +1,27 @@
+======================================================================
+  DISCOVERABILITY TRENDS
+  Current:  2026-06-11T15:06:26.390Z
+  Previous: none (first run)
+======================================================================
+
+First run — no previous data to compare. Save current report as baseline:
+  cp gap-report.json gap-report.prev.json
+
+Top search gaps in this baseline:
+  "idli rice" — 1/12 overlap — missing: Shan Pilau Rice Mix | TRS Ground Rice
+  "mamra basmati" — 2/12 overlap — missing: Tilda Pure Basmati | Tilda Pure Basmati 10kg
+  "masoor dal" — 0/12 overlap — missing: Haldiram's Moong Dal | Haldiram's Moong Dal 400g
+  "ragi flour" — 2/12 overlap — missing: TRS Pure Gram Flour | Natco - Chapati Flour Medium 1.5kg
+  "kohinoor basmati" — 2/12 overlap — missing: Tilda Pure Basmati | Tilda Pure Basmati 10kg
+  "black eyed beans" — 2/12 overlap — missing: Natco - Black Eye Beans 2kg | Natco - Black Eye Beans 500g
+  "white kidney beans" — 2/12 overlap — missing: TRS Red Kidney Beans | Natco - Red Kidney Beans 1kg
+  "alubia beans" — 2/12 overlap — missing: TRS Moth Beans | TRS Mung Beans
+  "rosemary jar" — 1/12 overlap — missing: Natco - Ajwan Seeds Jar 100g | Natco - Amchoor Powder Jar 100g
+  "pappadoms black pepper" — 1/12 overlap — missing: TRS Coarse Black Pepper | Natco - Black Pepper Coarse 100g
+
+ZERO-OVERLAP SEARCHES (1 — investigate immediately):
+  "masoor dal" — expected 12, got 0
+
+======================================================================
+  Baseline: cp catalogue/discoverability/gap-report.json catalogue/discoverability/gap-report.prev.json
+======================================================================

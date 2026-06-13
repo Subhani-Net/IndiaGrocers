@@ -1,0 +1,469 @@
+{
+  "finalMap": {
+    "rice-quinoa": "basmati-rice",
+    "sugar": "jaggery-gur",
+    "tinned-coconut": "coconut-milk",
+    "flavoured-nuts-snacks": "roasted-peanuts-chana",
+    "flavoured-nuts": "roasted-peanuts-chana",
+    "coconut-products": "coconut-oil",
+    "all-essentials": "ginger-garlic-paste",
+    "dried-fruit": "mustard-seeds-rai",
+    "soya-products": "rajma-kidney-beans",
+    "tinned-fruit": "amchur-mango-powder",
+    "instant-noodles": "garam-masala"
+  },
+  "lowConsensus": [
+    {
+      "oc": "tinned-lentils-beans",
+      "sorted": [
+        [
+          "rajma-kidney-beans",
+          4
+        ],
+        [
+          "frozen-peas",
+          2
+        ],
+        [
+          "lobhia-black-eye-beans",
+          1
+        ]
+      ],
+      "total": 8
+    },
+    {
+      "oc": "dried-lentils-beans-peas",
+      "sorted": [
+        [
+          "rajma-kidney-beans",
+          20
+        ],
+        [
+          "masoor-dal-red-lentils",
+          8
+        ],
+        [
+          "toor-dal",
+          8
+        ]
+      ],
+      "total": 61
+    },
+    {
+      "oc": "seeds",
+      "sorted": [
+        [
+          "cumin-seeds-jeera",
+          8
+        ],
+        [
+          "masoor-dal-red-lentils",
+          2
+        ],
+        [
+          "brown-rice",
+          2
+        ]
+      ],
+      "total": 17
+    },
+    {
+      "oc": "ghee-oils",
+      "sorted": [
+        [
+          "sunflower-oil",
+          10
+        ],
+        [
+          "mustard-oil",
+          2
+        ],
+        [
+          "ghee-clarified-butter",
+          2
+        ]
+      ],
+      "total": 16
+    },
+    {
+      "oc": "flour-milk-powder",
+      "sorted": [
+        [
+          "chapatti-flour-atta",
+          5
+        ],
+        [
+          "besan-gram-flour",
+          4
+        ],
+        [
+          "fresh-ginger",
+          4
+        ]
+      ],
+      "total": 28
+    },
+    {
+      "oc": "flours",
+      "sorted": [
+        [
+          "besan-gram-flour",
+          5
+        ],
+        [
+          "suji-coarse-semolina",
+          5
+        ],
+        [
+          "chapatti-flour-atta",
+          3
+        ]
+      ],
+      "total": 23
+    },
+    {
+      "oc": "food-colourings-essences",
+      "sorted": [
+        [
+          "lime-lemon-pickle",
+          3
+        ],
+        [
+          "rooh-afza-rose-syrup",
+          3
+        ],
+        [
+          "turmeric-powder-haldi",
+          2
+        ]
+      ],
+      "total": 13
+    },
+    {
+      "oc": "teas-drinks",
+      "sorted": [
+        [
+          "coconut-oil",
+          2
+        ],
+        [
+          "garam-masala",
+          1
+        ]
+      ],
+      "total": 3
+    },
+    {
+      "oc": "spices-herbs",
+      "sorted": [
+        [
+          "turmeric-powder-haldi",
+          16
+        ],
+        [
+          "cumin-seeds-jeera",
+          12
+        ],
+        [
+          "red-chilli-powder-mirchi",
+          11
+        ]
+      ],
+      "total": 110
+    },
+    {
+      "oc": "spice-herb-jars",
+      "sorted": [
+        [
+          "turmeric-powder-haldi",
+          5
+        ],
+        [
+          "red-chilli-powder-mirchi",
+          4
+        ],
+        [
+          "cumin-seeds-jeera",
+          4
+        ]
+      ],
+      "total": 36
+    },
+    {
+      "oc": "chutneys-pickles-sauces",
+      "sorted": [
+        [
+          "mango-chutney",
+          6
+        ],
+        [
+          "mixed-pickle",
+          2
+        ],
+        [
+          "tamarind-paste-concentrate",
+          2
+        ]
+      ],
+      "total": 20
+    },
+    {
+      "oc": "tinned-vegetables",
+      "sorted": [
+        [
+          "cumin-seeds-jeera",
+          1
+        ],
+        [
+          "punjabi-north-indian",
+          1
+        ],
+        [
+          "loose-leaf-tea-chai",
+          1
+        ]
+      ],
+      "total": 4
+    },
+    {
+      "oc": "raw-nuts",
+      "sorted": [
+        [
+          "roasted-peanuts-chana",
+          9
+        ],
+        [
+          "whole-moong-green",
+          2
+        ],
+        [
+          "mixture-bombay-mix",
+          2
+        ]
+      ],
+      "total": 17
+    },
+    {
+      "oc": "pappadoms",
+      "sorted": [
+        [
+          "papad",
+          2
+        ],
+        [
+          "black-pepper-kali-mirch",
+          1
+        ],
+        [
+          "cumin-seeds-jeera",
+          1
+        ]
+      ],
+      "total": 7
+    },
+    {
+      "oc": "spice-blends-mixes",
+      "sorted": [
+        [
+          "garam-masala",
+          6
+        ],
+        [
+          "turmeric-powder-haldi",
+          2
+        ],
+        [
+          "red-chilli-powder-mirchi",
+          1
+        ]
+      ],
+      "total": 17
+    },
+    {
+      "oc": "namkeen-lentil-snacks",
+      "sorted": [
+        [
+          "butter-unsalted",
+          1
+        ],
+        [
+          "roasted-peanuts-chana",
+          1
+        ],
+        [
+          "toor-dal",
+          1
+        ]
+      ],
+      "total": 3
+    },
+    {
+      "oc": "shan-masalas",
+      "sorted": [
+        [
+          "garam-masala",
+          6
+        ],
+        [
+          "biryani-masala",
+          5
+        ],
+        [
+          "chicken-masala",
+          2
+        ]
+      ],
+      "total": 18
+    },
+    {
+      "oc": "mdh-masalas",
+      "sorted": [
+        [
+          "garam-masala",
+          2
+        ],
+        [
+          "kitchen-king-masala",
+          1
+        ],
+        [
+          "chole-chana-masala",
+          1
+        ]
+      ],
+      "total": 10
+    },
+    {
+      "oc": "haldiram-namkeens",
+      "sorted": [
+        [
+          "bhujia",
+          4
+        ],
+        [
+          "turmeric-powder-haldi",
+          4
+        ],
+        [
+          "moong-dal-yellow",
+          2
+        ]
+      ],
+      "total": 10
+    },
+    {
+      "oc": "tinned-sweets",
+      "sorted": [
+        [
+          "gulab-jamun-mix",
+          3
+        ],
+        [
+          "turmeric-powder-haldi",
+          2
+        ]
+      ],
+      "total": 5
+    },
+    {
+      "oc": "indian-biscuits",
+      "sorted": [
+        [
+          "biscuits-parle-g",
+          3
+        ],
+        [
+          "butter-salted",
+          1
+        ],
+        [
+          "ghee-clarified-butter",
+          1
+        ]
+      ],
+      "total": 7
+    },
+    {
+      "oc": "loose-leaf-tea",
+      "sorted": [
+        [
+          "loose-leaf-tea-chai",
+          4
+        ],
+        [
+          "masoor-dal-red-lentils",
+          2
+        ],
+        [
+          "garam-masala",
+          2
+        ]
+      ],
+      "total": 8
+    },
+    {
+      "oc": "drinks-syrups",
+      "sorted": [
+        [
+          "rooh-afza-rose-syrup",
+          2
+        ],
+        [
+          "amchur-mango-powder",
+          2
+        ]
+      ],
+      "total": 4
+    },
+    {
+      "oc": "bikaji-namkeens",
+      "sorted": [
+        [
+          "bhujia",
+          1
+        ],
+        [
+          "mixture-bombay-mix",
+          1
+        ],
+        [
+          "chapatti-flour-atta",
+          1
+        ]
+      ],
+      "total": 3
+    },
+    {
+      "oc": "health-drinks",
+      "sorted": [
+        [
+          "bournvita",
+          1
+        ],
+        [
+          "horlicks",
+          1
+        ],
+        [
+          "amchur-mango-powder",
+          1
+        ]
+      ],
+      "total": 3
+    },
+    {
+      "oc": "indian-candies",
+      "sorted": [
+        [
+          "amchur-mango-powder",
+          1
+        ],
+        [
+          "biscuits-parle-g",
+          1
+        ]
+      ],
+      "total": 2
+    }
+  ]
+}

@@ -64,7 +64,21 @@ const nextConfig = {
             },
           ]
         : []),
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "9000",
+        pathname: "/uploads/**",
+      },
     ],
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/uploads/:path*",
+        destination: "http://localhost:9000/uploads/:path*",
+      },
+    ]
   },
 }
 

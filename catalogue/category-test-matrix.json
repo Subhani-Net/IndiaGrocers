@@ -1,0 +1,456 @@
+[
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "staples-grains",
+    "expectedTitles": ["Basmati Rice", "Sona Masuri", "Idli Rice", "Popcorn", "Semolina", "Ground Rice", "Mamra Basmati", "Powa"],
+    "minExpected": 5,
+    "failureReason": "Staples & Grains parent category missing core rice/grain products"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "dal-lentils",
+    "expectedTitles": ["Toor Dal", "Chana Dal", "Moong Dal", "Masoor", "Urad", "Rajma", "Chick Peas", "Black Eye Beans", "Kidney Beans", "Soya Chunks"],
+    "minExpected": 6,
+    "failureReason": "Dal & Lentils parent category missing core lentil varieties"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "spices-whole",
+    "expectedTitles": ["Cumin Seeds", "Mustard Seeds", "Coriander Seeds", "Fennel Seeds", "Fenugreek", "Cardamom", "Cloves", "Cinnamon", "Black Pepper", "Bay Leaves"],
+    "minExpected": 6,
+    "failureReason": "Spices Whole parent category missing core whole spices"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "spice-blends",
+    "expectedTitles": ["Garam Masala", "Chana Masala", "Biryani Masala", "Tandoori Masala", "Chicken Masala", "Kitchen King"],
+    "minExpected": 4,
+    "failureReason": "Spice Blends parent category missing core masala blends"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "snacks-namkeen",
+    "expectedTitles": ["Haldiram", "Bikaji", "Bhujia", "Parle", "Britannia", "Papad", "Roasted"],
+    "minExpected": 4,
+    "failureReason": "Snacks & Namkeen category missing core snack brands"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "pickles-chutneys",
+    "expectedTitles": ["Pickle", "Chutney", "Tamarind", "Sauce"],
+    "minExpected": 3,
+    "failureReason": "Pickles & Chutneys category missing condiment products"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "beverages",
+    "expectedTitles": ["Tea", "Chai", "Coffee", "Horlicks", "Bournvita", "Rooh Afza", "Rose Syrup"],
+    "minExpected": 3,
+    "failureReason": "Beverages category missing tea/coffee/syrup products"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "oils-ghee",
+    "expectedTitles": ["Mustard Oil", "Sunflower Oil", "Coconut Oil", "Groundnut Oil", "Sesame Oil", "Ghee", "Almond Oil"],
+    "minExpected": 4,
+    "failureReason": "Oils & Ghee category missing cooking oil/ghee products"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "atta-flours",
+    "expectedTitles": ["Atta", "Chakki", "Ragi Flour", "Gram Flour", "Chapati Flour", "Rice Flour", "Besan", "Semolina Coarse", "Suji"],
+    "minExpected": 4,
+    "failureReason": "Atta & Flours category missing flour/atta varieties"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "condiments",
+    "expectedTitles": ["Coconut Milk", "Coconut Cream", "Ginger", "Garlic", "Jaggery", "Lemon Juice"],
+    "minExpected": 3,
+    "failureReason": "Condiments category missing cooking essentials"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "fresh",
+    "expectedTitles": ["Okra", "Crispy Fried Onion", "Phool Makhana", "Curry Leaves"],
+    "minExpected": 2,
+    "failureReason": "Fresh Produce category missing vegetable products"
+  },
+  {
+    "testGroup": "Category Page - Parent",
+    "searchTerm": "",
+    "categoryHandle": "household",
+    "expectedTitles": ["Garlic Paste", "Ginger Paste"],
+    "minExpected": 2,
+    "failureReason": "Household category missing ginger-garlic paste products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "basmati-rice",
+    "expectedTitles": ["Basmati Rice", "Tilda", "Kohinoor", "Daawat"],
+    "minExpected": 3,
+    "failureReason": "Basmati Rice subcategory missing branded basmati products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "toor-dal",
+    "expectedTitles": ["Toor Dal Oily", "Toor Dal Plain", "Daria Dal"],
+    "minExpected": 2,
+    "failureReason": "Toor Dal subcategory missing toor dal varieties"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "rajma-kidney-beans",
+    "expectedTitles": ["Kidney Beans", "Red Kidney", "White Kidney"],
+    "minExpected": 2,
+    "failureReason": "Rajma subcategory missing kidney bean products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "moong-dal-yellow",
+    "expectedTitles": ["Mung Dal Yellow"],
+    "minExpected": 1,
+    "failureReason": "Moong Dal Yellow subcategory missing moong dal"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "masoor-dal-red-lentils",
+    "expectedTitles": ["Brown Lentils", "Red Lentils"],
+    "minExpected": 1,
+    "failureReason": "Masoor Dal subcategory missing lentil products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "bhujia",
+    "expectedTitles": ["Haldiram", "Bikaji", "Bhujia Sev"],
+    "minExpected": 2,
+    "failureReason": "Bhujia subcategory missing namkeen snack products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "biryani-masala",
+    "expectedTitles": ["Biryani", "Shan", "Natco"],
+    "minExpected": 2,
+    "failureReason": "Biryani Masala subcategory missing biryani spice blends"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "cumin-seeds-jeera",
+    "expectedTitles": ["Cumin Seeds", "Cumin Ground"],
+    "minExpected": 2,
+    "failureReason": "Cumin Seeds subcategory missing cumin varieties"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "turmeric-powder-haldi",
+    "expectedTitles": ["Turmeric Powder", "Turmeric Powder Jar"],
+    "minExpected": 1,
+    "failureReason": "Turmeric Powder subcategory missing haldi products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "rooh-afza-rose-syrup",
+    "expectedTitles": ["Rose Syrup", "Rooh Afza"],
+    "minExpected": 1,
+    "failureReason": "Rooh Afza subcategory missing rose syrup products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "ghee-clarified-butter",
+    "expectedTitles": ["Ghee Pure"],
+    "minExpected": 1,
+    "failureReason": "Ghee subcategory missing clarified butter products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "coconut-oil",
+    "expectedTitles": ["Coconut", "Oil"],
+    "minExpected": 2,
+    "failureReason": "Coconut Oil subcategory missing coconut-based products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "sunflower-oil",
+    "expectedTitles": ["Oil", "Sesame Oil", "Groundnut"],
+    "minExpected": 2,
+    "failureReason": "Sunflower Oil subcategory missing cooking oils"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "mango-chutney",
+    "expectedTitles": ["Mango Chutney", "Chutney Sweet"],
+    "minExpected": 1,
+    "failureReason": "Mango Chutney subcategory missing chutney products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "papad",
+    "expectedTitles": ["Lijjat", "Urad", "Papad"],
+    "minExpected": 2,
+    "failureReason": "Papad subcategory missing Lijjat papad products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "ginger-garlic-paste",
+    "expectedTitles": ["Garlic Paste", "Ginger Paste", "Ginger Garlic"],
+    "minExpected": 2,
+    "failureReason": "Ginger-Garlic Paste subcategory missing paste products"
+  },
+  {
+    "testGroup": "Category Page - Leaf Subcategory",
+    "searchTerm": "",
+    "categoryHandle": "black-pepper-kali-mirch",
+    "expectedTitles": ["Black Pepper"],
+    "minExpected": 2,
+    "failureReason": "Black Pepper subcategory missing pepper products"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "rice",
+    "categoryHandle": "staples-grains",
+    "expectedTitles": ["Basmati Rice", "Sona Masuri", "Idli Rice", "Ground Rice", "Mamra Basmati", "Powa"],
+    "minExpected": 3,
+    "failureReason": "Searching 'rice' in Staples & Grains should return rice varieties"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "dal",
+    "categoryHandle": "dal-lentils",
+    "expectedTitles": ["Toor Dal", "Chana Dal", "Moong Dal", "Masoor", "Mung Dal"],
+    "minExpected": 3,
+    "failureReason": "Searching 'dal' in Dal & Lentils should return dal varieties"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "masala",
+    "categoryHandle": "spice-blends",
+    "expectedTitles": ["Garam Masala", "Chana Masala", "Biryani Masala", "Tandoori Masala", "Kitchen King Masala"],
+    "minExpected": 3,
+    "failureReason": "Searching 'masala' in Spice Blends should return masala products"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "haldiram",
+    "categoryHandle": "snacks-namkeen",
+    "expectedTitles": ["Haldiram's", "Bhujia", "Moong Dal"],
+    "minExpected": 2,
+    "failureReason": "Searching 'haldiram' in Snacks should return Haldiram products"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "turmeric",
+    "categoryHandle": "spices-ground",
+    "expectedTitles": ["Turmeric Powder"],
+    "minExpected": 1,
+    "failureReason": "Searching 'turmeric' in Spices Ground should return turmeric powder"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "atta",
+    "categoryHandle": "atta-flours",
+    "expectedTitles": ["Atta", "Chakki", "Chapati Flour"],
+    "minExpected": 2,
+    "failureReason": "Searching 'atta' in Atta & Flours should return atta products"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "pickle",
+    "categoryHandle": "pickles-chutneys",
+    "expectedTitles": ["Pickle"],
+    "minExpected": 2,
+    "failureReason": "Searching 'pickle' in Pickles should return pickle varieties"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "ghee",
+    "categoryHandle": "oils-ghee",
+    "expectedTitles": ["Ghee Pure"],
+    "minExpected": 2,
+    "failureReason": "Searching 'ghee' in Oils & Ghee should return ghee products"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "tea",
+    "categoryHandle": "beverages",
+    "expectedTitles": ["Tea", "Chai", "Tata Gold", "Wagh Bakri"],
+    "minExpected": 2,
+    "failureReason": "Searching 'tea' in Beverages should return tea products"
+  },
+  {
+    "testGroup": "Search Within Category Context",
+    "searchTerm": "coconut milk",
+    "categoryHandle": "condiments",
+    "expectedTitles": ["Coconut Milk", "Coconut Cream", "Coconut Milk Powder"],
+    "minExpected": 2,
+    "failureReason": "Searching 'coconut milk' in Condiments should return coconut products"
+  },
+  {
+    "testGroup": "Ordered Results - Position 1",
+    "searchTerm": "aashirvaad atta",
+    "expectedTitles": ["Aashirvaad Atta Select"],
+    "minExpected": 1,
+    "expectedOrder": [0],
+    "failureReason": "Brand + item search should rank exact match first"
+  },
+  {
+    "testGroup": "Ordered Results - Position 1",
+    "searchTerm": "tic tilda pure basmati",
+    "expectedTitles": ["Tilda Pure Basmati"],
+    "minExpected": 1,
+    "expectedOrder": [0],
+    "failureReason": "Tilda basmati should appear in position 0 for exact brand search"
+  },
+  {
+    "testGroup": "Ordered Results - Position 1",
+    "searchTerm": "mdh kitchen king",
+    "expectedTitles": ["MDH Kitchen King Masala"],
+    "minExpected": 1,
+    "expectedOrder": [0],
+    "failureReason": "MDH Kitchen King should be top result for exact product search"
+  },
+  {
+    "testGroup": "Ordered Results - Position 1",
+    "searchTerm": "shan chicken biryani",
+    "expectedTitles": ["Shan Special Chicken Biryani"],
+    "minExpected": 1,
+    "expectedOrder": [0],
+    "failureReason": "Shan Chicken Biryani should be top result for exact product search"
+  },
+  {
+    "testGroup": "Ordered Results - Position 1",
+    "searchTerm": "haldiram aloo bhujia",
+    "expectedTitles": ["Haldiram's Aloo Bhujia"],
+    "minExpected": 1,
+    "expectedOrder": [0],
+    "failureReason": "Haldiram's Aloo Bhujia should be top result"
+  },
+  {
+    "testGroup": "Ordered Results - Position 1",
+    "searchTerm": "maggi noodles",
+    "expectedTitles": ["Maggi 2-Minute Noodles"],
+    "minExpected": 1,
+    "expectedOrder": [0],
+    "failureReason": "Maggi noodles should be top result"
+  },
+  {
+    "testGroup": "Ordered Results - Position 1",
+    "searchTerm": "parle g biscuits",
+    "expectedTitles": ["Parle-G Glucose Biscuits"],
+    "minExpected": 1,
+    "expectedOrder": [0],
+    "failureReason": "Parle-G should be top result for biscuit search"
+  },
+  {
+    "testGroup": "Ordered Results - Position 1",
+    "searchTerm": "patak mango chutney",
+    "expectedTitles": ["Mango Chutney"],
+    "minExpected": 1,
+    "expectedOrder": [0],
+    "failureReason": "Mango chutney should be top result"
+  },
+  {
+    "testGroup": "Ordered Results - Breadth Check",
+    "searchTerm": "rice",
+    "expectedTitles": ["Basmati", "Sona Masuri", "Idli", "Ponni", "Mamra", "Ground"],
+    "minExpected": 4,
+    "failureReason": "Rice search should surface multiple rice varieties, not just Basmati"
+  },
+  {
+    "testGroup": "Ordered Results - Breadth Check",
+    "searchTerm": "spices",
+    "expectedTitles": ["Turmeric", "Cumin", "Coriander", "Chilli", "Fennel", "Cardamom"],
+    "minExpected": 3,
+    "failureReason": "Spices search should surface variety of spices"
+  },
+  {
+    "testGroup": "Ordered Results - Breadth Check",
+    "searchTerm": "snacks",
+    "expectedTitles": ["Haldiram", "Bikaji", "Namkeen", "Bhujia", "Parle", "Britannia"],
+    "minExpected": 3,
+    "failureReason": "Snacks search should surface multiple snack brands"
+  },
+  {
+    "testGroup": "Ordered Results - Breadth Check",
+    "searchTerm": "oil",
+    "expectedTitles": ["Mustard Oil", "Coconut Oil", "Sunflower", "Olive", "Sesame", "Groundnut"],
+    "minExpected": 3,
+    "failureReason": "Oil search should surface multiple oil types"
+  },
+  {
+    "testGroup": "Ordered Results - Breadth Check",
+    "searchTerm": "flour",
+    "expectedTitles": ["Atta", "Gram Flour", "Chapati Flour", "Rice Flour", "Ragi", "Coconut Flour"],
+    "minExpected": 3,
+    "failureReason": "Flour search should surface multiple flour types"
+  },
+  {
+    "testGroup": "Brand Discovery — Shan Products",
+    "searchTerm": "shan",
+    "expectedTitles": ["Shan Special Chicken Biryani", "Shan Butter Chicken", "Shan Chana Masala", "Shan Tandoori", "Shan Seekh Kabab", "Shan Nihari"],
+    "minExpected": 4,
+    "failureReason": "Shan search should surface multiple Shan products across recipes"
+  },
+  {
+    "testGroup": "Brand Discovery — TRS Products",
+    "searchTerm": "trs",
+    "expectedTitles": ["TRS Coarse", "TRS Fine", "TRS Garam Masala", "TRS Cumin", "TRS Turmeric", "TRS Fennel"],
+    "minExpected": 4,
+    "failureReason": "TRS search should surface multiple TRS spice products"
+  },
+  {
+    "testGroup": "Brand Discovery — Haldiram Products",
+    "searchTerm": "haldiram",
+    "expectedTitles": ["Haldiram's Aloo Bhujia", "Haldiram's Moong Dal", "Haldiram's All In One", "Haldiram's Khatta Meetha", "Haldiram's Bhujia Sev"],
+    "minExpected": 3,
+    "failureReason": "Haldiram search should surface multiple namkeen varieties"
+  },
+  {
+    "testGroup": "Price-Based Expected Ordering",
+    "searchTerm": "basmati rice",
+    "expectedTitles": ["Tilda Pure Basmati", "Daawat Rozana", "Natco - Basmati Rice India 2kg"],
+    "minExpected": 2,
+    "expectedOrder": [0, 1, 2],
+    "failureReason": "Tilda (lower price point) should appear before larger packs in basmati search"
+  },
+  {
+    "testGroup": "Negative — Category Should NOT Leak",
+    "searchTerm": "chana dal",
+    "expectedTitles": ["Chana Dal", "Chanadal"],
+    "minExpected": 1,
+    "failureReason": "Chana Dal search should return dal products, not Chana Masala spice blend"
+  },
+  {
+    "testGroup": "Negative — Category Should NOT Leak",
+    "searchTerm": "chana masala",
+    "expectedTitles": ["Chana Masala"],
+    "minExpected": 1,
+    "failureReason": "Chana Masala search should return spice blend, not raw chana dal"
+  }
+]

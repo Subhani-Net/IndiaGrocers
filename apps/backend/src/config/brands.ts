@@ -53,11 +53,26 @@ export const BRANDS: Brand[] = [
   { slug: "haldirams", name: "Haldiram's", categories: ["snacks-namkeen"] },
   { slug: "jabsons", name: "Jabsons", categories: ["snacks-namkeen"] },
   { slug: "lijjat", name: "Lijjat", categories: ["snacks-namkeen"] },
+  { slug: "bikaji", name: "Bikaji", categories: ["snacks-namkeen"] },
+  { slug: "parle", name: "Parle", categories: ["snacks-namkeen"] },
+  { slug: "britannia", name: "Britannia", categories: ["snacks-namkeen"] },
+  { slug: "maggi", name: "Maggi", categories: ["snacks-namkeen", "condiments"] },
 
   // Beverages
   { slug: "wagh-bakri", name: "Wagh Bakri", categories: ["beverages"] },
   { slug: "brooke-bond", name: "Brooke Bond", categories: ["beverages"] },
   { slug: "tetley", name: "Tetley", categories: ["beverages"] },
+  { slug: "tata-gold", name: "Tata Gold", categories: ["beverages"] },
+  { slug: "wagh-bakri", name: "Wagh Bakri", categories: ["beverages"] },
+  { slug: "horlicks", name: "Horlicks", categories: ["beverages"] },
+  { slug: "bournvita", name: "Bournvita", categories: ["beverages"] },
+  { slug: "girnar", name: "Girnar", categories: ["beverages"] },
+  { slug: "hamdard", name: "Hamdard", categories: ["beverages"] },
+  { slug: "dabur", name: "Dabur", categories: ["beverages", "condiments"] },
+  { slug: "glucon-d", name: "Glucon-D", categories: ["beverages"] },
+  { slug: "maaza", name: "Maaza", categories: ["beverages"] },
+  { slug: "frooti", name: "Frooti", categories: ["beverages"] },
+  { slug: "falak", name: "Falak", categories: ["staples-grains"] },
 
   // Pickles & Chutneys
   { slug: "priya", name: "Priya", categories: ["pickles-chutneys"] },

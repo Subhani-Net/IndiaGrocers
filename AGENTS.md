@@ -18,13 +18,71 @@ Run storefront commands with `yarn`, not `npm`:
 cd apps/storefront && yarn dev
 ```
 
+## Data Architecture — CRITICAL RULES
+
+> **VIOLATING THESE RULES CAUSES DAYS OF DRIFT AND RE-WORK.**
+> Every agent, script, and manual action must follow these.
+
+### Master/Reference Data Files — Separated by Change Frequency
+
+| Frequency | File | Content | Who Edits |
+|-----------|------|---------|-----------|
+| **Rarely** | `catalogue/products.csv` | Product identity, variants, metadata, categories | Product team |
+| | `catalogue/categories.csv` | Category tree | Product team |
+| | `catalogue/collections.csv` | Collection definitions | Marketing |
+| | `catalogue/category-assignment.json` | Product→Category mapping | Product team |
+| | `catalogue/category-key-mapping.json` | JSON→DB key translation | Dev (static) |
+| **Periodically** | `catalogue/products-collections.csv` | Product→Collection assignments | Marketing |
+| | `catalogue/meilisearch/synonyms.csv` | Search synonyms | SEO team |
+| **Weekly** | `catalogue/prices.csv` | Variant prices | Operations |
+
+> **Full documentation:** `catalogue/DATA-ARCHITECTURE.md`
+
+### The Pipeline — One Command
+
+```bash
+node catalogue/enrich.mjs --apply --reindex
+```
+
+This reads ALL files above and applies them to DB + MeiliSearch in order.
+
+### Clean Slate — Every Update, Every Time
+
+| Operation | Rule |
+|-----------|------|
+| **Reindex MeiliSearch** | **Always delete all documents first.** Enforced in `reindex-products.ts`. |
+| **Seed fresh DB** | Always drop + recreate the database. Never seed on top of existing data. |
+| **CSV enrichment** | `enrich.mjs --apply` is idempotent — detects creates vs updates by handle. Safe to re-run. |
+| **Price update** | Edit `prices.csv` only. Products CSV untouched. Run `enrich.mjs --apply --reindex`. |
+| **After ANY data change** | Run `npm run reindex` (with clean-slate delete). Run `node scripts/verify-data-health.mjs`. |
+
+### Anti-Patterns — NEVER DO THESE
+
+| ❌ Never | ✅ Instead |
+|----------|-----------|
+| Edit product in Medusa Admin UI | Edit `catalogue/products.csv` → `enrich.mjs --apply --reindex` |
+| Edit category in Medusa Admin UI | Edit `catalogue/categories.csv` → `enrich.mjs --apply --reindex` |
+| Edit price directly on product | Edit `catalogue/prices.csv` → `enrich.mjs --apply --reindex` |
+| Add image via Medusa Admin upload | Copy to `apps/backend/uploads/` → set `thumbnail_url` in CSV → `enrich.mjs --apply --reindex` |
+| Run `npm run reindex` without deleting | Always delete-all first (enforced in script) |
+
+### MeiliSearch Document Count Check
+
+After every reindex, verify document count equals product count:
+```bash
+# Expected: numberOfDocuments === product count in DB
+curl -s http://localhost:7700/indexes/products/stats
+```
+
+If `numberOfDocuments > productCount`, the index has stale duplicates — nuke and reindex:
+```bash
+curl -X DELETE http://localhost:7700/indexes/products/documents
+cd apps/meilisearch && npm run reindex
+```
+
 ## Fresh Setup — Step by Step
 
-> **⚠️ BEFORE ANY DATA WORK:** Read `scripts/data-pipeline/QA-GATES.md`.  
-> All 5 phases must pass their gate before proceeding.  
-> **Never enrich incomplete data.**
-
-Run these in order. The automated script at `scripts/setup.ps1` does all of this.
+Run these in order. The CSV catalogue is the single source of truth.
 
 ### Prerequisites
 - Docker Desktop running (whale icon in tray, not animating)
@@ -33,7 +91,6 @@ Run these in order. The automated script at `scripts/setup.ps1` does all of this
 ### Step 1: Docker
 ```bash
 docker compose -f docker-compose.yml up -d
-# If "container name already in use": docker rm -f indiagrocers-meilisearch
 ```
 
 | Service | Port | Credentials |
@@ -52,7 +109,6 @@ cd apps\storefront
 yarn install
 cd ..\..
 ```
-> IMPORTANT: Root `npm install` must complete before backend commands work. The backend subscriber imports `@indiagrocers/meilisearch` which is a workspace package. Running `npx medusa user` without root install will fail with `Cannot find module '@indiagrocers/meilisearch'`.
 
 ### Step 3: Configure backend .env
 ```bash
@@ -61,14 +117,15 @@ cp .env.template .env   # if .env missing
 ```
 Ensure `.env` has:
 ```
-DATABASE_URL=postgres://medusa:medusa@localhost:5432/indiagrocers
+DATABASE_URL=postgres://medusa:medusa@localhost:5432/indiagrocers_dev
 REDIS_URL=redis://localhost:6379
 ```
 
-### Step 4: Migrate + create admin
+### Step 4: Create database + migrate + admin
 ```bash
 cd apps\backend
-npx medusa db:migrate        # creates tables + seeds infrastructure (categories, regions, collections)
+docker exec indiagrocers-postgres psql -U medusa -d indiagrocers -c "CREATE DATABASE indiagrocers_dev;"
+npx medusa db:migrate        # creates tables + seeds infrastructure (store, region, sales channels, categories, collections)
 npx medusa user -e admin@example.com -p password123
 ```
 
@@ -77,31 +134,30 @@ npx medusa user -e admin@example.com -p password123
 npx medusa develop   # runs on :9000 — keep this terminal open
 ```
 
-### Step 6: Seed products (in a new terminal, with backend running)
+### Step 6: Seed everything from CSV (in a new terminal, with backend running)
 ```bash
-cd apps\backend
-node src/seed/merge-product-variants.mjs       # import Natco products → 290→238 consolidated
-node src/seed/migrate-to-natco-categories.mjs   # map products to new category tree
-node src/seed/assign-categories-from-titles.mjs # title-based category assignment
-node src/seed/fix-category-handles.mjs          # fix old category handles
-node src/seed/set-inventory.mjs                  # enable stock (disable inventory mgmt)
+node catalogue/enrich.mjs --apply --reindex
 ```
+This single command:
+- Creates 502 products with variants, prices, metadata, tags, images, categories
+- Syncs 140 categories with parent-child tree
+- Creates product collections
+- Links products to sales channels
+- Auto-updates storefront publishable key
+- Uploads synonyms to MeiliSearch
+- **Deletes all MeiliSearch documents and reindexes from scratch (clean slate)**
 
-### Step 7: Configure search
-```bash
-cd apps\meilisearch
-npm run configure       # create MeiliSearch index with synonyms, filters, ranking
-npm run reindex         # push all products into search index
-```
-
-### Step 8: Verify data quality
+### Step 7: Verify data quality
 ```bash
 node scripts/verify-data-health.mjs
-# Checks: no old category handles in MeiliSearch, product count matches,
-# dietary flags present. Run after ANY data operation.
+# Expected: 4 passed, 0 warnings, 0 failed
+
+# Check MeiliSearch document count matches product count
+curl -s http://localhost:7700/indexes/products/stats
+# Expected: numberOfDocuments === 502
 ```
 
-### Step 9: Start storefront
+### Step 8: Start storefront
 ```bash
 cd apps\storefront
 yarn dev              # runs on :8000
@@ -187,24 +243,40 @@ Location: `apps/backend/src/framework-enhancements/`
 3. If no longer needed, delete the enhancement directory and revert `medusa-config.ts`
 4. Run full test suite: `npx playwright test --project=bdd && node tests/verify-pricing.mjs`
 
-## Seed pipeline (custom, NOT `medusa seed`)
+## Seed pipeline (catalogue system)
 
-6-step pipeline requiring backend running on `http://127.0.0.1:9000`.
-Admin auth: `admin@example.com` / `password123`.
+Single command from CSV master files:
 
+```bash
+# Validate (compare CSV vs DB)
+node catalogue/enrich.mjs --validate-only
+
+# Apply all changes (products, categories, tags, metadata, MeiliSearch)
+node catalogue/enrich.mjs --apply
+
+# Weekly price updates
+node catalogue/update-prices.mjs --apply
+
+# Generate CSVs from current DB (one-time bootstrap)
+node catalogue/generate-csvs.mjs
 ```
-1. npx medusa exec src/migration-scripts/initial-data-seed.ts   # infra
-2. node src/seed/merge-product-variants.mjs   # weights -> variants (290→238)
-3. node src/seed/migrate-to-natco-categories.mjs   # map products to new category tree
-4. node src/seed/assign-categories-from-titles.mjs   # title-based category assignment
-5. node src/seed/fix-category-handles.mjs   # fix old category handles
-6. node src/seed/set-inventory.mjs               # disable inventory mgmt
+
+**CSV files are the source of truth:** `catalogue/products.csv` (612 rows),
+`catalogue/categories.csv` (208), `catalogue/prices/current.csv` (612).
+
+Documentation: `catalogue/README.md`
+Schema: `catalogue/schema.json`
+
+### Snapshot Seed (new environments)
+
+```bash
+node scripts/data-pipeline/export-snapshot.mjs          # Export from working DB
+node scripts/data-pipeline/seed-from-snapshot.mjs --apply  # Import to fresh DB
 ```
 
-Step 1 uses `medusa exec` (Medusa TS runtime). Steps 2-5 use plain `node`
-(.mjs scripts call Medusa Admin API directly).
+### Archived Scripts
 
-Detailed pipeline docs: `apps/backend/src/seed/README.md`.
+Historical scripts moved to `archive/`. See `scripts/data-pipeline/DATA-PIPELINE-MASTER-MAP.md` for reference.
 
 ## Documentation
 
@@ -798,6 +870,114 @@ Each depends on prior items. Execute in order.
 2. Build HTML-to-PDF invoice template
 3. Add downloadable invoice to order history
 4. Add print-friendly CSS to order confirmation page
+
+---
+
+## System Rebuild — Application State & Test Coverage
+
+> **If this application is rebuilt from scratch on a new Medusa instance, the
+> following guarantees hold. Every file below documents or validates a specific
+> system behavior.**
+
+### Data Flow Contracts (source of truth for rebuild)
+
+| Contract | File(s) | What It Guarantees |
+|----------|---------|--------------------|
+| Product listing pages never show false "Out of Stock" | `e2e/products/inventory-visibility.spec.ts`, `e2e/features/catalog/inventory-display.feature` | Inventory read from `getBulkInventory()`, never from `variant.inventory_quantity` |
+| Cart page never shows false OOS banner/badges | Same as above — cart tests included | Cart items read from `inventoryMap[item.variant_id]`, never from `item.variant.inventory_quantity` |
+| PDP stock status reads from inventory data layer | `e2e/products/inventory-visibility.spec.ts` | PDP uses `inventoryMap` prop, variant chips enabled when in stock |
+| Checkout: shipping method registered BEFORE payment | `e2e/checkout/checkout-flow.spec.ts`, `e2e/features/checkout/checkout.feature` (shipping method section) | `setShippingMethod()` called at Step 2, step guard validates at Step 3 |
+| Checkout: cart.complete() never fails with "No shipping method" | `e2e/features/checkout/checkout.feature`, `e2e/features/checkout/payment-flow.feature` | Shipping method set on cart before `cart.complete()` is called |
+| Delivery cost displayed = actual cart shipping method cost | `e2e/features/checkout/checkout.feature` (delivery cost scenario) | Cost reads `cart.shipping_methods[0].amount`, never hardcoded |
+| Bulk-inventory endpoint returns live stock data | `scripts/verify-bulk-inventory.mjs` (9 tests) | `POST /store/bulk-inventory` → `getVariantAvailability()` → correct availability |
+| Full inventory pipeline correct | `tests/verify-inventory-pipeline.mjs` (5 sections) | Product fetch → variant IDs → bulk-inventory → enriched stock display |
+| Cart cache invalidation on shipping method set | `e2e/features/checkout/checkout.feature` (cache scenario) | `revalidateTag("carts")` called in `setShippingMethod()` |
+| No `cache: "force-cache"` on dynamic data (cart, inventory) | `lib/data/cart.ts`, `lib/data/inventory.ts` | Cart = tag-based ISR, inventory = 10s ISR |
+| JSON-LD structured data on PDP matches inventory | `e2e/products/inventory-visibility.spec.ts` | `availability` field correct in `<script type="application/ld+json">` |
+
+### Architecture Invariants (must hold after any rebuild)
+
+| Invariant | File | Verify With |
+|-----------|------|-------------|
+| `variant.inventory_quantity` is NEVER read by any UI component | Entire `src/` — zero direct reads except comment in `inventory.ts` and dead storage in `weight-heavy-card.tsx:59` | `grep "\.inventory_quantity" apps/storefront/src/` → 0 results (UI layer only) |
+| Inventory is a separate data layer from product identity | `lib/data/inventory.ts` → `getBulkInventory()` | Single function, single endpoint |
+| Products: ISR 60s, Inventory: ISR 10s, Cart: no force-cache | `lib/data/products.ts`, `lib/data/inventory.ts`, `lib/data/cart.ts` | grep for `cache: "force-cache"` → 0 results in data layer |
+| `setShippingMethod()` is called before `pushStep("payment")` | `checkout-form/index.tsx:handleDeliveryContinue` | `e2e/checkout/checkout-flow.spec.ts` |
+| Step guard blocks navigation to `?step=payment` without shipping | `checkout-form/index.tsx:useEffect` guard | `e2e/checkout/checkout-flow.spec.ts` |
+| `handlePlaceOrder` validates shipping before `initiatePaymentSession` | `checkout-form/index.tsx:handlePlaceOrder` | Step guard + manual validation in handler |
+
+### Test Files Index
+
+| Layer | File | Type | Tests |
+|-------|------|------|-------|
+| Backend endpoint | `scripts/verify-bulk-inventory.mjs` | Node.js | 9 (endpoint contract, availability validation) |
+| Pipeline verification | `tests/verify-inventory-pipeline.mjs` | Node.js | 5 sections (backend → storefront) |
+| E2E — inventory visibility | `e2e/products/inventory-visibility.spec.ts` | Playwright | 7 (PDP, cart, listing badges) |
+| E2E — checkout flow | `e2e/checkout/checkout-flow.spec.ts` | Playwright | 11 (steps, guards, validation) |
+| E2E — payment flow | `e2e/checkout/payment-flow.spec.ts` | Playwright | 4 (cart, address, payment, confirmation) |
+| BDD — catalog inventory | `e2e/features/catalog/inventory-display.feature` | playwright-bdd | 7 scenarios |
+| BDD — checkout | `e2e/features/checkout/checkout.feature` | playwright-bdd | 18 scenarios (8 original + 10 new) |
+| BDD — payment flow | `e2e/features/checkout/payment-flow.feature` | playwright-bdd | 14 scenarios (10 original + 4 new) |
+
+### Run All Validation
+
+```bash
+# Backend
+node scripts/verify-bulk-inventory.mjs         # 9 tests
+node tests/verify-inventory-pipeline.mjs        # Pipeline verification
+
+# Storefront E2E
+npx playwright test e2e/products/inventory-visibility.spec.ts
+npx playwright test e2e/checkout/checkout-flow.spec.ts
+npx playwright test e2e/checkout/payment-flow.spec.ts
+```
+
+---
+
+## Architecture Guardrails — Default Behaviour
+
+> **These apply to every analysis, fix, feature, and code change unless the user
+> explicitly states "deep analysis not required."**
+
+### Before Any Fix
+
+| Agent must | Details |
+|-----------|---------|
+| Trace the **complete data flow** | From source of truth → API → cache → UI. Identify ALL components in the chain before proposing any fix. |
+| Identify **every file, system, and data contract** affected | List second-order effects: caching layers, other pages, other APIs, other components that read the same data. |
+| Challenge **the assumption beneath the bug** | Ask: is the field we're fixing inherently unreliable? Is the architecture assuming something that isn't true? |
+| Design for the **long-term steady state** | The fix must work correctly after orders are placed, after cache invalidates, after data drifts, across all fetch contexts. |
+
+### Before Any Feature
+
+| Agent must | Details |
+|-----------|---------|
+| Design the **data architecture first** | What data lives where, how it flows, how it invalidates, what its freshness requirements are. Derive implementation from this architecture. |
+| Separate concerns by **change frequency** | Identity (stable), pricing (semi-stable), inventory (volatile) → different cache TTLs, different fetch paths. |
+| Identify the **single source of truth** | Every data element must have exactly one authoritative source. UI reads from that source. |
+| Evaluate **caching strategy holistically** | What gets cached, for how long, what triggers invalidation, what's the worst-case staleness. |
+
+### Before Proposing "A Fix"
+
+| Agent must | Details |
+|-----------|---------|
+| Explain **why the system-level design makes this fix correct** | Not "this line fixes the bug" — "this architecture change makes the entire class of bugs impossible." |
+| Identify **what could regress** | List components/pages/flows that use the same data and could break silently. |
+| Describe the **long-term steady state** | After 100 orders, after cache invalidation, after a cold start — does this hold? |
+| Prefer **architectural separation over patching** | If two concerns are coupled (inventory merged into product), separate them rather than adding if-else guards around the coupling. |
+
+### Bandaids vs Architecture — Distinction
+
+| ❌ Band-aid (unacceptable) | ✅ Architecture fix (required) |
+|---|---|
+| Add `?? 0` or `== null` guard to handle missing data | Fix the data source to reliably provide the data, or separate the concern |
+| Add a try/catch that swallows the real error | Trace the error to its root and fix the data contract |
+| Add `cache: "no-store"` to force freshness | Design a caching strategy that matches data volatility |
+| Mutate the product object to inject inventory | Create a separate inventory data layer with its own fetch path |
+| Fix one component's stock check | Audit all components that read stock, design a single inventory source |
+| Clear the cache manually | Design automatic cache invalidation triggered by the data change event |
+
+Unless user states "deep analysis not required", every change follows these rules.
 
 ---
 

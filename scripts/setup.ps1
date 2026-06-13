@@ -91,23 +91,10 @@ Pop-Location
 # NOTE: Backend must be running for steps 5-6 (npx medusa develop in another terminal)
 if (-not $SkipSeed) {
   Write-Host "`n[5/7] Seeding products (backend must be running on :9000)..." -ForegroundColor Yellow
-  Push-Location "$ProjectRoot\apps\backend"
+  Write-Host "  Using orchestrator: node scripts/data-pipeline/run-all.mjs --apply" -ForegroundColor Gray
 
-  Write-Host "  Step 5.1 — Importing products (merge weight variants)..." -ForegroundColor Gray
-  node src/seed/merge-product-variants.mjs
-
-  Write-Host "  Step 5.2 — Migrating to Natco category tree..." -ForegroundColor Gray
-  node src/seed/migrate-to-natco-categories.mjs
-
-  Write-Host "  Step 5.3 — Assigning categories from titles..." -ForegroundColor Gray
-  node src/seed/assign-categories-from-titles.mjs
-
-  Write-Host "  Step 5.4 — Fixing category handles..." -ForegroundColor Gray
-  node src/seed/fix-category-handles.mjs
-
-  Write-Host "  Step 5.5 — Configuring inventory..." -ForegroundColor Gray
-  node src/seed/set-inventory.mjs
-
+  Push-Location "$ProjectRoot"
+  node scripts/data-pipeline/run-all.mjs --apply
   Pop-Location
 }
 else {

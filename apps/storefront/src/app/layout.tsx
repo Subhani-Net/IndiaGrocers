@@ -1,11 +1,14 @@
 import { getBaseURL } from "@lib/util/env"
-import { Metadata } from "next"
+import { Metadata, Viewport } from "next"
 import "styles/globals.css"
+
+export const viewport: Viewport = {
+  themeColor: "#FF6B35",
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
   manifest: "/manifest.json",
-  themeColor: "#FF6B35",
   title: "IndiaGrocers London | Indian Grocery Store Online",
   description:
     "Your favourite Indian grocery store in London. Fresh vegetables, spices, rice, dals, pooja essentials and more delivered to your door.",

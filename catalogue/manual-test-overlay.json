@@ -1,0 +1,6 @@
+[
+  {
+    "_comment": "Manual test overlay — human-curated tests that override or extend auto-generated ones.",
+    "_usage": "Add tests here for edge cases, typos, semantic searches, and linguistic patterns that auto-generation can't capture."
+  }
+]

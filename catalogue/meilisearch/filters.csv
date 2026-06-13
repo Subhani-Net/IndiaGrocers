@@ -1,0 +1,13 @@
+attribute
+category_handle
+collection_handle
+metadata.allergens
+metadata.brand_slug
+metadata.dietary_flags
+metadata.eco_rating
+metadata.regional_tags
+metadata.subscription_eligible
+metadata.vat_rate
+metadata.velocity
+status
+tags

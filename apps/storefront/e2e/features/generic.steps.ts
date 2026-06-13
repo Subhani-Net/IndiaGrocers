@@ -1097,7 +1097,12 @@ Then("the page displays the category title", async ({ page }) => {
 })
 
 Then("the page displays subcategory chips", async ({ page }) => {
-  console.log("Subcategory chips check")
+  await expect(page.locator('[data-testid="subcategory-chips"]').first()).toBeVisible({ timeout: 5000 })
+})
+
+Then("the subcategory chip is visually active", async ({ page }) => {
+  const chip = page.locator('[data-testid="subcategory-chips"] a, [data-testid="subcategory-chips"] button').first()
+  await expect(chip).toBeVisible()
 })
 
 Then("the page displays a grid of product cards", async ({ page }) => {
@@ -1183,23 +1188,33 @@ Then("a placeholder image is displayed instead of a broken image", async ({ page
 })
 
 Then("an autocomplete dropdown appears with matching products", async ({ page }) => {
-  console.log("Autocomplete check")
+  await expect(page.locator("[class*=\"backdrop-blur\"]")).toBeVisible({ timeout: 3000 })
+  const items = page.locator("[class*=\"backdrop-blur\"] a")
+  expect(await items.count()).toBeGreaterThanOrEqual(1)
 })
 
 Then("each suggestion shows a thumbnail, title, and price", async ({ page }) => {
-  console.log("Suggestion content check")
+  const dropdown = page.locator("[class*=\"backdrop-blur\"]")
+  await expect(dropdown).toBeVisible()
+  const images = dropdown.locator("img")
+  expect(await images.count()).toBeGreaterThanOrEqual(1)
+  const firstText = await dropdown.textContent()
+  expect(firstText).toMatch(/[0-9]+\.[0-9]{2}/)
 })
 
 Then("the dropdown shows a {string} link", async ({ page }, text: string) => {
-  console.log(`Dropdown "${text}" link check`)
+  const link = page.locator(`a:has-text("${text}")`).first()
+  await expect(link).toBeVisible()
 })
 
 Then("the autocomplete dropdown shows lentil products matching the term", async ({ page }) => {
-  console.log("Lentil autocomplete check")
+  await expect(page.locator("[class*=\"backdrop-blur\"]")).toBeVisible({ timeout: 3000 })
+  const content = (await page.locator("[class*=\"backdrop-blur\"]").textContent()) || ""
+  expect(content.toLowerCase()).toMatch(/lentil|dal|masoor|moong|chana|toor/)
 })
 
 Then("the autocomplete dropdown closes", async ({ page }) => {
-  console.log("Autocomplete closed check")
+  await expect(page.locator("[class*=\"backdrop-blur\"]")).not.toBeVisible({ timeout: 3000 })
 })
 
 // ────────────────────────────────────────────────────────────
@@ -1212,29 +1227,35 @@ Given("the user navigates to the search page with an empty query", async ({ page
 })
 
 Then("the page displays a message to start typing or select a category", async ({ page }) => {
-  const content = (await page.textContent("body")) || ""
-  expect(content.length).toBeGreaterThan(100)
+  await expect(page.getByText("Start typing")).toBeVisible({ timeout: 5000 })
 })
 
 Then("the page displays a suggestion to try different terms", async ({ page }) => {
-  const content = (await page.textContent("body")) || ""
-  expect(content.length).toBeGreaterThan(100)
+  await expect(page.getByText("No results found")).toBeVisible({ timeout: 5000 })
+  const body = (await page.textContent("body")) || ""
+  expect(body.toLowerCase()).toMatch(/different|try|browse/)
 })
 
 Then("the {string} chip is visually active", async ({ page }, cat: string) => {
-  console.log(`"${cat}" chip active check`)
+  const chip = page.locator("a").filter({ hasText: cat }).first()
+  await expect(chip).toBeVisible()
 })
 
 Given("a category chip is active on the search results", async ({ page }) => {
-  console.log("Active chip precondition")
+  await page.goto("/search?q=rice", { waitUntil: "domcontentloaded" })
+  await page.waitForTimeout(2000)
+  const chips = page.locator("a").filter({ hasText: /rice|spices|dals|grains/i }).first()
+  await expect(chips).toBeVisible({ timeout: 5000 })
 })
 
 When("the user clicks the same chip again", async ({ page }) => {
-  console.log("Chip toggle click")
+  const chip = page.locator("a").filter({ hasText: /rice|spices|dals|grains/i }).first()
+  await chip.click()
+  await page.waitForTimeout(1000)
 })
 
 Then("the filter is removed", async ({ page }) => {
-  console.log("Filter removed check")
+  await expect(page.locator('[data-testid="product-title"], [data-testid="product-full-title"]').first()).toBeVisible({ timeout: 5000 })
 })
 
 Then("each search result displays a product title", async ({ page }) => {
@@ -1243,8 +1264,13 @@ Then("each search result displays a product title", async ({ page }) => {
 })
 
 Then("each search result displays a product price", async ({ page }) => {
-  const content = (await page.textContent("body")) || ""
-  expect(content).toMatch(/[0-9]+\.[0-9]{2}/)
+  await page.waitForSelector('[data-testid="product-card"]', { timeout: 5000 })
+  const cards = page.locator('[data-testid="product-card"]')
+  const count = await cards.count()
+  expect(count).toBeGreaterThanOrEqual(1)
+  const firstCard = cards.first()
+  const text = (await firstCard.textContent()) || ""
+  expect(text).toMatch(/£[0-9]+\.[0-9]{2}/)
 })
 
 Then("each search result displays a product image", async ({ page }) => {

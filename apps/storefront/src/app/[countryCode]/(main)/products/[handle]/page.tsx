@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { listProducts } from "@lib/data/products"
+import { getBulkInventory } from "@lib/data/inventory"
 import { getCategoryByHandle } from "@lib/data/categories"
 import { getRegion, listRegions } from "@lib/data/regions"
 import GroceryProductTemplate from "@modules/products/templates/grocery-pdp"
@@ -99,9 +100,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
           "@type": "Offer",
           price: (price / 100).toFixed(2),
           priceCurrency: "GBP",
-          availability: firstVariant?.inventory_quantity
+          availability: inventoryMap?.[firstVariant?.id]?.availability != null
             ? "https://schema.org/InStock"
-            : "https://schema.org/OutOfStock",
+            : "https://schema.org/InStock",
         }
       : undefined,
   }
@@ -140,11 +141,14 @@ export default async function ProductPage(props: Props) {
     queryParams: {
       handle: params.handle,
       fields:
-        "*variants.calculated_price,*variants.metadata,categories.id,categories.name,categories.handle,+variants.inventory_quantity,*variants.images,*metadata,*tags,*thumbnail,*description,*collection",
+        "*variants.calculated_price,*variants.metadata,categories.id,categories.name,categories.handle,*variants.images,*metadata,*tags,*thumbnail,*description,*collection",
     },
   }).then(({ response }) => response.products[0])
 
   if (!pricedProduct) notFound()
+
+  const variantIds = (pricedProduct.variants ?? []).map((v: any) => v.id)
+  const inventoryMap = await getBulkInventory(variantIds)
 
   const images =
     getImagesForVariant(pricedProduct, searchParams.v_id) ??
@@ -187,6 +191,7 @@ export default async function ProductPage(props: Props) {
     <GroceryProductTemplate
       product={pricedProduct}
       region={region}
+      inventoryMap={inventoryMap}
       countryCode={params.countryCode}
       images={images}
       breadcrumbs={breadcrumbs}

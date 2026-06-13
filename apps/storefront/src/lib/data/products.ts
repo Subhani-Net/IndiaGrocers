@@ -58,18 +58,17 @@ export const listProducts = async ({
           offset,
           region_id: region?.id,
           fields:
-            "handle,*variants.calculated_price,categories.id,categories.name,+variants.inventory_quantity,*variants.images,+metadata,+tags,+thumbnail,+description,",
+            "handle,*variants.calculated_price,categories.id,categories.name,*variants.images,+metadata,+tags,+thumbnail,+description,",
           ...queryParams,
         },
         headers,
         next,
-        cache: "force-cache",
       }
     )
     .then(({ products, count }) => {
       const nextPage = count > offset + limit ? pageParam + 1 : null
       return {
-        response: { products, count },
+        response: { products: products || [], count },
         nextPage,
         queryParams,
       }
@@ -187,12 +186,11 @@ export async function fetchProductsPage({
         limit,
         offset,
         region_id: region.id,
-        fields: "handle,title,*variants.calculated_price,*variants.metadata,variants.title,variants.id,categories.id,categories.name,+variants.inventory_quantity,*variants.images,*metadata,*tags,*thumbnail,*description,",
+        fields: "handle,title,*variants.calculated_price,*variants.metadata,variants.title,variants.id,categories.id,categories.name,*variants.images,*metadata,*tags,*thumbnail,*description,",
         ...queryParams,
       },
       headers,
       next,
-      cache: "force-cache",
     })
     .then(({ products, count }) => ({ products, count }))
 
@@ -225,11 +223,10 @@ export async function fetchProductsByIds({
         id: ids,
         region_id: region.id,
         limit: ids.length,
-        fields: "handle,title,*variants.calculated_price,*variants.metadata,variants.title,variants.id,categories.id,categories.name,+variants.inventory_quantity,*variants.images,*metadata,*tags,*thumbnail,*description,",
+        fields: "handle,title,*variants.calculated_price,*variants.metadata,variants.title,variants.id,categories.id,categories.name,*variants.images,*metadata,*tags,*thumbnail,*description,",
       },
       headers,
       next,
-      cache: "force-cache",
     })
     .then(({ products }) => ({ products }))
 

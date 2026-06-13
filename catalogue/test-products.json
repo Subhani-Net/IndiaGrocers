@@ -1,0 +1,4457 @@
+[
+  {
+    "id": "prod_01KTVB3043SQPCDMH3R6DBFCP1",
+    "title": "Natco - Soya Chunks 700g",
+    "handle": "4567660527688",
+    "categories": [
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB30DPB5VQHESBR4NT80D1",
+    "title": "Natco - Black Eyed Beans 400g",
+    "handle": "6647387652168",
+    "categories": [
+      "lobhia-black-eye-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB30K6MRZ9GC87E7ARV2VP",
+    "title": "Natco - White Kidney Beans 400g",
+    "handle": "6579342409800",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB30S6SVNEGVHKFVN5XA2T",
+    "title": "Natco - Bhel Puri Kit 500g",
+    "handle": "6535757660232",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB30ZJCSXBCAGBR2B203X8",
+    "title": "Natco - Chick Peas Full Case 4x1kg",
+    "handle": "4583223754824",
+    "categories": [
+      "frozen-peas",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB315BDX6BTKKT9Z46NTSC",
+    "title": "Natco - Red Kidney Beans 2.5kg",
+    "handle": "4583223394376",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB31B11VJ4DA8X8YMBMF35",
+    "title": "Natco - Red Kidney Beans Boiled Full Case 12x400g",
+    "handle": "4583223361608",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB31GJ1HBMKWBGDFYK98SP",
+    "title": "Natco - Chick Peas Full Case 12x400g",
+    "handle": "4583223165000",
+    "categories": [
+      "frozen-peas",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB31P25KM2Y2KDQM0XZR68",
+    "title": "Natco - Chick Peas 2.5kg",
+    "handle": "4583223066696",
+    "categories": [
+      "frozen-peas",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB31VRZJB6MDQQEM5GCPFW",
+    "title": "Natco - Chick Peas 2kg",
+    "handle": "4567672356936",
+    "categories": [
+      "frozen-peas",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB321226G12J4BEWX804CN",
+    "title": "Natco - Kala Chana Boiled 400g",
+    "handle": "4567672193096",
+    "categories": [
+      "kala-chana-black-chickpeas",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB326R9Z0DTJY495M1HJX1",
+    "title": "Natco - Red Kidney Beans 1kg",
+    "handle": "4567671734344",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB32BKYW755NQ36G43KFH7",
+    "title": "Natco - Red Kidney Beans 2kg",
+    "handle": "4567671701576",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB32GSF0PHB6RNX4NG3MWX",
+    "title": "Natco - Rose Coco (Borlotti) Beans 400g",
+    "handle": "4567671504968",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB32P0EJ7J6Y7WCGRXR3XE",
+    "title": "Natco - Toovar 400g",
+    "handle": "4567670030408",
+    "categories": [
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB32V5MFY6TMA06BC07FRA",
+    "title": "Natco - Alubia Beans 2kg",
+    "handle": "4567667638344",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB330N0YPHKWR7BTG2JCX9",
+    "title": "Natco - Alubia Beans 500g",
+    "handle": "4567667605576",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB335PCZD048MZZ4GCW24X",
+    "title": "Natco - Black Eye Beans 2kg",
+    "handle": "4567667572808",
+    "categories": [
+      "lobhia-black-eye-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB33AFZ7Z9TYWQVT7EM95S",
+    "title": "Natco - Pure Mustard Oil 250ml",
+    "handle": "15383683334529",
+    "categories": [
+      "mustard-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB33FFQSCFP56RPA6B1DRA",
+    "title": "Natco - Pure Mustard Oil 1Ltr",
+    "handle": "15383643226497",
+    "categories": [
+      "mustard-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB33M708VWN9FEE73AA5XD",
+    "title": "Natco - Basmati Rice India 2kg",
+    "handle": "4567662002248",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB33S5NPGN979GM7XE7CK6",
+    "title": "Natco - Ragi Flour 900g",
+    "handle": "4567668523080",
+    "categories": [
+      "ragi-finger-millet-flour",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB33XVM7MZFFJ862EXSTTX",
+    "title": "Natco - Lemon Juice 1 Ltr",
+    "handle": "15097116393857",
+    "categories": [
+      "lime-lemon-pickle",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB342SANA1BCYE78F9VP96",
+    "title": "Natco - Lemon Juice 500ml",
+    "handle": "15097122881921",
+    "categories": [
+      "lime-lemon-pickle",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB347E5TEYK1DHKPKPFA46",
+    "title": "Natco - Lemon Juice with Essential Oil 200ml",
+    "handle": "15097233015169",
+    "categories": [
+      "lime-lemon-pickle",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB34CE5WJASMWVMJ8745HV",
+    "title": "Natco - Okra Full Case 12x400g",
+    "handle": "4567670423624",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB34HFTA0AGPS8HN7VXNHH",
+    "title": "Natco - Jaggery 500g",
+    "handle": "4567661183048",
+    "categories": [
+      "jaggery-gur",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB34PJ3ZEDQT0NJ9J9YCW0",
+    "title": "Natco - Spiced Tea - Masala Blend 160s",
+    "handle": "14681551307137",
+    "categories": [
+      "garam-masala",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB34VNGK8RDPSZFAJ3VRMZ",
+    "title": "Natco - Coriander Seeds Jar 60g",
+    "handle": "6842634403912",
+    "categories": [
+      "coriander-seeds-dhania",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB350DT5GJXHAZQJBEPCC7",
+    "title": "Natco - Kasuri Methi Leaves 100g",
+    "handle": "4567658168392",
+    "categories": [
+      "kasuri-methi-dried-fenugreek-leaves",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB355K6VKTJ6H7RY6A06KJ",
+    "title": "Natco - Crispy Fried Onions 150g",
+    "handle": "4567661084744",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB35AH1NW5KFHNFEYK2PRT",
+    "title": "Natco - Mixed Pickle 300g",
+    "handle": "4567673438280",
+    "categories": [
+      "mixed-pickle",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB35FK9TPQMBT28X0Y75W3",
+    "title": "Natco - Whole Birdseye Chilli Jar 40g",
+    "handle": "6804786282568",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB35KFDSA06MQC6P1CTC9A",
+    "title": "Natco - Coconut Cream 400ml",
+    "handle": "4567672488008",
+    "categories": [
+      "coconut-oil",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB35RAZ2QP5T85SGG2WHX5",
+    "title": "Natco - Coconut Water 330ml",
+    "handle": "4567667671112",
+    "categories": [
+      "coconut-oil",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB35X9041TP1NYMMQZ6TN0",
+    "title": "Natco - Coconut Water 1L",
+    "handle": "6546732482632",
+    "categories": [
+      "coconut-oil",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3626RG6WTP79F8MVWQ4M",
+    "title": "Natco - Demerara Sugar 500g",
+    "handle": "6804650754120",
+    "categories": [
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB367BYPQSR66S2HHAVYXW",
+    "title": "Natco - Chakki Atta Multigrain 5kg",
+    "handle": "4567669735496",
+    "categories": [
+      "chapatti-flour-atta",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB36CSX0T3ZQFWRC58Z7AJ",
+    "title": "Natco - Rosemary Jar 40g",
+    "handle": "6804638728264",
+    "categories": [
+      "rooh-afza-rose-syrup",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB36H9WFRK830V25BM448S",
+    "title": "Natco - Phool Makhana (Popped Lotus Seeds) 100g",
+    "handle": "4567661281352",
+    "categories": [
+      "cumin-seeds-jeera",
+      "staples-grains",
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB36P6V4YJC49X5XV41A6A",
+    "title": "Natco - Punjabi Tinda Full Case 12x400g",
+    "handle": "4567670161480",
+    "categories": [
+      "punjabi-north-indian",
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB36TSAPGZ548T1G0AW5G5",
+    "title": "Natco - Big D Honey Roast Peanuts 12x50g Packs on a Pub Card",
+    "handle": "5864194801736",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB36ZF8EBSNSNWDNW36QET",
+    "title": "Natco - Big D Salted Cashews 12x30g Cards",
+    "handle": "6562924986440",
+    "categories": [
+      "butter-salted",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3743QQNHTF8G6YV4C28X",
+    "title": "Natco - Big D Salted Peanuts 24x50g",
+    "handle": "5864191590472",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB378WAWHHH9BQRSAAAYN8",
+    "title": "Natco - Mango Chutney Spicy 340g",
+    "handle": "4567673077832",
+    "categories": [
+      "mango-chutney",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB37DYX3K8C15AK6Q2PZSP",
+    "title": "Natco - Tamarind Sauce 340g",
+    "handle": "4567672848456",
+    "categories": [
+      "tamarind-paste-concentrate",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB37J5JRQJNPVJYMZ98N2H",
+    "title": "Natco - Garlic &amp; Chilli Sauce 340g",
+    "handle": "4567672750152",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB37PSFSM1ZVY57AKM3B4Y",
+    "title": "Natco - Tamarind &amp; Date Sauce 340g",
+    "handle": "4567672717384",
+    "categories": [
+      "tamarind-paste-concentrate",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB37V0J5M0ZQD0VJYKGF38",
+    "title": "Natco - Roasted Monkey Nuts 300g",
+    "handle": "4567663411272",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB37ZMSA3RXYE8QB757XKJ",
+    "title": "Natco - Roasted &amp; Salted Pistachio Nuts 1kg",
+    "handle": "4567663378504",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB384JS04XDTRNPGXAGRFR",
+    "title": "Natco - Roasted &amp; Salted Pistachio Nuts 300g",
+    "handle": "4567663312968",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB388HZ41XBFZ00D8RENH4",
+    "title": "Natco - Roasted &amp; Salted Pistachio Nuts 100g",
+    "handle": "4567663280200",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB38CX6P7TR11JTH9P7R5P",
+    "title": "Natco - Pappadoms Black Pepper 200g",
+    "handle": "4567662559304",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB38HCH8DAYQ5Q33DW96HJ",
+    "title": "Natco - Pappadoms Jeera (Microwavable) 200g",
+    "handle": "4567662526536",
+    "categories": [
+      "cumin-seeds-jeera",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB38NVD7P26WJ4PAXTZYKX",
+    "title": "Natco - Pappadoms Plain (Microwavable) 200g",
+    "handle": "4567662493768",
+    "categories": [
+      "plain-flour-maida",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB38SDV52G2C1NPZ4T3QX0",
+    "title": "Natco - Pappadoms Punjabi (Microwavable) 200g",
+    "handle": "4567662461000",
+    "categories": [
+      "punjabi-north-indian",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB38X0E4BT98YE89DD9G58",
+    "title": "Natco - Pappadoms Madras (Papa Brand) 250g",
+    "handle": "4567662166088",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB391G22H3CPB90P3JN59M",
+    "title": "Natco - Popcorn 2kg",
+    "handle": "4567661051976",
+    "categories": [
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB396BQHNP6R0V2X4Q53RK",
+    "title": "Natco - Popcorn 500g",
+    "handle": "4567660986440",
+    "categories": [
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB39ANZ5AK81GY5V6PG1SS",
+    "title": "Natco - Peanut Gachak (Peanut Brittle) 400g",
+    "handle": "4567660167240",
+    "categories": [
+      "groundnut-peanut-oil",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB39EYEVQ3NF2R15W3GDYP",
+    "title": "Natco - Coconut Flour 200g",
+    "handle": "4583223853128",
+    "categories": [
+      "coconut-oil",
+      "condiments",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB39JD8PVXHV3461XQXZV3",
+    "title": "Natco - Coconut Flour 1kg",
+    "handle": "4583223820360",
+    "categories": [
+      "coconut-oil",
+      "condiments",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB39PHKAWJ9TTCV6G84PXR",
+    "title": "Natco - Coconut Milk 400ml",
+    "handle": "4567672619080",
+    "categories": [
+      "coconut-milk",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB39TS1DJZS4W5FB59SHD2",
+    "title": "Natco - Coconut Milk Light 400ml",
+    "handle": "4567672553544",
+    "categories": [
+      "coconut-milk",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB39Z8ZA49AP6VMSSPREB8",
+    "title": "Natco - Coconut Oil (Parachute Brand) 500ml",
+    "handle": "4567671832648",
+    "categories": [
+      "coconut-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3A3H7CW8P7BRAM23SCRW",
+    "title": "Natco - Coconut Desicated Medium 1kg",
+    "handle": "4567663870024",
+    "categories": [
+      "coconut-oil",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3A7TBEK4J7Y9GWQC6HY6",
+    "title": "Natco - Coconut Desiccated (Fine) 300g",
+    "handle": "4567663837256",
+    "categories": [
+      "coconut-oil",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3ACC56VNVP4SJD4ESXJJ",
+    "title": "Natco - Coconut Milk Powder 300g",
+    "handle": "4567663804488",
+    "categories": [
+      "coconut-milk",
+      "condiments",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3AFXRWBXNH4K5YG4FNPY",
+    "title": "Natco - Coconut Flakes 200g",
+    "handle": "4567663673416",
+    "categories": [
+      "coconut-oil",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3AMBA85BGM7JX23JSDYR",
+    "title": "Natco - Coconut Halves 250g",
+    "handle": "4567663607880",
+    "categories": [
+      "coconut-oil",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3ARQ3YBWPGPN802SNSJF",
+    "title": "Natco - Coconut Flavouring Essence 28ml",
+    "handle": "4567655350344",
+    "categories": [
+      "coconut-oil",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3AW45DVCC7ZPSGW30YNQ",
+    "title": "Natco - Brinjal Chutney Sweet 300g",
+    "handle": "4567673208904",
+    "categories": [
+      "mango-chutney",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3B0T3P6NEHTEQWJA98EE",
+    "title": "Natco - Mango Pickle Hot 300g",
+    "handle": "4567673667656",
+    "categories": [
+      "mango-pickle-achar",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3B57A4MRGNPZSAZHCWEV",
+    "title": "Natco - Chilli Pickle Hot 300g",
+    "handle": "4567673602120",
+    "categories": [
+      "green-chilli-pickle",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3B9KKK6DGR11V6Q6V6TG",
+    "title": "Natco - Lime Pickle Hot 300g",
+    "handle": "4567673405512",
+    "categories": [
+      "lime-lemon-pickle",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3BDZQ69HJ362HDDPA2NW",
+    "title": "Natco - Gorkeri Chutney Sweet 300g",
+    "handle": "4567673274440",
+    "categories": [
+      "mango-chutney",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3BJ8S9RFPRX36TRHDAW9",
+    "title": "Natco - Chundo Chutney Sweet 340g",
+    "handle": "4567673241672",
+    "categories": [
+      "mango-chutney",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3BPG99YBZD7CMCBTTS1C",
+    "title": "Natco - Thecha Chilli Paste 300g",
+    "handle": "4567673143368",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3BVF0QFBDV4ABTQAPCK0",
+    "title": "Natco - Mango Chutney Sweet 340g",
+    "handle": "4567673045064",
+    "categories": [
+      "mango-chutney",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3BZWHD5EVVDD1AZV2MDB",
+    "title": "Natco - Garlic Pickle 300g",
+    "handle": "4567673012296",
+    "categories": [
+      "garlic-pickle",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3C3EZT1ZA8MVXN59BJD6",
+    "title": "Natco - Garlic Paste 190g",
+    "handle": "4567672979528",
+    "categories": [
+      "ginger-garlic-paste",
+      "household"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3C82JS5CG2JTJBY32YDQ",
+    "title": "Natco - Ginger Paste 190g",
+    "handle": "4567672946760",
+    "categories": [
+      "ginger-garlic-paste",
+      "household"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3CCN6KYCBB7PBNC1DAYP",
+    "title": "Natco - Garlic &amp; Ginger Paste 190g",
+    "handle": "4567672913992",
+    "categories": [
+      "ginger-garlic-paste",
+      "household"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3CH754408T8N1TKSF49X",
+    "title": "Natco - Bombay Sandwich Spread 280g",
+    "handle": "4567672881224",
+    "categories": [
+      "mixture-bombay-mix",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3CNPCFVV2D1S49P6DR9V",
+    "title": "Natco - Chilli Sauce Hot 310g",
+    "handle": "4567672815688",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3CS8QZE6F312BGF3AY2D",
+    "title": "Natco - Coriander Mint Sauce 340g",
+    "handle": "4567672651848",
+    "categories": [
+      "coriander-seeds-dhania",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3CXAKC798C7QNDAS0T21",
+    "title": "Natco - Cornmeal Fine 1.5kg",
+    "handle": "4567669604424",
+    "categories": [
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3D14YQ74WBP61425ZYY7",
+    "title": "Natco - Cornmeal Fine 500g",
+    "handle": "4567669538888",
+    "categories": [
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3D5HYR4MF8YA7GPZFBEV",
+    "title": "Natco - Cornmeal Medium 1.5kg",
+    "handle": "4567669506120",
+    "categories": [
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3D9TRR4BTQN9Z07RYR7N",
+    "title": "Natco - Cornmeal Medium 500g",
+    "handle": "4567669440584",
+    "categories": [
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3DDWTXYVV11K2K6215DK",
+    "title": "Natco - Golden Raisins 1kg",
+    "handle": "4567669932104",
+    "categories": [
+      "mustard-seeds-rai",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3DHM0YZ52XQHRPG0TKR3",
+    "title": "Natco - Golden Raisins 100g",
+    "handle": "4567669899336",
+    "categories": [
+      "mustard-seeds-rai",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3DNNTBTN973YC44QG9XB",
+    "title": "Natco - Demerara Sugar 1.5kg",
+    "handle": "4567660331080",
+    "categories": [
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3DT1XRRNYYERDCNB7GEX",
+    "title": "Natco - Almond Oil 500ml",
+    "handle": "6666608541768",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3DY4632SACP8V013D0ZA",
+    "title": "Natco - Almond Oil 250ml",
+    "handle": "6666603167816",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3E2P2KGRS9JZ6MV1TQ27",
+    "title": "Natco - Castor Oil 250ml",
+    "handle": "6666591010888",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3E733F3P9DQ0F916MG01",
+    "title": "Natco - Pure Linseed Oil 250ml",
+    "handle": "6666589536328",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3EAKVHR0JG44E95GJ32H",
+    "title": "Natco - Groundnut Oil 1 Litre",
+    "handle": "6666589306952",
+    "categories": [
+      "groundnut-peanut-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3EF74T3J3BB6GQ4T86VA",
+    "title": "Natco - Pure Sesame Oil 1 Litre",
+    "handle": "6666589044808",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3EKHNGH5MDYX1Y3WBEX3",
+    "title": "Natco - Pure Sesame Oil 250ml",
+    "handle": "6666587701320",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3ERCQM37NP2BZRRT3DGW",
+    "title": "Natco - Pomace Olive Oil Blend 3 Litres",
+    "handle": "4583223296072",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3EWMV85T0JY8TNWMN7H5",
+    "title": "Natco - Pomace Olive Oil 5 Litre",
+    "handle": "4583223263304",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3F07AJ222HF20KCQD053",
+    "title": "Natco - Cashew Roasted Salted 250g",
+    "handle": "4567664558152",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3F40YWKAJYWRHWN89WQY",
+    "title": "Natco - Chapati Flour White 1.5kg",
+    "handle": "4567669866568",
+    "categories": [
+      "chapatti-flour-atta",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3F8EX3D8DQJHD95KHAR7",
+    "title": "Natco - Chapati Flour Medium 1.5kg",
+    "handle": "4567669833800",
+    "categories": [
+      "chapatti-flour-atta",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3FC5J1W116ZBSP82DBAG",
+    "title": "Natco - White Maize Meal 1.5kg",
+    "handle": "4567669342280",
+    "categories": [
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3FGYHK0MAXWMCTT4BWDF",
+    "title": "Natco - Gram Flour Superfine 2kg",
+    "handle": "4567669309512",
+    "categories": [
+      "besan-gram-flour",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3FMKXBKGT08Q8YX4W24K",
+    "title": "Natco - Gram Flour Superfine 1kg",
+    "handle": "4567669211208",
+    "categories": [
+      "besan-gram-flour",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3FSCMETA0WS8E3T5EE9Y",
+    "title": "Natco - Gram Flour Superfine 500g",
+    "handle": "4567669145672",
+    "categories": [
+      "besan-gram-flour",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3FXVHWTW1AAC19BDBMF6",
+    "title": "Natco - Gram Flour (Papa brand) 2kg",
+    "handle": "4567669047368",
+    "categories": [
+      "besan-gram-flour",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3G1SHWP4Y40YVS73CHS3",
+    "title": "Natco - Ground Rice 1.5kg",
+    "handle": "4567668981832",
+    "categories": [
+      "basmati-rice",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3G64G4HFE7RNAB9NF1MD",
+    "title": "Natco - Ground Rice 500g",
+    "handle": "4567668949064",
+    "categories": [
+      "basmati-rice",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3GATSFDX4AZ80XF2AA57",
+    "title": "Natco - Rice Flour 500g",
+    "handle": "4567668850760",
+    "categories": [
+      "rice-flour",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3GF5AVR1KQHQN8MXQRV9",
+    "title": "Natco - Semolina Fine 1.5kg",
+    "handle": "4567668817992",
+    "categories": [
+      "semolina-sooji-rava",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3GKVMVJPYRA4DR0XRHSH",
+    "title": "Natco - Semolina Fine 500g",
+    "handle": "4567668785224",
+    "categories": [
+      "semolina-sooji-rava",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3GRC2SGB0PEPPGQ882V1",
+    "title": "Natco - Semolina Coarse 1.5kg",
+    "handle": "4567668719688",
+    "categories": [
+      "suji-coarse-semolina",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3GWGTR4T7QPQ9X39EH65",
+    "title": "Natco - Semolina Coarse 500g",
+    "handle": "4567668686920",
+    "categories": [
+      "suji-coarse-semolina",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3H0RV0737ANA1G10D443",
+    "title": "Natco - Semolina Extra Coarse 1.5kg",
+    "handle": "4567668621384",
+    "categories": [
+      "suji-coarse-semolina",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3H58N915S15Q88HDSFFA",
+    "title": "Natco - Millet (Bajri) Flour 900g",
+    "handle": "4567668555848",
+    "categories": [
+      "ragi-finger-millet-flour",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3H9MXZSERBWV0FWMPDXT",
+    "title": "Natco - Milk Powder 750g",
+    "handle": "4567668326472",
+    "categories": [
+      "turmeric-powder-haldi",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3HE7RW5F3DQW0ZYVK4MT",
+    "title": "Natco - Milk Powder 300g",
+    "handle": "4567668293704",
+    "categories": [
+      "turmeric-powder-haldi",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3HJC49YZZA46NQ7CREEG",
+    "title": "Natco - Rose Syrup 725ml",
+    "handle": "4567667769416",
+    "categories": [
+      "rooh-afza-rose-syrup",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3HPNYRFHKMBX5KHMJBF2",
+    "title": "Natco - Yellow Food Colouring - Powder 25g",
+    "handle": "4567656104008",
+    "categories": [
+      "moong-dal-yellow",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3HV8ECK1ZK1YNX35V0BJ",
+    "title": "Natco - Orange Food Colouring - Powder 25g",
+    "handle": "4567656071240",
+    "categories": [
+      "turmeric-powder-haldi",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3J037W3TQDBCHQ9RW6XC",
+    "title": "Natco - Red Food Colouring - Powder 25g",
+    "handle": "4567656005704",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3J3C56EMK3X2M1X2X7ZK",
+    "title": "Natco - Green Food Colouring - Powder 25g",
+    "handle": "4567655972936",
+    "categories": [
+      "turmeric-powder-haldi",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3J7FW63FTCT73E4T43ZQ",
+    "title": "Natco - Orange Food Colouring - Liquid 28ml",
+    "handle": "4567655874632",
+    "categories": [
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3JBX5WCE7CFBP8JRCE83",
+    "title": "Natco - Red Food Colouring - Liquid 28ml",
+    "handle": "4567655841864",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3JFYP995X5JTWGG85626",
+    "title": "Natco - Green Food Colouring - Liquid 28ml",
+    "handle": "4567655743560",
+    "categories": [
+      "whole-moong-green",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3JKNF0GT91W5MFVDZAT5",
+    "title": "Natco - Vanilla Flavouring Essence 28ml",
+    "handle": "4567655678024",
+    "categories": [
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3JQVBY2GCG182A6YDX2Q",
+    "title": "Natco - Almond Flavouring Essence 28ml",
+    "handle": "4567655612488",
+    "categories": [
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3JVZANWN2YHKGV1GCQZ4",
+    "title": "Natco - Rose Flavouring Essence 28ml",
+    "handle": "4567655514184",
+    "categories": [
+      "rooh-afza-rose-syrup",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3K0EH09XMVBQFDWP2R56",
+    "title": "Natco - Strawberry Flavouring Essence 28ml",
+    "handle": "4567655448648",
+    "categories": [
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3K4X4NZ086R5R3N7CEK8",
+    "title": "Natco - Pineapple Flavouring Essence 28ml",
+    "handle": "4567655383112",
+    "categories": [
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3K91QCAWEKERZD1GDDQ8",
+    "title": "Natco - Kevda Water 310ml",
+    "handle": "4567655284808",
+    "categories": [
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3KCQTXJT2CE81KFFE582",
+    "title": "Natco - Rose Water 310ml",
+    "handle": "4567655219272",
+    "categories": [
+      "rooh-afza-rose-syrup",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3KH0T24NSJ7MH2NB18AJ",
+    "title": "Natco - Ghee Pure (Plough brand) 500g",
+    "handle": "4567672127560",
+    "categories": [
+      "ghee-clarified-butter",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3KNBZAEVTGVP20YGFCX7",
+    "title": "Natco - Ghee Pure Butter 1kg",
+    "handle": "4567672029256",
+    "categories": [
+      "ghee-clarified-butter",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3KSW6Z6C5N274ETZ9BE4",
+    "title": "Natco - Pomace Olive Oil 1 Litre",
+    "handle": "4567671898184",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3KXC2W04CS34MB3AE4DV",
+    "title": "Natco - Olive Oil Extra Virgin 500ml",
+    "handle": "4567671865416",
+    "categories": [
+      "sunflower-oil",
+      "oils-ghee"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3M0XWFZVQECWFS2S826Y",
+    "title": "Natco - Mamra Basmati 908g",
+    "handle": "4641506558024",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3M46Y51RFXCD74G9CPF4",
+    "title": "Natco - Mamra Basmati 200g",
+    "handle": "4641504952392",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3M8E8P4PH41DZQBAJ7S6",
+    "title": "Natco - Black Eye Beans 500g",
+    "handle": "4567667507272",
+    "categories": [
+      "lobhia-black-eye-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3MCVNSRAAGYAG2W8WX2N",
+    "title": "Natco - Butter Beans 2kg",
+    "handle": "4567667474504",
+    "categories": [
+      "ghee-clarified-butter",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3MH8XMB0HQH71CKX29KS",
+    "title": "Natco - Butter Beans 500g",
+    "handle": "4567667441736",
+    "categories": [
+      "ghee-clarified-butter",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3MMK453Y0SQHF6JC74JR",
+    "title": "Natco - Brown Lentils 2kg",
+    "handle": "4567667376200",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3MQTFRYPGN04T4FWCQJV",
+    "title": "Natco - Brown Lentils 500g",
+    "handle": "4567667343432",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3MW7KA5RKC4M9C6HCVEW",
+    "title": "Natco - Chanadal Polished 2kg",
+    "handle": "4567667310664",
+    "categories": [
+      "chana-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3MZG16XR8PE5JGR83837",
+    "title": "Natco - Chanadal Polished 1kg",
+    "handle": "4567667277896",
+    "categories": [
+      "chana-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3N3WB0RRPRSNM4FCRWY1",
+    "title": "Natco - Green Lentils 1kg",
+    "handle": "4567667212360",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "dal-lentils",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3N8CW0NBP2FF0RYGFRYD",
+    "title": "Natco - Green Lentils 2kg",
+    "handle": "4567667114056",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "dal-lentils",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3NCRMDH1T1HFHKP28TF6",
+    "title": "Natco - Mung Beans 1kg",
+    "handle": "4567667081288",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3NGMQYH1T4SD2SXSHM1A",
+    "title": "Natco - Mung Beans 2kg",
+    "handle": "4567667015752",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3NMP5WHFN5PMPZC8RKW8",
+    "title": "Natco - Mung Split 2kg",
+    "handle": "4567666982984",
+    "categories": [
+      "urad-dal-split",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3NS4K2862JTGSGVHG6X3",
+    "title": "Natco - Mung Split 500g",
+    "handle": "4567666950216",
+    "categories": [
+      "urad-dal-split",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3NXR2E1P7001AN6MADYH",
+    "title": "Natco - Mung Dal Yellow 1kg",
+    "handle": "4567666917448",
+    "categories": [
+      "moong-dal-yellow",
+      "dal-lentils",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3P2F9EEVS3YHK15WKVV1",
+    "title": "Natco - Gram Roasted Unsalted 300g",
+    "handle": "4567661445192",
+    "categories": [
+      "butter-unsalted",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3P6VHA82P79QADZZR1RN",
+    "title": "Natco - Gram Roasted Salted 300g",
+    "handle": "4567661412424",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3PBBK9YRAXWCBAXF98KE",
+    "title": "Natco - Daria Gotta (Small) 300g",
+    "handle": "4567661379656",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3PFGPKBM1N3Z8489Y5V1",
+    "title": "Natco - Daria Gotta (Large) 700g",
+    "handle": "4567661314120",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3PKESW4X5MF6M965PJ5M",
+    "title": "Natco - Daria Dal 300g",
+    "handle": "4567661248584",
+    "categories": [
+      "toor-dal",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3PPTNKYDTSKGNZ1JJED5",
+    "title": "Natco - Pine Nuts 75g",
+    "handle": "4641502855240",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3PTBJ68CTX08YHJ1TD4P",
+    "title": "Natco - Cashew Split 1kg",
+    "handle": "4567664656456",
+    "categories": [
+      "urad-dal-split",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3PYEH3TFF9EWJGV4GHD2",
+    "title": "Natco - Almond Blanched Whole 250g",
+    "handle": "4567664885832",
+    "categories": [
+      "whole-moong-green",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3Q2ES8FR3AHE3EF22ETJ",
+    "title": "Natco - Cashew Kernel 300g",
+    "handle": "4567664689224",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3Q6F87C9A2FEGJWY7Y4X",
+    "title": "Natco - Almonds 1kg",
+    "handle": "4567665115208",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3QARSC346J14WC0MTGG1",
+    "title": "Natco - Almonds 400g",
+    "handle": "4567665049672",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3QED145AD19XCPK828SF",
+    "title": "Natco - Almonds Ground 300g",
+    "handle": "4567665016904",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3QJVFB90J4A0PZE6HHWK",
+    "title": "Natco - Almond Flakes 1kg",
+    "handle": "4567664984136",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3QQEMTJBDV54B6TF3F4G",
+    "title": "Natco - Almond Flakes 300g",
+    "handle": "4567664951368",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3QW7AHE0DEPMYEGS60PD",
+    "title": "Natco - Blanched Almond Whole 700g",
+    "handle": "4567664918600",
+    "categories": [
+      "whole-moong-green",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3QZTPR9FJ0PW0VARCPXV",
+    "title": "Natco - Pecans 200g",
+    "handle": "4567664820296",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3R4ASXXAND3J031P887E",
+    "title": "Natco - Walnut Halves 700g",
+    "handle": "4567664787528",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3R8YYB5V0K93P92C0GJG",
+    "title": "Natco - Walnut Halves 200g",
+    "handle": "4567664754760",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3RD66EQHHRMRYAKEMHYZ",
+    "title": "Natco - Cashew Kernel 1kg",
+    "handle": "4567664721992",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3RHMZN0TEZY8YRVEWZE7",
+    "title": "Natco - Cashew (Large White Pieces) 750g",
+    "handle": "4567664590920",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3RP512GAA89FZJ6MRBJV",
+    "title": "Natco - Peanuts Red 1kg",
+    "handle": "4567663575112",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3RT9K7DXQQM3C73JV3FY",
+    "title": "Natco - Peanuts Red 400g",
+    "handle": "4567663476808",
+    "categories": [
+      "roasted-peanuts-chana",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3RYCDYFGMPC1P03S32TB",
+    "title": "Natco - Pappadoms Madras (Coin size) 200g",
+    "handle": "4567662362696",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3S1X88HWNS5Q9TKK5C7A",
+    "title": "Natco - Pistachio Kernels 1kg",
+    "handle": "4567663214664",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3S67VJB9PV1NPABT6AF9",
+    "title": "Natco - Pistachio Kernels 250g",
+    "handle": "4567663149128",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3SAG7XA7PEZQWR7DQ8BT",
+    "title": "Natco - Pistachio Kernels 100g",
+    "handle": "4567663116360",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3SEVZYPZ40724ZZ9FCD7",
+    "title": "Natco - Luxury Fruit &amp; Nut Mix 250g",
+    "handle": "4567662952520",
+    "categories": [
+      "mixture-bombay-mix",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3SK2R7C3RPKDAGHVYNKM",
+    "title": "Natco - Luxury Fruit &amp; Nuts Mix 750g",
+    "handle": "4567662919752",
+    "categories": [
+      "mixture-bombay-mix",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3SPSPHH56WGTZ5P3B26T",
+    "title": "Natco - Basmati Rice India - Bag 5kg",
+    "handle": "4567662067784",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3ST3BXHYNNASKXNTMSQ9",
+    "title": "Natco - Basmati Rice Kernel 5kg",
+    "handle": "4567661871176",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3SYFPFADJSB1MCBPJWE5",
+    "title": "Natco - Long Grain White Rice 5kg",
+    "handle": "4567661838408",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3T2WHQVCZYHR2EBEB9K5",
+    "title": "Natco - Easycook Parboiled Rice 5kg",
+    "handle": "4567661772872",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3T75YJJT4Y0MM38N36DB",
+    "title": "Natco - Sona Masuri Rice 5kg",
+    "handle": "4567661674568",
+    "categories": [
+      "sona-masoori-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3TBH6RZM33GD22HMKBPS",
+    "title": "Natco - Ponni Rice 5kg",
+    "handle": "4567661543496",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3TFR517NQ9D8AV6MJPNY",
+    "title": "Natco - Idli Rice 5kg",
+    "handle": "4567661477960",
+    "categories": [
+      "idli-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3TKZ9VDRAXYDEVPBZQH1",
+    "title": "Natco - Powa Medium (Flaked Rice) 1kg",
+    "handle": "4567660757064",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3TR1RJG24Z1KG0SGGEHE",
+    "title": "Natco - Pumpkin Seeds 250g",
+    "handle": "4567660953672",
+    "categories": [
+      "cumin-seeds-jeera",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3TWHK1Q55ET0Q0E8HV7K",
+    "title": "Natco - Linseed Brown 1kg",
+    "handle": "4567660920904",
+    "categories": [
+      "brown-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3V04PEQZ430PZYGEGV4A",
+    "title": "Natco - Linseed Brown 400g",
+    "handle": "4567660888136",
+    "categories": [
+      "brown-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3V4NFK951TF4V7YF3D27",
+    "title": "Natco - White Poppy Seeds 300g",
+    "handle": "4567660855368",
+    "categories": [
+      "cumin-seeds-jeera",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3V8WYVWSQ4DKFAETJCK6",
+    "title": "Natco - White Poppy Seeds 100g",
+    "handle": "4567660822600",
+    "categories": [
+      "cumin-seeds-jeera",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3VCCQ1709ND45D2HSRDB",
+    "title": "Natco - Sunflower Seeds 1kg",
+    "handle": "4567660724296",
+    "categories": [
+      "sunflower-oil",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3VFTP5F7TD13MQMK5R81",
+    "title": "Natco - Sunflower Seeds 300g",
+    "handle": "4567660691528",
+    "categories": [
+      "sunflower-oil",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3VKV66EPHENFN0Z6V9FZ",
+    "title": "Natco - Sagoo Seeds Medium 1.5kg",
+    "handle": "4567660658760",
+    "categories": [
+      "cumin-seeds-jeera",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3VR8XVJ8ZH3R1BK3E3AG",
+    "title": "Natco - Sesame Seeds Natural 400g",
+    "handle": "4567660593224",
+    "categories": [
+      "cumin-seeds-jeera",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3VWD5SBVAA3YG7HD1ZC4",
+    "title": "Natco - Sesame Seeds Hulled 1.5kg",
+    "handle": "4567660560456",
+    "categories": [
+      "cumin-seeds-jeera",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3VZRXNMRN6MKS1EES5JP",
+    "title": "Natco - Black Chia Seeds 250g",
+    "handle": "4567660134472",
+    "categories": [
+      "whole-urad-black",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3W44J6368GYYD86RAHKY",
+    "title": "Natco - Soya Beans 2kg",
+    "handle": "4567665573960",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3W8GY1KN5BR70ZG6XK7W",
+    "title": "Natco - Soya Beans 500g",
+    "handle": "4567665541192",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3WCQ2QN8YG63083CEM9T",
+    "title": "Natco - Soya Chunks 350g",
+    "handle": "4567660462152",
+    "categories": [
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3WGD5ABN4M7M0K43X0B0",
+    "title": "Natco - Soya Mince 300g",
+    "handle": "4567660396616",
+    "categories": [
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3WMG7FN55TDTDWE5E8EX",
+    "title": "Natco - Mango Pulp Alphonso 450g",
+    "handle": "4567671996488",
+    "categories": [
+      "amchur-mango-powder",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3WQMTJARSBHESKYVGPTP",
+    "title": "Natco - Tomatoes Chopped Full Case 12x400g",
+    "handle": "4567670980680",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3WVW0GS0X6H0J7MEAPH2",
+    "title": "Natco - Red Lentils Polished 2kg",
+    "handle": "4567666524232",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "dal-lentils",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3X07J2400Y2QJCA5Z54M",
+    "title": "Natco - Basil Jar 25g",
+    "handle": "4567668260936",
+    "categories": [
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3X4HDDNHFXC2FSZYQX19",
+    "title": "Natco - Coriander Leaves Jar 25g",
+    "handle": "4567668195400",
+    "categories": [
+      "coriander-seeds-dhania",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3X8Q1VQ8WWPTP5HDVPFW",
+    "title": "Natco - Marjoram Jar 20g",
+    "handle": "4567668162632",
+    "categories": [
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3XD4Z418KSVR7J9XZBDQ",
+    "title": "Natco - Mint Jar 30g",
+    "handle": "4567668097096",
+    "categories": [
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3XGJPN1ZSMZDN3B8VHDR",
+    "title": "Natco - Mixed Herbs Jar 25g",
+    "handle": "4567668064328",
+    "categories": [
+      "mixed-pickle",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3XMPQ3DEP93QBXSEF6SH",
+    "title": "Natco - Oregano Jar 25g",
+    "handle": "4567667966024",
+    "categories": [
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3XQX1R3GKSV6XVMTG0H6",
+    "title": "Natco - Parsley Jar 25g",
+    "handle": "4567667933256",
+    "categories": [
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3XVMMG9C7PP1PGW5MFAW",
+    "title": "Natco - Sage Jar 25g",
+    "handle": "4567667867720",
+    "categories": [
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3Y07NX0QGW9AZB0A5CEN",
+    "title": "Natco - Ajwan Seeds Jar 100g",
+    "handle": "4567657578568",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3Y4V68J69T1Q70VV3FJF",
+    "title": "Natco - Amchoor Powder Jar 100g",
+    "handle": "4567657545800",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3Y9337ZY8XZEQDT50XR1",
+    "title": "Natco - Aniseed Star Jar 40g",
+    "handle": "4567657513032",
+    "categories": [
+      "star-anise",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3YD7M2SEZ2QXYMYGSEY9",
+    "title": "Natco - Asafoetida (Hing) Jar 100g",
+    "handle": "4567657447496",
+    "categories": [
+      "asafoetida-hing",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3YHFK4A74QC9GCTHY0CV",
+    "title": "Natco - Bay Leaves Jar 10g",
+    "handle": "4567657381960",
+    "categories": [
+      "bay-leaves-tej-patta",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3YNN0X9VGB7V2NT6CS4H",
+    "title": "Natco - Cardamom Green Jar 50g",
+    "handle": "4567657316424",
+    "categories": [
+      "green-cardamom-elaichi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3YSNV6XTHTBKPSJP0EWZ",
+    "title": "Natco - Whole Birdseye Chilli Jar 50g",
+    "handle": "4567657283656",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3YX48Z3TJ4YTT03ZE67F",
+    "title": "Natco - Chilli Crushed Jar 80g",
+    "handle": "4567657250888",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3Z1CNEQW4R1RPWX3BM2W",
+    "title": "Natco - Chilli Powder Hot Jar 100g",
+    "handle": "4567657185352",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3Z5EJBEV9R5ZT29ZXQAB",
+    "title": "Natco - Cassia (Dalchini) Jar 50g",
+    "handle": "4567657119816",
+    "categories": [
+      "cinnamon-sticks-dalchini",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3Z9P660BKXRT9DYBC515",
+    "title": "Natco - Cinnamon Ground Jar 100g",
+    "handle": "4567657087048",
+    "categories": [
+      "cinnamon-sticks-dalchini",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3ZDHFT6VX1BEX24DP0T0",
+    "title": "Natco - Cloves Jar 50g",
+    "handle": "4567657054280",
+    "categories": [
+      "cloves-laung",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3ZHRN8M7AW3CY4118C0X",
+    "title": "Natco - Coriander Seeds Jar 65g",
+    "handle": "4567657021512",
+    "categories": [
+      "coriander-seeds-dhania",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3ZNNKCZAZFF5B8F3JN62",
+    "title": "Natco - Coriander Ground Jar 70g",
+    "handle": "4567656988744",
+    "categories": [
+      "coriander-seeds-dhania",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3ZTAX38NE1TYZWHZPDVN",
+    "title": "Natco - All Purpose Seasoning 100g",
+    "handle": "4583224016968",
+    "categories": [
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB3ZXQ8BABH592KCJS7E70",
+    "title": "Natco - All Purpose Seasoning 400g",
+    "handle": "4583223984200",
+    "categories": [
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4025VWA4Y79GBGW0EEC4",
+    "title": "Natco - Anardana Powder Mangal 100g",
+    "handle": "4567665508424",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB406BSFXD38E7VXEVKW4W",
+    "title": "Natco - Chana Masala Mangal 100g",
+    "handle": "4567665475656",
+    "categories": [
+      "chole-chana-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB40ASEVAMZENE8D81P8JH",
+    "title": "Natco - Chat Masala Mangal 100g",
+    "handle": "4567665442888",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB40F4FHMFTP7THS99446Z",
+    "title": "Natco - Meat Masala Mangal 100g",
+    "handle": "4567665377352",
+    "categories": [
+      "meat-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB40KSQ7K87N4QN8YPZJ02",
+    "title": "Natco - Pickle Masala Mangal 125g",
+    "handle": "4567665344584",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB40QGHX8G7WXPR89NYK1D",
+    "title": "Natco - Sambhar Masala Mangal 100g",
+    "handle": "4567665279048",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB40W329Q8B729NAPJEDFN",
+    "title": "Natco - Chicken Masala Mangal 100g",
+    "handle": "4567665213512",
+    "categories": [
+      "chicken-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB410DJFCENS809703QYZ1",
+    "title": "Natco - Biryani Masala Mangal 50g",
+    "handle": "4567665180744",
+    "categories": [
+      "biryani-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB414NQ5GYCF4E8FASX77Q",
+    "title": "Natco - Pavbhaji Masala Mangal 100g",
+    "handle": "4567665147976",
+    "categories": [
+      "pav-bhaji-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB419CK5V2AMYGSW4N88MP",
+    "title": "Natco - Garam Masala 400g",
+    "handle": "4567658627144",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB41CZN3T2PAP00BWASW3B",
+    "title": "Natco - Mixed Masala Whole 300g",
+    "handle": "4567658135624",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB41GTSBEF1ZCSQA383D96",
+    "title": "Natco - Tandoori Masala 400g",
+    "handle": "4567657644104",
+    "categories": [
+      "tandoori-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB41MS3V4QPW40B0B1728J",
+    "title": "Natco - Garam Masala Jar 80g",
+    "handle": "4567656759368",
+    "categories": [
+      "garam-masala",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB41S0PFRFJ6DE5AKRJ936",
+    "title": "Natco - Tandoori Masala Jar 100g",
+    "handle": "4567656169544",
+    "categories": [
+      "tandoori-masala",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB41XT2S6P0S691R8526M0",
+    "title": "Natco - Dried Tarragon 25g",
+    "handle": "4567667834952",
+    "categories": [
+      "dried-red-chillies",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4223X2WG07W3CT3KMBV6",
+    "title": "Natco - Sugar Candy 375g",
+    "handle": "4567660298312",
+    "categories": [
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB426DYPXAR6X6GWW30Q04",
+    "title": "Natco - Spinach Puree 395g",
+    "handle": "6617796804680",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB42ATFQ7N0GH93RH32WDD",
+    "title": "Natco - Mango Slices Alphonso 425g",
+    "handle": "4567671963720",
+    "categories": [
+      "amchur-mango-powder",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB42ERB2Q86VT2WSWYSJ45",
+    "title": "Natco - Mango Pulp Kesar 850g",
+    "handle": "4567671930952",
+    "categories": [
+      "amchur-mango-powder",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB42KTSRB9JYCBGHM24BY4",
+    "title": "Natco - Crispy Fried Onions 400g",
+    "handle": "6647388209224",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB42R3SB8EJYBWDV4V7WSV",
+    "title": "Natco - Spinach Leaf 396g",
+    "handle": "4567671406664",
+    "categories": [
+      "loose-leaf-tea-chai",
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB42WAHTVEBT3N4ZQM9GDM",
+    "title": "Natco - Spinach Puree 794g",
+    "handle": "4567671308360",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB430RXYZ9SGZFBWAS9CZ2",
+    "title": "Natco - Tomato Paste 800g",
+    "handle": "4567671210056",
+    "categories": [
+      "tamarind-paste-concentrate",
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB434Z6YSGZWENT4WRWQNN",
+    "title": "Natco - Tomatoes Peeled 400g",
+    "handle": "4567671144520",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB438XMBP3GQ84H0V6YZV9",
+    "title": "Natco - Patra 400g",
+    "handle": "4567670915144",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB43C7GFMVH1JH86NNHH40",
+    "title": "Natco - Sarson Ka Saag 450g",
+    "handle": "4567670816840",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB43GQJD7FZRZ4M9TGSF71",
+    "title": "Natco - Karela 400g",
+    "handle": "4567670620232",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB43NE02MTCH860YCQAFH7",
+    "title": "Natco - Lotus Root 400g",
+    "handle": "4567670521928",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB43SY0KCM777M2XCEAD7S",
+    "title": "Natco - Suran (Yam) 400g",
+    "handle": "4567670095944",
+    "categories": [
+      "fresh"
+    ]
+  },
+  {
+    "id": "prod_01KTVB43YHZZB6Z55MK4VC8D18",
+    "title": "Natco - Couscous 500g",
+    "handle": "4567668588616",
+    "categories": [
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB442V4WPCXFBYYWEG2C30",
+    "title": "Natco - Vermice T&apos;Dini-Fedelini 500g",
+    "handle": "4567659905096",
+    "categories": [
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB44790BHEQKW17S0348AB",
+    "title": "Natco - Brown Chick Peas 2kg",
+    "handle": "brown-chick-peas",
+    "categories": [
+      "brown-rice",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB44BCRS0JZKCDCWWJJECD",
+    "title": "Natco - Brown Chick Peas 500g",
+    "handle": "brown-chick-peas1",
+    "categories": [
+      "brown-rice",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB44F18A8H6AR9AYX4J6F7",
+    "title": "Natco - Moth Beans 2kg",
+    "handle": "moth-beans",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB44JG3C1139E70WJYRRX0",
+    "title": "Natco - Moth Beans 500g",
+    "handle": "moth-beans1",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB44PRYZW6FFP8A0XRBAJN",
+    "title": "Natco - Mung Dal Yellow 2kg",
+    "handle": "mung-dal-yellow-2kg",
+    "categories": [
+      "moong-dal-yellow",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB44V0H8NR5YQ2A460P6F5",
+    "title": "Natco - Red Lentils Polished 1kg",
+    "handle": "red-lentils-polished",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB44YV4YJ2CCRMHG7NXJTD",
+    "title": "Natco - Rose Coco (Borlotti) Beans 2kg",
+    "handle": "rosecoco-beans",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB452Y8YT45D7D6DA4BS3G",
+    "title": "Natco - Rose Coco (Borlotti) Beans 500g",
+    "handle": "rosecoco-beans1",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB457CGJG6EPEFQ8E590W7",
+    "title": "Natco - Toor Dal Oily 2kg",
+    "handle": "toor-dal-oily1",
+    "categories": [
+      "toor-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB45B2HFY0M1X5VYBXWBG2",
+    "title": "Natco - Toor Dal Oily 1kg",
+    "handle": "toor-dal-oily",
+    "categories": [
+      "toor-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB45FTQFHV1GD8H0J1Z8PR",
+    "title": "Natco - Toor Dal Plain 2kg",
+    "handle": "toor-dal-plain",
+    "categories": [
+      "plain-flour-maida",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB45KXMZ8NF16ZDSBQPST8",
+    "title": "Natco - Toor Dal Plain 500g",
+    "handle": "toor-dal-plain1",
+    "categories": [
+      "plain-flour-maida",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB45QDS8VDHNESMYBZMTY6",
+    "title": "Natco - Urid Beans 2kg",
+    "handle": "uridbeans",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB45VW9X8TQZBC56545DWT",
+    "title": "Natco - Urid Beans 1kg",
+    "handle": "uridbeans1",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB460GYA04MS9TXNJD856H",
+    "title": "Natco - Urid Dal White 2kg",
+    "handle": "urid-dal-white",
+    "categories": [
+      "toor-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB464S58W3MAQ1SGKTJ0Z6",
+    "title": "Natco - Urid Dal White 1kg",
+    "handle": "urid-dal-white1",
+    "categories": [
+      "toor-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB468Y0W79CMFBDR8VHGHW",
+    "title": "Natco - Urid Split 2kg",
+    "handle": "uridsplit1",
+    "categories": [
+      "urad-dal-split",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB46CXPF727K70P2Y2CFNF",
+    "title": "Natco - Urid Split 500g",
+    "handle": "uridsplit",
+    "categories": [
+      "urad-dal-split",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB46H8CQZC63HV7DE4X2D2",
+    "title": "Natco - Yellow Split Peas 2kg",
+    "handle": "yellow-split-peas1",
+    "categories": [
+      "moong-dal-yellow",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB46NNEFZGSG8FV3TR505Y",
+    "title": "Natco - Yellow Split Peas 1kg",
+    "handle": "yellow-split-peas",
+    "categories": [
+      "moong-dal-yellow",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB46STW3DDHCVJ4KD7H7XG",
+    "title": "Natco - Tamarind Slab 200g",
+    "handle": "tamarindslab",
+    "categories": [
+      "tamarind-paste-concentrate",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB46XTCHHXDMVBG3J4PZ41",
+    "title": "Natco - Takmuria (Basil Seeds) 100g",
+    "handle": "takmuria",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB471A9R8E7QAXW85C4CNH",
+    "title": "Natco - Ajwan Seeds 300g",
+    "handle": "ajwanseeds",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB474TCCCNEZX0CBS2Z2CH",
+    "title": "Natco - Amchoor Powder 400g",
+    "handle": "amchoor-powder",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB478X20QP1JA4B4TM4WMM",
+    "title": "Natco - Chinese 5 Spice 100g",
+    "handle": "chinese-5-spice",
+    "categories": [
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB47CZS1C3K4RT65S71V7Z",
+    "title": "Natco - Cardamom Green 200g",
+    "handle": "cardamomgreen",
+    "categories": [
+      "green-cardamom-elaichi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB47HA1DH4AEZEKMT167WZ",
+    "title": "Natco - Cardamom Seeds 100g",
+    "handle": "cardamomseeds",
+    "categories": [
+      "green-cardamom-elaichi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB47ND265ZXEK3ZM5EY6PM",
+    "title": "Natco - Cardamom Green Ground 50g",
+    "handle": "cardamom-green-ground",
+    "categories": [
+      "green-cardamom-elaichi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB47SRZCATB6ZAV7QA893S",
+    "title": "Natco - Chilli Whole Stemless 200g",
+    "handle": "chilli-whole-stemless",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB47Y29X97PYT4YF1KFJW2",
+    "title": "Natco - Chilli Crushed 300g",
+    "handle": "crushed-chilli",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB482D7CFAP1RA6FJJ0TKD",
+    "title": "Natco - Chilli Powder Kashmiri 100g",
+    "handle": "chilli-powder-kashmiri1",
+    "categories": [
+      "kashmiri-chilli-powder",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB48613MFTKSCYPBH28C43",
+    "title": "Natco - Chilli Powder Extra Hot 400g",
+    "handle": "chilli-powder-extra-hot",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB48ABPKB07PNPPZQJ8AYE",
+    "title": "Natco - Chilli Powder 1kg",
+    "handle": "chilli-powder",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB48EE62ZR9YRZQ6Y6P0DE",
+    "title": "Natco - Chilli Powder 100g",
+    "handle": "chilli-powder1",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB48J97XFXXM5P97T2YRY3",
+    "title": "Natco - Cinnamon Sticks 50g",
+    "handle": "cinnamon-sticks",
+    "categories": [
+      "cinnamon-sticks-dalchini",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB48PQQKRGH8M3NFNTNRNV",
+    "title": "Natco - Cloves 200g",
+    "handle": "cloves",
+    "categories": [
+      "cloves-laung",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB48TY046HFCMM2NTQCM8F",
+    "title": "Natco - Cloves Ground 50g",
+    "handle": "cloves-ground",
+    "categories": [
+      "cloves-laung",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB48ZBHX0V3ZWTF43S12C8",
+    "title": "Natco - Coriander Seeds 300g",
+    "handle": "coriander-seeds",
+    "categories": [
+      "coriander-seeds-dhania",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB493DH68WGT8XEYBBQKD3",
+    "title": "Natco - Cumin Seeds Black 100g",
+    "handle": "cumin-seeds-black",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB496NZRCDME2CFCXP3JR8",
+    "title": "Natco - Cumin Seeds 400g",
+    "handle": "cumin-seeds",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB499TEFHEVCGAAFD4M6M3",
+    "title": "Natco - Cumin Ground 100g",
+    "handle": "cumin-ground1",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB49DS7CXBK39A23FBEJD7",
+    "title": "Natco - Curry Powder Hot 400g",
+    "handle": "curry-powder-hot",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB49JHPMMWAS5N51P1JVJG",
+    "title": "Natco - Curry Leaves 100g",
+    "handle": "curryleaves",
+    "categories": [
+      "curry-leaves",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB49PTE5TCTHFB8ZAPS2TD",
+    "title": "Natco - Fennel Seeds 400g",
+    "handle": "fennel-seeds",
+    "categories": [
+      "fennel-seeds-saunf",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB49TZ5KX1GGNTC8HND783",
+    "title": "Natco - Garlic Powder 100g",
+    "handle": "garlic-powder",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB49YRYJE906M1JT22G75Z",
+    "title": "Natco - Garlic Flakes 100g",
+    "handle": "garlic-flakes",
+    "categories": [
+      "garlic-pickle",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4A1X40W4632Y2W8Q789V",
+    "title": "Natco - Tamarind Wet 400g",
+    "handle": "tamarindwet",
+    "categories": [
+      "tamarind-paste-concentrate",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4A6CW5EPHFNCV6ASE5B4",
+    "title": "Natco - Ginger Powder 100g",
+    "handle": "ginger-powder",
+    "categories": [
+      "ginger-powder-sonth",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4AA4B4SQQJ4QR1XVGWR3",
+    "title": "Natco - Kala Namak 300g",
+    "handle": "kalanamak",
+    "categories": [
+      "kala-chana-black-chickpeas",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4AE8H6CK3AAW6K345MR6",
+    "title": "Natco - Kalwanji (Nigella) Seeds 300g",
+    "handle": "nigella-seeds",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4AHMZWHGR2DCH1RN49G5",
+    "title": "Natco - Mace Ground 50g",
+    "handle": "mace-ground",
+    "categories": [
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4ANXGB93M5E8YC6GZCHR",
+    "title": "Natco - Nutmeg Ground 50g",
+    "handle": "nutmeg-ground",
+    "categories": [
+      "nutmeg-jaiphal",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4AT3FWY3GN1GPFSPTK47",
+    "title": "Natco - Methi Seeds Fenugreek 400g",
+    "handle": "methi-seeds",
+    "categories": [
+      "fenugreek-seeds-methi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4AXTPWXWTWCF2HAZSFPW",
+    "title": "Natco - Mustard Seeds 400g",
+    "handle": "mustard-seeds",
+    "categories": [
+      "mustard-seeds-rai",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4B1Q215WJZZFXDJ0B5JC",
+    "title": "Natco - Panchpuran (5 Whole Spice) 1kg",
+    "handle": "panchpuran-whole-spice",
+    "categories": [
+      "whole-moong-green",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4B5RYQ4K1W9MCX9RDM4T",
+    "title": "Natco - Chilli Whole Birdseye 150g",
+    "handle": "chilli-whole-birdseye",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4B9B9B0ZHD0KY9F0F7J8",
+    "title": "Natco - Black Pepper Coarse 300g",
+    "handle": "black-pepper-coarse",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4BCQPVWMAN90B1MMDZ5V",
+    "title": "Natco - Black Pepper Coarse 1kg",
+    "handle": "black-pepper-coarse2",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4BH4C3MHWVV18YPDAZ3A",
+    "title": "Natco - Black Pepper Whole 1kg",
+    "handle": "black-pepper-whole",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4BMHASENGQ9N3T6NXW38",
+    "title": "Natco - Chilli Powder Kashmiri 400g",
+    "handle": "chilli-powder-kashmiri",
+    "categories": [
+      "kashmiri-chilli-powder",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4BRF139EK8TBCCCXZ28F",
+    "title": "Natco - Black Pepper Whole 300g",
+    "handle": "black-pepper-whole1",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4BW0D0YR72A0FD8NBAC4",
+    "title": "Natco - Black Pepper Ground 400g",
+    "handle": "black-pepper-ground",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4C0198M1MGH1NB12TZYY",
+    "title": "Natco - White Pepper Ground 100g",
+    "handle": "white-pepper-ground",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4C3VNZ0BYGJJGDJFBXPM",
+    "title": "Natco - Saffron 1g",
+    "handle": "saffron",
+    "categories": [
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4C7Y3T9JRXP34HWX08W1",
+    "title": "Natco - Turmeric Powder 400g",
+    "handle": "turmeric-powder",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4CBPTYFWB8R1Y26XD3AP",
+    "title": "Natco - Cassia (Dalchini) 400g",
+    "handle": "cassia",
+    "categories": [
+      "cinnamon-sticks-dalchini",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4CG390BVH1YDT8MVKMTW",
+    "title": "Natco - Coriander Ground 400g",
+    "handle": "coriander-ground",
+    "categories": [
+      "coriander-seeds-dhania",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4CMJHGPZWPEK418FPXW9",
+    "title": "Natco - Cumin Ground 400g",
+    "handle": "cumin-ground",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4CS43SMP3H18R497CEV2",
+    "title": "Natco - Curry Powder Hot 100g",
+    "handle": "curry-powder-hot1",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4CW995AV1PFETBT7K778",
+    "title": "Natco - Curry Powder 400g",
+    "handle": "curry-powder",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4D0G8PJQDB9JZDJSMKMD",
+    "title": "Natco - Cumin Seeds Jar 100g",
+    "handle": "cumin-seeds-jar",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4D4H3VMD9VSBSRT6FQRJ",
+    "title": "Natco - Cumin Ground Jar 70g",
+    "handle": "cumin-ground-jars",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4D971DCDQSA7DR8Z33EF",
+    "title": "Natco - Curry Powder Medium Jar 100g",
+    "handle": "curry-powder-medium-jar",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4DDRYHPGYK6YXQ6205JZ",
+    "title": "Natco - Fennel Seeds Jar 100g",
+    "handle": "fennel-seeds-jar",
+    "categories": [
+      "fennel-seeds-saunf",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4DHY3ZX6FZ644Q08AD06",
+    "title": "Natco - Garlic Powder Jar 100g",
+    "handle": "garlic-powder-jar",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4DP9842FEZBNCPTH4X5F",
+    "title": "Natco - Kalwanji (Nigella) Seeds Jar 100g",
+    "handle": "nigella-seeds-jar",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4DTZYZXM2SSZC3A0B2NE",
+    "title": "Natco - Kala Namak 100g",
+    "handle": "kalanamak1",
+    "categories": [
+      "kala-chana-black-chickpeas",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4DZ0EB1YRXQ0R29068C0",
+    "title": "Natco - Methi Leaves Jar 10g",
+    "handle": "methi-leaves-jar",
+    "categories": [
+      "kasuri-methi-dried-fenugreek-leaves",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4E2RR8ZP4WPJ11P9T4G4",
+    "title": "Natco - Mustard Seeds Black Jar 100g",
+    "handle": "mustard-seeds-black-jar",
+    "categories": [
+      "mustard-seeds-rai",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4E6X66TPNE7RC1VP9K72",
+    "title": "Natco - Yellow Mustard Seeds 300g",
+    "handle": "yellow-mustard-seeds",
+    "categories": [
+      "mustard-seeds-rai",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4EBHZ9QFHZS0F26RX37A",
+    "title": "Natco - Nutmeg Whole Jar 100g",
+    "handle": "nutmeg-whole-jar",
+    "categories": [
+      "nutmeg-jaiphal",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4EG61ER5H4YSJ948WWTE",
+    "title": "Natco - Nutmeg Ground Jar 100g",
+    "handle": "nutmeg-ground-jar",
+    "categories": [
+      "nutmeg-jaiphal",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4EMQGRXHF48NVFQ6VK3Z",
+    "title": "Natco - Paprika Powder 400g",
+    "handle": "paprika-powder",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4ESDSH45A3DW0N781JGY",
+    "title": "Natco - Black Pepper Coarse 100g",
+    "handle": "black-pepper-coarse1",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4EXEBBV5N4P3WMPQZYTN",
+    "title": "Natco - Paprika Powder Jar 100g",
+    "handle": "paprika-powder-jar",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4F0ZDT64X5Q9D2PW724Q",
+    "title": "Natco - Black Pepper Whole Jar 100g",
+    "handle": "black-pepper-whole-jar",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4F560JJFG42N6TC1XW4N",
+    "title": "Natco - White Pepper Ground Jar 100g",
+    "handle": "white-pepper-ground-jar",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4F9E30S5X58PZKQXAA3G",
+    "title": "Natco - Tamarind Paste Jar 250g",
+    "handle": "tamarind-paste-jar",
+    "categories": [
+      "tamarind-paste-concentrate",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4FCKDQ09J8DV9T26K9YP",
+    "title": "Natco - Turmeric Powder Jar 100g",
+    "handle": "turmeric-powder-jar",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4FGPWBV2ZVKH0TKRBR3X",
+    "title": "Natco - Ground Ginger Jar 70g",
+    "handle": "ground-ginger-jar",
+    "categories": [
+      "ginger-powder-sonth",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4FMXR68TPSD6GPAMP395",
+    "title": "Natco - Methi Seeds Jar 100g",
+    "handle": "methi-seeds-jar",
+    "categories": [
+      "fenugreek-seeds-methi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4FRJ8PT4BDD5A4ZHN9SW",
+    "title": "Natco - Black Pepper Ground Jar 100g",
+    "handle": "black-pepper-ground-jar",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4FWW6V1KPAJQ2YVM16MB",
+    "title": "TRS Coarse Black Pepper",
+    "handle": "trs-coarse-black-pepper",
+    "categories": [
+      "black-pepper-kali-mirch",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4G1JNY7K8P7FXSMAPP3E",
+    "title": "TRS Coarse Cornmeal",
+    "handle": "trs-coarse-cornmeal",
+    "categories": [
+      "suji-coarse-semolina",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4G6DKPCWWMBPAGHAVE5F",
+    "title": "TRS Coarse Semolina",
+    "handle": "trs-coarse-semolina",
+    "categories": [
+      "suji-coarse-semolina",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4GB5QJG0B3BW9E63Z3WJ",
+    "title": "TRS Coriander Powder (Dhania)",
+    "handle": "trs-coriander-powder-dhania",
+    "categories": [
+      "coriander-powder-dhania",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4GFKSX3SMF9WFND3QK4P",
+    "title": "TRS Coriander Seeds (Whole Dhania)",
+    "handle": "trs-coriander-seeds-whole-dhania",
+    "categories": [
+      "coriander-seeds-dhania",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4GMAHKY5GFQ5KSCT6QKC",
+    "title": "TRS Crushed Chilli",
+    "handle": "trs-crushed-chilli",
+    "categories": [
+      "red-chilli-powder-mirchi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4GRY8655VS2S3SV9NSN9",
+    "title": "TRS Cumin Powder",
+    "handle": "trs-cumin-powder",
+    "categories": [
+      "cumin-powder-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4GXK13T3RYZ32X2R3ZS2",
+    "title": "TRS Cumin Seeds",
+    "handle": "trs-cumin-seeds",
+    "categories": [
+      "cumin-seeds-jeera",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4H2AQ2QJ4281VQVZCKJC",
+    "title": "TRS Fennel Seeds",
+    "handle": "trs-fennel-seeds",
+    "categories": [
+      "fennel-seeds-saunf",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4H6Q3WT5AV0CQX6PG789",
+    "title": "TRS Fenugreek Leaves",
+    "handle": "trs-fenugreek-leaves",
+    "categories": [
+      "kasuri-methi-dried-fenugreek-leaves",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4HBCCTCXCD63R355JN7P",
+    "title": "TRS Fenugreek Seeds",
+    "handle": "trs-fenugreek-seeds",
+    "categories": [
+      "fenugreek-seeds-methi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4HFPWQJCB667SEE6QY0J",
+    "title": "TRS Fine Desiccated Coconut",
+    "handle": "trs-fine-desiccated-coconut",
+    "categories": [
+      "coconut-oil",
+      "condiments"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4HMB2DMVXJTKJHY8DRNF",
+    "title": "TRS Fine Semolina",
+    "handle": "trs-fine-semolina",
+    "categories": [
+      "semolina-sooji-rava",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4HS2Z1S1YERKWB22BGWK",
+    "title": "TRS Garam Masala",
+    "handle": "trs-garam-masala",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4HY4P2SG6ZP37WAHKVPS",
+    "title": "TRS Garlic Powder",
+    "handle": "trs-garlic-powder",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4J1W1T8XW2YGD1V9T4NG",
+    "title": "TRS Ginger  Garlic Paste",
+    "handle": "trs-ginger-garlic-paste",
+    "categories": [
+      "ginger-garlic-paste",
+      "household"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4J68S4SGPEZZWY6RA1KA",
+    "title": "TRS Ginger Paste",
+    "handle": "trs-ginger-paste",
+    "categories": [
+      "ginger-garlic-paste",
+      "household"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4JAJF2RFY4572AAFS4A5",
+    "title": "TRS Ginger Powder",
+    "handle": "trs-ginger-powder",
+    "categories": [
+      "ginger-powder-sonth",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4JF2E0XKK02KV7FVZ4HT",
+    "title": "TRS Green Cardamom",
+    "handle": "trs-green-cardamom",
+    "categories": [
+      "green-cardamom-elaichi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4JM6SCJQK7CTZ0VZ13N0",
+    "title": "TRS Green Lentils",
+    "handle": "trs-green-lentils",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4JS2MDH4R3T23SS0RKP1",
+    "title": "TRS Ground Rice",
+    "handle": "trs-ground-rice",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4JXS835HFYB2KFC9GAWF",
+    "title": "TRS Hot Madras Curry",
+    "handle": "trs-hot-madras-curry",
+    "categories": [
+      "fish-curry-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4K2E0JV4JSGTPMKXEFTT",
+    "title": "TRS Mild Madras Curry Powder",
+    "handle": "trs-mild-madras-curry-powder",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4K79S82JWX8AMJYC4AJB",
+    "title": "TRS Moth Beans",
+    "handle": "trs-moth-beans",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4KC9HCG6RV2NJBKEHGW2",
+    "title": "TRS Mung Beans",
+    "handle": "trs-mung-beans",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4KHA6D2ZZXRH1XD7TN37",
+    "title": "TRS Mung Dal",
+    "handle": "trs-mung-dal",
+    "categories": [
+      "toor-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4KP8NHH8M7KQBE1WC8P8",
+    "title": "TRS Mung Dal Chilka (Split Green Peas)",
+    "handle": "trs-mung-dal-chilka-split-green-peas",
+    "categories": [
+      "urad-dal-split",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4KTSPJ68EF4PX6VGG95C",
+    "title": "TRS Paprika Powder",
+    "handle": "trs-paprika-powder",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4M0AVTYCGSTBXT6Y44JF",
+    "title": "TRS Popcorn",
+    "handle": "trs-popcorn",
+    "categories": [
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4M4JPKRS01V7R8J2AYMP",
+    "title": "TRS Pure Gram Flour",
+    "handle": "trs-pure-gram-flour",
+    "categories": [
+      "besan-gram-flour",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4M8YHAR3E58W5QZT0HF4",
+    "title": "TRS Red Adzuki Beans (Red Cow Peas)",
+    "handle": "trs-red-adzuki-beans-red-cow-peas",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4MD68PEAX05Y5EH954GG",
+    "title": "TRS Red Kidney Beans",
+    "handle": "trs-red-kidney-beans",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4MHSF1K0HDSVWX0PDT6W",
+    "title": "TRS Red Split Lentils",
+    "handle": "trs-red-split-lentils",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4MNGAP4Q12D1KGNQBX46",
+    "title": "TRS Rosecoco Beans",
+    "handle": "trs-rosecoco-beans",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4MT2HZ8RD24XGMS3T72K",
+    "title": "TRS Sarson Ka Saag (Spiced Mustard Greens Curry)",
+    "handle": "trs-sarson-ka-saag-spiced-mustard-greens-curry",
+    "categories": [
+      "mustard-oil",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4MYFA0VVA2RFMNBY651T",
+    "title": "TRS Tapioca Pearls",
+    "handle": "trs-tapioca-pearls",
+    "categories": [
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4N2VZ1Y5X9VVM92CR8KT",
+    "title": "TRS Toor Dal",
+    "handle": "trs-toor-dal",
+    "categories": [
+      "toor-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4N6NAGPC28KSE7EV0RAS",
+    "title": "TRS Tumeric Powder",
+    "handle": "trs-tumeric-powder",
+    "categories": [
+      "turmeric-powder-haldi",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4NB4TDVVWYBRM57E1GJV",
+    "title": "TRS Urid Beans",
+    "handle": "trs-urid-beans",
+    "categories": [
+      "rajma-kidney-beans",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4NFTZSKHXVE1JSMJHPWS",
+    "title": "TRS Urid Dal",
+    "handle": "trs-urid-dal",
+    "categories": [
+      "toor-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4NMAQ727B9TXY48T7WW9",
+    "title": "TRS Urid Dal Chilka",
+    "handle": "trs-urid-dal-chilka",
+    "categories": [
+      "toor-dal",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4NRT2SZEMD5KW6DQ50PV",
+    "title": "TRS Urid Whole Gota",
+    "handle": "trs-urid-whole-gota",
+    "categories": [
+      "whole-moong-green",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4NXEJNF7R95KK48FD66Q",
+    "title": "TRS White Maize Meal",
+    "handle": "trs-white-maize-meal",
+    "categories": [
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4P1RDEC5PQAR605SQAKT",
+    "title": "TRS Whole Cinnamon (Dalchini)",
+    "handle": "trs-whole-cinnamon-dalchini",
+    "categories": [
+      "cinnamon-sticks-dalchini",
+      "spices-whole"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4P69G41AY772Z38RN441",
+    "title": "TRS Yellow Peas",
+    "handle": "trs-yellow-peas",
+    "categories": [
+      "moong-dal-yellow",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4PAGKMXMX0X99J4DE2Z6",
+    "title": "TRS Yellow Split Peas",
+    "handle": "trs-yellow-split-peas",
+    "categories": [
+      "moong-dal-yellow",
+      "dal-lentils"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4PEK3T7WW2MS48TGA5TA",
+    "title": "Shan Special Chicken Biryani Mix",
+    "handle": "shan-special-chicken-biryani-mix",
+    "categories": [
+      "biryani-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4PJCFYSXTDQC5SHTX20D",
+    "title": "Shan Special Beef Biryani Mix",
+    "handle": "shan-special-beef-biryani-mix",
+    "categories": [
+      "biryani-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4PNYTFVGE4MHJF844JW8",
+    "title": "Shan Special Mutton Biryani Mix",
+    "handle": "shan-special-mutton-biryani-mix",
+    "categories": [
+      "biryani-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4PT1WC5A2GWP4ZB6FJZR",
+    "title": "Shan Sindhi Biryani Mix",
+    "handle": "shan-sindhi-biryani-mix",
+    "categories": [
+      "biryani-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4PXHSW18ES76H624F52Q",
+    "title": "Shan Bombay Biryani Mix",
+    "handle": "shan-bombay-biryani-mix",
+    "categories": [
+      "biryani-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4Q1SD251XGVSJTDAJFY8",
+    "title": "Shan Karahi Gosht Masala",
+    "handle": "shan-karahi-gosht-masala",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4Q63GGPS7NK154KK1D68",
+    "title": "Shan Nihari Masala",
+    "handle": "shan-nihari-masala",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4QA687VMJR93A8YEPM7Z",
+    "title": "Shan Korma Masala",
+    "handle": "shan-korma-masala",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4QEG6V08R72X8VD17X45",
+    "title": "Shan Butter Chicken Masala",
+    "handle": "shan-butter-chicken-masala",
+    "categories": [
+      "chicken-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4QKCBF9DDGTQ9K2G51MJ",
+    "title": "Shan Chicken Tikka Masala",
+    "handle": "shan-chicken-tikka-masala",
+    "categories": [
+      "chicken-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4QQYJW0BXD0XVBRQ60S1",
+    "title": "Shan Tandoori Chicken Mix",
+    "handle": "shan-tandoori-chicken-mix",
+    "categories": [
+      "tandoori-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4QWAF6BTWM4AQRX65S46",
+    "title": "Shan Seekh Kabab Mix",
+    "handle": "shan-seekh-kabab-mix",
+    "categories": [
+      "mixture-bombay-mix",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4R0SK1Y0PGSJ94ZZHF2W",
+    "title": "Shan Haleem Mix",
+    "handle": "shan-haleem-mix",
+    "categories": [
+      "mixture-bombay-mix",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4R40HA54CEPBS5478CNS",
+    "title": "Shan Chana Masala",
+    "handle": "shan-chana-masala",
+    "categories": [
+      "chole-chana-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4R8NKAHT633TVDQFCBK7",
+    "title": "Shan Daal Masala",
+    "handle": "shan-daal-masala",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4RD3K9T2GA47HZBHB15N",
+    "title": "Shan Achar Gosht Masala",
+    "handle": "shan-achar-gosht-masala",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4RHM6YH04MX25S4PF7AR",
+    "title": "Shan Keema Masala",
+    "handle": "shan-keema-masala",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4RNXP01GFDJDY4V26YWZ",
+    "title": "Shan Pilau Rice Mix",
+    "handle": "shan-pilau-rice-mix",
+    "categories": [
+      "basmati-rice",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4RS86CTWNK2AE599GMNA",
+    "title": "MDH Kitchen King Masala",
+    "handle": "mdh-kitchen-king-masala",
+    "categories": [
+      "kitchen-king-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4RWYTJYM9JV6ERV4W8RS",
+    "title": "MDH Chana Masala",
+    "handle": "mdh-chana-masala",
+    "categories": [
+      "chole-chana-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4S10D1F54R156XCCGWDJ",
+    "title": "MDH Rajma Masala",
+    "handle": "mdh-rajma-masala",
+    "categories": [
+      "rajma-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4S4CD1GPENHGM4FBKAPQ",
+    "title": "MDH Pav Bhaji Masala",
+    "handle": "mdh-pav-bhaji-masala",
+    "categories": [
+      "pav-bhaji-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4S8JE0TD2RCW61SM6CYF",
+    "title": "MDH Paneer Butter Masala",
+    "handle": "mdh-paneer-butter-masala",
+    "categories": [
+      "paneer-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4SC80A6HZ7ECN0QTTWBN",
+    "title": "MDH Dal Makhani Masala",
+    "handle": "mdh-dal-makhani-masala",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4SGC30CG4KYH6DVQ7G3H",
+    "title": "MDH Sambar Masala",
+    "handle": "mdh-sambar-masala",
+    "categories": [
+      "garam-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4SME6X673AZFYM0QSJQA",
+    "title": "MDH Chicken Masala",
+    "handle": "mdh-chicken-masala",
+    "categories": [
+      "chicken-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4SRC3V66DB5RMWFQ7XEK",
+    "title": "MDH Tandoori Masala",
+    "handle": "mdh-tandoori-masala",
+    "categories": [
+      "tandoori-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4SVJTPGNN9TJTZXWS9T3",
+    "title": "MDH Meat Masala",
+    "handle": "mdh-meat-masala",
+    "categories": [
+      "meat-masala",
+      "spice-blends"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4SZ0MEZ626ZXK36GAY5H",
+    "title": "Lijjat Urad Papad Extra Thin",
+    "handle": "lijjat-urad-papad-extra-thin",
+    "categories": [
+      "papad",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4T3768M4NWBGRFEY0KVN",
+    "title": "Lijjat Urad Special Papad",
+    "handle": "lijjat-urad-special-papad",
+    "categories": [
+      "papad",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4T7D2YK82899CA353ZCH",
+    "title": "Lijjat Moong Dal Papad",
+    "handle": "lijjat-moong-dal-papad",
+    "categories": [
+      "moong-dal-yellow",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4TBPGGWV95T3MZXCSW72",
+    "title": "Tilda Pure Basmati",
+    "handle": "tilda-pure-basmati",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4TG3ZKDY8B80R0KPDG6S",
+    "title": "Kohinoor Extra Long Basmati",
+    "handle": "kohinoor-extra-long-basmati",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4TMD3YX170KPP93M8V68",
+    "title": "Daawat Rozana Basmati",
+    "handle": "daawat-rozana-basmati",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4TRZZF5R42WGM8NQX56C",
+    "title": "Elephant Atta Chakki Fresh",
+    "handle": "elephant-atta-chakki-fresh",
+    "categories": [
+      "fresh-ginger",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4V1TDWE9XAB2ZJSNHQQ1",
+    "title": "Pillsbury Chakki Fresh Atta",
+    "handle": "pillsbury-chakki-fresh-atta",
+    "categories": [
+      "fresh-ginger",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4V62WVSRDKT6J74QWZ8Z",
+    "title": "Aashirvaad Atta Select",
+    "handle": "aashirvaad-atta-select",
+    "categories": [
+      "chapatti-flour-atta",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4VAXAYNMEN16MYEDQ32T",
+    "title": "TRS Puffed Lotus Seeds Makhana",
+    "handle": "trs-puffed-lotus-seeds-makhana",
+    "categories": [
+      "cumin-seeds-jeera",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4VFP2ST3RXAHGJV9YG2K",
+    "title": "Haldiram's Aloo Bhujia",
+    "handle": "haldirams-aloo-bhujia-200g",
+    "categories": [
+      "bhujia",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4VKTFXG234TX25TP7YW4",
+    "title": "Haldiram's Moong Dal",
+    "handle": "haldirams-moong-dal-200g",
+    "categories": [
+      "moong-dal-yellow",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4VPZSY06877A82G6NMW2",
+    "title": "Haldiram's All In One Mix",
+    "handle": "haldirams-all-in-one-mix-200g",
+    "categories": [
+      "turmeric-powder-haldi",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4VVREJAPJT2BQ7AE9WYD",
+    "title": "Haldiram's Khatta Meetha Mix",
+    "handle": "haldirams-khatta-meetha-mix-200g",
+    "categories": [
+      "turmeric-powder-haldi",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4W0CZANVK5S262M7N40X",
+    "title": "Haldiram's Dalmoth",
+    "handle": "haldirams-dalmoth-200g",
+    "categories": [
+      "turmeric-powder-haldi",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4W4CW84VPEVFDFWD3XBK",
+    "title": "Haldiram's Bhujia Sev",
+    "handle": "haldirams-bhujia-sev-200g",
+    "categories": [
+      "bhujia",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4W9507HWRBWRZCQXPXBA",
+    "title": "Haldiram's Mathri",
+    "handle": "haldirams-mathri-200g",
+    "categories": [
+      "turmeric-powder-haldi",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4WDVY1EBYHAEVRQ6S18X",
+    "title": "Haldiram's Gulab Jamun Tin",
+    "handle": "haldirams-gulab-jamun-tin-500g",
+    "categories": [
+      "gulab-jamun-mix",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4WJ5JAHVXP5KHPH8DK29",
+    "title": "Haldiram's Rasgulla Tin",
+    "handle": "haldirams-rasgulla-tin-1kg",
+    "categories": [
+      "turmeric-powder-haldi",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4WPHCBX400J8N84VKHD8",
+    "title": "Haldiram's Soan Papdi",
+    "handle": "haldirams-soan-papdi-500g",
+    "categories": [
+      "turmeric-powder-haldi",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4WTPY1WRS36YH3Z8TT70",
+    "title": "Parle-G Glucose Biscuits",
+    "handle": "parle-g-glucose-biscuits-400g",
+    "categories": [
+      "biscuits-parle-g",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4WYTBP83MSWW8MHP47K5",
+    "title": "Parle Monaco Salted Crackers",
+    "handle": "parle-monaco-salted-crackers-200g",
+    "categories": [
+      "butter-salted",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4X32RY9Y0MAS6MEB29QJ",
+    "title": "Parle Bourbon",
+    "handle": "parle-bourbon-200g",
+    "categories": [
+      "biscuits-parle-g",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4X6AT0V1JV5MK3SBJZ1E",
+    "title": "Britannia Good Day Butter Cookies",
+    "handle": "britannia-good-day-butter-cookies-150g",
+    "categories": [
+      "ghee-clarified-butter",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4XAEG46P170XDXZSRMMX",
+    "title": "Britannia Good Day Cashew Cookies",
+    "handle": "britannia-good-day-cashew-cookies-150g",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4XE3JK68JBG89JRPKV6T",
+    "title": "Britannia Marie Gold",
+    "handle": "britannia-marie-gold-200g",
+    "categories": [
+      "biscuits-marie",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4XJAFCC1Z3TK3P7SJR2Y",
+    "title": "Britannia Bourbon Cream",
+    "handle": "britannia-bourbon-cream-200g",
+    "categories": [
+      "double-cream",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4XPPCNSBY30EMF4MENFC",
+    "title": "Maggi 2-Minute Noodles Masala",
+    "handle": "maggi-2-minute-noodles-masala-4-pack",
+    "categories": [
+      "garam-masala",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4XTWYX106PSPTK8PQGCX",
+    "title": "Maggi Hot & Sweet Sauce",
+    "handle": "maggi-hot-sweet-sauce-400g",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4XZ5GZ0FYDW10G0ECQ6B",
+    "title": "Patak's Mango Chutney",
+    "handle": "pataks-mango-chutney-340g",
+    "categories": [
+      "mango-chutney",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4Y3A7C6G95NF12PDTEP4",
+    "title": "Patak's Lime Pickle",
+    "handle": "pataks-lime-pickle-283g",
+    "categories": [
+      "lime-lemon-pickle",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4Y7NYRPY3JFXGJSEBFGS",
+    "title": "Patak's Mixed Pickle",
+    "handle": "pataks-mixed-pickle-283g",
+    "categories": [
+      "mixed-pickle",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4YC4QD78013JPTWTQ69S",
+    "title": "Patak's Tikka Masala Paste",
+    "handle": "pataks-tikka-masala-paste-290g",
+    "categories": [
+      "garam-masala",
+      "pickles-chutneys"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4YGEJS9P7VRJ37DRS18X",
+    "title": "Lal Qilla Premium Basmati",
+    "handle": "lal-qilla-premium-basmati-5kg",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4YME22S0882RZ6A1HJGX",
+    "title": "Falak Super Basmati",
+    "handle": "falak-super-basmati-5kg",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4YRR902E82NJGTGEVXT7",
+    "title": "Brooke Bond Red Label Tea",
+    "handle": "brooke-bond-red-label-tea-500g",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4YWG0Q9382X19NGJ4ZAV",
+    "title": "Tata Gold Tea",
+    "handle": "tata-gold-tea-500g",
+    "categories": [
+      "loose-leaf-tea-chai",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4Z04Y4YK71AEBRK85TPB",
+    "title": "Wagh Bakri Premium Tea",
+    "handle": "wagh-bakri-premium-tea-500g",
+    "categories": [
+      "loose-leaf-tea-chai",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4Z4DT82ZAJ4WAK0KXY0N",
+    "title": "Wagh Bakri Masala Chai",
+    "handle": "wagh-bakri-masala-chai-250g",
+    "categories": [
+      "garam-masala",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4Z8X55SA2QBF7BP8RBK2",
+    "title": "Girnar Masala Chai Tea Bags",
+    "handle": "girnar-masala-chai-tea-bags-100-bags",
+    "categories": [
+      "garam-masala",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4ZCC7GV7X880SJV7QKCT",
+    "title": "Hamdard Rooh Afza",
+    "handle": "hamdard-rooh-afza-750ml",
+    "categories": [
+      "rooh-afza-rose-syrup",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4ZGGG641GGPEA2HHA11F",
+    "title": "Maaza Mango Drink",
+    "handle": "maaza-mango-drink-1l",
+    "categories": [
+      "amchur-mango-powder",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4ZMT4B5YJGY9HZ88G18M",
+    "title": "Frooti Mango",
+    "handle": "frooti-mango-1l",
+    "categories": [
+      "amchur-mango-powder",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4ZS25NQWQ4WHWENE20SZ",
+    "title": "Bikaji Bhujia",
+    "handle": "bikaji-bhujia-200g",
+    "categories": [
+      "bhujia",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB4ZWQTF219T5GS455F47Y",
+    "title": "Bikaji All In One Mix",
+    "handle": "bikaji-all-in-one-mix-200g",
+    "categories": [
+      "mixture-bombay-mix",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB5013X5GRV5B5K0K3HXJW",
+    "title": "Bikaji Khatta Meetha",
+    "handle": "bikaji-khatta-meetha-200g",
+    "categories": [
+      "chapatti-flour-atta",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB505CQJ4V1GCK4BP8PQZ0",
+    "title": "Bournvita",
+    "handle": "bournvita-500g",
+    "categories": [
+      "bournvita",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB508NXQYC3FGTR820PB4D",
+    "title": "Horlicks Original",
+    "handle": "horlicks-original-500g",
+    "categories": [
+      "horlicks",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB50CAV3GG25F7R49B362R",
+    "title": "Dabur Chyawanprash",
+    "handle": "dabur-chyawanprash-500g",
+    "categories": [
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB50GV3XE9TB9VM4HB61J3",
+    "title": "Glucon-D Mango",
+    "handle": "glucon-d-mango-500g",
+    "categories": [
+      "amchur-mango-powder",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB50N1YW5RSXE722J8TF1S",
+    "title": "Parle Mango Bite",
+    "handle": "parle-mango-bite-40-piece-bag",
+    "categories": [
+      "amchur-mango-powder",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB50S4W4G857S4SFA7S0T2",
+    "title": "Parle Melody",
+    "handle": "parle-melody-40-piece-bag",
+    "categories": [
+      "biscuits-parle-g",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB50WY4KVA3J6DHANDYHZF",
+    "title": "Bikaji Soan Papdi",
+    "handle": "bikaji-soan-papdi-500g",
+    "categories": [
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB510AQJCQ5B9TN48Z0MEM",
+    "title": "Bikaji Gulab Jamun Tin",
+    "handle": "bikaji-gulab-jamun-tin-1kg",
+    "categories": [
+      "gulab-jamun-mix",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB513Z19YZ9KAW06WP010Q",
+    "title": "Tilda Pure Basmati 5kg",
+    "handle": "tilda-pure-basmati-5kg",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB51851WK9B35BWRHRK2VE",
+    "title": "Tilda Pure Basmati 10kg",
+    "handle": "tilda-pure-basmati-10kg",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB51CAVWT8D8W0GTQKXB9B",
+    "title": "Kohinoor Extra Long Basmati 5kg",
+    "handle": "kohinoor-extra-long-basmati-5kg",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB51GMYJF6N0B4V69H8J29",
+    "title": "Lal Qilla Premium Basmati 10kg",
+    "handle": "lal-qilla-premium-basmati-10kg",
+    "categories": [
+      "basmati-rice",
+      "staples-grains"
+    ]
+  },
+  {
+    "id": "prod_01KTVB51MGV03VCVWHN69ESYD4",
+    "title": "Elephant Atta Chakki Fresh 10kg",
+    "handle": "elephant-atta-chakki-fresh-10kg",
+    "categories": [
+      "fresh-ginger",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB51QXMP63TF2CTBXNA0HV",
+    "title": "Pillsbury Chakki Fresh Atta 10kg",
+    "handle": "pillsbury-chakki-fresh-atta-10kg",
+    "categories": [
+      "fresh-ginger",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB51W6XBV421BJV644A77N",
+    "title": "Aashirvaad Atta Select 10kg",
+    "handle": "aashirvaad-atta-select-10kg",
+    "categories": [
+      "chapatti-flour-atta",
+      "atta-flours"
+    ]
+  },
+  {
+    "id": "prod_01KTVB5208FGST9HM96T8NQN2H",
+    "title": "Brooke Bond Red Label Tea 1kg",
+    "handle": "brooke-bond-red-label-tea-1kg",
+    "categories": [
+      "masoor-dal-red-lentils",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB523D4BJ8AK8JCV95P8X3",
+    "title": "Tata Gold Tea 1kg",
+    "handle": "tata-gold-tea-1kg",
+    "categories": [
+      "loose-leaf-tea-chai",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB527GXC6N7C8QX5WAP2Z8",
+    "title": "Wagh Bakri Premium Tea 1kg",
+    "handle": "wagh-bakri-premium-tea-1kg",
+    "categories": [
+      "loose-leaf-tea-chai",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB52BX8ZRPJ6J87ZAE0ZR7",
+    "title": "Hamdard Rooh Afza 1.5L",
+    "handle": "hamdard-rooh-afza-15l",
+    "categories": [
+      "rooh-afza-rose-syrup",
+      "beverages"
+    ]
+  },
+  {
+    "id": "prod_01KTVB52FGNW689KWJKKF15JRN",
+    "title": "Haldiram's Aloo Bhujia 400g",
+    "handle": "haldirams-aloo-bhujia-400g",
+    "categories": [
+      "bhujia",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB52KPFEGYB5XVWPD3BREG",
+    "title": "Haldiram's Aloo Bhujia 1kg",
+    "handle": "haldirams-aloo-bhujia-1kg",
+    "categories": [
+      "bhujia",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB52QW4R8HTCY9HB6SPGS0",
+    "title": "Haldiram's Moong Dal 400g",
+    "handle": "haldirams-moong-dal-400g",
+    "categories": [
+      "moong-dal-yellow",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB52VX6K08Y0XQQ8KT6RBK",
+    "title": "Haldiram's Gulab Jamun Tin 1kg",
+    "handle": "haldirams-gulab-jamun-tin-1kg",
+    "categories": [
+      "gulab-jamun-mix",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB52ZWS6PPMBP6DZ20KJYT",
+    "title": "Parle-G Glucose Biscuits 1kg",
+    "handle": "parle-g-glucose-biscuits-1kg",
+    "categories": [
+      "biscuits-parle-g",
+      "snacks-namkeen"
+    ]
+  },
+  {
+    "id": "prod_01KTVB533YGFDYXPCWHJBCZBY7",
+    "title": "Maggi 2-Minute Noodles Masala 8-Pack",
+    "handle": "maggi-2-minute-noodles-masala-8-pack",
+    "categories": [
+      "garam-masala",
+      "snacks-namkeen"
+    ]
+  }
+]

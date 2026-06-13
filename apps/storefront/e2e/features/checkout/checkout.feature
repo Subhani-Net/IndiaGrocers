@@ -78,6 +78,83 @@ Feature: Checkout and Order Confirmation
   Scenario: Review step shows the full order summary
     Given the user is on the review step
     Then the order summary shows the items, shipping cost, and total
+
+  # ────────────────────────────────────────────────────────────
+  # CHECKOUT FLOW — Shipping Method Registration (Architecture Fix)
+  # ────────────────────────────────────────────────────────────
+
+  @critical-path @regression
+  Scenario: Delivery step registers a shipping method on the cart before advancing
+    Given the user has an item in their basket
+    And the user has filled in their delivery address
+    When the user selects a delivery slot and clicks Continue to Payment
+    Then the shipping method is registered on the cart via the Medusa API
+    And the user is advanced to the payment step
+
+  @critical-path @regression
+  Scenario: Payment step is guarded — redirects to delivery if no shipping method
+    Given the user has an item in their basket
+    And no shipping method has been set on the cart
+    When the user navigates to the payment step
+    Then the user is redirected to the delivery step
+
+  @critical-path @regression
+  Scenario: Delivery cost displayed in order summary matches the registered shipping method
+    Given the user has an item in their basket
+    And the user has filled in their delivery address
+    And the user has selected a delivery slot and advanced to payment
+    Then the delivery cost in the order summary matches the cart's shipping method amount
+
+  @critical-path @regression
+  Scenario: Place order validates shipping method is set before creating payment session
+    Given the user is on the payment step
+    And a shipping method is registered on the cart
+    When the user initiates payment
+    Then the payment session is created successfully
+    And the cart completion succeeds without a "No shipping method selected" error
+
+  @critical-path @regression
+  Scenario: Payment session is created only after shipping method is confirmed
+    Given the user has an item in their basket
+    And the user has filled in their delivery address
+    And the user has selected a delivery slot and advanced to payment
+    When the user places the order
+    Then the cart has a shipping method before payment session creation
+    And the "No shipping method selected" error is never raised
+
+  # ────────────────────────────────────────────────────────────
+  # DELIVERY SLOT → SHIPPING OPTION MAPPING
+  # ────────────────────────────────────────────────────────────
+
+  Scenario: All delivery time windows map to valid shipping option IDs
+    Given the user has an item in their basket
+    And the user has filled in their delivery address
+    When the user is on the delivery step
+    Then every available time window has a non-empty shipping option ID
+    And the window prices match the shipping option's calculated price
+
+  Scenario: Express delivery option is mapped correctly when available
+    Given the user has an item in their basket
+    And the user has filled in their delivery address
+    When the user is on the delivery step
+    Then if a premium window exists, it maps to the express shipping option
+    And the premium window displays the express shipping option's price
+
+  # ────────────────────────────────────────────────────────────
+  # CACHE & DATA FLOW
+  # ────────────────────────────────────────────────────────────
+
+  Scenario: Cart cache is revalidated after shipping method is set
+    Given the user has an item in their basket
+    And the user is on the delivery step
+    When a shipping method is set on the cart
+    Then the cart cache tag is revalidated
+    And the payment step receives the cart with the updated shipping method
+
+  Scenario: Shipping options list is not cached indefinitely
+    Given the user accesses the checkout page
+    Then the shipping options are fetched from the Medusa API
+    And the shipping options response includes real shipping option IDs and prices
     And the delivery address is displayed
     And the selected delivery slot is displayed
 

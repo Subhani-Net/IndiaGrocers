@@ -8,6 +8,7 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import NavSearch from "@modules/layout/components/nav-search"
 
 interface NavCategory {
   name: string
@@ -36,14 +37,6 @@ async function fetchNavCategories(): Promise<NavCategory[]> {
   }
 }
 
-function SearchIcon() {
-  return (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-    </svg>
-  )
-}
-
 function AccountIcon() {
   return (
     <svg className="w-5 h-5 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,9 +63,12 @@ function ChevronDown() {
 
 export default async function Nav({ customer }: { customer?: any }) {
   const [regions, locales, currentLocale, categories] = await Promise.all([
-    listRegions().then((regions: StoreRegion[]) => regions),
+    listRegions().catch((err) => {
+      console.warn("[Nav] regions fetch failed:", err?.message || err)
+      return [] as StoreRegion[]
+    }),
     listLocales(),
-    getLocale(),
+    getLocale().catch(() => null),
     fetchNavCategories(),
   ])
 
@@ -138,22 +134,7 @@ export default async function Nav({ customer }: { customer?: any }) {
               </div>
             </div>
 
-            <form className="flex-1 flex items-center" action="/gb/search" method="get">
-              <div className="relative flex-1">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-grey-40">
-                  <SearchIcon />
-                </div>
-                <input
-                  type="text"
-                  name="q"
-                  placeholder="Search rice, spices, dals..."
-                  className="w-full h-10 pl-10 pr-4 text-sm bg-grey-5 border border-grey-20/80 rounded-xl text-grey-90 placeholder-grey-40 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all duration-200"
-                />
-              </div>
-              <button type="submit" className="ml-2 min-w-[40px] h-10 flex items-center justify-center bg-brand-orange text-white rounded-xl hover:bg-brand-orange-dark active:scale-95 transition-all duration-200 press-scale">
-                <SearchIcon />
-              </button>
-            </form>
+            <NavSearch />
           </div>
 
           {/* Right: Account + Cart */}

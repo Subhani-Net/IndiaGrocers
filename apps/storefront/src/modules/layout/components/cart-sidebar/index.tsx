@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { retrieveCart, deleteLineItem } from "@lib/data/cart"
+import { getImageUrl } from "@lib/util/images"
 
 function formatPrice(amount: number): string {
   return new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP", minimumFractionDigits: 2 }).format(amount / 100)
@@ -93,7 +94,7 @@ export default function CartSidebar({ countryCode }: { countryCode: string }) {
                         }`}
                       >
                         <div className="w-10 h-10 rounded-lg bg-grey-10 flex-shrink-0 overflow-hidden relative">
-                          {item.thumbnail && <img src={item.thumbnail} alt="" className="w-full h-full object-cover" />}
+                          {item.thumbnail && <img src={getImageUrl(item.thumbnail)} alt="" className="w-full h-full object-cover" />}
                           {isNew(item) && (
                             <span className="absolute -top-1 -right-1 bg-brand-orange text-white text-[7px] font-bold px-1 rounded-full shadow-sm">NEW</span>
                           )}

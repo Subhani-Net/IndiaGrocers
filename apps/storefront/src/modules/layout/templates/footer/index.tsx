@@ -6,10 +6,21 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import MedusaCTA from "@modules/layout/components/medusa-cta"
 
 export default async function Footer() {
-  const { collections } = await listCollections({
-    fields: "*products",
-  })
-  const productCategories = await listCategories()
+  let collections: any[] = []
+  let productCategories: any[] = []
+
+  try {
+    const result = await listCollections({ fields: "*products" })
+    collections = result?.collections ?? []
+  } catch (err) {
+    console.warn("[Footer] collections fetch failed:", err?.message || err)
+  }
+
+  try {
+    productCategories = await listCategories()
+  } catch (err) {
+    console.warn("[Footer] categories fetch failed:", err?.message || err)
+  }
 
   return (
     <footer className="border-t-4 border-brand-orange w-full bg-grey-5">

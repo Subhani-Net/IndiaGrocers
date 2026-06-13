@@ -1,0 +1,74 @@
+{
+  "version": "3.0",
+  "description": "IndiaGrocers product catalogue schema — multi-file master data. Edit CSVs, run enrich.mjs --apply.",
+
+  "display": {
+    "mode": "grouped",
+    "comment": "Products grouped by handle. Multiple CSV rows with same handle → multi-variant product."
+  },
+
+  "files": {
+    "products.csv": { "description": "Product identity — structure, attributes, classification. Rarely changes." },
+    "prices.csv": { "description": "Variant prices. Updated weekly by operations." },
+    "categories.csv": { "description": "Category tree with parent relationships." },
+    "collections.csv": { "description": "Product collections." },
+    "products-collections.csv": { "description": "Product-to-collection assignments." },
+    "category-assignment.json": { "description": "Product-to-category mapping from curated JSON." },
+    "category-key-mapping.json": { "description": "JSON category keys → DB handle mapping." },
+    "meilisearch/synonyms.csv": { "description": "Search synonym dictionary." }
+  },
+
+  "columns": {
+    "products.csv": {
+      "handle": { "type": "string", "required": true, "description": "Product handle. Same handle across variant rows = multi-variant product." },
+      "variant_id": { "type": "string", "required": false, "description": "Medusa variant ID (auto-populated by generate-csvs, never edit)" },
+      "variant_sku": { "type": "string", "required": false, "description": "SKU code" },
+      "variant_barcode": { "type": "string", "required": false, "description": "EAN/UPC barcode" },
+      "product_group": { "type": "string", "required": false, "description": "Group key for display grouping (e.g., natco-cumin-seeds)" },
+      "variant_title": { "type": "string", "required": true, "description": "Variant label (e.g., 400g, 1kg, 500ml). Single-variant products use empty or 'Default'." },
+      "product_title": { "type": "string", "required": true, "description": "Display title WITHOUT weight suffix (e.g., 'Natco - Toor Dal Oily')" },
+      "subtitle": { "type": "string", "required": false, "description": "Short subtitle line under title" },
+      "description": { "type": "string", "required": false, "description": "Product description (HTML allowed)" },
+      "brand": { "type": "string", "required": false, "description": "Brand name (e.g., Natco, TRS)" },
+      "category_handle": { "type": "string", "required": true, "description": "Primary category handle (leaf subcategory recommended)" },
+      "collection_handle": { "type": "string", "required": false, "description": "Collection handle" },
+      "dietary_flags": { "type": "string", "required": false, "description": "Semicolon-separated: vegetarian;vegan;gluten-free;halal;organic" },
+      "tags": { "type": "string", "required": false, "description": "Semicolon-separated tags for search/filtering/display" },
+      "allergens": { "type": "string", "required": false, "description": "Semicolon-separated: milk;soya;nuts;gluten;sulphites" },
+      "ingredients": { "type": "string", "required": false, "description": "Free-text ingredients list" },
+      "storage": { "type": "string", "required": false, "description": "Storage instructions" },
+      "country_of_origin": { "type": "string", "required": false, "description": "Country name" },
+      "weight_value": { "type": "number", "required": false, "description": "Numeric weight (e.g., 400 for 400g)" },
+      "weight_unit": { "type": "string", "required": false, "description": "g, kg, ml, l" },
+      "price_gbp": { "type": "number", "required": true, "description": "Price in GBP major unit (e.g., 3.49 = £3.49)" },
+      "manage_inventory": { "type": "boolean", "required": false, "description": "Enable inventory tracking" },
+      "thumbnail_url": { "type": "string", "required": false, "description": "Full URL or /uploads/ path" },
+      "image_filenames": { "type": "string", "required": false, "description": "Semicolon-separated filenames from catalogue/images/ for product images[] gallery" },
+      "velocity": { "type": "number", "required": false, "description": "Sales velocity score (0-100) for search ranking" },
+      "eco_rating": { "type": "string", "required": false, "description": "A, B, C, D, E sustainability rating" },
+      "brand_slug": { "type": "string", "required": false, "description": "URL-safe brand identifier (auto-derived, displayed for reference)" },
+      "vat_rate": { "type": "number", "required": false, "description": "VAT rate (e.g., 0, 5, 20)" },
+      "regional_tags": { "type": "string", "required": false, "description": "Semicolon-separated: punjabi;gujarati;south-indian;bengali" },
+      "subscription_eligible": { "type": "boolean", "required": false, "description": "Available for subscription orders" },
+      "status": { "type": "string", "required": false, "description": "published, draft, proposed (default: published)" },
+      "variant_title_raw": { "type": "string", "required": false, "description": "Original variant title from Medusa (reference only, never edit)" },
+      "variant_sku_raw": { "type": "string", "required": false, "description": "Original SKU from Medusa (reference only, never edit)" }
+    },
+    "categories.csv": {
+      "handle": { "type": "string", "required": true, "description": "URL-safe category handle" },
+      "name": { "type": "string", "required": true, "description": "Display name" },
+      "parent_handle": { "type": "string", "required": false, "description": "Parent category handle (empty for root)" },
+      "rank": { "type": "number", "required": false, "description": "Display order (lower = first)" },
+      "description": { "type": "string", "required": false, "description": "Category description for SEO/template" }
+    },
+    "collections.csv": {
+      "handle": { "type": "string", "required": true, "description": "URL-safe collection handle" },
+      "title": { "type": "string", "required": true, "description": "Display title" },
+      "status": { "type": "string", "required": false, "description": "active, inactive" }
+    },
+    "meilisearch/synonyms.csv": {
+      "term": { "type": "string", "required": true, "description": "Canonical term" },
+      "synonyms": { "type": "string", "required": true, "description": "Comma-separated synonym list" }
+    }
+  }
+}

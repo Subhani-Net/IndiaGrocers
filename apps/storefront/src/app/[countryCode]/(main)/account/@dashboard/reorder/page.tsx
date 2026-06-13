@@ -5,6 +5,7 @@ import { usePantry } from "@lib/context/pantry-context"
 import { addToCart } from "@lib/data/cart"
 import { formatGBP } from "@lib/util/format-price"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { getImageUrl } from "@lib/util/images"
 
 const TABS = [
   { key: "pantry", label: "My Pantry" },
@@ -192,7 +193,7 @@ function PantryRow({
       <LocalizedClientLink href={`/products/${item.handle}`} className="flex-1 min-w-0">
         <div className="flex items-center gap-3">
           {item.thumbnail && (
-            <img src={item.thumbnail} alt="" className="w-12 h-12 rounded-lg object-cover bg-stone-100 flex-shrink-0" />
+            <img src={getImageUrl(item.thumbnail)} alt="" className="w-12 h-12 rounded-lg object-cover bg-stone-100 flex-shrink-0" />
           )}
           <div className="min-w-0">
             <p className="text-sm font-medium text-stone-800 truncate">{item.title}</p>

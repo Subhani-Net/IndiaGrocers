@@ -5,6 +5,7 @@ import { usePantry } from "@lib/context/pantry-context"
 import { addToCart } from "@lib/data/cart"
 import { formatGBP } from "@lib/util/format-price"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { getImageUrl } from "@lib/util/images"
 
 export default function QuickReorderShelf() {
   const { items, runningLow } = usePantry()
@@ -52,7 +53,7 @@ export default function QuickReorderShelf() {
               <LocalizedClientLink href={`/products/${item.handle}`}>
                 <div className="w-full aspect-square bg-stone-100 flex items-center justify-center text-2xl">
                   {item.thumbnail ? (
-                    <img src={item.thumbnail} alt="" className="w-full h-full object-cover" />
+                    <img src={getImageUrl(item.thumbnail)} alt="" className="w-full h-full object-cover" />
                   ) : (
                     "🛍️"
                   )}

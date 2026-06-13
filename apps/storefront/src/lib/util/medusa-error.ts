@@ -11,7 +11,9 @@ export default function medusaError(error: any): never {
     // Extracting the error message from the response data
     const message = error.response.data.message || error.response.data
 
-    throw new Error(message.charAt(0).toUpperCase() + message.slice(1) + ".")
+    const msg = typeof message === "string" ? message : String(message)
+    const capitalized = msg.charAt(0).toUpperCase() + msg.slice(1)
+    throw new Error(capitalized.endsWith(".") ? capitalized : capitalized + ".")
   } else if (error.request) {
     // The request was made but no response was received
     throw new Error("No response received: " + error.request)

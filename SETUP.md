@@ -93,60 +93,26 @@ Verify: `python -c "import urllib.request,json;print(json.load(urllib.request.ur
 
 ## Step 6 — Seed Products
 
-In a **new terminal**, with the backend running. The automated script handles all
-of this: `powershell -File scripts\setup.ps1 -SkipDocker`
-
-Or run individually:
-
-### 6A — Product Import (data pipeline)
+### Using the Catalogue System
 
 ```bash
-cd apps\backend
+# Validate CSV vs DB (safe, no changes)
+node catalogue/enrich.mjs --validate-only
 
-# Core pipeline (Natco products + category + inventory)
-node src/seed/merge-product-variants.mjs       # import Natco products → 290→238 consolidated
-node src/seed/migrate-to-natco-categories.mjs   # map products to new category tree
-node src/seed/assign-categories-from-titles.mjs # title-based category assignment
-node src/seed/fix-category-handles.mjs          # fix old category handles
-node src/seed/set-inventory.mjs                  # enable stock (disable inventory mgmt)
+# Apply product data + MeiliSearch config
+node catalogue/enrich.mjs --apply
+
+# Weekly prices (run separately)
+node catalogue/update-prices.mjs --apply
 ```
 
-### 6B — TRS Products
+**CSV files are the source of truth:** `catalogue/products.csv` (612 rows),
+`catalogue/categories.csv` (208), `catalogue/prices/current.csv` (612).
+
+### Snapshot Seed (fastest for fresh environments)
 
 ```bash
-cd scripts
-node import-trs-products.mjs              # import 50 TRS brand products (spices, lentils, etc.)
-node rename-trs-images.mjs                # rename TRS images to {brand}_{handle} format
-node fix-trs-images.mjs                   # fix TRS image paths
-```
-
-### 6C — MVC Products (Minimum Viable Catalogue)
-
-```bash
-cd scripts\mvc
-node import-round1.mjs                    # ~99 MVC Round 1 products (Shan, MDH, Tilda, Kohinoor, etc.)
-node create-categories.mjs                # create ~23 new MVC category handles
-node pipeline.mjs --apply                 # enrichment: tags, dietary flags, allergens, descriptions, synonyms
-node assign-images.mjs                    # assign images to MVC products
-```
-
-### 6D — Images
-
-```bash
-cd scripts
-node download-natco-images.mjs            # download 357 Natco product images
-node set-thumbnails.mjs                   # (from apps/backend/src/seed) set product thumbnails
-```
-
-### 6E — Other Data Fixes
-
-```bash
-cd apps\backend\src\seed
-node set-descriptions.mjs                 # generate descriptions for products missing them
-node enrich-metadata.mjs                  # apply metadata enrichment
-cd ..\..\..\
-node scripts\fix-tinned-products.mjs     # fix tinned product category assignments
-node scripts\enrich-from-csv.mjs --apply # CSV-based enrichment (dietary, tags, allergens)
+node scripts/data-pipeline/seed-from-snapshot.mjs --apply
 ```
 
 ---

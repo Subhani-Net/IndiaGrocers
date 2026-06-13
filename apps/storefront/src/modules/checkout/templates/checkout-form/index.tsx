@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useCallback } from "react"
-import { setAddresses, placeOrder, initiatePaymentSession } from "@lib/data/cart"
+import { useState, useCallback, useEffect } from "react"
+import { setAddresses, placeOrder, initiatePaymentSession, setShippingMethod } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useActionState } from "react"
@@ -16,9 +16,10 @@ import StripePayment from "@modules/checkout/components/stripe-payment"
 interface CheckoutFormProps {
   cart: HttpTypes.StoreCart
   customer: HttpTypes.StoreCustomer | null
+  shippingOptions?: any[]
 }
 
-export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
+export default function CheckoutForm({ cart, customer, shippingOptions = [] }: CheckoutFormProps) {
   const searchParams = useSearchParams()
   const router = useRouter()
   const pathname = usePathname()
@@ -39,10 +40,24 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
   // Delivery slot state
   const [selectedSlotDate, setSelectedSlotDate] = useState<Date | null>(null)
   const [selectedSlotWindow, setSelectedSlotWindow] = useState<any>(null)
+  const [settingShipping, setSettingShipping] = useState(false)
+  const [deliveryError, setDeliveryError] = useState<string | null>(null)
 
   // Payment state
   const [placingOrder, setPlacingOrder] = useState(false)
   const [paymentError, setPaymentError] = useState<string | null>(null)
+
+  // Shipping method — derive from cart after it's been set
+  const hasShippingMethod = (cart?.shipping_methods?.length ?? 0) > 0
+
+  // Step guard: if user manually navigates to payment without shipping, redirect to delivery
+  useEffect(() => {
+    if (step === "payment" && !hasShippingMethod) {
+      const params = new URLSearchParams(searchParams)
+      params.set("step", "delivery")
+      router.replace(`${pathname}?${params.toString()}`)
+    }
+  }, [step, hasShippingMethod, searchParams, router, pathname])
 
   const pushStep = useCallback(
     (newStep: string) => {
@@ -95,12 +110,40 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
   const handleSlotSelect = (date: Date, window: any) => {
     setSelectedSlotDate(date)
     setSelectedSlotWindow(window)
+    setDeliveryError(null)
+  }
+
+  // Delivery Continue: register shipping method on the cart, then advance
+  const handleDeliveryContinue = async () => {
+    if (!selectedSlotDate || !selectedSlotWindow) return
+    setDeliveryError(null)
+
+    const shippingOptionId = selectedSlotWindow.shippingOptionId
+    if (!shippingOptionId) {
+      setDeliveryError("No shipping option available. Please try again.")
+      return
+    }
+
+    setSettingShipping(true)
+    try {
+      await setShippingMethod({ cartId: cart.id, shippingMethodId: shippingOptionId })
+      pushStep("payment")
+    } catch (e: any) {
+      setDeliveryError(e.message || "Failed to set delivery method. Please try again.")
+    }
+    setSettingShipping(false)
   }
 
   // Handle order placement
   const handlePlaceOrder = async (paymentMethodId?: string) => {
     setPlacingOrder(true)
     setPaymentError(null)
+
+    if (!cart?.shipping_methods?.length) {
+      setPaymentError("Please select a delivery slot before placing your order.")
+      setPlacingOrder(false)
+      return
+    }
     console.log("[placeOrder] paymentMethodId:", paymentMethodId, "provider:", paymentMethodId ? "pp_stripe_stripe" : "pp_system_default")
     console.log("[placeOrder] cart.item_total:", cart?.item_total, "cart.total:", cart?.total)
     try {
@@ -116,6 +159,7 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
       }
       await placeOrder()
     } catch (e: any) {
+      if (e?.digest?.startsWith("NEXT_REDIRECT")) throw e
       setPaymentError(
         e.message || "Payment failed. Please try again."
       )
@@ -124,9 +168,7 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
   }
 
   const itemTotal = cart?.item_total || 0
-  const deliveryCost = selectedSlotWindow?.premium
-    ? selectedSlotWindow.price
-    : 399
+  const deliveryCost = cart?.shipping_methods?.[0]?.amount ?? 399
   const total = itemTotal + (deliveryCost > 0 ? deliveryCost : 0)
 
   // Log amounts for price verification (all values in pence)
@@ -234,13 +276,20 @@ export default function CheckoutForm({ cart, customer }: CheckoutFormProps) {
               selectedDate={selectedSlotDate}
               selectedWindow={selectedSlotWindow}
               hasFastRequired={false}
+              shippingOptions={shippingOptions}
             />
 
-            <button onClick={() => { if (selectedSlotDate && selectedSlotWindow) pushStep("payment") }}
-              disabled={!selectedSlotDate || !selectedSlotWindow}
+            {deliveryError && (
+              <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-lg text-xs text-red-700">
+                {deliveryError}
+              </div>
+            )}
+
+            <button onClick={handleDeliveryContinue}
+              disabled={!selectedSlotDate || !selectedSlotWindow || settingShipping}
               className="w-full mt-5 py-3 bg-brand-orange text-white font-bold rounded-lg hover:bg-brand-orange/90 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all text-sm"
               data-testid="continue-to-payment-btn">
-              Continue to Payment
+              {settingShipping ? "Saving delivery..." : "Continue to Payment"}
             </button>
           </div>
         )}

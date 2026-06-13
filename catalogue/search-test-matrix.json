@@ -1,0 +1,513 @@
+[
+  {
+    "testGroup": "Exact Match - Brand",
+    "searchTerm": "Aashirvaad",
+    "expectedTitles": ["Aashirvaad"],
+    "minExpected": 2,
+    "failureReason": "Brand search failed — Aashirvaad products not in top results"
+  },
+  {
+    "testGroup": "Exact Match - Brand",
+    "searchTerm": "Tilda Pure Basmati",
+    "expectedTitles": ["Tilda"],
+    "minExpected": 2,
+    "failureReason": "Tilda branded products not returned for exact name match"
+  },
+  {
+    "testGroup": "Exact Match - Brand",
+    "searchTerm": "Haldiram",
+    "expectedTitles": ["Haldiram"],
+    "minExpected": 2,
+    "failureReason": "Haldiram brand search failed — snack products not in top results"
+  },
+  {
+    "testGroup": "Exact Match - Brand",
+    "searchTerm": "Shan",
+    "expectedTitles": ["Shan"],
+    "minExpected": 2,
+    "failureReason": "Shan masala products not returned for brand search"
+  },
+  {
+    "testGroup": "Exact Match - Brand",
+    "searchTerm": "MDH",
+    "expectedTitles": ["MDH"],
+    "minExpected": 2,
+    "failureReason": "MDH masala products not found — acronym search broken"
+  },
+  {
+    "testGroup": "Exact Match - Brand",
+    "searchTerm": "TRS Coarse Black Pepper",
+    "expectedTitles": ["TRS Coarse Black Pepper"],
+    "minExpected": 1,
+    "failureReason": "TRS branded spice not found with full title match"
+  },
+  {
+    "testGroup": "Exact Match - Brand",
+    "searchTerm": "Natco",
+    "expectedTitles": ["Natco"],
+    "minExpected": 2,
+    "failureReason": "Natco brand not found — title normalization may have removed brand context from index"
+  },
+  {
+    "testGroup": "Exact Match - Item",
+    "searchTerm": "Basmati Rice India",
+    "expectedTitles": ["Basmati Rice"],
+    "minExpected": 2,
+    "failureReason": "Core staple product not matched on exact title fragment"
+  },
+  {
+    "testGroup": "Exact Match - Item",
+    "searchTerm": "Toor Dal Oily",
+    "expectedTitles": ["Toor Dal"],
+    "minExpected": 2,
+    "failureReason": "Primary lentil variety toor dal not found — core catalog item"
+  },
+  {
+    "testGroup": "Exact Match - Item",
+    "searchTerm": "Garam Masala",
+    "expectedTitles": ["Garam Masala"],
+    "minExpected": 2,
+    "failureReason": "Top-selling spice blend garam masala not matched"
+  },
+  {
+    "testGroup": "Exact Match - Item",
+    "searchTerm": "Chana Masala",
+    "expectedTitles": ["Chana Masala"],
+    "minExpected": 2,
+    "failureReason": "Popular spice blend Chana Masala not found"
+  },
+  {
+    "testGroup": "Exact Match - Size",
+    "searchTerm": "Toor Dal 2kg",
+    "expectedTitles": ["Toor Dal", "2kg"],
+    "minExpected": 2,
+    "failureReason": "Size-qualified search for 2kg toor dal failed — weight in title not matching"
+  },
+  {
+    "testGroup": "Exact Match - Size",
+    "searchTerm": "Basmati Rice 5kg",
+    "expectedTitles": ["Basmati Rice", "5kg"],
+    "minExpected": 2,
+    "failureReason": "Size-specified rice search failed — 5kg variant not found"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Daal",
+    "expectedTitles": ["Dal"],
+    "minExpected": 2,
+    "failureReason": "Transliteration 'daal' not resolving — common British spelling variant for dal"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Dhal",
+    "expectedTitles": ["Dal"],
+    "minExpected": 2,
+    "failureReason": "Transliteration 'dhal' not matching — South Indian/UK spelling of dal"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Atta",
+    "expectedTitles": ["Atta"],
+    "minExpected": 2,
+    "failureReason": "Hindi word 'atta' (whole wheat flour) not matching category products"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Ata",
+    "expectedTitles": ["Atta"],
+    "minExpected": 1,
+    "failureReason": "Shortened transliteration 'ata' should resolve to atta via fuzzy search"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Panir",
+    "expectedTitles": ["Paneer"],
+    "minExpected": 1,
+    "failureReason": "Transliteration 'panir' not resolving to paneer — common British spelling"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Jeera",
+    "expectedTitles": ["Cumin"],
+    "minExpected": 2,
+    "failureReason": "Hindi 'jeera' not matching cumin seeds — critical vernacular search failure"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Haldi",
+    "expectedTitles": ["Turmeric"],
+    "minExpected": 2,
+    "failureReason": "Hindi 'haldi' not matching turmeric — core Indian kitchen term"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Dhania",
+    "expectedTitles": ["Coriander"],
+    "minExpected": 2,
+    "failureReason": "Hindi 'dhania' not resolving to coriander seeds"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Mirchi",
+    "expectedTitles": ["Chilli"],
+    "minExpected": 2,
+    "failureReason": "Hindi 'mirchi' (chilli) not matching — foundation spice term"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Methi",
+    "expectedTitles": ["Fenugreek"],
+    "minExpected": 2,
+    "failureReason": "Hindi 'methi' not resolving to fenugreek — essential Indian spice"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Saunf",
+    "expectedTitles": ["Fennel"],
+    "minExpected": 2,
+    "failureReason": "Hindi 'saunf' not matching fennel seeds — common after-meal spice"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Ajwain",
+    "expectedTitles": ["Ajwain", "Ajwan", "Carom"],
+    "minExpected": 2,
+    "failureReason": "Hindi 'ajwain' not matching carom seeds — digestive spice"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Besan",
+    "expectedTitles": ["Besan", "Gram Flour"],
+    "minExpected": 2,
+    "failureReason": "Hindi 'besan' not matching gram flour — core Indian kitchen ingredient"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Sooji",
+    "expectedTitles": ["Semolina"],
+    "minExpected": 2,
+    "failureReason": "Hindi 'sooji' not matching semolina — essential for upma/rava dishes"
+  },
+  {
+    "testGroup": "Linguistic - Transliteration",
+    "searchTerm": "Imli",
+    "expectedTitles": ["Tamarind"],
+    "minExpected": 1,
+    "failureReason": "Hindi 'imli' not matching tamarind — key chutney ingredient"
+  },
+  {
+    "testGroup": "Typo - Brand",
+    "searchTerm": "Ashirvad",
+    "expectedTitles": ["Aashirvaad"],
+    "minExpected": 1,
+    "failureReason": "Typo 'Ashirvad' (missing 'aa') should still match Aashirvaad via fuzzy search"
+  },
+  {
+    "testGroup": "Typo - Brand",
+    "searchTerm": "Aashirvadh",
+    "expectedTitles": ["Aashirvaad"],
+    "minExpected": 1,
+    "failureReason": "Typo 'Aashirvadh' (dh instead of d) should fuzzy-match Aashirvaad"
+  },
+  {
+    "testGroup": "Typo - Brand",
+    "searchTerm": "Haldirams",
+    "expectedTitles": ["Haldiram"],
+    "minExpected": 2,
+    "failureReason": "Fuzzy search failing — plural 'Haldirams' should match 'Haldiram'"
+  },
+  {
+    "testGroup": "Typo - Item",
+    "searchTerm": "Chana ddal",
+    "expectedTitles": ["Chana", "Chick Peas"],
+    "minExpected": 1,
+    "failureReason": "Double-letter typo 'ddal' should still find chana dal products"
+  },
+  {
+    "testGroup": "Typo - Item",
+    "searchTerm": "Panner",
+    "expectedTitles": ["Paneer"],
+    "minExpected": 1,
+    "failureReason": "Typo 'panner' not matching paneer — common spelling error"
+  },
+  {
+    "testGroup": "Typo - Item",
+    "searchTerm": "Basmati Ric",
+    "expectedTitles": ["Basmati Rice"],
+    "minExpected": 2,
+    "failureReason": "Truncated word 'ric' should fuzzy-match rice — missing trailing 'e'"
+  },
+  {
+    "testGroup": "Typo - Item",
+    "searchTerm": "Turmerik",
+    "expectedTitles": ["Turmeric"],
+    "minExpected": 2,
+    "failureReason": "Typo 'turmerik' should fuzzy-match turmeric — ending swapped"
+  },
+  {
+    "testGroup": "Broken Strings",
+    "searchTerm": "Ash ir vad atta",
+    "expectedTitles": ["Atta", "Flour"],
+    "minExpected": 1,
+    "failureReason": "Spaced typo 'Ash ir vad' should resolve to Aashirvaad — broken typing"
+  },
+  {
+    "testGroup": "Broken Strings",
+    "searchTerm": "cocnut oil",
+    "expectedTitles": ["Coconut Oil"],
+    "minExpected": 1,
+    "failureReason": "Missing 'o' in coconut — typo tolerance should handle single character omission"
+  },
+  {
+    "testGroup": "Broken Strings",
+    "searchTerm": "  basmati rice  ",
+    "expectedTitles": ["Basmati Rice"],
+    "minExpected": 2,
+    "failureReason": "Leading/trailing whitespace not trimmed — should match normally"
+  },
+  {
+    "testGroup": "Broken Strings",
+    "searchTerm": "masala    chai",
+    "expectedTitles": ["Tea", "Chai"],
+    "minExpected": 1,
+    "failureReason": "Multiple spaces between words — tokenizer should collapse and still match"
+  },
+  {
+    "testGroup": "Semantic - Intent",
+    "searchTerm": "something to make idli",
+    "expectedTitles": ["Rice", "Urad"],
+    "minExpected": 2,
+    "failureReason": "Semantic search for idli ingredients failed — should return idli rice and urad dal"
+  },
+  {
+    "testGroup": "Semantic - Intent",
+    "searchTerm": "lentils for tadka",
+    "expectedTitles": ["Dal", "Lentil"],
+    "minExpected": 2,
+    "failureReason": "Intent-based search for tadka dal failed — toor dal should appear"
+  },
+  {
+    "testGroup": "Semantic - Intent",
+    "searchTerm": "healthy snacks",
+    "expectedTitles": ["Roasted", "Nut"],
+    "minExpected": 1,
+    "failureReason": "Semantic search 'healthy snacks' should return roasted chana, nuts"
+  },
+  {
+    "testGroup": "Semantic - Intent",
+    "searchTerm": "spicy pickles",
+    "expectedTitles": ["Pickle", "Chilli"],
+    "minExpected": 1,
+    "failureReason": "Intent search 'spicy pickles' should return mango and lime pickles"
+  },
+  {
+    "testGroup": "Semantic - Intent",
+    "searchTerm": "flour for chapati",
+    "expectedTitles": ["Atta", "Flour"],
+    "minExpected": 2,
+    "failureReason": "Intent search for chapati flour should return atta products"
+  },
+  {
+    "testGroup": "Semantic - Intent",
+    "searchTerm": "ingredients for biryani",
+    "expectedTitles": ["Basmati", "Biryani"],
+    "minExpected": 2,
+    "failureReason": "Intent search for biryani should return basmati rice and biryani masala"
+  },
+  {
+    "testGroup": "Multi-token Combinations",
+    "searchTerm": "5kg wheat flour aashirvaad",
+    "expectedTitles": ["Aashirvaad", "Atta"],
+    "minExpected": 1,
+    "failureReason": "Multi-token query with brand + weight + category should prioritize exact match"
+  },
+  {
+    "testGroup": "Multi-token Combinations",
+    "searchTerm": "mdh haldi powder",
+    "expectedTitles": ["MDH", "Turmeric"],
+    "minExpected": 1,
+    "failureReason": "Brand + spice + form query should return MDH turmeric powder specifically"
+  },
+  {
+    "testGroup": "Multi-token Combinations",
+    "searchTerm": "natco toor dal 2kg",
+    "expectedTitles": ["Natco", "Toor Dal", "2kg"],
+    "minExpected": 2,
+    "failureReason": "Full product specification: brand + item + size should pinpoint unique product"
+  },
+  {
+    "testGroup": "Multi-token Combinations",
+    "searchTerm": "shan biryani masala 50g",
+    "expectedTitles": ["Shan", "Biryani"],
+    "minExpected": 1,
+    "failureReason": "Specific product query with brand + blend + size should return exact match"
+  },
+  {
+    "testGroup": "Multi-token Combinations",
+    "searchTerm": "kohinoor extra long basmati",
+    "expectedTitles": ["Kohinoor", "Basmati"],
+    "minExpected": 1,
+    "failureReason": "Premium rice product multi-word query should match Kohinoor exactly"
+  },
+  {
+    "testGroup": "Category Navigation",
+    "searchTerm": "toor",
+    "expectedTitles": ["Toor"],
+    "minExpected": 2,
+    "failureReason": "Category context lost — 'toor' should map to dal-lentils category products"
+  },
+  {
+    "testGroup": "Category Navigation",
+    "searchTerm": "maggi",
+    "expectedTitles": ["Maggi"],
+    "minExpected": 1,
+    "failureReason": "Brand 'maggi' should trigger noodles/snacks category — instant food context"
+  },
+  {
+    "testGroup": "Category Navigation",
+    "searchTerm": "bhujia",
+    "expectedTitles": ["Bhujia"],
+    "minExpected": 2,
+    "failureReason": "Snack 'bhujia' should surface snacks-namkeen category — haldiram should be top"
+  },
+  {
+    "testGroup": "Category Navigation",
+    "searchTerm": "papad",
+    "expectedTitles": ["Papad", "Lijjat"],
+    "minExpected": 1,
+    "failureReason": "Papad search should surface snacks-namkeen category with Lijjat results"
+  },
+  {
+    "testGroup": "Category Navigation",
+    "searchTerm": "ghee",
+    "expectedTitles": ["Ghee"],
+    "minExpected": 2,
+    "failureReason": "Ghee search should surface oils-ghee category — core dairy product"
+  },
+  {
+    "testGroup": "Category Navigation",
+    "searchTerm": "almonds",
+    "expectedTitles": ["Almond"],
+    "minExpected": 2,
+    "failureReason": "Plural 'almonds' should find nut products — stemmer must handle plural"
+  },
+  {
+    "testGroup": "Category Navigation",
+    "searchTerm": "paneer masala",
+    "expectedTitles": ["Paneer"],
+    "minExpected": 1,
+    "failureReason": "Combined 'paneer masala' should trigger both spice-blends and dairy contexts"
+  },
+  {
+    "testGroup": "Edge Case - Empty",
+    "searchTerm": "",
+    "expectedTitles": [],
+    "minExpected": 0,
+    "failureReason": "Empty search should return start-typing prompt, not 500 or blank page"
+  },
+  {
+    "testGroup": "Edge Case - Special Characters",
+    "searchTerm": "garam masala & chana masala",
+    "expectedTitles": ["Garam Masala", "Chana Masala"],
+    "minExpected": 2,
+    "failureReason": "Ampersand in search query should be tokenized and both terms matched"
+  },
+  {
+    "testGroup": "Edge Case - Numeric",
+    "searchTerm": "400g",
+    "expectedTitles": ["400g"],
+    "minExpected": 2,
+    "failureReason": "Numeric weight search '400g' should match products with 400g variants"
+  },
+  {
+    "testGroup": "Edge Case - Single Character",
+    "searchTerm": "a",
+    "expectedTitles": [],
+    "minExpected": 0,
+    "failureReason": "Single character search should handle gracefully — not crash or return 500"
+  },
+  {
+    "testGroup": "Edge Case - Long Query",
+    "searchTerm": "organic whole grain traditional indian basmati rice premium quality",
+    "expectedTitles": ["Basmati", "Rice"],
+    "minExpected": 1,
+    "failureReason": "Very long query should still find relevant basmati products via keyword intersection"
+  },
+  {
+    "testGroup": "Edge Case - No Results",
+    "searchTerm": "xyznonexistentproduct999",
+    "expectedTitles": [],
+    "minExpected": 0,
+    "failureReason": "Gibberish query should show friendly empty state, not crash or error"
+  },
+  {
+    "testGroup": "Synonym Resolution",
+    "searchTerm": "gram flour",
+    "expectedTitles": ["Besan", "Gram Flour"],
+    "minExpected": 1,
+    "failureReason": "English 'gram flour' should resolve besan synonym and surface besan products"
+  },
+  {
+    "testGroup": "Synonym Resolution",
+    "searchTerm": "clarified butter",
+    "expectedTitles": ["Ghee"],
+    "minExpected": 2,
+    "failureReason": "English 'clarified butter' should resolve ghee synonym and surface ghee products"
+  },
+  {
+    "testGroup": "Synonym Resolution",
+    "searchTerm": "chickpea flour",
+    "expectedTitles": ["Besan", "Gram Flour"],
+    "minExpected": 1,
+    "failureReason": "Synonym 'chickpea flour' should match besan products via MeiliSearch synonyms"
+  },
+  {
+    "testGroup": "Synonym Resolution",
+    "searchTerm": "indian cheese",
+    "expectedTitles": ["Paneer"],
+    "minExpected": 1,
+    "failureReason": "Synonym 'indian cheese' should match paneer via MeiliSearch synonym dictionary"
+  },
+  {
+    "testGroup": "Synonym Resolution",
+    "searchTerm": "pigeon pea",
+    "expectedTitles": ["Toor"],
+    "minExpected": 2,
+    "failureReason": "English 'pigeon pea' should resolve toor dal synonym"
+  },
+  {
+    "testGroup": "Synonym Resolution",
+    "searchTerm": "black gram",
+    "expectedTitles": ["Urad"],
+    "minExpected": 2,
+    "failureReason": "English 'black gram' should resolve urad dal synonym"
+  },
+  {
+    "testGroup": "Sort — Price Low to High",
+    "searchTerm": "basmati rice",
+    "expectedTitles": ["Basmati"],
+    "minExpected": 3,
+    "failureReason": "Sort by price ascending — cheapest basmati should appear in top results"
+  },
+  {
+    "testGroup": "Dietary Filter — Vegetarian",
+    "searchTerm": "snacks",
+    "expectedTitles": ["Haldiram", "Bikaji", "Bhujia"],
+    "minExpected": 1,
+    "failureReason": "Vegetarian dietary filter on snacks should surface haldiram/bikaji products"
+  },
+  {
+    "testGroup": "Dietary Filter — Vegan",
+    "searchTerm": "dal",
+    "expectedTitles": ["Dal"],
+    "minExpected": 3,
+    "failureReason": "Vegan filter on dal should return lentils (all vegan by nature)"
+  },
+  {
+    "testGroup": "Dietary Filter — Gluten-Free",
+    "searchTerm": "flour",
+    "expectedTitles": ["Flour"],
+    "minExpected": 2,
+    "failureReason": "Gluten-free filter on flour should return besan and rice flour, not wheat atta"
+  }
+]

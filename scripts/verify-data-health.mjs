@@ -8,28 +8,35 @@
 const BASE = "http://127.0.0.1:9000"
 const MEILI = "http://localhost:7700"
 
-// Expected Natco category handles (no old ones should appear)
+// Expected category handles (from categories.csv — 36 handles matching JSON)
 const VALID_HANDLES = new Set([
-  "spices-herbs", "spice-herb-jars", "spice-blends-mixes", "food-colourings-essences", "sugar",
-  "dried-lentils-beans-peas", "tinned-lentils-beans", "soya-products", "namkeen-lentil-snacks",
-  "tinned-vegetables", "tinned-coconut", "tinned-fruit",
-  "rice-quinoa", "flour-milk-powder", "wheat-grains-couscous", "corn",
-  "ghee-oils", "teas-drinks", "vegetables", "flours", "tinned-products",
-  "raw-nuts", "flavoured-nuts", "seeds", "coconut-products", "dried-fruit",
-  "pappadoms", "chutneys-pickles-sauces", "flavoured-nuts-snacks", "raisins-snacks",
-  "all-snacks", "all-grains", "all-lentils-beans", "all-nuts-seeds",
+  "rice_grains", "basmati_rice", "everyday_rice", "sona_masuri_rice", "speciality_rice_poha",
+  "atta_flours", "atta_chapati_flour", "gram_flour_besan", "semolina_rava", "speciality_flours_grains_pasta", "coconut_staples",
+  "dals_lentils_pulses", "lentils_dals", "beans_peas_pulses",
+  "spices_masalas_herbs", "whole_spices_seeds", "powdered_spices", "masalas_spice_blends", "herbs_dried_leaves",
+  "chutneys_pickles_pastes", "pickles", "chutneys_spreads", "cooking_pastes_table_sauces",
+  "oils_ghee", "cooking_oils_ghee",
+  "snacks_sweets_bakery", "savouries_papadoms", "sweets_confectionery", "biscuits_crackers", "nuts_seeds_pub_cards",
+  "beverages_pantry", "beverages_drinks", "ayurveda_wellness", "sweeteners", "baking_essences_waters", "canned_veg_tamarind_meat_alts",
 ])
 
-// OLD handles that should NEVER appear in MeiliSearch
+// Old handles that should NEVER appear in MeiliSearch (from the 140-category tree, now retired)
 const FORBIDDEN_HANDLES = new Set([
   "staples-grains", "atta-flours", "dal-lentils", "oils-ghee",
   "spices-whole", "spices-ground", "spice-blends", "dairy", "beverages",
   "snacks-namkeen", "pickles-chutneys", "frozen", "fresh", "ready-to-cook", "condiments",
   "pooja", "household", "regional",
-  "masoor-dal-red-lentils", "whole-moong-green", "moong-dal-yellow",
-  "chapatti-flour-atta", "suji-coarse-semolina", "garam-masala",
-  "amchur-mango-powder", "chaat-masala", "chole-chana-masala",
-  "coriander-powder-dhania", "pav-bhaji-masala", "sambar-powder", "tamarind-chutney",
+  "basmati-rice", "sona-masoori-rice", "idli-rice", "brown-rice", "poha-flattened-rice",
+  "semolina-sooji-rava", "chapatti-flour-atta", "besan-gram-flour", "plain-flour-maida",
+  "rice-flour", "ragi-finger-millet-flour", "suji-coarse-semolina",
+  "toor-dal", "chana-dal", "moong-dal-yellow", "whole-moong-green",
+  "masoor-dal-red-lentils", "urad-dal-split", "whole-urad-black",
+  "rajma-kidney-beans", "chana-whole-chickpeas", "kala-chana-black-chickpeas", "lobhia-black-eye-beans",
+])
+
+// Handles that should NEVER appear in MeiliSearch (old system, now migrated away)
+const FORBIDDEN_HANDLES = new Set([
+  "sambar-powder", "tamarind-chutney",
 ])
 
 async function main() {
@@ -74,12 +81,17 @@ async function main() {
     failed++
   }
 
-  // 2. Check Medusa product count
+  // 2. Check Medusa product count (via admin API — no hardcoded key)
   console.log("\n2. Medusa product count...")
   try {
-    const pk = "pk_736cac65cdf91adefa6c0180c37a29f00047518c60376efb84586432312a2d00"
-    const r = await fetch(`${BASE}/store/products?limit=1&fields=id`, {
-      headers: { "x-publishable-api-key": pk },
+    const loginRes = await fetch(`${BASE}/auth/user/emailpass`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "admin@example.com", password: "password123" }),
+    })
+    const { token } = await loginRes.json()
+    const r = await fetch(`${BASE}/admin/products?limit=1&fields=id`, {
+      headers: { Authorization: `Bearer ${token}` },
     })
     const data = await r.json()
     if (data.count >= 260) {

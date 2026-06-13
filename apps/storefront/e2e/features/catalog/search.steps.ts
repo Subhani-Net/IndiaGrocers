@@ -9,11 +9,9 @@ const { Given, When, Then } = createBdd()
  */
 
 When("the user types {string}", async ({ page }, text: string) => {
-  const searchInput = page.locator('input[type="search"], input[placeholder*="search" i]').first()
-  if ((await searchInput.count()) > 0) {
-    await searchInput.fill(text)
-    await page.waitForTimeout(1000)
-  }
+  const searchInput = page.locator('input[type="text"]').first()
+  await searchInput.fill(text)
+  await page.waitForTimeout(1000)
 })
 
 Given("the search autocomplete dropdown is visible", async ({ page }) => {
@@ -32,31 +30,46 @@ Given("the user is on the search page with results", async ({ page }) => {
 })
 
 When("the user clicks the {string} category chip", async ({ page }, category: string) => {
-  const chip = page.locator("button").filter({ hasText: new RegExp(category, "i") }).first()
+  const chip = page.locator("a").filter({ hasText: new RegExp(category, "i") }).first()
   if ((await chip.count()) > 0) {
     await chip.click()
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(2000)
   }
 })
 
 Then("the chip is visually active", async ({ page }, category: string) => {
-  console.log(`"${category}" chip active check`)
+  const chip = page.locator("a").filter({ hasText: category }).first()
+  await expect(chip).toBeVisible()
 })
 
 Then("all search results are displayed", async ({ page }) => {
-  const titles = page.locator('[data-testid="product-title"]')
+  const titles = page.locator('[data-testid="product-title"], [data-testid="product-full-title"]')
   const count = await titles.count()
-  console.log(`All results after filter clear: ${count}`)
+  expect(count).toBeGreaterThanOrEqual(1)
 })
 
 Then("the top result is {string}", async ({ page }, productTitle: string) => {
-  const firstTitle = page.locator('[data-testid="product-title"], [data-testid="product-full-title"]').first()
-  const text = await firstTitle.textContent().catch(() => "")
-  console.log(`Top result: "${text}"`)
+  await page.waitForSelector('[data-testid="product-full-title"]', { timeout: 5000 })
+  const firstTitle = page.locator('[data-testid="product-full-title"]').first()
+  await expect(firstTitle).toBeVisible()
+  const text = await firstTitle.textContent()
+  expect(text?.toLowerCase()).toContain(productTitle.toLowerCase())
+})
+
+Then("the results include {string}", async ({ page }, productTitle: string) => {
+  await page.waitForSelector('[data-testid="product-full-title"]', { timeout: 5000 })
+  const allTitles = page.locator('[data-testid="product-full-title"]')
+  const count = await allTitles.count()
+  const texts: string[] = []
+  for (let i = 0; i < count; i++) {
+    texts.push((await allTitles.nth(i).textContent()) || "")
+  }
+  expect(texts.some(t => t.toLowerCase().includes(productTitle.toLowerCase()))).toBeTruthy()
 })
 
 Then("at least {int} results are returned", async ({ page }, minCount: number) => {
   const titles = page.locator('[data-testid="product-title"], [data-testid="product-full-title"]')
+  await expect(titles.first()).toBeVisible({ timeout: 5000 })
   const count = await titles.count()
   expect(count).toBeGreaterThanOrEqual(minCount)
 })

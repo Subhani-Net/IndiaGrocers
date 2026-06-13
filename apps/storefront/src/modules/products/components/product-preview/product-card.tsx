@@ -24,9 +24,7 @@ export default function ProductCard({
     region?: HttpTypes.StoreRegion
     isFeatured?: boolean
 }) {
-    const brandMatch = (product.title || "").match(/\s+-\s+(.+)$/)
-    const brand = brandMatch ? brandMatch[1] : null
-    const cleanTitle = brandMatch ? (product.title || "").slice(0, brandMatch.index) : (product.title || "")
+    const displayTitle = product.title || ""
 
     const variants = (product.variants || []).map((v: any) => ({
         id: v.id,
@@ -110,10 +108,7 @@ export default function ProductCard({
                         </div>
                         <div className="flex-1 min-w-0">
                             <span className="hidden" data-testid="product-full-title">{product.title}</span>
-                            {brand && (
-                                <span className="text-[10px] text-brand-saffron font-bold uppercase tracking-wider block mb-0.5 truncate">{brand}</span>
-                            )}
-                            <h3 data-testid="product-title" className="text-sm font-semibold text-grey-90 leading-tight line-clamp-2">{cleanTitle}</h3>
+                            <h3 data-testid="product-title" className="text-sm font-semibold text-grey-90 leading-tight line-clamp-2">{displayTitle}</h3>
                             <div className="flex items-center mt-1.5">
                                 <span className="text-sm font-bold text-grey-90">{formatPrice(firstVariant?.price || 0)}</span>
                                 {weightText && <span className="text-[11px] text-grey-50 ml-2">{weightText}</span>}
@@ -168,14 +163,9 @@ export default function ProductCard({
                         <div className="w-full aspect-square rounded-xl overflow-hidden bg-grey-5 border border-grey-10/60 relative mb-3">
                             <Thumbnail thumbnail={product.thumbnail} images={product.images} size="square" />
                             <WishlistButton productId={product.id} />
-                            {brand && (
-                                <span className="absolute top-2.5 left-2.5 bg-brand-saffron/90 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm backdrop-blur-sm">
-                                    {brand}
-                                </span>
-                            )}
                         </div>
                         <h3 data-testid="product-title" className="text-sm font-semibold text-grey-90 group-hover:text-brand-orange transition-colors line-clamp-2 h-10 leading-snug text-center">
-                            {cleanTitle}
+                            {displayTitle}
                         </h3>
                     </LocalizedClientLink>
 

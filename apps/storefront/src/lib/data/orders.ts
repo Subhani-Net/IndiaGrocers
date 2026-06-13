@@ -1,7 +1,6 @@
 "use server"
 
 import { sdk } from "@lib/config"
-import medusaError from "@lib/util/medusa-error"
 import { getAuthHeaders, getCacheOptions } from "./cookies"
 import { HttpTypes } from "@medusajs/types"
 
@@ -26,7 +25,10 @@ export const retrieveOrder = async (id: string) => {
       cache: "no-store",
     })
     .then(({ order }) => order)
-    .catch((err) => medusaError(err))
+    .catch((err) => {
+      console.warn("[retrieveOrder] failed for", id, ":", err?.message || err)
+      return null
+    })
 }
 
 export const listOrders = async (
@@ -57,7 +59,10 @@ export const listOrders = async (
       cache: "force-cache",
     })
     .then(({ orders }) => orders)
-    .catch((err) => medusaError(err))
+    .catch((err) => {
+      console.warn("[listOrders] failed:", err?.message || err)
+      return [] as HttpTypes.StoreOrder[]
+    })
 }
 
 export const createTransferRequest = async (

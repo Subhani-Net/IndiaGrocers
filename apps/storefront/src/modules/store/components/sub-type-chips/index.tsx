@@ -20,7 +20,7 @@ export default function SubTypeChips({
   return (
     <div className="bg-white border-b border-stone-200/40">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-3">
-        <div className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth">
+        <div className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth" data-testid="subcategory-chips">
           <LocalizedClientLink
             href="."
             scroll={false}

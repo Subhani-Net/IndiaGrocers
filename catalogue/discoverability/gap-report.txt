@@ -1,0 +1,35 @@
+======================================================================
+  DISCOVERABILITY GAP REPORT — 2026-06-11T20:57:45.879Z
+  Expected snapshot: 2026-06-11T20:57:28.089Z
+  Products: 435
+======================================================================
+
+SEARCH: 456 terms | avg overlap 5.0 | 2163 missing | 87 clean | 369 with gaps
+
+Top search gaps (most missing):
+  "idli rice" — 1/12 overlap — missing: Shan Pilau Rice Mix | TRS Ground Rice | Natco - Basmati Rice India
+  "mamra basmati" — 1/12 overlap — missing: Tilda Pure Basmati | Tilda Pure Basmati | Tilda Pure Basmati
+  "masoor dal" — 0/12 overlap — missing: Haldiram's Moong Dal | Haldiram's Moong Dal | MDH Dal Makhani Masala
+  "kohinoor basmati" — 2/12 overlap — missing: Tilda Pure Basmati | Tilda Pure Basmati | Tilda Pure Basmati
+  "white kidney beans" — 2/12 overlap — missing: TRS Red Kidney Beans | Natco - Red Kidney Beans | Natco - Red Kidney Beans Boiled Full Case 12x400g
+  "alubia beans" — 1/12 overlap — missing: TRS Moth Beans | TRS Mung Beans | TRS Red Adzuki Beans (Red Cow Peas)
+  "rosemary jar" — 1/12 overlap — missing: Natco - Ajwan Seeds Jar | Natco - Amchoor Powder Jar | Natco - Aniseed Star Jar
+  "pappadoms black pepper" — 1/12 overlap — missing: TRS Coarse Black Pepper | Natco - Black Pepper Coarse | Natco - Black Pepper Ground
+  "thecha chilli paste" — 1/12 overlap — missing: Patak's Tikka Masala Paste | TRS Crushed Chilli | TRS Ginger  Garlic Paste
+  "castor oil" — 1/12 overlap — missing: Natco - Almond Oil | Natco - Coconut Oil (Parachute Brand) | Natco - Groundnut Oil
+
+CATEGORIES: 87 categories | avg overlap 3.6 | 28 missing | 82 clean | 5 with gaps
+
+Top category gaps (most missing):
+  [leaf] turmeric-powder-haldi (Turmeric Powder (Haldi)) — 2/12 overlap — missing: Haldiram's All In One Mix | Haldiram's Dalmoth | Haldiram's Khatta Meetha Mix
+  [leaf] cumin-seeds-jeera (Cumin Seeds (Jeera)) — 5/12 overlap — missing: TRS Cumin Seeds | TRS Puffed Lotus Seeds Makhana | Natco - Cumin Ground
+  [leaf] garam-masala (Garam Masala) — 5/12 overlap — missing: Shan Achar Gosht Masala | Shan Keema Masala | Maggi 2-Minute Noodles Masala
+  [leaf] rajma-kidney-beans (Rajma (Kidney Beans)) — 9/12 overlap — missing: TRS Red Kidney Beans | TRS Rosecoco Beans | TRS Urid Beans
+  [leaf] red-chilli-powder-mirchi (Red Chilli Powder (Mirchi)) — 11/12 overlap — missing: TRS Crushed Chilli
+
+Clean categories (no gaps): 82
+  sona-masoori-rice, basmati-rice, idli-rice, brown-rice, semolina-sooji-rava, chapatti-flour-atta, besan-gram-flour, plain-flour-maida, rice-flour, ragi-finger-millet-flour, suji-coarse-semolina, toor-dal, chana-dal, moong-dal-yellow, whole-moong-green, masoor-dal-red-lentils, urad-dal-split, whole-urad-black, kala-chana-black-chickpeas, lobhia-black-eye-beans, sunflower-oil, mustard-oil, coconut-oil, ghee-clarified-butter, groundnut-peanut-oil, mustard-seeds-rai, coriander-seeds-dhania, fenugreek-seeds-methi, fennel-seeds-saunf, bay-leaves-tej-patta, green-cardamom-elaichi, cloves-laung, cinnamon-sticks-dalchini, black-pepper-kali-mirch, asafoetida-hing, dried-red-chillies, star-anise, nutmeg-jaiphal, coriander-powder-dhania, cumin-powder-jeera, ginger-powder-sonth, kashmiri-chilli-powder, amchur-mango-powder, kasuri-methi-dried-fenugreek-leaves, chole-chana-masala, rajma-masala, biryani-masala, pav-bhaji-masala, kitchen-king-masala, tandoori-masala, meat-masala, fish-curry-masala, chicken-masala, paneer-masala, butter-unsalted, butter-salted, double-cream, loose-leaf-tea-chai, bournvita, horlicks, rooh-afza-rose-syrup, bhujia, mixture-bombay-mix, papad, biscuits-parle-g, biscuits-marie, roasted-peanuts-chana, mango-pickle-achar, mixed-pickle, lime-lemon-pickle, green-chilli-pickle, garlic-pickle, tamarind-paste-concentrate, mango-chutney, frozen-peas, curry-leaves, fresh-ginger, gulab-jamun-mix, coconut-milk, ginger-garlic-paste, jaggery-gur, punjabi-north-indian
+
+======================================================================
+  Full JSON: D:\Dump\IndiaGrocers-Fix\catalogue\discoverability\gap-report.json
+======================================================================

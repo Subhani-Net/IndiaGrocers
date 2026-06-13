@@ -160,14 +160,21 @@ async function main() {
   const products = await fetchProducts(token)
   console.log(`  ✓ ${products.length} products fetched\n`)
 
-  // 3. Transform for MeiliSearch
+  // 3. DELETE ALL existing documents — clean slate every reindex
+  console.log("Clearing existing index...")
+  const index = await getProductsIndex()
+  try {
+    await index.deleteAllDocuments()
+    console.log("  ✓ Index cleared")
+  } catch (e: any) {
+    console.log("  ⚠ Could not clear index:", e.message)
+  }
+
+  // 4. Transform for MeiliSearch
   console.log("Transforming and indexing...")
   const documents = products.map(transformProduct)
 
-  // 4. Index into MeiliSearch
-  const index = await getProductsIndex()
-
-  // Index in batches of 100
+  // 5. Index into MeiliSearch
   const batchSize = 100
   let indexed = 0
 

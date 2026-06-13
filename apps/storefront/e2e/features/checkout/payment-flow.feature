@@ -104,3 +104,47 @@ Feature: Payment Processing and Order Confirmation
     Given the user is on the order confirmation page as a guest
     When the user clicks "Create Account"
     Then the user is navigated to the registration page
+
+  # ────────────────────────────────────────────────────────────
+  # SHIPPING METHOD VALIDATION IN CART COMPLETION
+  # ────────────────────────────────────────────────────────────
+
+  @D1 @D5 @critical-path @regression
+  Scenario: Cart completion validates shipping method is set
+    Given the user has an item in their basket
+    And the user has filled in their delivery address
+    And the user has selected a delivery slot
+    And the user has initiated a successful payment
+    When the cart is completed
+    Then the cart's shipping_methods array is non-empty
+    And the validateShippingStep passes without error
+
+  @D1 @D5 @critical-path @regression
+  Scenario: Delivery cost in order confirmation matches registered shipping method
+    Given the user has completed the full checkout flow
+    Then the order confirmation displays the correct shipping cost
+    And the shipping cost in the order matches the shipping method registered on the cart
+
+  # ────────────────────────────────────────────────────────────
+  # DATA FLOW — Shipping Method → Payment → Order
+  # ────────────────────────────────────────────────────────────
+
+  @architecture @critical-path
+  Scenario: Shipping method is registered BEFORE payment session creation
+    Given the user is on the payment step
+    When the user clicks the Pay button
+    Then the cart has a shipping method set before initiatePaymentSession is called
+    And the payment session is created for a cart with valid shipping
+
+  @architecture @critical-path
+  Scenario: Complete order flow with shipping method validation
+    Given the user starts with an empty basket
+    When the user adds a product to the basket
+    And the user fills in delivery address
+    And the user selects a delivery slot
+    And the shipping method is registered on the cart
+    And the user enters payment details
+    And the user confirms the order
+    Then the order is created successfully
+    And the order has a shipping method
+    And the order confirmation page displays correct shipping cost

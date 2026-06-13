@@ -10,9 +10,10 @@
 
 import {
   getProductsIndex,
-  buildMeiliSearchSynonyms,
   PRODUCTS_INDEX,
 } from "../src/index"
+import { readFileSync, existsSync } from "fs"
+import { resolve } from "path"
 
 async function main() {
   console.log(`Configuring MeiliSearch index: ${PRODUCTS_INDEX}\n`)
@@ -77,11 +78,24 @@ async function main() {
   ])
   console.log("  ✓ rankingRules updated")
 
-  // 5. Upload synonyms
+  // 5. Upload synonyms from CSV (single source of truth)
   console.log("Uploading synonym dictionary...")
-  const synonyms = buildMeiliSearchSynonyms()
-  await index.updateSynonyms(synonyms)
-  console.log(`  ✓ ${Object.keys(synonyms).length} synonym pairs uploaded\n`)
+  const synCsvPath = resolve(process.cwd(), "..", "..", "catalogue", "meilisearch", "synonyms.csv")
+  const synonyms: Record<string, string[]> = {}
+  if (existsSync(synCsvPath)) {
+    const content = readFileSync(synCsvPath, "utf8")
+    const lines = content.trim().split("\n").slice(1) // skip header
+    for (const line of lines) {
+      const [term, syns] = line.split(",").map(s => s.trim().replace(/^"|"$/g, ""))
+      if (term && syns) synonyms[term] = syns.split(";").map(s => s.trim())
+    }
+  }
+  if (Object.keys(synonyms).length > 0) {
+    await index.updateSynonyms(synonyms)
+    console.log(`  ✓ ${Object.keys(synonyms).length} synonym pairs uploaded`)
+  } else {
+    console.log("  ⚠ No synonyms found in catalogue/meilisearch/synonyms.csv")
+  }
 
   console.log("✅ MeiliSearch index configured successfully.")
   console.log(`   Search at: ${process.env.MEILISEARCH_HOST || "http://localhost:7700"}`)

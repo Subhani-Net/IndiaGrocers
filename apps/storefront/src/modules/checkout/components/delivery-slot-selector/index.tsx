@@ -17,12 +17,26 @@ interface TimeWindow {
   available: boolean
   premium: boolean
   price: number
+  shippingOptionId?: string
 }
 
 // Generate next N weekend days (Sat & Sun only)
-function generateSlots(days: number = 5, hasFastRequired: boolean = false): DeliverySlot[] {
+function generateSlots(days: number = 5, hasFastRequired: boolean = false, shippingOptions: any[] = []): DeliverySlot[] {
   const slots: DeliverySlot[] = []
   const now = new Date()
+
+  // Map shipping options: find the standard one for price reference
+  const standardOption = shippingOptions.find(
+    (so: any) => so.name?.toLowerCase().includes("standard") || so.amount === 399
+  )
+  const expressOption = shippingOptions.find(
+    (so: any) => so.name?.toLowerCase().includes("express") || so.amount === 699
+  )
+
+  const standardPrice = standardOption?.calculated_price?.calculated_amount ?? standardOption?.amount ?? 399
+  const standardOptionId = standardOption?.id ?? ""
+  const expressPrice = expressOption?.calculated_price?.calculated_amount ?? expressOption?.amount ?? 699
+  const expressOptionId = expressOption?.id ?? ""
   
   // Find next Saturday from today
   let current = new Date(now)
@@ -55,11 +69,11 @@ function generateSlots(days: number = 5, hasFastRequired: boolean = false): Deli
     const monthDay = d.toLocaleDateString("en-GB", { day: "numeric", month: "short" })
     const dateLabel = `${dayName} ${monthDay}`
 
-    // 4-hour time windows
+    // 4-hour time windows — all use Standard Delivery, Express available as premium option
     const allWindows: TimeWindow[] = [
-      { id: `${daysGenerated}-morning`, label: "Morning (8am-12pm)", start: "08:00", end: "12:00", available: true, premium: false, price: 0 },
-      { id: `${daysGenerated}-afternoon`, label: "Afternoon (12pm-4pm)", start: "12:00", end: "16:00", available: true, premium: false, price: 0 },
-      { id: `${daysGenerated}-evening`, label: "Evening (4pm-8pm)", start: "16:00", end: "20:00", available: true, premium: false, price: 0 },
+      { id: `${daysGenerated}-morning`, label: "Morning (8am-12pm)", start: "08:00", end: "12:00", available: true, premium: false, price: standardPrice, shippingOptionId: standardOptionId },
+      { id: `${daysGenerated}-afternoon`, label: "Afternoon (12pm-4pm)", start: "12:00", end: "16:00", available: true, premium: false, price: standardPrice, shippingOptionId: standardOptionId },
+      { id: `${daysGenerated}-evening`, label: "Evening (4pm-8pm)", start: "16:00", end: "20:00", available: true, premium: false, price: standardPrice, shippingOptionId: standardOptionId },
     ]
 
     slots.push({ date: d, dateLabel, timeWindows: allWindows })
@@ -75,6 +89,7 @@ interface DeliverySlotSelectorProps {
   selectedDate?: Date | null
   selectedWindow?: TimeWindow | null
   hasFastRequired?: boolean
+  shippingOptions?: any[]
 }
 
 export default function DeliverySlotSelector({
@@ -82,8 +97,9 @@ export default function DeliverySlotSelector({
   selectedDate,
   selectedWindow,
   hasFastRequired = false,
+  shippingOptions = [],
 }: DeliverySlotSelectorProps) {
-  const slots = useMemo(() => generateSlots(5, hasFastRequired), [hasFastRequired])
+  const slots = useMemo(() => generateSlots(5, hasFastRequired, shippingOptions), [hasFastRequired, shippingOptions])
   const [expandedDay, setExpandedDay] = useState<number>(0)
 
   const handleSelect = useCallback(
