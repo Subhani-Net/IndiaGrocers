@@ -9,7 +9,8 @@ import Summary from "./summary"
 import EmptyCartMessage from "../components/empty-cart-message"
 import SignInPrompt from "../components/sign-in-prompt"
 import Divider from "@modules/common/components/divider"
-import BasketProgressBar, { MIN_ORDER, FREE_DELIVERY_TARGET } from "@modules/cart/components/basket-progress-bar"
+import BasketProgressBar from "@modules/cart/components/basket-progress-bar"
+import { MIN_ORDER_AMOUNT, FREE_DELIVERY_THRESHOLD } from "@lib/config/store-config"
 import BulkUpgradeNudge, { detectBulkUpgrade } from "@modules/cart/components/bulk-upgrade-nudge"
 import CategoryReminderStrip from "@modules/cart/components/category-reminder-strip"
 
@@ -72,7 +73,7 @@ const CartTemplate = ({
 
   // Complete Your Basket — show when £30-£44.99
   const showCompleteBasket =
-    itemTotal >= MIN_ORDER && itemTotal < FREE_DELIVERY_TARGET
+    itemTotal >= MIN_ORDER_AMOUNT && itemTotal < FREE_DELIVERY_THRESHOLD
 
   // Category reminder — cart categories already present
   const cartCategoryHandles = useMemo(() => {

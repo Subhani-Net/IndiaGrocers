@@ -4,6 +4,7 @@ import { listRegions } from "@lib/data/regions"
 import { listLocales } from "@lib/data/locales"
 import { getLocale } from "@lib/data/locale-actions"
 import { listCategories } from "@lib/data/categories"
+import { FREE_DELIVERY_BANNER } from "@lib/config/store-config"
 import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
@@ -75,7 +76,7 @@ export default async function Nav({ customer }: { customer?: any }) {
   return (
     <>
       <div className="bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-orange text-white text-center text-sm py-2 px-4 font-medium tracking-wide">
-        FREE DELIVERY on orders over £40 &nbsp;·&nbsp; Order by 2pm for next day delivery
+        {FREE_DELIVERY_BANNER}
       </div>
 
         <header className="z-50 bg-white border-b border-grey-20/60">

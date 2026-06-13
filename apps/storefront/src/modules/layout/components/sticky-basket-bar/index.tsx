@@ -2,10 +2,8 @@
 
 import { useEffect, useState, useCallback } from "react"
 import { formatGBP } from "@lib/util/format-price"
+import { FREE_DELIVERY_THRESHOLD } from "@lib/config/store-config"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-
-const FREE_DELIVERY = 4500
-const DELIVERY_COST = 399
 
 export default function StickyBasketBar() {
   const [total, setTotal] = useState(0)
@@ -32,8 +30,8 @@ export default function StickyBasketBar() {
 
   if (!visible) return null
 
-  const remaining = Math.max(FREE_DELIVERY - total, 0)
-  const reachedFree = total >= FREE_DELIVERY
+  const remaining = Math.max(FREE_DELIVERY_THRESHOLD - total, 0)
+  const reachedFree = total >= FREE_DELIVERY_THRESHOLD
 
   return (
     <div className="fixed bottom-14 left-0 right-0 z-40 lg:hidden">

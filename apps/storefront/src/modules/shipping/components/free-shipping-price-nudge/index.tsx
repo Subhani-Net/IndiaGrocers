@@ -13,8 +13,6 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import { useState } from "react"
 import { StoreFreeShippingPrice } from "types/global"
 
-const FREE_SHIPPING_TARGET = 4000 // £40.00 in pence
-
 const computeTarget = (
   cart: HttpTypes.StoreCart,
   price: HttpTypes.StorePrice

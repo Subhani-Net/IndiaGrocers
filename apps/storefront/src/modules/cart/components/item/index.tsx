@@ -63,7 +63,8 @@ const Item = ({ item, type = "full", currencyCode, inventoryMap }: ItemProps) =>
 
   const maxQtyFromInventory = 10
   const maxQuantity = item.variant?.manage_inventory ? 10 : maxQtyFromInventory
-  const availability = inventoryMap?.[item.variant_id]?.availability
+  const availability =
+    item.variant_id ? inventoryMap?.[item.variant_id]?.availability : undefined
   const isOOS = item.variant?.manage_inventory && availability != null && availability <= 0
 
   return (

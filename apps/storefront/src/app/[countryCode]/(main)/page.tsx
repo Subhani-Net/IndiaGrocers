@@ -3,6 +3,7 @@ import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 import { retrieveCustomer } from "@lib/data/customer"
 import { listOrders } from "@lib/data/orders"
+import { FREE_DELIVERY_THRESHOLD_GBP } from "@lib/config/store-config"
 import FeaturedProducts from "@modules/home/components/featured-products"
 import HeroCarousel from "@modules/home/components/hero-carousel"
 import CategoryGrid from "@modules/home/components/category-grid"
@@ -156,7 +157,7 @@ export default async function Home(props: {
       <section className="py-16 px-6 bg-white">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { emoji: "🚚", title: "Free Delivery", desc: "On orders over £45", iconBg: "bg-brand-orange/10" },
+            { emoji: "🚚", title: "Free Delivery", desc: `On orders over ${FREE_DELIVERY_THRESHOLD_GBP}`, iconBg: "bg-brand-orange/10" },
             { emoji: "⚡", title: "Express Option", desc: "Next day delivery", iconBg: "bg-brand-saffron/10" },
             { emoji: "🥬", title: "Farm Fresh", desc: "Directly sourced", iconBg: "bg-brand-cardamom/10" },
             { emoji: "💝", title: "Best Price", desc: "Quality guaranteed", iconBg: "bg-brand-orange/10" },

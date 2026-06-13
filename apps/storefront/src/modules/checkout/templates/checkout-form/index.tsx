@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react"
 import { setAddresses, placeOrder, initiatePaymentSession, setShippingMethod } from "@lib/data/cart"
+import { STANDARD_DELIVERY_COST } from "@lib/config/store-config"
 import { HttpTypes } from "@medusajs/types"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useActionState } from "react"
@@ -168,7 +169,7 @@ export default function CheckoutForm({ cart, customer, shippingOptions = [] }: C
   }
 
   const itemTotal = cart?.item_total || 0
-  const deliveryCost = cart?.shipping_methods?.[0]?.amount ?? 399
+  const deliveryCost = cart?.shipping_methods?.[0]?.amount ?? STANDARD_DELIVERY_COST
   const total = itemTotal + (deliveryCost > 0 ? deliveryCost : 0)
 
   // Log amounts for price verification (all values in pence)

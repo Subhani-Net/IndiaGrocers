@@ -1,11 +1,8 @@
 "use client"
 
 import { formatGBP } from "@lib/util/format-price"
+import { FREE_DELIVERY_THRESHOLD, MIN_ORDER_AMOUNT, STANDARD_DELIVERY_COST } from "@lib/config/store-config"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-
-const FREE_DELIVERY_TARGET = 4500 // £45.00 in pence
-const MIN_ORDER = 3000 // £30.00 in pence
-const STANDARD_DELIVERY = 399 // £3.99
 
 interface BasketProgressBarProps {
   itemTotal: number
@@ -16,10 +13,10 @@ export default function BasketProgressBar({
   itemTotal,
   itemCount,
 }: BasketProgressBarProps) {
-  const progress = Math.min((itemTotal / FREE_DELIVERY_TARGET) * 100, 100)
-  const remaining = Math.max(FREE_DELIVERY_TARGET - itemTotal, 0)
-  const reachedFreeDelivery = itemTotal >= FREE_DELIVERY_TARGET
-  const belowMinOrder = itemTotal > 0 && itemTotal < MIN_ORDER
+  const progress = Math.min((itemTotal / FREE_DELIVERY_THRESHOLD) * 100, 100)
+  const remaining = Math.max(FREE_DELIVERY_THRESHOLD - itemTotal, 0)
+  const reachedFreeDelivery = itemTotal >= FREE_DELIVERY_THRESHOLD
+  const belowMinOrder = itemTotal > 0 && itemTotal < MIN_ORDER_AMOUNT
 
   if (itemCount === 0) return null
 
@@ -47,7 +44,7 @@ export default function BasketProgressBar({
             <>
               <span className="text-lg">⚠️</span>
               <span className="text-sm font-bold text-red-700">
-                Minimum order {formatGBP(MIN_ORDER)}
+                Minimum order {formatGBP(MIN_ORDER_AMOUNT)}
               </span>
             </>
           ) : (
@@ -92,7 +89,7 @@ export default function BasketProgressBar({
             {formatGBP(itemTotal)}
           </span>
           <span className="text-xs text-stone-400 font-medium">
-            Free at {formatGBP(FREE_DELIVERY_TARGET)}
+            Free at {formatGBP(FREE_DELIVERY_THRESHOLD)}
           </span>
         </div>
       </div>
@@ -101,7 +98,7 @@ export default function BasketProgressBar({
       {belowMinOrder && (
         <div className="bg-red-100/50 px-4 py-2 border-t border-red-200">
           <p className="text-xs text-red-700 font-medium">
-            Add {formatGBP(MIN_ORDER - itemTotal)} more to reach the {formatGBP(MIN_ORDER)} minimum order
+            Add {formatGBP(MIN_ORDER_AMOUNT - itemTotal)} more to reach the {formatGBP(MIN_ORDER_AMOUNT)} minimum order
           </p>
         </div>
       )}
@@ -110,8 +107,8 @@ export default function BasketProgressBar({
       {!reachedFreeDelivery && !belowMinOrder && (
         <div className="bg-white/50 px-4 py-2 border-t border-amber-200/50">
           <p className="text-xs text-stone-500">
-            Delivery: {formatGBP(STANDARD_DELIVERY)} — FREE over{" "}
-            {formatGBP(FREE_DELIVERY_TARGET)}
+            Delivery: {formatGBP(STANDARD_DELIVERY_COST)} — FREE over{" "}
+            {formatGBP(FREE_DELIVERY_THRESHOLD)}
           </p>
         </div>
       )}
@@ -119,4 +116,4 @@ export default function BasketProgressBar({
   )
 }
 
-export { FREE_DELIVERY_TARGET, MIN_ORDER, STANDARD_DELIVERY }
+export { FREE_DELIVERY_THRESHOLD, MIN_ORDER_AMOUNT, STANDARD_DELIVERY_COST }

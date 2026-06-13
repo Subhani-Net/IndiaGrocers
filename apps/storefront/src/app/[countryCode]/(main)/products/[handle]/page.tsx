@@ -48,8 +48,8 @@ function getImagesForVariant(
 ) {
   if (!selectedVariantId || !product.variants) return product.images
   const variant = product.variants.find((v) => v.id === selectedVariantId)
-  if (!variant?.images?.length) return product.images ?? null
-  const imageIdsMap = new Map(variant.images.map((i) => [i.id, true as const]))
+  if (!(variant as any)?.images?.length) return product.images ?? null
+  const imageIdsMap = new Map((variant as any).images.map((i: any) => [i.id, true as const]))
   return product.images?.filter((i) => imageIdsMap.has(i.id))
 }
 
@@ -100,9 +100,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
           "@type": "Offer",
           price: (price / 100).toFixed(2),
           priceCurrency: "GBP",
-          availability: inventoryMap?.[firstVariant?.id]?.availability != null
-            ? "https://schema.org/InStock"
-            : "https://schema.org/InStock",
+          availability: "https://schema.org/InStock",
         }
       : undefined,
   }

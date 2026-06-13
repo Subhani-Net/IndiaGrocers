@@ -85,6 +85,14 @@ export default function WeightHeavyProductCard({
   const [lineItemMap, setLineItemMap] = useState<Record<string, string>>({})
 
   const activeVariant = selectedVariant || firstVariant
+  // If no variant data at all, product card cannot render interactions
+  if (!activeVariant) {
+    return (
+      <div className="flex flex-col bg-white rounded-xl border border-stone-200 overflow-hidden">
+        <div className="p-3 text-center text-xs text-stone-400">No variants available</div>
+      </div>
+    )
+  }
   const visibleChips = variants.slice(0, 3)
   const hasMore = variants.length > 3
 
@@ -222,7 +230,7 @@ export default function WeightHeavyProductCard({
           </div>
 
           {/* Add/Quantity - mobile */}
-          {qtyCounts[activeVariant?.id || ''] > 0 ? (
+          {qtyCounts[activeVariant.id] > 0 ? (
             <div className="flex items-center border border-grey-30 rounded-lg bg-white shadow-sm h-8 flex-shrink-0 mt-1.5" data-testid="qty-controls">
               <button
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(activeVariant.id, -1) }}
@@ -232,7 +240,7 @@ export default function WeightHeavyProductCard({
                 −
               </button>
               <span className="w-7 text-center text-xs font-bold text-grey-90 select-none" data-testid="qty-count">
-                {qtyCounts[activeVariant?.id || ''] || 0}
+                {qtyCounts[activeVariant.id] || 0}
               </span>
               <button
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(activeVariant.id, 1) }}
@@ -348,7 +356,7 @@ export default function WeightHeavyProductCard({
           </div>
 
           {/* Add to basket / Quantity */}
-          {qtyCounts[activeVariant?.id || ''] > 0 ? (
+          {qtyCounts[activeVariant.id] > 0 ? (
             <div className="mt-auto pt-2.5 flex items-center justify-center border border-grey-30 rounded-lg bg-white shadow-sm h-10" data-testid="qty-controls">
               <button
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(activeVariant.id, -1) }}
@@ -358,7 +366,7 @@ export default function WeightHeavyProductCard({
                 −
               </button>
               <span className="w-10 text-center text-sm font-bold text-grey-90 select-none" data-testid="qty-count">
-                {qtyCounts[activeVariant?.id || ''] || 0}
+                {qtyCounts[activeVariant.id] || 0}
               </span>
               <button
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuantityChange(activeVariant.id, 1) }}

@@ -23,7 +23,7 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
     try {
       const { shipping_options } = await listCartOptions()
       shippingOptions = shipping_options
-    } catch (err) {
+    } catch (err: any) {
       console.warn("[layout] listCartOptions failed:", err?.message || err)
     }
   }

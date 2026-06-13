@@ -46,7 +46,7 @@ export const updateLocale = async (localeCode: string): Promise<string> => {
       ...(await getAuthHeaders()),
     }
 
-    await sdk.store.cart.update(cartId, { locale: localeCode }, {}, headers)
+    await sdk.store.cart.update(cartId, { locale: localeCode } as any, {}, headers)
 
     const cartCacheTag = await getCacheTag("carts")
     if (cartCacheTag) {

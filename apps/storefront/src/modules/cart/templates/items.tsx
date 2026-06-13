@@ -12,7 +12,7 @@ type ItemsTemplateProps = {
 }
 
 const isOOS = (item: HttpTypes.StoreCartLineItem, inventoryMap?: InventoryMap) => {
-  if (!item.variant?.manage_inventory) return false
+  if (!item.variant?.manage_inventory || !item.variant_id) return false
   const availability = inventoryMap?.[item.variant_id]?.availability
   if (availability == null) return false
   return availability <= 0

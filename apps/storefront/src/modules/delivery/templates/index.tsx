@@ -1,10 +1,14 @@
 import { TruckIcon, ClockIcon, MapPinIcon, CurrencyPoundIcon } from "@heroicons/react/24/outline"
+import {
+  FREE_DELIVERY_THRESHOLD_GBP, STANDARD_DELIVERY_GBP, EXPRESS_DELIVERY_GBP,
+  STANDARD_ETA, EXPRESS_ETA, CUTOFF_TIME,
+} from "@lib/config/store-config"
 import FaqAccordion from "../components/faq-accordion"
 
 const deliveryCharges = [
-  { type: "Free Delivery", cost: "£0.00", time: "3–5 working days", note: "Orders over £40" },
-  { type: "Standard Delivery", cost: "£3.99", time: "3–5 working days", note: "Orders under £40" },
-  { type: "Express Delivery", cost: "£6.99", time: "Next working day", note: "Order before 2:00 PM" },
+  { type: "Free Delivery", cost: "£0.00", time: STANDARD_ETA, note: `Orders over ${FREE_DELIVERY_THRESHOLD_GBP}` },
+  { type: "Standard Delivery", cost: STANDARD_DELIVERY_GBP, time: STANDARD_ETA, note: `Orders under ${FREE_DELIVERY_THRESHOLD_GBP}` },
+  { type: "Express Delivery", cost: EXPRESS_DELIVERY_GBP, time: EXPRESS_ETA, note: `Order before ${CUTOFF_TIME}` },
 ]
 
 const postcodeZones = [
@@ -96,7 +100,7 @@ export default function DeliveryTemplate() {
             </div>
             <div>
               <p className="font-bold text-grey-90 text-lg">
-                Order by 2:00 PM for next day delivery
+                Order by {CUTOFF_TIME} for next day delivery
               </p>
               <p className="text-grey-60 text-sm mt-1 leading-relaxed">
                 Orders placed before 2:00 PM Monday to Friday will be dispatched the same day

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import PostcodeOverlay from "../postcode-overlay"
+// PostcodeOverlay has been deleted — this component is deprecated
 
 export default function PostcodeCheckButton() {
   const [open, setOpen] = useState(false)
@@ -19,7 +19,7 @@ export default function PostcodeCheckButton() {
         </svg>
         <span className="hidden lg:inline font-medium">Postcode</span>
       </button>
-      <PostcodeOverlay open={open} onClose={() => setOpen(false)} />
+      {/* PostcodeOverlay removed — component is deprecated */}
     </>
   )
 }

@@ -2,6 +2,8 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 
 interface EmptyStateProps {
   type: "category" | "search" | "filter" | "wishlist" | "orders"
+  /** Custom subtitle below the main message */
+  subtitle?: string
   /** Search query for search-type empty state */
   query?: string
   /** Categories to suggest browsing */
@@ -33,6 +35,7 @@ export default function EmptyState({
   query,
   suggestedCategories,
   suggestedTerms,
+  subtitle,
 }: EmptyStateProps) {
   const config: Record<
     string,
@@ -76,6 +79,8 @@ export default function EmptyState({
         {c.title}
       </h3>
       <p className="text-sm text-stone-500 max-w-sm mb-6">{c.message}</p>
+
+      {subtitle && <p className="text-xs text-stone-400 max-w-sm mb-6 -mt-4">{subtitle}</p>}
 
       {suggestedTerms && suggestedTerms.length > 0 && (
         <div className="mb-5">

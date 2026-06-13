@@ -6,6 +6,7 @@ import ShippingDetails from "@modules/order/components/shipping-details"
 import PaymentDetails from "@modules/order/components/payment-details"
 import OrderSummary from "@modules/order/components/order-summary"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { DELIVERY_ETA_RANGE } from "@lib/config/store-config"
 import { HttpTypes } from "@medusajs/types"
 
 type Props = {
@@ -61,7 +62,7 @@ export default function OrderCompletedTemplate({ order }: Props) {
               <p className="text-sm text-stone-500 mt-0.5">
                 Your order will arrive by{" "}
                 <span className="font-semibold text-stone-700">{etaStr}</span>
-                {" "}between 8am–8pm
+                {" "}between {DELIVERY_ETA_RANGE}
               </p>
               <p className="text-xs text-stone-400 mt-1">
                 You&apos;ll receive tracking updates via email and SMS

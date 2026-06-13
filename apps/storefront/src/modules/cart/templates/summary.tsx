@@ -9,11 +9,12 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import { applyPromotions } from "@lib/data/cart"
 import { convertToLocale } from "@lib/util/money"
 import { formatGBP } from "@lib/util/format-price"
-import BasketProgressBar, {
-  FREE_DELIVERY_TARGET,
-  MIN_ORDER,
-  STANDARD_DELIVERY,
-} from "@modules/cart/components/basket-progress-bar"
+import BasketProgressBar from "@modules/cart/components/basket-progress-bar"
+import {
+  FREE_DELIVERY_THRESHOLD,
+  MIN_ORDER_AMOUNT,
+  STANDARD_DELIVERY_COST,
+} from "@lib/config/store-config"
 
 type SummaryProps = {
   cart: HttpTypes.StoreCart & {
@@ -37,7 +38,7 @@ const Summary = ({ cart }: SummaryProps) => {
   const { promotions = [] } = cart
   const itemTotal = cart.item_total || 0
   const itemCount = cart.items?.length || 0
-  const belowMinOrder = itemCount > 0 && itemTotal < MIN_ORDER
+  const belowMinOrder = itemCount > 0 && itemTotal < MIN_ORDER_AMOUNT
 
   const handleApplyPromo = async () => {
     if (!promoCode.trim()) return
@@ -65,9 +66,9 @@ const Summary = ({ cart }: SummaryProps) => {
     )
   }
 
-  const reachedFree = itemTotal >= FREE_DELIVERY_TARGET
-  const deliveryCost = reachedFree ? 0 : STANDARD_DELIVERY
-  const total = itemTotal + (reachedFree ? 0 : STANDARD_DELIVERY)
+  const reachedFree = itemTotal >= FREE_DELIVERY_THRESHOLD
+  const deliveryCost = reachedFree ? 0 : STANDARD_DELIVERY_COST
+  const total = itemTotal + (reachedFree ? 0 : STANDARD_DELIVERY_COST)
 
   return (
     <div className="flex flex-col gap-y-4">
@@ -180,12 +181,12 @@ const Summary = ({ cart }: SummaryProps) => {
         <div className="flex justify-between text-stone-500">
           <span>Delivery</span>
           <span className={reachedFree ? "text-green-600 font-medium" : ""}>
-            {reachedFree ? "FREE" : formatGBP(STANDARD_DELIVERY)}
+            {reachedFree ? "FREE" : formatGBP(STANDARD_DELIVERY_COST)}
           </span>
         </div>
         {!reachedFree && (
           <p className="text-xs text-stone-400">
-            Free delivery on orders over {formatGBP(FREE_DELIVERY_TARGET)}
+            Free delivery on orders over {formatGBP(FREE_DELIVERY_THRESHOLD)}
           </p>
         )}
       </div>
@@ -203,10 +204,10 @@ const Summary = ({ cart }: SummaryProps) => {
       {belowMinOrder ? (
         <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-center">
           <p className="text-sm font-semibold text-red-700">
-            Add {formatGBP(MIN_ORDER - itemTotal)} more to checkout
+            Add {formatGBP(MIN_ORDER_AMOUNT - itemTotal)} more to checkout
           </p>
           <p className="text-xs text-red-500 mt-0.5">
-            Minimum order is {formatGBP(MIN_ORDER)}
+            Minimum order is {formatGBP(MIN_ORDER_AMOUNT)}
           </p>
         </div>
       ) : (

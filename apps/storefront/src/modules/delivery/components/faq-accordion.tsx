@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ChevronDownIcon } from "@heroicons/react/24/solid"
+import { FREE_DELIVERY_THRESHOLD_GBP, STANDARD_ETA, CUTOFF_TIME } from "@lib/config/store-config"
 
 interface FaqItem {
   question: string
@@ -17,7 +18,7 @@ const faqs: FaqItem[] = [
   {
     question: "How long does delivery take?",
     answer:
-      "Standard delivery takes 3-5 working days. Express next-day delivery is available if you order before 2:00 PM. Delivery times are Monday to Saturday, excluding public holidays.",
+      `Standard delivery takes ${STANDARD_ETA.replace("working days", "working days")}. Express next-day delivery is available if you order before ${CUTOFF_TIME}. Delivery times are Monday to Saturday, excluding public holidays.`,
   },
   {
     question: "What if I'm not home?",
@@ -32,12 +33,12 @@ const faqs: FaqItem[] = [
   {
     question: "Do you deliver on weekends?",
     answer:
-      "Yes, we deliver Monday to Saturday. Sunday deliveries are currently not available. Express next-day orders placed before 2pm Friday will arrive on Saturday.",
+      `Yes, we deliver Monday to Saturday. Sunday deliveries are currently not available. Express next-day orders placed before ${CUTOFF_TIME.replace(":00 PM", "pm")} Friday will arrive on Saturday.`,
   },
   {
     question: "Is there a minimum order?",
     answer:
-      "There is no minimum order value. However, orders under £20 may incur a small order surcharge. Free delivery is available on all orders over £40.",
+      `There is no minimum order value. However, orders under £20 may incur a small order surcharge. Free delivery is available on all orders over ${FREE_DELIVERY_THRESHOLD_GBP}.`,
   },
 ]
 

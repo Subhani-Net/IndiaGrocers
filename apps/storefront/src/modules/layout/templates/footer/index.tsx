@@ -12,13 +12,13 @@ export default async function Footer() {
   try {
     const result = await listCollections({ fields: "*products" })
     collections = result?.collections ?? []
-  } catch (err) {
+  } catch (err: any) {
     console.warn("[Footer] collections fetch failed:", err?.message || err)
   }
 
   try {
     productCategories = await listCategories()
-  } catch (err) {
+  } catch (err: any) {
     console.warn("[Footer] categories fetch failed:", err?.message || err)
   }
 

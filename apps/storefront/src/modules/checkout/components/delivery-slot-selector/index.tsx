@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useCallback } from "react"
 import { formatGBP } from "@lib/util/format-price"
+import { DELIVERY_SLOTS, STANDARD_DELIVERY_COST, EXPRESS_DELIVERY_COST } from "@lib/config/store-config"
 
 interface DeliverySlot {
   date: Date
@@ -27,15 +28,15 @@ function generateSlots(days: number = 5, hasFastRequired: boolean = false, shipp
 
   // Map shipping options: find the standard one for price reference
   const standardOption = shippingOptions.find(
-    (so: any) => so.name?.toLowerCase().includes("standard") || so.amount === 399
+    (so: any) => so.name?.toLowerCase().includes("standard") || so.amount === STANDARD_DELIVERY_COST
   )
   const expressOption = shippingOptions.find(
-    (so: any) => so.name?.toLowerCase().includes("express") || so.amount === 699
+    (so: any) => so.name?.toLowerCase().includes("express") || so.amount === EXPRESS_DELIVERY_COST
   )
 
-  const standardPrice = standardOption?.calculated_price?.calculated_amount ?? standardOption?.amount ?? 399
+  const standardPrice = standardOption?.calculated_price?.calculated_amount ?? standardOption?.amount ?? STANDARD_DELIVERY_COST
   const standardOptionId = standardOption?.id ?? ""
-  const expressPrice = expressOption?.calculated_price?.calculated_amount ?? expressOption?.amount ?? 699
+  const expressPrice = expressOption?.calculated_price?.calculated_amount ?? expressOption?.amount ?? EXPRESS_DELIVERY_COST
   const expressOptionId = expressOption?.id ?? ""
   
   // Find next Saturday from today
@@ -54,7 +55,7 @@ function generateSlots(days: number = 5, hasFastRequired: boolean = false, shipp
   // Generate 4 weekend days (2 Saturdays + 2 Sundays across 2 weekends)
   let daysGenerated = 0
   let attempts = 0
-  while (daysGenerated < 4 && attempts < 14) {
+  while (daysGenerated < DELIVERY_SLOTS.daysToShow && attempts < DELIVERY_SLOTS.maxAttempts) {
     const d = new Date(current)
     d.setDate(d.getDate() + attempts)
     const dow = d.getDay()
@@ -69,12 +70,17 @@ function generateSlots(days: number = 5, hasFastRequired: boolean = false, shipp
     const monthDay = d.toLocaleDateString("en-GB", { day: "numeric", month: "short" })
     const dateLabel = `${dayName} ${monthDay}`
 
-    // 4-hour time windows — all use Standard Delivery, Express available as premium option
-    const allWindows: TimeWindow[] = [
-      { id: `${daysGenerated}-morning`, label: "Morning (8am-12pm)", start: "08:00", end: "12:00", available: true, premium: false, price: standardPrice, shippingOptionId: standardOptionId },
-      { id: `${daysGenerated}-afternoon`, label: "Afternoon (12pm-4pm)", start: "12:00", end: "16:00", available: true, premium: false, price: standardPrice, shippingOptionId: standardOptionId },
-      { id: `${daysGenerated}-evening`, label: "Evening (4pm-8pm)", start: "16:00", end: "20:00", available: true, premium: false, price: standardPrice, shippingOptionId: standardOptionId },
-    ]
+    // Time windows from store config
+    const allWindows: TimeWindow[] = DELIVERY_SLOTS.windows.map((w, idx) => ({
+      id: `${daysGenerated}-${idx}`,
+      label: w.label,
+      start: w.start,
+      end: w.end,
+      available: true,
+      premium: false,
+      price: standardPrice,
+      shippingOptionId: standardOptionId,
+    }))
 
     slots.push({ date: d, dateLabel, timeWindows: allWindows })
     daysGenerated++
@@ -115,7 +121,7 @@ export default function DeliverySlotSelector({
       <div>
         <h3 className="text-sm font-bold text-stone-800 mb-1">Choose Delivery Slot</h3>
         <p className="text-xs text-stone-400" data-testid="delivery-slot-subtitle">
-          Weekend delivery — Saturday &amp; Sunday, 4-hour slots
+          Weekend delivery — Saturday &amp; Sunday, {DELIVERY_SLOTS.windows[0].start.replace(":00","")}am-based slots
         </p>
       </div>
 
