@@ -1,0 +1,453 @@
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of D:\Dump\IndiaGrocers-Fix\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * D:\Dump\IndiaGrocers-Fix\apps\storefront\yarn.lock
+
+   ▲ Next.js 15.5.18 (Turbopack)
+   - Local:        http://localhost:8000
+   - Network:      http://172.20.64.1:8000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Compiled middleware in 135ms
+ ✓ Ready in 2.4s
+ ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+ ⚠ See instructions if you need to configure Turbopack:
+  https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+
+ ○ Compiling /[countryCode] ...
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+[1m[33mwarn[39m[22m - The class `ease-[cubic-bezier(0.4,0,0.2,1)]` is ambiguous and matches multiple utilities.
+[1m[33mwarn[39m[22m - If this is content and not a class, replace it with `ease-&lsqb;cubic-bezier(0.4,0,0.2,1)&rsqb;` to silence this warning.
+ ✓ Compiled /[countryCode] in 3.7s
+Initiating Medusa client with default headers:
+ {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Initiating Medusa client with default headers:
+ {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/customers/me?fields=%2Aorders
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 401
+
+Performing request to:
+ URL: http://localhost:9000/store/regions
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/locales
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/product-categories?fields=%2Acategory_children%2C%20%2Acategory_children.category_children%2C%20%2Aproducts%2C%20%2Aparent_category%2C%20%2Aparent_category.parent_category%2C%20%2Ametadata&limit=200
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/collections?fields=%2Aproducts&limit=100&offset=0
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/collections?fields=products.id%2Cproducts.title&limit=100&offset=0
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Received response with status 404
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/product-categories?fields=%2Acategory_children%2C%20%2Acategory_children.category_children%2C%20%2Aproducts%2C%20%2Aparent_category%2C%20%2Aparent_category.parent_category%2C%20%2Ametadata&limit=200
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/customers/me?fields=%2Aorders
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 401
+
+Performing request to:
+ URL: http://localhost:9000/store/orders?limit=10&offset=0&order=-created_at&fields=%2Aitems%2C%2Bitems.metadata%2C%2Aitems.variant%2C%2Aitems.product
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+ GET /gb 200 in 4932ms
+Received response with status 200
+
+Received response with status 401
+
+[listOrders] failed: Unauthorized
+Performing request to:
+ URL: http://localhost:9000/store/product-categories?fields=%2Acategory_children%2C%20%2Acategory_children.category_children%2C%20%2Aproducts%2C%20%2Aparent_category%2C%20%2Aparent_category.parent_category%2C%20%2Ametadata&limit=200
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/regions/reg_01KV0SP48049AXD1M2EFJF1T9P
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDJCJGT9MSXV6FVHDNE4
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDHXHAZGKMA9TYFNT5E8
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDHDH3600APGXHPYA964
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDGYANYBEC0XS9VMXNND
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDGFMXBKG24K3W1TBB99
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDG0F7BDDTG3064ZRB74
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDFHHSVWRF39B7KNTMB6
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDF13D6BVFCFWPV4XJ9Z
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDEH3PX8JJYY465M7FNT
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDE2P28T8XG35H648S80
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDDKXTJ197FRHYB7VXVH
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDD20944WKXGZ1P2YTDE
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Performing request to:
+ URL: http://localhost:9000/store/products?limit=12&offset=0&region_id=reg_01KV0SP48049AXD1M2EFJF1T9P&fields=%2Avariants.calculated_price%2C%2Bthumbnail%2C%2Aimages&collection_id=pcol_01KV0TYDC4C7BG319FC78DSP0K
+ Headers: {
+  "accept": "application/json",
+  "content-type": "application/json",
+  "x-publishable-api-key": "pk_7f1613508744308da044e2902d0de9ab28bfc4b838371d1afcb6b4796b8a1149",
+  "authorization": "<REDACTED>"
+}
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+Received response with status 200
+
+^C^C

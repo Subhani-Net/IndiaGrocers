@@ -6,12 +6,14 @@ import { useState, useEffect, useCallback, useMemo } from "react"
 import SortProducts, {
   SortOptions,
 } from "@modules/store/components/refinement-list/sort-products"
+import FilterAccordion from "@modules/store/components/filter-accordion"
 
 type FilterPanelProps = {
   sortBy: SortOptions
   categoryHandle?: string
   countryCode?: string
   search?: boolean
+  compact?: boolean
   "data-testid"?: string
 }
 
@@ -19,6 +21,7 @@ export default function FilterPanel({
   sortBy,
   categoryHandle,
   countryCode: _cc,
+  compact = false,
   "data-testid": dataTestId,
 }: FilterPanelProps) {
   const router = useRouter()
@@ -118,6 +121,155 @@ export default function FilterPanel({
     { value: "organic", label: "Organic" },
   ]
 
+  const accordionSections = [
+    {
+      id: "sort",
+      title: "Sort By",
+      children: (
+        <SortProducts
+          sortBy={sortBy}
+          setQueryParams={(name, value) =>
+            pushFilters({ [name]: value })
+          }
+          data-testid={dataTestId}
+        />
+      ),
+    },
+    {
+      id: "stock",
+      title: "Stock Status",
+      children: (
+        <label className="flex items-center justify-between cursor-pointer">
+          <span className="text-xs text-stone-600">In Stock Only</span>
+          <button
+            onClick={handleInStockToggle}
+            className={`relative w-9 h-5 rounded-full transition-colors ${
+              inStockOnly ? "bg-brand-orange" : "bg-stone-200"
+            }`}
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${
+                inStockOnly ? "translate-x-4" : ""
+              }`}
+            />
+          </button>
+        </label>
+      ),
+    },
+    {
+      id: "weight",
+      title: "Weight",
+      badge: weight || undefined,
+      children: (
+        <div className="flex flex-wrap gap-1.5">
+          {COMMON_WEIGHTS.map((w) => (
+            <button
+              key={w}
+              onClick={() => handleWeightChange(w === weight ? "" : w)}
+              className={`text-[11px] font-medium px-2.5 py-1 rounded-lg border transition-all ${
+                weight === w
+                  ? "bg-brand-orange text-white border-brand-orange"
+                  : "border-stone-200 text-stone-500 hover:border-brand-orange/50"
+              }`}
+            >
+              {w}
+            </button>
+          ))}
+        </div>
+      ),
+    },
+    {
+      id: "brand",
+      title: "Brand",
+      badge: brand || undefined,
+      children: (
+        <>
+          <input
+            type="text"
+            placeholder="Type a brand name..."
+            value={brand}
+            onChange={(e) => setBrand(e.target.value)}
+            onBlur={() => handleBrandChange(brand)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleBrandChange(brand)
+              if (e.key === "Escape") handleBrandChange("")
+            }}
+            className="w-full px-3 py-1.5 text-xs border border-stone-200 rounded-lg outline-none focus:border-brand-orange transition-colors"
+          />
+          {brand && (
+            <p className="text-[10px] text-stone-400 mt-1">
+              Press Enter to apply, Esc to clear
+            </p>
+          )}
+        </>
+      ),
+    },
+    {
+      id: "dietary",
+      title: "Dietary",
+      badge: dietary.length || undefined,
+      children: (
+        <div className="flex flex-col gap-1.5">
+          {DIETARY_FLAGS.map(({ value, label }) => (
+            <label
+              key={value}
+              className="flex items-center gap-2 cursor-pointer text-xs text-stone-600 hover:text-stone-800"
+            >
+              <input
+                type="checkbox"
+                checked={dietary.includes(value)}
+                onChange={() => handleDietaryToggle(value)}
+                className="w-3.5 h-3.5 rounded border-stone-300 text-brand-orange focus:ring-brand-orange/30 accent-brand-orange"
+              />
+              {label}
+            </label>
+          ))}
+        </div>
+      ),
+    },
+    {
+      id: "price",
+      title: "Price Range",
+      badge: minPrice || maxPrice ? "£" : undefined,
+      children: (
+        <div className="flex items-center gap-2">
+          <input
+            type="number"
+            placeholder="Min"
+            value={minPrice}
+            onChange={(e) => setMinPrice(e.target.value)}
+            onBlur={handlePriceApply}
+            onKeyDown={(e) => e.key === "Enter" && handlePriceApply()}
+            className="w-full px-2.5 py-1.5 text-xs border border-stone-200 rounded-lg outline-none focus:border-brand-orange"
+            min="0"
+            step="0.01"
+          />
+          <span className="text-stone-300 text-xs">–</span>
+          <input
+            type="number"
+            placeholder="Max"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(e.target.value)}
+            onBlur={handlePriceApply}
+            onKeyDown={(e) => e.key === "Enter" && handlePriceApply()}
+            className="w-full px-2.5 py-1.5 text-xs border border-stone-200 rounded-lg outline-none focus:border-brand-orange"
+            min="0"
+            step="0.01"
+          />
+        </div>
+      ),
+    },
+  ]
+
+  const sectionClassName = compact
+    ? "" // Accordion provides the container style
+    : "bg-white rounded-xl border border-stone-200 p-3.5"
+  const sectionTitleClassName = compact
+    ? "hidden" // Title is rendered by accordion trigger
+    : "text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2"
+
+  const allSectionIds = accordionSections.map((s) => s.id)
+
   return (
     <div className="flex flex-col gap-4">
       {/* Active filters */}
@@ -165,141 +317,19 @@ export default function FilterPanel({
         </div>
       )}
 
-      {/* Sort */}
-      <div className="bg-white rounded-xl border border-stone-200 p-3.5">
-        <h3 className="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2">
-          Sort By
-        </h3>
-        <SortProducts
-          sortBy={sortBy}
-          setQueryParams={(name, value) =>
-            pushFilters({ [name]: value })
-          }
-          data-testid={dataTestId}
+      {compact ? (
+        <FilterAccordion
+          sections={accordionSections}
+          defaultValue={[]}
         />
-      </div>
-
-      {/* In Stock Toggle */}
-      <div className="bg-white rounded-xl border border-stone-200 p-3.5">
-        <label className="flex items-center justify-between cursor-pointer">
-          <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">
-            In Stock Only
-          </span>
-          <button
-            onClick={handleInStockToggle}
-            className={`relative w-9 h-5 rounded-full transition-colors ${
-              inStockOnly ? "bg-brand-orange" : "bg-stone-200"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${
-                inStockOnly ? "translate-x-4" : ""
-              }`}
-            />
-          </button>
-        </label>
-      </div>
-
-      {/* Weight Filter */}
-      <div className="bg-white rounded-xl border border-stone-200 p-3.5">
-        <h3 className="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2.5">
-          Weight
-        </h3>
-        <div className="flex flex-wrap gap-1.5">
-          {COMMON_WEIGHTS.map((w) => (
-            <button
-              key={w}
-              onClick={() => handleWeightChange(w === weight ? "" : w)}
-              className={`text-[11px] font-medium px-2.5 py-1 rounded-lg border transition-all ${
-                weight === w
-                  ? "bg-brand-orange text-white border-brand-orange"
-                  : "border-stone-200 text-stone-500 hover:border-brand-orange/50"
-              }`}
-            >
-              {w}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Brand Filter */}
-      <div className="bg-white rounded-xl border border-stone-200 p-3.5">
-        <h3 className="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2">
-          Brand
-        </h3>
-        <input
-          type="text"
-          placeholder="Type a brand name..."
-          value={brand}
-          onChange={(e) => setBrand(e.target.value)}
-          onBlur={() => handleBrandChange(brand)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") handleBrandChange(brand)
-            if (e.key === "Escape") handleBrandChange("")
-          }}
-          className="w-full px-3 py-1.5 text-xs border border-stone-200 rounded-lg outline-none focus:border-brand-orange transition-colors"
-        />
-        {brand && (
-          <p className="text-[10px] text-stone-400 mt-1">
-            Press Enter to apply, Esc to clear
-          </p>
-        )}
-      </div>
-
-      {/* Dietary Filter */}
-      <div className="bg-white rounded-xl border border-stone-200 p-3.5">
-        <h3 className="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2.5">
-          Dietary
-        </h3>
-        <div className="flex flex-col gap-1.5">
-          {DIETARY_FLAGS.map(({ value, label }) => (
-            <label
-              key={value}
-              className="flex items-center gap-2 cursor-pointer text-xs text-stone-600 hover:text-stone-800"
-            >
-              <input
-                type="checkbox"
-                checked={dietary.includes(value)}
-                onChange={() => handleDietaryToggle(value)}
-                className="w-3.5 h-3.5 rounded border-stone-300 text-brand-orange focus:ring-brand-orange/30 accent-brand-orange"
-              />
-              {label}
-            </label>
-          ))}
-        </div>
-      </div>
-
-      {/* Price Range */}
-      <div className="bg-white rounded-xl border border-stone-200 p-3.5">
-        <h3 className="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2.5">
-          Price Range (£)
-        </h3>
-        <div className="flex items-center gap-2">
-          <input
-            type="number"
-            placeholder="Min"
-            value={minPrice}
-            onChange={(e) => setMinPrice(e.target.value)}
-            onBlur={handlePriceApply}
-            onKeyDown={(e) => e.key === "Enter" && handlePriceApply()}
-            className="w-full px-2.5 py-1.5 text-xs border border-stone-200 rounded-lg outline-none focus:border-brand-orange"
-            min="0"
-            step="0.01"
-          />
-          <span className="text-stone-300 text-xs">–</span>
-          <input
-            type="number"
-            placeholder="Max"
-            value={maxPrice}
-            onChange={(e) => setMaxPrice(e.target.value)}
-            onBlur={handlePriceApply}
-            onKeyDown={(e) => e.key === "Enter" && handlePriceApply()}
-            className="w-full px-2.5 py-1.5 text-xs border border-stone-200 rounded-lg outline-none focus:border-brand-orange"
-            min="0"
-            step="0.01"
-          />
-        </div>
-      </div>
+      ) : (
+        accordionSections.map((section) => (
+          <div key={section.id} className={sectionClassName}>
+            <h3 className={sectionTitleClassName}>{section.title}</h3>
+            {section.children}
+          </div>
+        ))
+      )}
     </div>
   )
 }

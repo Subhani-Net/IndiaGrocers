@@ -7,13 +7,15 @@ import Breadcrumb, {
   buildCategoryBreadcrumbs,
 } from "@modules/common/components/breadcrumb"
 import EmptyState from "@modules/common/components/empty-state"
-import WeightHeavyProductCard from "@modules/products/components/product-preview/weight-heavy-card"
+import ProductCard from "@modules/products/components/product-preview/weight-heavy-card"
 import CartSidebar from "@modules/layout/components/cart-sidebar"
 import SubTypeChips from "@modules/store/components/sub-type-chips"
 import BrandTilesStrip from "@modules/store/components/brand-tiles-strip"
 import FilterPanel from "@modules/store/components/filter-panel"
 import InlineSort from "@modules/store/components/inline-sort"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
+import { useLayover } from "@lib/context/layover-context"
+import MobileFilterDrawer from "@modules/store/components/mobile-filter-drawer"
 
 // Brand display names keyed by slug — subset for brand-showcase display
 const BRAND_DISPLAY: Record<string, string> = {
@@ -74,6 +76,7 @@ export default function BrandShowcaseCategoryTemplate({
 }: BrandShowcaseCategoryTemplateProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const { openLayover } = useLayover()
   const [products] = useState(initialProducts)
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false)
 
@@ -182,30 +185,17 @@ export default function BrandShowcaseCategoryTemplate({
           </aside>
 
           {/* Mobile Filter Drawer */}
-          {mobileFilterOpen && (
-            <div className="sm:hidden fixed inset-0 z-40 flex">
-              <div
-                className="absolute inset-0 bg-black/30"
-                onClick={() => setMobileFilterOpen(false)}
-              />
-              <div className="relative ml-auto w-72 bg-white h-full overflow-y-auto shadow-xl p-4">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="font-semibold text-stone-800">Filters</h3>
-                  <button
-                    onClick={() => setMobileFilterOpen(false)}
-                    className="text-stone-400 hover:text-stone-600"
-                  >
-                    ✕
-                  </button>
-                </div>
-                <FilterPanel
-                  sortBy={sortBy}
-                  categoryHandle={category.handle}
-                  countryCode={countryCode}
-                />
-              </div>
-            </div>
-          )}
+          <MobileFilterDrawer
+            isOpen={mobileFilterOpen}
+            onClose={() => setMobileFilterOpen(false)}
+          >
+            <FilterPanel
+              sortBy={sortBy}
+              categoryHandle={category.handle}
+              countryCode={countryCode}
+              compact
+            />
+          </MobileFilterDrawer>
 
           {/* Product Grid */}
           <div className="flex-1 min-w-0">
@@ -221,10 +211,11 @@ export default function BrandShowcaseCategoryTemplate({
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {products.map((p: any) => (
-                  <WeightHeavyProductCard
+                  <ProductCard
                     key={p.id}
                     product={p}
                     countryCode={countryCode}
+                    onProductClick={() => openLayover(p)}
                   />
                 ))}
               </div>

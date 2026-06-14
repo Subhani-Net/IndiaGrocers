@@ -39,6 +39,7 @@ export async function searchProducts(
     offset?: number
     filter?: string
     sort?: string[]
+    signal?: AbortSignal
   }
 ): Promise<SearchResult> {
   try {
@@ -46,18 +47,6 @@ export async function searchProducts(
     if (MEILISEARCH_SEARCH_KEY) {
       headers["Authorization"] = `Bearer ${MEILISEARCH_SEARCH_KEY}`
     }
-
-    const params = new URLSearchParams({
-      q: query,
-      limit: String(options?.limit || 20),
-      offset: String(options?.offset || 0),
-    })
-
-    if (options?.filter) params.set("filter", options.filter)
-    if (options?.sort) params.set("sort", options.sort.join(","))
-
-    // Request hits to show in response for synonym detection
-    params.set("showMatchesPosition", "true")
 
     const res = await fetch(
       `${MEILISEARCH_HOST}/indexes/products/search`,
@@ -75,6 +64,7 @@ export async function searchProducts(
           sort: options?.sort,
           showMatchesPosition: true,
         }),
+        signal: options?.signal,
       }
     )
 
@@ -97,17 +87,22 @@ export async function searchProducts(
       totalCount: data.estimatedTotalHits || data.totalHits || 0,
       appliedSynonym,
     }
-  } catch {
+  } catch (error: any) {
+    if (error?.name === "AbortError") {
+      return { products: [], totalCount: 0, appliedSynonym: null }
+    }
     return { products: [], totalCount: 0, appliedSynonym: null }
   }
 }
 
 /**
  * Quick autocomplete search — returns top 5 matching products.
+ * Accepts an optional AbortSignal to cancel stale requests on rapid typing.
  */
 export async function autocompleteProducts(
-  query: string
+  query: string,
+  signal?: AbortSignal
 ): Promise<MeiliProduct[]> {
-  const { products } = await searchProducts(query, { limit: 5 })
+  const { products } = await searchProducts(query, { limit: 5, signal })
   return products
 }

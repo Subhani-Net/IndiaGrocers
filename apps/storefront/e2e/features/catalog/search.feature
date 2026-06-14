@@ -11,6 +11,9 @@ Feature: Product Search
   # - No-matching-results shows a suggestion to try different terms
   # - Search country code is dynamically resolved (not hardcoded)
   # - Named vernacular terms: jeera, haldi, chana, basmati, dal, besan, masala
+  # - **Architecture (Option A):** All search results flow through SSR (server component pre-fetches).
+  #   Client component manages UI state only (query, filters, autocomplete). No client-side
+  #   server actions. useTransition.isPending drives the loading spinner.
 
   Scenario: Search for products using an English term
     Given the user navigates to the search page with query "basmati"
@@ -85,3 +88,50 @@ Feature: Product Search
     Then the top result is "Shan Karahi Gosht Masala"
     And the results include "MDH Kitchen King Masala"
     And at least 10 results are returned
+
+  # ─── BEHAVIOR CONTRACTS ───
+
+  Scenario: Autocomplete dropdown renders within 3 seconds regardless of search loading state
+    Given the user navigates to the search page
+    When the user types "basmati"
+    Then an autocomplete dropdown appears within 3 seconds
+    And the dropdown is visible even if the main search is still loading
+
+  Scenario: Search results persist after page load without flashing to empty
+    Given the user navigates to the search page with query "jeera"
+    Then search results are displayed
+    And the results remain visible for at least 3 seconds
+    And no "No results" message appears while products are displayed
+
+  Scenario: Typing a new query updates results via SSR without a full page reload
+    Given the user is on the search page with results
+    When the user types "basmati" in the search input
+    Then the page URL updates to include the new query
+    And search results for "basmati" are displayed within 10 seconds
+
+  # ─── HEADER SEARCH CONTEXT ───
+
+  Scenario: Typing in the header search replaces page content with live results grid
+    Given the user is on the homepage
+    When the user types "basmati" in the header search bar
+    Then the page content is replaced by a live search results grid
+    And the grid shows product cards matching the query
+
+  Scenario: Clicking an autocomplete suggestion navigates to the search results page
+    Given the user is on the homepage
+    And the user has typed "rice" in the header search bar
+    When the user clicks an autocomplete suggestion
+    Then the autocomplete dropdown closes
+    And the user is navigated to the search page with query "rice"
+
+  Scenario: Navigating away from search restores the original page content
+    Given the user is searching for "basmati" in the header search
+    When the user navigates to a category page
+    Then the search grid is cleared
+    And the category page content is displayed
+
+  Scenario: Search mode is cleared on Escape key
+    Given the user is searching for "rice" in the header search
+    When the user presses the Escape key
+    Then the search grid is cleared
+    And the original page content is restored

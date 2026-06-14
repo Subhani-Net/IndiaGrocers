@@ -9,12 +9,19 @@ import Footer from "@modules/layout/templates/footer"
 import Nav from "@modules/layout/templates/nav"
 import FreeShippingPriceNudge from "@modules/shipping/components/free-shipping-price-nudge"
 import PantryShell from "@modules/home/components/pantry-shell"
+import { SearchProvider } from "@lib/context/search-context"
+import { LayoverProvider } from "@lib/context/layover-context"
+import SearchLayoutClient from "@modules/layout/components/search-layout-client"
+import PdpLayoverShell from "@modules/layout/components/pdp-layover-shell"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
 }
 
-export default async function PageLayout(props: { children: React.ReactNode }) {
+type Params = { params: Promise<{ countryCode: string }>; children: React.ReactNode }
+
+export default async function PageLayout(props: Params) {
+  const { countryCode } = await props.params
   const customer = await retrieveCustomer()
   const cart = await retrieveCart()
   let shippingOptions: StoreCartShippingOption[] = []
@@ -29,21 +36,26 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
   }
 
   return (
-    <>
-      <Nav />
-      {customer && cart && (
-        <CartMismatchBanner customer={customer} cart={cart} />
-      )}
+    <SearchProvider countryCode={countryCode}>
+      <LayoverProvider countryCode={countryCode}>
+        <Nav />
+        {customer && cart && (
+          <CartMismatchBanner customer={customer} cart={cart} />
+        )}
 
-      {cart && (
-        <FreeShippingPriceNudge
-          variant="popup"
-          cart={cart}
-          shippingOptions={shippingOptions}
-        />
-      )}
-      <PantryShell>{props.children}</PantryShell>
-      <Footer />
-    </>
+        {cart && (
+          <FreeShippingPriceNudge
+            variant="popup"
+            cart={cart}
+            shippingOptions={shippingOptions}
+          />
+        )}
+        <SearchLayoutClient>
+          <PantryShell>{props.children}</PantryShell>
+        </SearchLayoutClient>
+        <Footer />
+        <PdpLayoverShell countryCode={countryCode} />
+      </LayoverProvider>
+    </SearchProvider>
   )
 }

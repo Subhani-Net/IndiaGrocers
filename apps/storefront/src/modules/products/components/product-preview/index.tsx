@@ -10,5 +10,5 @@ export default function ProductPreview({
   region: HttpTypes.StoreRegion
   isFeatured?: boolean
 }) {
-  return <ProductCard product={product} region={region} isFeatured={isFeatured} />
+  return <ProductCard product={product} region={region} />
 }

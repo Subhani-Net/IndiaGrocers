@@ -1,15 +1,14 @@
 "use client"
 
-import { useState, useEffect, useCallback, useRef, useMemo } from "react"
+import { useState, useEffect, useRef, useMemo, useTransition } from "react"
 import { HttpTypes } from "@medusajs/types"
 import { Spinner } from "@medusajs/icons"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import Thumbnail from "@modules/products/components/thumbnail"
-import ProductCard from "@modules/products/components/product-preview/product-card"
+import WeightHeavyProductCard from "@modules/products/components/product-preview/weight-heavy-card"
 import { useSearchParams, useRouter } from "next/navigation"
-import { searchProducts, autocompleteProducts } from "@lib/search-client"
+import { autocompleteProducts } from "@lib/search-client"
 import { getImageUrl } from "@lib/util/images"
-import { fetchProductsByIds } from "@lib/data/products"
 import EmptyState from "@modules/common/components/empty-state"
 
 const DIETARY_CHIPS = [
@@ -81,122 +80,117 @@ function BrandChips({
 export default function SearchTemplate({
   categoryChips,
   countryCode,
+  initialResults,
+  initialTotal,
+  initialQuery,
+  initialPage,
+  initialDietary,
+  initialBrand,
+  initialSort,
 }: {
   categoryChips?: Array<{ name: string; handle: string }>
   countryCode: string
+  initialResults?: HttpTypes.StoreProduct[]
+  initialTotal?: number
+  initialQuery?: string
+  initialPage?: number
+  initialDietary?: string | null
+  initialBrand?: string | null
+  initialSort?: string
 }) {
   const searchParams = useSearchParams()
   const router = useRouter()
+  const [isPending, startTransition] = useTransition()
+
   const qParam = searchParams.get("q")
   const brandParam = searchParams.get("brand")
-  const maxPriceParam = searchParams.get("maxPrice")
+  const pageParam = parseInt(searchParams.get("page") || "1", 10) || 1
 
-  const [query, setQuery] = useState(qParam || brandParam || "")
-  const [products, setProducts] = useState<HttpTypes.StoreProduct[]>([])
-  const [loading, setLoading] = useState(false)
-  const [loadingMore, setLoadingMore] = useState(false)
-  const [searched, setSearched] = useState(false)
-  const [page, setPage] = useState(1)
-  const [totalCount, setTotalCount] = useState(0)
+  // ─── State ───
+  const [query, setQuery] = useState(initialQuery || "")
+  const [products, setProducts] = useState<HttpTypes.StoreProduct[]>(initialResults || [])
+  const [totalCount, setTotalCount] = useState(initialTotal || 0)
+  const [searched, setSearched] = useState(!!initialQuery)
+  const [currentPage, setCurrentPage] = useState(initialPage || 1)
+
+  const [activeDietary, setActiveDietary] = useState<string | null>(initialDietary || null)
+  const [activeBrand, setActiveBrand] = useState<string | null>(initialBrand || null)
+  const [activeSort, setActiveSort] = useState(initialSort || "")
+
   const [autocompleteResults, setAutocompleteResults] = useState<HttpTypes.StoreProduct[]>([])
   const [showAutocomplete, setShowAutocomplete] = useState(false)
-  const [activeDietary, setActiveDietary] = useState<string | null>(null)
-  const [activeBrand, setActiveBrand] = useState<string | null>(null)
-  const [activeSort, setActiveSort] = useState("")
   const [autocompleteIndex, setAutocompleteIndex] = useState(-1)
+
   const inputContainerRef = useRef<HTMLDivElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const hasFilters = !!(brandParam || maxPriceParam)
-  const initialLoad = useRef(true)
-
-  const buildFilter = useCallback((): string => {
-    const parts: string[] = []
-    if (activeDietary) {
-      parts.push(`metadata.dietary_flags = "${activeDietary}"`)
-    }
-    if (activeBrand) {
-      parts.push(`metadata.brand_slug = "${activeBrand.toLowerCase()}"`)
-    }
-    if (maxPriceParam) {
-      parts.push(`price_gbp <= ${parseFloat(maxPriceParam) * 100}`)
-    }
-    return parts.join(" AND ")
-  }, [activeDietary, activeBrand, maxPriceParam])
-
-  const [appliedSynonym, setAppliedSynonym] = useState<string | null>(null)
-
-  const performSearch = useCallback(async (searchQuery: string, pageNum: number = 1, append: boolean = false) => {
-    if (!searchQuery.trim() && !hasFilters && !activeDietary && !activeBrand) {
-      setProducts([]); setSearched(false); setTotalCount(0); setAppliedSynonym(null); return
-    }
-    if (append) {
-      setLoadingMore(true)
-    } else {
-      setLoading(true)
-    }
-    setSearched(true)
-    try {
-      const options: any = { limit: 12, offset: (pageNum - 1) * 12 }
-      const filter = buildFilter()
-      if (filter) options.filter = filter
-      if (activeSort) options.sort = [activeSort]
-
-      const { products: hits, totalCount: count, appliedSynonym: synonym } = await searchProducts((searchQuery || "").trim(), options)
-      const hitIds = hits.map((h: any) => h.id)
-      const fullProducts = await fetchProductsByIds({ ids: hitIds, countryCode })
-      if (append) {
-        setProducts(prev => [...prev, ...(fullProducts as any[])])
+  // ─── SSR results → state ───
+  useEffect(() => {
+    const isLoadMore = (initialPage || 1) > 1
+    if (initialResults && initialResults.length > 0) {
+      if (isLoadMore) {
+        setProducts(prev => [...prev, ...initialResults])
       } else {
-        setProducts(fullProducts as any[])
+        setProducts(initialResults)
       }
-      setTotalCount(count)
-      setPage(pageNum)
-      setAppliedSynonym(synonym || null)
-    } catch {
-      if (!append) { setProducts([]); setTotalCount(0) }
+      setTotalCount(initialTotal || 0)
+      setSearched(true)
+      setCurrentPage(initialPage || 1)
+      if (initialQuery) setQuery(initialQuery)
+    } else if (initialQuery && !isLoadMore) {
+      // Server returned empty results — only clear on page 1
+      setProducts([])
+      setTotalCount(0)
+      setSearched(true)
+      setCurrentPage(initialPage || 1)
+      setQuery(initialQuery)
     }
-    setLoading(false)
-    setLoadingMore(false)
-  }, [hasFilters, activeDietary, activeBrand, activeSort, buildFilter, countryCode])
+  }, [initialResults, initialTotal, initialQuery, initialPage])
+
+  // Synced from SSR for active filter state
+  useEffect(() => {
+    if (initialDietary !== undefined) setActiveDietary(initialDietary)
+  }, [initialDietary])
 
   useEffect(() => {
-    if (initialLoad.current && query) {
-      initialLoad.current = false
-      performSearch(query)
-      return
-    }
-    initialLoad.current = false
-    const timer = setTimeout(() => performSearch(query), 300)
+    if (initialBrand !== undefined) setActiveBrand(initialBrand)
+  }, [initialBrand])
+
+  useEffect(() => {
+    if (initialSort !== undefined) setActiveSort(initialSort)
+  }, [initialSort])
+
+  // ─── Debounced URL sync (single source of truth for navigation) ───
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const params = new URLSearchParams()
+      if (query.trim()) params.set("q", query.trim())
+      if (activeDietary) params.set("dietary", activeDietary)
+      if (activeBrand) params.set("brand", activeBrand)
+      if (activeSort) params.set("sort", activeSort)
+      const url = `/${countryCode}/search${params.toString() ? "?" + params.toString() : ""}`
+      startTransition(() => router.replace(url, { scroll: false }))
+    }, 300)
     return () => clearTimeout(timer)
-  }, [query, performSearch])
+  }, [query, activeDietary, activeBrand, activeSort, countryCode])
 
-  useEffect(() => { if (searched) performSearch(query) }, [activeDietary, activeBrand, activeSort])
-
+  // ─── Autocomplete (client-side MeiliSearch only, no Medusa) ───
   useEffect(() => {
-    const params = new URLSearchParams()
-    if (query.trim()) params.set("q", query.trim())
-    if (activeDietary) params.set("dietary", activeDietary)
-    if (activeBrand) params.set("brand", activeBrand)
-    if (activeSort) params.set("sort", activeSort)
-    if (maxPriceParam) params.set("maxPrice", maxPriceParam)
-    const url = `/${countryCode}/search${params.toString() ? "?" + params.toString() : ""}`
-    router.replace(url, { scroll: false })
-  }, [query, activeDietary, activeBrand, activeSort])
-
-  useEffect(() => {
-    if (!query.trim() || hasFilters) { setAutocompleteResults([]); return }
+    if (!query.trim() || brandParam) { setAutocompleteResults([]); return }
+    const controller = new AbortController()
     const timer = setTimeout(async () => {
       try {
-        const hits = await autocompleteProducts(query)
+        const hits = await autocompleteProducts(query, controller.signal)
+        if (controller.signal.aborted) return
         setAutocompleteResults(hits.map(h => ({ id: h.id, title: h.title, handle: h.handle, thumbnail: h.thumbnail, calculated_price: { calculated_amount: h.price_gbp } } as any)))
         setAutocompleteIndex(-1)
       } catch { setAutocompleteResults([]) }
     }, 200)
-    return () => clearTimeout(timer)
-  }, [query, hasFilters])
+    return () => { clearTimeout(timer); controller.abort() }
+  }, [query, brandParam])
 
+  // ─── Click-outside closes autocomplete ───
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as Node
@@ -208,6 +202,19 @@ export default function SearchTemplate({
     return () => document.removeEventListener("mousedown", handleClick)
   }, [])
 
+  // ─── Load More: navigate to next page ───
+  const handleLoadMore = () => {
+    const nextPage = currentPage + 1
+    const params = new URLSearchParams()
+    if (query.trim()) params.set("q", query.trim())
+    if (activeDietary) params.set("dietary", activeDietary)
+    if (activeBrand) params.set("brand", activeBrand)
+    if (activeSort) params.set("sort", activeSort)
+    params.set("page", String(nextPage))
+    startTransition(() => router.push(`/${countryCode}/search?${params.toString()}`, { scroll: false }))
+  }
+
+  // ─── Keyboard nav for autocomplete ───
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!showAutocomplete || autocompleteResults.length === 0) return
     if (e.key === "ArrowDown") {
@@ -228,6 +235,7 @@ export default function SearchTemplate({
     }
   }
 
+  // ─── Render ───
   return (
     <div className="content-container py-12">
       {brandParam && (
@@ -260,14 +268,14 @@ export default function SearchTemplate({
             type="text"
             value={query}
             onChange={(e) => { setQuery(e.target.value); setShowAutocomplete(true) }}
-            onFocus={() => { if (query.trim() && !hasFilters) setShowAutocomplete(true) }}
+            onFocus={() => { if (query.trim() && !brandParam) setShowAutocomplete(true) }}
             onKeyDown={handleKeyDown}
             placeholder="Search for rice, spices, dals, snacks..."
             className="w-full h-14 pl-12 pr-6 text-lg bg-grey-5 border-2 border-grey-20/80 rounded-2xl text-grey-90 placeholder-grey-40 outline-none transition-all duration-200 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/20 focus:bg-white"
           />
-          {loading && <div className="absolute right-4 top-1/2 -translate-y-1/2"><Spinner className="animate-spin text-brand-orange" /></div>}
+          {isPending && <div className="absolute right-4 top-1/2 -translate-y-1/2"><Spinner className="animate-spin text-brand-orange" /></div>}
 
-          {showAutocomplete && autocompleteResults.length > 0 && query.trim() && !loading && !hasFilters && (
+          {showAutocomplete && autocompleteResults.length > 0 && query.trim() && !brandParam && (
             <div ref={dropdownRef} className="absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.12)] border border-grey-20/80 z-50 overflow-hidden">
               {autocompleteResults.map((product, idx) => {
                 const { brand } = extractBrand(product.title)
@@ -338,34 +346,33 @@ export default function SearchTemplate({
       </div>
 
       <div className="mt-12">
-        {loading && (
+        {isPending && !products.length && (
           <div className="flex justify-center py-20"><Spinner className="animate-spin text-brand-orange w-8 h-8" /></div>
         )}
 
-        {!loading && searched && products.length === 0 && (
+        {!isPending && searched && products.length === 0 && (
           <EmptyState type="search" suggestedTerms={["basmati rice", "jeera", "turmeric", "chickpeas"]} />
         )}
 
-        {!loading && products.length > 0 && (
+        {products.length > 0 && (
           <>
             <p className="text-ui-fg-subtle mb-4">
               {totalCount} result{totalCount !== 1 ? "s" : ""}
               {query ? ` for "${query}"` : ""}
-              {appliedSynonym && <span className="text-brand-orange font-medium"> — showing results for "{appliedSynonym}"</span>}
             </p>
             <div className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-3 sm:gap-4">
               {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <WeightHeavyProductCard key={product.id} product={product} countryCode={countryCode} />
               ))}
             </div>
             {products.length < totalCount && (
               <div className="flex justify-center mt-8">
                 <button
-                  onClick={() => performSearch(query, page + 1, true)}
-                  disabled={loadingMore}
+                  onClick={handleLoadMore}
+                  disabled={isPending}
                   className="px-10 py-3.5 bg-brand-orange text-white font-semibold rounded-xl hover:bg-brand-orange-dark active:scale-[0.97] transition-all duration-200 disabled:opacity-50 shadow-lg shadow-brand-orange/20 press-scale"
                 >
-                  {loadingMore ? (
+                  {isPending ? (
                     <span className="flex items-center gap-2">
                       <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
                       Loading...
@@ -377,7 +384,7 @@ export default function SearchTemplate({
           </>
         )}
 
-        {!searched && !loading && (
+        {!searched && !isPending && (
           <EmptyState type="search" subtitle="Start typing or select a category to find products" />
         )}
       </div>

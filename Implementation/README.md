@@ -5,7 +5,7 @@
 >
 > **Last updated:** June 2026
 >
-> **Related:** `AGENTS.md` (repo setup), `catalogue-build/minimum-viable-catalogue.md` (target catalog), `data-design/FEATURE-DEPENDENCY-MAP.md` (handle dependencies), `data-design/FEATURE-INVENTORY.md` (complete feature catalog)
+> **Related:** `AGENTS.md` (repo setup), `Documentation/navigation-system.md` (nav architecture), `Documentation/search-system.md` (search architecture), `Implementation/navigation-contracts.md` (nav data contracts), `catalogue-build/minimum-viable-catalogue.md` (target catalog), `data-design/FEATURE-DEPENDENCY-MAP.md` (handle dependencies), `data-design/FEATURE-INVENTORY.md` (complete feature catalog)
 
 ---
 

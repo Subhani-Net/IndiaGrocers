@@ -22,9 +22,11 @@ interface VariantChip {
 export default function WeightHeavyProductCard({
   product,
   countryCode,
+  onProductClick,
 }: {
   product: any
   countryCode: string
+  onProductClick?: () => void
 }) {
   // Extract brand from subtitle or metadata
   const brand =
@@ -156,13 +158,17 @@ export default function WeightHeavyProductCard({
       {/* MOBILE LAYOUT */}
       <div className="flex sm:hidden items-center gap-3 p-3 w-full">
         <div className="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-stone-50 border border-stone-100 relative">
-          <LocalizedClientLink href={`/products/${handle}`}>
-            <Thumbnail
-              thumbnail={product.thumbnail}
-              images={product.images}
-              size="square"
-            />
-          </LocalizedClientLink>
+          {onProductClick ? (
+            <div role="button" tabIndex={0} onClick={onProductClick}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onProductClick() } }}
+              className="w-full h-full cursor-pointer">
+              <Thumbnail thumbnail={product.thumbnail} images={product.images} size="square" />
+            </div>
+          ) : (
+            <LocalizedClientLink href={`/products/${handle}`}>
+              <Thumbnail thumbnail={product.thumbnail} images={product.images} size="square" />
+            </LocalizedClientLink>
+          )}
           <WishlistButton productId={product.id} />
         </div>
         <div className="flex-1 min-w-0">
@@ -171,11 +177,21 @@ export default function WeightHeavyProductCard({
               {brand}
             </span>
           )}
-          <LocalizedClientLink href={`/products/${handle}`}>
-            <h3 data-testid="product-title" className="text-sm font-semibold text-stone-800 leading-tight line-clamp-2">
-              {cleanTitle}
-            </h3>
-          </LocalizedClientLink>
+          {onProductClick ? (
+            <div role="button" tabIndex={0} onClick={onProductClick}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onProductClick() } }}
+              className="text-left cursor-pointer">
+              <h3 data-testid="product-title" className="text-sm font-semibold text-stone-800 leading-tight line-clamp-2">
+                {cleanTitle}
+              </h3>
+            </div>
+          ) : (
+            <LocalizedClientLink href={`/products/${handle}`}>
+              <h3 data-testid="product-title" className="text-sm font-semibold text-stone-800 leading-tight line-clamp-2">
+                {cleanTitle}
+              </h3>
+            </LocalizedClientLink>
+          )}
 
           {/* Weight chips - mobile */}
           {visibleChips.length > 0 && (
@@ -265,36 +281,60 @@ export default function WeightHeavyProductCard({
 
       {/* DESKTOP LAYOUT */}
       <div className="hidden sm:flex flex-col flex-1">
-        <LocalizedClientLink
-          href={`/products/${handle}`}
-          className="block group"
-        >
-          <div className="w-full aspect-square rounded-t-xl overflow-hidden bg-stone-50 border-b border-stone-100 relative">
-            <Thumbnail
-              thumbnail={product.thumbnail}
-              images={product.images}
-              size="square"
-            />
-            <WishlistButton productId={product.id} />
-            {brand && (
-              <span className="absolute top-2.5 left-2.5 bg-stone-800/80 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full backdrop-blur-sm">
-                {brand}
-              </span>
-            )}
-            {activeVariant?.isBestValue && (
-              <span className="absolute top-2.5 right-2.5 bg-amber-400 text-amber-900 text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
-                Best Value
-              </span>
-            )}
+        {onProductClick ? (
+          <div role="button" tabIndex={0} onClick={onProductClick}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onProductClick() } }}
+            className="block group text-left w-full cursor-pointer">
+            <div className="w-full aspect-square rounded-t-xl overflow-hidden bg-stone-50 border-b border-stone-100 relative">
+              <Thumbnail thumbnail={product.thumbnail} images={product.images} size="square" />
+              <WishlistButton productId={product.id} />
+              {brand && (
+                <span className="absolute top-2.5 left-2.5 bg-stone-800/80 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full backdrop-blur-sm">
+                  {brand}
+                </span>
+              )}
+              {activeVariant?.isBestValue && (
+                <span className="absolute top-2.5 right-2.5 bg-amber-400 text-amber-900 text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
+                  Best Value
+                </span>
+              )}
+            </div>
           </div>
-        </LocalizedClientLink>
+        ) : (
+          <LocalizedClientLink href={`/products/${handle}`} className="block group">
+            <div className="w-full aspect-square rounded-t-xl overflow-hidden bg-stone-50 border-b border-stone-100 relative">
+              <Thumbnail thumbnail={product.thumbnail} images={product.images} size="square" />
+              <WishlistButton productId={product.id} />
+              {brand && (
+                <span className="absolute top-2.5 left-2.5 bg-stone-800/80 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full backdrop-blur-sm">
+                  {brand}
+                </span>
+              )}
+              {activeVariant?.isBestValue && (
+                <span className="absolute top-2.5 right-2.5 bg-amber-400 text-amber-900 text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
+                  Best Value
+                </span>
+              )}
+            </div>
+          </LocalizedClientLink>
+        )}
 
         <div className="flex-1 flex flex-col p-3.5">
-          <LocalizedClientLink href={`/products/${handle}`}>
-            <h3 data-testid="product-title" className="text-sm font-semibold text-stone-800 group-hover:text-brand-orange transition-colors line-clamp-2 leading-snug min-h-[2.5rem]">
-              {cleanTitle}
-            </h3>
-          </LocalizedClientLink>
+          {onProductClick ? (
+            <div role="button" tabIndex={0} onClick={onProductClick}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onProductClick() } }}
+              className="text-left w-full cursor-pointer">
+              <h3 data-testid="product-title" className="text-sm font-semibold text-stone-800 group-hover:text-brand-orange transition-colors line-clamp-2 leading-snug min-h-[2.5rem]">
+                {cleanTitle}
+              </h3>
+            </div>
+          ) : (
+            <LocalizedClientLink href={`/products/${handle}`}>
+              <h3 data-testid="product-title" className="text-sm font-semibold text-stone-800 group-hover:text-brand-orange transition-colors line-clamp-2 leading-snug min-h-[2.5rem]">
+                {cleanTitle}
+              </h3>
+            </LocalizedClientLink>
+          )}
 
           {/* Weight chips */}
           {visibleChips.length > 0 && (
@@ -318,12 +358,20 @@ export default function WeightHeavyProductCard({
                 </button>
               ))}
               {hasMore && (
-                <LocalizedClientLink
-                  href={`/products/${handle}`}
-                  className="text-[11px] text-stone-400 hover:text-brand-orange self-center px-1"
-                >
-                  +{variants.length - 3}
-                </LocalizedClientLink>
+                onProductClick ? (
+                  <div role="button" tabIndex={0} onClick={onProductClick}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onProductClick() } }}
+                    className="text-[11px] text-stone-400 hover:text-brand-orange self-center px-1 cursor-pointer">
+                    +{variants.length - 3}
+                  </div>
+                ) : (
+                  <LocalizedClientLink
+                    href={`/products/${handle}`}
+                    className="text-[11px] text-stone-400 hover:text-brand-orange self-center px-1"
+                  >
+                    +{variants.length - 3}
+                  </LocalizedClientLink>
+                )
               )}
             </div>
           )}

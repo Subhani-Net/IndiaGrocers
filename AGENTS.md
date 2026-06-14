@@ -932,6 +932,88 @@ npx playwright test e2e/checkout/checkout-flow.spec.ts
 npx playwright test e2e/checkout/payment-flow.spec.ts
 ```
 
+### Navigation System — Rebuild Contracts
+
+> **Documentation:** `Documentation/navigation-system.md`, `Implementation/navigation-contracts.md`
+
+| Contract | File(s) | What It Guarantees |
+|----------|---------|--------------------|
+| Navigation: 3-level category tree with injected "All [Category]" | `nav/index.tsx:19-58` | `fetchNavCategories()` returns `NavCategory[]` with virtual L2 child at index 0 per L1; grandchildren mapped correctly |
+| Navigation: Desktop panel shows ALL L1 categories simultaneously | `all-groceries-panel/index.tsx:100-131` | `categories.map()` renders every L1 block in a masonry grid; no per-category hover filtering |
+| Navigation: Mobile cart is a plain link, not a Popover | `nav/index.tsx:134-141` | Mobile cart is `<LocalizedClientLink href="/cart">` with `data-testid="nav-mobile-cart-link"`; no `<Suspense>` or `<CartButton>` in mobile layout |
+| Navigation: Desktop cart is a Popover dropdown | `nav/index.tsx:163-174` | Desktop cart is `<Suspense><CartButton/></Suspense>`; Popover panel shows only on `small:` screens |
+| Navigation: Header uses `position: sticky; top: 0` | `nav/index.tsx:115` | `<header className="sticky top-0 z-50">` — verified by Playwright computed style assertion |
+| Navigation: Mobile logo centered via absolute positioning | `nav/index.tsx:127-131` | `absolute left-1/2 -translate-x-1/2` with `pointer-events-none` wrapper; link has `pointer-events-auto` |
+| Navigation: Panel body scroll lock | `all-groceries-panel/index.tsx:44-53`, `mobile-menu/index.tsx:97-107` | `document.body.style.overflow = "hidden"` on open, restored on close |
+| Navigation: ESC dismisses desktop panel | `all-groceries-panel/index.tsx:35-42` | Global `keydown` listener with `e.key === "Escape"` |
+
+### Navigation Test Files
+
+| Layer | File | Type | Tests |
+|-------|------|------|-------|
+| E2E — Navigation | `e2e/layout/navigation.spec.ts` | Playwright | 19 (5 describe blocks) |
+| BDD — Navigation | `e2e/features/layout/navigation.feature` | playwright-bdd | 20 scenarios |
+| BDD — Navigation steps | `e2e/features/layout/navigation.steps.ts` | playwright-bdd | ~30 step definitions |
+
+### Run Navigation Validation
+
+```bash
+npx playwright test --project=e2e e2e/layout/navigation.spec.ts
+npx playwright test --project=bdd e2e/features/layout/
+```
+
+### Search System — Rebuild Contracts
+
+> **Architecture:** SearchContext (live grid) + SSR page (direct URL). Universal `WeightHeavyProductCard` on all grids. `PdpLayover` modal for variant selection. `NavSearch` autocomplete with keyboard nav.
+
+| Contract | File(s) | What It Guarantees |
+|----------|---------|--------------------|
+| Search: global context manages live grid state | `lib/context/search-context.tsx:41-170` | `SearchProvider` wraps layout; `useSearch()` returns `isSearchActive`, `searchQuery`, `searchResults`, `isLoading`, `totalCount`. 300ms debounced `searchProducts` → `fetchProductsByIds` with AbortController per invocation |
+| Search: layout conditionally renders grid | `(main)/layout.tsx:37-58`, `components/search-layout-client.tsx` | `<SearchLayoutClient>` reads `isSearchActive` → renders `<SearchResultsGrid>` or passes through `{children}` |
+| Search: header NavSearch connected to context | `nav-search/index.tsx:16-23` | `useSearch()` reads/writes query; autocomplete dropdown with 200ms debounce + AbortSignal; ArrowUp/Down/Enter/Escape keyboard nav; product click → `router.push("/search?q=...")` |
+| Search: navigating away clears search | `search-context.tsx:129-137` | `useEffect([pathname])` fires on route change; if `isSearchActive && !pathname.includes("/search")` → `clearSearch()` |
+| Search: SSR page for direct URL | `search/page.tsx:39-55` | Server component reads `searchParams` (q, dietary, brand, sort, page, maxPrice), builds MeiliSearch filter, calls `searchProducts` + `fetchProductsByIds` directly, passes as `initialResults` |
+| Search: client template syncs SSR props | `search/templates/index.tsx:128-144` | `useEffect` watches `initialResults` → syncs to `products` state; `initialPage > 1` check for Load More append |
+| Card: universal `WeightHeavyProductCard` | `weight-heavy-card.tsx` | Weight chips, best-value badges, unit pricing (£/kg, p/100g), variant selection, +/- qty controls. `onProductClick` prop → `<div role="button">` instead of `<LocalizedClientLink>` when layover active |
+| Card: click opens `PdpLayover` modal | `weight-heavy-card.tsx:161-184,280-314` | `onProductClick={() => openLayover(product)}` passed from all templates via `useLayover()` |
+| PdpLayover: multi-line variant sheet | `pdp-layover/index.tsx` | Mobile slide-up bottom sheet, desktop centered modal. Lists all variants with price, computed unit price, +/- steppers. Bulk "Add to Basket" calls `addToCart` per variant with qty > 0 |
+| Layover: global context | `lib/context/layover-context.tsx` | `LayoverProvider` + `useLayover()` returns `openProduct`, `openLayover(product)`, `closeLayover()`. Body scroll locked while open |
+| Mobile filter: portal-rendered drawer | `mobile-filter-drawer/index.tsx:55-70` | `createPortal` to `document.body`; `animate-drawer-in` (250ms) open / `animate-drawer-out` (200ms) close |
+| Mobile filter: accordion sections via Radix | `filter-panel/index.tsx:320-325` | `FilterAccordion` with `type="multiple"`, `defaultValue=[]` — collapsed on mobile |
+| Mobile filter: body scroll lock on open | `mobile-filter-drawer/index.tsx:39-46` | `document.body.style.overflow = "hidden"` on mount, restored on unmount |
+| Mobile filter: ESC key dismiss | `mobile-filter-drawer/index.tsx:49-54` | Global `keydown` listener with `e.key === "Escape"` |
+| Mobile filter: desktop sidebar unchanged | `standard-grid.tsx:134-140` | `<aside className="hidden sm:block w-56">` — `FilterPanel` without `compact` prop |
+
+### Search & Card Test Files
+
+| Layer | File | Type | Tests |
+|-------|------|------|-------|
+| E2E — Loading states | `e2e/search/loading-states.spec.ts` | Playwright | 10 (spinner lifecycle, race condition) |
+| E2E — Behavior contracts | `e2e/search/behavior-contracts.spec.ts` | Playwright | 12 (autocomplete speed, results persistence, SSR pre-fetch) |
+| E2E — Top results | `e2e/search/top-results.spec.ts` | Playwright | 16 (hardcoded top-N for 15 terms) |
+| E2E — Vernacular | `e2e/search/vernacular.spec.ts` | Playwright | 4 (Hindi→English mapping) |
+| BDD — Search | `e2e/features/catalog/search.feature` | playwright-bdd | 22 scenarios |
+| BDD — Search steps | `e2e/features/catalog/search.steps.ts` | playwright-bdd | 22 step definitions |
+| BDD — Navigation | `e2e/features/layout/navigation.feature` | playwright-bdd | 22 scenarios (incl. header search) |
+| BDD — Navigation steps | `e2e/features/layout/navigation.steps.ts` | playwright-bdd | ~35 step definitions |
+
+### Mobile Filter Test Files
+
+| Layer | File | Type | Tests |
+|-------|------|------|-------|
+| E2E — Mobile Filter | `e2e/filters/mobile-filter-drawer.spec.ts` | Playwright | 11 (5 describe blocks) |
+| BDD — Filters | `e2e/features/catalog/filters.feature` | playwright-bdd | 10 scenarios |
+| BDD — Filter steps | `e2e/features/catalog/filters.steps.ts` | playwright-bdd | ~20 step definitions |
+
+### Run All Validation
+
+```bash
+npx playwright test --project=e2e e2e/search/
+npx playwright test --project=e2e e2e/filters/
+npx playwright test --project=bdd e2e/features/catalog/search.feature
+npx playwright test --project=bdd e2e/features/layout/navigation.feature
+npx playwright test --project=bdd e2e/features/catalog/filters.feature
+
 ---
 
 ## Architecture Guardrails — Default Behaviour

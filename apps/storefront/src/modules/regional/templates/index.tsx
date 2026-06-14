@@ -3,8 +3,9 @@
 import { Suspense } from "react"
 import Breadcrumb from "@modules/common/components/breadcrumb"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import WeightHeavyProductCard from "@modules/products/components/product-preview/weight-heavy-card"
+import ProductCard from "@modules/products/components/product-preview/weight-heavy-card"
 import CartSidebar from "@modules/layout/components/cart-sidebar"
+import { useLayover } from "@lib/context/layover-context"
 
 interface RegionalCollectionProps {
   regionName: string
@@ -34,6 +35,7 @@ export default function RegionalCollectionTemplate({
   countryCode,
   initialProducts,
 }: RegionalCollectionProps) {
+  const { openLayover } = useLayover()
   const displayName = REGION_LABELS[regionName] || regionName.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase())
 
   const shelves = Object.entries(initialProducts || {}).filter(
@@ -91,10 +93,11 @@ export default function RegionalCollectionTemplate({
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                     {items.slice(0, 8).map((product: any) => (
-                      <WeightHeavyProductCard
+                      <ProductCard
                         key={product.id}
                         product={product}
                         countryCode={countryCode}
+                        onProductClick={() => openLayover(product)}
                       />
                     ))}
                   </div>

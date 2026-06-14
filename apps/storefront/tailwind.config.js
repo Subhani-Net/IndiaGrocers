@@ -115,10 +115,44 @@ module.exports = {
                     "0%": { opacity: "0" },
                     "100%": { opacity: "1" },
                 },
+                "drawer-slide-in": {
+                    "0%": { transform: "translateX(-100%)" },
+                    "100%": { transform: "translateX(0)" },
+                },
+                "drawer-slide-out": {
+                    "0%": { transform: "translateX(0)" },
+                    "100%": { transform: "translateX(-100%)" },
+                },
+                "drawer-push-in": {
+                    "0%": { transform: "translateX(100%)", opacity: "0" },
+                    "100%": { transform: "translateX(0)", opacity: "1" },
+                },
+                "drawer-push-out": {
+                    "0%": { transform: "translateX(0)", opacity: "1" },
+                    "100%": { transform: "translateX(-30%)", opacity: "0" },
+                },
+                "drawer-pop-in": {
+                    "0%": { transform: "translateX(-30%)", opacity: "0" },
+                    "100%": { transform: "translateX(0)", opacity: "1" },
+                },
+                "accordion-down": {
+                    "0%": { height: "0", opacity: "0" },
+                    "100%": { height: "var(--radix-accordion-content-height)", opacity: "1" },
+                },
+                "accordion-up": {
+                    "0%": { height: "var(--radix-accordion-content-height)", opacity: "1" },
+                    "100%": { height: "0", opacity: "0" },
+                },
             },
             animation: {
                 "sheet-up": "sheet-slide-up 250ms cubic-bezier(0.4, 0, 0.2, 1) forwards",
                 "fade-in": "fade-in 180ms cubic-bezier(0.4, 0, 0.2, 1) forwards",
+                "drawer-in": "drawer-slide-in 250ms cubic-bezier(0.4, 0, 0.2, 1) forwards",
+                "drawer-out": "drawer-slide-out 200ms cubic-bezier(0.4, 0, 0.2, 1) forwards",
+                "drawer-push-forward": "drawer-push-in 250ms cubic-bezier(0.4, 0, 0.2, 1) forwards",
+                "drawer-push-back": "drawer-pop-in 250ms cubic-bezier(0.4, 0, 0.2, 1) forwards",
+                "accordion-down": "accordion-down 200ms cubic-bezier(0.4, 0, 0.2, 1)",
+                "accordion-up": "accordion-up 200ms cubic-bezier(0.4, 0, 0.2, 1)",
             },
         },
     },
