@@ -16,6 +16,7 @@ import InlineSort from "@modules/store/components/inline-sort"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import { useLayover } from "@lib/context/layover-context"
 import MobileFilterDrawer from "@modules/store/components/mobile-filter-drawer"
+import ThreePaneLayout from "@modules/store/components/three-pane-layout"
 
 // Brand display names keyed by slug — subset for brand-showcase display
 const BRAND_DISPLAY: Record<string, string> = {
@@ -144,18 +145,25 @@ export default function BrandShowcaseCategoryTemplate({
 
       {/* Product Grid + Filter */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        {/* Toolbar */}
-        <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-          <div className="flex items-center gap-3">
+        {/* Mobile Filter Button + Sort */}
+        <div className="flex lg:hidden items-center justify-between mb-4 border-b border-stone-100 pb-4">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
+              className="text-xs font-medium text-stone-600 border border-stone-200 rounded-lg px-3 py-1.5 hover:border-brand-orange/50"
+            >
+              {mobileFilterOpen ? "Hide Filters" : "Filter"}
+            </button>
+            <InlineSort sortBy={sortBy} />
+          </div>
+          <div className="flex items-center gap-2">
             <p className="text-sm text-stone-500">
               {totalCount} product{totalCount !== 1 ? "s" : ""}
             </p>
             {hasFilters && (
               <button
                 onClick={() => {
-                  router.push(
-                    `/${countryCode}/categories/${category.handle}`
-                  )
+                  router.push(`/${countryCode}/categories/${category.handle}`)
                 }}
                 className="text-xs font-medium text-brand-orange hover:underline"
               >
@@ -163,72 +171,53 @@ export default function BrandShowcaseCategoryTemplate({
               </button>
             )}
           </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
-              className="sm:hidden text-xs font-medium text-stone-600 border border-stone-200 rounded-lg px-3 py-1.5 hover:border-brand-orange/50"
-            >
-              {mobileFilterOpen ? "Hide Filters" : "Filter"}
-            </button>
-            <InlineSort sortBy={sortBy} />
-          </div>
         </div>
 
-        <div className="flex gap-6">
-          {/* Desktop Filter */}
-          <aside className="hidden sm:block w-56 flex-shrink-0">
+        {/* Mobile Filter Drawer */}
+        <MobileFilterDrawer
+          isOpen={mobileFilterOpen}
+          onClose={() => setMobileFilterOpen(false)}
+        >
+          <FilterPanel
+            categoryHandle={category.handle}
+            countryCode={countryCode}
+            compact
+          />
+        </MobileFilterDrawer>
+
+        {/* Desktop: Tesco-style 3-Pane Layout (lg+) */}
+        <ThreePaneLayout
+          filterPanel={
             <FilterPanel
-              sortBy={sortBy}
               categoryHandle={category.handle}
               countryCode={countryCode}
             />
-          </aside>
-
-          {/* Mobile Filter Drawer */}
-          <MobileFilterDrawer
-            isOpen={mobileFilterOpen}
-            onClose={() => setMobileFilterOpen(false)}
-          >
-            <FilterPanel
-              sortBy={sortBy}
-              categoryHandle={category.handle}
-              countryCode={countryCode}
-              compact
+          }
+          cartSidebar={<CartSidebar countryCode={countryCode} className="!w-full" />}
+          productCount={totalCount}
+          sortDropdown={<InlineSort sortBy={sortBy} />}
+          countryCode={countryCode}
+        >
+          {products.length === 0 ? (
+            <EmptyState
+              type={hasFilters ? "filter" : "category"}
+              suggestedCategories={[
+                { name: "Spices — Ground", handle: "spices-ground" },
+                { name: "Spices — Whole", handle: "spices-whole" },
+                { name: "Beverages", handle: "beverages" },
+              ]}
             />
-          </MobileFilterDrawer>
-
-          {/* Product Grid */}
-          <div className="flex-1 min-w-0">
-            {products.length === 0 ? (
-              <EmptyState
-                type={hasFilters ? "filter" : "category"}
-                suggestedCategories={[
-                  { name: "Spices — Ground", handle: "spices-ground" },
-                  { name: "Spices — Whole", handle: "spices-whole" },
-                  { name: "Beverages", handle: "beverages" },
-                ]}
-              />
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                {products.map((p: any) => (
-                  <ProductCard
-                    key={p.id}
-                    product={p}
-                    countryCode={countryCode}
-                    onProductClick={() => openLayover(p)}
-                  />
-                ))}
-              </div>
+          ) : (
+              products.map((p: any) => (
+                <ProductCard
+                  key={p.id}
+                  product={p}
+                  countryCode={countryCode}
+                  onProductClick={() => openLayover(p)}
+                />
+              ))
             )}
-          </div>
-
-          {/* Cart Sidebar */}
-          <div className="hidden xl:block w-[340px] flex-shrink-0">
-            <Suspense>
-              <CartSidebar countryCode={countryCode} />
-            </Suspense>
-          </div>
-        </div>
+        </ThreePaneLayout>
       </div>
     </div>
   )

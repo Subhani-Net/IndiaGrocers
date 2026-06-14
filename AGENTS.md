@@ -1005,14 +1005,43 @@ npx playwright test --project=bdd e2e/features/layout/
 | BDD — Filters | `e2e/features/catalog/filters.feature` | playwright-bdd | 10 scenarios |
 | BDD — Filter steps | `e2e/features/catalog/filters.steps.ts` | playwright-bdd | ~20 step definitions |
 
+### 3-Pane Layout — Rebuild Contracts
+
+> **Architecture:** `ThreePaneLayout` (client component) manages filter/basket toggle state. Sticky panes on lg+. Horizontal quick-filter row above grid.
+
+| Contract | File(s) | What It Guarantees |
+|----------|---------|--------------------|
+| 3-Pane: default state = grid + basket visible, filter hidden | `three-pane-layout/index.tsx:143-173` | `filterOpen` starts `false`; left pane hidden, right pane shown, quick-filter row visible |
+| 3-Pane: All Filters button toggles filter pane | `three-pane-layout/index.tsx:123-135` | `toggleFilter()` sets `filterOpen = !filterOpen`; left pane slides in, right basket hides |
+| 3-Pane: cart-updated event auto-closes filter | `three-pane-layout/index.tsx:61-66` | `window.addEventListener("cart-updated", () => setFilterOpen(false))` |
+| 3-Pane: children never remount on toggle | `three-pane-layout/index.tsx:146` | `{children}` in center pane — React preserves subtree across sibling toggles |
+| 3-Pane: sticky left and right panes | `three-pane-layout/index.tsx:139,152` | `sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto` on both panes |
+| 3-Pane: horizontal quick-filter row | `three-pane-layout/index.tsx:73-102` | Dietary chips (Vegan, Vegetarian, GF, Organic) + All Filters button + sort dropdown |
+| 3-Pane: search page has basket only | `three-pane-layout/index.tsx` | `showFilterPane={false}` → no filter button, no left pane; only basket on right |
+| Filter/Sort: decoupled architecture | `filter-panel/index.tsx:8-13` | `FilterPanel` has zero sort code — no `SortProducts`, no `sortBy` prop, no sort accordion section. Sort lives ONLY in `InlineSort` in the utility bar |
+| Filter/Sort: independent URL params | `filter-panel/index.tsx:55-100` | Sort writes `sortBy` param. Filters write `brand`, `weight`, `dietary`, `minPrice`, `maxPrice`, `inStock`. No overlap, no conflict |
+| Utility bar: desktop + mobile consistent layout | `three-pane-layout/index.tsx:59-97`, `standard-grid.tsx:104-131` | Both viewports: [Filter] [Sort ▾] ─── [product count]. `justify-between`, `items-center` |
+| Utility bar: border separator | `three-pane-layout/index.tsx:60`, `standard-grid.tsx:105` | `border-b border-stone-100 pb-4` on both desktop and mobile utility rows |
+| Mobile menu: category-first navigation | `mobile-menu/index.tsx:150-220` | No static links (Home, Store, Account, Cart). "Shop by Category" header. Category rows at 44px with `border-b` separators. Utility links in muted footer |
+
+### 3-Pane Layout Test Files
+
+| Layer | File | Type | Tests |
+|-------|------|------|-------|
+| E2E — 3-Pane Layout | `e2e/layout/three-pane-layout.spec.ts` | Playwright | 14 (5 describe blocks) |
+| BDD — 3-Pane Layout | `e2e/features/catalog/three-pane-layout.feature` | playwright-bdd | 10 scenarios |
+| BDD — 3-Pane steps | `e2e/features/catalog/three-pane-layout.steps.ts` | playwright-bdd | ~25 step definitions |
+
 ### Run All Validation
 
 ```bash
 npx playwright test --project=e2e e2e/search/
 npx playwright test --project=e2e e2e/filters/
+npx playwright test --project=e2e e2e/layout/three-pane-layout.spec.ts
 npx playwright test --project=bdd e2e/features/catalog/search.feature
 npx playwright test --project=bdd e2e/features/layout/navigation.feature
 npx playwright test --project=bdd e2e/features/catalog/filters.feature
+npx playwright test --project=bdd e2e/features/catalog/three-pane-layout.feature
 
 ---
 

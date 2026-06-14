@@ -13,6 +13,7 @@ import FilterPanel from "@modules/store/components/filter-panel"
 import InlineSort from "@modules/store/components/inline-sort"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import MobileFilterDrawer from "@modules/store/components/mobile-filter-drawer"
+import ThreePaneLayout from "@modules/store/components/three-pane-layout"
 
 const PRODUCTS_PER_PAGE = 12
 
@@ -97,18 +98,25 @@ export default function WeightHeavyCategoryTemplate({
 
       {/* Product Grid + Filter */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        {/* Toolbar */}
-        <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-          <div className="flex items-center gap-3">
+        {/* Mobile Filter Button + Sort */}
+        <div className="flex lg:hidden items-center justify-between mb-4 border-b border-stone-100 pb-4">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
+              className="text-xs font-medium text-stone-600 border border-stone-200 rounded-lg px-3 py-1.5 hover:border-brand-orange/50"
+            >
+              {mobileFilterOpen ? "Hide Filters" : "Filter"}
+            </button>
+            <InlineSort sortBy={sortBy} />
+          </div>
+          <div className="flex items-center gap-2">
             <p className="text-sm text-stone-500">
               {totalCount} product{totalCount !== 1 ? "s" : ""}
             </p>
             {hasFilters && (
               <button
                 onClick={() => {
-                  router.push(
-                    `/${countryCode}/categories/${category.handle}`
-                  )
+                  router.push(`/${countryCode}/categories/${category.handle}`)
                 }}
                 className="text-xs font-medium text-brand-orange hover:underline"
               >
@@ -116,88 +124,69 @@ export default function WeightHeavyCategoryTemplate({
               </button>
             )}
           </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
-              className="sm:hidden text-xs font-medium text-stone-600 border border-stone-200 rounded-lg px-3 py-1.5 hover:border-brand-orange/50"
-            >
-              {mobileFilterOpen ? "Hide Filters" : "Filter"}
-            </button>
-            <InlineSort sortBy={sortBy} />
-          </div>
         </div>
 
-        <div className="flex gap-6">
-          {/* Desktop Filter Panel */}
-          <aside className="hidden sm:block w-56 flex-shrink-0">
+        {/* Mobile Filter Drawer */}
+        <MobileFilterDrawer
+          isOpen={mobileFilterOpen}
+          onClose={() => setMobileFilterOpen(false)}
+        >
+          <FilterPanel
+            categoryHandle={category.handle}
+            countryCode={countryCode}
+            compact
+          />
+        </MobileFilterDrawer>
+
+        {/* Desktop: Tesco-style 3-Pane Layout (lg+) */}
+        <ThreePaneLayout
+          filterPanel={
             <FilterPanel
-              sortBy={sortBy}
               categoryHandle={category.handle}
               countryCode={countryCode}
             />
-          </aside>
-
-          {/* Mobile Filter Drawer */}
-          <MobileFilterDrawer
-            isOpen={mobileFilterOpen}
-            onClose={() => setMobileFilterOpen(false)}
-          >
-            <FilterPanel
-              sortBy={sortBy}
-              categoryHandle={category.handle}
-              countryCode={countryCode}
-              compact
+          }
+          cartSidebar={<CartSidebar countryCode={countryCode} className="!w-full" />}
+          productCount={totalCount}
+          sortDropdown={<InlineSort sortBy={sortBy} />}
+          countryCode={countryCode}
+        >
+          {products.length === 0 ? (
+            <EmptyState
+              type={hasFilters ? "filter" : "category"}
+              suggestedCategories={[
+                { name: "Staples & Grains", handle: "staples-grains" },
+                { name: "Atta & Flours", handle: "atta-flours" },
+                { name: "Dal & Lentils", handle: "dal-lentils" },
+              ]}
             />
-          </MobileFilterDrawer>
-
-          {/* Product Grid */}
-          <div className="flex-1 min-w-0">
-            {products.length === 0 ? (
-              <EmptyState
-                type={hasFilters ? "filter" : "category"}
-                suggestedCategories={[
-                  { name: "Staples & Grains", handle: "staples-grains" },
-                  { name: "Atta & Flours", handle: "atta-flours" },
-                  { name: "Dal & Lentils", handle: "dal-lentils" },
-                ]}
-              />
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                {products.map((product: any) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    countryCode={countryCode}
-                    onProductClick={() => openLayover(product)}
-                  />
-                ))}
-              </div>
+          ) : (
+              products.map((product: any) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  countryCode={countryCode}
+                  onProductClick={() => openLayover(product)}
+                />
+              ))
             )}
 
-            {/* Load More */}
-            {products.length > 0 && products.length < totalCount && (
-              <div className="flex flex-col items-center mt-8 gap-2">
-                <p className="text-sm text-stone-400">
-                  Showing {products.length} of {totalCount} products
-                </p>
-                <button
-                  onClick={handleLoadMore}
-                  disabled={loading}
-                  className="px-8 py-2.5 text-sm font-semibold border border-brand-orange text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-colors disabled:opacity-50"
-                >
-                  {loading ? "Loading..." : "Load More Products"}
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* Cart Sidebar (xl+) */}
-          <div className="hidden xl:block w-[340px] flex-shrink-0">
-            <Suspense>
-              <CartSidebar countryCode={countryCode} />
-            </Suspense>
-          </div>
-        </div>
+          {/* Load More */}
+          {products.length > 0 && products.length < totalCount && (
+            <div className="flex flex-col items-center mt-8 gap-2">
+              <p className="text-sm text-stone-400">
+                Showing {products.length} of {totalCount} products
+              </p>
+              <button
+                onClick={handleLoadMore}
+                disabled={loading}
+                className="px-8 py-2.5 text-sm font-semibold border border-brand-orange text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-colors disabled:opacity-50"
+              >
+                {loading ? "Loading..." : "Load More Products"}
+              </button>
+            </div>
+          )}
+        </ThreePaneLayout>
       </div>
     </div>
   )

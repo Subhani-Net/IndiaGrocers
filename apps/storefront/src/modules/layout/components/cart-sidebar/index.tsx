@@ -9,7 +9,7 @@ function formatPrice(amount: number): string {
   return new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP", minimumFractionDigits: 2 }).format(amount / 100)
 }
 
-export default function CartSidebar({ countryCode }: { countryCode: string }) {
+export default function CartSidebar({ countryCode, className = "" }: { countryCode: string; className?: string }) {
   const [cart, setCart] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [removing, setRemoving] = useState<string | null>(null)
@@ -56,7 +56,7 @@ export default function CartSidebar({ countryCode }: { countryCode: string }) {
   }
 
   return (
-    <div className="hidden xl:block w-64 flex-shrink-0">
+    <div className={`hidden xl:block w-64 flex-shrink-0 ${className}`}>
       <div className="sticky top-20 glass-strong rounded-2xl p-4">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-sm font-bold text-grey-90">Your Basket</h3>

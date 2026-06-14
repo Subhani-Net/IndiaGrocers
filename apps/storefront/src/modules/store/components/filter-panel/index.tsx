@@ -3,26 +3,19 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useState, useEffect, useCallback, useMemo } from "react"
 
-import SortProducts, {
-  SortOptions,
-} from "@modules/store/components/refinement-list/sort-products"
 import FilterAccordion from "@modules/store/components/filter-accordion"
 
 type FilterPanelProps = {
-  sortBy: SortOptions
   categoryHandle?: string
   countryCode?: string
   search?: boolean
   compact?: boolean
-  "data-testid"?: string
 }
 
 export default function FilterPanel({
-  sortBy,
   categoryHandle,
   countryCode: _cc,
   compact = false,
-  "data-testid": dataTestId,
 }: FilterPanelProps) {
   const router = useRouter()
   const pathname = usePathname()
@@ -122,19 +115,6 @@ export default function FilterPanel({
   ]
 
   const accordionSections = [
-    {
-      id: "sort",
-      title: "Sort By",
-      children: (
-        <SortProducts
-          sortBy={sortBy}
-          setQueryParams={(name, value) =>
-            pushFilters({ [name]: value })
-          }
-          data-testid={dataTestId}
-        />
-      ),
-    },
     {
       id: "stock",
       title: "Stock Status",

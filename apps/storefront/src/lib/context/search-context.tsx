@@ -21,6 +21,7 @@ interface SearchContextValue {
   searchResults: HttpTypes.StoreProduct[]
   isLoading: boolean
   totalCount: number
+  countryCode: string
   setSearchActive: (active: boolean) => void
   setSearchQuery: (query: string) => void
   clearSearch: () => void
@@ -172,6 +173,7 @@ export function SearchProvider({
         searchResults,
         isLoading,
         totalCount,
+        countryCode,
         setSearchActive,
         setSearchQuery,
         clearSearch,
