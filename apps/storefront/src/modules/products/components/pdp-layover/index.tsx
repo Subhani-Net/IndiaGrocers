@@ -15,43 +15,29 @@ function formatPrice(amount: number): string {
   }).format(amount / 100)
 }
 
-function formatUnitPrice(amount: number): string {
-  const pounds = amount / 100
-  if (pounds < 0.01) return ""
-  if (pounds < 1) return `${(pounds * 100).toFixed(0)}p/100g`
-  return `£${pounds.toFixed(2)}/unit`
-}
-
 function extractWeight(title: string): { weight: number; unit: string } | null {
   const match = title.match(/(\d+\.?\d*)\s*(g|kg|ml|l|L)/i)
   if (!match) return null
-  const weight = parseFloat(match[1])
-  const unit = match[2].toLowerCase()
-  return { weight, unit }
+  return { weight: parseFloat(match[1]), unit: match[2].toLowerCase() }
 }
 
-function computeUnitPrice(
-  price: number,
-  variantTitle: string
-): string {
+function computeUnitPrice(price: number, variantTitle: string): string {
   const extracted = extractWeight(variantTitle)
   if (!extracted) return ""
-
-  let weightInKg: number
-  if (extracted.unit === "kg" || extracted.unit === "l") {
-    weightInKg = extracted.weight
-  } else {
-    weightInKg = extracted.weight / 1000
-  }
+  const weightInKg =
+    extracted.unit === "kg" || extracted.unit === "l"
+      ? extracted.weight
+      : extracted.weight / 1000
   if (weightInKg <= 0) return ""
-
   const pricePerKg = price / weightInKg
   const priceInPounds = pricePerKg / 100
-
-  if (priceInPounds < 1) {
-    return `${(priceInPounds * 100).toFixed(0)}p/100g`
-  }
+  if (priceInPounds < 1) return `${(priceInPounds * 100).toFixed(0)}p/100g`
   return `£${priceInPounds.toFixed(2)}/kg`
+}
+
+function getWeightLabel(title: string): string {
+  const match = title.match(/(\d+\.?\d*\s*(?:g|kg|ml|l|L))/i)
+  return match ? match[1] : title
 }
 
 // ─── Component ───
@@ -74,14 +60,14 @@ export default function PdpLayover({
     metadata: v.metadata || {},
   }))
 
-  const hasVariants = variants.length > 1
-  const displayVariants = hasVariants
-    ? variants
-    : variants.filter((v) => v.title !== "Default")
+  const displayVariants = variants.filter((v) => v.title !== "Default")
 
   const [quantities, setQuantities] = useState<Record<string, number>>({})
   const [adding, setAdding] = useState(false)
   const [closing, setClosing] = useState(false)
+  const [selectedVariant, setSelectedVariant] = useState(
+    displayVariants.length > 0 ? displayVariants[0] : variants[0] || null
+  )
 
   // Lock body scroll
   useEffect(() => {
@@ -110,6 +96,7 @@ export default function PdpLayover({
     (sum, v) => sum + (quantities[v.id] || 0) * v.price,
     0
   )
+  const brand = (product.metadata as any)?.brand
 
   const handleQuantity = (variantId: string, delta: number) => {
     setQuantities((prev) => {
@@ -136,6 +123,10 @@ export default function PdpLayover({
     }
   }
 
+  const selectedPrice = selectedVariant?.price || 0
+  const selectedUnitPrice =
+    selectedVariant && computeUnitPrice(selectedVariant.price, selectedVariant.title)
+
   return (
     <>
       {/* Backdrop */}
@@ -146,100 +137,124 @@ export default function PdpLayover({
         onClick={handleClose}
       />
 
-      {/* Panel */}
+      {/* ═══ DESKTOP: Centered Modal, 2-column horizontal ═══ */}
       <div
-        className={`fixed z-[61] bg-white flex flex-col transition-transform duration-250 ease-fluid-out
-          sm:inset-x-4 sm:top-1/2 sm:-translate-y-1/2 sm:max-w-2xl sm:mx-auto sm:rounded-2xl sm:max-h-[85vh]
-          inset-x-0 bottom-0 rounded-t-2xl max-h-[90vh]
-          ${closing ? "translate-y-full sm:translate-y-1/2 sm:opacity-0" : "translate-y-0 sm:opacity-100"}
-        `}
+        className={`hidden sm:block fixed z-[61] inset-x-4 top-1/2 -translate-y-1/2 max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl max-h-[85vh] overflow-y-auto transition-all duration-200 ${
+          closing ? "opacity-0 scale-95" : "opacity-100 scale-100"
+        }`}
       >
-        {/* Drag handle (mobile only) */}
-        <div className="sm:hidden flex justify-center pt-3 pb-1">
-          <div className="w-10 h-1 bg-grey-30 rounded-full" />
-        </div>
+        {/* Close button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/90 hover:bg-grey-10 shadow-sm transition-colors"
+          aria-label="Close"
+        >
+          <svg className="w-5 h-5 text-grey-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
 
-        {/* Header */}
-        <div className="flex items-start gap-4 p-4 sm:p-6 border-b border-grey-20/60 flex-shrink-0">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-xl overflow-hidden bg-grey-10 border border-grey-10/60">
-            <Thumbnail
-              thumbnail={product.thumbnail}
-              images={product.images}
-              size="square"
-            />
+        {/* 2-Column Grid */}
+        <div className="flex">
+          {/* ─── LEFT: Image (40%) ─── */}
+          <div className="w-[40%] flex-shrink-0 p-6">
+            <div className="aspect-square rounded-xl overflow-hidden bg-grey-10 border border-grey-10/60">
+              <Thumbnail
+                thumbnail={product.thumbnail}
+                images={product.images}
+                size="square"
+              />
+            </div>
           </div>
-          <div className="flex-1 min-w-0">
-            <h2 className="text-base sm:text-lg font-bold text-grey-90 leading-snug line-clamp-2">
+
+          {/* ─── RIGHT: Info (60%) ─── */}
+          <div className="w-[60%] flex flex-col p-6 pl-0">
+            {/* Brand + Title */}
+            {brand && (
+              <span className="text-xs font-semibold text-brand-saffron uppercase tracking-wider">
+                {brand}
+              </span>
+            )}
+            <h2 className="text-lg font-bold text-stone-900 leading-snug mt-0.5">
               {product.title}
             </h2>
-            {product.metadata && (product.metadata as any)?.brand && (
-              <p className="text-xs font-semibold text-brand-saffron mt-1">
-                {(product.metadata as any).brand}
-              </p>
-            )}
-            <button
-              onClick={handleClose}
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-grey-10 transition-colors"
-              aria-label="Close"
-            >
-              <svg className="w-5 h-5 text-grey-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
 
-        {/* Variant list */}
-        <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-3">
-          {displayVariants.length === 0 ? (
-            <p className="text-sm text-grey-40 text-center py-8">
-              No variants available
-            </p>
-          ) : (
-            <div className="space-y-1">
+            {/* Weight / Pack Size Chips */}
+            {displayVariants.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {displayVariants.map((v) => (
+                  <button
+                    key={v.id}
+                    onClick={() => setSelectedVariant(v)}
+                    className={`text-[12px] font-medium px-3 py-1.5 rounded-lg border transition-all ${
+                      selectedVariant?.id === v.id
+                        ? "bg-brand-orange text-white border-brand-orange"
+                        : "bg-stone-100 border-stone-200 text-stone-600 hover:border-brand-orange/50"
+                    }`}
+                  >
+                    {getWeightLabel(v.title)}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Price Block */}
+            <div className="mt-4">
+              <div className="flex items-baseline gap-2">
+                <span className="text-2xl font-bold text-stone-900">
+                  {formatPrice(selectedPrice)}
+                </span>
+                {selectedUnitPrice && (
+                  <span className="text-sm text-stone-400">
+                    {selectedUnitPrice}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Variant List with Qty Selectors */}
+            <div className="mt-4 space-y-1.5 overflow-y-auto max-h-[30vh]">
               {displayVariants.map((v) => {
                 const qty = quantities[v.id] || 0
                 const unitPrice = computeUnitPrice(v.price, v.title)
-                const isActive = qty > 0
-
                 return (
                   <div
                     key={v.id}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors ${
-                      isActive ? "bg-brand-orange/5 border border-brand-orange/20" : "border border-transparent"
+                    className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                      qty > 0
+                        ? "bg-brand-orange/5 border border-brand-orange/20"
+                        : "border border-transparent"
                     }`}
                   >
                     <div className="flex-1 min-w-0">
-                      <span className="text-sm font-medium text-grey-80">
+                      <span className="text-sm font-medium text-stone-700">
                         {v.title}
                       </span>
                       <div className="flex items-baseline gap-2 mt-0.5">
-                        <span className="text-sm font-bold text-grey-90">
+                        <span className="text-sm font-bold text-stone-900">
                           {formatPrice(v.price)}
                         </span>
                         {unitPrice && (
-                          <span className="text-[11px] text-grey-40">
+                          <span className="text-[11px] text-stone-400">
                             {unitPrice}
                           </span>
                         )}
                       </div>
                     </div>
-
-                    {/* Quantity stepper */}
                     <div className="flex items-center gap-0 flex-shrink-0">
                       <button
                         onClick={() => handleQuantity(v.id, -1)}
                         disabled={qty === 0}
-                        className="w-9 h-9 flex items-center justify-center text-base font-medium text-grey-50 hover:bg-grey-10 rounded-lg transition-colors disabled:opacity-20"
+                        className="w-8 h-8 flex items-center justify-center text-sm font-medium text-stone-500 hover:bg-stone-100 rounded-md transition-colors disabled:opacity-20"
                       >
                         −
                       </button>
-                      <span className="w-9 text-center text-sm font-semibold text-grey-90 tabular-nums">
+                      <span className="w-8 text-center text-sm font-semibold text-stone-900 tabular-nums">
                         {qty}
                       </span>
                       <button
                         onClick={() => handleQuantity(v.id, 1)}
-                        className="w-9 h-9 flex items-center justify-center text-base font-medium text-brand-orange hover:bg-brand-orange/10 rounded-lg transition-colors"
+                        className="w-8 h-8 flex items-center justify-center text-sm font-medium text-brand-orange hover:bg-brand-orange/10 rounded-md transition-colors"
                       >
                         +
                       </button>
@@ -248,23 +263,171 @@ export default function PdpLayover({
                 )
               })}
             </div>
-          )}
+
+            {/* Footer: Total + Add to Basket */}
+            <div className="mt-auto pt-4 border-t border-stone-100">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm text-stone-500">
+                  {totalItems} item{totalItems !== 1 ? "s" : ""}
+                </span>
+                <span className="text-lg font-bold text-stone-900">
+                  {formatPrice(totalPrice)}
+                </span>
+              </div>
+              <button
+                onClick={handleAddAll}
+                disabled={totalItems === 0 || adding}
+                className="w-full py-3 bg-brand-orange text-white font-semibold rounded-xl hover:bg-brand-orange-dark active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {adding ? "Adding..." : "Add to Basket"}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ═══ MOBILE: Bottom Sheet ═══ */}
+      <div
+        className={`sm:hidden fixed z-[61] inset-x-0 bottom-0 bg-white rounded-t-2xl shadow-2xl max-h-[90vh] flex flex-col transition-transform duration-250 ease-fluid-out ${
+          closing ? "translate-y-full" : "translate-y-0"
+        }`}
+      >
+        {/* Grab bar */}
+        <div className="flex justify-center pt-3 pb-1 flex-shrink-0">
+          <div className="w-10 h-1 bg-stone-300 rounded-full" />
         </div>
 
-        {/* Footer: total + add button */}
-        <div className="p-4 sm:p-6 border-t border-grey-20/60 flex-shrink-0">
+        {/* Top: Image + Title + Chips */}
+        <div className="flex items-start gap-3 px-4 py-3 border-b border-stone-100 flex-shrink-0">
+          <div className="w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden bg-stone-50 border border-stone-100">
+            <Thumbnail
+              thumbnail={product.thumbnail}
+              images={product.images}
+              size="square"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            {brand && (
+              <span className="text-[11px] font-semibold text-brand-saffron uppercase tracking-wider">
+                {brand}
+              </span>
+            )}
+            <h2 className="text-sm font-bold text-stone-900 leading-snug line-clamp-2 mt-0.5">
+              {product.title}
+            </h2>
+            {displayVariants.length > 0 && (
+              <div className="flex flex-wrap gap-1 mt-2">
+                {displayVariants.map((v) => (
+                  <button
+                    key={v.id}
+                    onClick={() => setSelectedVariant(v)}
+                    className={`text-[11px] font-medium px-2.5 py-1 rounded-full border transition-all ${
+                      selectedVariant?.id === v.id
+                        ? "bg-brand-orange text-white border-brand-orange"
+                        : "bg-stone-100 border-stone-200 text-stone-500"
+                    }`}
+                  >
+                    {getWeightLabel(v.title)}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+          <button
+            onClick={handleClose}
+            className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-stone-100 transition-colors flex-shrink-0"
+            style={{ minHeight: 48 }}
+            aria-label="Close"
+          >
+            <svg className="w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Price Display */}
+        <div className="px-4 py-3 border-b border-stone-100 flex-shrink-0">
+          <div className="flex items-baseline gap-2">
+            <span className="text-xl font-bold text-stone-900">
+              {formatPrice(selectedPrice)}
+            </span>
+            {selectedUnitPrice && (
+              <span className="text-sm text-stone-400">{selectedUnitPrice}</span>
+            )}
+          </div>
+        </div>
+
+        {/* Variant List */}
+        <div className="flex-1 overflow-y-auto px-4 py-2">
+          <div className="space-y-1">
+            {displayVariants.map((v) => {
+              const qty = quantities[v.id] || 0
+              const unitPrice = computeUnitPrice(v.price, v.title)
+              return (
+                <div
+                  key={v.id}
+                  className={`flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors ${
+                    qty > 0
+                      ? "bg-brand-orange/5 border border-brand-orange/20"
+                      : "border border-transparent"
+                  }`}
+                >
+                  <div className="flex-1 min-w-0">
+                    <span className="text-sm font-medium text-stone-700">
+                      {v.title}
+                    </span>
+                    <div className="flex items-baseline gap-2 mt-0.5">
+                      <span className="text-sm font-bold text-stone-900">
+                        {formatPrice(v.price)}
+                      </span>
+                      {unitPrice && (
+                        <span className="text-[11px] text-stone-400">
+                          {unitPrice}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-0 flex-shrink-0">
+                    <button
+                      onClick={() => handleQuantity(v.id, -1)}
+                      disabled={qty === 0}
+                      className="w-9 h-9 flex items-center justify-center text-base font-medium text-stone-500 hover:bg-stone-100 rounded-lg transition-colors disabled:opacity-20"
+                      style={{ minHeight: 48 }}
+                    >
+                      −
+                    </button>
+                    <span className="w-9 text-center text-sm font-semibold text-stone-900 tabular-nums">
+                      {qty}
+                    </span>
+                    <button
+                      onClick={() => handleQuantity(v.id, 1)}
+                      className="w-9 h-9 flex items-center justify-center text-base font-medium text-brand-orange hover:bg-brand-orange/10 rounded-lg transition-colors"
+                      style={{ minHeight: 48 }}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Sticky Footer: Total + Add to Basket */}
+        <div className="px-4 py-3 border-t border-stone-100 flex-shrink-0 bg-white">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-sm text-grey-50">
+            <span className="text-sm text-stone-500">
               {totalItems} item{totalItems !== 1 ? "s" : ""}
             </span>
-            <span className="text-lg font-bold text-grey-90">
+            <span className="text-lg font-bold text-stone-900">
               {formatPrice(totalPrice)}
             </span>
           </div>
           <button
             onClick={handleAddAll}
             disabled={totalItems === 0 || adding}
-            className="w-full py-3 bg-brand-orange text-white font-semibold rounded-xl hover:bg-brand-orange-dark active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed press-scale"
+            className="w-full py-3.5 bg-brand-orange text-white font-semibold rounded-xl hover:bg-brand-orange-dark active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{ minHeight: 48 }}
           >
             {adding ? "Adding..." : "Add to Basket"}
           </button>

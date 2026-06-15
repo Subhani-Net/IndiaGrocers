@@ -894,6 +894,13 @@ Each depends on prior items. Execute in order.
 | Cart cache invalidation on shipping method set | `e2e/features/checkout/checkout.feature` (cache scenario) | `revalidateTag("carts")` called in `setShippingMethod()` |
 | No `cache: "force-cache"` on dynamic data (cart, inventory) | `lib/data/cart.ts`, `lib/data/inventory.ts` | Cart = tag-based ISR, inventory = 10s ISR |
 | JSON-LD structured data on PDP matches inventory | `e2e/products/inventory-visibility.spec.ts` | `availability` field correct in `<script type="application/ld+json">` |
+| Order confirmation: retry polling with 4 exponential attempts | `order/confirmed/page.tsx`, `components/order-confirmation-client.tsx` | Polls at 0s, 1s, 2.5s, 4s intervals; terminates on first 200; shows failover after exhaustion |
+| Order confirmation: optimistic loading state | `order-confirmation-client.tsx:60-100` | Shows "Finishing your order... Please do not close or refresh" with `animate-pulse` skeleton receipts during polling |
+| Order confirmation: memory leak protection | `order-confirmation-client.tsx:26-27,80-85` | `cancelledRef` flag checked before every `setState`; `clearTimeout` on unmount with undefined guard |
+| Order confirmation: failover renders static receipt | `order-confirmation-client.tsx:135-188` | Green checkmark + order ID + "Refresh Page" + "View Order History" when all 4 retries fail |
+| Order confirmation: Repeat Order adds all items to cart | `order-completed-template.tsx:35-70` | Reads `order?.items`, calls `addToCart` per item, dispatches `cart-updated` event; states: idle → adding → ✓ Added to Cart |
+| Order confirmation: Order Status Tracker | `order-completed-template.tsx:75-117` | 3-stage timeline: "Order Received" (✓ green), "Processing" (animated spinner), "Out for Delivery" (pending) |
+| Order confirmation: error boundary | `order/[id]/confirmed/error.tsx` | Catches template crashes, shows "Order Confirmed" + "Try Again" + "Continue Shopping" |
 
 ### Architecture Invariants (must hold after any rebuild)
 
@@ -918,6 +925,9 @@ Each depends on prior items. Execute in order.
 | BDD — catalog inventory | `e2e/features/catalog/inventory-display.feature` | playwright-bdd | 7 scenarios |
 | BDD — checkout | `e2e/features/checkout/checkout.feature` | playwright-bdd | 18 scenarios (8 original + 10 new) |
 | BDD — payment flow | `e2e/features/checkout/payment-flow.feature` | playwright-bdd | 14 scenarios (10 original + 4 new) |
+| E2E — order confirmation polling | `e2e/checkout/order-confirmation-polling.spec.ts` | Playwright | 13 (5 describe blocks) |
+| BDD — order confirmation | `e2e/features/checkout/order-confirmation.feature` | playwright-bdd | 10 scenarios |
+| BDD — order confirmation steps | `e2e/features/checkout/order-confirmation.steps.ts` | playwright-bdd | ~30 step definitions |
 
 ### Run All Validation
 
@@ -930,6 +940,7 @@ node tests/verify-inventory-pipeline.mjs        # Pipeline verification
 npx playwright test e2e/products/inventory-visibility.spec.ts
 npx playwright test e2e/checkout/checkout-flow.spec.ts
 npx playwright test e2e/checkout/payment-flow.spec.ts
+npx playwright test e2e/checkout/order-confirmation-polling.spec.ts
 ```
 
 ### Navigation System — Rebuild Contracts
