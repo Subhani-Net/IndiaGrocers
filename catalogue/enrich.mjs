@@ -65,6 +65,9 @@ function parseCSVLine(line) {
 }
 
 function isActive(row) { const s = (row.status || "").toLowerCase(); return s !== "inactive" && s !== "draft" && s !== "deleted" }
+
+const UK_ALLERGENS = new Set(["celery","gluten","crustaceans","eggs","fish","lupin","milk","molluscs","mustard","tree-nuts","peanuts","sesame","soya","sulphites"])
+const REGIONAL_TAGS_SET = new Set(["punjabi","gujarati","south-indian","bengali","east-african-asian"])
 function autoBrandSlug(title) {
   if (!title) return "generic"
   // Map known brand names to whitelisted slugs
@@ -80,6 +83,11 @@ function autoBrandSlug(title) {
     "dabur": "dabur", "glucon-d": "glucon-d", "maaza": "maaza", "frooti": "frooti",
     "brooke bond": "brooke-bond", "tata gold": "tata-gold", "wagh bakri": "wagh-bakri",
     "hamdard": "hamdard", "girnar": "girnar",
+    "east end": "east-end", "east-end": "east-end",
+    "ashoka": "ashoka", "cadbury": "cadbury",
+    "hajmola": "hajmola", "chings": "chings-secret",
+    "laziza": "laziza", "national": "national-foods",
+    "idhayam": "idhayam",
   }
   const lower = title.toLowerCase()
   for (const [name, slug] of Object.entries(brandMap)) {
@@ -322,8 +330,9 @@ async function main() {
           
           const imgs = buildImages(firstRow)
           if (imgs) body.images = imgs
-          const tgs = buildTags(firstRow)
-          if (tgs) body.tags = tgs
+          // Tags — skip on CREATE (Medusa v2 requires pre-existing tag IDs)
+          // const tgs = buildTags(firstRow)
+          // if (tgs) body.tags = tgs
           if (firstRow.collection_handle) {
             const colId = dbCollections.get(firstRow.collection_handle)
             if (colId) body.collection_id = colId
@@ -366,13 +375,13 @@ async function main() {
           // Images
           const newImages = buildImages(firstRow)
           const currentImageUrls = (dbProduct.images || []).map(i => i.url).sort().join(",")
-          const newImageUrls = newImages.map(i => i.url).sort().join(",")
-          if (newImageUrls !== currentImageUrls && newImageUrls) updates.images = newImages
+          const newImageUrls = newImages ? newImages.map(i => i.url).sort().join(",") : ""
+          if (newImages && newImageUrls !== currentImageUrls) updates.images = newImages
 
-          // Tags
-          const newTags = buildTags(firstRow)
-          const currentTags = (dbProduct.tags || []).map(t => t.value).sort().join(",")
-          if (newTags.map(t => t.value).sort().join(",") !== currentTags) updates.tags = newTags
+          // Tags — skip on UPDATE (Medusa v2 requires pre-existing tag IDs)
+          // const newTags = buildTags(firstRow)
+          // const currentTags = (dbProduct.tags || []).map(t => t.value).sort().join(",")
+          // if (newTags && newTags.map(t => t.value).sort().join(",") !== currentTags) updates.tags = newTags
 
           // Metadata
           const dbMeta = dbProduct.metadata || {}
@@ -619,16 +628,16 @@ function buildProductMeta(row, dbMeta) {
     country_of_origin: dbMeta.country_of_origin || row.country_of_origin || "India",
     uk_food_business_operator: dbMeta.uk_food_business_operator || "IndiaGrocers London",
     ingredients: dbMeta.ingredients || row.ingredients || "See product packaging",
-    allergens: dbMeta.allergens || (row.allergens ? row.allergens.split(";").filter(Boolean) : []),
+    allergens: dbMeta.allergens || (row.allergens ? row.allergens.split(";").filter(Boolean).map(a => { const t = a.trim(); return t === "wheat" ? "gluten" : t }).filter(a => UK_ALLERGENS.has(a)) : []),
     vat_rate: dbMeta.vat_rate ?? (row.vat_rate ? parseFloat(row.vat_rate) : 0),
     velocity: dbMeta.velocity || "B",
     sourcing_tier: dbMeta.sourcing_tier || "B",
-    dietary_flags: row.dietary_flags ? row.dietary_flags.split(";").filter(Boolean) : (dbMeta.dietary_flags || []),
-    regional_tags: row.regional_tags ? row.regional_tags.split(";").filter(Boolean) : (dbMeta.regional_tags || []),
+    dietary_flags: row.dietary_flags ? row.dietary_flags.split(";").filter(Boolean).map(f => f.trim()) : (dbMeta.dietary_flags || []),
+    regional_tags: row.regional_tags ? row.regional_tags.split(";").filter(Boolean).filter(t => REGIONAL_TAGS_SET.has(t.trim())) : (dbMeta.regional_tags || []),
     subscription_eligible: dbMeta.subscription_eligible ?? (row.subscription_eligible === "true"),
     requires_fast_delivery: dbMeta.requires_fast_delivery ?? false,
     requires_cold_chain: dbMeta.requires_cold_chain ?? false,
-    brand_slug: row.brand_slug || dbMeta.brand_slug || autoBrandSlug(row.product_title || ""),
+    brand_slug: (row.brand_slug && row.brand_slug !== "0" ? row.brand_slug : "") || dbMeta.brand_slug || autoBrandSlug(row.product_title || ""),
     synonyms: dbMeta.synonyms || [],
   }
 

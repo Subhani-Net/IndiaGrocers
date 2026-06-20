@@ -67,6 +67,12 @@ export const productMetadataSchema = z.object({
     .array(z.string().min(1))
     .default([])
     .describe("Per-product alternate search terms (Hindi/Urdu/Tamil/English transliterations)"),
+
+  images: z.array(z.string()).default([])
+    .describe("Product images (filenames or URLs)"),
+
+  shelf_weight_kg: z.number().optional()
+    .describe("Gross packaged shelf weight in kg"),
 })
 
 export type ProductMetadataInput = z.infer<typeof productMetadataSchema>

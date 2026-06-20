@@ -1,0 +1,615 @@
+product_handle,variant_sku,variant_barcode,variant_title,weight_value,weight_unit,thumbnail_url,velocity,tags,allergens,ingredients,storage,country_of_origin,variant_title_raw,variant_sku_raw,sourcing_depot
+aashirvaad-atta-select,aashirvaad-aashirvaad-atta-select-5kg,GEN_aashirvaad-atta-select_5kg,5kg,5,kg,/images/products/aashirvaad-atta-select.jpg,B,,,See product packaging for full ingredients list,,India,5kg,Aashirvaad-aashirvaad-atta-select-v0,fresh_supplier
+aashirvaad-atta-select,aashirvaad-aashirvaad-atta-select-10kg,GEN_aashirvaad-atta-select_10kg,10kg,10,kg,/images/products/aashirvaad-atta-select.jpg,B,,,See product packaging,,India,10kg,MVC-aashirvaad-atta-select-10kg-v0,fresh_supplier
+ashoka-chana-masala,ashoka-chana-masala-280g,GEN_ashoka-chana-masala_280g,,280,g,/images/products/ashoka-chana-masala.png,A,,,See product packaging,Store in a cool dry place,India,Default,ashoka-chana-masala-280g,depot_c
+ashoka-dal-makhani,ashoka-dal-makhani-280g,GEN_ashoka-dal-makhani_280g,,280,g,/images/products/ashoka-dal-makhani.jpg,A,,milk,Contains milk; See product packaging,Store in a cool dry place,India,Default,ashoka-dal-makhani-280g,depot_c
+ashoka-mutter-paneer,ashoka-mutter-paneer-280g,GEN_ashoka-mutter-paneer_280g,,280,g,/images/products/ashoka-mutter-paneer.png,A,gluten-free,milk,Contains milk; See product packaging,Store in a cool dry place,India,Default,ashoka-mutter-paneer-280g,depot_c
+ashoka-palak-paneer,ashoka-palak-paneer-280g,GEN_ashoka-palak-paneer_280g,,280,g,/images/products/ashoka-palak-paneer.jpg,A,gluten-free,milk,Contains milk; See product packaging,Store in a cool dry place,India,Default,ashoka-palak-paneer-280g,depot_c
+ashoka-rajma-masala,ashoka-rajma-masala-280g,GEN_ashoka-rajma-masala_280g,,280,g,/images/products/ashoka-rajma-masala.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,ashoka-rajma-masala-280g,depot_c
+bikaji-gulab-jamun-tin,bikaji-gulab-jamun-tin-1kg,GEN_bikaji-gulab-jamun-tin_1kg,,1,kg,/images/products/bikaji-gulab-jamun-tin.png,A,,milk,Contains milk,Store in a cool dry place,India,Default,bikaji-gulab-jamun-tin-1kg,depot_b
+bikaji-khatta-meetha,bikaji-khatta-meetha-200g,GEN_bikaji-khatta-meetha_200g,,200,g,/images/products/bikaji-khatta-meetha.png,A,,,May contain peanuts,Store in a cool dry place,India,Default,bikaji-khatta-meetha-200g,depot_b
+bikaji-soan-papdi,bikaji-soan-papdi-500g,GEN_bikaji-soan-papdi_500g,,500,g,/images/products/bikaji-soan-papdi.png,A,,milk;wheat,Contains milk and wheat,Store in a cool dry place,India,Default,bikaji-soan-papdi-500g,depot_b
+britannia-good-day-butter-cookies,britannia-britannia-good-day-butter-cookies-150g,GEN_britannia-good-day-butter-cookies_150g,150g,150,g,/images/products/britannia-good-day-butter-cookies.jpg,B,,,See product packaging for full ingredients list,,India,150g,Britannia-britannia-good-day-butter-cookies-v0,depot_c
+britannia-good-day-cashew-cookies,britannia-britannia-good-day-cashew-cookies-150g,GEN_britannia-good-day-cashew-cookies_150g,150g,150,g,/images/products/britannia-good-day-cashew-cookies.jpg,B,,,See product packaging for full ingredients list,,India,150g,Britannia-britannia-good-day-cashew-cookies-v0,depot_c
+britannia-marie-gold,britannia-britannia-marie-gold-200g,GEN_britannia-marie-gold_200g,200g,200,g,/images/products/britannia-marie-gold.jpg,B,,,See product packaging for full ingredients list,,India,200g,Britannia-britannia-marie-gold-v0,depot_c
+brooke-bond-red-label,brooke-bond-tea-500g,GEN_brooke-bond-red-label_500g,500g,500,g,/images/products/brooke-bond-red-label.jpg,,,,Store in a cool dry place,India,500,brooke-bond-red-label-500g,,fresh_supplier
+brooke-bond-red-label,brooke-bond-tea-1kg,GEN_brooke-bond-red-label_1kg,1kg,1,kg,/images/products/brooke-bond-red-label.jpg,,,,Store in a cool dry place,India,1,brooke-bond-red-label-1kg,,fresh_supplier
+chings-schezwan-noodles,chings-schezwan-noodles-240g,GEN_chings-schezwan-noodles_240g,,240,g,/images/products/chings-schezwan-noodles.jpg,A,,wheat,Contains wheat,Store in a cool dry place,India,Default,chings-schezwan-noodles-240g,fresh_supplier
+chings-schezwan-sauce,chings-schezwan-sauce-250g,GEN_chings-schezwan-sauce_250g,,250,g,/images/products/chings-schezwan-sauce.jpg,A,,soya,Contains soya,Store in a cool dry place,India,Default,chings-schezwan-sauce-250g,fresh_supplier
+everest-garam-masala,everest-garam-masala-100g,GEN_everest-garam-masala_100g,,100,g,/images/products/everest-garam-masala.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,everest-garam-masala-100g,depot_b
+everest-pav-bhaji-masala,everest-pav-bhaji-100g,GEN_everest-pav-bhaji-masala_100g,,100,g,/images/products/everest-pav-bhaji-masala.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,everest-pav-bhaji-masala-100g,depot_b
+everest-sambhar-masala,everest-sambhar-masala-100g,GEN_everest-sambhar-masala_100g,,100,g,/images/products/everest-sambhar-masala.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,everest-sambhar-masala-100g,depot_b
+everest-tea-masala,everest-tea-masala-100g,GEN_everest-tea-masala_100g,,100,g,/images/products/everest-tea-masala.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,everest-tea-masala-100g,depot_b
+haldirams-aloo-bhujia,haldirams-haldirams-aloo-bhujia-400g,GEN_haldirams-aloo-bhujia_400g,400g,400,g,/uploads/haldirams-aloo-bhujia.jpg,B,,,See product packaging,,India,400g,MVC-haldirams-aloo-bhujia-400g-v0,depot_b
+haldirams-aloo-bhujia,haldirams-haldirams-aloo-bhujia-1kg,GEN_haldirams-aloo-bhujia_1kg,1kg,1,kg,/uploads/haldirams-aloo-bhujia.jpg,B,,,See product packaging,,India,1kg,MVC-haldirams-aloo-bhujia-1kg-v0,depot_b
+haldirams-gulab-jamun-tin,haldirams-haldirams-gulab-jamun-tin-500g,GEN_haldirams-gulab-jamun-tin_500g,500g,500,g,/images/products/haldirams-gulab-jamun-tin.png,B,,,See product packaging for full ingredients list,,India,500g,Haldiram's-haldirams-gulab-jamun-tin-v0,depot_b
+haldirams-gulab-jamun-tin,haldirams-haldirams-gulab-jamun-tin-1kg,GEN_haldirams-gulab-jamun-tin_1kg,1kg,1,kg,/images/products/haldirams-gulab-jamun-tin.png,B,,,See product packaging,,India,1kg,MVC-haldirams-gulab-jamun-tin-1kg-v0,depot_b
+haldirams-moong-dal,haldirams-haldirams-moong-dal-400g,GEN_haldirams-moong-dal_400g,400g,400,g,/images/products/haldirams-moong-dal.jpg,B,,,See product packaging,,India,400g,MVC-haldirams-moong-dal-400g-v0,depot_b
+haldirams-rasgulla-tin,haldirams-haldirams-rasgulla-tin-1kg,GEN_haldirams-rasgulla-tin_1kg,1kg,1,kg,/images/products/haldirams-rasgulla-tin.png,B,,,See product packaging for full ingredients list,,India,1kg,Haldiram's-haldirams-rasgulla-tin-v0,depot_b
+haldirams-soan-papdi,haldirams-haldirams-soan-papdi-500g,GEN_haldirams-soan-papdi_500g,500g,500,g,/images/products/haldirams-soan-papdi.png,B,,,See product packaging for full ingredients list,,India,500g,Haldiram's-haldirams-soan-papdi-v0,depot_b
+haldirams-mathri,haldirams-mathri-200g,GEN_haldirams-mathri_200g,,200,g,/images/products/haldirams-mathri.png,A,,wheat,Contains wheat gluten,Store in a cool dry place,India,Default,haldirams-mathri-200g,depot_b
+laziza-kheer-mix,laziza-kheer-mix-150g,GEN_laziza-kheer-mix_150g,,150,g,/images/products/laziza-kheer-mix.jpg,A,,milk,Contains milk; See product packaging,Store in a cool dry place,Pakistan,Default,laziza-kheer-mix-150g,depot_c
+laziza-rasmalai-mix,laziza-rasmalai-mix-200g,GEN_laziza-rasmalai-mix_200g,,200,g,/images/products/laziza-rasmalai-mix.jpg,A,,milk,Contains milk solids; See product packaging,Store in a cool dry place,Pakistan,Default,laziza-rasmalai-mix-200g,depot_c
+lg-asafoetida-hing,lg-hing-100g,GEN_lg-asafoetida-hing_100g,,100,g,/images/products/lg-asafoetida-hing.jpg,A,,asafoetida,See product packaging for full ingredients list,Store in a cool dry place,India,Default,lg-asafoetida-hing-100g,fresh_supplier
+maggi-2-minute-noodles-masala-4-pack,maggi-maggi-2-minute-noodles-masala-4-pack,GEN_maggi-2-minute-noodles-masala-4-pack_0,4-Pack,,,/images/products/maggi-2-minute-noodles-masala-4-pack.jpg,B,,,See product packaging for full ingredients list,,India,4-Pack,Maggi-maggi-2-minute-noodles-masala-v0,depot_c
+mdh-sambar-masala,mdh-sambar-masala-100g,GEN_mdh-sambar-masala_100g,,100,g,/images/products/mdh-sambar-masala.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,mdh-sambar-masala-100g,depot_b
+mtr-gulab-jamun-tin,mtr-gulab-jamun-tin-500g,GEN_mtr-gulab-jamun-tin_500g,,500,g,/images/products/mtr-gulab-jamun-tin.png,A,,milk,Contains milk,Store in a cool dry place,India,Default,mtr-gulab-jamun-tin-500g,depot_c
+mtr-idli-mix,mtr-idli-mix-500g,GEN_mtr-idli-mix_500g,,500,g,/images/products/mtr-idli-mix.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,mtr-idli-mix-500g,depot_c
+mtr-khaman-dhokla-mix,mtr-dhokla-mix-500g,GEN_mtr-khaman-dhokla-mix_500g,,500,g,/images/products/mtr-khaman-dhokla-mix.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,mtr-khaman-dhokla-mix-500g,depot_c
+mtr-rava-dosa-mix,mtr-rava-dosa-mix-500g,GEN_mtr-rava-dosa-mix_500g,,500,g,/images/products/mtr-rava-dosa-mix.jpg,A,,wheat,Contains wheat,Store in a cool dry place,India,Default,mtr-rava-dosa-mix-500g,depot_c
+mtr-rava-idli-mix,mtr-rava-idli-mix-500g,GEN_mtr-rava-idli-mix_500g,,500,g,/images/products/mtr-rava-idli-mix.jpg,A,,wheat,Contains wheat,Store in a cool dry place,India,Default,mtr-rava-idli-mix-500g,depot_c
+mtr-roasted-vermicelli,mtr-vermicelli-400g,GEN_mtr-roasted-vermicelli_400g,,400,g,/images/products/mtr-roasted-vermicelli.jpg,A,,wheat,Contains wheat,Store in a cool dry place,India,Default,mtr-roasted-vermicelli-400g,depot_c
+mtr-upma-mix,mtr-upma-mix-500g,GEN_mtr-upma-mix_500g,,500,g,/images/products/mtr-upma-mix.jpg,A,,wheat,Contains wheat,Store in a cool dry place,India,Default,mtr-upma-mix-500g,depot_c
+mtr-vada-mix,mtr-vada-mix-200g,GEN_mtr-vada-mix_200g,,200,g,/images/products/mtr-vada-mix.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,mtr-vada-mix-200g,depot_c
+14681551307137,natco-spiced-tea-masala-blend-160s,GEN_14681551307137_0,,,,/uploads/natco_spiced-tea-masala-blend-160s.jpg,A,,,See product packaging for full ingredients list,,India,Default,V6920,depot_b
+15097116393857,natco-lemon-juicetr,GEN_15097116393857_0,,,,/uploads/natco_lemon-juice-1-ltr.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1000,depot_b
+15097122881921,natco-lemon-juice-500ml,GEN_15097122881921_500ml,500ml,500,ml,/uploads/natco_lemon-juice-500ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1005,depot_b
+15097233015169,natco-lemon-juice-with-essential-oil-200ml,GEN_15097233015169_200ml,200ml,200,ml,/uploads/natco_lemon-juice-with-essential-oil-200ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1010,depot_b
+15383643226497,natco-pure-mustard-oiltr,GEN_15383643226497_0,,,,/uploads/natco_pure-mustard-oil-1ltr.jpg,A,,mustard,See product packaging for full ingredients list,,India,Default,C2273,depot_b
+15383683334529,natco-pure-mustard-oil-250ml,GEN_15383683334529_250ml,250ml,250,ml,/uploads/natco_pure-mustard-oil-250ml.jpg,A,,mustard,See product packaging for full ingredients list,,India,Default,C2275,depot_b
+4567655219272,natco-rose-water-310ml,4567655219272,310ml,310,ml,/uploads/natco_rose-water-310ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V6105,depot_b
+4567655284808,natco-kevda-water-310ml,4567655284808,310ml,310,ml,/uploads/natco_kevda-water-310ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V3205,depot_b
+4567655350344,natco-coconut-flavouring-essence-28ml,4567655350344,28ml,28,ml,/uploads/natco_coconut-flavouring-essence-28ml.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,V1196,depot_b
+4567655383112,natco-pineapple-flavouring-essence-28ml,4567655383112,28ml,28,ml,/uploads/natco_pineapple-flavouring-essence-28ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1192,depot_b
+4567655448648,natco-strawberry-flavouring-essence-28ml,4567655448648,28ml,28,ml,/uploads/natco_strawberry-flavouring-essence-28ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1188,depot_b
+4567655514184,natco-rose-flavouring-essence-28ml,4567655514184,28ml,28,ml,/uploads/natco_rose-flavouring-essence-28ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1182,depot_b
+4567655612488,natco-almond-flavouring-essence-28ml,4567655612488,28ml,28,ml,/uploads/natco_almond-flavouring-essence-28ml.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,V1176,depot_b
+4567655678024,natco-vanilla-flavouring-essence-28ml,4567655678024,28ml,28,ml,/uploads/natco_vanilla-flavouring-essence-28ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1172,depot_b
+4567655743560,natco-green-food-colouring-liquid-28ml,4567655743560,28ml,28,ml,/uploads/natco_green-food-colouring-liquid-28ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1160,depot_b
+4567655841864,natco-red-food-colouring-liquid-28ml,4567655841864,28ml,28,ml,/uploads/natco_red-food-colouring-liquid-28ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1156,depot_b
+4567655874632,natco-orange-food-colouring-liquid-28ml,4567655874632,28ml,28,ml,/uploads/natco_orange-food-colouring-liquid-28ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1152,depot_b
+4567655972936,natco-green-food-colouring-powder-25g,4567655972936,25g,25,g,/uploads/natco_green-food-colouring-powder-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1136,depot_b
+4567656005704,natco-red-food-colouring-powder-25g,4567656005704,25g,25,g,/uploads/natco_red-food-colouring-powder-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1132,depot_b
+4567656071240,natco-orange-food-colouring-powder-25g,4567656071240,25g,25,g,/uploads/natco_orange-food-colouring-powder-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1128,depot_b
+4567656104008,natco-yellow-food-colouring-powder-25g,4567656104008,25g,25,g,/uploads/natco_yellow-food-colouring-powder-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,V1124,depot_b
+4567656169544,natco-tandoori-masala-jar-100g,4567656169544,100g,100,g,/uploads/natco_tandoori-masala-jar-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T9307,depot_b
+4567656759368,natco-garam-masala-jar-80g,4567656759368,80g,80,g,/uploads/natco_garam-masala-jar-80g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T6154,depot_b
+4567656988744,natco-coriander-ground-jar-70g,4567656988744,70g,70,g,/uploads/natco_coriander-ground-jar-70g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T4354,depot_b
+4567657054280,natco-cloves-jar-50g,4567657054280,50g,50,g,/uploads/natco_cloves-jar-50g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T3907,depot_b
+4567657087048,natco-cinnamon-ground-jar-100g,4567657087048,100g,100,g,/uploads/natco_cinnamon-ground-jar-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T3807,depot_b
+4567657119816,natco-cassia-dalchini-jar-50g,4567657119816,50g,50,g,/uploads/natco_cassia-dalchini-jar-50g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T3507,depot_b
+4567657185352,natco-chilli-powder-hot-jar-100g,4567657185352,100g,100,g,/uploads/natco_chilli-powder-hot-jar-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T3352,depot_b
+4567657250888,natco-chilli-crushed-jar-80g,4567657250888,80g,80,g,/uploads/natco_chilli-crushed-jar-80g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T3252,depot_b
+4567657316424,natco-cardamom-green-jar-50g,4567657316424,50g,50,g,/uploads/natco_cardamom-green-jar-50g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T2252,depot_b
+4567657381960,natco-bay-leaves-jar-10g,4567657381960,10g,10,g,/uploads/natco_bay-leaves-jar-10g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T1952,depot_b
+4567657447496,natco-asafoetida-hing-jar-100g,4567657447496,100g,100,g,/uploads/natco_asafoetida-hing-jar-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T1752,depot_b
+4567657513032,natco-aniseed-star-jar-40g,4567657513032,40g,40,g,/uploads/natco_aniseed-star-jar-40g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T1554,depot_b
+4567657545800,natco-amchoor-powder-jar-100g,4567657545800,100g,100,g,/uploads/natco_amchoor-powder-jar-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T1307,depot_b
+4567657578568,natco-ajwan-seeds-jar-100g,4567657578568,100g,100,g,/uploads/natco_ajwan-seeds-jar-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T1107,depot_b
+4567657644104,natco-tandoori-masala-400g,4567657644104,400g,400,g,/uploads/natco_tandoori-masala-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,S9660,depot_b
+4567658135624,natco-mixed-masala-whole-300g,4567658135624,300g,300,g,/uploads/natco_mixed-masala-whole-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,S8360,depot_b
+4567658168392,natco-kasuri-methi-leaves-100g,4567658168392,100g,100,g,/uploads/natco_kasuri-methi-leaves-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,S8274,depot_b
+4567658627144,natco-garam-masala-400g,4567658627144,400g,400,g,/uploads/natco_garam-masala-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,S7260,depot_b
+4567659905096,natco-vermice-taposdini-fedelini-500g,4567659905096,500g,500,g,/uploads/natco_vermice-taposdini-fedelini-500g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R9380,depot_b
+4567660134472,natco-black-chia-seeds-250g,4567660134472,250g,250,g,/uploads/natco_black-chia-seeds-250g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R8480,depot_b
+4567660167240,natco-peanut-gachak-peanut-brittle-400g,4567660167240,400g,400,g,/uploads/natco_peanut-gachak-peanut-brittle-400g.jpg,A,,tree-nuts;peanuts,See product packaging for full ingredients list,,India,Default,R8416,depot_b
+4567660298312,natco-sugar-candy-375g,4567660298312,375g,375,g,/uploads/natco_sugar-candy-375g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R7560,depot_b
+4567660396616,natco-soya-mince-300g,4567660396616,300g,300,g,/uploads/natco_soya-mince-300g.jpg,A,,soya,See product packaging for full ingredients list,,India,Default,R7450,depot_b
+4567660527688,natco-soya-chunks-700g,GEN_4567660527688_700g,700g,700,g,/uploads/natco_soya-chunks-700g.jpg,A,,soya,See product packaging for full ingredients list,,India,Default,R7360,depot_b
+4567660527688,natco-soya-chunks-350g,GEN_4567660527688_350g,350g,350,g,/uploads/natco_soya-chunks-350g.jpg,A,,soya,See product packaging for full ingredients list,,India,Default,R7380,depot_b
+4567660560456,natco-sesame-seeds-hulled-15kg,4567660560456,1.5kg,1.5,kg,/uploads/natco_sesame-seeds-hulled-15kg.jpg,A,,sesame,See product packaging for full ingredients list,,India,Default,R7250,depot_b
+4567660593224,natco-sesame-seeds-natural-400g,4567660593224,400g,400,g,/uploads/natco_sesame-seeds-natural-400g.png,A,,sesame,See product packaging for full ingredients list,,India,Default,R7160,depot_b
+4567660658760,natco-sagoo-seeds-medium-15kg,4567660658760,1.5kg,1.5,kg,/uploads/natco_sagoo-seeds-medium-15kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R7091,depot_b
+4567660724296,natco-sunflower-seeds-1kg,GEN_4567660724296_1kg,1kg,1,kg,/uploads/natco_sunflower-seeds-1kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R7000,depot_b
+4567660724296,natco-sunflower-seeds-300g,GEN_4567660724296_300g,300g,300,g,/uploads/natco_sunflower-seeds-300g.png,A,,,See product packaging for full ingredients list,,India,Default,R7005,depot_b
+4567660757064,natco-powa-medium-flaked-rice-1kg,4567660757064,1kg,1,kg,/uploads/natco_powa-medium-flaked-rice-1kg.png,A,,,See product packaging for full ingredients list,,India,Default,R6750,depot_b
+4567660855368,natco-white-poppy-seeds-300g,GEN_4567660855368_300g,300g,300,g,/uploads/natco_white-poppy-seeds-300g.png,A,,,See product packaging for full ingredients list,,India,Default,R6550,depot_b
+4567660855368,natco-white-poppy-seeds-100g,GEN_4567660855368_100g,100g,100,g,/uploads/natco_white-poppy-seeds-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R6562,depot_b
+4567660920904,natco-linseed-brown-1kg,GEN_4567660920904_1kg,1kg,1,kg,/uploads/natco_linseed-brown-1kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R6410,depot_b
+4567660920904,natco-linseed-brown-400g,GEN_4567660920904_400g,400g,400,g,/uploads/natco_linseed-brown-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R6420,depot_b
+4567660953672,natco-pumpkin-seeds-250g,4567660953672,250g,250,g,/uploads/natco_pumpkin-seeds-250g.png,A,,,See product packaging for full ingredients list,,India,Default,R6250,depot_b
+4567661051976,natco-popcorn-2kg,GEN_4567661051976_2kg,2kg,2,kg,/uploads/natco_popcorn-2kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R6150,depot_b
+4567661051976,natco-popcorn-500g,GEN_4567661051976_500g,500g,500,g,/uploads/natco_popcorn-500g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R6160,depot_b
+4567661084744,natco-crispy-fried-onions-150g,GEN_4567661084744_150g,150g,150,g,/uploads/natco_crispy-fried-onions-150g.png,A,,,See product packaging for full ingredients list,,India,Default,R6035,depot_b
+4567661084744,natco-crispy-fried-onions-400g,GEN_4567661084744_400g,400g,400,g,/uploads/natco_crispy-fried-onions-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R6020,depot_b
+4567661183048,natco-jaggery-500g,4567661183048,500g,500,g,/uploads/natco_jaggery-500g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R5360,depot_b
+4567661248584,natco-daria-dal-300g,4567661248584,300g,300,g,/uploads/natco_daria-dal-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R4300,depot_b
+4567661281352,natco-phool-makhana-popped-lotus-seeds-100g,4567661281352,100g,100,g,/uploads/natco_phool-makhana-popped-lotus-seeds-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R4282,depot_b
+4567661314120,natco-daria-gotta-large-700g,4567661314120,700g,700,g,/uploads/natco_daria-gotta-large-700g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R4220,depot_b
+4567661379656,natco-daria-gotta-small-300g,4567661379656,300g,300,g,/uploads/natco_daria-gotta-small-300g.png,A,,,See product packaging for full ingredients list,,India,Default,R4200,depot_b
+4567661412424,natco-gram-roasted-salted-300g,4567661412424,300g,300,g,/uploads/natco_gram-roasted-salted-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R4160,depot_b
+4567661445192,natco-gram-roasted-unsalted-300g,4567661445192,300g,300,g,/uploads/natco_gram-roasted-unsalted-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R4150,depot_b
+4567661477960,natco-idli-rice-5kg,4567661477960,5kg,5,kg,/uploads/natco_idli-rice-5kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R1918,depot_b
+4567661543496,natco-ponni-rice-5kg,4567661543496,5kg,5,kg,/uploads/natco_ponni-rice-5kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R1818,depot_b
+4567661674568,natco-sona-masuri-rice-5kg,4567661674568,5kg,5,kg,/uploads/natco_sona-masuri-rice-5kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R1514,depot_b
+4567661772872,natco-easycook-parboiled-rice-5kg,4567661772872,5kg,5,kg,/uploads/natco_easycook-parboiled-rice-5kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R1455,depot_b
+4567661838408,natco-long-grain-white-rice-5kg,4567661838408,5kg,5,kg,/uploads/natco_long-grain-white-rice-5kg.jpg,A,,mustard,See product packaging for full ingredients list,,India,Default,R1404,depot_b
+4567661871176,natco-basmati-rice-kernel-5kg,4567661871176,5kg,5,kg,/uploads/natco_basmati-rice-kernel-5kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R1290,depot_b
+4567662002248,natco-basmati-rice-india-2kg,4567662002248,2kg,2,kg,/uploads/natco_basmati-rice-india-2kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R1140,depot_b
+4567662067784,natco-basmati-rice-india-bag-5kg,4567662067784,5kg,5,kg,/uploads/natco_basmati-rice-india-bag-5kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R1138,depot_b
+4567662166088,natco-pappadoms-madras-papa-brand-250g,4567662166088,250g,250,g,/uploads/natco_pappadoms-madras-papa-brand-250g.jpg,A,,,See product packaging for full ingredients list,,India,Default,P5100,depot_b
+4567662362696,natco-pappadoms-madras-coin-size-200g,4567662362696,200g,200,g,/uploads/natco_pappadoms-madras-coin-size-200g.jpg,A,,,See product packaging for full ingredients list,,India,Default,P5022,depot_b
+4567662461000,natco-pappadoms-punjabi-microwavable-200g,4567662461000,200g,200,g,/uploads/natco_pappadoms-punjabi-microwavable-200g.jpg,A,,,See product packaging for full ingredients list,,India,Default,P4510,depot_b
+4567662493768,natco-pappadoms-plain-microwavable-200g,4567662493768,200g,200,g,/uploads/natco_pappadoms-plain-microwavable-200g.jpg,A,,,See product packaging for full ingredients list,,India,Default,P4410,depot_b
+4567662526536,natco-pappadoms-jeera-microwavable-200g,4567662526536,200g,200,g,/uploads/natco_pappadoms-jeera-microwavable-200g.jpg,A,,,See product packaging for full ingredients list,,India,Default,P4310,depot_b
+4567662559304,natco-pappadoms-black-pepper-200g,4567662559304,200g,200,g,/uploads/natco_pappadoms-black-pepper-200g.jpg,A,,,See product packaging for full ingredients list,,India,Default,P4010,depot_b
+4567662919752,natco-luxury-fruit-nuts-mix-750g,4567662919752,750g,750,g,/uploads/natco_luxury-fruit-amp-nuts-mix-750g.png,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N5320,depot_b
+4567662952520,natco-luxury-fruit-nut-mix-250g,4567662952520,250g,250,g,/uploads/natco_luxury-fruit-amp-nut-mix-250g.png,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N5315,depot_b
+4567663214664,natco-pistachio-kernels-1kg,GEN_4567663214664_1kg,1kg,1,kg,/uploads/natco_pistachio-kernels-1kg.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N5250,depot_b
+4567663214664,natco-pistachio-kernels-250g,GEN_4567663214664_250g,250g,250,g,/uploads/natco_pistachio-kernels-250g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N5260,depot_b
+4567663214664,natco-pistachio-kernels-100g,GEN_4567663214664_100g,100g,100,g,/uploads/natco_pistachio-kernels-100g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N5270,depot_b
+4567663378504,natco-roasted-salted-pistachio-nuts-1kg,GEN_4567663378504_1kg,1kg,1,kg,/uploads/natco_roasted-amp-salted-pistachio-nuts-1kg.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N5150,depot_b
+4567663378504,natco-roasted-salted-pistachio-nuts-300g,GEN_4567663378504_300g,300g,300,g,/uploads/natco_roasted-amp-salted-pistachio-nuts-300g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N5160,depot_b
+4567663378504,natco-roasted-salted-pistachio-nuts-100g,GEN_4567663378504_100g,100g,100,g,/uploads/natco_roasted-amp-salted-pistachio-nuts-100g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N5170,depot_b
+4567663411272,natco-roasted-monkey-nuts-300g,4567663411272,300g,300,g,/uploads/natco_roasted-monkey-nuts-300g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N4317,depot_b
+4567663575112,natco-peanuts-red-1kg,GEN_4567663575112_1kg,1kg,1,kg,/uploads/natco_peanuts-red-1kg.jpg,A,,tree-nuts;peanuts,See product packaging for full ingredients list,,India,Default,N4150,depot_b
+4567663575112,natco-peanuts-red-400g,GEN_4567663575112_400g,400g,400,g,/uploads/natco_peanuts-red-400g.jpg,A,,tree-nuts;peanuts,See product packaging for full ingredients list,,India,Default,N4160,depot_b
+4567663607880,natco-coconut-halves-250g,4567663607880,250g,250,g,/uploads/natco_coconut-halves-250g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N3715,depot_b
+4567663673416,natco-coconut-flakes-200g,4567663673416,200g,200,g,/uploads/natco_coconut-flakes-200g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N3675,depot_b
+4567663804488,natco-coconut-milk-powder-300g,4567663804488,300g,300,g,/uploads/natco_coconut-milk-powder-300g.jpg,A,,milk;tree-nuts,See product packaging for full ingredients list,,India,Default,N3510,depot_b
+4567663837256,natco-coconut-desiccated-fine-300g,4567663837256,300g,300,g,/uploads/natco_coconut-desiccated-fine-300g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N3360,depot_b
+4567663870024,natco-coconut-desicated-medium-1kg,4567663870024,1kg,1,kg,/uploads/natco_coconut-desicated-medium-1kg.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N3250,depot_b
+4567664558152,natco-cashew-roasted-salted-250g,4567664558152,250g,250,g,/uploads/natco_cashew-roasted-salted-250g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N2615,depot_b
+4567664590920,natco-cashew-large-white-pieces-750g,4567664590920,750g,750,g,/uploads/natco_cashew-large-white-pieces-750g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N2415,depot_b
+4567664656456,natco-cashew-split-1kg,4567664656456,1kg,1,kg,/uploads/natco_cashew-split-1kg.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N2350,depot_b
+4567664689224,natco-cashew-kernel-300g,GEN_4567664689224_300g,300g,300,g,/uploads/natco_cashew-kernel-300g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N2260,depot_b
+4567664689224,natco-cashew-kernel-1kg,GEN_4567664689224_1kg,1kg,1,kg,/uploads/natco_cashew-kernel-1kg.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N2250,depot_b
+4567664787528,natco-walnut-halves-700g,GEN_4567664787528_700g,700g,700,g,/uploads/natco_walnut-halves-700g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1610,depot_b
+4567664787528,natco-walnut-halves-200g,GEN_4567664787528_200g,200g,200,g,/uploads/natco_walnut-halves-200g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1620,depot_b
+4567664820296,natco-pecans-200g,4567664820296,200g,200,g,/uploads/natco_pecans-200g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1550,depot_b
+4567664885832,natco-almond-blanched-whole-250g,4567664885832,250g,250,g,/uploads/natco_almond-blanched-whole-250g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1420,depot_b
+4567664918600,natco-blanched-almond-whole-700g,4567664918600,700g,700,g,/uploads/natco_blanched-almond-whole-700g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1410,depot_b
+4567664984136,natco-almond-flakes-1kg,GEN_4567664984136_1kg,1kg,1,kg,/uploads/natco_almond-flakes-1kg.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1350,depot_b
+4567664984136,natco-almond-flakes-300g,GEN_4567664984136_300g,300g,300,g,/uploads/natco_almond-flakes-300g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1360,depot_b
+4567665016904,natco-almonds-ground-300g,4567665016904,300g,300,g,/uploads/natco_almonds-ground-300g.png,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1260,depot_b
+4567665115208,natco-almonds-1kg,GEN_4567665115208_1kg,1kg,1,kg,/uploads/natco_almonds-1kg.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1140,depot_b
+4567665115208,natco-almonds-400g,GEN_4567665115208_400g,400g,400,g,/uploads/natco_almonds-400g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1160,depot_b
+4567665147976,natco-pavbhaji-masala-mangal-100g,4567665147976,100g,100,g,/uploads/natco_pavbhaji-masala-mangal-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,M2400,depot_b
+4567665180744,natco-biryani-masala-mangal-50g,4567665180744,50g,50,g,/uploads/natco_biryani-masala-mangal-50g.jpg,A,,,See product packaging for full ingredients list,,India,Default,M1550,depot_b
+4567665213512,natco-chicken-masala-mangal-100g,4567665213512,100g,100,g,/uploads/natco_chicken-masala-mangal-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,M1520,depot_b
+4567665279048,natco-sambhar-masala-mangal-100g,4567665279048,100g,100,g,/uploads/natco_sambhar-masala-mangal-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,M1450,depot_b
+4567665344584,natco-pickle-masala-mangal-125g,4567665344584,125g,125,g,/uploads/natco_pickle-masala-mangal-125g.png,A,,,See product packaging for full ingredients list,,India,Default,M1411,depot_b
+4567665377352,natco-meat-masala-mangal-100g,4567665377352,100g,100,g,/uploads/natco_meat-masala-mangal-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,M1360,depot_b
+4567665442888,natco-chat-masala-mangal-100g,4567665442888,100g,100,g,/uploads/natco_chat-masala-mangal-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,M1210,depot_b
+4567665475656,natco-chana-masala-mangal-100g,4567665475656,100g,100,g,/uploads/natco_chana-masala-mangal-100g.png,A,,,See product packaging for full ingredients list,,India,Default,M1100,depot_b
+4567665508424,natco-anardana-powder-mangal-100g,4567665508424,100g,100,g,/uploads/natco_anardana-powder-mangal-100g.jpg,A,,,See product packaging for full ingredients list,,India,Default,M1000,depot_b
+4567665573960,natco-soya-beans-2kg,GEN_4567665573960_2kg,2kg,2,kg,/uploads/natco_soya-beans-2kg.jpg,A,,soya,See product packaging for full ingredients list,,India,Default,L9550,depot_b
+4567665573960,natco-soya-beans-500g,GEN_4567665573960_500g,500g,500,g,/uploads/natco_soya-beans-500g.jpg,A,,soya,See product packaging for full ingredients list,,India,Default,L9560,depot_b
+4567666524232,natco-red-lentils-polished-2kg,GEN_4567666524232_2kg,2kg,2,kg,/uploads/natco_red-lentils-polished-2kg.jpg,A,,sesame,See product packaging for full ingredients list,,India,Default,L6150,depot_b
+4567666524232,natco-red-lentils-polished-1kg,GEN_4567666524232_1kg,1kg,1,kg,/uploads/natco_red-lentils-polished-2kg.jpg,B,,sesame,Red Lentils Polished 1kg,,India,Default,L6148,depot_b
+4567666917448,natco-mung-dal-yellow-1kg,GEN_4567666917448_1kg,1kg,1,kg,/uploads/natco_mung-dal-yellow-1kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L4368,depot_b
+4567666917448,natco-mung-dal-yellow-2kg,GEN_4567666917448_2kg,2kg,2,kg,/uploads/natco_mung-dal-yellow-1kg.jpg,B,,,Mung Dal Yellow 2kg,,India,Default,L4370,depot_b
+4567666982984,natco-mung-split-2kg,GEN_4567666982984_2kg,2kg,2,kg,/uploads/natco_mung-split-2kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L4250,depot_b
+4567666982984,natco-mung-split-500g,GEN_4567666982984_500g,500g,500,g,/uploads/natco_mung-split-500g.jpg,A,,,See product packaging for full ingredients list,,India,Default,L4260,depot_b
+4567667081288,natco-mung-beans-1kg,GEN_4567667081288_1kg,1kg,1,kg,/uploads/natco_mung-beans-1kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L4157,depot_b
+4567667081288,natco-mung-beans-2kg,GEN_4567667081288_2kg,2kg,2,kg,/uploads/natco_mung-beans-2kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L4160,depot_b
+4567667212360,natco-green-lentils-1kg,GEN_4567667212360_1kg,1kg,1,kg,/uploads/natco_green-lentils-1kg.jpg,A,,sesame,See product packaging for full ingredients list,,India,Default,L3548,depot_b
+4567667212360,natco-green-lentils-2kg,GEN_4567667212360_2kg,2kg,2,kg,/uploads/natco_green-lentils-2kg.jpg,A,,sesame,See product packaging for full ingredients list,,India,Default,L3550,depot_b
+4567667310664,natco-chanadal-polished-2kg,GEN_4567667310664_2kg,2kg,2,kg,/uploads/natco_chanadal-polished-2kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L2160,depot_b
+4567667310664,natco-chanadal-polished-1kg,GEN_4567667310664_1kg,1kg,1,kg,/uploads/natco_chanadal-polished-1kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L2178,depot_b
+4567667376200,natco-brown-lentils-2kg,GEN_4567667376200_2kg,2kg,2,kg,/uploads/natco_brown-lentils-2kg.png,A,,sesame,See product packaging for full ingredients list,,India,Default,L1550,depot_b
+4567667376200,natco-brown-lentils-500g,GEN_4567667376200_500g,500g,500,g,/uploads/natco_brown-lentils-500g.jpg,A,,sesame,See product packaging for full ingredients list,,India,Default,L1560,depot_b
+4567667474504,natco-butter-beans-2kg,GEN_4567667474504_2kg,2kg,2,kg,/uploads/natco_butter-beans-2kg.png,A,,milk,See product packaging for full ingredients list,,India,Default,L1350,depot_b
+4567667474504,natco-butter-beans-500g,GEN_4567667474504_500g,500g,500,g,/uploads/natco_butter-beans-500g.png,A,,milk,See product packaging for full ingredients list,,India,Default,L1360,depot_b
+4567667572808,natco-black-eye-beans-2kg,GEN_4567667572808_2kg,2kg,2,kg,/uploads/natco_black-eye-beans-2kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L1150,depot_b
+4567667572808,natco-black-eye-beans-500g,GEN_4567667572808_500g,500g,500,g,/uploads/natco_black-eye-beans-500g.png,A,,,See product packaging for full ingredients list,,India,Default,L1160,depot_b
+4567667638344,natco-alubia-beans-2kg,GEN_4567667638344_2kg,2kg,2,kg,/uploads/natco_alubia-beans-2kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L1010,depot_b
+4567667638344,natco-alubia-beans-500g,GEN_4567667638344_500g,500g,500,g,/uploads/natco_alubia-beans-500g.jpg,A,,,See product packaging for full ingredients list,,India,Default,L1020,depot_b
+4567667671112,natco-coconut-water-330ml,GEN_4567667671112_330ml,330ml,330,ml,/uploads/natco_coconut-water-330ml.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,J3172,depot_b
+4567667671112,natco-coconut-water-1l,GEN_4567667671112_1l,1l,1,l,/uploads/natco_coconut-water-1l.png,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,J3170,depot_b
+4567667769416,natco-rose-syrup-725ml,4567667769416,725ml,725,ml,/uploads/natco_rose-syrup-725ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,J3003,depot_b
+4567667834952,natco-dried-tarragon-25g,4567667834952,25g,25,g,/uploads/natco_dried-tarragon-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H6522,depot_b
+4567667867720,natco-sage-jar-25g,4567667867720,25g,25,g,/uploads/natco_sage-jar-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H6022,depot_b
+4567667933256,natco-parsley-jar-25g,4567667933256,25g,25,g,/uploads/natco_parsley-jar-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H5022,depot_b
+4567667966024,natco-oregano-jar-25g,4567667966024,25g,25,g,/uploads/natco_oregano-jar-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H4522,depot_b
+4567668064328,natco-mixed-herbs-jar-25g,4567668064328,25g,25,g,/uploads/natco_mixed-herbs-jar-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H3722,depot_b
+4567668097096,natco-mint-jar-30g,4567668097096,30g,30,g,/uploads/natco_mint-jar-30g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H3626,depot_b
+4567668162632,natco-marjoram-jar-20g,4567668162632,20g,20,g,/uploads/natco_marjoram-jar-20g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H3524,depot_b
+4567668195400,natco-coriander-leaves-jar-25g,4567668195400,25g,25,g,/uploads/natco_coriander-leaves-jar-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H2122,depot_b
+4567668260936,natco-basil-jar-25g,4567668260936,25g,25,g,/uploads/natco_basil-jar-25g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H1022,depot_b
+4567668326472,natco-milk-powder-750g,GEN_4567668326472_750g,750g,750,g,/uploads/natco_milk-powder-750g.jpg,A,,milk,See product packaging for full ingredients list,,India,Default,G1050,depot_b
+4567668326472,natco-milk-powder-300g,GEN_4567668326472_300g,300g,300,g,/uploads/natco_milk-powder-300g.png,A,,milk,See product packaging for full ingredients list,,India,Default,G1060,depot_b
+4567668523080,natco-ragi-flour-900g,4567668523080,900g,900,g,/uploads/natco_ragi-flour-900g.jpg,A,,,See product packaging for full ingredients list,,India,Default,F7120,depot_b
+4567668555848,natco-millet-bajri-flour-900g,4567668555848,900g,900,g,/uploads/natco_millet-bajri-flour-900g.jpg,A,,,See product packaging for full ingredients list,,India,Default,F7115,depot_b
+4567668588616,natco-couscous-500g,4567668588616,500g,500,g,/uploads/natco_couscous-500g.jpg,A,,,See product packaging for full ingredients list,,India,Default,F7110,depot_b
+4567668621384,natco-semolina-extra-coarse-15kg,4567668621384,1.5kg,1.5,kg,/uploads/natco_semolina-extra-coarse-15kg.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F6350,depot_b
+4567668719688,natco-semolina-coarse-15kg,GEN_4567668719688_1.5kg,1.5kg,1.5,kg,/uploads/natco_semolina-coarse-15kg.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F6250,depot_b
+4567668719688,natco-semolina-coarse-500g,GEN_4567668719688_500g,500g,500,g,/uploads/natco_semolina-coarse-500g.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F6260,depot_b
+4567668817992,natco-semolina-fine-15kg,GEN_4567668817992_1.5kg,1.5kg,1.5,kg,/uploads/natco_semolina-fine-15kg.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F6150,depot_b
+4567668817992,natco-semolina-fine-500g,GEN_4567668817992_500g,500g,500,g,/uploads/natco_semolina-fine-500g.png,A,,gluten,See product packaging for full ingredients list,,India,Default,F6160,depot_b
+4567668850760,natco-rice-flour-500g,4567668850760,500g,500,g,/uploads/natco_rice-flour-500g.jpg,A,,,See product packaging for full ingredients list,,India,Default,F5160,depot_b
+4567668981832,natco-ground-rice-15kg,GEN_4567668981832_1.5kg,1.5kg,1.5,kg,/uploads/natco_ground-rice-15kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,F4150,depot_b
+4567668981832,natco-ground-rice-500g,GEN_4567668981832_500g,500g,500,g,/uploads/natco_ground-rice-500g.png,A,,,See product packaging for full ingredients list,,India,Default,F4160,depot_b
+4567669047368,natco-gram-flour-papa-brand-2kg,4567669047368,2kg,2,kg,/uploads/natco_gram-flour-papa-brand-2kg.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F3353,depot_b
+4567669309512,natco-gram-flour-superfine-2kg,GEN_4567669309512_2kg,2kg,2,kg,/uploads/natco_gram-flour-superfine-2kg.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F3253,depot_b
+4567669309512,natco-gram-flour-superfine-1kg,GEN_4567669309512_1kg,1kg,1,kg,/uploads/natco_gram-flour-superfine-1kg.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F3263,depot_b
+4567669309512,natco-gram-flour-superfine-500g,GEN_4567669309512_500g,500g,500,g,/uploads/natco_gram-flour-superfine-500g.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F3273,depot_b
+4567669342280,natco-white-maize-meal-15kg,4567669342280,1.5kg,1.5,kg,/uploads/natco_white-maize-meal-15kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,F2320,depot_b
+4567669506120,natco-cornmeal-medium-15kg,GEN_4567669506120_1.5kg,1.5kg,1.5,kg,/uploads/natco_cornmeal-medium-15kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,F2250,depot_b
+4567669506120,natco-cornmeal-medium-500g,GEN_4567669506120_500g,500g,500,g,/uploads/natco_cornmeal-medium-500g.jpg,A,,,See product packaging for full ingredients list,,India,Default,F2260,depot_b
+4567669604424,natco-cornmeal-fine-15kg,GEN_4567669604424_1.5kg,1.5kg,1.5,kg,/uploads/natco_cornmeal-fine-15kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,F2150,depot_b
+4567669604424,natco-cornmeal-fine-500g,GEN_4567669604424_500g,500g,500,g,/uploads/natco_cornmeal-fine-500g.png,A,,,See product packaging for full ingredients list,,India,Default,F2160,depot_b
+4567669735496,natco-chakki-atta-multigrain-5kg,4567669735496,5kg,5,kg,/uploads/natco_chakki-atta-multigrain-5kg.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F1626,depot_b
+4567669833800,natco-chapati-flour-medium-15kg,4567669833800,1.5kg,1.5,kg,/uploads/natco_chapati-flour-medium-15kg.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F1250,depot_b
+4567669866568,natco-chapati-flour-white-15kg,4567669866568,1.5kg,1.5,kg,/uploads/natco_chapati-flour-white-15kg.jpg,A,,gluten,See product packaging for full ingredients list,,India,Default,F1150,depot_b
+4567669932104,natco-golden-raisins-1kg,GEN_4567669932104_1kg,1kg,1,kg,/uploads/natco_golden-raisins-1kg.jpg,A,,mustard,See product packaging for full ingredients list,,India,Default,D4150,depot_b
+4567669932104,natco-golden-raisins-100g,GEN_4567669932104_100g,100g,100,g,/uploads/natco_golden-raisins-100g.jpg,A,,mustard,See product packaging for full ingredients list,,India,Default,D4170,depot_b
+4567670030408,natco-toovar-400g,4567670030408,400g,400,g,/uploads/natco_toovar-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C7110,depot_b
+4567670095944,natco-suran-yam-400g,4567670095944,400g,400,g,/uploads/natco_suran-yam-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C7100,depot_b
+4567670161480,natco-punjabi-tinda-full-case-12x400g-400g,4567670161480,400g,400,g,/uploads/natco_punjabi-tinda-full-case-12x400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C7090,depot_b
+4567670423624,natco-okra-full-case-12x400g-400g,4567670423624,400g,400,g,/uploads/natco_okra-full-case-12x400g.png,A,,,See product packaging for full ingredients list,,India,Default,C7060,depot_b
+4567670521928,natco-lotus-root-400g,4567670521928,400g,400,g,/uploads/natco_lotus-root-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C7050,depot_b
+4567670620232,natco-karela-400g,4567670620232,400g,400,g,/uploads/natco_karela-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C7040,depot_b
+4567670816840,natco-sarson-ka-saag-450g,4567670816840,450g,450,g,/uploads/natco_sarson-ka-saag-450g.jpg,A,,mustard,See product packaging for full ingredients list,,India,Default,C6000,depot_b
+4567670915144,natco-patra-400g,4567670915144,400g,400,g,/uploads/natco_patra-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C5110,depot_b
+4567670980680,natco-tomatoes-chopped-full-case-12x400g-400g,4567670980680,400g,400,g,/uploads/natco_tomatoes-chopped-full-case-12x400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2860,depot_b
+4567671144520,natco-tomatoes-peeled-400g,4567671144520,400g,400,g,/uploads/natco_tomatoes-peeled-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2820,depot_b
+4567671210056,natco-tomato-paste-800g,4567671210056,800g,800,g,/uploads/natco_tomato-paste-800g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2675,depot_b
+4567671406664,natco-spinach-leaf-396g,4567671406664,396g,396,g,/uploads/natco_spinach-leaf-396g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2410,depot_b
+4567671504968,natco-rose-coco-borlotti-beans-400g,GEN_4567671504968_400g,400g,400,g,/uploads/natco_rose-coco-borlotti-beans-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2310,depot_b
+4567671504968,natco-rose-coco-borlotti-beans-2kg,GEN_4567671504968_2kg,2kg,2,kg,/uploads/natco_rose-coco-borlotti-beans-400g.jpg,B,,,Rose Coco (Borlotti) Beans 2kg,,India,Default,L6350,depot_b
+4567671504968,natco-rose-coco-borlotti-beans-500g,GEN_4567671504968_500g,500g,500,g,/uploads/natco_rose-coco-borlotti-beans-400g.jpg,B,,,Rose Coco (Borlotti) Beans 500g,,India,Default,L6360,depot_b
+4567671832648,natco-coconut-oil-parachute-brand-500ml,4567671832648,500ml,500,ml,/uploads/natco_coconut-oil-parachute-brand-500ml.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,C2170,depot_b
+4567671865416,natco-olive-oil-extra-virgin-500ml,4567671865416,500ml,500,ml,/uploads/natco_olive-oil-extra-virgin-500ml.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2117,depot_b
+4567671930952,natco-mango-pulp-kesar-850g,4567671930952,850g,850,g,/uploads/natco_mango-pulp-kesar-850g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C1815,depot_b
+4567671963720,natco-mango-slices-alphonso-425g,4567671963720,425g,425,g,/uploads/natco_mango-slices-alphonso-425g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C1750,depot_b
+4567671996488,natco-mango-pulp-alphonso-450g,4567671996488,450g,450,g,/uploads/natco_mango-pulp-alphonso-450g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C1730,depot_b
+4567672029256,natco-ghee-pure-butter-1kg,4567672029256,1kg,1,kg,/uploads/natco_ghee-pure-butter-1kg.jpg,A,,milk,See product packaging for full ingredients list,,India,Default,C1510,depot_b
+4567672127560,natco-ghee-pure-plough-brand-500g,4567672127560,500g,500,g,/uploads/natco_ghee-pure-plough-brand-500g.jpg,A,,milk,See product packaging for full ingredients list,,India,Default,C1435,depot_b
+4567672193096,natco-kala-chana-boiled-400g,4567672193096,400g,400,g,/uploads/natco_kala-chana-boiled-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C1130,depot_b
+4567672488008,natco-coconut-cream-400ml,4567672488008,400ml,400,ml,/uploads/natco_coconut-cream-400ml.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,C1025,depot_b
+4567672553544,natco-coconut-milk-light-400ml,4567672553544,400ml,400,ml,/uploads/natco_coconut-milk-light-400ml.jpg,A,,milk;tree-nuts,See product packaging for full ingredients list,,India,Default,C1020,depot_b
+4567672619080,natco-coconut-milk-400ml,4567672619080,400ml,400,ml,/uploads/natco_coconut-milk-400ml.jpg,A,,milk;tree-nuts,See product packaging for full ingredients list,,India,Default,C1015,depot_b
+4567672651848,natco-coriander-mint-sauce-340g,4567672651848,340g,340,g,/uploads/natco_coriander-mint-sauce-340g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2285,depot_b
+4567672717384,natco-tamarind-date-sauce-340g,4567672717384,340g,340,g,/uploads/natco_tamarind-amp-date-sauce-340g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2280,depot_b
+4567672750152,natco-garlic-chilli-sauce-340g,4567672750152,340g,340,g,/uploads/natco_garlic-amp-chilli-sauce-340g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2270,depot_b
+4567672815688,natco-chilli-sauce-hot-310g,4567672815688,310g,310,g,/uploads/natco_chilli-sauce-hot-310g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2265,depot_b
+4567672848456,natco-tamarind-sauce-340g,4567672848456,340g,340,g,/uploads/natco_tamarind-sauce-340g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2260,depot_b
+4567672881224,natco-bombay-sandwich-spread-280g,4567672881224,280g,280,g,/uploads/natco_bombay-sandwich-spread-280g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2201,depot_b
+4567672913992,natco-garlic-ginger-paste-190g,4567672913992,190g,190,g,/uploads/natco_garlic-amp-ginger-paste-190g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2090,depot_b
+4567672946760,natco-ginger-paste-190g,4567672946760,190g,190,g,/uploads/natco_ginger-paste-190g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2085,depot_b
+4567672979528,natco-garlic-paste-190g,4567672979528,190g,190,g,/uploads/natco_garlic-paste-190g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2080,depot_b
+4567673012296,natco-garlic-pickle-300g,4567673012296,300g,300,g,/uploads/natco_garlic-pickle-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2070,depot_b
+4567673045064,natco-mango-chutney-sweet-340g,4567673045064,340g,340,g,/uploads/natco_mango-chutney-sweet-340g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2065,depot_b
+4567673077832,natco-mango-chutney-spicy-340g,4567673077832,340g,340,g,/uploads/natco_mango-chutney-spicy-340g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2060,depot_b
+4567673143368,natco-thecha-chilli-paste-300g,4567673143368,300g,300,g,/uploads/natco_thecha-chilli-paste-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2050,depot_b
+4567673208904,natco-brinjal-chutney-sweet-300g,4567673208904,300g,300,g,/uploads/natco_brinjal-chutney-sweet-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2035,depot_b
+4567673241672,natco-chundo-chutney-sweet-340g,4567673241672,340g,340,g,/uploads/natco_chundo-chutney-sweet-340g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2030,depot_b
+4567673274440,natco-gorkeri-chutney-sweet-300g,4567673274440,300g,300,g,/uploads/natco_gorkeri-chutney-sweet-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2025,depot_b
+4567673405512,natco-lime-pickle-hot-300g,4567673405512,300g,300,g,/uploads/natco_lime-pickle-hot-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2015,depot_b
+4567673438280,natco-mixed-pickle-300g,4567673438280,300g,300,g,/uploads/natco_mixed-pickle-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2010,depot_b
+4567673602120,natco-chilli-pickle-hot-300g,4567673602120,300g,300,g,/uploads/natco_chilli-pickle-hot-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2005,depot_b
+4567673667656,natco-mango-pickle-hot-300g,4567673667656,300g,300,g,/uploads/natco_mango-pickle-hot-300g.jpg,A,,,See product packaging for full ingredients list,,India,Default,A2000,depot_b
+4583223066696,natco-chick-peas-25kg,GEN_4583223066696_2.5kg,2.5kg,2.5,kg,/uploads/natco_chick-peas-25kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,C1100,depot_b
+4583223066696,natco-chick-peas-2kg,GEN_4583223066696_2kg,2kg,2,kg,/uploads/natco_chick-peas-2kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L3160,depot_b
+4583223165000,natco-chick-peas-full-case-12x400g-400g,4583223165000,400g,400,g,/uploads/natco_chick-peas-full-case-12x400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C1110,depot_b
+4583223263304,natco-pomace-olive-oil-5-litre,GEN_4583223263304_5l,5l,5,l,/uploads/natco_pomace-olive-oil-5-litre.png,A,,,See product packaging for full ingredients list,,India,Default,C2105,depot_b
+4583223263304,natco-pomace-olive-oil-1-litre,GEN_4583223263304_1l,1l,1,l,/uploads/natco_pomace-olive-oil-1-litre.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2115,depot_b
+4583223296072,natco-pomace-olive-oil-blenditres,4583223296072,,,,/uploads/natco_pomace-olive-oil-blend-3-litres.png,A,,,See product packaging for full ingredients list,,India,Default,C2110,depot_b
+4583223361608,natco-red-kidney-beans-boiled-full-case-12x400g-400g,4583223361608,400g,400,g,/uploads/natco_red-kidney-beans-boiled-full-case-12x400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2300,depot_b
+4583223394376,natco-red-kidney-beans-25kg,GEN_4583223394376_2.5kg,2.5kg,2.5,kg,/uploads/natco_red-kidney-beans-25kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2305,depot_b
+4583223394376,natco-red-kidney-beans-1kg,GEN_4583223394376_1kg,1kg,1,kg,/uploads/natco_red-kidney-beans-1kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L5748,depot_b
+4583223394376,natco-red-kidney-beans-2kg,GEN_4583223394376_2kg,2kg,2,kg,/uploads/natco_red-kidney-beans-2kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L5750,depot_b
+4583223754824,natco-chick-peas-full-case-4x1kg-1kg,4583223754824,1kg,1,kg,/uploads/natco_chick-peas-full-case-4x1kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,L3158,depot_b
+4583223853128,natco-coconut-flour-200g,GEN_4583223853128_200g,200g,200,g,/uploads/natco_coconut-flour-200g.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N3455,depot_b
+4583223853128,natco-coconut-flour-1kg,GEN_4583223853128_1kg,1kg,1,kg,/uploads/natco_coconut-flour-1kg.jpg,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N3450,depot_b
+4583224016968,natco-all-purpose-seasoning-100g,GEN_4583224016968_100g,100g,100,g,/uploads/natco_all-purpose-seasoning-100g.png,A,,,See product packaging for full ingredients list,,India,Default,S1420,depot_b
+4583224016968,natco-all-purpose-seasoning-400g,GEN_4583224016968_400g,400g,400,g,/uploads/natco_all-purpose-seasoning-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,S1410,depot_b
+4641502855240,natco-pine-nuts-75g,4641502855240,75g,75,g,/uploads/natco_pine-nuts-75g.png,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,N1705,depot_b
+4641506558024,natco-mamra-basmati-908g,GEN_4641506558024_908g,908g,908,g,/uploads/natco_mamra-basmati-908g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R6910,depot_b
+4641506558024,natco-mamra-basmati-200g,GEN_4641506558024_200g,200g,200,g,/uploads/natco_mamra-basmati-200g.jpg,A,,,See product packaging for full ingredients list,,India,Default,R6960,depot_b
+5864191590472,natco-big-d-salted-peanuts-24x50g-50g,5864191590472,50g,50,g,/uploads/natco_big-d-salted-peanuts-24x50g.png,A,,tree-nuts;peanuts,See product packaging for full ingredients list,,India,Default,TRI06301,depot_b
+5864194801736,natco-big-d-honey-roast-peanuts-12x50g-packs-on-a-pub-card-12x50g,5864194801736,12x50g,,,/uploads/natco_big-d-honey-roast-peanuts-12x50g-packs-on-a-pub-card.jpg,A,,tree-nuts;peanuts,See product packaging for full ingredients list,,India,Default,TRI06380,depot_b
+6535757660232,natco-bhel-puri-kit-500g,6535757660232,500g,500,g,/uploads/natco_bhel-puri-kit-500g.jpg,A,,gluten;peanuts,See product packaging for full ingredients list,,India,Default,C7510,depot_b
+6562924986440,natco-big-d-salted-cashews-12x30g-cards-12x30g,6562924986440,12x30g,,,/uploads/natco_big-d-salted-cashews-12x30g-cards.png,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,TRI06352,depot_b
+6579342409800,natco-white-kidney-beans-400g,6579342409800,400g,400,g,/uploads/natco_white-kidney-beans-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2350,depot_b
+6617796804680,natco-spinach-puree-395g,GEN_6617796804680_395g,395g,395,g,/uploads/natco_spinach-puree-395g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2510,depot_b
+6617796804680,natco-spinach-puree-794g,GEN_6617796804680_794g,794g,794,g,/uploads/natco_spinach-puree-794g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2500,depot_b
+6647387652168,natco-black-eyed-beans-400g,6647387652168,400g,400,g,/uploads/natco_black-eyed-beans-400g.jpg,A,,,See product packaging for full ingredients list,,India,Default,C2330,depot_b
+6666589044808,natco-pure-sesame-oil-1-litre,GEN_6666589044808_1l,1l,1,l,/uploads/natco_pure-sesame-oil-1-litre.png,A,,sesame,See product packaging for full ingredients list,,India,Default,C2260,depot_b
+6666589044808,natco-pure-sesame-oil-250ml,GEN_6666589044808_250ml,250ml,250,ml,/uploads/natco_pure-sesame-oil-250ml.png,A,,sesame,See product packaging for full ingredients list,,India,Default,C2255,depot_b
+6666589306952,natco-groundnut-oil-1-litre,6666589306952,1 Litre,1,l,/uploads/natco_groundnut-oil-1-litre.png,A,,tree-nuts;peanuts,See product packaging for full ingredients list,,India,Default,C2210,depot_b
+6666589536328,natco-pure-linseed-oil-250ml,6666589536328,250ml,250,ml,/uploads/natco_pure-linseed-oil-250ml.png,A,,,See product packaging for full ingredients list,,India,Default,C2265,depot_b
+6666591010888,natco-castor-oil-250ml,6666591010888,250ml,250,ml,/uploads/natco_castor-oil-250ml.png,A,,,See product packaging for full ingredients list,,India,Default,C2250,depot_b
+6666608541768,natco-almond-oil-500ml,GEN_6666608541768_500ml,500ml,500,ml,/uploads/natco_almond-oil-500ml.png,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,C2282,depot_b
+6666608541768,natco-almond-oil-250ml,GEN_6666608541768_250ml,250ml,250,ml,/uploads/natco_almond-oil-250ml.png,A,,tree-nuts,See product packaging for full ingredients list,,India,Default,C2280,depot_b
+6804638728264,natco-rosemary-jar-40g,6804638728264,40g,40,g,/uploads/natco_rosemary-jar-40g.jpg,A,,,See product packaging for full ingredients list,,India,Default,H5524,depot_b
+6804650754120,natco-demerara-sugar-500g,GEN_6804650754120_500g,500g,500,g,/uploads/natco_demerara-sugar-500g.png,A,,,See product packaging for full ingredients list,,India,Default,R7512,depot_b
+6804650754120,natco-demerara-sugar-15kg,GEN_6804650754120_1.5kg,1.5kg,1.5,kg,/uploads/natco_demerara-sugar-15kg.jpg,A,,,See product packaging for full ingredients list,,India,Default,R7510,depot_b
+6804786282568,natco-whole-birdseye-chilli-jar-40g,GEN_6804786282568_40g,40g,40,g,/uploads/natco_whole-birdseye-chilli-jar-40g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T3151,depot_b
+6804786282568,natco-whole-birdseye-chilli-jar-50g,GEN_6804786282568_50g,50g,50,g,/uploads/natco_whole-birdseye-chilli-jar-50g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T3152,depot_b
+6842634403912,natco-coriander-seeds-jar-60g,GEN_6842634403912_60g,60g,60,g,/uploads/natco_coriander-seeds-jar-60g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T4106,depot_b
+6842634403912,natco-coriander-seeds-jar-65g,GEN_6842634403912_65g,65g,65,g,/uploads/natco_coriander-seeds-jar-65g.jpg,A,,,See product packaging for full ingredients list,,India,Default,T4107,depot_b
+ajwanseeds,natco-ajwan-seeds-300g,GEN_ajwanseeds_300g,300g,300,g,/uploads/natco_ajwan-seeds-jar-100g.jpg,B,,,Ajwan Seeds 300g,,India,Default,S1160,depot_b
+amchoor-powder,natco-amchoor-powder-400g,GEN_amchoor-powder_400g,400g,400,g,/uploads/natco_amchoor-powder-jar-100g.jpg,B,,,Amchoor Powder 400g,,India,Default,S1350,depot_b
+black-pepper-coarse,natco-black-pepper-coarse-300g,GEN_black-pepper-coarse_300g,300g,300,g,/uploads/natco_pappadoms-black-pepper-200g.jpg,B,,,Black Pepper Coarse 300g,,India,Default,S9151,depot_b
+black-pepper-coarse,natco-black-pepper-coarse-1kg,GEN_black-pepper-coarse_1kg,1kg,1,kg,/uploads/natco_pappadoms-black-pepper-200g.jpg,B,,,Black Pepper Coarse 1kg,,India,Default,S9160,depot_b
+black-pepper-coarse,natco-black-pepper-coarse-100g,GEN_black-pepper-coarse_100g,100g,100,g,/uploads/natco_pappadoms-black-pepper-200g.jpg,B,,,Black Pepper Coarse 100g,,India,Default,S9152,depot_b
+black-pepper-ground,natco-black-pepper-ground-400g,GEN_black-pepper-ground_400g,400g,400,g,/uploads/natco_pappadoms-black-pepper-200g.jpg,B,,,Black Pepper Ground 400g,,India,Default,S9350,depot_b
+black-pepper-ground-jar,natco-black-pepper-ground-jar-100g,GEN_black-pepper-ground-jar_100g,100g,100,g,/uploads/natco_pappadoms-black-pepper-200g.jpg,B,,,Black Pepper Ground Jar 100g,,India,Default,T8407,depot_b
+black-pepper-whole,natco-black-pepper-whole-1kg,GEN_black-pepper-whole_1kg,1kg,1,kg,/uploads/natco_pappadoms-black-pepper-200g.jpg,B,,,Black Pepper Whole 1kg,,India,Default,S9250,depot_b
+black-pepper-whole,natco-black-pepper-whole-300g,GEN_black-pepper-whole_300g,300g,300,g,/uploads/natco_pappadoms-black-pepper-200g.jpg,B,,,Black Pepper Whole 300g,,India,Default,S9260,depot_b
+black-pepper-whole-jar,natco-black-pepper-whole-jar-100g,GEN_black-pepper-whole-jar_100g,100g,100,g,/uploads/natco_pappadoms-black-pepper-200g.jpg,B,,,Black Pepper Whole Jar 100g,,India,Default,T8307,depot_b
+brown-chick-peas,natco-brown-chick-peas-2kg,GEN_brown-chick-peas_2kg,2kg,2,kg,/uploads/natco_brown-chick-peas.jpg,B,,,Brown Chick Peas 2kg,,India,Default,L9150,depot_b
+brown-chick-peas,natco-brown-chick-peas-500g,GEN_brown-chick-peas_500g,500g,500,g,/uploads/natco_brown-chick-peas.jpg,B,,,Brown Chick Peas 500g,,India,Default,L9160,depot_b
+cardamom-green-ground,natco-cardamom-green-ground-50g,GEN_cardamom-green-ground_50g,50g,50,g,/uploads/natco_cardamom-green-jar-50g.jpg,B,,,Cardamom Green Ground 50g,,India,Default,S2110,depot_b
+cardamomgreen,natco-cardamom-green-200g,GEN_cardamomgreen_200g,200g,200,g,/uploads/natco_cardamom-green-ground.jpg,B,,,Cardamom Green 200g,,India,Default,S1960,depot_b
+cardamomseeds,natco-cardamom-seeds-100g,GEN_cardamomseeds_100g,100g,100,g,/uploads/natco_cardamomseeds.jpg,B,,,Cardamom Seeds 100g,,India,Default,S2040,depot_b
+cassia,natco-cassia-dalchini-400g,GEN_cassia_400g,400g,400,g,/uploads/natco_cassia-dalchini-jar-50g.jpg,B,,,Cassia (Dalchini) 400g,,India,Default,S3150,depot_b
+chilli-powder,natco-chilli-powder-1kg,GEN_chilli-powder_1kg,1kg,1,kg,/uploads/natco_chilli-powder-hot-jar-100g.jpg,B,,,Chilli Powder 1kg,,India,Default,S2760,depot_b
+chilli-powder,natco-chilli-powder-100g,GEN_chilli-powder_100g,100g,100,g,/uploads/natco_chilli-powder-hot-jar-100g.jpg,B,,,Chilli Powder 100g,,India,Default,S2780,depot_b
+chilli-powder-extra-hot,natco-chilli-powder-extra-hot-400g,GEN_chilli-powder-extra-hot_400g,400g,400,g,/uploads/natco_chilli-powder-hot-jar-100g.jpg,B,,,Chilli Powder Extra Hot 400g,,India,Default,S2745,depot_b
+chilli-powder-kashmiri1,natco-chilli-powder-kashmiri-100g,GEN_chilli-powder-kashmiri1_100g,100g,100,g,/uploads/natco_chilli-powder-hot-jar-100g.jpg,B,,,Chilli Powder Kashmiri 100g,,India,Default,S2720,depot_b
+chilli-powder-kashmiri1,natco-chilli-powder-kashmiri-400g,GEN_chilli-powder-kashmiri1_400g,400g,400,g,/uploads/natco_chilli-powder-hot-jar-100g.jpg,B,,,Chilli Powder Kashmiri 400g,,India,Default,S2715,depot_b
+chilli-whole-birdseye,natco-chilli-whole-birdseye-150g,GEN_chilli-whole-birdseye_150g,150g,150,g,/uploads/natco_chilli-whole-birdseye.jpg,B,,,Chilli Whole Birdseye 150g,,India,Default,S2250,depot_b
+chilli-whole-stemless,natco-chilli-whole-stemless-200g,GEN_chilli-whole-stemless_200g,200g,200,g,/uploads/natco_chilli-whole-stemless.jpg,B,,,Chilli Whole Stemless 200g,,India,Default,S2320,depot_b
+chinese-5-spice,natco-chinese-5-spice-100g,GEN_chinese-5-spice_100g,100g,100,g,/uploads/natco_chinese-5-spice.png,B,,,Chinese 5 Spice 100g,,India,Default,S1610,depot_b
+cinnamon-sticks,natco-cinnamon-sticks-50g,GEN_cinnamon-sticks_50g,50g,50,g,/uploads/natco_cinnamon-sticks.jpg,B,,,Cinnamon Sticks 50g,,India,Default,S3215,depot_b
+cloves,natco-cloves-200g,GEN_cloves_200g,200g,200,g,/uploads/natco_cloves-jar-50g.jpg,B,,,Cloves 200g,,India,Default,S3560,depot_b
+cloves-ground,natco-cloves-ground-50g,GEN_cloves-ground_50g,50g,50,g,/uploads/natco_cloves-ground.jpg,B,,,Cloves Ground 50g,,India,Default,S3605,depot_b
+coriander-ground,natco-coriander-ground-400g,GEN_coriander-ground_400g,400g,400,g,/uploads/natco_coriander-ground-jar-70g.jpg,B,,,Coriander Ground 400g,,India,Default,S4570,depot_b
+coriander-seeds,natco-coriander-seeds-300g,GEN_coriander-seeds_300g,300g,300,g,/uploads/natco_coriander-seeds-jar-60g.jpg,B,,,Coriander Seeds 300g,,India,Default,S4160,depot_b
+crushed-chilli,natco-chilli-crushed-300g,GEN_crushed-chilli_300g,300g,300,g,/uploads/natco_chilli-crushed-jar-80g.jpg,B,,,Chilli Crushed 300g,,India,Default,S2550,depot_b
+cumin-ground-jars,natco-cumin-ground-jar-70g,GEN_cumin-ground-jars_70g,70g,70,g,/uploads/natco_cumin-ground-jars.jpg,B,,,Cumin Ground Jar 70g,,India,Default,T4756,depot_b
+cumin-ground1,natco-cumin-ground-100g,GEN_cumin-ground1_100g,100g,100,g,/uploads/natco_cumin-ground-jars.jpg,B,,,Cumin Ground 100g,,India,Default,S5580,depot_b
+cumin-ground1,natco-cumin-ground-400g,GEN_cumin-ground1_400g,400g,400,g,/uploads/natco_cumin-ground-jars.jpg,B,,,Cumin Ground 400g,,India,Default,S5570,depot_b
+cumin-seeds,natco-cumin-seeds-400g,GEN_cumin-seeds_400g,400g,400,g,/uploads/natco_cumin-seeds-black.jpg,B,,,Cumin Seeds 400g,,India,Default,S5260,depot_b
+cumin-seeds-black,natco-cumin-seeds-black-100g,GEN_cumin-seeds-black_100g,100g,100,g,/uploads/natco_cumin-seeds-black.jpg,B,,,Cumin Seeds Black 100g,,India,Default,S5160,depot_b
+cumin-seeds-jar,natco-cumin-seeds-jar-100g,GEN_cumin-seeds-jar_100g,100g,100,g,/uploads/natco_cumin-seeds-black.jpg,B,,,Cumin Seeds Jar 100g,,India,Default,T4507,depot_b
+curry-powder,natco-curry-powder-400g,GEN_curry-powder_400g,400g,400,g,/uploads/natco_curry-powder-hot.png,B,,,Curry Powder 400g,,India,Default,S6370,depot_b
+curry-powder-hot,natco-curry-powder-hot-400g,GEN_curry-powder-hot_400g,400g,400,g,/uploads/natco_curry-powder-hot.png,B,,,Curry Powder Hot 400g,,India,Default,S6150,depot_b
+curry-powder-hot,natco-curry-powder-hot-100g,GEN_curry-powder-hot_100g,100g,100,g,/uploads/natco_curry-powder-hot.png,B,,,Curry Powder Hot 100g,,India,Default,S6160,depot_b
+curry-powder-medium-jar,natco-curry-powder-medium-jar-100g,GEN_curry-powder-medium-jar_100g,100g,100,g,/uploads/natco_curry-powder-medium-jar.jpg,B,,,Curry Powder Medium Jar 100g,,India,Default,T5407,depot_b
+curryleaves,natco-curry-leaves-100g,GEN_curryleaves_100g,100g,100,g,/uploads/natco_curryleaves.jpg,B,,,Curry Leaves 100g,,India,Default,S6430,depot_b
+fennel-seeds,natco-fennel-seeds-400g,GEN_fennel-seeds_400g,400g,400,g,/uploads/natco_fennel-seeds-jar.jpg,B,,,Fennel Seeds 400g,,India,Default,S7160,depot_b
+fennel-seeds-jar,natco-fennel-seeds-jar-100g,GEN_fennel-seeds-jar_100g,100g,100,g,/uploads/natco_fennel-seeds-jar.jpg,B,,,Fennel Seeds Jar 100g,,India,Default,T5807,depot_b
+garlic-flakes,natco-garlic-flakes-100g,GEN_garlic-flakes_100g,100g,100,g,/uploads/natco_garlic-flakes.jpg,B,,,Garlic Flakes 100g,,India,Default,S7385,depot_b
+garlic-powder,natco-garlic-powder-100g,GEN_garlic-powder_100g,100g,100,g,/uploads/natco_garlic-powder-jar.jpg,B,,,Garlic Powder 100g,,India,Default,S7360,depot_b
+garlic-powder-jar,natco-garlic-powder-jar-100g,GEN_garlic-powder-jar_100g,100g,100,g,/uploads/natco_garlic-powder-jar.jpg,B,,,Garlic Powder Jar 100g,,India,Default,T6352,depot_b
+ginger-powder,natco-ginger-powder-100g,GEN_ginger-powder_100g,100g,100,g,/uploads/natco_ginger-powder.jpg,B,,,Ginger Powder 100g,,India,Default,S7560,depot_b
+ground-ginger-jar,natco-ground-ginger-jar-70g,GEN_ground-ginger-jar_70g,70g,70,g,/uploads/natco_ground-ginger-jar.jpg,B,,,Ground Ginger Jar 70g,,India,Default,T6509,depot_b
+kalanamak,natco-kala-namak-300g,GEN_kalanamak_300g,300g,300,g,/uploads/natco_kalanamak.jpg,B,,,Kala Namak 300g,,India,Default,S7680,depot_b
+kalanamak,natco-kala-namak-100g,GEN_kalanamak_100g,100g,100,g,/uploads/natco_kalanamak.jpg,B,,,Kala Namak 100g,,India,Default,S7690,depot_b
+mace-ground,natco-mace-ground-50g,GEN_mace-ground_50g,50g,50,g,/uploads/natco_mace-ground.jpg,B,,,Mace Ground 50g,,India,Default,S7815,depot_b
+methi-leaves-jar,natco-methi-leaves-jar-10g,GEN_methi-leaves-jar_10g,10g,10,g,/uploads/natco_kasuri-methi-leaves-100g.jpg,B,,,Methi Leaves Jar 10g,,India,Default,T7552,depot_b
+methi-seeds,natco-methi-seeds-fenugreek-400g,GEN_methi-seeds_400g,400g,400,g,/uploads/natco_methi-seeds-jar.jpg,B,,,Methi Seeds Fenugreek 400g,,India,Default,S8160,depot_b
+methi-seeds-jar,natco-methi-seeds-jar-100g,GEN_methi-seeds-jar_100g,100g,100,g,/uploads/natco_methi-seeds-jar.jpg,B,,,Methi Seeds Jar 100g,,India,Default,T7352,depot_b
+moth-beans,natco-moth-beans-2kg,GEN_moth-beans_2kg,2kg,2,kg,/uploads/natco_moth-beans.png,B,,,Moth Beans 2kg,,India,Default,L5150,depot_b
+moth-beans,natco-moth-beans-500g,GEN_moth-beans_500g,500g,500,g,/uploads/natco_moth-beans.png,B,,,Moth Beans 500g,,India,Default,L5160,depot_b
+mustard-seeds,natco-mustard-seeds-400g,GEN_mustard-seeds_400g,400g,400,g,/uploads/natco_mustard-seeds-black-jar.jpg,B,,mustard,Mustard Seeds 400g,,India,Default,S8460,depot_b
+mustard-seeds-black-jar,natco-mustard-seeds-black-jar-100g,GEN_mustard-seeds-black-jar_100g,100g,100,g,/uploads/natco_mustard-seeds-black-jar.jpg,B,,mustard,Mustard Seeds Black Jar 100g,,India,Default,T7652,depot_b
+nigella-seeds,natco-kalwanji-nigella-seeds-300g,GEN_nigella-seeds_300g,300g,300,g,/uploads/natco_nigella-seeds-jar.jpg,B,,,Kalwanji (Nigella) Seeds 300g,,India,Default,S7750,depot_b
+nigella-seeds-jar,natco-kalwanji-nigella-seeds-jar-100g,GEN_nigella-seeds-jar_100g,100g,100,g,/uploads/natco_nigella-seeds-jar.jpg,B,,,Kalwanji (Nigella) Seeds Jar 100g,,India,Default,T6752,depot_b
+nutmeg-ground,natco-nutmeg-ground-50g,GEN_nutmeg-ground_50g,50g,50,g,/uploads/natco_nutmeg-ground-jar.jpg,B,,tree-nuts,Nutmeg Ground 50g,,India,Default,S7900,depot_b
+nutmeg-ground-jar,natco-nutmeg-ground-jar-100g,GEN_nutmeg-ground-jar_100g,100g,100,g,/uploads/natco_nutmeg-ground-jar.jpg,B,,tree-nuts,Nutmeg Ground Jar 100g,,India,Default,T7807,depot_b
+nutmeg-whole-jar,natco-nutmeg-whole-jar-100g,GEN_nutmeg-whole-jar_100g,100g,100,g,/uploads/natco_nutmeg-whole-jar.jpg,B,,tree-nuts,Nutmeg Whole Jar 100g,,India,Default,T7707,depot_b
+panchpuran-whole-spice,natco-panchpuran-5-whole-spice-1kg,GEN_panchpuran-whole-spice_1kg,1kg,1,kg,/uploads/natco_panchpuran-whole-spice.jpg,B,,,Panchpuran (5 Whole Spice) 1kg,,India,Default,S8650,depot_b
+paprika-powder,natco-paprika-powder-400g,GEN_paprika-powder_400g,400g,400,g,/uploads/natco_paprika-powder-jar.jpg,B,,,Paprika Powder 400g,,India,Default,S8770,depot_b
+paprika-powder-jar,natco-paprika-powder-jar-100g,GEN_paprika-powder-jar_100g,100g,100,g,/uploads/natco_paprika-powder-jar.jpg,B,,,Paprika Powder Jar 100g,,India,Default,T8252,depot_b
+saffron,natco-saffron-1g,GEN_saffron_1g,1g,1,g,/uploads/natco_saffron.png,B,,,Saffron 1g,,India,Default,S9555,depot_b
+takmuria,natco-takmuria-basil-seeds-100g,GEN_takmuria_100g,100g,100,g,/uploads/natco_ajwan-seeds-jar-100g.jpg,B,,,Takmuria (Basil Seeds) 100g,,India,Default,R8300,depot_b
+tamarind-paste-jar,natco-tamarind-paste-jar-250g,GEN_tamarind-paste-jar_250g,250g,250,g,/uploads/natco_tamarind-paste-jar.jpg,B,,,Tamarind Paste Jar 250g,,India,Default,T9151,depot_b
+tamarindslab,natco-tamarind-slab-200g,GEN_tamarindslab_200g,200g,200,g,/uploads/natco_tamarindslab.png,B,,,Tamarind Slab 200g,,India,Default,R8160,depot_b
+tamarindwet,natco-tamarind-wet-400g,GEN_tamarindwet_400g,400g,400,g,/uploads/natco_tamarind-amp-date-sauce-340g.jpg,B,,,Tamarind Wet 400g,,India,Default,R8200,depot_b
+toor-dal-oily1,natco-toor-dal-oily-2kg,GEN_toor-dal-oily1_2kg,2kg,2,kg,/uploads/natco_toor-dal-oily1.png,B,,,Toor Dal Oily 2kg,,India,Default,L6560,depot_b
+toor-dal-oily1,natco-toor-dal-oily-1kg,GEN_toor-dal-oily1_1kg,1kg,1,kg,/uploads/natco_toor-dal-oily.jpg,B,,,Toor Dal Oily 1kg,,India,Default,L6555,depot_b
+toor-dal-plain,natco-toor-dal-plain-2kg,GEN_toor-dal-plain_2kg,2kg,2,kg,/uploads/natco_toor-dal-plain.jpg,B,,,Toor Dal Plain 2kg,,India,Default,L6650,depot_b
+toor-dal-plain,natco-toor-dal-plain-500g,GEN_toor-dal-plain_500g,500g,500,g,/uploads/natco_toor-dal-plain.jpg,B,,,Toor Dal Plain 500g,,India,Default,L6660,depot_b
+turmeric-powder,natco-turmeric-powder-400g,GEN_turmeric-powder_400g,400g,400,g,/uploads/natco_turmeric-powder-jar.jpg,B,,,Turmeric Powder 400g,,India,Default,S9870,depot_b
+turmeric-powder-jar,natco-turmeric-powder-jar-100g,GEN_turmeric-powder-jar_100g,100g,100,g,/uploads/natco_turmeric-powder-jar.jpg,B,,,Turmeric Powder Jar 100g,,India,Default,T9807,depot_b
+urid-dal-white,natco-urid-dal-white-2kg,GEN_urid-dal-white_2kg,2kg,2,kg,/uploads/natco_urid-dal-white.jpg,B,,,Urid Dal White 2kg,,India,Default,L7560,depot_b
+urid-dal-white,natco-urid-dal-white-1kg,GEN_urid-dal-white_1kg,1kg,1,kg,/uploads/natco_urid-dal-white.jpg,B,,,Urid Dal White 1kg,,India,Default,L7568,depot_b
+uridbeans,natco-urid-beans-2kg,GEN_uridbeans_2kg,2kg,2,kg,/uploads/natco_urid-beans-case.jpg,B,,,Urid Beans 2kg,,India,Default,L7160,depot_b
+uridbeans,natco-urid-beans-1kg,GEN_uridbeans_1kg,1kg,1,kg,/uploads/natco_urid-beans-case.jpg,B,,,Urid Beans 1kg,,India,Default,L7158,depot_b
+uridsplit1,natco-urid-split-2kg,GEN_uridsplit1_2kg,2kg,2,kg,/uploads/natco_uridsplit.jpg,B,,,Urid Split 2kg,,India,Default,L7350,depot_b
+uridsplit1,natco-urid-split-500g,GEN_uridsplit1_500g,500g,500,g,/uploads/natco_uridsplit.jpg,B,,,Urid Split 500g,,India,Default,L7360,depot_b
+white-pepper-ground,natco-white-pepper-ground-100g,GEN_white-pepper-ground_100g,100g,100,g,/uploads/natco_white-pepper-ground-jar.jpg,B,,,White Pepper Ground 100g,,India,Default,S9470,depot_b
+white-pepper-ground-jar,natco-white-pepper-ground-jar-100g,GEN_white-pepper-ground-jar_100g,100g,100,g,/uploads/natco_white-pepper-ground-jar.jpg,B,,,White Pepper Ground Jar 100g,,India,Default,T8607,depot_b
+yellow-mustard-seeds,natco-yellow-mustard-seeds-300g,GEN_yellow-mustard-seeds_300g,300g,300,g,/uploads/natco_yellow-mustard-seeds.jpg,B,,mustard,Yellow Mustard Seeds 300g,,India,Default,S8410,depot_b
+yellow-split-peas1,natco-yellow-split-peas-2kg,GEN_yellow-split-peas1_2kg,2kg,2,kg,/uploads/natco_yellow-split-peas-case.jpg,B,,,Yellow Split Peas 2kg,,India,Default,L9350,depot_b
+yellow-split-peas1,natco-yellow-split-peas-1kg,GEN_yellow-split-peas1_1kg,1kg,1,kg,/uploads/natco_yellow-split-peas-case.jpg,B,,,Yellow Split Peas 1kg,,India,Default,L9348,depot_b
+parachute-coconut-oil,parachute-coconut-oil-500ml,GEN_parachute-coconut-oil_500ml,,500,ml,/images/products/parachute-coconut-oil.jpg,,,,Store in a cool dry place,India,500,parachute-coconut-oil-500ml,,fresh_supplier
+parle-bourbon,parle-parle-bourbon-200g,GEN_parle-bourbon_200g,200g,200,g,/images/products/parle-bourbon.jpg,B,,,See product packaging for full ingredients list,,India,200g,Parle-parle-bourbon-v0,depot_c
+parle-g-glucose-biscuits,parle-parle-g-glucose-biscuits-400g,GEN_parle-g-glucose-biscuits_400g,400g,400,g,/images/products/parle-g-glucose-biscuits.png,B,,,See product packaging for full ingredients list,,India,400g,Parle-parle-g-glucose-biscuits-v0,depot_c
+parle-g-glucose-biscuits,parle-parle-g-glucose-biscuits-1kg,GEN_parle-g-glucose-biscuits_1kg,1kg,1,kg,/images/products/parle-g-glucose-biscuits.png,B,,,See product packaging,,India,1kg,MVC-parle-g-glucose-biscuits-1kg-v0,depot_c
+pataks-lime-pickle,pataks-pataks-lime-pickle-283g,GEN_pataks-lime-pickle_283g,283g,283,g,/images/products/pataks-lime-pickle.jpg,B,,,See product packaging for full ingredients list,,India,283g,Patak's-pataks-lime-pickle-v0,depot_a
+pataks-mango-chutney,pataks-pataks-mango-chutney-340g,GEN_pataks-mango-chutney_340g,340g,340,g,/images/products/pataks-mango-chutney.jpg,B,,,See product packaging for full ingredients list,,India,340g,Patak's-pataks-mango-chutney-v0,depot_a
+pataks-mixed-pickle,pataks-pataks-mixed-pickle-283g,GEN_pataks-mixed-pickle_283g,283g,283,g,/images/products/pataks-mixed-pickle.jpg,B,,,See product packaging for full ingredients list,,India,283g,Patak's-pataks-mixed-pickle-v0,depot_a
+pataks-tikka-masala-paste,pataks-pataks-tikka-masala-paste-290g,GEN_pataks-tikka-masala-paste_290g,290g,290,g,/images/products/pataks-tikka-masala-paste.jpg,B,,,See product packaging for full ingredients list,,India,290g,Patak's-pataks-tikka-masala-paste-v0,depot_a
+pillsbury-chakki-fresh-atta,pillsbury-pillsbury-chakki-fresh-atta-5kg,GEN_pillsbury-chakki-fresh-atta_5kg,5kg,5,kg,/images/products/pillsbury-chakki-fresh-atta.jpg,B,,,See product packaging for full ingredients list,,India,5kg,Pillsbury-pillsbury-chakki-fresh-atta-v0,fresh_supplier
+pillsbury-chakki-fresh-atta,pillsbury-pillsbury-chakki-fresh-atta-10kg,GEN_pillsbury-chakki-fresh-atta_10kg,10kg,10,kg,/images/products/pillsbury-chakki-fresh-atta.jpg,B,,,See product packaging,,India,10kg,MVC-pillsbury-chakki-fresh-atta-10kg-v0,fresh_supplier
+priya-avakaya-mango-pickle,priya-avakaya-mango-500g,GEN_priya-avakaya-mango-pickle_500g,,500,g,/images/products/priya-avakaya-mango-pickle.png,A,,mustard,Contains mustard,Store in a cool dry place,India,Default,priya-avakaya-mango-pickle-500g,depot_c
+priya-garlic-pickle,priya-garlic-pickle-300g,GEN_priya-garlic-pickle_300g,,300,g,/images/products/priya-garlic-pickle.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,priya-garlic-pickle-300g,depot_c
+priya-gongura-pickle,priya-gongura-pickle-300g,GEN_priya-gongura-pickle_300g,,300,g,/images/products/priya-gongura-pickle.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,priya-gongura-pickle-300g,depot_c
+priya-tomato-pickle,priya-tomato-pickle-300g,GEN_priya-tomato-pickle_300g,,300,g,/images/products/priya-tomato-pickle.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,priya-tomato-pickle-300g,depot_c
+shan-achar-gosht-masala,shan-achar-gosht-50g,GEN_shan-achar-gosht-masala_50g,,50,g,/images/products/shan-achar-gosht-masala.png,A,,,See product packaging,Store in a cool dry place,Pakistan,Default,shan-achar-gosht-masala-50g,depot_b
+shan-bombay-biryani-mix,shan-shan-bombay-biryani-mix-60g,GEN_shan-bombay-biryani-mix_60g,60g,60,g,/images/products/shan-bombay-biryani-mix.png,B,,,See product packaging for full ingredients list,,India,60g,Shan-shan-bombay-biryani-mix-v0,depot_b
+shan-haleem-mix,shan-shan-haleem-mix-300g,GEN_shan-haleem-mix_300g,300g,300,g,/images/products/shan-haleem-mix.png,B,,,See product packaging for full ingredients list,,India,300g,Shan-shan-haleem-mix-v0,depot_b
+shan-pilau-rice-mix,shan-pilau-rice-50g,GEN_shan-pilau-rice-mix_50g,,50,g,/images/products/shan-pilau-rice-mix.png,A,,,See product packaging,Store in a cool dry place,Pakistan,Default,shan-pilau-rice-mix-50g,depot_b
+shan-sindhi-biryani-mix,shan-shan-sindhi-biryani-mix-65g,GEN_shan-sindhi-biryani-mix_65g,65g,65,g,/images/products/shan-sindhi-biryani-mix.png,B,,,See product packaging for full ingredients list,,India,65g,Shan-shan-sindhi-biryani-mix-v0,depot_b
+shan-special-beef-biryani-mix,shan-shan-special-beef-biryani-mix-60g,GEN_shan-special-beef-biryani-mix_60g,60g,60,g,/images/products/shan-special-beef-biryani-mix.jpg,B,,,See product packaging for full ingredients list,,India,60g,Shan-shan-special-beef-biryani-mix-v0,depot_b
+shan-special-chicken-biryani-mix,shan-shan-special-chicken-biryani-mix-60g,GEN_shan-special-chicken-biryani-mix_60g,60g,60,g,/images/products/shan-special-chicken-biryani-mix.jpg,B,,,See product packaging for full ingredients list,,India,60g,Shan-shan-special-chicken-biryani-mix-v0,depot_b
+shan-special-mutton-biryani-mix,shan-shan-special-mutton-biryani-mix-60g,GEN_shan-special-mutton-biryani-mix_60g,60g,60,g,/images/products/shan-special-mutton-biryani-mix.jpg,B,,,See product packaging for full ingredients list,,India,60g,Shan-shan-special-mutton-biryani-mix-v0,depot_b
+tilda-pure-basmati,tilda-tilda-pure-basmati-2kg,GEN_tilda-pure-basmati_2kg,2kg,2,kg,/images/products/tilda-pure-basmati.jpg,B,,,See product packaging for full ingredients list,,India,2kg,Tilda-tilda-pure-basmati-v0,fresh_supplier
+tilda-pure-basmati,tilda-tilda-pure-basmati-5kg,GEN_tilda-pure-basmati_5kg,5kg,5,kg,/images/products/tilda-pure-basmati.jpg,B,,,See product packaging,,India,5kg,MVC-tilda-pure-basmati-5kg-v0,fresh_supplier
+tilda-pure-basmati,tilda-tilda-pure-basmati-10kg,GEN_tilda-pure-basmati_10kg,10kg,10,kg,/images/products/tilda-pure-basmati.jpg,B,,,See product packaging,,India,10kg,MVC-tilda-pure-basmati-10kg-v0,fresh_supplier
+trs-coarse-black-pepper,trs-trs-coarse-black-pepper-100g,GEN_trs-coarse-black-pepper_100g,100g,100,g,/uploads/trs_coarse-black-pepper.png,B,,,TRS Coarse Black Pepper,,India,100g,trs-coarse-black-pepper-v0,depot_a
+trs-coarse-black-pepper,trs-trs-coarse-black-pepper-1kg,GEN_trs-coarse-black-pepper_1kg,1kg,1,kg,/uploads/trs_coarse-black-pepper.png,B,,,TRS Coarse Black Pepper,,India,1kg,trs-coarse-black-pepper-v1,depot_a
+trs-coarse-black-pepper,trs-trs-coarse-black-pepper-400g,GEN_trs-coarse-black-pepper_400g,400g,400,g,/uploads/trs_coarse-black-pepper.png,B,,,TRS Coarse Black Pepper,,India,400g,trs-coarse-black-pepper-v2,depot_a
+trs-coarse-cornmeal,trs-trs-coarse-cornmeal-15kg,GEN_trs-coarse-cornmeal_1.5kg,1.5kg,1.5,kg,/uploads/trs_coarse-cornmeal.png,B,,,TRS Coarse Cornmeal,,India,1.5kg,trs-coarse-cornmeal-v0,depot_a
+trs-coarse-cornmeal,trs-trs-coarse-cornmeal-500g,GEN_trs-coarse-cornmeal_500g,500g,500,g,/uploads/trs_coarse-cornmeal.png,B,,,TRS Coarse Cornmeal,,India,500g,trs-coarse-cornmeal-v1,depot_a
+trs-coarse-cornmeal,trs-trs-coarse-cornmeal-5kg,GEN_trs-coarse-cornmeal_5kg,5kg,5,kg,/uploads/trs_coarse-cornmeal.png,B,,,TRS Coarse Cornmeal,,India,5kg,trs-coarse-cornmeal-v2,depot_a
+trs-coarse-semolina,trs-trs-coarse-semolina-15kg,GEN_trs-coarse-semolina_1.5kg,1.5kg,1.5,kg,/uploads/trs_coarse-semolina.png,B,,gluten,TRS Coarse Semolina,,India,1.5kg,trs-coarse-semolina-v0,depot_a
+trs-coarse-semolina,trs-trs-coarse-semolina-500g,GEN_trs-coarse-semolina_500g,500g,500,g,/uploads/trs_coarse-semolina.png,B,,gluten,TRS Coarse Semolina,,India,500g,trs-coarse-semolina-v1,depot_a
+trs-coarse-semolina,trs-trs-coarse-semolina-5kg,GEN_trs-coarse-semolina_5kg,5kg,5,kg,/uploads/trs_coarse-semolina.png,B,,gluten,TRS Coarse Semolina,,India,5kg,trs-coarse-semolina-v2,depot_a
+trs-coriander-powder-dhania,trs-trs-coriander-powder-dhania-100g,GEN_trs-coriander-powder-dhania_100g,100g,100,g,/uploads/trs_coriander-powder-dhania.png,B,,,TRS Coriander Powder (Dhania),,India,100g,trs-coriander-powder-dhania-v0,depot_a
+trs-coriander-powder-dhania,trs-trs-coriander-powder-dhania-1kg,GEN_trs-coriander-powder-dhania_1kg,1kg,1,kg,/uploads/trs_coriander-powder-dhania.png,B,,,TRS Coriander Powder (Dhania),,India,1kg,trs-coriander-powder-dhania-v1,depot_a
+trs-coriander-powder-dhania,trs-trs-coriander-powder-dhania-200g,GEN_trs-coriander-powder-dhania_200g,200g,200,g,/uploads/trs_coriander-powder-dhania.png,B,,,TRS Coriander Powder (Dhania),,India,200g,trs-coriander-powder-dhania-v2,depot_a
+trs-coriander-powder-dhania,trs-trs-coriander-powder-dhania-400g,GEN_trs-coriander-powder-dhania_400g,400g,400,g,/uploads/trs_coriander-powder-dhania.png,B,,,TRS Coriander Powder (Dhania),,India,400g,trs-coriander-powder-dhania-v3,depot_a
+trs-coriander-powder-dhania,trs-trs-coriander-powder-dhania-5kg,GEN_trs-coriander-powder-dhania_5kg,5kg,5,kg,/uploads/trs_coriander-powder-dhania.png,B,,,TRS Coriander Powder (Dhania),,India,5kg,trs-coriander-powder-dhania-v4,depot_a
+trs-coriander-seeds-whole-dhania,trs-trs-coriander-seeds-whole-dhania-100g,GEN_trs-coriander-seeds-whole-dhania_100g,100g,100,g,/uploads/trs_coriander-seeds-whole-dhania.png,B,,,TRS Coriander Seeds (Whole Dhania),,India,100g,trs-coriander-seeds-whole-dhania-v0,depot_a
+trs-coriander-seeds-whole-dhania,trs-trs-coriander-seeds-whole-dhania-250g,GEN_trs-coriander-seeds-whole-dhania_250g,250g,250,g,/uploads/trs_coriander-seeds-whole-dhania.png,B,,,TRS Coriander Seeds (Whole Dhania),,India,250g,trs-coriander-seeds-whole-dhania-v1,depot_a
+trs-coriander-seeds-whole-dhania,trs-trs-coriander-seeds-whole-dhania-3kg,GEN_trs-coriander-seeds-whole-dhania_3kg,3kg,3,kg,/uploads/trs_coriander-seeds-whole-dhania.png,B,,,TRS Coriander Seeds (Whole Dhania),,India,3kg,trs-coriander-seeds-whole-dhania-v2,depot_a
+trs-coriander-seeds-whole-dhania,trs-trs-coriander-seeds-whole-dhania-750g,GEN_trs-coriander-seeds-whole-dhania_750g,750g,750,g,/uploads/trs_coriander-seeds-whole-dhania.png,B,,,TRS Coriander Seeds (Whole Dhania),,India,750g,trs-coriander-seeds-whole-dhania-v3,depot_a
+trs-crushed-chilli,trs-trs-crushed-chilli-100g,GEN_trs-crushed-chilli_100g,100g,100,g,/uploads/trs_crushed-chilli.png,B,,,TRS Crushed Chilli,,India,100g,trs-crushed-chilli-v0,depot_a
+trs-crushed-chilli,trs-trs-crushed-chilli-250g,GEN_trs-crushed-chilli_250g,250g,250,g,/uploads/trs_crushed-chilli.png,B,,,TRS Crushed Chilli,,India,250g,trs-crushed-chilli-v1,depot_a
+trs-crushed-chilli,trs-trs-crushed-chilli-3kg,GEN_trs-crushed-chilli_3kg,3kg,3,kg,/uploads/trs_crushed-chilli.png,B,,,TRS Crushed Chilli,,India,3kg,trs-crushed-chilli-v2,depot_a
+trs-crushed-chilli,trs-trs-crushed-chilli-750g,GEN_trs-crushed-chilli_750g,750g,750,g,/uploads/trs_crushed-chilli.png,B,,,TRS Crushed Chilli,,India,750g,trs-crushed-chilli-v3,depot_a
+trs-cumin-powder,trs-trs-cumin-powder-100g,GEN_trs-cumin-powder_100g,100g,100,g,/uploads/trs_cumin-powder.png,B,,,TRS Cumin Powder,,India,100g,trs-cumin-powder-v0,depot_a
+trs-cumin-powder,trs-trs-cumin-powder-400g,GEN_trs-cumin-powder_400g,400g,400,g,/uploads/trs_cumin-powder.png,B,,,TRS Cumin Powder,,India,400g,trs-cumin-powder-v1,depot_a
+trs-cumin-powder,trs-trs-cumin-powder-1kg,GEN_trs-cumin-powder_1kg,1kg,1,kg,/uploads/trs_cumin-powder.png,B,,,TRS Cumin Powder,,India,1Kg,trs-cumin-powder-v2,depot_a
+trs-cumin-powder,trs-trs-cumin-powder-5kg,GEN_trs-cumin-powder_5kg,5kg,5,kg,/uploads/trs_cumin-powder.png,B,,,TRS Cumin Powder,,India,5Kg,trs-cumin-powder-v3,depot_a
+trs-cumin-seeds,trs-trs-cumin-seeds-100g,GEN_trs-cumin-seeds_100g,100g,100,g,/uploads/trs_cumin-seeds.png,B,,,TRS Cumin Seeds,,India,100g,trs-cumin-seeds-v0,depot_a
+trs-cumin-seeds,trs-trs-cumin-seeds-1kg,GEN_trs-cumin-seeds_1kg,1kg,1,kg,/uploads/trs_cumin-seeds.png,B,,,TRS Cumin Seeds,,India,1kg,trs-cumin-seeds-v1,depot_a
+trs-cumin-seeds,trs-trs-cumin-seeds-400g,GEN_trs-cumin-seeds_400g,400g,400,g,/uploads/trs_cumin-seeds.png,B,,,TRS Cumin Seeds,,India,400g,trs-cumin-seeds-v2,depot_a
+trs-cumin-seeds,trs-trs-cumin-seeds-4kg,GEN_trs-cumin-seeds_4kg,4kg,4,kg,/uploads/trs_cumin-seeds.png,B,,,TRS Cumin Seeds,,India,4kg,trs-cumin-seeds-v3,depot_a
+trs-fennel-seeds,trs-trs-fennel-seeds-100g,GEN_trs-fennel-seeds_100g,100g,100,g,/uploads/trs_fennel-seeds.png,B,,,TRS Fennel Seeds,,India,100g,trs-fennel-seeds-v0,depot_a
+trs-fennel-seeds,trs-trs-fennel-seeds-1kg,GEN_trs-fennel-seeds_1kg,1kg,1,kg,/uploads/trs_fennel-seeds.png,B,,,TRS Fennel Seeds,,India,1kg,trs-fennel-seeds-v1,depot_a
+trs-fennel-seeds,trs-trs-fennel-seeds-400g,GEN_trs-fennel-seeds_400g,400g,400,g,/uploads/trs_fennel-seeds.png,B,,,TRS Fennel Seeds,,India,400g,trs-fennel-seeds-v2,depot_a
+trs-fenugreek-leaves,trs-trs-fenugreek-leaves-100g,GEN_trs-fenugreek-leaves_100g,100g,100,g,/uploads/trs_fenugreek-leaves.png,B,,,TRS Fenugreek Leaves,,India,100g,trs-fenugreek-leaves-v0,depot_a
+trs-fenugreek-leaves,trs-trs-fenugreek-leaves-1kg,GEN_trs-fenugreek-leaves_1kg,1kg,1,kg,/uploads/trs_fenugreek-leaves.png,B,,,TRS Fenugreek Leaves,,India,1kg,trs-fenugreek-leaves-v1,depot_a
+trs-fenugreek-leaves,trs-trs-fenugreek-leaves-300g,GEN_trs-fenugreek-leaves_300g,300g,300,g,/uploads/trs_fenugreek-leaves.png,B,,,TRS Fenugreek Leaves,,India,300g,trs-fenugreek-leaves-v2,depot_a
+trs-fenugreek-leaves,trs-trs-fenugreek-leaves-50g,GEN_trs-fenugreek-leaves_50g,50g,50,g,/uploads/trs_fenugreek-leaves.png,B,,,TRS Fenugreek Leaves,,India,50g,trs-fenugreek-leaves-v3,depot_a
+trs-fenugreek-seeds,trs-trs-fenugreek-seeds-50g,GEN_trs-fenugreek-seeds_50g,50g,50,g,/uploads/trs_fenugreek-seeds.png,B,,,TRS Fenugreek Seeds,,India,50g,trs-fenugreek-seeds-v0,depot_a
+trs-fenugreek-seeds,trs-trs-fenugreek-seeds-100g,GEN_trs-fenugreek-seeds_100g,100g,100,g,/uploads/trs_fenugreek-seeds.png,B,,,TRS Fenugreek Seeds,,India,100g,trs-fenugreek-seeds-v1,depot_a
+trs-fenugreek-seeds,trs-trs-fenugreek-seeds-300g,GEN_trs-fenugreek-seeds_300g,300g,300,g,/uploads/trs_fenugreek-seeds.png,B,,,TRS Fenugreek Seeds,,India,300g,trs-fenugreek-seeds-v2,depot_a
+trs-fenugreek-seeds,trs-trs-fenugreek-seeds-1kg,GEN_trs-fenugreek-seeds_1kg,1kg,1,kg,/uploads/trs_fenugreek-seeds.png,B,,,TRS Fenugreek Seeds,,India,1Kg,trs-fenugreek-seeds-v3,depot_a
+trs-fine-desiccated-coconut,trs-trs-fine-desiccated-coconut-300g,GEN_trs-fine-desiccated-coconut_300g,300g,300,g,/uploads/trs_fine-desiccated-coconut.png,B,,tree-nuts,TRS Fine Desiccated Coconut,,India,300g,trs-fine-desiccated-coconut-v0,depot_a
+trs-fine-desiccated-coconut,trs-trs-fine-desiccated-coconut-1kg,GEN_trs-fine-desiccated-coconut_1kg,1kg,1,kg,/uploads/trs_fine-desiccated-coconut.png,B,,tree-nuts,TRS Fine Desiccated Coconut,,India,1kg,trs-fine-desiccated-coconut-v1,depot_a
+trs-fine-semolina,trs-trs-fine-semolina-15kg,GEN_trs-fine-semolina_1.5kg,1.5kg,1.5,kg,/uploads/trs_fine-semolina.png,B,,gluten,TRS Fine Semolina,,India,1.5kg,trs-fine-semolina-v0,depot_a
+trs-fine-semolina,trs-trs-fine-semolina-500g,GEN_trs-fine-semolina_500g,500g,500,g,/uploads/trs_fine-semolina.png,B,,gluten,TRS Fine Semolina,,India,500g,trs-fine-semolina-v1,depot_a
+trs-fine-semolina,trs-trs-fine-semolina-5kg,GEN_trs-fine-semolina_5kg,5kg,5,kg,/uploads/trs_fine-semolina.png,B,,gluten,TRS Fine Semolina,,India,5kg,trs-fine-semolina-v2,depot_a
+trs-garam-masala,trs-trs-garam-masala-100g,GEN_trs-garam-masala_100g,100g,100,g,/uploads/trs_garam-masala.png,B,,,TRS Garam Masala,,India,100g,trs-garam-masala-v0,depot_a
+trs-garam-masala,trs-trs-garam-masala-200g,GEN_trs-garam-masala_200g,200g,200,g,/uploads/trs_garam-masala.png,B,,,TRS Garam Masala,,India,200g,trs-garam-masala-v1,depot_a
+trs-garam-masala,trs-trs-garam-masala-400g,GEN_trs-garam-masala_400g,400g,400,g,/uploads/trs_garam-masala.png,B,,,TRS Garam Masala,,India,400g,trs-garam-masala-v2,depot_a
+trs-garam-masala,trs-trs-garam-masala-500g,GEN_trs-garam-masala_500g,500g,500,g,/uploads/trs_garam-masala.png,B,,,TRS Garam Masala,,India,500g,trs-garam-masala-v3,depot_a
+trs-garam-masala,trs-trs-garam-masala-1kg,GEN_trs-garam-masala_1kg,1kg,1,kg,/uploads/trs_garam-masala.png,B,,,TRS Garam Masala,,India,1Kg,trs-garam-masala-v4,depot_a
+trs-garam-masala,trs-trs-garam-masala-5kg,GEN_trs-garam-masala_5kg,5kg,5,kg,/uploads/trs_garam-masala.png,B,,,TRS Garam Masala,,India,5Kg,trs-garam-masala-v5,depot_a
+trs-garlic-powder,trs-trs-garlic-powder-100g,GEN_trs-garlic-powder_100g,100g,100,g,/uploads/trs_garlic-powder.png,B,,,TRS Garlic Powder,,India,100g,trs-garlic-powder-v0,depot_a
+trs-garlic-powder,trs-trs-garlic-powder-1kg,GEN_trs-garlic-powder_1kg,1kg,1,kg,/uploads/trs_garlic-powder.png,B,,,TRS Garlic Powder,,India,1kg,trs-garlic-powder-v1,depot_a
+trs-garlic-powder,trs-trs-garlic-powder-400g,GEN_trs-garlic-powder_400g,400g,400,g,/uploads/trs_garlic-powder.png,B,,,TRS Garlic Powder,,India,400g,trs-garlic-powder-v2,depot_a
+trs-ginger-paste,trs-trs-ginger-paste-1kg,GEN_trs-ginger-paste_1kg,1kg,1,kg,/uploads/trs_ginger-paste.png,B,,,TRS Ginger Paste,,India,1kg,trs-ginger-paste-v0,depot_a
+trs-ginger-powder,trs-trs-ginger-powder-100g,GEN_trs-ginger-powder_100g,100g,100,g,/uploads/trs_ginger-powder.png,B,,,TRS Ginger Powder,,India,100g,trs-ginger-powder-v0,depot_a
+trs-ginger-powder,trs-trs-ginger-powder-400g,GEN_trs-ginger-powder_400g,400g,400,g,/uploads/trs_ginger-powder.png,B,,,TRS Ginger Powder,,India,400g,trs-ginger-powder-v1,depot_a
+trs-ginger-powder,trs-trs-ginger-powder-1kg,GEN_trs-ginger-powder_1kg,1kg,1,kg,/uploads/trs_ginger-powder.png,B,,,TRS Ginger Powder,,India,1Kg,trs-ginger-powder-v2,depot_a
+trs-green-cardamom,trs-trs-green-cardamom-200g,GEN_trs-green-cardamom_200g,200g,200,g,/uploads/trs_green-cardamom.png,B,,,TRS Green Cardamom,,India,200g,trs-green-cardamom-v0,depot_a
+trs-green-cardamom,trs-trs-green-cardamom-50g,GEN_trs-green-cardamom_50g,50g,50,g,/uploads/trs_green-cardamom.png,B,,,TRS Green Cardamom,,India,50g,trs-green-cardamom-v1,depot_a
+trs-green-cardamom,trs-trs-green-cardamom-750g,GEN_trs-green-cardamom_750g,750g,750,g,/uploads/trs_green-cardamom.png,B,,,TRS Green Cardamom,,India,750g,trs-green-cardamom-v2,depot_a
+trs-green-lentils,trs-trs-green-lentils-500g,GEN_trs-green-lentils_500g,500g,500,g,/uploads/trs_green-lentils.png,B,,sesame,TRS Green Lentils,,India,500g,trs-green-lentils-v0,depot_a
+trs-green-lentils,trs-trs-green-lentils-1kg,GEN_trs-green-lentils_1kg,1kg,1,kg,/uploads/trs_green-lentils.png,B,,sesame,TRS Green Lentils,,India,1kg,trs-green-lentils-v1,depot_a
+trs-green-lentils,trs-trs-green-lentils-2kg,GEN_trs-green-lentils_2kg,2kg,2,kg,/uploads/trs_green-lentils.png,B,,sesame,TRS Green Lentils,,India,2kg,trs-green-lentils-v2,depot_a
+trs-ground-rice,trs-trs-ground-rice-15kg,GEN_trs-ground-rice_1.5kg,1.5kg,1.5,kg,/uploads/trs_ground-rice.png,B,,,TRS Ground Rice,,India,1.5kg,trs-ground-rice-v0,depot_a
+trs-ground-rice,trs-trs-ground-rice-500g,GEN_trs-ground-rice_500g,500g,500,g,/uploads/trs_ground-rice.png,B,,,TRS Ground Rice,,India,500g,trs-ground-rice-v1,depot_a
+trs-ground-rice,trs-trs-ground-rice-5kg,GEN_trs-ground-rice_5kg,5kg,5,kg,/uploads/trs_ground-rice.png,B,,,TRS Ground Rice,,India,5kg,trs-ground-rice-v2,depot_a
+trs-hot-madras-curry,trs-trs-hot-madras-curry-100g,GEN_trs-hot-madras-curry_100g,100g,100,g,/uploads/trs_hot-madras-curry.png,B,,,TRS Hot Madras Curry,,India,100g,trs-hot-madras-curry-v0,depot_a
+trs-hot-madras-curry,trs-trs-hot-madras-curry-400g,GEN_trs-hot-madras-curry_400g,400g,400,g,/uploads/trs_hot-madras-curry.png,B,,,TRS Hot Madras Curry,,India,400g,trs-hot-madras-curry-v1,depot_a
+trs-mild-madras-curry-powder,trs-trs-mild-madras-curry-powder-1kg,GEN_trs-mild-madras-curry-powder_1kg,1kg,1,kg,/uploads/trs_mild-madras-curry-powder.png,B,,,TRS Mild Madras Curry Powder,,India,1kg,trs-mild-madras-curry-powder-v0,depot_a
+trs-mild-madras-curry-powder,trs-trs-mild-madras-curry-powder-2kg,GEN_trs-mild-madras-curry-powder_2kg,2kg,2,kg,/uploads/trs_mild-madras-curry-powder.png,B,,,TRS Mild Madras Curry Powder,,India,2kg,trs-mild-madras-curry-powder-v1,depot_a
+trs-mild-madras-curry-powder,trs-trs-mild-madras-curry-powder-400g,GEN_trs-mild-madras-curry-powder_400g,400g,400,g,/uploads/trs_mild-madras-curry-powder.png,B,,,TRS Mild Madras Curry Powder,,India,400g,trs-mild-madras-curry-powder-v2,depot_a
+trs-mild-madras-curry-powder,trs-trs-mild-madras-curry-powder-500g,GEN_trs-mild-madras-curry-powder_500g,500g,500,g,/uploads/trs_mild-madras-curry-powder.png,B,,,TRS Mild Madras Curry Powder,,India,500g,trs-mild-madras-curry-powder-v3,depot_a
+trs-mild-madras-curry-powder,trs-trs-mild-madras-curry-powder-5kg,GEN_trs-mild-madras-curry-powder_5kg,5kg,5,kg,/uploads/trs_mild-madras-curry-powder.png,B,,,TRS Mild Madras Curry Powder,,India,5kg,trs-mild-madras-curry-powder-v4,depot_a
+trs-moth-beans,trs-trs-moth-beans-500g,GEN_trs-moth-beans_500g,500g,500,g,/uploads/trs_moth-beans.png,B,,,TRS Moth Beans,,India,500g,trs-moth-beans-v0,depot_a
+trs-moth-beans,trs-trs-moth-beans-1kg,GEN_trs-moth-beans_1kg,1kg,1,kg,/uploads/trs_moth-beans.png,B,,,TRS Moth Beans,,India,1kg,trs-moth-beans-v1,depot_a
+trs-moth-beans,trs-trs-moth-beans-2kg,GEN_trs-moth-beans_2kg,2kg,2,kg,/uploads/trs_moth-beans.png,B,,,TRS Moth Beans,,India,2kg,trs-moth-beans-v2,depot_a
+trs-mung-beans,trs-trs-mung-beans-500g,GEN_trs-mung-beans_500g,500g,500,g,/uploads/trs_mung-beans.png,B,,,TRS Mung Beans,,India,500g,trs-mung-beans-v0,depot_a
+trs-mung-beans,trs-trs-mung-beans-1kg,GEN_trs-mung-beans_1kg,1kg,1,kg,/uploads/trs_mung-beans.png,B,,,TRS Mung Beans,,India,1Kg,trs-mung-beans-v1,depot_a
+trs-mung-beans,trs-trs-mung-beans-2kg,GEN_trs-mung-beans_2kg,2kg,2,kg,/uploads/trs_mung-beans.png,B,,,TRS Mung Beans,,India,2Kg,trs-mung-beans-v2,depot_a
+trs-mung-beans,trs-trs-mung-beans-5kg,GEN_trs-mung-beans_5kg,5kg,5,kg,/uploads/trs_mung-beans.png,B,,,TRS Mung Beans,,India,5Kg,trs-mung-beans-v3,depot_a
+trs-mung-beans,trs-trs-mung-beans,GEN_trs-mung-beans_0,Default,,,/uploads/trs_mung-beans.png,B,,,TRS Mung Beans,,India,,trs-mung-beans-v4,depot_a
+trs-mung-dal,trs-trs-mung-dal-500g,GEN_trs-mung-dal_500g,500g,500,g,/uploads/trs_mung-dal.png,B,,,TRS Mung Dal,,India,500g,trs-mung-dal-v0,depot_a
+trs-mung-dal,trs-trs-mung-dal-1kg,GEN_trs-mung-dal_1kg,1kg,1,kg,/uploads/trs_mung-dal.png,B,,,TRS Mung Dal,,India,1Kg,trs-mung-dal-v1,depot_a
+trs-mung-dal,trs-trs-mung-dal-2kg,GEN_trs-mung-dal_2kg,2kg,2,kg,/uploads/trs_mung-dal.png,B,,,TRS Mung Dal,,India,2Kg,trs-mung-dal-v2,depot_a
+trs-mung-dal,trs-trs-mung-dal-5kg,GEN_trs-mung-dal_5kg,5kg,5,kg,/uploads/trs_mung-dal.png,B,,,TRS Mung Dal,,India,5Kg,trs-mung-dal-v3,depot_a
+trs-mung-dal,trs-trs-mung-dal-25kg,GEN_trs-mung-dal_25kg,25kg,25,kg,/uploads/trs_mung-dal.png,B,,,TRS Mung Dal,,India,25Kg,trs-mung-dal-v4,depot_a
+trs-mung-dal-chilka-split-green-peas,trs-trs-mung-dal-chilka-split-green-peas-500g,GEN_trs-mung-dal-chilka-split-green-peas_500g,500g,500,g,/uploads/trs_mung-dal-chilka-split-green-peas.png,B,,,TRS Mung Dal Chilka (Split Green Peas),,India,500g,trs-mung-dal-chilka-split-green-peas-v0,depot_a
+trs-mung-dal-chilka-split-green-peas,trs-trs-mung-dal-chilka-split-green-peas-1kg,GEN_trs-mung-dal-chilka-split-green-peas_1kg,1kg,1,kg,/uploads/trs_mung-dal-chilka-split-green-peas.png,B,,,TRS Mung Dal Chilka (Split Green Peas),,India,1kg,trs-mung-dal-chilka-split-green-peas-v1,depot_a
+trs-mung-dal-chilka-split-green-peas,trs-trs-mung-dal-chilka-split-green-peas-2kg,GEN_trs-mung-dal-chilka-split-green-peas_2kg,2kg,2,kg,/uploads/trs_mung-dal-chilka-split-green-peas.png,B,,,TRS Mung Dal Chilka (Split Green Peas),,India,2kg,trs-mung-dal-chilka-split-green-peas-v2,depot_a
+trs-paprika-powder,trs-trs-paprika-powder-100g,GEN_trs-paprika-powder_100g,100g,100,g,/uploads/trs_paprika-powder.png,B,,,TRS Paprika Powder,,India,100g,trs-paprika-powder-v0,depot_a
+trs-paprika-powder,trs-trs-paprika-powder-1kg,GEN_trs-paprika-powder_1kg,1kg,1,kg,/uploads/trs_paprika-powder.png,B,,,TRS Paprika Powder,,India,1kg,trs-paprika-powder-v1,depot_a
+trs-paprika-powder,trs-trs-paprika-powder-400g,GEN_trs-paprika-powder_400g,400g,400,g,/uploads/trs_paprika-powder.png,B,,,TRS Paprika Powder,,India,400g,trs-paprika-powder-v2,depot_a
+trs-paprika-powder,trs-trs-paprika-powder-5kg,GEN_trs-paprika-powder_5kg,5kg,5,kg,/uploads/trs_paprika-powder.png,B,,,TRS Paprika Powder,,India,5kg,trs-paprika-powder-v3,depot_a
+trs-popcorn,trs-trs-popcorn-2kg,GEN_trs-popcorn_2kg,2kg,2,kg,/uploads/trs_popcorn.png,B,,,TRS Popcorn,,India,2kg,trs-popcorn-v0,depot_a
+trs-popcorn,trs-trs-popcorn-500g,GEN_trs-popcorn_500g,500g,500,g,/uploads/trs_popcorn.png,B,,,TRS Popcorn,,India,500g,trs-popcorn-v1,depot_a
+trs-pure-gram-flour,trs-trs-pure-gram-flour-1kg,GEN_trs-pure-gram-flour_1kg,1kg,1,kg,/uploads/trs_pure-gram-flour.jpg,B,,gluten,TRS Pure Gram Flour,,India,1kg,trs-pure-gram-flour-v0,depot_a
+trs-pure-gram-flour,trs-trs-pure-gram-flour-20kg,GEN_trs-pure-gram-flour_20kg,20kg,20,kg,/uploads/trs_pure-gram-flour.jpg,B,,gluten,TRS Pure Gram Flour,,India,20kg,trs-pure-gram-flour-v1,depot_a
+trs-pure-gram-flour,trs-trs-pure-gram-flour-2kg,GEN_trs-pure-gram-flour_2kg,2kg,2,kg,/uploads/trs_pure-gram-flour.jpg,B,,gluten,TRS Pure Gram Flour,,India,2kg,trs-pure-gram-flour-v2,depot_a
+trs-red-adzuki-beans-red-cow-peas,trs-trs-red-adzuki-beans-red-cow-peas-500g,GEN_trs-red-adzuki-beans-red-cow-peas_500g,500g,500,g,/uploads/trs_red-adzuki-beans-red-cow-peas.png,B,,,TRS Red Adzuki Beans (Red Cow Peas),,India,500g,trs-red-adzuki-beans-red-cow-peas-v0,depot_a
+trs-red-adzuki-beans-red-cow-peas,trs-trs-red-adzuki-beans-red-cow-peas-2kg,GEN_trs-red-adzuki-beans-red-cow-peas_2kg,2kg,2,kg,/uploads/trs_red-adzuki-beans-red-cow-peas.png,B,,,TRS Red Adzuki Beans (Red Cow Peas),,India,2Kg,trs-red-adzuki-beans-red-cow-peas-v1,depot_a
+trs-red-kidney-beans,trs-trs-red-kidney-beans-1kg,GEN_trs-red-kidney-beans_1kg,1kg,1,kg,/uploads/trs_red-kidney-beans.png,B,,,TRS Red Kidney Beans,,India,1kg,trs-red-kidney-beans-v0,depot_a
+trs-red-kidney-beans,trs-trs-red-kidney-beans-2kg,GEN_trs-red-kidney-beans_2kg,2kg,2,kg,/uploads/trs_red-kidney-beans.png,B,,,TRS Red Kidney Beans,,India,2kg,trs-red-kidney-beans-v1,depot_a
+trs-red-kidney-beans,trs-trs-red-kidney-beans-400g,GEN_trs-red-kidney-beans_400g,400g,400,g,/uploads/trs_red-kidney-beans.png,B,,,TRS Red Kidney Beans,,India,400g,trs-red-kidney-beans-v2,depot_a
+trs-red-kidney-beans,trs-trs-red-kidney-beans-500g,GEN_trs-red-kidney-beans_500g,500g,500,g,/uploads/trs_red-kidney-beans.png,B,,,TRS Red Kidney Beans,,India,500g,trs-red-kidney-beans-v3,depot_a
+trs-red-kidney-beans,trs-trs-red-kidney-beans-5kg,GEN_trs-red-kidney-beans_5kg,5kg,5,kg,/uploads/trs_red-kidney-beans.png,B,,,TRS Red Kidney Beans,,India,5kg,trs-red-kidney-beans-v4,depot_a
+trs-red-split-lentils,trs-trs-red-split-lentils-1kg,GEN_trs-red-split-lentils_1kg,1kg,1,kg,/uploads/trs_red-split-lentils.png,B,,sesame,TRS Red Split Lentils,,India,1kg,trs-red-split-lentils-v0,depot_a
+trs-red-split-lentils,trs-trs-red-split-lentils-5kg,GEN_trs-red-split-lentils_5kg,5kg,5,kg,/uploads/trs_red-split-lentils.png,B,,sesame,TRS Red Split Lentils,,India,5kg,trs-red-split-lentils-v3,depot_a
+trs-rosecoco-beans,trs-trs-rosecoco-beans-25kg,GEN_trs-rosecoco-beans_25kg,25kg,25,kg,/uploads/trs_rosecoco-beans.png,B,,,TRS Rosecoco Beans,,India,25kg,trs-rosecoco-beans-v0,depot_a
+trs-rosecoco-beans,trs-trs-rosecoco-beans-2kg,GEN_trs-rosecoco-beans_2kg,2kg,2,kg,/uploads/trs_rosecoco-beans.png,B,,,TRS Rosecoco Beans,,India,2kg,trs-rosecoco-beans-v1,depot_a
+trs-rosecoco-beans,trs-trs-rosecoco-beans-500g,GEN_trs-rosecoco-beans_500g,500g,500,g,/uploads/trs_rosecoco-beans.png,B,,,TRS Rosecoco Beans,,India,500g,trs-rosecoco-beans-v2,depot_a
+trs-sarson-ka-saag-spiced-mustard-greens-curry,trs-trs-sarson-ka-saag-spiced-mustard-greens-curry-450g,GEN_trs-sarson-ka-saag-spiced-mustard-greens-curry_450g,450g,450,g,/uploads/trs_sarson-ka-saag-spiced-mustard-greens-curry.png,B,,mustard,TRS Sarson Ka Saag (Spiced Mustard Greens Curry),,India,450g,trs-sarson-ka-saag-spiced-mustard-greens-curry-v0,depot_a
+trs-sarson-ka-saag-spiced-mustard-greens-curry,trs-trs-sarson-ka-saag-spiced-mustard-greens-curry-850g,GEN_trs-sarson-ka-saag-spiced-mustard-greens-curry_850g,850g,850,g,/uploads/trs_sarson-ka-saag-spiced-mustard-greens-curry.png,B,,mustard,TRS Sarson Ka Saag (Spiced Mustard Greens Curry),,India,850g,trs-sarson-ka-saag-spiced-mustard-greens-curry-v1,depot_a
+trs-tapioca-pearls,trs-trs-tapioca-pearls-15kg,GEN_trs-tapioca-pearls_1.5kg,1.5kg,1.5,kg,/uploads/trs_tapioca-pearls.png,B,,,TRS Tapioca Pearls,,India,1.5kg,trs-tapioca-pearls-v0,depot_a
+trs-tapioca-pearls,trs-trs-tapioca-pearls-500g,GEN_trs-tapioca-pearls_500g,500g,500,g,/uploads/trs_tapioca-pearls.png,B,,,TRS Tapioca Pearls,,India,500g,trs-tapioca-pearls-v1,depot_a
+trs-toor-dal,trs-trs-toor-dal-500g,GEN_trs-toor-dal_500g,500g,500,g,/uploads/trs_toor-dal.png,B,,,TRS Toor Dal,,India,500g,trs-toor-dal-v0,depot_a
+trs-toor-dal,trs-trs-toor-dal-1kg,GEN_trs-toor-dal_1kg,1kg,1,kg,/uploads/trs_toor-dal.png,B,,,TRS Toor Dal,,India,1Kg,trs-toor-dal-v1,depot_a
+trs-toor-dal,trs-trs-toor-dal-2kg,GEN_trs-toor-dal_2kg,2kg,2,kg,/uploads/trs_toor-dal.png,B,,,TRS Toor Dal,,India,2Kg,trs-toor-dal-v2,depot_a
+trs-toor-dal,trs-trs-toor-dal-25kg,GEN_trs-toor-dal_25kg,25kg,25,kg,/uploads/trs_toor-dal.png,B,,,TRS Toor Dal,,India,25Kg,trs-toor-dal-v3,depot_a
+trs-tumeric-powder,trs-trs-tumeric-powder-100g,GEN_trs-tumeric-powder_100g,100g,100,g,/uploads/trs_tumeric-powder.png,B,,,TRS Tumeric Powder,,India,100g,trs-tumeric-powder-v0,depot_a
+trs-tumeric-powder,trs-trs-tumeric-powder-400g,GEN_trs-tumeric-powder_400g,400g,400,g,/uploads/trs_tumeric-powder.png,B,,,TRS Tumeric Powder,,India,400g,trs-tumeric-powder-v1,depot_a
+trs-tumeric-powder,trs-trs-tumeric-powder-1kg,GEN_trs-tumeric-powder_1kg,1kg,1,kg,/uploads/trs_tumeric-powder.png,B,,,TRS Tumeric Powder,,India,1Kg,trs-tumeric-powder-v2,depot_a
+trs-tumeric-powder,trs-trs-tumeric-powder-5kg,GEN_trs-tumeric-powder_5kg,5kg,5,kg,/uploads/trs_tumeric-powder.png,B,,,TRS Tumeric Powder,,India,5Kg,trs-tumeric-powder-v3,depot_a
+trs-urid-beans,trs-trs-urid-beans-500g,GEN_trs-urid-beans_500g,500g,500,g,/uploads/trs_urid-beans.png,B,,,TRS Urid Beans,,India,500g,trs-urid-beans-v0,depot_a
+trs-urid-beans,trs-trs-urid-beans-1kg,GEN_trs-urid-beans_1kg,1kg,1,kg,/uploads/trs_urid-beans.png,B,,,TRS Urid Beans,,India,1Kg,trs-urid-beans-v1,depot_a
+trs-urid-beans,trs-trs-urid-beans-2kg,GEN_trs-urid-beans_2kg,2kg,2,kg,/uploads/trs_urid-beans.png,B,,,TRS Urid Beans,,India,2Kg,trs-urid-beans-v2,depot_a
+trs-urid-beans,trs-trs-urid-beans-5kg,GEN_trs-urid-beans_5kg,5kg,5,kg,/uploads/trs_urid-beans.png,B,,,TRS Urid Beans,,India,5Kg,trs-urid-beans-v3,depot_a
+trs-urid-beans,trs-trs-urid-beans-25kg,GEN_trs-urid-beans_25kg,25kg,25,kg,/uploads/trs_urid-beans.png,B,,,TRS Urid Beans,,India,25Kg,trs-urid-beans-v4,depot_a
+trs-urid-dal,trs-trs-urid-dal-500g,GEN_trs-urid-dal_500g,500g,500,g,/uploads/trs_urid-dal.png,B,,,TRS Urid Dal,,India,500g,trs-urid-dal-v0,depot_a
+trs-urid-dal,trs-trs-urid-dal-1kg,GEN_trs-urid-dal_1kg,1kg,1,kg,/uploads/trs_urid-dal.png,B,,,TRS Urid Dal,,India,1kg,trs-urid-dal-v1,depot_a
+trs-urid-dal,trs-trs-urid-dal-2kg,GEN_trs-urid-dal_2kg,2kg,2,kg,/uploads/trs_urid-dal.png,B,,,TRS Urid Dal,,India,2Kg,trs-urid-dal-v2,depot_a
+trs-urid-dal,trs-trs-urid-dal-5kg,GEN_trs-urid-dal_5kg,5kg,5,kg,/uploads/trs_urid-dal.png,B,,,TRS Urid Dal,,India,5Kg,trs-urid-dal-v3,depot_a
+trs-urid-dal-chilka,trs-trs-urid-dal-chilka-500g,GEN_trs-urid-dal-chilka_500g,500g,500,g,/uploads/trs_urid-dal-chilka.png,B,,,TRS Urid Dal Chilka,,India,500g,trs-urid-dal-chilka-v0,depot_a
+trs-urid-dal-chilka,trs-trs-urid-dal-chilka-1kg,GEN_trs-urid-dal-chilka_1kg,1kg,1,kg,/uploads/trs_urid-dal-chilka.png,B,,,TRS Urid Dal Chilka,,India,1kg,trs-urid-dal-chilka-v1,depot_a
+trs-urid-dal-chilka,trs-trs-urid-dal-chilka-2kg,GEN_trs-urid-dal-chilka_2kg,2kg,2,kg,/uploads/trs_urid-dal-chilka.png,B,,,TRS Urid Dal Chilka,,India,2kg,trs-urid-dal-chilka-v2,depot_a
+trs-urid-whole-gota,trs-trs-urid-whole-gota-500g,GEN_trs-urid-whole-gota_500g,500g,500,g,/uploads/trs_urid-whole-gota.png,B,,,TRS Urid Whole Gota,,India,500g,trs-urid-whole-gota-v0,depot_a
+trs-urid-whole-gota,trs-trs-urid-whole-gota-1kg,GEN_trs-urid-whole-gota_1kg,1kg,1,kg,/uploads/trs_urid-whole-gota.png,B,,,TRS Urid Whole Gota,,India,1kg,trs-urid-whole-gota-v1,depot_a
+trs-urid-whole-gota,trs-trs-urid-whole-gota-2kg,GEN_trs-urid-whole-gota_2kg,2kg,2,kg,/uploads/trs_urid-whole-gota.png,B,,,TRS Urid Whole Gota,,India,2Kg,trs-urid-whole-gota-v2,depot_a
+trs-urid-whole-gota,trs-trs-urid-whole-gota-5kg,GEN_trs-urid-whole-gota_5kg,5kg,5,kg,/uploads/trs_urid-whole-gota.png,B,,,TRS Urid Whole Gota,,India,5Kg,trs-urid-whole-gota-v3,depot_a
+trs-white-maize-meal,trs-trs-white-maize-meal-15kg,GEN_trs-white-maize-meal_1.5kg,1.5kg,1.5,kg,/uploads/trs_white-maize-meal.png,B,,,TRS White Maize Meal,,India,1.5kg,trs-white-maize-meal-v0,depot_a
+trs-white-maize-meal,trs-trs-white-maize-meal-500g,GEN_trs-white-maize-meal_500g,500g,500,g,/uploads/trs_white-maize-meal.png,B,,,TRS White Maize Meal,,India,500g,trs-white-maize-meal-v1,depot_a
+trs-white-maize-meal,trs-trs-white-maize-meal-5kg,GEN_trs-white-maize-meal_5kg,5kg,5,kg,/uploads/trs_white-maize-meal.png,B,,,TRS White Maize Meal,,India,5kg,trs-white-maize-meal-v2,depot_a
+trs-whole-cinnamon-dalchini,trs-trs-whole-cinnamon-dalchini-15kg,GEN_trs-whole-cinnamon-dalchini_1.5kg,1.5kg,1.5,kg,/uploads/trs_whole-cinnamon-dalchini.png,B,,,TRS Whole Cinnamon (Dalchini),,India,1.5kg,trs-whole-cinnamon-dalchini-v0,depot_a
+trs-whole-cinnamon-dalchini,trs-trs-whole-cinnamon-dalchini-200g,GEN_trs-whole-cinnamon-dalchini_200g,200g,200,g,/uploads/trs_whole-cinnamon-dalchini.png,B,,,TRS Whole Cinnamon (Dalchini),,India,200g,trs-whole-cinnamon-dalchini-v1,depot_a
+trs-whole-cinnamon-dalchini,trs-trs-whole-cinnamon-dalchini-400g,GEN_trs-whole-cinnamon-dalchini_400g,400g,400,g,/uploads/trs_whole-cinnamon-dalchini.png,B,,,TRS Whole Cinnamon (Dalchini),,India,400g,trs-whole-cinnamon-dalchini-v2,depot_a
+trs-whole-cinnamon-dalchini,trs-trs-whole-cinnamon-dalchini-50g,GEN_trs-whole-cinnamon-dalchini_50g,50g,50,g,/uploads/trs_whole-cinnamon-dalchini.png,B,,,TRS Whole Cinnamon (Dalchini),,India,50g,trs-whole-cinnamon-dalchini-v3,depot_a
+trs-yellow-peas,trs-trs-yellow-peas-500g,GEN_trs-yellow-peas_500g,500g,500,g,/uploads/trs_yellow-peas.png,B,,,TRS Yellow Peas,,India,500g,trs-yellow-peas-v0,depot_a
+trs-yellow-peas,trs-trs-yellow-peas-2kg,GEN_trs-yellow-peas_2kg,2kg,2,kg,/uploads/trs_yellow-peas.png,B,,,TRS Yellow Peas,,India,2Kg,trs-yellow-peas-v1,depot_a
+trs-yellow-split-peas,trs-trs-yellow-split-peas-2kg,GEN_trs-yellow-split-peas_2kg,2kg,2,kg,/uploads/trs_yellow-split-peas.png,B,,,TRS Yellow Split Peas,,India,2kg,trs-yellow-split-peas-v0,depot_a
+trs-yellow-split-peas,trs-trs-yellow-split-peas-500g,GEN_trs-yellow-split-peas_500g,500g,500,g,/uploads/trs_yellow-split-peas.png,B,,,TRS Yellow Split Peas,,India,500g,trs-yellow-split-peas-v1,depot_a
+trs-chilli-powder-hot,trs-chilli-hot-200g,GEN_trs-chilli-powder-hot_200g,,200,g,/images/products/trs-chilli-powder-hot.jpg,,,,Store in a cool dry place,India,200,trs-chilli-powder-hot-200g,,depot_a
+trs-coconut-milk,trs-coconut-milk-400ml,GEN_trs-coconut-milk_400ml,,400,ml,/images/products/trs-coconut-milk.jpg,,,,Store in a cool dry place,India,400,trs-coconut-milk-400ml,,depot_a
+trs-dark-red-kidney-beans,trs-rajma-dark-1kg,GEN_trs-dark-red-kidney-beans_1kg,,1,kg,/images/products/trs-dark-red-kidney-beans.png,,,,Store in a cool dry place,India,1,trs-dark-red-kidney-beans-1kg,,depot_a
+trs-garlic-paste,trs-garlic-paste-300g,GEN_trs-garlic-paste_300g,,300,g,/images/products/trs-garlic-paste.jpg,,,,Refrigerate after opening,India,300,trs-garlic-paste-300g,,depot_a
+trs-ginger-garlic-paste,trs-gg-paste-1kg,GEN_trs-ginger-garlic-paste_1kg,1kg,1,kg,/uploads/trs_ginger-garlic-paste.jpg,,,,Refrigerate after opening,India,1,trs-ginger-garlic-paste-1kg,,depot_a
+trs-ginger-garlic-paste,trs-gg-paste-300g,GEN_trs-ginger-garlic-paste_300g,300g,300,g,/uploads/trs_ginger-garlic-paste.jpg,,,,Refrigerate after opening,India,300,trs-ginger-garlic-paste-300g,,depot_a
+trs-ginger-paste,trs-ginger-paste-300g,GEN_trs-ginger-paste_300g,,300,g,/uploads/trs_ginger-paste.jpg,,,,Refrigerate after opening,India,300,trs-ginger-paste-300g,,depot_a
+trs-kala-chana,trs-kala-chana-1kg,GEN_trs-kala-chana_1kg,,1,kg,/images/products/trs-kala-chana.png,,,,Store in a cool dry place,India,1,trs-kala-chana-1kg,,depot_a
+trs-kashmiri-chilli-powder,trs-kashmiri-chilli-200g,GEN_trs-kashmiri-chilli-powder_200g,,200,g,/images/products/trs-kashmiri-chilli-powder.jpg,,,,Store in a cool dry place,India,200,trs-kashmiri-chilli-powder-200g,,depot_a
+trs-kewra-water,trs-kewra-water-190ml,GEN_trs-kewra-water_190ml,,190,ml,/images/products/trs-kewra-water.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,trs-kewra-water-190ml,depot_a
+trs-moong-whole-green,trs-moong-whole-green-1kg,GEN_trs-moong-whole-green_1kg,,1,kg,/images/products/trs-moong-whole-green.png,,,,Store in a cool dry place,India,1,trs-moong-whole-green-1kg,,depot_a
+trs-mustard-oil,trs-mustard-oil-1l,GEN_trs-mustard-oil_1l,,1,l,/images/products/trs-mustard-oil.jpg,A,,mustard,Contains mustard oil,Store in a cool dry place,India,Default,trs-mustard-oil-1l,depot_a
+trs-red-split-lentils,trs-red-split-lentils-2kg,GEN_trs-red-split-lentils_2kg,2kg,2,kg,/uploads/trs_red-lentils.jpg,,,,Store in a cool dry place,India,2,trs-red-split-lentils-2kg,,depot_a
+trs-red-split-lentils,trs-red-split-lentils-500g,GEN_trs-red-split-lentils_500g,500g,500,g,/uploads/trs_red-lentils.jpg,,,,Store in a cool dry place,India,500,trs-red-split-lentils-500g,,depot_a
+trs-rose-water,trs-rose-water-190ml,GEN_trs-rose-water_190ml,,190,ml,/images/products/trs-rose-water.jpg,A,,,See product packaging,Store in a cool dry place,India,Default,trs-rose-water-190ml,depot_a
+trs-tamarind-block,trs-tamarind-block-400g,GEN_trs-tamarind-block_400g,,400,g,/images/products/trs-tamarind-block.jpg,,,,Store in a cool dry place,India,400,trs-tamarind-block-400g,,depot_a
+trs-toor-dal-dry,trs-toor-dal-dry-1kg,GEN_trs-toor-dal-dry_1kg,,1,kg,/uploads/trs_toor-dal.jpg,,,,Store in a cool dry place,India,1,trs-toor-dal-dry-1kg,,depot_a
+trs-toor-dal-oily,trs-toor-dal-oily-1kg,GEN_trs-toor-dal-oily_1kg,1kg,1,kg,/uploads/trs_toor-dal.jpg,,,,Store in a cool dry place,India,1,trs-toor-dal-oily-1kg,,depot_a
+trs-toor-dal-oily,trs-toor-dal-oily-2kg,GEN_trs-toor-dal-oily_2kg,2kg,2,kg,/uploads/trs_toor-dal.jpg,,,,Store in a cool dry place,India,2,trs-toor-dal-oily-2kg,,depot_a
+trs-urad-dal-black-whole,trs-urad-black-whole-1kg,GEN_trs-urad-dal-black-whole_1kg,,1,kg,/images/products/trs-urad-dal-black-whole.png,,,,Store in a cool dry place,India,1,trs-urad-dal-black-whole-1kg,,depot_a
+wagh-bakri-premium-tea,wagh-bakri-tea-500g,GEN_wagh-bakri-premium-tea_500g,500g,500,g,/images/products/wagh-bakri-premium-tea.jpg,,,,Store in a cool dry place,India,500,wagh-bakri-premium-tea-500g,,fresh_supplier
+wagh-bakri-premium-tea,wagh-bakri-tea-1kg,GEN_wagh-bakri-premium-tea_1kg,1kg,1,kg,/images/products/wagh-bakri-premium-tea.jpg,,,,Store in a cool dry place,India,1,wagh-bakri-premium-tea-1kg,,fresh_supplier
+indian-onion,veg-indian-onion-1kg,GEN_indian-onion_1kg,1kg Bag,1,kg,/images/products/indian-onion.png,A,,,Fresh Indian Onion,Store in a cool dry place. Use within 2-3 weeks.,India,1kg Bag,veg-indian-onion-1kg,fresh_supplier
+mud-potato,veg-mud-potato-2kg,GEN_mud-potato_2kg,2kg Bag,2,kg,/images/products/mud-potato.png,A,,,Fresh Mud Potato,Store in a cool dark place. Use within 2-3 weeks.,Cyprus,2kg Bag,veg-mud-potato-2kg,fresh_supplier
+ginger,veg-ginger-250g,GEN_ginger_250g,250g Pack,250,g,/images/products/ginger.png,A,,,Fresh Ginger Root,Store in refrigerator. Use within 2-3 weeks.,India,250g Pack,veg-ginger-250g,fresh_supplier
+garlic,veg-garlic-250g,GEN_garlic_250g,250g Pack,Store in a cool dry place. Use within 3-4 weeks.,India,250,/images/products/garlic.png,,vegetarian;vegan;gluten-free,,,Fresh Garlic Bulbs,true,published,fresh_supplier
+okra,veg-okra-500g,GEN_okra_500g,500g Pack,Store in refrigerator. Use within 2-3 days.,India,500,/images/products/okra.png,,vegetarian;vegan;gluten-free,,,Fresh Okra,true,published,fresh_supplier
+green-chillies,veg-green-chillies-200g,GEN_green-chillies_200g,200g Pack,Store in refrigerator. Use within 5-7 days.,India,200,/images/products/green-chillies.png,,vegetarian;vegan;gluten-free,,,Fresh Green Chillies,true,published,fresh_supplier
+bottle-gourd,veg-dudhi-single,GEN_bottle-gourd_1pc,Single,Store in refrigerator. Use within 5-7 days.,India,1,/images/products/bottle-gourd.png,,vegetarian;vegan;gluten-free,,,Fresh Bottle Gourd,true,published,fresh_supplier
+bitter-gourd,veg-karela-500g,GEN_bitter-gourd_500g,500g Pack,500,g,/images/products/bitter-gourd.png,B,,,Fresh Bitter Gourd,Store in refrigerator. Use within 3-4 days.,India,500g Pack,veg-karela-500g,fresh_supplier
+drumsticks,veg-drumsticks-250g,GEN_drumsticks_250g,250g Pack,250,g,/images/products/drumsticks.png,A,,,Fresh Drumsticks,Store in refrigerator. Use within 3-4 days.,India,250g Pack,veg-drumsticks-250g,fresh_supplier
+tindora,veg-tindora-500g,GEN_tindora_500g,500g Pack,500,g,/images/products/tindora.png,B,,,Fresh Tindora,Store in refrigerator. Use within 3-4 days.,India,500g Pack,veg-tindora-500g,fresh_supplier
+curry-leaves,veg-curry-leaves-50g,GEN_curry-leaves_50g,50g Pack,50,g,/images/products/curry-leaves.png,A,,,Fresh Curry Leaves,Store in refrigerator. Use within 1-2 weeks.,India,50g Pack,veg-curry-leaves-50g,fresh_supplier
+vine-tomato,veg-tomato-500g,GEN_vine-tomato_500g,500g Pack,Store at room temperature. Use within 5-7 days.,UK,500,/images/products/vine-tomato.png,,vegetarian;vegan;gluten-free,,,Fresh Vine Tomatoes,true,published,fresh_supplier
+green-lime,veg-lime-4pk,GEN_green-lime_4pc,4 Pack,Store in refrigerator. Use within 1-2 weeks.,India,4,/images/products/green-lime.png,,vegetarian;vegan;gluten-free,,,Fresh Green Limes,true,published,fresh_supplier
+coconut,veg-coconut-single,GEN_coconut_1pc,Single,Store at room temperature. Use within 2 weeks.,Sri Lanka,1,/images/products/coconut.png,,vegetarian;vegan;gluten-free,,,Fresh Whole Coconut,true,published,fresh_supplier
+green-plantains,veg-plantain-single,GEN_green-plantains_1pc,Single,Store at room temperature. Use within 5-7 days.,India,1,/images/products/green-plantains.png,,vegetarian;vegan;gluten-free,,,Fresh Green Plantains,false,published,fresh_supplier
+cassava,veg-cassava-1kg,GEN_cassava_1kg,1kg Pack,1,kg,/images/products/cassava.png,B,,,Fresh Cassava Root,Store in refrigerator. Use within 1-2 weeks.,Sri Lanka,1kg Pack,veg-cassava-1kg,fresh_supplier
+arbi,veg-arbi-500g,GEN_arbi_500g,500g Pack,500,g,/images/products/arbi.png,B,,,Fresh Arbi (Taro Root),Store in refrigerator. Use within 1-2 weeks.,India,500g Pack,veg-arbi-500g,fresh_supplier

@@ -1,0 +1,22 @@
+vendor_handle,vendor_name,sourcing_depot,warehouse_aisle,lead_time_days,min_order_qty
+trs_vibrant,TRS Vibrant Brands,depot_a,A1-A4,3,6
+natco_foods,Natco Foods Ltd,depot_b,B1-B3,3,6
+shan_foods,Shan Foods Intl,depot_b,B1-B3,3,6
+mdh_spices,MDH Spices India,depot_b,B1-B3,3,6
+everest_spices,Everest Spices,depot_b,B1-B3,3,6
+ab_world_foods,AB World Foods,depot_a,A1-A4,3,6
+east_end_foods,East End Foods,depot_a,A1-A4,3,6
+ashoka_foods,Ashoka Foods,depot_c,C1-C5,3,6
+mtr_foods,MTR Foods India,depot_c,C1-C5,3,6
+haldiram_snacks,Haldiram Snacks Intl,depot_b,B1-B3,3,6
+bikaji_foods,Bikaji Foods Intl,depot_b,B1-B3,3,6
+britannia_ind,Britannia Industries,depot_c,C1-C5,3,6
+mondelez_india,Mondelez India,depot_c,C1-C5,3,6
+nestle_india,Nestle India,depot_c,C1-C5,3,6
+parle_products,Parle Products,depot_c,C1-C5,3,6
+laziza_foods,Laziza Foods Pakistan,depot_c,C1-C5,3,6
+priya_foods,Priya Foods India,depot_c,C1-C5,3,6
+aachi_foods,Aachi Foods Chennai,depot_c,C1-C5,3,6
+shri_mahila,Shri Mahila Griha Udyog,depot_c,C1-C5,5,12
+london_produce,London Produce Market,fresh_supplier,F1-F2,1,5
+multiple_suppliers,Multiple Suppliers,default_depot,G1-G8,4,6

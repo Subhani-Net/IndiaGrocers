@@ -1,0 +1,3 @@
+handle,name,parent_handle,rank,description
+vegetables_fruits_flowers,Fresh Vegetables & Fruits,,75,Weekly fresh produce — Indian vegetables; tropical fruits; and fresh flowers. Low margin; high velocity; perishable cold-chain category.
+fresh_vegetables,Fresh Vegetables,vegetables_fruits_flowers,50,Weekly fresh Indian & Sri Lankan vegetables. Sourced daily for peak freshness. 77 varieties from Veenas London supply chain.

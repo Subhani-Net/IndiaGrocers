@@ -1,0 +1,3 @@
+handle,name,parent_handle,rank,description
+frozen_breads,Frozen Breads & Parathas,,36,DEFERRED to Phase 2 (4-5 weeks). Shana frozen range — parathas; rotis; naans. Requires cold-chain logistics.
+frozen_paneer,Frozen Paneer & Dairy,frozen_breads,41,DEFERRED to Phase 2 (4-5 weeks). Nanak Paneer; East End Paneer. Requires cold-chain logistics.

@@ -1,0 +1,722 @@
+[
+  {
+    "handle": "indian-onion",
+    "title": "Indian Onion",
+    "subtitle": "Fresh produce — weekly staple",
+    "description": "Fresh Indian red onions. The essential base for every Indian curry. Sourced weekly for peak freshness.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["1kg Bag"] }],
+    "variants": [{
+      "title": "1kg Bag",
+      "sku": "veg-indian-onion-1kg",
+      "prices": [{ "currency_code": "gbp", "amount": 149 }],
+      "metadata": {
+        "barcode": "VEG_IND_ONION_1KG",
+        "weight_value": 1,
+        "weight_unit": "kg",
+        "sourcing_note": "AMB_STAPLE"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Indian Onion",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "A",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in a cool dry place. Use within 2-3 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "AMB_STAPLE"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "mud-potato",
+    "title": "Mud Potato",
+    "subtitle": "Cyprus variety — earthy flavour",
+    "description": "Fresh Cyprus mud potatoes. Excellent for curries and aloo dishes. Rich earthy flavour.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["2kg Bag"] }],
+    "variants": [{
+      "title": "2kg Bag",
+      "sku": "veg-mud-potato-2kg",
+      "prices": [{ "currency_code": "gbp", "amount": 299 }],
+      "metadata": {
+        "barcode": "VEG_MUD_POT_2KG",
+        "weight_value": 2,
+        "weight_unit": "kg",
+        "sourcing_note": "AMB_STAPLE"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "Cyprus",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Mud Potato",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "A",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in a cool dark place. Use within 2-3 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "AMB_STAPLE"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "ginger",
+    "title": "Ginger",
+    "subtitle": "Fresh root — daily essential",
+    "description": "Fresh root ginger. The universal Indian cooking essential — used in almost every dish.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["250g Pack"] }],
+    "variants": [{
+      "title": "250g Pack",
+      "sku": "veg-ginger-250g",
+      "prices": [{ "currency_code": "gbp", "amount": 249 }],
+      "metadata": {
+        "barcode": "VEG_GINGER_250G",
+        "weight_value": 250,
+        "weight_unit": "g",
+        "sourcing_note": "MARGIN_PACK"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Ginger Root",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "B",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 2-3 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "MARGIN_PACK"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "garlic",
+    "title": "Garlic",
+    "subtitle": "Fresh bulbs — kitchen essential",
+    "description": "Fresh garlic bulbs. Essential for almost every Indian dish — tempering, chutneys, and curries.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["250g Pack"] }],
+    "variants": [{
+      "title": "250g Pack",
+      "sku": "veg-garlic-250g",
+      "prices": [{ "currency_code": "gbp", "amount": 229 }],
+      "metadata": {
+        "barcode": "VEG_GARLIC_250G",
+        "weight_value": 250,
+        "weight_unit": "g",
+        "sourcing_note": "MARGIN_PACK"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Garlic Bulbs",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "B",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in a cool dry place. Use within 3-4 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "MARGIN_PACK"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "okra",
+    "title": "Okra / Bhindi",
+    "subtitle": "The #1 weekly trigger vegetable",
+    "description": "Fresh okra. The highest-volume vegetable — essential for bhindi masala, sambar, and stir-fries. Core volume driver.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["500g Pack"] }],
+    "variants": [{
+      "title": "500g Pack",
+      "sku": "veg-okra-500g",
+      "prices": [{ "currency_code": "gbp", "amount": 429 }],
+      "metadata": {
+        "barcode": "VEG_OKRA_500G",
+        "weight_value": 500,
+        "weight_unit": "g",
+        "sourcing_note": "CORE_VOL"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Okra",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "A",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": true,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 2-3 days.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "CORE_VOL"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "green-chillies",
+    "title": "Green Chillies",
+    "subtitle": "Essential for tempering & chutneys",
+    "description": "Fresh Indian green chillies. Essential for tempering, chutneys, and adding heat to any dish.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["200g Pack"] }],
+    "variants": [{
+      "title": "200g Pack",
+      "sku": "veg-green-chillies-200g",
+      "prices": [{ "currency_code": "gbp", "amount": 169 }],
+      "metadata": {
+        "barcode": "VEG_G_CHILLI_200G",
+        "weight_value": 200,
+        "weight_unit": "g",
+        "sourcing_note": "MARGIN_PACK"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Green Chillies",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "B",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 5-7 days.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "MARGIN_PACK"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "bottle-gourd",
+    "title": "Bottle Gourd / Dudhi",
+    "subtitle": "Mild & versatile — Gujarati staple",
+    "description": "Fresh bottle gourd. Mild and versatile — used in dudhi na muthia, curries, and halwa.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["Single"] }],
+    "variants": [{
+      "title": "Single",
+      "sku": "veg-dudhi-single",
+      "prices": [{ "currency_code": "gbp", "amount": 399 }],
+      "metadata": {
+        "barcode": "VEG_DUDHI_SGL",
+        "weight_value": 1,
+        "weight_unit": "pc",
+        "sourcing_note": "CORE_VOL"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Bottle Gourd",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "B",
+      "sourcing_tier": "B",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": ["gujarati"],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 5-7 days.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "CORE_VOL"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "bitter-gourd",
+    "title": "Bitter Gourd / Karela",
+    "subtitle": "Ayurvedic health vegetable",
+    "description": "Fresh bitter gourd. Prized in Ayurvedic cooking for its health benefits. Core volume driver.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["500g Pack"] }],
+    "variants": [{
+      "title": "500g Pack",
+      "sku": "veg-karela-500g",
+      "prices": [{ "currency_code": "gbp", "amount": 499 }],
+      "metadata": {
+        "barcode": "VEG_KARELA_500G",
+        "weight_value": 500,
+        "weight_unit": "g",
+        "sourcing_note": "CORE_VOL"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Bitter Gourd",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "B",
+      "sourcing_tier": "B",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 3-4 days.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "CORE_VOL"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "drumsticks",
+    "title": "Drumsticks",
+    "subtitle": "South Indian anchor vegetable",
+    "description": "Fresh drumsticks (murungaikkai). Essential for sambar and avial. A weekly trigger for the South Indian community.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["250g Pack"] }],
+    "variants": [{
+      "title": "250g Pack",
+      "sku": "veg-drumsticks-250g",
+      "prices": [{ "currency_code": "gbp", "amount": 269 }],
+      "metadata": {
+        "barcode": "VEG_DRUMSTICK_250G",
+        "weight_value": 250,
+        "weight_unit": "g",
+        "sourcing_note": "SI_ANCHOR"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Drumsticks",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "A",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": ["south-indian"],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 3-4 days.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "SI_ANCHOR"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "tindora",
+    "title": "Tindora",
+    "subtitle": "Ivy gourd — Gujarati favourite",
+    "description": "Fresh tindora (kovakkai). Small ivy gourd popular in Gujarati and South Indian cuisine. Core volume driver.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["500g Pack"] }],
+    "variants": [{
+      "title": "500g Pack",
+      "sku": "veg-tindora-500g",
+      "prices": [{ "currency_code": "gbp", "amount": 439 }],
+      "metadata": {
+        "barcode": "VEG_TINDORA_500G",
+        "weight_value": 500,
+        "weight_unit": "g",
+        "sourcing_note": "CORE_VOL"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Tindora",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "B",
+      "sourcing_tier": "B",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": ["gujarati"],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 3-4 days.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "CORE_VOL"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "curry-leaves",
+    "title": "Curry Leaves",
+    "subtitle": "Essential tempering herb",
+    "description": "Fresh curry leaves (kari veppilai). The essential tempering herb for South Indian cooking. Saturday fresh batch.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["50g Pack"] }],
+    "variants": [{
+      "title": "50g Pack",
+      "sku": "veg-curry-leaves-50g",
+      "prices": [{ "currency_code": "gbp", "amount": 249 }],
+      "metadata": {
+        "barcode": "VEG_CURRY_LV_50G",
+        "weight_value": 50,
+        "weight_unit": "g",
+        "sourcing_note": "SAT_FRESH"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Curry Leaves",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "A",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": ["south-indian"],
+      "subscription_eligible": true,
+      "requires_fast_delivery": true,
+      "requires_cold_chain": true,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 1-2 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "SAT_FRESH"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "vine-tomato",
+    "title": "Vine Tomato",
+    "subtitle": "Essential for rasam & curries",
+    "description": "Fresh vine tomatoes. Essential for rasam, South Indian curries, and daily cooking.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["500g Pack"] }],
+    "variants": [{
+      "title": "500g Pack",
+      "sku": "veg-tomato-500g",
+      "prices": [{ "currency_code": "gbp", "amount": 349 }],
+      "metadata": {
+        "barcode": "VEG_TOMATO_500G",
+        "weight_value": 500,
+        "weight_unit": "g",
+        "sourcing_note": "AMB_STAPLE"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "UK",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Vine Tomatoes",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "A",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store at room temperature. Use within 5-7 days.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "AMB_STAPLE"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "green-lime",
+    "title": "Green Lime",
+    "subtitle": "Essential for pickles & chaat",
+    "description": "Fresh green limes. Essential for pickles, squeezing over chaat, and daily cooking.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["4 Pack"] }],
+    "variants": [{
+      "title": "4 Pack",
+      "sku": "veg-lime-4pk",
+      "prices": [{ "currency_code": "gbp", "amount": 199 }],
+      "metadata": {
+        "barcode": "VEG_LIME_4PK",
+        "weight_value": 4,
+        "weight_unit": "pc",
+        "sourcing_note": "MARGIN_PACK"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Green Limes",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "B",
+      "sourcing_tier": "B",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 1-2 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "MARGIN_PACK"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "coconut",
+    "title": "Coconut",
+    "subtitle": "South Indian chutney essential",
+    "description": "Fresh whole coconut. Essential for South Indian chutneys, curries, and sweets. A weekly trigger purchase.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["Single"] }],
+    "variants": [{
+      "title": "Single",
+      "sku": "veg-coconut-single",
+      "prices": [{ "currency_code": "gbp", "amount": 169 }],
+      "metadata": {
+        "barcode": "VEG_COCONUT_SGL",
+        "weight_value": 1,
+        "weight_unit": "pc",
+        "sourcing_note": "SI_ANCHOR"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "Sri Lanka",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Whole Coconut",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "A",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": ["south-indian"],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store at room temperature. Use within 2 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "SI_ANCHOR"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "small-onion",
+    "title": "Small Onion / Shallots",
+    "subtitle": "South Indian sambar essential",
+    "description": "Fresh small onions (chinna vengayam). Essential for South Indian sambar, puli kulambu, and korma. A weekly trigger.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["500g Pack"] }],
+    "variants": [{
+      "title": "500g Pack",
+      "sku": "veg-small-onion-500g",
+      "prices": [{ "currency_code": "gbp", "amount": 449 }],
+      "metadata": {
+        "barcode": "VEG_SM_ONION_500G",
+        "weight_value": 500,
+        "weight_unit": "g",
+        "sourcing_note": "SI_ANCHOR"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Small Onions",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "A",
+      "sourcing_tier": "A",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": ["south-indian"],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in a cool dry place. Use within 2 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "SI_ANCHOR"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "green-plantains",
+    "title": "Green Plantains",
+    "subtitle": "Regional specialty — chips & curries",
+    "description": "Fresh green plantains (vazhaikkai). Used for chips, curries, and deep-fried snacks. Regional specialty item.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["Single"] }],
+    "variants": [{
+      "title": "Single",
+      "sku": "veg-plantain-single",
+      "prices": [{ "currency_code": "gbp", "amount": 449 }],
+      "metadata": {
+        "barcode": "VEG_G_PLANTAIN",
+        "weight_value": 1,
+        "weight_unit": "pc",
+        "sourcing_note": "REG_SPEC"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Green Plantains",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "C",
+      "sourcing_tier": "C",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": ["south-indian"],
+      "subscription_eligible": false,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store at room temperature. Use within 5-7 days.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "REG_SPEC"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "cassava",
+    "title": "Cassava / Mogo",
+    "subtitle": "Sri Lankan & East African staple",
+    "description": "Fresh cassava root (maravalli kizhangu). Boiled or fried — a Sri Lankan and East African staple. Core volume driver.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["1kg Pack"] }],
+    "variants": [{
+      "title": "1kg Pack",
+      "sku": "veg-cassava-1kg",
+      "prices": [{ "currency_code": "gbp", "amount": 299 }],
+      "metadata": {
+        "barcode": "VEG_CASSAVA_1KG",
+        "weight_value": 1,
+        "weight_unit": "kg",
+        "sourcing_note": "CORE_VOL"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "Sri Lanka",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Cassava Root",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "B",
+      "sourcing_tier": "B",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": ["east-african-asian"],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 1-2 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "CORE_VOL"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  },
+  {
+    "handle": "arbi",
+    "title": "Arbi / Taro Root",
+    "subtitle": "Boiled & fried — popular snack root",
+    "description": "Fresh arbi (taro root / cheppankizhangu). Boiled and fried for a popular Indian snack. Ambient storage.",
+    "status": "published",
+    "thumbnail": "",
+    "options": [{ "title": "Default", "values": ["500g Pack"] }],
+    "variants": [{
+      "title": "500g Pack",
+      "sku": "veg-arbi-500g",
+      "prices": [{ "currency_code": "gbp", "amount": 499 }],
+      "metadata": {
+        "barcode": "VEG_ARBI_500G",
+        "weight_value": 500,
+        "weight_unit": "g",
+        "sourcing_note": "AMB_STAPLE"
+      }
+    }],
+    "images": [],
+    "metadata": {
+      "country_of_origin": "India",
+      "uk_food_business_operator": "IndiaGrocers London",
+      "ingredients": "Fresh Arbi (Taro Root)",
+      "allergens": [],
+      "vat_rate": 0,
+      "velocity": "B",
+      "sourcing_tier": "B",
+      "dietary_flags": ["vegetarian", "vegan", "gluten-free"],
+      "regional_tags": [],
+      "subscription_eligible": true,
+      "requires_fast_delivery": false,
+      "requires_cold_chain": false,
+      "brand_slug": "generic",
+      "storage": "Store in refrigerator. Use within 1-2 weeks.",
+      "category_handle": "fresh_veg",
+      "sourcing_note": "AMB_STAPLE"
+    },
+    "categories": [{ "id": "fresh_veg" }]
+  }
+]

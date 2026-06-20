@@ -32,10 +32,6 @@ const FORBIDDEN_HANDLES = new Set([
   "toor-dal", "chana-dal", "moong-dal-yellow", "whole-moong-green",
   "masoor-dal-red-lentils", "urad-dal-split", "whole-urad-black",
   "rajma-kidney-beans", "chana-whole-chickpeas", "kala-chana-black-chickpeas", "lobhia-black-eye-beans",
-])
-
-// Handles that should NEVER appear in MeiliSearch (old system, now migrated away)
-const FORBIDDEN_HANDLES = new Set([
   "sambar-powder", "tamarind-chutney",
 ])
 

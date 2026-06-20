@@ -84,6 +84,27 @@ export const BRANDS: Brand[] = [
   // Ready to Cook / Instant
   { slug: "gits", name: "Gits", categories: ["ready-to-cook"] },
   { slug: "bambino", name: "Bambino", categories: ["ready-to-cook"] },
+  // Pickles & Chutneys (cont.)
+  { slug: "lg", name: "LG", categories: ["pickles-chutneys"] },
+  { slug: "laziza", name: "Laziza", categories: ["spice-blends", "ready-to-cook"] },
+  { slug: "karachi-bakery", name: "Karachi Bakery", categories: ["snacks-namkeen"] },
+  { slug: "ashoka", name: "Ashoka", categories: ["ready-to-cook", "pickles-chutneys"] },
+  { slug: "cadbury", name: "Cadbury", categories: ["snacks-namkeen"] },
+  { slug: "hajmola", name: "Hajmola", categories: ["condiments"] },
+  { slug: "national-foods", name: "National Foods", categories: ["spice-blends", "spices-ground"] },
+  { slug: "chings-secret", name: "Ching's Secret", categories: ["condiments", "ready-to-cook"] },
+  { slug: "idhayam", name: "Idhayam", categories: ["cooking-oils"] },
+  { slug: "bovonto", name: "Bovonto", categories: ["soft_drinks_juices"] },
+  { slug: "bru", name: "Bru", categories: ["tea_coffee"] },
+  { slug: "leo-coffee", name: "Leo Coffee", categories: ["tea_coffee"] },
+  { slug: "nescafe", name: "Nescafe", categories: ["tea_coffee"] },
+  { slug: "parachute", name: "Parachute", categories: ["cooking_oils"] },
+  { slug: "rasna", name: "Rasna", categories: ["soft_drinks_juices"] },
+  { slug: "udhayam", name: "Udhayam", categories: ["tea_coffee"] },
+
+  // Fresh Vegetables (in-house)
+  { slug: "fresh_veg", name: "Fresh Veg", categories: ["fresh_veg"] },
+
   // Fallback
   { slug: "generic", name: "Generic / Unbranded", categories: [] },
 ]

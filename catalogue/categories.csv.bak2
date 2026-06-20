@@ -1,0 +1,44 @@
+handle,name,parent_handle,rank,description
+rice_grains,Rice & Grains,,0,Premium rice varieties grains flakes and vermicelli lines
+basmati_rice,Basmati Rice,rice_grains,1,Premium long grain aromatic basmati rice varieties
+everyday_rice,Everyday Rice,rice_grains,2,Standard daily consumption white and parboiled rice
+sona_masuri_rice,Sona Masuri Rice,rice_grains,3,Authentic South Indian medium grain rice lines
+speciality_rice_poha,Speciality Rice & Poha,rice_grains,4,Flattened rice red black matta and regional grain variants
+vermicelli_noodles,Vermicelli & Noodles,rice_grains,5,Traditional roasting vermicelli instant and hakka noodles
+atta_flours,Atta & Flours,,10,Traditional and specialist South Asian milling flours
+atta_flour,Atta & Chapati Flour,atta_flours,11,Whole wheat premium chapati flour and stoneground chakki atta
+gram_flour_besan,Gram Flour (Besan),atta_flours,12,Pure chana dal flour for savouries sweets and batters
+semolina_rava,Semolina & Rava,atta_flours,13,Fine and coarse semolina for halwa upma and idli batters
+speciality_flours_grains,Speciality Flours & Pasta,atta_flours,14,Multi grain flour millet variants and regional starch flours
+coconut_products,Coconut Products,atta_flours,15,Coconut milk milk powder desiccated flakes and cream
+dals_lentils_pulses,Dals Lentils & Pulses,,20,Whole split oily and dry pulse lines
+lentils_dals,Lentils & Dals,dals_lentils_pulses,21,Split red yellow chana moong and toor dal selections
+beans_peas_pulses,Beans Peas & Pulses,dals_lentils_pulses,22,Whole chickpeas kidney beans black urad and dry peas
+spices_masalas_herbs,Spices Masalas & Herbs,,30,Pure whole powdered and composite blended spice elements
+whole_spices_seeds,Whole Spices & Seeds,spices_masalas_herbs,31,Whole seeds pods bark and aromatic tempering elements
+powdered_spices,Powdered Spices,spices_masalas_herbs,32,Pure ground chillies coriander turmeric and functional hing powder
+masalas_spice_blends,Masalas & Spice Blends,spices_masalas_herbs,33,Recipe specific meat vegetable and tea spice seasoning mixes
+herbs_leaves,Herbs & Dried Leaves,spices_masalas_herbs,34,Dried fenugreek leaves curry leaves and whole herbs
+sauces_pickles_pastes,Chutneys Pickles & Cooking Pastes,,40,Accompaniments condiments and meal preparation bases
+pickles,Pickles,sauces_pickles_pastes,41,Traditional oil and vinegar preserved vegetable and meat pickles
+chutneys_spreads,Chutneys & Spreads,sauces_pickles_pastes,42,Sweet spicy and tangy dipping chutneys and table spreads
+cooking_pastes_sauces,Cooking Pastes & Table Sauces,sauces_pickles_pastes,43,Ginger garlic purees kitchen sauces and schezwan dips
+oils_ghee,Oils & Ghee,,50,Traditional fats and oils for deep frying and tempering
+cooking_oils,Cooking Oils,oils_ghee,51,Mustard oil sesame oil sunflower and vegetable cooking oils
+pure_ghee,Pure Ghee,oils_ghee,52,Premium cow and buffalo clarified butter tins and jars
+snacks_sweets_bakery,Snacks Sweets & Bakery,,60,Savouries confectionery ready mixes and instant meals
+savouries_papadoms,Savouries & Papadoms,snacks_sweets_bakery,61,Traditional namkeens bhujia mathri and roasting papadoms
+sweets_confectionery,Sweets & Confectionery,snacks_sweets_bakery,62,Tinned halwas syrupy sweets and imported chocolate selections
+biscuits_crackers,Biscuits & Crackers,snacks_sweets_bakery,63,Authentic chai accompaniment biscuits and shortbread lines
+nuts_seeds,Nuts & Seeds,snacks_sweets_bakery,64,Roasted peanuts chana daria and premium nut selections
+dessert_mixes,Instant Dessert Mixes,snacks_sweets_bakery,65,Powdered dessert blends for kheer gulab jamun and kulfi
+rte_meals,Ready-To-Eat Meals,snacks_sweets_bakery,66,Ambient shelf stable heat and eat Indian curry pouches
+instant_breakfast_mixes,Instant Breakfast Mixes,snacks_sweets_bakery,67,Dry composite mixes for dosa idli vada and dhokla batters
+beverages_pantry,Beverages Wellness & Pantry,,70,Hot and cold drinks wellness remedies and baking essentials
+tea_coffee,Tea & Coffee,beverages_pantry,71,Loose leaf tea masala chai variants and filter or instant coffee
+soft_drinks_juices,Soft Drinks & Juices,beverages_pantry,72,Mango drinks grape sodas cordials and rooh afza concentrates
+health_malted_drinks,Health & Malted Drinks,beverages_pantry,73,Nutritional family milk additives and energy formulations
+wellness_ayurveda,Ayurveda & Wellness,beverages_pantry,74,Traditional chyawanprash herbal elixirs digestive tablets and mukhwas
+sweeteners,Sugar Jaggery & Sweeteners,beverages_pantry,75,Refined sugar brown sugar jaggery blocks and powder lines
+baking_essences,Baking Essences & Waters,beverages_pantry,76,Aromatic rose water kewra essences and food colourings
+pantry_tamarind_canned,Tamarind Canned Veg & Meat Alts,beverages_pantry,77,Tamarind blocks canned vegetables and dry soya chunks
