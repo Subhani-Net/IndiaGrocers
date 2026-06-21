@@ -507,7 +507,11 @@ async function main() {
       }
 
       const thumbnail = p.thumbnail || ""
-      const imageFilename = (thumbnail || "").replace(/^\/uploads\//, "").replace(/^\/images\/products\//, "")
+      let imageFilename = (thumbnail || "").replace(/^\/uploads\//, "").replace(/^\/images\/products\//, "")
+      // Filter out garbage: numbers-only values (weight/unit leaked into thumbnail field)
+      if (!imageFilename || /^\d+$/.test(imageFilename) || !imageFilename.match(/\.(png|jpg|jpeg|webp|gif)$/i)) {
+        imageFilename = ""
+      }
 
       for (const v of p.variants || []) {
         const variantTitle = v.title || "Default"

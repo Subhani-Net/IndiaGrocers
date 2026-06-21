@@ -63,6 +63,10 @@ abstract class StripeGbpBaseProvider extends AbstractPaymentProvider {
         payment_method: (input.data as any)?.payment_method,
         confirm: (input.data as any)?.confirm,
         return_url: (input.data as any)?.return_url,
+        metadata: {
+          session_id: (input.context as any)?.session_id ?? "",
+          resource_id: (input.context as any)?.resource_id ?? "",
+        },
       })
 
       console.log("[stripe-gbp] initiatePayment: PI created", pi.id, "status:", pi.status)
@@ -77,10 +81,25 @@ abstract class StripeGbpBaseProvider extends AbstractPaymentProvider {
   }
 
   async authorizePayment(input: any): Promise<{ data: Record<string, unknown>; status: string }> {
-    // PaymentIntent was created with confirm: true during initiatePayment,
-    // so the payment is already confirmed by Stripe. Return authorized.
-    // The PI ID comes from the session's external ID, not from input.data.
-    return { data: input.data || {}, status: "authorized" }
+    // PaymentIntent was created with confirm: true during initiatePayment
+    // so Stripe has already confirmed it. Check the ACTUAL Stripe status
+    // rather than blindly returning "authorized".
+    // With capture_method: "automatic", the PI may already be "succeeded" →
+    // the payment should show as "captured" in Medusa immediately.
+    const piId = input.data?.id || input.data?.stripe_pi_id
+    if (!piId) {
+      console.log("[stripe-gbp] authorizePayment: NO PI ID — returning pending")
+      return { data: input.data || {}, status: "pending" }
+    }
+    try {
+      const pi = await this.stripe_.paymentIntents.retrieve(piId)
+      const status = this.mapStripeStatus(pi.status)
+      console.log(`[stripe-gbp] authorizePayment: PI ${piId} Stripe status=${pi.status} → Medusa status=${status}`)
+      return { data: { ...input.data, stripe_pi_id: pi.id }, status }
+    } catch (err: any) {
+      console.log("[stripe-gbp] authorizePayment: Stripe retrieve failed:", err.message)
+      return { data: input.data || {}, status: "authorized" }
+    }
   }
 
   async getPaymentStatus(input: any): Promise<{ data: Record<string, unknown>; status: string }> {
@@ -168,6 +187,39 @@ abstract class StripeGbpBaseProvider extends AbstractPaymentProvider {
 
   async deletePayment(input: any): Promise<void> {
     // Stripe PaymentIntents cannot be deleted — just return
+  }
+
+  // ── Webhook support: verifies Stripe signature, maps events to Medusa actions ──
+
+  constructWebhookEvent(payload: { rawBody: Buffer; signature: string }): Stripe.Event {
+    return this.stripe_.webhooks.constructEvent(
+      payload.rawBody,
+      payload.signature,
+      process.env.STRIPE_WEBHOOK_SECRET || ""
+    )
+  }
+
+  async getWebhookActionAndData(data: { event: any }): Promise<{ action: string; data: Record<string, unknown> } | null> {
+    const event = data.event as Stripe.Event
+    switch (event.type) {
+      case "payment_intent.succeeded":
+        return {
+          action: "captured",
+          data: {
+            session_id: (event.data.object as any).metadata?.session_id,
+            amount: (event.data.object as any).amount,
+          },
+        }
+      case "payment_intent.payment_failed":
+        return {
+          action: "failed",
+          data: {
+            session_id: (event.data.object as any).metadata?.session_id,
+          },
+        }
+      default:
+        return null
+    }
   }
 
   private mapStripeStatus(status: string): string {

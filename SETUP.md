@@ -13,6 +13,7 @@
 | Node.js | 26+ | `node --version` |
 | npm | 11+ | `npm --version` |
 | Yarn | 4+ | `yarn --version` |
+| Stripe CLI | Latest | `stripe --version` (`winget install stripe.stripe` if missing) |
 
 ---
 
@@ -62,6 +63,7 @@ Ensure `.env` has these minimum values:
 DATABASE_URL=postgres://medusa:medusa@localhost:5432/indiagrocers
 REDIS_URL=redis://localhost:6379
 STRIPE_SECRET_KEY=sk_test_xxx      # from Stripe dashboard
+STRIPE_WEBHOOK_SECRET=whsec_xxx    # from `stripe listen` command (dev only)
 SENDGRID_API_KEY=SG.xxx            # from SendGrid (optional for dev)
 SENDGRID_FROM=info@srsoils.com
 ```
@@ -184,6 +186,28 @@ npx playwright test --project=bdd --grep "Cart Management"
 
 ## Dev Loop (After Initial Setup)
 
+### Quick-Start — 3 terminals
+
+| Terminal | `cd` into | Run |
+|----------|-----------|-----|
+| 1 | `apps\backend` | `npx medusa develop` |
+| 2 | `apps\storefront` | `yarn dev` |
+| 3 | (anywhere) | `stripe listen --forward-to localhost:9000/hooks/payment/stripe` |
+
+### Redis — clearing cache for dev
+
+Redis stores transient transactional data (event queue, cache). Safe to flush anytime.
+
+```bash
+npm run redis:clear    # flush all data (safe — no setup/schema in Redis)
+npm run redis:size     # check current key count
+```
+
+Redis modules registered in `medusa-config.ts`:
+- `event-bus-redis` — replaces in-memory event bus, enables cron jobs
+- `cache-redis` — shared cache that survives backend restarts
+- `workflow-engine-redis` — not registered (single-instance, no need for distributed coordination)
+
 ### Backend changes
 ```bash
 cd apps\backend
@@ -194,6 +218,15 @@ npx medusa develop        # auto-reloads on source changes
 ```bash
 cd apps\storefront
 yarn dev                  # auto-reloads with turbopack HMR
+```
+
+### Stripe webhook forwarding (run alongside backend)
+```bash
+# Required in dev — Stripe can't reach localhost without a tunnel.
+# If not running, payments will still work (provider auto-syncs),
+# but webhook events (payment_intent.succeeded, etc.) won't reach the backend.
+stripe listen --forward-to localhost:9000/hooks/payment/stripe
+# Copy the printed whsec_xxx → add to apps/backend/.env as STRIPE_WEBHOOK_SECRET=whsec_xxx
 ```
 
 ### After any data change (seed, enrichment, migration)
@@ -217,6 +250,8 @@ node scripts/verify-data-health.mjs         # confirm no regressions
 | Prices showing as `£99.00` instead of `£0.99` | This was fixed in D8 — `convertToLocale` in `money.ts` now divides by 100 |
 | Product card links go to `/products/undefined` | This was fixed in D9 — `handle` field added to API `fields` parameter |
 | Stripe charges 100× expected amount | This was fixed — `stripe-gbp-provider.ts` in framework-enhancements handles the unit conversion |
+| `'stripe' is not recognized` | Stripe CLI not installed: `winget install stripe.stripe`, then reopen terminal |
+| Payment shows "authorized" instead of "captured" | Normal in dev — `authorizePayment()` syncs from Stripe on next checkout. For existing orders, see `docs/architecture/order-lifecycle.md` §6 |
 
 ---
 

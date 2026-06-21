@@ -127,7 +127,23 @@ export default function CheckoutForm({ cart, customer, shippingOptions = [] }: C
 
     setSettingShipping(true)
     try {
-      await setShippingMethod({ cartId: cart.id, shippingMethodId: shippingOptionId })
+      // Persist delivery slot as metadata so it appears on confirmation page
+      const slotMetadata: Record<string, string> = {}
+      if (selectedSlotDate) {
+        slotMetadata.delivery_date = selectedSlotDate.toLocaleDateString("en-GB", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+        })
+      }
+      if (selectedSlotWindow?.label) {
+        slotMetadata.delivery_window = selectedSlotWindow.label
+      }
+      await setShippingMethod({
+        cartId: cart.id,
+        shippingMethodId: shippingOptionId,
+        metadata: slotMetadata,
+      })
       pushStep("payment")
     } catch (e: any) {
       setDeliveryError(e.message || "Failed to set delivery method. Please try again.")

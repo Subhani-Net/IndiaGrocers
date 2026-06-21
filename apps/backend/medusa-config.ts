@@ -62,6 +62,20 @@ module.exports = defineConfig({
         ],
       },
     },
+    {
+      key: "eventBus",
+      resolve: "@medusajs/event-bus-redis",
+      options: {
+        redisUrl: process.env.REDIS_URL || "redis://localhost:6379",
+      },
+    },
+    {
+      key: "cache",
+      resolve: "@medusajs/cache-redis",
+      options: {
+        redisUrl: process.env.REDIS_URL || "redis://localhost:6379",
+      },
+    },
   ],
   admin: {
     disable: process.env.DISABLE_MEDUSA_ADMIN === "true",

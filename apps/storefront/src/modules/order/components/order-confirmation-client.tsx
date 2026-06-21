@@ -7,7 +7,10 @@ import OrderCompletedTemplate from "@modules/order/templates/order-completed-tem
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 // ─── Polling intervals (ms from start of previous attempt) ───
-const RETRY_INTERVALS = [0, 1000, 2500, 4000]
+// Extended from 4 to 6 attempts to give the backend workflow
+// enough time to commit the order (Stripe PI creation + authorization).
+// Total window: ~30s before failover screen.
+const RETRY_INTERVALS = [0, 2000, 4000, 6000, 8000, 10000]
 const MAX_ATTEMPTS = RETRY_INTERVALS.length
 
 type Status = "loading" | "success" | "failed"

@@ -7,14 +7,14 @@ import ShippingDetails from "@modules/order/components/shipping-details"
 import PaymentDetails from "@modules/order/components/payment-details"
 import OrderSummary from "@modules/order/components/order-summary"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { DELIVERY_ETA_RANGE } from "@lib/config/store-config"
+import { DELIVERY_ETA_RANGE, STANDARD_ETA } from "@lib/config/store-config"
 import { HttpTypes } from "@medusajs/types"
 
 type Props = {
   order: HttpTypes.StoreOrder
 }
 
-// ─── Safe hel pers — never crash on missing data ───
+// ─── Safe helpers — never crash on missing data ───
 
 function safeString(val: unknown, fallback = "—"): string {
   if (val === null || val === undefined) return fallback
@@ -75,17 +75,33 @@ function RepeatOrderButton({ order }: { order: HttpTypes.StoreOrder | null }) {
   )
 }
 
-// ─── Order Status Tracker ───
+// ─── Order Status Tracker (dynamic — driven by order state) ───
 
-function OrderStatusTracker() {
+function OrderStatusTracker({ order }: { order: HttpTypes.StoreOrder }) {
+  const orderStatus = order?.status || "pending"
+  const fulfillmentStatus = order?.fulfillment_status || "not_fulfilled"
+  const paymentCollection = (order as any)?.payment_collections?.[0]
+  const paymentCaptured = paymentCollection?.status === "completed" || paymentCollection?.status === "captured"
+
+  // Determine which steps are complete based on actual order state
+  const paymentDone = orderStatus !== "pending" || paymentCaptured
+  const orderDone = orderStatus === "completed" || orderStatus === "archived"
+  const fulfilled = ["fulfilled", "partially_fulfilled", "shipped", "partially_shipped", "delivered", "partially_delivered"].includes(fulfillmentStatus)
+  const shipped = ["shipped", "partially_shipped", "delivered", "partially_delivered"].includes(fulfillmentStatus)
+
   const steps = [
-    { label: "Order Received", desc: "We've got your order", done: true },
-    { label: "Processing", desc: "Packing your items", done: false },
-    { label: "Out for Delivery", desc: "On its way to you", done: false },
+    { label: "Order Confirmed", desc: "Payment received", done: paymentDone },
+    { label: "Processing", desc: "Preparing your groceries", done: orderDone },
+    { label: "Out for Delivery", desc: "On its way to you", done: fulfilled },
+    { label: "Delivered", desc: "Enjoy your groceries!", done: shipped },
   ]
 
+  // Find the current active step (first undone)
+  const activeIndex = steps.findIndex(s => !s.done)
+  const currentStep = activeIndex === -1 ? steps.length - 1 : activeIndex
+
   return (
-    <div className="w-full bg-white border border-stone-200 rounded-xl p-4 sm:p-5">
+    <div className="w-full bg-white border border-stone-200 rounded-xl p-4 sm:p-5 print:hidden">
       <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider mb-4">
         Order Status
       </h3>
@@ -97,7 +113,7 @@ function OrderStatusTracker() {
                 className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
                   step.done
                     ? "bg-green-500"
-                    : i === 1
+                    : i === currentStep
                     ? "bg-brand-orange animate-pulse"
                     : "bg-stone-200"
                 }`}
@@ -106,7 +122,7 @@ function OrderStatusTracker() {
                   <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
-                ) : i === 1 ? (
+                ) : i === currentStep ? (
                   <svg className="w-3.5 h-3.5 text-white animate-spin" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
@@ -120,7 +136,7 @@ function OrderStatusTracker() {
               )}
             </div>
             <div className="pb-2">
-              <p className={`text-sm font-semibold ${step.done ? "text-stone-800" : i === 1 ? "text-brand-orange" : "text-stone-400"}`}>
+              <p className={`text-sm font-semibold ${step.done ? "text-stone-800" : i === currentStep ? "text-brand-orange" : "text-stone-400"}`}>
                 {step.label}
               </p>
               <p className="text-xs text-stone-400">{step.desc}</p>
@@ -129,6 +145,19 @@ function OrderStatusTracker() {
         ))}
       </div>
     </div>
+  )
+}
+
+// ─── Print Receipt Button ───
+
+function PrintReceiptButton() {
+  return (
+    <button
+      onClick={() => window.print()}
+      className="w-full py-2.5 text-sm font-semibold text-stone-600 border border-stone-200 rounded-xl hover:border-brand-orange/30 hover:text-brand-orange transition-colors print:hidden"
+    >
+      🖨️ Print Receipt
+    </button>
   )
 }
 
@@ -151,16 +180,12 @@ export default function OrderCompletedTemplate({ order }: Props) {
   const isFreeDelivery = shipping === 0
   const countryCode = order?.shipping_address?.country_code?.toLowerCase() || "gb"
 
-  // ─── Delivery ETA ───
-  const eta = new Date()
-  eta.setDate(eta.getDate() + 3)
-  const etaStr = eta.toLocaleDateString("en-GB", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-  })
+  // ─── Delivery ETA — reads shipping method metadata slot if available ───
+  const shippingMeta = (order?.shipping_methods?.[0]?.metadata || {}) as Record<string, string>
+  const deliverySlotDate = shippingMeta?.delivery_date || ""
+  const deliverySlotWindow = shippingMeta?.delivery_window || ""
 
-  // ─── Prevent back-button re-submit ───
+  // Prevent back-button re-submit
   useEffect(() => {
     if (typeof window !== "undefined") {
       router.replace(window.location.pathname + window.location.search)
@@ -168,11 +193,23 @@ export default function OrderCompletedTemplate({ order }: Props) {
   }, [])
 
   return (
-    <div className="py-8 sm:py-12 min-h-screen bg-stone-50">
+    <>
+      {/* ─── Print stylesheet ─── */}
+      <style>{`
+        @media print {
+          body * { visibility: hidden; }
+          .print-area, .print-area * { visibility: visible; }
+          .print-area { position: absolute; left: 0; top: 0; width: 100%; }
+          .print-hidden { display: none !important; }
+          @page { margin: 1cm; size: A4; }
+        }
+      `}</style>
+
+      <div className="py-8 sm:py-12 min-h-screen bg-stone-50 print-area">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 flex flex-col items-center gap-y-6">
 
         {/* ─── Success Checkmark ─── */}
-        <div className="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-500/20">
+        <div className="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-500/20 print-hidden">
           <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
           </svg>
@@ -200,11 +237,19 @@ export default function OrderCompletedTemplate({ order }: Props) {
             <span className="text-2xl flex-shrink-0">🚚</span>
             <div>
               <p className="font-bold text-stone-800">Estimated Delivery</p>
-              <p className="text-sm text-stone-500 mt-0.5">
-                Your order will arrive by{" "}
-                <span className="font-semibold text-stone-700">{etaStr}</span>
-                {" "}between {DELIVERY_ETA_RANGE || "8am–8pm"}
-              </p>
+              {deliverySlotDate ? (
+                <p className="text-sm text-stone-500 mt-0.5">
+                  Your delivery is scheduled for{" "}
+                  <span className="font-semibold text-stone-700">{deliverySlotDate}</span>
+                  {deliverySlotWindow && (
+                    <> between{" "}<span className="font-semibold text-stone-700">{deliverySlotWindow}</span></>
+                  )}
+                </p>
+              ) : (
+                <p className="text-sm text-stone-500 mt-0.5">
+                  {STANDARD_ETA || "3–5 working days"} · between {DELIVERY_ETA_RANGE || "8am–8pm"}
+                </p>
+              )}
               <p className="text-xs text-stone-400 mt-1">
                 You&apos;ll receive tracking updates via email
               </p>
@@ -212,8 +257,8 @@ export default function OrderCompletedTemplate({ order }: Props) {
           </div>
         </div>
 
-        {/* ─── Order Status Tracker ─── */}
-        <OrderStatusTracker />
+        {/* ─── Order Status Tracker (dynamic) ─── */}
+        <OrderStatusTracker order={order} />
 
         {/* ─── Delivery + Payment Cards ─── */}
         {order && (
@@ -271,10 +316,9 @@ export default function OrderCompletedTemplate({ order }: Props) {
 
         {/* ─── Post-Purchase Actions ─── */}
         <div className="w-full space-y-3">
-          {/* Repeat Order */}
           <RepeatOrderButton order={order} />
+          <PrintReceiptButton />
 
-          {/* View Order History */}
           <LocalizedClientLink
             href="/account/orders"
             className="block w-full py-2.5 text-sm font-semibold text-center text-stone-600 border border-stone-200 rounded-xl hover:border-brand-orange/30 hover:text-brand-orange transition-colors"
@@ -283,7 +327,7 @@ export default function OrderCompletedTemplate({ order }: Props) {
           </LocalizedClientLink>
         </div>
 
-        {/* ─── Save Details Prompt (first-time customers) ─── */}
+        {/* ─── Save Details Prompt ─── */}
         {showSavePrompt && (
           <div className="w-full bg-gradient-to-r from-brand-orange/5 to-amber-50 border border-brand-orange/20 rounded-xl p-4 sm:p-5">
             <p className="text-sm font-semibold text-stone-800 mb-2">
@@ -327,6 +371,7 @@ export default function OrderCompletedTemplate({ order }: Props) {
           or contact support.
         </p>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

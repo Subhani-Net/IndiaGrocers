@@ -29,7 +29,6 @@ async function fetchNavCategories(): Promise<NavCategory[]> {
     )
 
     return parents
-      .filter((p) => children.some((c) => c.parent_category_id === p.id))
       .map((p) => ({
         name: p.name,
         handle: p.handle,

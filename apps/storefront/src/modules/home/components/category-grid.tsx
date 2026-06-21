@@ -19,7 +19,6 @@ export default async function CategoryGrid() {
   const children = allCategories.filter((c) => c.parent_category_id)
 
   const displayParents = parents
-    .filter((p) => children.some((c) => c.parent_category_id === p.id))
     .slice(0, 12)
 
   if (!displayParents.length) {

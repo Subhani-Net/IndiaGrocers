@@ -1,0 +1,208 @@
+/**
+ * MVP PAYMENT RECONCILIATION JOB
+ *
+ * Runs every 15 minutes. Fixes orders and carts stuck due to network drops
+ * where Stripe has processed payment but Medusa hasn't recorded it.
+ *
+ * Two scenarios covered:
+ *   1. GHOST CART — Customer charged, no order created → complete cart
+ *   2. STUCK ORDER — Order exists, Stripe succeeded, Medusa "awaiting" → capture payment
+ *
+ * Idempotent: safe to run multiple times. completeCartWorkflow checks for
+ * existing orders. capturePaymentWorkflow is a no-op if already captured.
+ */
+
+import { MedusaContainer } from "@medusajs/framework/types"
+import { completeCartWorkflow } from "@medusajs/medusa/core-flows"
+import { capturePaymentWorkflow } from "@medusajs/medusa/core-flows"
+import Stripe from "stripe"
+
+const CART_AGE_MINUTES = 15
+const ORDER_WINDOW_HOURS = 24
+
+export default async function paymentReconciliation(container: MedusaContainer) {
+  const logger = container.resolve("logger")
+  const query = container.resolve("query") as any
+
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
+    apiVersion: "2024-04-10",
+  })
+
+  // ═══════════════════════════════════════════════════════════════
+  // PART 1: GHOST CARTS
+  // Cart exists, payment succeeded on Stripe, but order was never created.
+  // Re-trigger the cart completion workflow.
+  // ═══════════════════════════════════════════════════════════════
+
+  try {
+    const cutoff = new Date(Date.now() - CART_AGE_MINUTES * 60 * 1000)
+
+    // Step 1a — find carts stuck in limbo
+    const { data: carts } = await query.graph({
+      entity: "cart",
+      fields: [
+        "id",
+        "created_at",
+        // payment_collection is a linked entity via cart_payment_collection
+        "payment_collection.id",
+        "payment_collection.payments.id",
+        "payment_collection.payments.data",
+      ],
+      filters: {
+        completed_at: null,
+        created_at: { $lt: cutoff.toISOString() },
+      },
+    })
+
+    let ghostFixed = 0
+
+    for (const cart of carts) {
+      const payment = cart.payment_collection?.payments?.[0]
+      const piId = payment?.data?.stripe_pi_id
+      if (!piId) continue
+
+      try {
+        const pi = await stripe.paymentIntents.retrieve(piId)
+
+        if (pi.status !== "succeeded") continue
+
+        logger.info(
+          `[reconciliation] Ghost cart ${cart.id}: PI ${piId} succeeded, completing cart`
+        )
+
+        const { result } = await completeCartWorkflow(container).run({
+          input: { id: cart.id },
+          throwOnError: false,
+        })
+
+        if (result?.id) {
+          logger.info(`[reconciliation]   → Order ${result.id} created`)
+          ghostFixed++
+        }
+      } catch (e: any) {
+        logger.error(`[reconciliation] Ghost cart ${cart.id}: ${e.message}`)
+      }
+    }
+
+    if (ghostFixed > 0) {
+      logger.info(`[reconciliation] Ghost carts fixed: ${ghostFixed}`)
+    }
+  } catch (e: any) {
+    logger.error(`[reconciliation] Ghost cart scan failed: ${e.message}`)
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // PART 2: STUCK ORDERS
+  // Order created, Stripe payment succeeded, but Medusa payment
+  // collection status is still "awaiting". Capture the payment.
+  // ═══════════════════════════════════════════════════════════════
+
+  try {
+    const since = new Date(Date.now() - ORDER_WINDOW_HOURS * 3600 * 1000)
+
+    // Step 2a — find orders with payment collections in "awaiting" status
+    const { data: orders } = await query.graph({
+      entity: "order",
+      fields: [
+        "id",
+        "display_id",
+        "created_at",
+        "payment_collections.id",
+        "payment_collections.status",
+        "payment_collections.payments.id",
+        "payment_collections.payments.data",
+        "payment_collections.payments.amount",
+      ],
+      filters: {
+        created_at: { $gt: since.toISOString() },
+      },
+    })
+
+    let stuckFixed = 0
+
+    for (const order of orders) {
+      const pc = order.payment_collections?.[0]
+      if (!pc) continue
+
+      // Process any collection where Stripe might have succeeded but Medusa hasn't captured
+      // "awaiting" = payment was initiated but webhook never arrived
+      // "authorized" = payment was authorized but capture webhook never arrived  
+      // "not_paid" = payment session created but never completed
+      if (pc.status !== "awaiting" && pc.status !== "not_paid" && pc.status !== "authorized") continue
+
+      const payment = pc.payments?.[0]
+      const piId = payment?.data?.stripe_pi_id
+      if (!piId) continue
+
+      try {
+        const pi = await stripe.paymentIntents.retrieve(piId)
+
+        if (pi.status !== "succeeded") continue
+
+        logger.info(
+          `[reconciliation] Stuck order ${order.display_id}: PI ${piId} succeeded, capturing payment ${payment.id}`
+        )
+
+        try {
+          await capturePaymentWorkflow(container).run({
+            input: { payment_id: payment.id },
+            throwOnError: false,
+          })
+        } catch (e1: any) {
+          logger.warn(
+            `[reconciliation] capturePaymentWorkflow failed: ${e1.message}. Trying direct module capture...`
+          )
+          try {
+            const paymentModule = container.resolve("payment") as any
+            await paymentModule.capturePayment({
+              payment_id: payment.id,
+              amount: payment.amount,
+            })
+          } catch (e2: any) {
+            // Stripe PI was already auto-captured — the provider can't re-capture.
+            // Sync Medusa's DB state directly: payment collection + payment session.
+            logger.warn(
+              `[reconciliation] Direct capture also failed (PI already captured). Syncing DB state directly...`
+            )
+            try {
+              const pg = container.resolve("__pg_connection__") as any
+              await pg.query(`
+                UPDATE payment_collection
+                SET status = 'completed', captured_amount = COALESCE(captured_amount, authorized_amount, amount)
+                WHERE id = '${pc.id}'
+              `)
+              await pg.query(`
+                UPDATE payment_session
+                SET status = 'captured'
+                WHERE payment_collection_id = '${pc.id}'
+              `)
+              logger.info(`[reconciliation]   → DB synced: payment_collection=completed, session=captured`)
+            } catch (e3: any) {
+              logger.error(`[reconciliation] DB sync failed: ${e3.message}`)
+              continue
+            }
+          }
+        }
+
+        logger.info(`[reconciliation]   → Payment captured`)
+        stuckFixed++
+      } catch (e: any) {
+        logger.error(
+          `[reconciliation] Stuck order ${order.display_id}: ${e.message}`
+        )
+      }
+    }
+
+    if (stuckFixed > 0) {
+      logger.info(`[reconciliation] Stuck orders fixed: ${stuckFixed}`)
+    }
+  } catch (e: any) {
+    logger.error(`[reconciliation] Stuck order scan failed: ${e.message}`)
+  }
+}
+
+// Cron schedule — every 15 minutes
+export const config = {
+  name: "payment-reconciliation",
+  schedule: "*/15 * * * *",
+}
