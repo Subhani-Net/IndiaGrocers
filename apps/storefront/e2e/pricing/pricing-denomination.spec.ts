@@ -34,13 +34,16 @@ function extractPence(output: string): number {
   return match ? parseInt(match[1]) : 0
 }
 
-const stripe = new Stripe(
-  "REPLACED_KEY",
-  { apiVersion: "2024-04-10" }
-)
+// ─── Stripe SDK (uses env var, skips Stripe tests gracefully if not set) ──
+const STRIPE_KEY = process.env.STRIPE_SECRET_KEY || ""
+const stripe = STRIPE_KEY
+  ? new Stripe(STRIPE_KEY, { apiVersion: "2024-04-10" })
+  : null
 
 const PUBLISHABLE_KEY =
-  "pk_d1327a6688517efedf61db3390f0383286587d8f773ad0cf095c3d07e0ec9f96"
+  process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY ||
+  process.env.NEXT_PUBLIC_STRIPE_KEY ||
+  ""
 
 const BACKEND = "http://localhost:9000"
 
@@ -151,6 +154,12 @@ test.describe("DB pence ↔ Storefront display", () => {
 
 test.describe("Stripe PI ↔ DB payment", () => {
   test("Order #3: DB payment pence matches Stripe PI pence", async () => {
+    if (!stripe) {
+      console.log("  ⚠ STRIPE_SECRET_KEY not set — skipping Stripe PI test")
+      test.skip()
+      return
+    }
+
     const orderId = "order_01KVN5MKAYH05KTM32S01RGRM2"
 
     const output = dbQuery(`
