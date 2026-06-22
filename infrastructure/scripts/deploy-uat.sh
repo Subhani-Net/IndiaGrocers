@@ -51,7 +51,7 @@ log "Server initialized"
 
 step "Phase 2: Deploy UAT application (clone, migrate, seed, build, start)"
 
-log "⚠  Make sure the latest code is pushed to GitHub (develop branch) before continuing"
+log "⚠  Make sure the latest code is pushed to GitHub (main branch) before continuing"
 log "Press Enter to proceed..."
 read -r
 

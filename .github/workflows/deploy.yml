@@ -4,36 +4,13 @@
 #
 # Triggers:
 #   push to `main`    → Deploy Production (Server 1)
-#   push to `develop` → Deploy UAT        (Server 2)
-#
-# Prerequisites (set in GitHub Secrets):
-#   PROD_HOST          — IP or hostname of Server 1 (production)
-#   PROD_SSH_KEY       — SSH private key for deploy@server1
-#   PROD_SSH_USER      — SSH username for Server 1
-#   UAT_HOST           — IP or hostname of Server 2 (UAT)
-#   UAT_SSH_KEY        — SSH private key for deploy@server2
-#   UAT_SSH_USER       — SSH username for Server 2
-#   ENV_PROD           — Production .env file contents (backend)
-#   ENV_UAT            — UAT .env file contents (backend)
-#
-# Deploy strategy:
-#   - SSH into the target server
-#   - Pull the latest code
-#   - Install dependencies (npm ci / yarn install)
-#   - Run database migrations
-#   - Build the Next.js storefront
-#   - Restart the Medusa backend (pm2)
-#   - Restart the Next.js storefront (pm2)
-#   - Reindex MeiliSearch
-#   - Health check the deployment
-
-name: Deploy
+#   push to `staging` → Deploy UAT        (Server 2)
 
 on:
   push:
     branches:
       - main
-      - develop
+      - staging
 
 jobs:
 
@@ -129,7 +106,7 @@ jobs:
   # ═══════════════════════════════════════════════════════
 
   deploy-uat:
-    if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/staging'
     runs-on: ubuntu-latest
     environment: uat
 
@@ -153,8 +130,8 @@ jobs:
             cd /opt/uat
 
             # ── 2. Pull latest code ──
-            git fetch origin develop
-            git reset --hard origin/develop
+            git fetch origin staging
+            git reset --hard origin/staging
 
             # ── 3. Write .env files from GitHub Secrets ──
             echo "${{ secrets.ENV_UAT }}" > apps/backend/.env

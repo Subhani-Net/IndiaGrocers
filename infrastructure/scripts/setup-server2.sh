@@ -79,7 +79,7 @@ UAT_DIR="/opt/uat"
 if [ ! -d "$UAT_DIR" ]; then
     git clone "$REPO" "$UAT_DIR"
 fi
-cd "$UAT_DIR" && git fetch origin && git checkout develop && git pull origin develop
+cd "$UAT_DIR" && git fetch origin && git checkout main && git pull origin main
 npm ci --prefer-offline 2>/dev/null || npm install
 
 # UAT Backend

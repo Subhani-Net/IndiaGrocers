@@ -77,7 +77,7 @@ if [ ! -d "$APP_DIR" ]; then
     git clone "$REPO" "$APP_DIR"
 fi
 cd "$APP_DIR"
-git fetch origin && git checkout develop && git pull origin develop
+git fetch origin && git checkout main && git pull origin main
 
 npm ci --prefer-offline 2>/dev/null || npm install
 

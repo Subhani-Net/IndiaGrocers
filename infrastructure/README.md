@@ -100,9 +100,9 @@ docker compose -p uat -f infrastructure/server2/docker/docker-compose.uat.yml up
 # 5. Start Support Docker
 docker compose -p support -f infrastructure/server2/docker/docker-compose.support.yml up -d
 
-# 6. Clone repo for UAT (develop branch)
+# 6. Clone repo for UAT (staging branch)
 git clone https://github.com/Subhani-Net/IndiaGrocers.git /opt/uat
-cd /opt/uat && git checkout develop
+cd /opt/uat && git checkout staging
 
 # 7. Setup UAT backend
 cd /opt/uat/apps/backend
