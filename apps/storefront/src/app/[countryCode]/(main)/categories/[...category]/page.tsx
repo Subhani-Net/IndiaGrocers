@@ -5,7 +5,7 @@ import { Suspense } from "react"
 import { getCategoryByHandle, listCategories } from "@lib/data/categories"
 import { fetchProductsByIds } from "@lib/data/products"
 import { listRegions } from "@lib/data/regions"
-import { searchProducts } from "@lib/search-client"
+import { searchProducts, sortByCommodity } from "@lib/search-client"
 import { StoreRegion } from "@medusajs/types"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 
@@ -123,10 +123,13 @@ export default async function CategoryPage(props: Props) {
   }
 
   // 1. Query MeiliSearch for product IDs by category relevance
-  const { products: meiliHits, totalCount } = await searchProducts(pseudoQuery, {
+  let { products: meiliHits, totalCount } = await searchProducts(pseudoQuery, {
     limit: 200,
     filter: categoryFilter,
   })
+
+  // Sort by commodity_group so identical products across brands cluster together
+  meiliHits = sortByCommodity(meiliHits)
 
   // 2. Fetch full product data from Medusa by IDs (preserving MeiliSearch sort order)
   const productIds = meiliHits.map((h: any) => h.id)

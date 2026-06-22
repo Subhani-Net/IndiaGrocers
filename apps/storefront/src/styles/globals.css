@@ -132,16 +132,16 @@
 }
 
 :root {
-  --brand-orange: #FF6B35;
-  --brand-orange-light: #FF8F5E;
-  --brand-orange-dark: #E55A2B;
-  --brand-saffron: #F4A100;
-  --brand-saffron-light: #FFC34D;
-  --brand-cardamom: #2E6F40;
-  --brand-cardamom-dark: #1F4D2A;
-  --brand-red: #EF4444;
-  --brand-green: #22C55E;
-  --brand-charcoal: #1A1A2E;
+  --brand-orange: #EA580C;
+  --brand-orange-light: #F97316;
+  --brand-orange-dark: #C2410C;
+  --brand-saffron: #D97706;
+  --brand-saffron-light: #FDE68A;
+  --brand-cardamom: #166534;
+  --brand-cardamom-dark: #14532D;
+  --brand-red: #DC2626;
+  --brand-green: #16A34A;
+  --brand-charcoal: #171717;
 
   --glass-bg: rgba(255, 255, 255, 0.72);
   --glass-border: rgba(255, 255, 255, 0.18);

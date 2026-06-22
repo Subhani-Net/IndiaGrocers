@@ -90,10 +90,10 @@ function OrderStatusTracker({ order }: { order: HttpTypes.StoreOrder }) {
   const shipped = ["shipped", "partially_shipped", "delivered", "partially_delivered"].includes(fulfillmentStatus)
 
   const steps = [
-    { label: "Order Confirmed", desc: "Payment received", done: paymentDone },
-    { label: "Processing", desc: "Preparing your groceries", done: orderDone },
-    { label: "Out for Delivery", desc: "On its way to you", done: fulfilled },
-    { label: "Delivered", desc: "Enjoy your groceries!", done: shipped },
+    { label: "Confirmed", desc: "We've received your payment", done: paymentDone },
+    { label: "Preparing", desc: "Picking and packing your items", done: orderDone },
+    { label: "On the way", desc: "Your driver is heading to you", done: fulfilled },
+    { label: "Delivered", desc: "Enjoy", done: shipped },
   ]
 
   // Find the current active step (first undone)
@@ -103,7 +103,7 @@ function OrderStatusTracker({ order }: { order: HttpTypes.StoreOrder }) {
   return (
     <div className="w-full bg-white border border-stone-200 rounded-xl p-4 sm:p-5 print:hidden">
       <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider mb-4">
-        Order Status
+        Where my order is
       </h3>
       <div className="space-y-3">
         {steps.map((step, i) => (
@@ -218,7 +218,7 @@ export default function OrderCompletedTemplate({ order }: Props) {
         {/* ─── Thank You ─── */}
         <div className="text-center">
           <h1 className="text-2xl sm:text-3xl font-bold text-stone-900">
-            Order Confirmed!
+            Order placed!
           </h1>
           <p className="text-stone-500 mt-2">
             Your order number is{" "}

@@ -1,0 +1,72 @@
+# ═══════════════════════════════════════════════════════════════════
+# Caddy Reverse Proxy — Server 1 (Production)
+# ═══════════════════════════════════════════════════════════════════
+#
+# Deploy to: /etc/caddy/Caddyfile
+# Reload:    sudo systemctl reload caddy
+#
+# Routes:
+#   https://prod.192.168.1.10.nip.io     → Next.js storefront (port 3000)
+#   https://api-prod.192.168.1.10.nip.io → Medusa backend     (port 9000)
+#
+# nip.io provides free wildcard DNS — no domain registration needed.
+# When ready for real domains, replace the nip.io addresses below.
+#
+# Caddy auto-obtains Let's Encrypt certs if the IP is public.
+# For private IPs, Caddy falls back to self-signed certificates.
+
+# ── Global settings ─────────────────────────────────────────────
+{
+    email you@example.com
+    admin off
+}
+
+# ═══════════════════════════════════════════════════════════════════
+# Production Storefront — Next.js
+# ═══════════════════════════════════════════════════════════════════
+
+prod.192.168.1.10.nip.io {
+    reverse_proxy localhost:3000 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto https
+    }
+
+    encode gzip zstd
+
+    log {
+        output file /var/log/caddy/prod-storefront.log {
+            roll_size 20mb
+            roll_keep 5
+        }
+    }
+}
+
+# ═══════════════════════════════════════════════════════════════════
+# Production API — Medusa Backend
+# ═══════════════════════════════════════════════════════════════════
+
+api-prod.192.168.1.10.nip.io {
+    reverse_proxy localhost:9000 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto https
+    }
+
+    # Stripe webhook endpoint must be publicly accessible
+    @stripeWebhook {
+        path /hooks/payment/stripe
+    }
+    header @stripeWebhook -Server
+
+    encode gzip zstd
+
+    log {
+        output file /var/log/caddy/api-prod.log {
+            roll_size 20mb
+            roll_keep 5
+        }
+    }
+}

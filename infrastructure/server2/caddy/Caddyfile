@@ -1,0 +1,115 @@
+﻿# ═══════════════════════════════════════════════════════════════════
+# Caddy Reverse Proxy — Server 2 (Non-Production)
+# ═══════════════════════════════════════════════════════════════════
+#
+# Deploy to: /etc/caddy/Caddyfile
+# Reload:    sudo systemctl reload caddy
+#
+# Routes:
+#   https://uat.178.105.79.185.nip.io     → UAT Next.js       (port 3001)
+#   https://api-uat.178.105.79.185.nip.io → UAT Medusa        (port 9001)
+#   https://support.178.105.79.185.nip.io → Support Next.js    (port 3002)
+#   https://api-support.178.105.79.185.nip.io → Support Medusa (port 9002)
+#
+# UAT storefront is PROTECTED by HTTP Basic Auth.
+# Support is PUBLIC (used for training, demos, admin testing).
+#
+# Generate htpasswd credentials:
+#   sudo apt install apache2-utils -y
+#   sudo htpasswd -c /etc/caddy/uat.htpasswd admin
+#   # Enter password when prompted
+
+# ── Global settings ─────────────────────────────────────────────
+{
+    email you@example.com
+    admin off
+}
+
+# ═══════════════════════════════════════════════════════════════════
+# UAT — Staging Environment (PRIVATE — htpasswd protected)
+# ═══════════════════════════════════════════════════════════════════
+
+uat.178.105.79.185.nip.io {
+    # ── Basic HTTP Auth — keeps bots and public out ──
+    basicauth {
+        import /etc/caddy/uat.htpasswd
+    }
+
+    reverse_proxy localhost:3001 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto https
+    }
+
+    encode gzip zstd
+
+    log {
+        output file /var/log/caddy/uat-storefront.log {
+            roll_size 20mb
+            roll_keep 5
+        }
+    }
+}
+
+api-uat.178.105.79.185.nip.io {
+    basicauth {
+        import /etc/caddy/uat.htpasswd
+    }
+
+    reverse_proxy localhost:9001 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto https
+    }
+
+    encode gzip zstd
+
+    log {
+        output file /var/log/caddy/api-uat.log {
+            roll_size 20mb
+            roll_keep 5
+        }
+    }
+}
+
+# ═══════════════════════════════════════════════════════════════════
+# Prod-Support — Training / Demo / Admin Testing (PUBLIC)
+# ═══════════════════════════════════════════════════════════════════
+
+support.178.105.79.185.nip.io {
+    reverse_proxy localhost:3002 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto https
+    }
+
+    encode gzip zstd
+
+    log {
+        output file /var/log/caddy/support-storefront.log {
+            roll_size 20mb
+            roll_keep 5
+        }
+    }
+}
+
+api-support.178.105.79.185.nip.io {
+    reverse_proxy localhost:9002 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto https
+    }
+
+    encode gzip zstd
+
+    log {
+        output file /var/log/caddy/api-support.log {
+            roll_size 20mb
+            roll_keep 5
+        }
+    }
+}

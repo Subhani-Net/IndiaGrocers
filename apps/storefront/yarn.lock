@@ -9376,6 +9376,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^1.21.0":
+  version: 1.21.0
+  resolution: "lucide-react@npm:1.21.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10/71215c7818f45c0baaecf2524e62bc31b335d607020ed92d4e901e55099b4b40cf80c8d22ee9386514e6a66ea9b0a1c070c36aafdbdbe8c1b0c7192ec9f9f358
+  languageName: node
+  linkType: hard
+
 "luxon@npm:^3.5.0":
   version: 3.7.2
   resolution: "luxon@npm:3.7.2"
@@ -9456,6 +9465,7 @@ __metadata:
     eslint: "npm:8.10.0"
     eslint-config-next: "npm:15.0.8"
     lodash: "npm:^4.17.21"
+    lucide-react: "npm:^1.21.0"
     next: "npm:^15.5.18"
     pg: "npm:^8.11.3"
     playwright-bdd: "npm:^9.0.0"

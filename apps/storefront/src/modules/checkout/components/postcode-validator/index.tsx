@@ -86,32 +86,31 @@ export default function PostcodeValidator({
         <div className="mt-1.5">
           {result.status === "valid" && (
             <p className="text-[11px] text-green-600 font-medium flex items-center gap-1">
-              <span>✓</span> We deliver to {result.outward} — London zone
+              <span>✓</span> Delivering to {result.outward}
             </p>
           )}
           {result.status === "not_in_zone" && (
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-1.5">
               <p className="text-xs text-amber-800 font-medium">
-                We don&apos;t deliver to {result.outward} yet
+                We're not in {result.outward} yet
               </p>
               <p className="text-[10px] text-amber-600 mt-1">
-                Join our waitlist and we&apos;ll let you know when we expand to your area.
+                Leave your details and we'll let you know when we arrive.
               </p>
               <button
                 type="button"
                 className="mt-2 text-[11px] font-semibold text-amber-800 underline hover:text-amber-900"
                 onClick={() => {
-                  // Waitlist — just acknowledge for now
-                  alert(`Thanks! We'll notify you when we start delivering to ${result.outward}.`)
+                  alert(`Got it. We'll let you know when we reach ${result.outward}.`)
                 }}
               >
-                Join waitlist →
+                Notify me →
               </button>
             </div>
           )}
           {result.status === "invalid_format" && value.length >= 5 && (
             <p className="text-[11px] text-red-500">
-              Please enter a valid UK postcode (e.g. SW9 8AL)
+              That doesn't look like a valid UK postcode
             </p>
           )}
         </div>

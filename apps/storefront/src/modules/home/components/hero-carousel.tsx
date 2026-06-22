@@ -2,30 +2,31 @@
 
 import { useState, useEffect, useCallback } from "react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { ArrowRight } from "lucide-react"
 
 const slides = [
   {
-    emoji: "🥘",
-    title: "Cook Delicious Protein-Rich Meals",
-    subtitle: "with our finest dals, lentils & spices — shop now!",
+    emoji: "🛒",
+    title: "Your weekly grocery shop, delivered",
+    subtitle: "From pantry staples to everyday spices — everything you need at home",
     link: "/categories/dal-lentils",
     bg: "from-brand-orange to-brand-orange-dark",
     iconBg: "bg-white/15",
   },
   {
-    emoji: "🧴",
-    title: "Cook Healthier Every Day",
-    subtitle: "Premium quality cooking oils & ghee for your kitchen",
+    emoji: "🥘",
+    title: "Cooking oils, ghee and everyday essentials",
+    subtitle: "Stock your kitchen with quality ingredients for your daily meals",
     link: "/categories/oils-ghee",
-    bg: "from-brand-cardamom to-brand-cardamom-dark",
+    bg: "from-brand-evergreen to-brand-evergreen-dark",
     iconBg: "bg-white/15",
   },
   {
     emoji: "🌾",
-    title: "Top Quality Rice & Grains",
-    subtitle: "Basmati, Sona Masoori, Ponni & more — perfect for daily cooking",
+    title: "Rice and grains for the whole family",
+    subtitle: "Basmati, Sona Masoori, Ponni and more — free delivery over £40",
     link: "/categories/staples-grains",
-    bg: "from-brand-saffron to-brand-orange-dark",
+    bg: "from-brand-amber to-brand-orange-dark",
     iconBg: "bg-white/15",
   },
 ]
@@ -69,10 +70,8 @@ export default function HeroCarousel() {
                 className="inline-flex items-center gap-2 bg-white text-brand-orange font-semibold px-8 py-3.5 rounded-xl
                          hover:bg-grey-5 active:scale-[0.97] transition-all duration-200 text-base shadow-xl shadow-black/20"
               >
-                Shop Now
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                Browse
+                <ArrowRight className="w-4 h-4" />
               </LocalizedClientLink>
             </div>
           </div>

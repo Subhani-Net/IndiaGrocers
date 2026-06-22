@@ -95,7 +95,7 @@ const Summary = ({ cart }: SummaryProps) => {
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
-          Have a promo code?
+          Got a code?
         </button>
 
         {promoOpen && promotions.length === 0 && (
@@ -181,7 +181,7 @@ const Summary = ({ cart }: SummaryProps) => {
         <div className="flex justify-between text-stone-500">
           <span>Delivery</span>
           <span className={reachedFree ? "text-green-600 font-medium" : ""}>
-            {reachedFree ? "FREE" : formatGBP(STANDARD_DELIVERY_COST)}
+            {reachedFree ? "Free" : formatGBP(STANDARD_DELIVERY_COST)}
           </span>
         </div>
         {!reachedFree && (
@@ -216,7 +216,7 @@ const Summary = ({ cart }: SummaryProps) => {
           data-testid="checkout-button"
         >
           <button className="w-full py-3 bg-brand-orange text-white font-bold rounded-lg hover:bg-brand-orange/90 active:scale-[0.98] transition-all">
-            Proceed to Checkout — {formatGBP(total)}
+                            Go to Checkout — {formatGBP(total)}
           </button>
         </LocalizedClientLink>
       )}

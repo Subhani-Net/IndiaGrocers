@@ -1,0 +1,76 @@
+# ═══════════════════════════════════════════════════════════════════
+# Docker Compose — UAT Environment (Server 2)
+# ═══════════════════════════════════════════════════════════════════
+#
+# Usage:
+#   docker compose -p uat -f docker-compose.uat.yml up -d
+#
+# Ports are offset to avoid collisions with Prod-Support:
+#   Postgres: 5433   Redis: 6380   MeiliSearch: 7701
+#
+# The Medusa backend and Next.js storefront are built and run from
+# the host machine (via GitHub Actions deploy) — NOT containerised.
+# Only infrastructure services (DB, Redis, MeiliSearch) live here.
+
+version: "3.8"
+
+services:
+
+  # ── PostgreSQL 16 — UAT database ──────────────────────────────
+  postgres:
+    image: postgres:16
+    container_name: uat-postgres
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: medusa
+      POSTGRES_PASSWORD: medusa_uat_password_2026
+      POSTGRES_DB: indiagrocers_uat
+    volumes:
+      - uat_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medusa -d indiagrocers_uat"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Redis 7 — UAT cache + event bus ──────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: uat-redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    volumes:
+      - uat_redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── MeiliSearch v1.12 — UAT search engine ────────────────────
+  meilisearch:
+    image: getmeili/meilisearch:v1.12
+    container_name: uat-meilisearch
+    restart: unless-stopped
+    ports:
+      - "7701:7700"
+    environment:
+      MEILI_NO_ANALYTICS: "true"
+      MEILI_HTTP_ADDR: "0.0.0.0:7700"
+      MEILI_MASTER_KEY: uat-meili-master-key-2026
+    volumes:
+      - uat_meili_data:/meili_data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7700/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  uat_postgres_data:
+  uat_redis_data:
+  uat_meili_data:

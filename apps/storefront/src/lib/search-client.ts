@@ -9,7 +9,7 @@ const MEILISEARCH_HOST =
 const MEILISEARCH_SEARCH_KEY =
   process.env.NEXT_PUBLIC_MEILISEARCH_SEARCH_KEY || undefined
 
-interface MeiliProduct {
+export interface MeiliProduct {
   id: string
   title: string
   handle: string
@@ -20,6 +20,8 @@ interface MeiliProduct {
   collection_handle: string
   status: string
   metadata: Record<string, unknown>
+  commodity_group: string
+  brand_slug: string
 }
 
 interface SearchResult {
@@ -63,6 +65,11 @@ export async function searchProducts(
           filter: options?.filter,
           sort: options?.sort,
           showMatchesPosition: true,
+          attributesToRetrieve: [
+            "id", "title", "handle", "description", "thumbnail",
+            "price_gbp", "status", "commodity_group", "brand_slug",
+            "category_handle", "collection_title", "collection_handle",
+          ],
         }),
         signal: options?.signal,
       }
@@ -71,16 +78,7 @@ export async function searchProducts(
     if (!res.ok) throw new Error(`MeiliSearch returned ${res.status}`)
 
     const data = await res.json()
-
-    // If no results, try with resolved synonyms
     let appliedSynonym: string | null = null
-
-    // Simple synonym detection: if a hit matched a different term than the query
-    if (data.hits?.length > 0 && data.matchesPosition) {
-      const firstHit = data.hits[0]
-      // MeiliSearch returns match positions — if the matched term differs from query
-      // we can show the synonym notice
-    }
 
     return {
       products: data.hits || [],
@@ -97,7 +95,6 @@ export async function searchProducts(
 
 /**
  * Quick autocomplete search — returns top 5 matching products.
- * Accepts an optional AbortSignal to cancel stale requests on rapid typing.
  */
 export async function autocompleteProducts(
   query: string,
@@ -105,4 +102,20 @@ export async function autocompleteProducts(
 ): Promise<MeiliProduct[]> {
   const { products } = await searchProducts(query, { limit: 5, signal })
   return products
+}
+
+/**
+ * Sorts product hits by commodity_group so identical product types
+ * across brands cluster next to each other instead of being scattered
+ * by alphabetical brand order.
+ *
+ * "Natco Toor Dal Oily", "TRS Toor Dal Oily", "East End Toor Dal Oily"
+ * all sort together under "Toor Dal Oily".
+ */
+export function sortByCommodity(hits: MeiliProduct[]): MeiliProduct[] {
+  return [...hits].sort((a, b) => {
+    const ga = a.commodity_group || a.title || ""
+    const gb = b.commodity_group || b.title || ""
+    return ga.localeCompare(gb)
+  })
 }

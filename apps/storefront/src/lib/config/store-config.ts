@@ -39,22 +39,22 @@ export const DELIVERY_SLOTS = {
   /** If true, only Sat (6) and Sun (0) are available */
   weekendOnly: true,
   /** Time windows per day */
-  windows: [
-    { label: "Morning (8am-12pm)",   start: "08:00", end: "12:00" },
-    { label: "Afternoon (12pm-4pm)", start: "12:00", end: "16:00" },
-    { label: "Evening (4pm-8pm)",    start: "16:00", end: "20:00" },
-  ],
-} as const
+    windows: [
+      { label: "Morning 8–12pm",   start: "08:00", end: "12:00" },
+      { label: "Afternoon 12–4pm", start: "12:00", end: "16:00" },
+      { label: "Evening 4–8pm",    start: "16:00", end: "20:00" },
+    ],
+  } as const
 
-// ── Cut-off & ETA ──
+  // ── Cut-off & ETA ──
 
-export const CUTOFF_TIME = "2:00 PM"
-export const CUTOFF_TIME_24H = "14:00"
-export const DELIVERY_ETA_RANGE = "8am–8pm"
-export const STANDARD_ETA = "3–5 working days"
-export const EXPRESS_ETA = "Next working day"
+  export const CUTOFF_TIME = "2pm"
+  export const CUTOFF_TIME_24H = "14:00"
+  export const DELIVERY_ETA_RANGE = "8am–8pm"
+  export const STANDARD_ETA = "3–5 working days"
+  export const EXPRESS_ETA = "Next working day"
 
-// ── Banner Text ──
+  // ── Banner Text ──
 
-export const FREE_DELIVERY_BANNER =
-  `FREE DELIVERY on orders over ${FREE_DELIVERY_THRESHOLD_GBP} · Order by 2pm for next day delivery`
+  export const FREE_DELIVERY_BANNER =
+    `Free delivery on orders over ${FREE_DELIVERY_THRESHOLD_GBP} · Order by 2pm for your next-day slot`

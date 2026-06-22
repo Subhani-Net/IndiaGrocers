@@ -1,0 +1,221 @@
+# ═══════════════════════════════════════════════════════════════════
+# GitHub Actions — Deploy Pipeline
+# ═══════════════════════════════════════════════════════════════════
+#
+# Triggers:
+#   push to `main`    → Deploy Production (Server 1)
+#   push to `develop` → Deploy UAT        (Server 2)
+#
+# Prerequisites (set in GitHub Secrets):
+#   PROD_HOST          — IP or hostname of Server 1 (production)
+#   PROD_SSH_KEY       — SSH private key for deploy@server1
+#   PROD_SSH_USER      — SSH username for Server 1
+#   UAT_HOST           — IP or hostname of Server 2 (UAT)
+#   UAT_SSH_KEY        — SSH private key for deploy@server2
+#   UAT_SSH_USER       — SSH username for Server 2
+#   ENV_PROD           — Production .env file contents (backend)
+#   ENV_UAT            — UAT .env file contents (backend)
+#
+# Deploy strategy:
+#   - SSH into the target server
+#   - Pull the latest code
+#   - Install dependencies (npm ci / yarn install)
+#   - Run database migrations
+#   - Build the Next.js storefront
+#   - Restart the Medusa backend (pm2)
+#   - Restart the Next.js storefront (pm2)
+#   - Reindex MeiliSearch
+#   - Health check the deployment
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+
+  # ═══════════════════════════════════════════════════════
+  # PRODUCTION DEPLOY (main branch → Server 1)
+  # ═══════════════════════════════════════════════════════
+
+  deploy-production:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Production (Server 1)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script_stop: true
+          script: |
+            set -e
+
+            echo "=== Production Deploy — $(date) ==="
+
+            # ── 1. Navigate to project directory ──
+            cd /opt/production
+
+            # ── 2. Pull latest code ──
+            git fetch origin main
+            git reset --hard origin/main
+
+            # ── 3. Write .env files from GitHub Secrets ──
+            echo "${{ secrets.ENV_PROD }}" > apps/backend/.env
+
+            # ── 4. Install dependencies ──
+            npm ci --prefer-offline
+            cd apps/storefront && yarn install --immutable && cd ../..
+
+            # ── 5. Run database migrations ──
+            cd apps/backend
+            npx medusa db:migrate
+            cd ../..
+
+            # ── 6. Build storefront ──
+            cd apps/storefront
+            yarn build
+            cd ../..
+
+            # ── 7. Configure MeiliSearch ──
+            cd apps/meilisearch
+            npm run configure
+            cd ../..
+
+            # ── 8. Restart backend (pm2) ──
+            cd apps/backend
+            pm2 reload ecosystem.config.js --update-env || pm2 start ecosystem.config.js
+            cd ../..
+
+            # ── 9. Restart storefront (pm2) ──
+            cd apps/storefront
+            pm2 reload ecosystem.config.js --update-env || pm2 start ecosystem.config.js
+            cd ../..
+
+            # ── 10. Wait for backend to be ready ──
+            echo "Waiting for backend to be ready..."
+            for i in $(seq 1 30); do
+              if curl -sf http://localhost:9000/health > /dev/null 2>&1; then
+                echo "  Backend ready after ${i}s"
+                break
+              fi
+              sleep 1
+            done
+
+            # ── 11. Reindex MeiliSearch ──
+            cd apps/meilisearch
+            npm run reindex
+            cd ../..
+
+            # ── 12. Health check ──
+            echo ""
+            echo "Production health check:"
+            curl -s http://localhost:9000/health | head -c 200
+            echo ""
+
+            echo "=== Deploy complete ==="
+
+  # ═══════════════════════════════════════════════════════
+  # UAT DEPLOY (develop branch → Server 2)
+  # ═══════════════════════════════════════════════════════
+
+  deploy-uat:
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    environment: uat
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to UAT (Server 2)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.UAT_HOST }}
+          username: ${{ secrets.UAT_SSH_USER }}
+          key: ${{ secrets.UAT_SSH_KEY }}
+          script_stop: true
+          script: |
+            set -e
+
+            echo "=== UAT Deploy — $(date) ==="
+
+            # ── 1. Navigate to project directory ──
+            cd /opt/uat
+
+            # ── 2. Pull latest code ──
+            git fetch origin develop
+            git reset --hard origin/develop
+
+            # ── 3. Write .env files from GitHub Secrets ──
+            echo "${{ secrets.ENV_UAT }}" > apps/backend/.env
+
+            # ── 4. Stop running services before install (free memory) ──
+            pm2 stop all 2>/dev/null || true
+
+            # ── 5. Install dependencies ──
+            npm ci --prefer-offline
+            cd apps/storefront && yarn install --immutable && cd ../..
+
+            # ── 6. Run database migrations ──
+            cd apps/backend
+            npx medusa db:migrate
+            cd ../..
+
+            # ── 7. Build storefront ──
+            cd apps/storefront
+            yarn build
+            cd ../..
+
+            # ── 8. Sync product images to storefront public ──
+            # (If using local image hosting, ensure images are available)
+            if [ -d "apps/backend/uploads" ]; then
+              cp -n apps/backend/uploads/* apps/storefront/public/images/products/ 2>/dev/null || true
+            fi
+
+            # ── 9. Configure MeiliSearch ──
+            cd apps/meilisearch
+            npm run configure
+            cd ../..
+
+            # ── 10. Restart backend (pm2) ──
+            cd apps/backend
+            pm2 reload ecosystem.config.js --update-env || pm2 start ecosystem.config.js
+            cd ../..
+
+            # ── 11. Restart storefront (pm2) ──
+            cd apps/storefront
+            pm2 reload ecosystem.config.js --update-env || pm2 start ecosystem.config.js
+            cd ../..
+
+            # ── 12. Wait for backend ──
+            echo "Waiting for backend..."
+            for i in $(seq 1 30); do
+              if curl -sf http://localhost:9001/health > /dev/null 2>&1; then
+                echo "  Backend ready after ${i}s"
+                break
+              fi
+              sleep 1
+            done
+
+            # ── 13. Reindex MeiliSearch ──
+            cd apps/meilisearch
+            npm run reindex
+            cd ../..
+
+            # ── 14. Health check ──
+            echo ""
+            echo "UAT health check:"
+            curl -s http://localhost:9001/health | head -c 200
+            echo ""
+
+            echo "=== Deploy complete ==="

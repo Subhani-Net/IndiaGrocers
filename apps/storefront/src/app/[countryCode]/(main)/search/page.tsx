@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import { Suspense } from "react"
 import { listCategories } from "@lib/data/categories"
-import { searchProducts } from "@lib/search-client"
+import { searchProducts, sortByCommodity } from "@lib/search-client"
 import { fetchProductsByIds } from "@lib/data/products"
 import SearchTemplate from "@modules/search/templates"
 import { HttpTypes } from "@medusajs/types"
@@ -30,11 +30,11 @@ export default async function SearchPage(props: Props) {
   // Build MeiliSearch filter from URL params
   const filterParts: string[] = []
   if (dietary) filterParts.push(`metadata.dietary_flags = "${dietary}"`)
-  if (brand) filterParts.push(`metadata.brand_slug = "${brand.toLowerCase()}"`)
+  if (brand) filterParts.push(`brand_slug = "${brand.toLowerCase()}"`)
   if (maxPrice) filterParts.push(`price_gbp <= ${parseFloat(maxPrice) * 100}`)
   const filter = filterParts.join(" AND ")
 
-  // Fetch categories for chips (always needed)
+  // Fetch categories for chips
   const categories = await listCategories().catch(() => [])
 
   const parentCategories = (Array.isArray(categories) ? categories : [])
@@ -42,20 +42,24 @@ export default async function SearchPage(props: Props) {
     .slice(0, 12)
     .map((c: any) => ({ name: c.name, handle: c.handle }))
 
-  // Fetch search results (only when query is present)
+  // Fetch search results
   let initialResults: HttpTypes.StoreProduct[] = []
   let initialTotal = 0
 
   if (q) {
     try {
-      const limit = 12
+      const limit = 24
       const offset = (page - 1) * limit
 
       const options: any = { limit, offset }
       if (filter) options.filter = filter
       if (sort) options.sort = [sort]
 
-      const { products: hits, totalCount } = await searchProducts(q, options)
+      let { products: hits, totalCount } = await searchProducts(q, options)
+
+      // Sort by commodity_group so identical product types cluster together
+      // (e.g., "Toor Dal Oily" from all brands side-by-side instead of scattered)
+      hits = sortByCommodity(hits)
 
       if (hits.length) {
         const hitIds = hits.map((h: any) => h.id)
@@ -63,7 +67,7 @@ export default async function SearchPage(props: Props) {
         initialTotal = totalCount
       }
     } catch {
-      // Silent fallback — empty results rendered
+      // Silent fallback
     }
   }
 
@@ -78,7 +82,7 @@ export default async function SearchPage(props: Props) {
         initialPage={page}
         initialDietary={dietary || null}
         initialBrand={brand || null}
-        initialSort={sort || ""}
+        initialSort={sort || null}
       />
     </Suspense>
   )

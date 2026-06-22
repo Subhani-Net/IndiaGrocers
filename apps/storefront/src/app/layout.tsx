@@ -1,9 +1,16 @@
 import { getBaseURL } from "@lib/util/env"
 import { Metadata, Viewport } from "next"
+import { Inter } from "next/font/google"
 import "styles/globals.css"
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
+
 export const viewport: Viewport = {
-  themeColor: "#FF6B35",
+  themeColor: "#EA580C",
 }
 
 export const metadata: Metadata = {
@@ -26,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-mode="light">
+    <html lang="en" data-mode="light" className={inter.variable}>
       <head>
         <link rel="apple-touch-icon" href="/icons/icon-192.svg" />
       </head>

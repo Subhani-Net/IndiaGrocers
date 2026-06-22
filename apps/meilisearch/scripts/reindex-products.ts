@@ -62,6 +62,8 @@ interface IndexDocument {
   collection_handle: string
   tags: string[]
   metadata: Record<string, unknown>
+  commodity_group: string
+  brand_slug: string
 }
 
 async function login(): Promise<string> {
@@ -120,6 +122,23 @@ function transformProduct(p: MedusaProduct): IndexDocument {
       (v: any) => v.metadata?.weight_grams || v.metadata?.weight_value || 0
     )
   )
+  const brandSlug = (meta.brand_slug as string) || ""
+
+  // Compute commodity_group by stripping brand prefix from title
+  // "Natco - Toor Dal Oily" → "Toor Dal Oily"
+  // "Natco - Natco - Chick Peas" → "Chick Peas"
+  // "Fresh Veg - Okra / Bhindi" → "Okra / Bhindi"
+  let commodityGroup = p.title
+  const dashIdx = p.title.indexOf(" - ")
+  if (dashIdx > 0) {
+    let stripped = p.title.slice(dashIdx + 3).trim()
+    // Handle double-branded titles: "Natco - Natco - Chick Peas"
+    const secondDash = stripped.indexOf(" - ")
+    if (secondDash > 0) {
+      stripped = stripped.slice(secondDash + 3).trim()
+    }
+    commodityGroup = stripped
+  }
 
   return {
     id: p.id,
@@ -139,11 +158,13 @@ function transformProduct(p: MedusaProduct): IndexDocument {
     tags: (p.tags || []).map((t) => t.value),
     metadata: {
       ...meta,
-      brand_slug: meta.brand_slug || "",
+      brand_slug: brandSlug,
       synonyms_text: Array.isArray(meta.synonyms)
         ? (meta.synonyms as string[]).join(" ")
         : "",
     },
+    commodity_group: commodityGroup,
+    brand_slug: brandSlug,
   }
 }
 

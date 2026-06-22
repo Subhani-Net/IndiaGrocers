@@ -1,0 +1,75 @@
+# ═══════════════════════════════════════════════════════════════════
+# Docker Compose — Prod-Support Environment (Server 2)
+# ═══════════════════════════════════════════════════════════════════
+#
+# Usage:
+#   docker compose -p support -f docker-compose.support.yml up -d
+#
+# Ports are offset to avoid collisions with UAT:
+#   Postgres: 5434   Redis: 6381   MeiliSearch: 7702
+#
+# This database is populated nightly from Production via
+# the sync-prod-to-support.sh script (GDPR-compliant anonymisation).
+
+version: "3.8"
+
+services:
+
+  # ── PostgreSQL 16 — Prod-Support database ─────────────────────
+  postgres:
+    image: postgres:16
+    container_name: support-postgres
+    restart: unless-stopped
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: medusa
+      POSTGRES_PASSWORD: medusa_support_password_2026
+      POSTGRES_DB: indiagrocers_support
+    volumes:
+      - support_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medusa -d indiagrocers_support"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Redis 7 — Support cache + event bus ──────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: support-redis
+    restart: unless-stopped
+    ports:
+      - "6381:6379"
+    volumes:
+      - support_redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── MeiliSearch v1.12 — Support search engine ─────────────────
+  meilisearch:
+    image: getmeili/meilisearch:v1.12
+    container_name: support-meilisearch
+    restart: unless-stopped
+    ports:
+      - "7702:7700"
+    environment:
+      MEILI_NO_ANALYTICS: "true"
+      MEILI_HTTP_ADDR: "0.0.0.0:7700"
+      MEILI_MASTER_KEY: support-meili-master-key-2026
+    volumes:
+      - support_meili_data:/meili_data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7700/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  support_postgres_data:
+  support_redis_data:
+  support_meili_data:

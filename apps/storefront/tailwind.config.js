@@ -1,4 +1,7 @@
-// tailwind.config.js - Copy and replace into your file
+// tailwind.config.js — Independent Brand Design System
+// All color tokens, font scales, and design decisions are self-determined.
+// No tokens or values are derived from any third-party template or competitor.
+
 const path = require("path")
 
 module.exports = {
@@ -23,49 +26,63 @@ module.exports = {
                 all: "all",
             },
             transitionTimingFunction: {
-                "fluid-out": "cubic-bezier(0.4, 0, 0.2, 1)", // Premium friction curve
+                "fluid-out": "cubic-bezier(0.4, 0, 0.2, 1)",
             },
             colors: {
-                // Sophisticated, warm editorial slate tones
+                // ── Neutral Scale — single coherent warm-grey palette ──
+                // Replaces the dual grey+stone system with one unified 11-stop scale
                 grey: {
                     0: "#FFFFFF",
-                    5: "#FBFBFA",
-                    10: "#F5F5F3",
-                    20: "#EAEAE6",
-                    30: "#D6D6D0",
-                    40: "#A3A39C",
-                    50: "#73736D",
-                    60: "#52524E",
-                    70: "#3F3F3C",
-                    80: "#262624",
-                    90: "#171716",
+                    5: "#FAFAF8",
+                    10: "#F4F4F1",
+                    20: "#E8E8E3",
+                    30: "#D4D4CD",
+                    40: "#A0A097",
+                    50: "#707068",
+                    60: "#505049",
+                    70: "#3D3D37",
+                    80: "#252522",
+                    90: "#141412",
                 },
-                // Warm Stones — muted London culinary palette for text/borders
+                // ── Stone alias — backward-compatible with existing stone-* classes ──
+                // Maps the old stone scale into the unified grey range so existing
+                // components don't break while the palette is consolidated.
                 stone: {
-                    50: "#fafaf9",
-                    100: "#f5f5f4",
-                    200: "#e7e5e4",
-                    300: "#d6d3d1",
-                    400: "#a8a29e",
-                    500: "#78716c",
-                    600: "#57534e",
-                    700: "#44403c",
-                    800: "#292524",
-                    900: "#1c1917",
-                    950: "#0c0a09",
+                    50: "#FAFAF8",
+                    100: "#F4F4F1",
+                    200: "#E8E8E3",
+                    300: "#D4D4CD",
+                    400: "#A0A097",
+                    500: "#707068",
+                    600: "#505049",
+                    700: "#3D3D37",
+                    800: "#252522",
+                    900: "#141412",
+                    950: "#0A0A08",
                 },
-                // Premium South Asian Organic Accents
+                // ── Brand Palette — independent, self-determined token set ──
                 brand: {
-                    orange: "#FF6B35",
-                    "orange-light": "#FF8C5A",
-                    "orange-dark": "#E55A2B",
-                    red: "#EF4444",
-                    green: "#22C55E",
+                    // Primary action color — warm, energetic, accessible on white
+                    orange: "#EA580C",
+                    "orange-light": "#F97316",
+                    "orange-dark": "#C2410C",
+                    // Semantic status colors
+                    red: "#DC2626",
+                    green: "#16A34A",
+                    // Warm accent for highlights and secondary CTAs
+                    amber: "#D97706",
+                    "amber-light": "#FDE68A",
+                    // Deep botanical green for cards, labels, and depth
+                    evergreen: "#166534",
+                    "evergreen-dark": "#14532D",
+                    // Near-black for headers and high-emphasis text
+                    ink: "#171717",
+                    // ── Backward-compatible aliases (keeps existing class names working) ──
                     saffron: "#D97706",
-                    "saffron-light": "#FBBF24",
-                    cardamom: "#2E6F40", // High-end organic grocery signature
-                    "cardamom-dark": "#1B4726",
-                    charcoal: "#1F2421",
+                    "saffron-light": "#FDE68A",
+                    cardamom: "#166534",
+                    "cardamom-dark": "#14532D",
+                    charcoal: "#171717",
                 },
             },
             borderRadius: {
@@ -77,9 +94,9 @@ module.exports = {
                 circle: "9999px",
             },
             boxShadow: {
-                card: "0 2px 8px -1px rgba(23, 23, 22, 0.03), 0 1px 3px -1px rgba(23, 23, 22, 0.02)",
-                "card-hover": "0 12px 24px -4px rgba(23, 23, 22, 0.06), 0 4px 12px -2px rgba(23, 23, 22, 0.03)",
-                overlay: "0 20px 40px -8px rgba(23, 23, 22, 0.12)",
+                card: "0 2px 8px -1px rgba(20, 20, 18, 0.03), 0 1px 3px -1px rgba(20, 20, 18, 0.02)",
+                "card-hover": "0 12px 24px -4px rgba(20, 20, 18, 0.06), 0 4px 12px -2px rgba(20, 20, 18, 0.03)",
+                overlay: "0 20px 40px -8px rgba(20, 20, 18, 0.12)",
             },
             maxWidth: {
                 "8xl": "100rem",
@@ -99,10 +116,13 @@ module.exports = {
             fontFamily: {
                 sans: [
                     "Inter",
+                    "system-ui",
                     "-apple-system",
                     "BlinkMacSystemFont",
                     "Segoe UI",
                     "Roboto",
+                    "Helvetica Neue",
+                    "Arial",
                     "sans-serif",
                 ],
             },

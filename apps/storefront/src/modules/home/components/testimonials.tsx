@@ -39,8 +39,7 @@ export default function Testimonials() {
   return (
     <section className="py-20 px-6 bg-stone-50">
       <div className="max-w-[1440px] mx-auto">
-        <h2 className="section-title section-title-accent">Trusted by Customers</h2>
-        <p className="section-subtitle">Here is what our customers say about us</p>
+        <h2 className="section-title section-title-accent">What our customers say</h2>
 
         <div className="relative max-w-2xl mx-auto mt-10">
           <div className="overflow-hidden rounded-2xl">
